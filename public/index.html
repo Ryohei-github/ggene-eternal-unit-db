@@ -63,6 +63,7 @@ a:hover{text-decoration:underline}
 .badge-ex{background:linear-gradient(135deg,var(--accent2),#ff8844);color:#fff}
 .card-series{font-size:.7em;color:var(--text2);margin-bottom:8px}
 .card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:8px}
+.card-stats-sub{grid-template-columns:repeat(4,1fr);margin-bottom:8px;margin-top:-4px}
 .stat{text-align:center;padding:4px;background:var(--bg);border-radius:4px}
 .stat-label{font-size:.6em;color:var(--text2);text-transform:uppercase}
 .stat-val{font-size:.9em;font-weight:700}
@@ -134,6 +135,7 @@ a:hover{text-decoration:underline}
   .grid{grid-template-columns:1fr}
   .filters{flex-direction:column}
   .card-stats{grid-template-columns:repeat(2,1fr)}
+  .card-stats-sub{grid-template-columns:repeat(2,1fr)}
   .modal .stats-grid{grid-template-columns:repeat(2,1fr)}
   .modal .mechanism-item{flex-direction:column;align-items:flex-start}
   .modal .weapon-info{grid-template-columns:repeat(2,1fr)}
@@ -202,6 +204,8 @@ a:hover{text-decoration:underline}
       <button class="sort-btn active" data-sort="cp">戦闘力順</button>
       <button class="sort-btn" data-sort="atk">攻撃力順</button>
       <button class="sort-btn" data-sort="hp">HP順</button>
+      <button class="sort-btn" data-sort="def">防御力順</button>
+      <button class="sort-btn" data-sort="en">EN順</button>
       <button class="sort-btn" data-sort="name">名前順</button>
     </div>
   </div>
@@ -292,6 +296,8 @@ function updateUI() {
       <button class="sort-btn active" data-sort="cp">戦闘力順</button>
       <button class="sort-btn" data-sort="atk">攻撃力順</button>
       <button class="sort-btn" data-sort="hp">HP順</button>
+      <button class="sort-btn" data-sort="def">防御力順</button>
+      <button class="sort-btn" data-sort="en">EN順</button>
       <button class="sort-btn" data-sort="name">名前順</button>`;
     currentSort = 'cp'; currentDir = -1;
   } else if (isChara) {
@@ -424,6 +430,10 @@ function sortItems(items) {
         if (currentTab === 'unit') { va = parseInt(a.stats?.hp)||0; vb = parseInt(b.stats?.hp)||0; }
         else { va = parseInt(a.hp)||0; vb = parseInt(b.hp)||0; }
         break;
+      case 'def':
+        va = parseInt(a.stats?.defense)||0; vb = parseInt(b.stats?.defense)||0; break;
+      case 'en':
+        va = parseInt(a.stats?.en)||0; vb = parseInt(b.stats?.en)||0; break;
       case 'shoot': va = a.stats?.shooting||0; vb = b.stats?.shooting||0; break;
       case 'react': va = a.stats?.reaction||0; vb = b.stats?.reaction||0; break;
       case 'name': return dir * a.name.localeCompare(b.name, 'ja');
@@ -500,6 +510,12 @@ function unitCardHTML(u) {
       <div class="stat"><div class="stat-label">戦闘力</div><div class="stat-val cp-val">${(parseInt(u.combat_power)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">攻撃力</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
+    </div>
+    <div class="card-stats card-stats-sub">
+      <div class="stat"><div class="stat-label">防御力</div><div class="stat-val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">EN</div><div class="stat-val">${(parseInt(s.en)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">運動性</div><div class="stat-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">機動力</div><div class="stat-val">${parseInt(s.mobility)||0}</div></div>
     </div>
     <div class="card-terrain">
       <span class="terrain-item">宇${terrainIcon(t.space)}</span>
