@@ -112,10 +112,8 @@ def parse_chara_detail(url, name_hint):
                             elif i+1 < len(cell_texts) and cell_texts[i+1] in ['攻撃','耐久','支援']:
                                 data['chara_type'] = cell_texts[i+1]
 
-                # Direct type text in cells
-                for ct in cell_texts:
-                    if ct in ['攻撃', '耐久', '支援']:
-                        data['chara_type'] = ct
+                # Note: Removed "Direct type text in cells" fallback
+                # It was overwriting correct chara_type with チャンスステップ value
 
         # Series table: single-row table with series name
         if len(rows) == 1 and len(rows[0].find_all(['th', 'td'])) == 1:

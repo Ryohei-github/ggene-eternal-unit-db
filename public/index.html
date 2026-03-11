@@ -50,14 +50,15 @@ a:hover{text-decoration:underline}
 .card-name{font-size:1.05em;font-weight:700;color:#fff}
 .card-badges{display:flex;gap:4px;flex-shrink:0}
 .badge{padding:2px 8px;border-radius:4px;font-size:.65em;font-weight:700;letter-spacing:.5px}
-.badge-ur{background:linear-gradient(135deg,#ff2255,#ff6644);color:#fff}
-.badge-ssr{background:linear-gradient(135deg,#aa44ff,#cc66ff);color:#fff}
-.badge-sr{background:linear-gradient(135deg,#4488ff,#66aaff);color:#fff}
-.badge-r{background:linear-gradient(135deg,#44aa44,#66cc66);color:#fff}
+.badge-ur{background:linear-gradient(135deg,#9b30ff,#bf5fff);color:#fff}
+.badge-ssr{background:linear-gradient(135deg,#daa520,#ffd700);color:#1a1a1a}
+.badge-sr{background:linear-gradient(135deg,#a0a0a0,#c0c0c0);color:#1a1a1a}
+.badge-r{background:linear-gradient(135deg,#b87333,#cd853f);color:#fff}
+.badge-n{background:linear-gradient(135deg,#555,#777);color:#fff}
 .badge-type{background:var(--bg);border:1px solid var(--border);color:var(--text2)}
 .badge-atk{border-color:#ff4444;color:#ff6666}
 .badge-def{border-color:#4488ff;color:#6699ff}
-.badge-sup{border-color:#44cc44;color:#66dd66}
+.badge-sup{border-color:#daa520;color:#ffd700}
 .badge-ex{background:linear-gradient(135deg,var(--accent2),#ff8844);color:#fff}
 .card-series{font-size:.7em;color:var(--text2);margin-bottom:8px}
 .card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:8px}
@@ -73,6 +74,7 @@ a:hover{text-decoration:underline}
 .card-weapons{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px}
 .weapon-tag{padding:2px 6px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);border-radius:3px;font-size:.65em;color:var(--accent)}
 .weapon-tag.ex{background:rgba(255,107,53,.15);border-color:rgba(255,107,53,.3);color:var(--accent2)}
+.weapon-tag.map{background:rgba(255,68,102,.15);border-color:rgba(255,68,102,.3);color:#ff6688}
 .card-tags{display:flex;flex-wrap:wrap;gap:3px}
 .tag{padding:1px 5px;background:rgba(255,255,255,.05);border-radius:3px;font-size:.6em;color:var(--text2)}
 
@@ -457,6 +459,7 @@ function rarityClass(r) {
   if (r === 'SSR') return 'badge-ssr';
   if (r === 'SR') return 'badge-sr';
   if (r === 'R') return 'badge-r';
+  if (r === 'N') return 'badge-n';
   return 'badge-type';
 }
 
@@ -474,9 +477,12 @@ function isEXChara(c) {
 function unitCardHTML(u) {
   const s = u.stats || {};
   const t = u.terrain || {};
-  const weapons = (u.weapons||[]).map(w =>
-    `<span class="weapon-tag${w.is_ex?' ex':''}">${w.name}</span>`
-  ).join('');
+  const weapons = (u.weapons||[]).map(w => {
+    let label = w.name;
+    if (w.is_map) label = '（MAP兵器）' + label;
+    if (w.is_map && w.use_count) label += ` [${w.use_count}回]`;
+    return `<span class="weapon-tag${w.is_ex?' ex':''}${w.is_map?' map':''}">${label}</span>`;
+  }).join('');
   const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag">${t}</span>`).join('');
 
   return `<div class="card" onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
@@ -513,9 +519,11 @@ function charaCardHTML(c) {
 
   let statsHTML = '';
   if (hasStats) {
-    statsHTML = `<div class="card-stats">
-      <div class="stat"><div class="stat-label">戦闘力</div><div class="stat-val cp-val">${(s.combat_power||0).toLocaleString()}</div></div>
+    statsHTML = `<div class="card-stats" style="grid-template-columns:repeat(5,1fr)">
       <div class="stat"><div class="stat-label">射撃</div><div class="stat-val">${s.shooting||'-'}</div></div>
+      <div class="stat"><div class="stat-label">格闘</div><div class="stat-val">${s.melee||'-'}</div></div>
+      <div class="stat"><div class="stat-label">覚醒</div><div class="stat-val">${s.awakening||'-'}</div></div>
+      <div class="stat"><div class="stat-label">守備</div><div class="stat-val">${s.defense||'-'}</div></div>
       <div class="stat"><div class="stat-label">反応</div><div class="stat-val">${s.reaction||'-'}</div></div>
     </div>`;
   }
@@ -576,7 +584,7 @@ function showUnitDetail(name) {
 
   const weaponsHTML = (u.weapons||[]).map(w => `
     <div class="weapon-detail">
-      <div class="weapon-name">${w.is_map?'<span class="map-badge">MAP兵器</span>':''}${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}</div>
+      <div class="weapon-name">${w.is_map?'<span class="map-badge">MAP兵器</span>':''}${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}${w.is_map && w.use_count ? ` <span style="color:var(--accent2);font-size:.75em">[${w.use_count}回]</span>` : ''}</div>
       <div class="weapon-info">
         <div><span>属性:</span> <strong>${w.attribute}</strong></div>
         <div><span>タイプ:</span> <strong>${w.attack_type}</strong></div>
@@ -672,7 +680,6 @@ function showCharaDetail(name) {
         <div class="stat-box"><div class="label">覚醒値</div><div class="val">${s.awakening||'-'}</div></div>
         <div class="stat-box"><div class="label">守備力</div><div class="val">${s.defense||'-'}</div></div>
         <div class="stat-box"><div class="label">反応値</div><div class="val">${s.reaction||'-'}</div></div>
-        <div class="stat-box"><div class="label">機動力</div><div class="val">${s.mobility||'-'}</div></div>
       </div>
     </div>`;
   }
