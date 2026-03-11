@@ -75,13 +75,17 @@ a:hover{text-decoration:underline}
 .modal .detail-badges{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
 .modal .detail-section{margin-bottom:16px}
 .modal .detail-section h3{font-size:.85em;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:4px;margin-bottom:8px}
-.modal .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.modal .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
 .modal .stat-box{text-align:center;padding:8px;background:var(--bg);border-radius:6px;border:1px solid var(--border)}
 .modal .stat-box .label{font-size:.65em;color:var(--text2)}
 .modal .stat-box .val{font-size:1.1em;font-weight:700}
 .modal .weapon-detail{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;margin-bottom:6px}
 .modal .weapon-name{font-weight:700;font-size:.9em;margin-bottom:4px}
 .modal .weapon-name .ex-badge{color:var(--accent2);font-size:.7em;margin-left:4px}
+.modal .weapon-name .map-badge{display:inline-block;background:linear-gradient(135deg,#ff4466,#ff8844);color:#fff;font-size:.6em;font-weight:700;padding:1px 6px;border-radius:3px;margin-right:6px;vertical-align:middle}
+.modal .mechanism-item{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;margin-bottom:4px;font-size:.8em}
+.modal .mechanism-name{font-weight:600;color:var(--accent)}
+.modal .mechanism-effect{color:var(--text2);font-size:.9em}
 .modal .weapon-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:4px;font-size:.75em}
 .modal .weapon-info span{color:var(--text2)}
 .modal .weapon-info strong{color:var(--text)}
@@ -98,6 +102,7 @@ a:hover{text-decoration:underline}
   .filters{flex-direction:column}
   .card-stats{grid-template-columns:repeat(2,1fr)}
   .modal .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .modal .mechanism-item{flex-direction:column;align-items:flex-start}
   .modal .weapon-info{grid-template-columns:repeat(2,1fr)}
 }
 </style>
@@ -276,9 +281,10 @@ function showDetail(idx) {
   const s = u.stats || {};
   const t = u.terrain || {};
 
+  // --- 武装HTML（MAP兵器プレフィックス対応） ---
   const weaponsHTML = (u.weapons||[]).map(w => `
     <div class="weapon-detail">
-      <div class="weapon-name">${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}${w.is_map?'<span class="ex-badge">MAP</span>':''}</div>
+      <div class="weapon-name">${w.is_map?'<span class="map-badge">MAP兵器</span>':''}${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}</div>
       <div class="weapon-info">
         <div><span>属性:</span> <strong>${w.attribute}</strong></div>
         <div><span>タイプ:</span> <strong>${w.attack_type}</strong></div>
@@ -293,12 +299,23 @@ function showDetail(idx) {
     </div>
   `).join('');
 
-  const abHTML = (u.abilities||[]).map(a => `
+  // --- ゴミアビリティ除外 + 機構分離 ---
+  const garbageNames = ['リセマラ評価','キャラ一覧の関連記事','解放キャラ','スキル','UR','EXキャラアビリティ','対象ユニット','サポーターの一覧記事','レア度','2×2','SD','支援','攻撃'];
+  const isGarbage = (name) => garbageNames.includes(name) || /^戦闘力[\(（]/.test(name) || /[\(（]SP:\d+[\)）]/.test(name);
+  const isMechanism = (name) => /フィールド|アーマー|装甲|シールド|脱出|変形/.test(name);
+
+  const cleanAbilities = (u.abilities||[]).filter(a => !isGarbage(a.name));
+  const mechFromAbilities = cleanAbilities.filter(a => isMechanism(a.name));
+  const pureAbilities = cleanAbilities.filter(a => !isMechanism(a.name));
+  const mechFromSkills = (u.skills||[]);
+  const allMechanisms = [...mechFromSkills, ...mechFromAbilities];
+
+  const abHTML = pureAbilities.map(a => `
     <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.effect}</span></div>
   `).join('');
 
-  const skHTML = (u.skills||[]).map(sk => `
-    <div class="ability-item"><span class="ability-name">${sk.name}</span><br><span class="ability-effect">${sk.effect}</span></div>
+  const mechHTML = allMechanisms.map(m => `
+    <div class="mechanism-item"><span class="mechanism-name">${m.name}</span><span class="mechanism-effect">${m.effect||''}</span></div>
   `).join('');
 
   document.getElementById('modalContent').innerHTML = `
@@ -322,8 +339,8 @@ function showDetail(idx) {
         <div class="stat-box"><div class="label">攻撃力</div><div class="val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
         <div class="stat-box"><div class="label">防御力</div><div class="val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
         <div class="stat-box"><div class="label">機動力</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
+        <div class="stat-box"><div class="label">移動力</div><div class="val">${s.mobility||'-'}</div></div>
       </div>
-      <div style="margin-top:8px;font-size:.8em">移動力: ${s.mobility||'-'}</div>
     </div>
     <div class="detail-section">
       <h3>地形適性</h3>
@@ -339,9 +356,8 @@ function showDetail(idx) {
       <h3>武装 (${(u.weapons||[]).length})</h3>
       ${weaponsHTML}
     </div>
-    ${(u.abilities||[]).length ? `<div class="detail-section"><h3>アビリティ (${u.abilities.length})</h3>${abHTML}</div>` : ''}
-    ${(u.skills||[]).length ? `<div class="detail-section"><h3>スキル (${u.skills.length})</h3>${skHTML}</div>` : ''}
-    <a class="source-link" href="${u.source_url||'#'}" target="_blank">GameWithで詳細を見る →</a>
+    ${pureAbilities.length ? `<div class="detail-section"><h3>アビリティ (${pureAbilities.length})</h3>${abHTML}</div>` : ''}
+    ${allMechanisms.length ? `<div class="detail-section"><h3>機構 (${allMechanisms.length})</h3>${mechHTML}</div>` : ''}
   `;
   document.getElementById('modalOverlay').classList.add('open');
 }
