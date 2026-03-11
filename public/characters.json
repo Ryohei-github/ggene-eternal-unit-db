@@ -1,0 +1,3791 @@
+[
+  {
+    "name": "ガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494871",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "最大HP上昇Lv3",
+        "effect": "自身の最大HPが15%上昇"
+      },
+      {
+        "name": "回避率上昇Lv1",
+        "effect": "自身の回避率が5%上昇"
+      },
+      {
+        "name": "機動力上昇Lv1",
+        "effect": "自身の機動力が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "サザビー(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494870",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(HP条件)攻撃力上昇Lv2",
+        "effect": "自身のHPが50%以下の時自身の攻撃力が10%上昇"
+      },
+      {
+        "name": "サイコフレームLv1",
+        "effect": "自身の命中率と回避率が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムバルバトス(第6形態)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494861",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "最大HP上昇Lv3",
+        "effect": "自身の最大HPが15%上昇"
+      },
+      {
+        "name": "EN回復(単体)Lv1",
+        "effect": "毎ターン開始時、自身のENが5%回復"
+      },
+      {
+        "name": "ナノラミネートアーマーLv3",
+        "effect": "戦闘を行う敵がビーム武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムエアリアル(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494860",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "EN回復(単体)Lv1",
+        "effect": "毎ターン開始時、自身のENが5%回復"
+      },
+      {
+        "name": "エスカッシャンLv3",
+        "effect": "戦闘を行う敵がビーム武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "クロスボーンガンダムX1改(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494863",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "クリティカルダメージアップLv3",
+        "effect": "自身のクリティカルダメージが15%上昇"
+      },
+      {
+        "name": "ビームダメージ軽減Lv3",
+        "effect": "戦闘を行う敵がビーム武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "フリーダムガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494862",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "EN回復(単体)Lv1",
+        "effect": "毎ターン開始時、自身のENが5%回復"
+      },
+      {
+        "name": "フェイズシフト装甲Lv3",
+        "effect": "戦闘を行う敵が物理武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ユニコーンガンダム(デストロイモード)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494865",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "IフィールドLv3",
+        "effect": "戦闘を行う敵がビーム射撃武装で攻撃する時自身の被ダメージが50%軽減"
+      },
+      {
+        "name": "フル・サイコフレームLv1",
+        "effect": "自身の命中率と回避率が10%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ナラティブガンダムA装備(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494864",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "防御力上昇Lv3",
+        "effect": "自身の防御力が15%上昇"
+      },
+      {
+        "name": "命中率上昇Lv1",
+        "effect": "自身の命中率が5%上昇"
+      },
+      {
+        "name": "特殊ダメージ軽減Lv3",
+        "effect": "戦闘を行う敵が特殊武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ルシーニュ(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494867",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "EN回復(単体)Lv1",
+        "effect": "毎ターン開始時、自身のENが5%回復"
+      },
+      {
+        "name": "(テンション条件)攻撃力・防御力上昇Lv3",
+        "effect": "自身のテンションが「超強気」以上の時自身の攻撃力と防御力が10%上昇"
+      }
+    ]
+  },
+  {
+    "name": "νガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494866",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "フィン・ファンネルバリアLv3",
+        "effect": "戦闘を行う敵がビーム射撃武装で攻撃する時自身の被ダメージが50%軽減"
+      },
+      {
+        "name": "サイコフレームLv1",
+        "effect": "自身の命中率と回避率が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムEz8(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494869",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(HP条件)攻撃力上昇Lv3",
+        "effect": "自身のHPが50%以下の時自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "物理ダメージ軽減Lv3",
+        "effect": "戦闘を行う敵が物理武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ストライカーカスタム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494868",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "妖刀システムLv3",
+        "effect": "自身のテンションが「超強気」以上の時自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "物理ダメージ軽減Lv3",
+        "effect": "戦闘を行う敵が物理武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "フェニックスガンダム(能力解放)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494873",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "命中率・回避率上昇Lv1",
+        "effect": "自身の命中率と回避率が5%上昇"
+      },
+      {
+        "name": "HP回復(単体)Lv2",
+        "effect": "毎ターン開始時、自身のHPが10%回復"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムエクシア(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/494872",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "GNフィールドLv4",
+        "effect": "自身の受けるダメージが4500以下の場合、ダメージを無効"
+      },
+      {
+        "name": "EN回復(単体)Lv1",
+        "effect": "毎ターン開始時、自身のENが5%回復"
+      }
+    ]
+  },
+  {
+    "name": "ストライクフリーダムガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/495657",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "EN回復(単体)Lv1",
+        "effect": "毎ターン開始時、自身のENが5%回復"
+      },
+      {
+        "name": "ヴァリアブルフェイズシフト装甲Lv4",
+        "effect": "戦闘を行う敵が物理武装で攻撃する時自身の被ダメージが40%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ジャスティスガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/495656",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "防御力上昇Lv3",
+        "effect": "自身の防御力が15%上昇"
+      },
+      {
+        "name": "EN回復(単体)Lv1",
+        "effect": "毎ターン開始時、自身のENが5%回復"
+      },
+      {
+        "name": "フェイズシフト装甲Lv3",
+        "effect": "戦闘を行う敵が物理武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "Zガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/497175",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "回避率上昇Lv1",
+        "effect": "自身の回避率が5%上昇"
+      },
+      {
+        "name": "(HP条件)攻撃力上昇Lv3",
+        "effect": "自身のHPが75%以上の時自身の攻撃力が20%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ジO(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/497176",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "機動力上昇Lv1",
+        "effect": "自身の機動力が5%上昇"
+      },
+      {
+        "name": "(テンション条件)攻撃力・防御力上昇Lv3",
+        "effect": "自身のテンションが「超強気」以上の時自身の攻撃力と防御力が10%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダム試作2号機(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/501196",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "防御力上昇Lv1",
+        "effect": "自身の防御力が5%上昇"
+      },
+      {
+        "name": "クリティカルダメージアップLv1",
+        "effect": "自身のクリティカルダメージが5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "シャア専用ザク2(THE ORIGIN版)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/501197",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(HP条件)攻撃力上昇Lv4",
+        "effect": "自身のHPが満タンの時自身の攻撃力が30%上昇"
+      },
+      {
+        "name": "機動力上昇Lv1",
+        "effect": "自身の機動力が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムデスサイズヘル(EW版)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/502731",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "防御力上昇Lv3",
+        "effect": "自身の防御力が15%上昇"
+      },
+      {
+        "name": "攻撃力上昇Lv2",
+        "effect": "自身の攻撃力が10%上昇"
+      },
+      {
+        "name": "(回避選択した戦闘開始時)回避率上昇Lv3",
+        "effect": "回避選択時の戦闘における自身の回避率が15%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ビルドストライクガンダム(フルパッケージ)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/502730",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "物理ダメージ軽減Lv3",
+        "effect": "戦闘を行う敵が物理武装で攻撃する時自身の被ダメージが30%軽減"
+      },
+      {
+        "name": "機動力上昇Lv1",
+        "effect": "自身の機動力が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "Hi-νガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/505942",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "フィン・ファンエルバリアLv4",
+        "effect": "戦闘を行う敵がビーム射撃武装で攻撃する時自身の被ダメージが60%軽減"
+      },
+      {
+        "name": "サイコフレームLv2",
+        "effect": "自身の命中率と回避率が10%上昇"
+      }
+    ]
+  },
+  {
+    "name": "フォースインパルスガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/505943",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "機動力上昇Lv3",
+        "effect": "自身の機動力が15%上昇"
+      },
+      {
+        "name": "HP&EN回復(単体)Lv1",
+        "effect": "毎ターン開始時、自身のHPとENが5％回復"
+      },
+      {
+        "name": "ヴァリアブルフェイズシフト装甲Lv4",
+        "effect": "戦闘を行う敵が物理武装で攻撃する時自身の被ダメージが40%軽減"
+      }
+    ]
+  },
+  {
+    "name": "サイコザク(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/507347",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "機動力上昇Lv3",
+        "effect": "自身の機動力が15%上昇"
+      },
+      {
+        "name": "攻撃力上昇Lv2",
+        "effect": "自身の攻撃力が10%上昇"
+      },
+      {
+        "name": "命中率・回避率上昇Lv2",
+        "effect": "自身の命中率と回避率が10%上昇"
+      }
+    ]
+  },
+  {
+    "name": "フルアーマー・ガンダム(サンダーボルト版)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/507348",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "防御力上昇Lv3",
+        "effect": "自身の防御力が15%上昇"
+      },
+      {
+        "name": "最大HP上昇Lv1",
+        "effect": "自身の最大HPが5%上昇"
+      },
+      {
+        "name": "物理ダメージ軽減Lv3",
+        "effect": "戦闘を行う敵が物理武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "バンシィノルン(デストロイモード)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/512096",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "最大HP上昇Lv4",
+        "effect": "自身の最大HPが20%上昇"
+      },
+      {
+        "name": "IフィールドLv3",
+        "effect": "戦闘を行う敵がビーム射撃武装で攻撃する時自身の被ダメージが50%軽減"
+      },
+      {
+        "name": "フル・サイコフレームLv1",
+        "effect": "自身の命中率と回避率が10%上昇"
+      }
+    ]
+  },
+  {
+    "name": "マスターガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/512097",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(テンション条件)クリティカル率上昇Lv4",
+        "effect": "自身のテンションが「超一撃」以上の時自身のクリティカル率が25%上昇"
+      },
+      {
+        "name": "クリティカルダメージアップLv2",
+        "effect": "自身のクリティカルダメージが10%上昇"
+      }
+    ]
+  },
+  {
+    "name": "モンスターブラックドラゴン(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/513206",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "(テンション条件)攻撃力・防御力上昇Lv3",
+        "effect": "自身のテンションが「超強気」以上の時自身の攻撃力と防御力が10%上昇"
+      },
+      {
+        "name": "HP&EN回復(単体)Lv1",
+        "effect": "毎ターン開始時、自身のHPとENが5％回復"
+      }
+    ]
+  },
+  {
+    "name": "劉備ユニコーンガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/513207",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(HP条件)攻撃力上昇Lv3",
+        "effect": "自身のHPが50%以下の時自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "有利：ライバルLv1",
+        "effect": "【ライバル】戦闘を行う敵が上記の「タグ」を含む時自身の攻撃力と防御力が15%上昇"
+      }
+    ]
+  },
+  {
+    "name": "キュベレイ(ZZ版)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/516590",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "有利：サイコミュLv2",
+        "effect": "【サイコミュ】戦闘を行う敵がビーム武装で攻撃する時自身の被ダメージが40%軽減"
+      },
+      {
+        "name": "ビームダメージ軽減Lv4",
+        "effect": "戦闘を行う敵がビーム武装で攻撃する時自身の被ダメージが40%軽減"
+      }
+    ]
+  },
+  {
+    "name": "フルアーマーZZガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/516591",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "最大HP上昇Lv3",
+        "effect": "自身の最大HPが15%上昇"
+      },
+      {
+        "name": "(被ダメージ条件)防御力上昇Lv2",
+        "effect": "敵からダメージを受けるたびに自身の防御力が10%上昇(最大50%)"
+      },
+      {
+        "name": "物理・ビーム武装ダメージ軽減Lv3",
+        "effect": "戦闘を行う敵が物理、ビーム武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムアスタロトリナシメント(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/518729",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "EN回復(単体)Lv2",
+        "effect": "毎ターン開始時、自身のENが10%回復"
+      },
+      {
+        "name": "ナノラミネートアーマーLv3",
+        "effect": "戦闘を行う敵がビーム武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ジオング(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/518728",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "最大HP上昇Lv1",
+        "effect": "自身の最大HPが5%上昇"
+      },
+      {
+        "name": "(HP条件)攻撃力上昇Lv3",
+        "effect": "自身のHPが25%以下の時自身の攻撃力が25%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ユニコーンガンダム(デストロイモード/覚醒)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/521258",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "攻撃力上昇Lv2",
+        "effect": "自身の攻撃力が10%上昇"
+      },
+      {
+        "name": "NT-DLv3",
+        "effect": "自身の機動力が10%上昇戦闘を行う敵がビーム射撃武装で攻撃する時自身の被ダメージが30%軽減自身が特殊武装のダメージを受ける時敵の覚醒値が50%減少"
+      }
+    ]
+  },
+  {
+    "name": "ゴッドガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/521257",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(テンション条件)攻撃力上昇Lv3",
+        "effect": "自身のテンションが「超強気」以上の時自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(距離条件)ダメージ軽減Lv3",
+        "effect": "敵が自身から4マス以上離れた場所から攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムF91(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/521256",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガチャ",
+    "abilities": [
+      {
+        "name": "防御力上昇Lv3",
+        "effect": "自身の防御力が15%上昇"
+      },
+      {
+        "name": "(テンション条件)防御力・機動力上昇Lv3",
+        "effect": "自身のテンションが「超強気」以上の時自身の防御力と機動力が10%上昇"
+      },
+      {
+        "name": "命中率・回避率上昇Lv1",
+        "effect": "自身の命中率と回避率が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダム試作3号機(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/522772",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "防御力上昇Lv3",
+        "effect": "自身の防御力が15%上昇"
+      },
+      {
+        "name": "最大HP上昇Lv1",
+        "effect": "自身の最大HPが5%上昇"
+      },
+      {
+        "name": "IフィールドLv3",
+        "effect": "戦闘を行う敵がビーム射撃武装で攻撃する時自身の被ダメージが50%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ノイエジール(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/522771",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "IフィールドLv3",
+        "effect": "戦闘を行う敵がビーム射撃武装で攻撃する時自身の被ダメージが50%軽減"
+      },
+      {
+        "name": "有利：地球連邦軍(宇宙世紀)Lv1",
+        "effect": "【地球連邦軍(宇宙世紀)】戦闘を行う敵が上記の「タグ」を含む時自身の攻撃力と防御力が15%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダム・バルバトスルプスレクス(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/527322",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇&EN回復(単体)Lv3",
+        "effect": "自身の攻撃力が15%上昇毎ターン開始時、自身のENが5%回復"
+      },
+      {
+        "name": "(テンション条件)攻撃力上昇・防御力減少Lv2",
+        "effect": "自身のテンションが「超強気」以上の時自身の攻撃力が7%上昇防御力が5%減少自身のテンションが「超一撃」の時自身の攻撃力が15%上昇防御力が10%減少"
+      },
+      {
+        "name": "ナノラミネートアーマーLv3",
+        "effect": "戦闘を行う敵がビーム武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ガンダム・エアリアル改修型(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/527321",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "最大HP上昇Lv3",
+        "effect": "自身の最大HPが15%上昇"
+      },
+      {
+        "name": "(HP条件)防御力上昇Lv2",
+        "effect": "自身のHPが50%以上の時自身の防御力が10%上昇"
+      },
+      {
+        "name": "エスカッシャンLv3",
+        "effect": "戦闘を行う敵がビーム武装で攻撃する時自身の被ダメージが30%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ブルーディスティニー1号機(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/529042",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(与ダメージ条件)攻撃力上昇Lv3",
+        "effect": "戦闘終了時、戦闘でダメージを与えるごとに自身の攻撃力が4%上昇(最大20%)"
+      },
+      {
+        "name": "最大HP上昇Lv1",
+        "effect": "自身の最大HPが5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "シナンジュ(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/529043",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "機動力上昇Lv3",
+        "effect": "自身の機動力が15%上昇"
+      },
+      {
+        "name": "(テンション条件)物理・ビーム武装最大射程アップLv1",
+        "effect": "自身のテンションが「超一撃」以上の時物理、ビーム武装の最大射程が1上昇"
+      },
+      {
+        "name": "サイコフレームLv1",
+        "effect": "自身の命中率と回避率が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "クスィーガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/532058",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "ミノフスキー・フライト&ビーム・バリアーLv3",
+        "effect": "戦闘を行う敵が物理射撃、ビーム射撃で攻撃する時自身の被ダメージが50%軽減自身のテンションが「超一撃」以上の時自身の移動力が1上昇"
+      },
+      {
+        "name": "有利：地球連邦軍(宇宙世紀)Lv2",
+        "effect": "【地球連邦軍(宇宙世紀)】戦闘を行う敵が上記の「タグ」を含む時自身の攻撃力と防御力が20%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ペーネロペー(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/532059",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "最大HP上昇Lv3",
+        "effect": "自身の最大HPが15%上昇"
+      },
+      {
+        "name": "ミノフスキー・フライト&ビーム・バリアーLv2",
+        "effect": "戦闘を行う敵が物理射撃、ビーム射撃で攻撃する時自身の被ダメージが40%軽減自身のテンションが「超一撃」以上の時自身の移動力が1上昇"
+      },
+      {
+        "name": "機動力上昇Lv2",
+        "effect": "自身の機動力が10%上昇"
+      }
+    ]
+  },
+  {
+    "name": "プロヴィデンスガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/533694",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "機動力上昇&EN回復(単体)Lv3",
+        "effect": "自身の機動力が15%上昇毎ターン開始時、自身のENが5%回復"
+      },
+      {
+        "name": "フェイズシフト装甲Lv3",
+        "effect": "戦闘を行う敵が物理武装で攻撃する時自身の被ダメージが30%軽減"
+      },
+      {
+        "name": "(HP条件)攻撃力上昇Lv3",
+        "effect": "自身のHPが50%以下の時自身の攻撃力が15%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ケンプファー(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/533693",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(テンション条件)攻撃力・機動力上昇Lv3",
+        "effect": "自身のテンションが「超強気」以上の時自身の攻撃力と機動力が10%上昇"
+      },
+      {
+        "name": "回避率上昇Lv1",
+        "effect": "自身の回避率が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダム・キャリバーン(最終決戦時)(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/537873",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(HP条件)攻撃力上昇Lv1",
+        "effect": "自身のHPが75%以上の時自身の攻撃力が10%上昇自身のHPが50%以上の時自身の攻撃力が5%上昇"
+      },
+      {
+        "name": "エスカッシャンLv4",
+        "effect": "戦闘を行う敵がビーム武装で攻撃する時自身の被ダメージが40%軽減"
+      }
+    ]
+  },
+  {
+    "name": "デスティニーガンダム(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/537872",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "クリティカルダメージアップLv4",
+        "effect": "自身のクリティカルダメージが20%上昇"
+      },
+      {
+        "name": "ヴァリアブルフェイズシフト装甲Lv4",
+        "effect": "戦闘を行う敵が物理武装で攻撃する時自身の被ダメージが40%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ビグ・ラング(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/540488",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "最大EN上昇Lv3",
+        "effect": "自身の最大ENが15%上昇"
+      },
+      {
+        "name": "最大HP上昇Lv2",
+        "effect": "自身の最大HPが10%上昇"
+      },
+      {
+        "name": "(HP条件)防御力上昇Lv2",
+        "effect": "自身のHPが満タンの時自身の防御力が20%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダム・キマリスヴィダール(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/540487",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "防御力上昇&EN回復(単体)Lv3",
+        "effect": "自身の防御力が15%上昇毎ターン開始時、自身のENが5%回復"
+      },
+      {
+        "name": "ナノラミネートアーマーLv3",
+        "effect": "戦闘を行う敵がビーム武装で攻撃する時自身の被ダメージが30%軽減"
+      },
+      {
+        "name": "(HP条件)攻撃力上昇Lv3",
+        "effect": "自身のHPが50%以下の時自身の攻撃力が15%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムDX(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/543046",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "最大HP上昇Lv2",
+        "effect": "自身の最大HPが10%上昇"
+      },
+      {
+        "name": "(テンション条件)移動力上昇Lv1",
+        "effect": "自身のテンションが「超一撃」以上の時自身の移動力が1上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムヴァサーゴチェストブレイク(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/543045",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "機動力上昇Lv3",
+        "effect": "自身の機動力が15%上昇"
+      },
+      {
+        "name": "攻撃力上昇Lv1",
+        "effect": "自身の攻撃力が5%上昇"
+      },
+      {
+        "name": "EN回復(単体)Lv2",
+        "effect": "毎ターン開始時、自身のENが10%回復"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムアストレイ レッドフレーム改(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/544875",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(HP条件)攻撃力上昇Lv2",
+        "effect": "自身のHPが50%以上の時自身の攻撃力が10%上昇"
+      },
+      {
+        "name": "(テンション条件)機動力上昇Lv2",
+        "effect": "自身のテンションが「超強気」以上の時自身の機動力が10%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムアストレイ ゴールドフレーム天ミナ(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/544874",
+    "rarity": "UR",
+    "chara_type": "耐久",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "防御力上昇Lv3",
+        "effect": "自身の防御力が15%上昇"
+      },
+      {
+        "name": "最大HP上昇Lv1",
+        "effect": "自身の最大HPが5%上昇"
+      },
+      {
+        "name": "回避率上昇Lv1",
+        "effect": "自身の回避率が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムAGE-2ノーマル(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/546755",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "機動力上昇Lv3",
+        "effect": "自身の機動力が15%上昇"
+      },
+      {
+        "name": "有利：ニュータイプLv2",
+        "effect": "【ニュータイプ】戦闘を行う敵が上記の「タグ」を含む自身の攻撃力と防御が20%上昇"
+      },
+      {
+        "name": "最大HP上昇&有利：XラウンダーLv2",
+        "effect": "自身の最大HPが5%上昇【Xラウンダー】戦闘を行う敵が上記の「タグ」含む時自身の攻撃力と防御力が20%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガンダムAGE-1ノーマル(EX)",
+    "source_url": "https://gamewith.jp/ggene-eternal/546754",
+    "rarity": "UR",
+    "chara_type": "攻撃",
+    "obtain_method": "ピックアップガシャ",
+    "abilities": [
+      {
+        "name": "攻撃力上昇Lv3",
+        "effect": "自身の攻撃力が15%上昇"
+      },
+      {
+        "name": "(反撃時)攻撃力上昇Lv4",
+        "effect": "自身が反撃、支援反撃時自身の攻撃力が20%上昇"
+      },
+      {
+        "name": "防御力上昇Lv1",
+        "effect": "自身の防御力が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "アムロ・レイ",
+    "source_url": "https://gamewith.jp/ggene-eternal/495090",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャガンダム(EX)を入手時",
+    "series": "機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3971,
+      "shooting": 571,
+      "defense": 670,
+      "melee": 532,
+      "reaction": 802,
+      "awakening": 658,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "effect": "自身の受けるダメージが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "自身が支援防御時自身の防御力が20%上昇【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "シャア・アズナブル(CCA)",
+    "source_url": "https://gamewith.jp/ggene-eternal/495089",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャサザビー(EX)を入手時",
+    "series": "機動戦士ガンダム 逆襲のシャア",
+    "stats": {
+      "combat_power": 4038,
+      "shooting": 595,
+      "defense": 530,
+      "melee": 614,
+      "reaction": 643,
+      "awakening": 876,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "effect": "自身の武装の消費ENが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「チャンスステップ」+1回【ネオ・ジオン】搭乗ユニットが上記の「タグ」を含む時自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "マーク・ギルダー",
+    "source_url": "https://gamewith.jp/ggene-eternal/495092",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャフェニックスガンダム(能力解放)(EX)を入手時",
+    "series": "G GENERATIONシリーズ",
+    "stats": {
+      "combat_power": 3739,
+      "shooting": 564,
+      "defense": 624,
+      "melee": 568,
+      "reaction": 627,
+      "awakening": 729,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "ロックオンLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の命中率が100%上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENチャージLv3(SP:10)",
+        "effect": "自身のENが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "覚醒値上昇Lv4",
+        "effect": "自身の覚醒値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援攻撃/反撃」+1回【ナノスキン】かつ【GGENERATIONシリーズ】搭乗ユニットが上記の「シリーズ/タグ」を含む時毎ターン開始時、自部隊のHPが5%回復"
+      }
+    ]
+  },
+  {
+    "name": "刹那・F・セイエイ",
+    "source_url": "https://gamewith.jp/ggene-eternal/495091",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャガンダムエクシア(EX)を入手時",
+    "series": "機動戦士ガンダム00",
+    "stats": {
+      "combat_power": 3574,
+      "shooting": 552,
+      "defense": 524,
+      "melee": 770,
+      "reaction": 565,
+      "awakening": 448,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "MPアップLv4(SP:3)",
+        "effect": "自身のMPが6上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "MP上昇Lv3",
+        "effect": "自身のMPが6上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「チャンスステップ」+1回【ソレスタルビーイング】搭乗ユニットが上記の「タグ」を含む時自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "シロー・アマダ",
+    "source_url": "https://gamewith.jp/ggene-eternal/495088",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャガンダムEz8(EX)を入手時",
+    "series": "機動戦士ガンダム 第08MS小隊機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3584,
+      "shooting": 736,
+      "defense": 620,
+      "melee": 613,
+      "reaction": 559,
+      "awakening": 466,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "MP上昇Lv3",
+        "effect": "自身のMPが6上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "イットウ・ツルギ",
+    "source_url": "https://gamewith.jp/ggene-eternal/495087",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャストライカー・カスタム(EX)を入手時",
+    "series": "機動戦士ガンダム カタナ機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3595,
+      "shooting": 496,
+      "defense": 603,
+      "melee": 818,
+      "reaction": 580,
+      "awakening": 506,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ロックオンLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の命中率が100%上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "強化人間Lv3",
+        "effect": "自身のMPが6上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "アスナ・エルマリート",
+    "source_url": "https://gamewith.jp/ggene-eternal/495086",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャル・シーニュ(EX)を入手時",
+    "series": "機動戦士ガンダム エコール・デュ・シエル 天空の学校機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "stats": {
+      "combat_power": 3874,
+      "shooting": 678,
+      "defense": 561,
+      "melee": 578,
+      "reaction": 705,
+      "awakening": 717,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "MPアップLv4(SP:3)",
+        "effect": "自身のMPが6上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "ロックオンLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の命中率が100%上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENチャージLv3(SP:10)",
+        "effect": "自身のENが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援攻撃/反撃」+1回【エゥーゴ】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "アムロ・レイ(CCA)",
+    "source_url": "https://gamewith.jp/ggene-eternal/495085",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャνガンダム(EX)を入手時",
+    "series": "機動戦士ガンダム 逆襲のシャア",
+    "stats": {
+      "combat_power": 3870,
+      "shooting": 629,
+      "defense": 543,
+      "melee": 585,
+      "reaction": 688,
+      "awakening": 807,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "effect": "自身の武装の消費ENが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援攻撃/反撃」+1回【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "バナージ・リンクス",
+    "source_url": "https://gamewith.jp/ggene-eternal/495084",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャユニコーンガンダム(デストロイモード)(EX)を入手時",
+    "series": "機動戦士ガンダムUC",
+    "stats": {
+      "combat_power": 3608,
+      "shooting": 583,
+      "defense": 525,
+      "melee": 700,
+      "reaction": 559,
+      "awakening": 628,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "ニュータイプ(UC)Lv2",
+        "effect": "【NT-D】搭乗ユニットが上記の「タグ」を含む時自身の命中率と回避率が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ヨナ・バシュタ",
+    "source_url": "https://gamewith.jp/ggene-eternal/495083",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャナラティブガンダムA装備(EX)を入手時",
+    "series": "機動戦士ガンダムNT",
+    "stats": {
+      "combat_power": 3755,
+      "shooting": 567,
+      "defense": 701,
+      "melee": 527,
+      "reaction": 665,
+      "awakening": 538,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "effect": "自身の武装の消費ENが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "effect": "自身の受けるダメージが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "effect": "自身のHPが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "ニュータイプ(UC)Lv2",
+        "effect": "【NT-D】搭乗ユニットが上記の「タグ」を含む時自身の命中率と回避率が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援防御」+1回【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "キンケドゥ・ナウ",
+    "source_url": "https://gamewith.jp/ggene-eternal/495082",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャクロスボーン・ガンダムX1改(EX)を入手時",
+    "series": "機動戦士クロスボーン・ガンダム",
+    "stats": {
+      "combat_power": 3875,
+      "shooting": 640,
+      "defense": 593,
+      "melee": 640,
+      "reaction": 703,
+      "awakening": 650,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "クリティカルブーストLv4(SP:5)",
+        "effect": "自身のクリティカル率が40%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【宇宙海賊クロスボーン・バンガード】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "キラ・ヤマト",
+    "source_url": "https://gamewith.jp/ggene-eternal/495081",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャフリーダムガンダム(EX)を入手時",
+    "series": "機動戦士ガンダムSEED",
+    "stats": {
+      "combat_power": 3865,
+      "shooting": 695,
+      "defense": 556,
+      "melee": 612,
+      "reaction": 706,
+      "awakening": 663,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "effect": "自身の武装の消費ENが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "コーディネイターLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援攻撃/反撃」+1回【三隻同盟】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "三日月・オーガス",
+    "source_url": "https://gamewith.jp/ggene-eternal/495080",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャガンダム・バルバトス(第6形態)(EX)を入手時",
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "stats": {
+      "combat_power": 3689,
+      "shooting": 477,
+      "defense": 627,
+      "melee": 612,
+      "reaction": 747,
+      "awakening": 538,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "effect": "自身の受けるダメージが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "effect": "自身のHPが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "相性：阿頼耶識Lv4",
+        "effect": "【阿頼耶識システム】搭乗ユニットが上記の「タグ」を含む時自身のクリティカル率が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援防御」+1回【鉄華団】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "スレッタ・マーキュリー",
+    "source_url": "https://gamewith.jp/ggene-eternal/495079",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャガンダム・エアリアル(EX)を入手時",
+    "series": "機動戦士ガンダム 水星の魔女",
+    "stats": {
+      "combat_power": 3702,
+      "shooting": 774,
+      "defense": 559,
+      "melee": 558,
+      "reaction": 584,
+      "awakening": 655,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "effect": "自身の武装の消費ENが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      }
+    ]
+  },
+  {
+    "name": "カミーユ・ビダン",
+    "source_url": "https://gamewith.jp/ggene-eternal/497173",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャZガンダム(EX)を入手時",
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "stats": {
+      "combat_power": 3938,
+      "shooting": 589,
+      "defense": 519,
+      "melee": 595,
+      "reaction": 670,
+      "awakening": 970,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "クリティカルブーストLv5(SP:5)",
+        "effect": "自身のクリティカル率が50%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "HPリペアLv4(SP:10)",
+        "effect": "自身のHPが60%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "effect": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "ニュータイプLv5",
+        "effect": "自身の覚醒値と反応値が25%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【エゥーゴ】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "パプテマス・シロッコ",
+    "source_url": "https://gamewith.jp/ggene-eternal/497174",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャジ・O(EX)を入手時",
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "stats": {
+      "combat_power": 3868,
+      "shooting": 589,
+      "defense": 552,
+      "melee": 627,
+      "reaction": 685,
+      "awakening": 795,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "MPアップLv4(SP:3)",
+        "effect": "自身のMPが6上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "ENチャージLv3(SP:10)",
+        "effect": "自身のENが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "(支援時)攻撃力上昇Lv4",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の攻撃力20%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援攻撃/反撃」+1回【ティターンズ】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "アナベル・ガトー",
+    "source_url": "https://gamewith.jp/ggene-eternal/501200",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャガンダム試作2号機(EX)を入手時",
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY",
+    "stats": {
+      "combat_power": 3587,
+      "shooting": 822,
+      "defense": 594,
+      "melee": 598,
+      "reaction": 543,
+      "awakening": 460,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ロックオンLv2(SP:5)",
+        "effect": "",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENセーブLv5(SP:5)",
+        "effect": "自身の武装の消費ENが25%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENチャージLv4(SP:10)",
+        "effect": "自身のENが60%回復",
+        "sp_cost": 10
+      }
+    ]
+  },
+  {
+    "name": "シャア・アズナブル(THE ORIGIN版)",
+    "source_url": "https://gamewith.jp/ggene-eternal/501201",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャシャア専用ザク2(THE ORIGIN版)(EX)を入手時",
+    "series": "機動戦士ガンダム THE ORIGIN",
+    "stats": {
+      "combat_power": 3860,
+      "shooting": 602,
+      "defense": 537,
+      "melee": 697,
+      "reaction": 704,
+      "awakening": 698,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【専用機】かつ【機動戦士ガンダムTHE ORIGIN】搭乗ユニットが上記の「シリーズ/タグ」を含む時敵への与ダメージが15%上昇自身の機動力が15%上昇"
+      }
+    ]
+  },
+  {
+    "name": "デュオ・マックスウェル(EW版)",
+    "source_url": "https://gamewith.jp/ggene-eternal/502735",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャガンダムデスサイズヘル(EW版)(EX)を入手時",
+    "series": "新機動戦記ガンダムW Endless Waltz新機動戦記ガンダムW",
+    "stats": {
+      "combat_power": 3651,
+      "shooting": 514,
+      "defense": 681,
+      "melee": 652,
+      "reaction": 715,
+      "awakening": 390,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "クリティカルブーストLv4(SP:5)",
+        "effect": "自身のクリティカル率が40%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "effect": "自身のHPが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "守備値上昇Lv4",
+        "effect": "自身の守備値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む時反撃時自身の攻撃力が20%上昇【機動戦士ガンダムW】搭乗ユニットが上記の「シリーズ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "レイジ",
+    "source_url": "https://gamewith.jp/ggene-eternal/502736",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ガシャビルドストライクガンダム(フルパッケージ)(EX)を入手時",
+    "series": "ガンダムビルドファイターズ機動戦士ガンダムSEED",
+    "stats": {
+      "combat_power": 3577,
+      "shooting": 665,
+      "defense": 561,
+      "melee": 604,
+      "reaction": 588,
+      "awakening": 584,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ロックオンLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の命中率が100%上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "ガンプラビルダーLv2",
+        "effect": "【ガンプラ】搭乗ユニットが上記の「タグ」を含む時毎ターン開始時、自身のHPが10%回復"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減【ガンプラ】搭乗ユニットが上記の「タグ」を含む時毎ターン開始時、自部隊のENが7%回復"
+      }
+    ]
+  },
+  {
+    "name": "アムロ・レイ",
+    "source_url": "https://gamewith.jp/ggene-eternal/505944",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャHi-νガンダム(EX)を入手時",
+    "series": "機動戦士ガンダム 逆襲のシャア",
+    "stats": {
+      "combat_power": 4154,
+      "shooting": 604,
+      "defense": 541,
+      "melee": 551,
+      "reaction": 727,
+      "awakening": 897,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "MPアップLv5(SP:3)",
+        "effect": "自身のMPが7上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "アタックバーストLv5(SP:5)",
+        "effect": "敵に与えるダメージが25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENチャージLv4(SP:10)",
+        "effect": "自身のENが60%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "effect": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "ニュータイプLv5",
+        "effect": "自身の覚醒値と反応値が25%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「チャンスステップ」+1回搭乗ユニットが「Hi-νガンダム(EX)」かつ、自身のテンションが「超一撃」以上の時ビーム、特殊武装の最大射程が1上昇"
+      }
+    ]
+  },
+  {
+    "name": "シン・アスカ",
+    "source_url": "https://gamewith.jp/ggene-eternal/505945",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャフォースインパルスガンダム(EX)を入手時",
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "stats": {
+      "combat_power": 3857,
+      "shooting": 638,
+      "defense": 503,
+      "melee": 617,
+      "reaction": 711,
+      "awakening": 780,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "コーディネイターLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援攻撃/反撃」+1回搭乗ユニットが「フォースインパルスガンダム(EX)」かつ、自身のHPが50%以下になった時、自身のHPが50%回復(1回)"
+      }
+    ]
+  },
+  {
+    "name": "ダリル・ローレンツ",
+    "source_url": "https://gamewith.jp/ggene-eternal/507344",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャサイコ・ザク(EX)を入手時",
+    "series": "機動戦士ガンダム サンダーボルト機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3794,
+      "shooting": 687,
+      "defense": 589,
+      "melee": 634,
+      "reaction": 589,
+      "awakening": 499,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "MPアップLv4(SP:3)",
+        "effect": "自身のMPが6上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ]
+  },
+  {
+    "name": "イオ・フレミング",
+    "source_url": "https://gamewith.jp/ggene-eternal/507343",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャフルアーマー・ガンダム(サンダーボルト版)(EX)を入手時",
+    "series": "機動戦士ガンダム サンダーボルト機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3916,
+      "shooting": 588,
+      "defense": 798,
+      "melee": 573,
+      "reaction": 747,
+      "awakening": 437,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENチャージLv3(SP:10)",
+        "effect": "自身のENが50%回復",
+        "sp_cost": 10
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "effect": "自身のHPが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "守備値上昇Lv4",
+        "effect": "自身の守備値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援防御」+1回【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "リディ・マーセナス",
+    "source_url": "https://gamewith.jp/ggene-eternal/512098",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャバンシィ・ノルン(デストロイモード)(EX)を入手時",
+    "series": "機動戦士ガンダムUC",
+    "stats": {
+      "combat_power": 4017,
+      "shooting": 544,
+      "defense": 725,
+      "melee": 544,
+      "reaction": 665,
+      "awakening": 526,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "フォースガードLv5(SP:5)",
+        "effect": "自身の受けるダメージが25%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ロックオンLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の命中率が100%上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv2(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv5",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が25%上昇"
+      },
+      {
+        "name": "ニュータイプ(UC)Lv4",
+        "effect": "【NT-D】搭乗ユニットが上記の「タグ」を含む時自身の命中率と回避率が10%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援防御」+1回【NT-D】搭乗ユニットが上記「タグ」を含む時、自身の守備値が15%上昇【地球連邦軍(宇宙世紀)】搭乗ユニットが上記「タグ」を含む時、自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "東方不敗マスター・アジア",
+    "source_url": "https://gamewith.jp/ggene-eternal/512099",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャマスターガンダム(EX)を入手時",
+    "series": "機動武闘伝Gガンダム",
+    "stats": {
+      "combat_power": 3542,
+      "shooting": 529,
+      "defense": 520,
+      "melee": 819,
+      "reaction": 577,
+      "awakening": 412,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "MPアップLv4(SP:3)",
+        "effect": "自身のMPが6上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "クリティカルブーストLv4(SP:5)",
+        "effect": "自身のクリティカル率が40%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "ガンダムファイターLv4",
+        "effect": "【モビル・トレース・システム】搭乗ユニットが上記の「タグ」を含む時自身の命中率と回避率が10%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "搭乗ユニットが「マスタガンダム(EX)」かつ、自身のテンションが「超一撃」以上の時、自身の移動力が1上昇【デビルガンダム軍団】搭乗ユニットが上記の「タグ」を含む時、敵への与ダメージが15%上昇。自身のクリティカル率が15%上昇"
+      }
+    ]
+  },
+  {
+    "name": "モンスターブラックドラゴン",
+    "source_url": "https://gamewith.jp/ggene-eternal/513208",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャモンスターブラックドラゴン(EX)を入手時",
+    "series": "SDガンダム外伝 ジークジオン編",
+    "stats": {
+      "combat_power": 3747,
+      "shooting": 620,
+      "defense": 576,
+      "melee": 564,
+      "reaction": 590,
+      "awakening": 813,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv5(SP:5)",
+        "effect": "敵に与えるダメージが25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "HPリペアLv4(SP:10)",
+        "effect": "自身のHPが60%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "(支援時)攻撃力上昇Lv5",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の攻撃力25%上昇"
+      },
+      {
+        "name": "覚醒値上昇Lv5",
+        "effect": "自身の覚醒値が25%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援攻撃/反撃」+1回【SDガンダム】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "劉備ユニコーンガンダム",
+    "source_url": "https://gamewith.jp/ggene-eternal/513209",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャ劉備ユニコーンガンダム(EX)を入手時",
+    "series": "SDガンダムワールド 三国創傑伝",
+    "stats": {
+      "combat_power": 3709,
+      "shooting": 615,
+      "defense": 530,
+      "melee": 855,
+      "reaction": 588,
+      "awakening": 561,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "effect": "自身の受けるダメージが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "effect": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "格闘値上昇Lv4",
+        "effect": "自身の格闘値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【SDガンダム】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが1%軽減自身のHPが25%以下の時自身のHPが25%回復(1回)"
+      }
+    ]
+  },
+  {
+    "name": "ハマーン・カーン",
+    "source_url": "https://gamewith.jp/ggene-eternal/516588",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャキュベレイ(ZZ版)(EX)を入手時",
+    "series": "機動戦士ガンダムZZ",
+    "stats": {
+      "combat_power": 3928,
+      "shooting": 635,
+      "defense": 533,
+      "melee": 621,
+      "reaction": 706,
+      "awakening": 812,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "覚醒ブーストLv5(SP:5)",
+        "effect": "自身の覚醒値が25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv5(SP:5)",
+        "effect": "敵に与えるダメージが25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "effect": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "ニュータイプLv5",
+        "effect": "自身の覚醒値と反応値が25%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【ネオ・ジオン】「キュベレイ(ZZ版)(EX)」搭乗時、同部隊内の上記タグを持つユニット1体につき自身の攻撃力が4％上昇(最大20％)搭乗ユニットが上記のタグを含む時敵への与ダメージが15％上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ジュドー・アーシタ",
+    "source_url": "https://gamewith.jp/ggene-eternal/516589",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャフルアーマーZZガンダム(EX)を入手時",
+    "series": "機動戦士ガンダムZZ",
+    "stats": {
+      "combat_power": 3988,
+      "shooting": 541,
+      "defense": 736,
+      "melee": 531,
+      "reaction": 759,
+      "awakening": 672,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "effect": "自身の武装の消費ENが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "effect": "自身のHPが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "自身が支援防御時自身の防御力が20%上昇【エゥーゴ】搭乗ユニットが上記の「タグ」を含む時自身の被ダメージが15%軽減搭乗ユニットが「フルアーマーZZガンダム(EX)」かつ、自身のHPが50%以下になった時、自身のHPが50%回復(1回)"
+      }
+    ]
+  },
+  {
+    "name": "アルジ・ミラージ",
+    "source_url": "https://gamewith.jp/ggene-eternal/518727",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダム・アスタロトリナシメント(EX)を入手時",
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ機動戦士ガンダム 鉄血のオルフェンズ 月鋼",
+    "stats": {
+      "combat_power": 3415,
+      "shooting": 600,
+      "defense": 555,
+      "melee": 703,
+      "reaction": 562,
+      "awakening": 436,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "MPアップLv4(SP:3)",
+        "effect": "自身のMPが6上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "クリティカルブーストLv4(SP:5)",
+        "effect": "自身のクリティカル率が40%上昇(1ターン)",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "(支援時)攻撃力上昇Lv4",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の攻撃力20%上昇"
+      },
+      {
+        "name": "相性：神経接続システムLv4",
+        "effect": "【神経接続システム】搭乗ユニットが上記の「タグ」を含む時自身のクリティカル率が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【機動戦士ガンダム鉄血のオルフェンズ】搭乗ユニットが上記の「シリーズ」を含む、自身のテンションが「超一撃」以上の時「支援攻撃/反撃」+1回【傭兵】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身が支援攻撃、支援反撃時自身の攻撃力が10%上昇"
+      }
+    ]
+  },
+  {
+    "name": "シャア・アズナブル",
+    "source_url": "https://gamewith.jp/ggene-eternal/518726",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャジオング(EX)を入手時",
+    "series": "機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3839,
+      "shooting": 613,
+      "defense": 521,
+      "melee": 613,
+      "reaction": 649,
+      "awakening": 856,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "覚醒ブーストLv4(SP:5)",
+        "effect": "自身の覚醒値が20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "搭乗ユニットが「ジオング(EX)」かつ、自身のHPが0%になった時、自身のHPが5%回復(1回)【ジオン公国軍】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "バナージ・リンクス",
+    "source_url": "https://gamewith.jp/ggene-eternal/521262",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャユニコーンガンダム(デストロイモード/覚醒)(EX)を入手時",
+    "series": "機動戦士ガンダムUC",
+    "stats": {
+      "combat_power": 3867,
+      "shooting": 545,
+      "defense": 524,
+      "melee": 528,
+      "reaction": 582,
+      "awakening": 815,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ENセーブLv5(SP:5)",
+        "effect": "自身の武装の消費ENが25%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv5(SP:5)",
+        "effect": "敵に与えるダメージが25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "覚醒ブーストLv5(SP:5)",
+        "effect": "自身の覚醒値が25%上昇(1ターン)",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv5",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが25%軽減"
+      },
+      {
+        "name": "ニュータイプ(UC)Lv5",
+        "effect": "【NT-D】搭乗ユニットが上記の「タグ」を含む時自身の命中率と回避率が12%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援攻撃/反撃」+1回搭乗ユニットが「ユニコーンガンダム(デストロイモード/覚醒)(EX)」かつ、自身のテンションが「超一撃」以上の時「支援攻撃/反撃」+1回「ユニコーンガンダム(デストロイモード/覚醒)(EX)」搭乗時防御力減少の武装効果値が5％加算"
+      }
+    ]
+  },
+  {
+    "name": "ドモン・カッシュ",
+    "source_url": "https://gamewith.jp/ggene-eternal/521261",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャゴッドガンダム(EX)を入手時",
+    "series": "機動武闘伝Gガンダム",
+    "stats": {
+      "combat_power": 3780,
+      "shooting": 527,
+      "defense": 502,
+      "melee": 896,
+      "reaction": 513,
+      "awakening": 449,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "MPアップLv5(SP:3)",
+        "effect": "自身のMPが7上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "格闘ブーストLv5(SP:5)",
+        "effect": "自身の格闘値が25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv2(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "effect": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "相性：明鏡止水Lv3",
+        "effect": "【明鏡止水】搭乗ユニットが上記の「タグ」を含む時自身のMPが6上昇自身の反応値が50%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「ゴッドガンダム(EX)」搭乗時自身の武装の消費MPが2軽減【各国代表】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "シーブック・アノー",
+    "source_url": "https://gamewith.jp/ggene-eternal/521263",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダムF91(EX)を入手時",
+    "series": "機動戦士ガンダムF91",
+    "stats": {
+      "combat_power": 4021,
+      "shooting": 538,
+      "defense": 735,
+      "melee": 538,
+      "reaction": 808,
+      "awakening": 628,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "MPアップLv4(SP:3)",
+        "effect": "自身のMPが6上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "effect": "自身のHPが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      }
+    ]
+  },
+  {
+    "name": "コウ・ウラキ",
+    "source_url": "https://gamewith.jp/ggene-eternal/522775",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダム試作3号機(EX)を入手時",
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3880,
+      "shooting": 569,
+      "defense": 820,
+      "melee": 531,
+      "reaction": 675,
+      "awakening": 424,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "effect": "自身の武装の消費ENが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "フォースガードLv5(SP:5)",
+        "effect": "自身の受けるダメージが25%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ハイスピードLv2(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が2上昇",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv5",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が25%上昇"
+      },
+      {
+        "name": "守備値上昇Lv5",
+        "effect": "自身の守備値が25%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援防御」+1回「ガンダム試作3号機(EX)」搭乗時攻撃力減少の武装効果値が5%加算【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "アナベル・ガトー",
+    "source_url": "https://gamewith.jp/ggene-eternal/522774",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャノイエ・ジール(EX)を入手時",
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3543,
+      "shooting": 861,
+      "defense": 563,
+      "melee": 669,
+      "reaction": 513,
+      "awakening": 398,
+      "mobility": 15
+    }
+  },
+  {
+    "name": "三日月・オーガス",
+    "source_url": "https://gamewith.jp/ggene-eternal/527324",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダム・バルバトスルプスレクス(EX)を入手時",
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "stats": {
+      "combat_power": 3634,
+      "shooting": 517,
+      "defense": 507,
+      "melee": 880,
+      "reaction": 584,
+      "awakening": 563,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "クリティカルブーストLv5(SP:5)",
+        "effect": "自身のクリティカル率が50%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "格闘ブーストLv5(SP:5)",
+        "effect": "自身の格闘値が25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "effect": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "相性：阿頼耶識Lv5",
+        "effect": "【阿頼耶識システム】搭乗ユニットが上記の「タグ」を含む時自身のクリティカル率が25%上昇"
+      },
+      {
+        "name": "格闘値上昇Lv1",
+        "effect": "自身の格闘値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「チャンスステップ」+1回【阿頼耶識システム】搭乗ユニットが上記の「タグ」を含む時自身のMPが6上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ラクス・クライン",
+    "source_url": "https://gamewith.jp/ggene-eternal/512212",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ジェネレーションタワー",
+    "series": "機動戦士ガンダムSEED",
+    "stats": {
+      "combat_power": 3669,
+      "shooting": 619,
+      "defense": 534,
+      "melee": 579,
+      "reaction": 649,
+      "awakening": 696,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "effect": "自身の武装の消費ENが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "MPアップ(範囲)Lv3(SP:10)",
+        "effect": "範囲内にいる味方のMPを5上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "コーディネイターLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "相性：三隻同盟Lv3",
+        "effect": "【三隻同盟】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ミオリネ・レンブラン",
+    "source_url": "https://gamewith.jp/ggene-eternal/527319",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "EAST TOWERイベント",
+    "series": "機動戦士ガンダム 水星の魔女",
+    "stats": {
+      "combat_power": 3390,
+      "shooting": 643,
+      "defense": 500,
+      "melee": 783,
+      "reaction": 522,
+      "awakening": 429,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバースト(範囲)Lv2(SP:10)",
+        "effect": "範囲内にいる味方の敵に与えるダメージが12%上昇(1ターン)",
+        "sp_cost": 10
+      }
+    ]
+  },
+  {
+    "name": "スレッタ・マーキュリー",
+    "source_url": "https://gamewith.jp/ggene-eternal/527323",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダム・エアリアル改修型(EX)を入手時",
+    "series": "機動戦士ガンダム 水星の魔女",
+    "stats": {
+      "combat_power": 3791,
+      "shooting": 567,
+      "defense": 814,
+      "melee": 491,
+      "reaction": 659,
+      "awakening": 522,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "effect": "自身の受けるダメージが20%軽減(1ターン)",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "相性：GUND-ARMLv4",
+        "effect": "【GUND-ARM】搭乗ユニットが上記の「タグ」を含む時自身のMPが6上昇"
+      },
+      {
+        "name": "守備値上昇Lv1",
+        "effect": "自身の守備値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【GUND-ARM】搭乗ユニットが上記の「タグ」を含む時味方が攻撃する戦闘時、敵の反撃に対して支援防御に参加可能敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ユウ・カジマ",
+    "source_url": "https://gamewith.jp/ggene-eternal/529044",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャブルーディスティニー1号機(EX)を入手時",
+    "series": "機動戦士ガンダム外伝 THE BLUE DESTINY機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3810,
+      "shooting": 639,
+      "defense": 581,
+      "melee": 848,
+      "reaction": 620,
+      "awakening": 483,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "effect": "自身の受けるダメージが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "effect": "自身のHPが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "格闘値上昇Lv4",
+        "effect": "自身の格闘値が20%上昇"
+      },
+      {
+        "name": "格闘値上昇Lv1",
+        "effect": "自身の格闘値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「ブルーディスティニー1号機(EX)」搭乗時、戦闘終了時、敵を撃破してなくてもチャンスステップを発動(1回)【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "フル・フロンタル",
+    "source_url": "https://gamewith.jp/ggene-eternal/529045",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャシナンジュ(EX)を入手時",
+    "series": "機動戦士ガンダムUC",
+    "stats": {
+      "combat_power": 3588,
+      "shooting": 695,
+      "defense": 505,
+      "melee": 753,
+      "reaction": 569,
+      "awakening": 528,
+      "mobility": 15
+    },
+    "abilities": [
+      {
+        "name": "(支援時)攻撃力上昇Lv4",
+        "effect": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の攻撃力20%上昇"
+      },
+      {
+        "name": "強化人間Lv3",
+        "effect": "自身のMPが6上昇"
+      },
+      {
+        "name": "格闘値上昇Lv1",
+        "effect": "自身の格闘値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「支援攻撃/反撃」+1回搭乗ユニットが「シナンジュ(EX)」かつ、自身のテンションが「超一撃」以上の時自身の移動力が1上昇【ネオ・ジオン】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ハサウェイ・ノア",
+    "source_url": "https://gamewith.jp/ggene-eternal/532061",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャΞガンダム(EX)を入手時",
+    "series": "機動戦士ガンダム 閃光のハサウェイ機動戦士ガンダム 逆襲のシャア",
+    "stats": {
+      "combat_power": 4088,
+      "shooting": 594,
+      "defense": 524,
+      "melee": 626,
+      "reaction": 607,
+      "awakening": 832,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "MPアップLv5(SP:3)",
+        "effect": "自身のMPが7上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "覚醒ブーストLv5(SP:5)",
+        "effect": "自身の覚醒値が25%上昇(1ターン)",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "effect": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "覚醒値上昇Lv5",
+        "effect": "自身の覚醒値が25%上昇"
+      },
+      {
+        "name": "反応値上昇Lv1",
+        "effect": "自身の反応値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「チャンスステップ」+1回【マフティー】搭乗ユニットが上記の「タグ」を含む時自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "レーン・エイム",
+    "source_url": "https://gamewith.jp/ggene-eternal/532060",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャペーネロペー(EX)を入手時",
+    "series": "機動戦士ガンダム 閃光のハサウェイ機動戦士ガンダム 逆襲のシャア",
+    "stats": {
+      "combat_power": 3827,
+      "shooting": 558,
+      "defense": 749,
+      "melee": 522,
+      "reaction": 613,
+      "awakening": 702,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "MPアップLv4(SP:3)",
+        "effect": "自身のMPが6上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "effect": "自身の受けるダメージが20%軽減(1ターン)",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "覚醒値上昇Lv4",
+        "effect": "自身の覚醒値が20%上昇"
+      },
+      {
+        "name": "守備値上昇Lv1",
+        "effect": "自身の守備値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む時反撃時自身の攻撃力が20%上昇【機動戦士ガンダム 閃光のハサウェイ】搭乗ユニットが上記の「シリーズ」を含む時自身のMPが6上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ラウ・ル・クルーゼ",
+    "source_url": "https://gamewith.jp/ggene-eternal/533691",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャプロヴィデンスガンダム(EX)を入手時",
+    "series": "機動戦士ガンダムSEED",
+    "stats": {
+      "combat_power": 3818,
+      "shooting": 780,
+      "defense": 526,
+      "melee": 571,
+      "reaction": 576,
+      "awakening": 813,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "覚醒ブーストLv4(SP:5)",
+        "effect": "自身の覚醒値が20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      }
+    ]
+  },
+  {
+    "name": "ミハイル・カミンスキー",
+    "source_url": "https://gamewith.jp/ggene-eternal/533692",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャケンプファー(EX)を入手時",
+    "series": "機動戦士ガンダム0080 ポケットの中の戦争機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3770,
+      "shooting": 819,
+      "defense": 574,
+      "melee": 682,
+      "reaction": 622,
+      "awakening": 473,
+      "mobility": 15
+    }
+  },
+  {
+    "name": "スレッタ・マーキュリー",
+    "source_url": "https://gamewith.jp/ggene-eternal/537869",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダム・キャリバーン(最終決戦時)(EX)を入手時",
+    "series": "機動戦士ガンダム 水星の魔女",
+    "stats": {
+      "combat_power": 3943,
+      "shooting": 645,
+      "defense": 561,
+      "melee": 588,
+      "reaction": 571,
+      "awakening": 824,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "覚醒ブーストLv5(SP:5)",
+        "effect": "自身の覚醒値が25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "HPリペアLv4(SP:10)",
+        "effect": "自身のHPが60%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "effect": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "覚醒値上昇Lv5",
+        "effect": "自身の覚醒値が25%上昇"
+      },
+      {
+        "name": "覚醒値上昇Lv1",
+        "effect": "自身の覚醒値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「チャンスステップ」+1回「ガンダム・キャリバーン(最終決戦時)(EX)」搭乗時、自身の武装の消費HPが5%軽減「GUND-ARM」搭乗ユニットが上記の「タグ」を含む時自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "シン・アスカ",
+    "source_url": "https://gamewith.jp/ggene-eternal/537868",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャデスティニーガンダム(EX)を入手時",
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "stats": {
+      "combat_power": 3949,
+      "shooting": 608,
+      "defense": 488,
+      "melee": 742,
+      "reaction": 718,
+      "awakening": 787,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "MPアップLv5(SP:3)",
+        "effect": "自身のMPが7上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "アタックバーストLv5(SP:5)",
+        "effect": "敵に与えるダメージが25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv2(SP:7)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 7
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "effect": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "コーディネイターLv5",
+        "effect": "自身の覚醒値と反応値が25%上昇"
+      },
+      {
+        "name": "覚醒値上昇Lv1",
+        "effect": "自身の覚醒値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「デスティニーガンダム(EX)」搭乗時自身のMPが2上昇「超一撃EX1(シン・アスカ)」(1ターン)自身のクリティカル率と格闘値と反応値が20%上昇自身のMP変動無効効果終了時、「超一撃EX2(シン・アスカ)」(1ターン)クリティカル確定発動自身の格闘値と反応値が50%上昇自身のMP変動無効効果終了時、自身のMPが12減少"
+      }
+    ]
+  },
+  {
+    "name": "オリヴァー・マイ",
+    "source_url": "https://gamewith.jp/ggene-eternal/540491",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャビグ・ラング(EX)を入手時",
+    "series": "機動戦士ガンダム MS IGLOO機動戦士ガンダム",
+    "stats": {
+      "combat_power": 3570,
+      "shooting": 763,
+      "defense": 583,
+      "melee": 628,
+      "reaction": 536,
+      "awakening": 499,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "effect": "自身の武装の消費ENが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "effect": "自身のHPが50%回復",
+        "sp_cost": 10
+      }
+    ]
+  },
+  {
+    "name": "ガエリオ・ボードウィン",
+    "source_url": "https://gamewith.jp/ggene-eternal/540490",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダム・キマリスヴィダール(EX)を入手時",
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "stats": {
+      "combat_power": 4060,
+      "shooting": 537,
+      "defense": 670,
+      "melee": 778,
+      "reaction": 702,
+      "awakening": 468,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "effect": "自身の受けるダメージが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "格闘ブーストLv4(SP:5)",
+        "effect": "自身の格闘値が20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "命中率・回避率上昇Lv3(SP:5)",
+        "effect": "自身の命中率と回避率が25%上昇(1ターン)",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "格闘値上昇Lv4",
+        "effect": "自身の格闘値が20%上昇"
+      },
+      {
+        "name": "格闘値上昇Lv1",
+        "effect": "自身の格闘値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む時反撃時自身の攻撃力が20%上昇【阿頼耶識TypeE】搭乗ユニットが上記の「タグ」を含む時自身のMPが6上昇自身のクリティカル率が25%上昇自身の格闘値と反応値が25%上昇"
+      }
+    ]
+  },
+  {
+    "name": "ガロード・ラン",
+    "source_url": "https://gamewith.jp/ggene-eternal/543044",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダムDX(EX)を入手時",
+    "series": "機動新世紀ガンダムX",
+    "stats": {
+      "combat_power": 3611,
+      "shooting": 871,
+      "defense": 568,
+      "melee": 630,
+      "reaction": 542,
+      "awakening": 445,
+      "mobility": 15
+    }
+  },
+  {
+    "name": "シャギア・フロスト",
+    "source_url": "https://gamewith.jp/ggene-eternal/543043",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダムヴァサーゴチェストブレイク(EX)を入手時",
+    "series": "機動新世紀ガンダムX",
+    "stats": {
+      "combat_power": 3866,
+      "shooting": 795,
+      "defense": 589,
+      "melee": 738,
+      "reaction": 577,
+      "awakening": 584,
+      "mobility": 15
+    }
+  },
+  {
+    "name": "ロウ・ギュール",
+    "source_url": "https://gamewith.jp/ggene-eternal/544872",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダムアストレイレッドフレーム改(EX)を入手時",
+    "series": "機動戦士ガンダムSEED VS ASTRAY機動戦士ガンダムSEED DESTINY",
+    "stats": {
+      "combat_power": 4473,
+      "shooting": 585,
+      "defense": 610,
+      "melee": 852,
+      "reaction": 624,
+      "awakening": 376,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "ENセーブLv5(SP:5)",
+        "effect": "自身の武装の消費ENが25%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "アタックバーストLv5(SP:5)",
+        "effect": "敵に与えるダメージが25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "格闘ブーストLv5(SP:5)",
+        "effect": "自身の格闘値が25%上昇(1ターン)",
+        "sp_cost": 5
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "effect": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "格闘値上昇Lv5",
+        "effect": "自身の格闘値が25%上昇"
+      },
+      {
+        "name": "反応値上昇Lv1",
+        "effect": "自身の反応値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「チャンスステップ」+1回「ガンダムアストレイレッドフレーム改(EX)」搭乗時、自身の武装の消費ENが25％軽減【SEEDシリーズ】搭乗ユニットが上記の「タグ」を含む時自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ロンド・ミナ・サハク",
+    "source_url": "https://gamewith.jp/ggene-eternal/544873",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダムアストレイゴールドフレーム天ミナ(EX)を入手時",
+    "series": "機動戦士ガンダムSEED ASTRAY機動戦士ガンダムSEED機動戦士ガンダムSEED DESTINY",
+    "stats": {
+      "combat_power": 4120,
+      "shooting": 518,
+      "defense": 782,
+      "melee": 582,
+      "reaction": 871,
+      "awakening": 538,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "effect": "敵に与えるダメージが20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "effect": "自身の受けるダメージが20%軽減(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENチャージLv3(SP:10)",
+        "effect": "自身のENが50%回復",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "コーディネイターLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "格闘値上昇Lv1",
+        "effect": "自身の格闘値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "「ガンダムアストレイゴールドフレーム天ミナ(EX)」搭乗時、自身の武装の消費ENが15%軽減【オーブ】「ガンダムアストレイゴールドフレーム天ミナ(EX)」搭乗時、同部隊内の上記タグを持つユニットに対し、攻撃力と防御力5%アップを付与(永続)搭乗ユニットが上記の「タグ」を含む時自身への被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ティファ・アディール",
+    "source_url": "https://gamewith.jp/ggene-eternal/543130",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "タワーイベントWEST14階報酬",
+    "series": "機動新世紀ガンダムX",
+    "stats": {
+      "combat_power": 3910,
+      "shooting": 431,
+      "defense": 642,
+      "melee": 431,
+      "reaction": 862,
+      "awakening": 789,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "命中率・回避率上昇Lv3(SP:5)",
+        "effect": "自身の命中率と回避率が25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "フォースガード(範囲)Lv2(SP:10)",
+        "effect": "範囲内にいる味方の自身の受けるダメージが12%軽減(1ターン)移動前限定で使用可能",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "effect": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "ニュータイプ(X)Lv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "相性：フリーデンLv3",
+        "effect": "【フリーデン】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      },
+      {
+        "name": "守備値上昇Lv1",
+        "effect": "自身の守備値が5%上昇"
+      }
+    ]
+  },
+  {
+    "name": "アセム・アスノ",
+    "source_url": "https://gamewith.jp/ggene-eternal/546751",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダムAGE-2ノーマル(EX)を入手時",
+    "series": "機動戦士ガンダムAGE",
+    "stats": {
+      "combat_power": 3920,
+      "shooting": 845,
+      "defense": 511,
+      "melee": 801,
+      "reaction": 689,
+      "awakening": 359,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "MPアップLv5(SP:3)",
+        "effect": "自身のMPが7上昇",
+        "sp_cost": 3
+      },
+      {
+        "name": "アタックバーストLv5(SP:5)",
+        "effect": "敵に与えるダメージが25%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ENチャージLv4(SP:10)",
+        "effect": "自身のENが60%回復",
+        "sp_cost": 10
+      }
+    ]
+  },
+  {
+    "name": "フリット・アスノ",
+    "source_url": "https://gamewith.jp/ggene-eternal/546750",
+    "rarity": "UR",
+    "chara_type": "支援",
+    "obtain_method": "ピックアップガシャガンダムAGE-1ノーマル(EX)を入手時",
+    "series": "機動戦士ガンダムAGE",
+    "stats": {
+      "combat_power": 3804,
+      "shooting": 738,
+      "defense": 465,
+      "melee": 823,
+      "reaction": 600,
+      "awakening": 644,
+      "mobility": 15
+    },
+    "skills": [
+      {
+        "name": "格闘ブーストLv4(SP:5)",
+        "effect": "自身の格闘値が20%上昇(1ターン)",
+        "sp_cost": 5
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇",
+        "sp_cost": 5
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "effect": "効果を発動した次の戦闘時自身の回避率が100%上昇",
+        "sp_cost": 10
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "effect": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "XラウンダーLv4",
+        "effect": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "格闘値上昇Lv1",
+        "effect": "自身の格闘値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "effect": "【条件1】【AGEシステム】【条件2】【地球連邦軍(AGE)】搭乗ユニットが【条件1】のタグを含む時同部隊内の【条件2】のタグを持つユニット1体につき自身の攻撃力を3%上昇(最大15%)【地球連邦軍(AGE)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  }
+]

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gジェネエターナル ユニットDB</title>
+<title>Gジェネエターナル DB</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0a0e17;--card:#131a2b;--card-hover:#1a2540;--border:#2a3655;--accent:#00d4ff;--accent2:#ff6b35;--text:#e0e8f0;--text2:#8899aa;--gold:#ffd700;--ur:#ff4466}
@@ -12,10 +12,17 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
 /* Header */
-.header{background:linear-gradient(135deg,#0d1525,#1a2844);border-bottom:2px solid var(--accent);padding:16px 20px;text-align:center;position:sticky;top:0;z-index:100}
+.header{background:linear-gradient(135deg,#0d1525,#1a2844);border-bottom:none;padding:16px 20px 0;text-align:center;position:sticky;top:0;z-index:100}
 .header h1{font-size:1.4em;letter-spacing:2px;background:linear-gradient(90deg,var(--accent),#80e0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .header .sub{font-size:.75em;color:var(--text2);margin-top:4px}
 .header .yt-link{display:inline-block;margin-top:6px;font-size:.7em;color:var(--accent2);border:1px solid var(--accent2);padding:2px 10px;border-radius:12px}
+
+/* Tabs */
+.tab-bar{display:flex;justify-content:center;gap:0;margin-top:14px;background:linear-gradient(135deg,#0d1525,#1a2844);position:sticky;top:0;z-index:100}
+.tab-btn{padding:10px 28px;font-size:.9em;font-weight:600;color:var(--text2);background:transparent;border:none;border-bottom:3px solid transparent;cursor:pointer;transition:all .2s;letter-spacing:1px}
+.tab-btn:hover{color:var(--text)}
+.tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-btn .tab-count{font-size:.7em;font-weight:400;margin-left:4px;opacity:.7}
 
 /* Controls */
 .controls{max-width:1200px;margin:16px auto;padding:0 16px}
@@ -44,10 +51,14 @@ a:hover{text-decoration:underline}
 .card-badges{display:flex;gap:4px;flex-shrink:0}
 .badge{padding:2px 8px;border-radius:4px;font-size:.65em;font-weight:700;letter-spacing:.5px}
 .badge-ur{background:linear-gradient(135deg,#ff2255,#ff6644);color:#fff}
+.badge-ssr{background:linear-gradient(135deg,#aa44ff,#cc66ff);color:#fff}
+.badge-sr{background:linear-gradient(135deg,#4488ff,#66aaff);color:#fff}
+.badge-r{background:linear-gradient(135deg,#44aa44,#66cc66);color:#fff}
 .badge-type{background:var(--bg);border:1px solid var(--border);color:var(--text2)}
 .badge-atk{border-color:#ff4444;color:#ff6666}
 .badge-def{border-color:#4488ff;color:#6699ff}
 .badge-sup{border-color:#44cc44;color:#66dd66}
+.badge-ex{background:linear-gradient(135deg,var(--accent2),#ff8844);color:#fff}
 .card-series{font-size:.7em;color:var(--text2);margin-bottom:8px}
 .card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:8px}
 .stat{text-align:center;padding:4px;background:var(--bg);border-radius:4px}
@@ -64,6 +75,17 @@ a:hover{text-decoration:underline}
 .weapon-tag.ex{background:rgba(255,107,53,.15);border-color:rgba(255,107,53,.3);color:var(--accent2)}
 .card-tags{display:flex;flex-wrap:wrap;gap:3px}
 .tag{padding:1px 5px;background:rgba(255,255,255,.05);border-radius:3px;font-size:.6em;color:var(--text2)}
+
+/* Character card specifics */
+.card-skills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px}
+.skill-tag{padding:2px 6px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.2);border-radius:3px;font-size:.65em;color:var(--gold)}
+.card-abilities-count{font-size:.7em;color:var(--text2)}
+
+/* Supporter card specifics */
+.supporter-info{font-size:.75em;color:var(--text2);margin-bottom:6px;line-height:1.5}
+.supporter-info strong{color:var(--text);font-weight:600}
+.supporter-stat{display:inline-block;padding:2px 8px;background:var(--bg);border-radius:4px;font-size:.75em;margin-right:6px;margin-bottom:4px}
+.supporter-stat .sv{font-weight:700;color:var(--text)}
 
 /* Detail Modal */
 .modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:200;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto}
@@ -94,8 +116,16 @@ a:hover{text-decoration:underline}
 .modal .ability-item:last-child{border:none}
 .modal .ability-name{font-weight:600;color:#fff}
 .modal .ability-effect{color:var(--text2);font-size:.85em}
+.modal .skill-item{padding:8px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;margin-bottom:4px}
+.modal .skill-name{font-weight:600;font-size:.85em;color:var(--gold)}
+.modal .skill-effect{color:var(--text2);font-size:.8em;margin-top:2px}
 .modal .source-link{display:inline-block;margin-top:8px;font-size:.75em}
 .terrain-grid{display:flex;gap:12px;font-size:.85em}
+
+/* Supporter modal */
+.modal .supporter-detail-block{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;margin-bottom:8px}
+.modal .supporter-detail-block .sd-label{font-size:.7em;color:var(--accent);font-weight:600;margin-bottom:4px}
+.modal .supporter-detail-block .sd-text{font-size:.85em;color:var(--text);line-height:1.5}
 
 @media(max-width:600px){
   .grid{grid-template-columns:1fr}
@@ -104,35 +134,41 @@ a:hover{text-decoration:underline}
   .modal .stats-grid{grid-template-columns:repeat(2,1fr)}
   .modal .mechanism-item{flex-direction:column;align-items:flex-start}
   .modal .weapon-info{grid-template-columns:repeat(2,1fr)}
+  .tab-btn{padding:10px 16px;font-size:.8em}
 }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>Gジェネエターナル ユニットDB</h1>
-  <div class="sub">URユニット一覧 ・ 検索＆フィルタ</div>
+  <h1>Gジェネエターナル DB</h1>
+  <div class="sub">UR データベース ・ 検索＆フィルタ</div>
   <a class="yt-link" href="https://www.youtube.com/@MH_GAMES_JP" target="_blank">▶ MH GAMES YouTube</a>
+  <div class="tab-bar" id="tabBar">
+    <button class="tab-btn active" data-tab="unit">ユニット<span class="tab-count" id="unitTabCount"></span></button>
+    <button class="tab-btn" data-tab="chara">キャラ<span class="tab-count" id="charaTabCount"></span></button>
+    <button class="tab-btn" data-tab="supporter">サポーター<span class="tab-count" id="supporterTabCount"></span></button>
+  </div>
 </div>
 
 <div class="controls">
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="ユニット名で検索...（例: サザビー、ガンダム）">
   </div>
-  <div class="filters">
+  <div class="filters" id="filtersContainer">
     <div class="filter-group">
       <label>タイプ</label>
       <select id="filterType"><option value="">すべて</option></select>
     </div>
-    <div class="filter-group">
+    <div class="filter-group" id="filterSeriesGroup">
       <label>シリーズ</label>
       <select id="filterSeries"><option value="">すべて</option></select>
     </div>
-    <div class="filter-group">
+    <div class="filter-group" id="filterTagGroup">
       <label>タグ</label>
       <select id="filterTag"><option value="">すべて</option></select>
     </div>
-    <div class="filter-group">
+    <div class="filter-group" id="filterTerrainGroup">
       <label>地形</label>
       <select id="filterTerrain">
         <option value="">すべて</option>
@@ -143,10 +179,22 @@ a:hover{text-decoration:underline}
         <option value="water">水中◯</option>
       </select>
     </div>
+    <div class="filter-group" id="filterRarityGroup" style="display:none">
+      <label>レア</label>
+      <select id="filterRarity"><option value="">すべて</option></select>
+    </div>
+    <div class="filter-group" id="filterCharaTypeGroup" style="display:none">
+      <label>キャラタイプ</label>
+      <select id="filterCharaType"><option value="">すべて</option></select>
+    </div>
+    <div class="filter-group" id="filterTargetGroup" style="display:none">
+      <label>対象</label>
+      <select id="filterTarget"><option value="">すべて</option></select>
+    </div>
   </div>
   <div class="stats-bar">
     <span id="resultCount">読込中...</span>
-    <div class="sort-btns">
+    <div class="sort-btns" id="sortBtns">
       <button class="sort-btn active" data-sort="cp">戦闘力順</button>
       <button class="sort-btn" data-sort="atk">攻撃力順</button>
       <button class="sort-btn" data-sort="hp">HP順</button>
@@ -155,34 +203,153 @@ a:hover{text-decoration:underline}
   </div>
 </div>
 
-<div class="grid" id="unitGrid"></div>
+<div class="grid" id="mainGrid"></div>
 
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal" id="modalContent"></div>
 </div>
 
 <script>
-let allUnits = [];
+let allUnits = [], allCharas = [], allSupporters = [];
+let currentTab = 'unit';
 let currentSort = 'cp';
-let currentDir = -1; // descending
+let currentDir = -1;
 
 async function init() {
-  const resp = await fetch('/units.json');
-  allUnits = await resp.json();
+  const [uResp, cResp, sResp] = await Promise.all([
+    fetch('/units.json'), fetch('/characters.json'), fetch('/supporters.json')
+  ]);
+  allUnits = await uResp.json();
+  allCharas = await cResp.json();
+  allSupporters = await sResp.json();
+
+  document.getElementById('unitTabCount').textContent = `(${allUnits.length})`;
+  document.getElementById('charaTabCount').textContent = `(${allCharas.length})`;
+  document.getElementById('supporterTabCount').textContent = `(${allSupporters.length})`;
+
+  setupTabs();
   buildFilters();
   render();
 }
 
-function buildFilters() {
-  const types = new Set(), series = new Set(), tags = new Set();
-  allUnits.forEach(u => {
-    if (u.unit_type) types.add(u.unit_type);
-    (u.series||[]).forEach(s => series.add(s));
-    (u.tags||[]).forEach(t => tags.add(t));
+function setupTabs() {
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentTab = btn.dataset.tab;
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      resetFilters();
+      buildFilters();
+      updateUI();
+      render();
+    });
   });
-  fillSelect('filterType', [...types].sort());
-  fillSelect('filterSeries', [...series].sort());
-  fillSelect('filterTag', [...tags].sort());
+}
+
+function resetFilters() {
+  document.getElementById('searchInput').value = '';
+  document.getElementById('filterType').innerHTML = '<option value="">すべて</option>';
+  document.getElementById('filterSeries').innerHTML = '<option value="">すべて</option>';
+  document.getElementById('filterTag').innerHTML = '<option value="">すべて</option>';
+  document.getElementById('filterTerrain').value = '';
+  document.getElementById('filterRarity').innerHTML = '<option value="">すべて</option>';
+  document.getElementById('filterCharaType').innerHTML = '<option value="">すべて</option>';
+  document.getElementById('filterTarget').innerHTML = '<option value="">すべて</option>';
+}
+
+function updateUI() {
+  const isUnit = currentTab === 'unit';
+  const isChara = currentTab === 'chara';
+  const isSupporter = currentTab === 'supporter';
+
+  // Search placeholder
+  const placeholders = {
+    unit: 'ユニット名で検索...（例: サザビー、ガンダム）',
+    chara: 'キャラ名で検索...（例: アムロ、シャア）',
+    supporter: 'サポーター名で検索...（例: ブライト、ホワイトベース）'
+  };
+  document.getElementById('searchInput').placeholder = placeholders[currentTab];
+
+  // Show/hide filter groups
+  document.getElementById('filterSeriesGroup').style.display = isUnit ? '' : (isChara ? '' : 'none');
+  document.getElementById('filterTagGroup').style.display = isUnit ? '' : 'none';
+  document.getElementById('filterTerrainGroup').style.display = isUnit ? '' : 'none';
+  document.getElementById('filterRarityGroup').style.display = !isUnit ? '' : 'none';
+  document.getElementById('filterCharaTypeGroup').style.display = isChara ? '' : 'none';
+  document.getElementById('filterTargetGroup').style.display = isSupporter ? '' : 'none';
+
+  // Show/hide type filter (unit_type for units, hide for others since we have charaType)
+  document.querySelector('#filterType').parentElement.style.display = isUnit ? '' : 'none';
+
+  // Sort buttons
+  const sortContainer = document.getElementById('sortBtns');
+  if (isUnit) {
+    sortContainer.innerHTML = `
+      <button class="sort-btn active" data-sort="cp">戦闘力順</button>
+      <button class="sort-btn" data-sort="atk">攻撃力順</button>
+      <button class="sort-btn" data-sort="hp">HP順</button>
+      <button class="sort-btn" data-sort="name">名前順</button>`;
+    currentSort = 'cp'; currentDir = -1;
+  } else if (isChara) {
+    sortContainer.innerHTML = `
+      <button class="sort-btn active" data-sort="cp">戦闘力順</button>
+      <button class="sort-btn" data-sort="shoot">射撃値順</button>
+      <button class="sort-btn" data-sort="react">反応値順</button>
+      <button class="sort-btn" data-sort="name">名前順</button>`;
+    currentSort = 'cp'; currentDir = -1;
+  } else {
+    sortContainer.innerHTML = `
+      <button class="sort-btn active" data-sort="hp">HP順</button>
+      <button class="sort-btn" data-sort="atk">攻撃力順</button>
+      <button class="sort-btn" data-sort="name">名前順</button>`;
+    currentSort = 'hp'; currentDir = -1;
+  }
+  bindSortButtons();
+}
+
+function bindSortButtons() {
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sort = btn.dataset.sort;
+      if (currentSort === sort) currentDir *= -1;
+      else { currentSort = sort; currentDir = sort === 'name' ? 1 : -1; }
+      document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      render();
+    });
+  });
+}
+
+function buildFilters() {
+  if (currentTab === 'unit') {
+    const types = new Set(), series = new Set(), tags = new Set();
+    allUnits.forEach(u => {
+      if (u.unit_type) types.add(u.unit_type);
+      (u.series||[]).forEach(s => series.add(s));
+      (u.tags||[]).forEach(t => tags.add(t));
+    });
+    fillSelect('filterType', [...types].sort());
+    fillSelect('filterSeries', [...series].sort());
+    fillSelect('filterTag', [...tags].sort());
+  } else if (currentTab === 'chara') {
+    const rarities = new Set(), types = new Set(), series = new Set();
+    allCharas.forEach(c => {
+      if (c.rarity) rarities.add(c.rarity);
+      if (c.chara_type) types.add(c.chara_type);
+      if (c.series) series.add(c.series);
+    });
+    fillSelect('filterRarity', [...rarities].sort());
+    fillSelect('filterCharaType', [...types].sort());
+    fillSelect('filterSeries', [...series].sort());
+  } else {
+    const rarities = new Set(), targets = new Set();
+    allSupporters.forEach(s => {
+      if (s.rarity) rarities.add(s.rarity);
+      if (s.target_series) targets.add(s.target_series);
+    });
+    fillSelect('filterRarity', [...rarities].sort());
+    fillSelect('filterTarget', [...targets].sort());
+  }
 }
 
 function fillSelect(id, opts) {
@@ -190,31 +357,71 @@ function fillSelect(id, opts) {
   opts.forEach(o => { const op = document.createElement('option'); op.value = o; op.textContent = o; sel.appendChild(op); });
 }
 
-function getFiltered() {
-  const q = document.getElementById('searchInput').value.toLowerCase();
-  const type = document.getElementById('filterType').value;
-  const series = document.getElementById('filterSeries').value;
-  const tag = document.getElementById('filterTag').value;
-  const terrain = document.getElementById('filterTerrain').value;
-
-  return allUnits.filter(u => {
-    if (q && !u.name.toLowerCase().includes(q)) return false;
-    if (type && u.unit_type !== type) return false;
-    if (series && !(u.series||[]).includes(series)) return false;
-    if (tag && !(u.tags||[]).includes(tag)) return false;
-    if (terrain && (!u.terrain || u.terrain[terrain] !== '◯')) return false;
-    return true;
-  });
+function getData() {
+  if (currentTab === 'unit') return allUnits;
+  if (currentTab === 'chara') return allCharas;
+  return allSupporters;
 }
 
-function sortUnits(units) {
+function getFiltered() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const data = getData();
+
+  if (currentTab === 'unit') {
+    const type = document.getElementById('filterType').value;
+    const series = document.getElementById('filterSeries').value;
+    const tag = document.getElementById('filterTag').value;
+    const terrain = document.getElementById('filterTerrain').value;
+    return data.filter(u => {
+      if (q && !u.name.toLowerCase().includes(q)) return false;
+      if (type && u.unit_type !== type) return false;
+      if (series && !(u.series||[]).includes(series)) return false;
+      if (tag && !(u.tags||[]).includes(tag)) return false;
+      if (terrain && (!u.terrain || u.terrain[terrain] !== '◯')) return false;
+      return true;
+    });
+  } else if (currentTab === 'chara') {
+    const rarity = document.getElementById('filterRarity').value;
+    const cType = document.getElementById('filterCharaType').value;
+    const series = document.getElementById('filterSeries').value;
+    return data.filter(c => {
+      if (q && !c.name.toLowerCase().includes(q)) return false;
+      if (rarity && c.rarity !== rarity) return false;
+      if (cType && c.chara_type !== cType) return false;
+      if (series && c.series !== series) return false;
+      return true;
+    });
+  } else {
+    const rarity = document.getElementById('filterRarity').value;
+    const target = document.getElementById('filterTarget').value;
+    return data.filter(s => {
+      if (q && !s.name.toLowerCase().includes(q)) return false;
+      if (rarity && s.rarity !== rarity) return false;
+      if (target && s.target_series !== target) return false;
+      return true;
+    });
+  }
+}
+
+function sortItems(items) {
   const dir = currentDir;
-  return [...units].sort((a, b) => {
+  return [...items].sort((a, b) => {
     let va, vb;
     switch(currentSort) {
-      case 'cp': va = parseInt(a.combat_power)||0; vb = parseInt(b.combat_power)||0; break;
-      case 'atk': va = parseInt(a.stats?.attack)||0; vb = parseInt(b.stats?.attack)||0; break;
-      case 'hp': va = parseInt(a.stats?.hp)||0; vb = parseInt(b.stats?.hp)||0; break;
+      case 'cp':
+        if (currentTab === 'unit') { va = parseInt(a.combat_power)||0; vb = parseInt(b.combat_power)||0; }
+        else { va = a.stats?.combat_power||0; vb = b.stats?.combat_power||0; }
+        break;
+      case 'atk':
+        if (currentTab === 'unit') { va = parseInt(a.stats?.attack)||0; vb = parseInt(b.stats?.attack)||0; }
+        else { va = parseInt(a.attack)||0; vb = parseInt(b.attack)||0; }
+        break;
+      case 'hp':
+        if (currentTab === 'unit') { va = parseInt(a.stats?.hp)||0; vb = parseInt(b.stats?.hp)||0; }
+        else { va = parseInt(a.hp)||0; vb = parseInt(b.hp)||0; }
+        break;
+      case 'shoot': va = a.stats?.shooting||0; vb = b.stats?.shooting||0; break;
+      case 'react': va = a.stats?.reaction||0; vb = b.stats?.reaction||0; break;
       case 'name': return dir * a.name.localeCompare(b.name, 'ja');
     }
     return dir * (va - vb);
@@ -222,17 +429,35 @@ function sortUnits(units) {
 }
 
 function render() {
-  const filtered = sortUnits(getFiltered());
-  document.getElementById('resultCount').textContent = `${filtered.length} / ${allUnits.length} ユニット`;
-  const grid = document.getElementById('unitGrid');
-  grid.innerHTML = filtered.map((u, i) => cardHTML(u, i)).join('');
+  const filtered = sortItems(getFiltered());
+  const data = getData();
+  const labels = { unit: 'ユニット', chara: 'キャラ', supporter: 'サポーター' };
+  document.getElementById('resultCount').textContent = `${filtered.length} / ${data.length} ${labels[currentTab]}`;
+  const grid = document.getElementById('mainGrid');
+
+  if (currentTab === 'unit') {
+    grid.innerHTML = filtered.map(u => unitCardHTML(u)).join('');
+  } else if (currentTab === 'chara') {
+    grid.innerHTML = filtered.map(c => charaCardHTML(c)).join('');
+  } else {
+    grid.innerHTML = filtered.map(s => supporterCardHTML(s)).join('');
+  }
 }
 
+// === Type utilities ===
 function typeClass(t) {
   if (t === '攻撃') return 'badge-atk';
   if (t === '耐久') return 'badge-def';
   if (t === '支援') return 'badge-sup';
   return '';
+}
+
+function rarityClass(r) {
+  if (r === 'UR') return 'badge-ur';
+  if (r === 'SSR') return 'badge-ssr';
+  if (r === 'SR') return 'badge-sr';
+  if (r === 'R') return 'badge-r';
+  return 'badge-type';
 }
 
 function terrainIcon(val) {
@@ -241,7 +466,12 @@ function terrainIcon(val) {
   return '<span class="terrain-no">-</span>';
 }
 
-function cardHTML(u, idx) {
+function isEXChara(c) {
+  return c.name.includes('(EX)') || c.name.includes('（EX）');
+}
+
+// === UNIT CARD ===
+function unitCardHTML(u) {
   const s = u.stats || {};
   const t = u.terrain || {};
   const weapons = (u.weapons||[]).map(w =>
@@ -249,7 +479,7 @@ function cardHTML(u, idx) {
   ).join('');
   const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag">${t}</span>`).join('');
 
-  return `<div class="card" onclick="showDetail(${allUnits.indexOf(u)})">
+  return `<div class="card" onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
     <div class="card-header">
       <div class="card-name">${u.name}</div>
       <div class="card-badges">
@@ -275,13 +505,75 @@ function cardHTML(u, idx) {
   </div>`;
 }
 
-function showDetail(idx) {
-  const u = allUnits[idx];
+// === CHARA CARD ===
+function charaCardHTML(c) {
+  const ex = isEXChara(c);
+  const s = c.stats || {};
+  const hasStats = Object.keys(s).length > 0;
+
+  let statsHTML = '';
+  if (hasStats) {
+    statsHTML = `<div class="card-stats">
+      <div class="stat"><div class="stat-label">戦闘力</div><div class="stat-val cp-val">${(s.combat_power||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">射撃</div><div class="stat-val">${s.shooting||'-'}</div></div>
+      <div class="stat"><div class="stat-label">反応</div><div class="stat-val">${s.reaction||'-'}</div></div>
+    </div>`;
+  }
+
+  const skillTags = (c.skills||[]).map(sk => {
+    const shortName = sk.name.replace(/\(SP:\d+\)/, '').replace(/Lv\d+/, '').trim();
+    return `<span class="skill-tag">${shortName} SP:${sk.sp_cost||'?'}</span>`;
+  }).join('');
+
+  const abilCount = (c.abilities||[]).length;
+
+  return `<div class="card" onclick="showCharaDetail('${c.name.replace(/'/g,"\\'")}')">
+    <div class="card-header">
+      <div class="card-name">${c.name}</div>
+      <div class="card-badges">
+        <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
+        ${c.chara_type ? `<span class="badge badge-type ${typeClass(c.chara_type)}">${c.chara_type}</span>` : ''}
+        ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
+      </div>
+    </div>
+    ${c.series ? `<div class="card-series">${c.series}</div>` : ''}
+    ${statsHTML}
+    ${skillTags ? `<div class="card-skills">${skillTags}</div>` : ''}
+    ${abilCount ? `<div class="card-abilities-count">アビリティ: ${abilCount}個</div>` : ''}
+  </div>`;
+}
+
+// === SUPPORTER CARD ===
+function supporterCardHTML(s) {
+  const leaderShort = s.leader_skill ? (s.leader_skill.length > 60 ? s.leader_skill.substring(0, 60) + '...' : s.leader_skill) : '-';
+  const supportShort = s.support_skill ? (s.support_skill.length > 60 ? s.support_skill.substring(0, 60) + '...' : s.support_skill) : '-';
+
+  return `<div class="card" onclick="showSupporterDetail('${s.name.replace(/'/g,"\\'")}')">
+    <div class="card-header">
+      <div class="card-name">${s.name}</div>
+      <div class="card-badges">
+        <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
+      </div>
+    </div>
+    <div style="margin-bottom:8px">
+      <span class="supporter-stat">HP <span class="sv">${s.hp||'-'}</span></span>
+      <span class="supporter-stat">攻撃 <span class="sv">${s.attack||'-'}</span></span>
+      ${s.target_series ? `<span class="tag" style="font-size:.7em">${s.target_series}</span>` : ''}
+    </div>
+    <div class="supporter-info">
+      <div><strong>リーダー:</strong> ${leaderShort}</div>
+      <div><strong>サポート:</strong> ${supportShort}</div>
+    </div>
+  </div>`;
+}
+
+// === UNIT DETAIL ===
+function showUnitDetail(name) {
+  const u = allUnits.find(x => x.name === name);
   if (!u) return;
   const s = u.stats || {};
   const t = u.terrain || {};
 
-  // --- 武装HTML（MAP兵器プレフィックス対応） ---
   const weaponsHTML = (u.weapons||[]).map(w => `
     <div class="weapon-detail">
       <div class="weapon-name">${w.is_map?'<span class="map-badge">MAP兵器</span>':''}${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}</div>
@@ -299,7 +591,6 @@ function showDetail(idx) {
     </div>
   `).join('');
 
-  // --- ゴミアビリティ除外 + 機構分離 ---
   const garbageNames = ['リセマラ評価','キャラ一覧の関連記事','解放キャラ','スキル','UR','EXキャラアビリティ','対象ユニット','サポーターの一覧記事','レア度','2×2','SD','支援','攻撃'];
   const isGarbage = (name) => garbageNames.includes(name) || /^戦闘力[\(（]/.test(name) || /[\(（]SP:\d+[\)）]/.test(name);
   const isMechanism = (name) => /フィールド|アーマー|装甲|シールド|脱出|変形/.test(name);
@@ -359,6 +650,101 @@ function showDetail(idx) {
     ${pureAbilities.length ? `<div class="detail-section"><h3>アビリティ (${pureAbilities.length})</h3>${abHTML}</div>` : ''}
     ${allMechanisms.length ? `<div class="detail-section"><h3>機構 (${allMechanisms.length})</h3>${mechHTML}</div>` : ''}
   `;
+  openModal();
+}
+
+// === CHARA DETAIL ===
+function showCharaDetail(name) {
+  const c = allCharas.find(x => x.name === name);
+  if (!c) return;
+  const s = c.stats || {};
+  const ex = isEXChara(c);
+  const hasStats = Object.keys(s).length > 0;
+
+  let statsHTML = '';
+  if (hasStats) {
+    statsHTML = `<div class="detail-section">
+      <h3>ステータス</h3>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="label">戦闘力</div><div class="val" style="color:var(--gold)">${(s.combat_power||0).toLocaleString()}</div></div>
+        <div class="stat-box"><div class="label">射撃値</div><div class="val">${s.shooting||'-'}</div></div>
+        <div class="stat-box"><div class="label">格闘値</div><div class="val">${s.melee||'-'}</div></div>
+        <div class="stat-box"><div class="label">覚醒値</div><div class="val">${s.awakening||'-'}</div></div>
+        <div class="stat-box"><div class="label">守備力</div><div class="val">${s.defense||'-'}</div></div>
+        <div class="stat-box"><div class="label">反応値</div><div class="val">${s.reaction||'-'}</div></div>
+        <div class="stat-box"><div class="label">機動力</div><div class="val">${s.mobility||'-'}</div></div>
+      </div>
+    </div>`;
+  }
+
+  const skillsHTML = (c.skills||[]).map(sk => `
+    <div class="skill-item">
+      <div class="skill-name">${sk.name}</div>
+      <div class="skill-effect">${sk.effect}</div>
+    </div>
+  `).join('');
+
+  const garbageNames = ['リセマラ評価','キャラ一覧の関連記事','解放キャラ','スキル','UR','EXキャラアビリティ','対象ユニット','サポーターの一覧記事','レア度','2×2','SD','支援','攻撃'];
+  const isGarbage = (n) => garbageNames.includes(n) || /^戦闘力[\(（]/.test(n) || /[\(（]SP:\d+[\)）]/.test(n);
+  const cleanAbilities = (c.abilities||[]).filter(a => !isGarbage(a.name));
+
+  const abHTML = cleanAbilities.map(a => `
+    <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.effect}</span></div>
+  `).join('');
+
+  document.getElementById('modalContent').innerHTML = `
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2>${c.name}</h2>
+    <div class="detail-badges">
+      <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
+      ${c.chara_type ? `<span class="badge badge-type ${typeClass(c.chara_type)}">${c.chara_type}</span>` : ''}
+      ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
+      ${c.obtain_method ? `<span class="badge badge-type">${c.obtain_method}</span>` : ''}
+    </div>
+    ${c.series ? `<div class="detail-section"><div style="font-size:.8em;color:var(--text2)">${c.series}</div></div>` : ''}
+    ${statsHTML}
+    ${(c.skills||[]).length ? `<div class="detail-section"><h3>スキル (${c.skills.length})</h3>${skillsHTML}</div>` : ''}
+    ${cleanAbilities.length ? `<div class="detail-section"><h3>アビリティ (${cleanAbilities.length})</h3>${abHTML}</div>` : ''}
+  `;
+  openModal();
+}
+
+// === SUPPORTER DETAIL ===
+function showSupporterDetail(name) {
+  const s = allSupporters.find(x => x.name === name);
+  if (!s) return;
+
+  document.getElementById('modalContent').innerHTML = `
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2>${s.name}</h2>
+    <div class="detail-badges">
+      <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
+      ${s.target_series ? `<span class="badge badge-type">${s.target_series}</span>` : ''}
+    </div>
+    <div class="detail-section">
+      <h3>基本ステータス</h3>
+      <div class="stats-grid" style="grid-template-columns:repeat(2,1fr)">
+        <div class="stat-box"><div class="label">HP</div><div class="val">${s.hp||'-'}</div></div>
+        <div class="stat-box"><div class="label">攻撃力</div><div class="val">${s.attack||'-'}</div></div>
+      </div>
+    </div>
+    ${s.leader_skill ? `<div class="detail-section">
+      <h3>リーダースキル</h3>
+      <div class="supporter-detail-block">
+        <div class="sd-text">${s.leader_skill}</div>
+      </div>
+    </div>` : ''}
+    ${s.support_skill ? `<div class="detail-section">
+      <h3>サポートスキル</h3>
+      <div class="supporter-detail-block">
+        <div class="sd-text">${s.support_skill}</div>
+      </div>
+    </div>` : ''}
+  `;
+  openModal();
+}
+
+function openModal() {
   document.getElementById('modalOverlay').classList.add('open');
 }
 
@@ -372,20 +758,13 @@ document.getElementById('filterType').addEventListener('change', render);
 document.getElementById('filterSeries').addEventListener('change', render);
 document.getElementById('filterTag').addEventListener('change', render);
 document.getElementById('filterTerrain').addEventListener('change', render);
+document.getElementById('filterRarity').addEventListener('change', render);
+document.getElementById('filterCharaType').addEventListener('change', render);
+document.getElementById('filterTarget').addEventListener('change', render);
 document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
 
-document.querySelectorAll('.sort-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    const sort = btn.dataset.sort;
-    if (currentSort === sort) currentDir *= -1;
-    else { currentSort = sort; currentDir = sort === 'name' ? 1 : -1; }
-    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    render();
-  });
-});
-
+bindSortButtons();
 init();
 </script>
 </body>
