@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gジェネエターナル ユニットDB</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--bg:#0a0e17;--card:#131a2b;--card-hover:#1a2540;--border:#2a3655;--accent:#00d4ff;--accent2:#ff6b35;--text:#e0e8f0;--text2:#8899aa;--gold:#ffd700;--ur:#ff4466}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* Header */
+.header{background:linear-gradient(135deg,#0d1525,#1a2844);border-bottom:2px solid var(--accent);padding:16px 20px;text-align:center;position:sticky;top:0;z-index:100}
+.header h1{font-size:1.4em;letter-spacing:2px;background:linear-gradient(90deg,var(--accent),#80e0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.header .sub{font-size:.75em;color:var(--text2);margin-top:4px}
+.header .yt-link{display:inline-block;margin-top:6px;font-size:.7em;color:var(--accent2);border:1px solid var(--accent2);padding:2px 10px;border-radius:12px}
+
+/* Controls */
+.controls{max-width:1200px;margin:16px auto;padding:0 16px}
+.search-box{display:flex;gap:8px;margin-bottom:12px}
+.search-box input{flex:1;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1em;outline:none}
+.search-box input:focus{border-color:var(--accent)}
+.search-box input::placeholder{color:var(--text2)}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px}
+.filter-group{display:flex;align-items:center;gap:4px}
+.filter-group label{font-size:.75em;color:var(--text2);white-space:nowrap}
+.filter-group select{padding:6px 10px;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.85em;outline:none}
+.filter-group select:focus{border-color:var(--accent)}
+.stats-bar{display:flex;justify-content:space-between;align-items:center;font-size:.8em;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border);margin-bottom:12px}
+.sort-btns{display:flex;gap:4px}
+.sort-btn{padding:3px 8px;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--text2);cursor:pointer;font-size:.75em}
+.sort-btn.active{border-color:var(--accent);color:var(--accent)}
+
+/* Grid */
+.grid{max-width:1200px;margin:0 auto;padding:0 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px}
+
+/* Card */
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;transition:all .2s}
+.card:hover{background:var(--card-hover);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,212,255,.1)}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.card-name{font-size:1.05em;font-weight:700;color:#fff}
+.card-badges{display:flex;gap:4px;flex-shrink:0}
+.badge{padding:2px 8px;border-radius:4px;font-size:.65em;font-weight:700;letter-spacing:.5px}
+.badge-ur{background:linear-gradient(135deg,#ff2255,#ff6644);color:#fff}
+.badge-type{background:var(--bg);border:1px solid var(--border);color:var(--text2)}
+.badge-atk{border-color:#ff4444;color:#ff6666}
+.badge-def{border-color:#4488ff;color:#6699ff}
+.badge-sup{border-color:#44cc44;color:#66dd66}
+.card-series{font-size:.7em;color:var(--text2);margin-bottom:8px}
+.card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:8px}
+.stat{text-align:center;padding:4px;background:var(--bg);border-radius:4px}
+.stat-label{font-size:.6em;color:var(--text2);text-transform:uppercase}
+.stat-val{font-size:.9em;font-weight:700}
+.cp-val{color:var(--gold)}
+.card-terrain{display:flex;gap:6px;font-size:.7em;margin-bottom:8px}
+.terrain-item{display:flex;align-items:center;gap:2px}
+.terrain-ok{color:#44cc44}
+.terrain-tri{color:#ffaa00}
+.terrain-no{color:#555}
+.card-weapons{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px}
+.weapon-tag{padding:2px 6px;background:rgba(0,212,255,.1);border:1px solid rgba(0,212,255,.2);border-radius:3px;font-size:.65em;color:var(--accent)}
+.weapon-tag.ex{background:rgba(255,107,53,.15);border-color:rgba(255,107,53,.3);color:var(--accent2)}
+.card-tags{display:flex;flex-wrap:wrap;gap:3px}
+.tag{padding:1px 5px;background:rgba(255,255,255,.05);border-radius:3px;font-size:.6em;color:var(--text2)}
+
+/* Detail Modal */
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:200;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto}
+.modal-overlay.open{display:flex}
+.modal{background:var(--card);border:1px solid var(--accent);border-radius:12px;max-width:700px;width:100%;padding:24px;position:relative}
+.modal-close{position:absolute;top:12px;right:16px;font-size:1.5em;color:var(--text2);cursor:pointer;background:none;border:none}
+.modal-close:hover{color:#fff}
+.modal h2{font-size:1.3em;margin-bottom:4px;color:#fff}
+.modal .detail-badges{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.modal .detail-section{margin-bottom:16px}
+.modal .detail-section h3{font-size:.85em;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:4px;margin-bottom:8px}
+.modal .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.modal .stat-box{text-align:center;padding:8px;background:var(--bg);border-radius:6px;border:1px solid var(--border)}
+.modal .stat-box .label{font-size:.65em;color:var(--text2)}
+.modal .stat-box .val{font-size:1.1em;font-weight:700}
+.modal .weapon-detail{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;margin-bottom:6px}
+.modal .weapon-name{font-weight:700;font-size:.9em;margin-bottom:4px}
+.modal .weapon-name .ex-badge{color:var(--accent2);font-size:.7em;margin-left:4px}
+.modal .weapon-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:4px;font-size:.75em}
+.modal .weapon-info span{color:var(--text2)}
+.modal .weapon-info strong{color:var(--text)}
+.modal .weapon-effect{font-size:.7em;color:var(--text2);margin-top:4px;font-style:italic}
+.modal .ability-item{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8em}
+.modal .ability-item:last-child{border:none}
+.modal .ability-name{font-weight:600;color:#fff}
+.modal .ability-effect{color:var(--text2);font-size:.85em}
+.modal .source-link{display:inline-block;margin-top:8px;font-size:.75em}
+.terrain-grid{display:flex;gap:12px;font-size:.85em}
+
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr}
+  .filters{flex-direction:column}
+  .card-stats{grid-template-columns:repeat(2,1fr)}
+  .modal .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .modal .weapon-info{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Gジェネエターナル ユニットDB</h1>
+  <div class="sub">URユニット一覧 ・ 検索＆フィルタ</div>
+  <a class="yt-link" href="https://www.youtube.com/@MH_GAMES_JP" target="_blank">▶ MH GAMES YouTube</a>
+</div>
+
+<div class="controls">
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="ユニット名で検索...（例: サザビー、ガンダム）">
+  </div>
+  <div class="filters">
+    <div class="filter-group">
+      <label>タイプ</label>
+      <select id="filterType"><option value="">すべて</option></select>
+    </div>
+    <div class="filter-group">
+      <label>シリーズ</label>
+      <select id="filterSeries"><option value="">すべて</option></select>
+    </div>
+    <div class="filter-group">
+      <label>タグ</label>
+      <select id="filterTag"><option value="">すべて</option></select>
+    </div>
+    <div class="filter-group">
+      <label>地形</label>
+      <select id="filterTerrain">
+        <option value="">すべて</option>
+        <option value="space">宇宙◯</option>
+        <option value="air">空中◯</option>
+        <option value="ground">地上◯</option>
+        <option value="surface">水上◯</option>
+        <option value="water">水中◯</option>
+      </select>
+    </div>
+  </div>
+  <div class="stats-bar">
+    <span id="resultCount">読込中...</span>
+    <div class="sort-btns">
+      <button class="sort-btn active" data-sort="cp">戦闘力順</button>
+      <button class="sort-btn" data-sort="atk">攻撃力順</button>
+      <button class="sort-btn" data-sort="hp">HP順</button>
+      <button class="sort-btn" data-sort="name">名前順</button>
+    </div>
+  </div>
+</div>
+
+<div class="grid" id="unitGrid"></div>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal" id="modalContent"></div>
+</div>
+
+<script>
+let allUnits = [];
+let currentSort = 'cp';
+let currentDir = -1; // descending
+
+async function init() {
+  const resp = await fetch('/units.json');
+  allUnits = await resp.json();
+  buildFilters();
+  render();
+}
+
+function buildFilters() {
+  const types = new Set(), series = new Set(), tags = new Set();
+  allUnits.forEach(u => {
+    if (u.unit_type) types.add(u.unit_type);
+    (u.series||[]).forEach(s => series.add(s));
+    (u.tags||[]).forEach(t => tags.add(t));
+  });
+  fillSelect('filterType', [...types].sort());
+  fillSelect('filterSeries', [...series].sort());
+  fillSelect('filterTag', [...tags].sort());
+}
+
+function fillSelect(id, opts) {
+  const sel = document.getElementById(id);
+  opts.forEach(o => { const op = document.createElement('option'); op.value = o; op.textContent = o; sel.appendChild(op); });
+}
+
+function getFiltered() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const type = document.getElementById('filterType').value;
+  const series = document.getElementById('filterSeries').value;
+  const tag = document.getElementById('filterTag').value;
+  const terrain = document.getElementById('filterTerrain').value;
+
+  return allUnits.filter(u => {
+    if (q && !u.name.toLowerCase().includes(q)) return false;
+    if (type && u.unit_type !== type) return false;
+    if (series && !(u.series||[]).includes(series)) return false;
+    if (tag && !(u.tags||[]).includes(tag)) return false;
+    if (terrain && (!u.terrain || u.terrain[terrain] !== '◯')) return false;
+    return true;
+  });
+}
+
+function sortUnits(units) {
+  const dir = currentDir;
+  return [...units].sort((a, b) => {
+    let va, vb;
+    switch(currentSort) {
+      case 'cp': va = parseInt(a.combat_power)||0; vb = parseInt(b.combat_power)||0; break;
+      case 'atk': va = parseInt(a.stats?.attack)||0; vb = parseInt(b.stats?.attack)||0; break;
+      case 'hp': va = parseInt(a.stats?.hp)||0; vb = parseInt(b.stats?.hp)||0; break;
+      case 'name': return dir * a.name.localeCompare(b.name, 'ja');
+    }
+    return dir * (va - vb);
+  });
+}
+
+function render() {
+  const filtered = sortUnits(getFiltered());
+  document.getElementById('resultCount').textContent = `${filtered.length} / ${allUnits.length} ユニット`;
+  const grid = document.getElementById('unitGrid');
+  grid.innerHTML = filtered.map((u, i) => cardHTML(u, i)).join('');
+}
+
+function typeClass(t) {
+  if (t === '攻撃') return 'badge-atk';
+  if (t === '耐久') return 'badge-def';
+  if (t === '支援') return 'badge-sup';
+  return '';
+}
+
+function terrainIcon(val) {
+  if (val === '◯') return '<span class="terrain-ok">◯</span>';
+  if (val === '△') return '<span class="terrain-tri">△</span>';
+  return '<span class="terrain-no">-</span>';
+}
+
+function cardHTML(u, idx) {
+  const s = u.stats || {};
+  const t = u.terrain || {};
+  const weapons = (u.weapons||[]).map(w =>
+    `<span class="weapon-tag${w.is_ex?' ex':''}">${w.name}</span>`
+  ).join('');
+  const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag">${t}</span>`).join('');
+
+  return `<div class="card" onclick="showDetail(${allUnits.indexOf(u)})">
+    <div class="card-header">
+      <div class="card-name">${u.name}</div>
+      <div class="card-badges">
+        <span class="badge badge-ur">UR</span>
+        ${u.unit_type ? `<span class="badge badge-type ${typeClass(u.unit_type)}">${u.unit_type}</span>` : ''}
+      </div>
+    </div>
+    <div class="card-series">${(u.series||[]).join(' / ')}</div>
+    <div class="card-stats">
+      <div class="stat"><div class="stat-label">戦闘力</div><div class="stat-val cp-val">${(parseInt(u.combat_power)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">攻撃力</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
+    </div>
+    <div class="card-terrain">
+      <span class="terrain-item">宇${terrainIcon(t.space)}</span>
+      <span class="terrain-item">空${terrainIcon(t.air)}</span>
+      <span class="terrain-item">地${terrainIcon(t.ground)}</span>
+      <span class="terrain-item">水上${terrainIcon(t.surface)}</span>
+      <span class="terrain-item">水中${terrainIcon(t.water)}</span>
+    </div>
+    <div class="card-weapons">${weapons}</div>
+    <div class="card-tags">${topTags}</div>
+  </div>`;
+}
+
+function showDetail(idx) {
+  const u = allUnits[idx];
+  if (!u) return;
+  const s = u.stats || {};
+  const t = u.terrain || {};
+
+  const weaponsHTML = (u.weapons||[]).map(w => `
+    <div class="weapon-detail">
+      <div class="weapon-name">${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}${w.is_map?'<span class="ex-badge">MAP</span>':''}</div>
+      <div class="weapon-info">
+        <div><span>属性:</span> <strong>${w.attribute}</strong></div>
+        <div><span>タイプ:</span> <strong>${w.attack_type}</strong></div>
+        <div><span>射程:</span> <strong>${w.range_min}-${w.range_max}</strong></div>
+        <div><span>威力:</span> <strong>${w.power_min}~${w.power_max}</strong></div>
+        <div><span>EN:</span> <strong>${w.en_min}~${w.en_max}</strong></div>
+        <div><span>命中:</span> <strong>${w.hit}</strong></div>
+        <div><span>クリ:</span> <strong>${w.critical}</strong></div>
+      </div>
+      ${w.weapon_effect && w.weapon_effect !== 'なし' ? `<div class="weapon-effect">効果: ${w.weapon_effect}</div>` : ''}
+      ${w.use_limit && w.use_limit !== 'なし' ? `<div class="weapon-effect">制限: ${w.use_limit}</div>` : ''}
+    </div>
+  `).join('');
+
+  const abHTML = (u.abilities||[]).map(a => `
+    <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.effect}</span></div>
+  `).join('');
+
+  const skHTML = (u.skills||[]).map(sk => `
+    <div class="ability-item"><span class="ability-name">${sk.name}</span><br><span class="ability-effect">${sk.effect}</span></div>
+  `).join('');
+
+  document.getElementById('modalContent').innerHTML = `
+    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <h2>${u.name}</h2>
+    <div class="detail-badges">
+      <span class="badge badge-ur">UR</span>
+      ${u.unit_type ? `<span class="badge badge-type ${typeClass(u.unit_type)}">${u.unit_type}</span>` : ''}
+      <span class="badge badge-type">${u.obtain_method||''}</span>
+    </div>
+    <div class="detail-section">
+      <div style="font-size:.8em;color:var(--text2);margin-bottom:4px">${(u.series||[]).join(' / ')}</div>
+      <div class="card-tags">${(u.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+    </div>
+    <div class="detail-section">
+      <h3>ステータス</h3>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="label">戦闘力</div><div class="val" style="color:var(--gold)">${(parseInt(u.combat_power)||0).toLocaleString()}</div></div>
+        <div class="stat-box"><div class="label">HP</div><div class="val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
+        <div class="stat-box"><div class="label">EN</div><div class="val">${s.en||'-'}</div></div>
+        <div class="stat-box"><div class="label">攻撃力</div><div class="val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
+        <div class="stat-box"><div class="label">防御力</div><div class="val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
+        <div class="stat-box"><div class="label">機動力</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
+      </div>
+      <div style="margin-top:8px;font-size:.8em">移動力: ${s.mobility||'-'}</div>
+    </div>
+    <div class="detail-section">
+      <h3>地形適性</h3>
+      <div class="terrain-grid">
+        <span>宇宙${terrainIcon(t.space)}</span>
+        <span>空中${terrainIcon(t.air)}</span>
+        <span>地上${terrainIcon(t.ground)}</span>
+        <span>水上${terrainIcon(t.surface)}</span>
+        <span>水中${terrainIcon(t.water)}</span>
+      </div>
+    </div>
+    <div class="detail-section">
+      <h3>武装 (${(u.weapons||[]).length})</h3>
+      ${weaponsHTML}
+    </div>
+    ${(u.abilities||[]).length ? `<div class="detail-section"><h3>アビリティ (${u.abilities.length})</h3>${abHTML}</div>` : ''}
+    ${(u.skills||[]).length ? `<div class="detail-section"><h3>スキル (${u.skills.length})</h3>${skHTML}</div>` : ''}
+    <a class="source-link" href="${u.source_url||'#'}" target="_blank">GameWithで詳細を見る →</a>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+}
+
+// Event listeners
+document.getElementById('searchInput').addEventListener('input', render);
+document.getElementById('filterType').addEventListener('change', render);
+document.getElementById('filterSeries').addEventListener('change', render);
+document.getElementById('filterTag').addEventListener('change', render);
+document.getElementById('filterTerrain').addEventListener('change', render);
+document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+document.querySelectorAll('.sort-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const sort = btn.dataset.sort;
+    if (currentSort === sort) currentDir *= -1;
+    else { currentSort = sort; currentDir = sort === 'name' ? 1 : -1; }
+    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    render();
+  });
+});
+
+init();
+</script>
+</body>
+</html>
