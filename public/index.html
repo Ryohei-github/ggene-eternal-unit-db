@@ -47,8 +47,9 @@ a:hover{text-decoration:underline}
 /* Card */
 .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;transition:all .2s}
 .card:hover{background:var(--card-hover);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,212,255,.1)}
-.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
-.card-name{font-size:1.05em;font-weight:700;color:#fff}
+.card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:8px}
+.card-icon{width:48px;height:48px;border-radius:6px;border:1px solid var(--border);flex-shrink:0;object-fit:cover}
+.card-name{font-size:1.05em;font-weight:700;color:#fff;flex:1;min-width:0}
 .card-badges{display:flex;gap:4px;flex-shrink:0}
 .badge{padding:2px 8px;border-radius:4px;font-size:.65em;font-weight:700;letter-spacing:.5px}
 .badge-ur{background:linear-gradient(135deg,#9b30ff,#bf5fff);color:#fff}
@@ -499,6 +500,7 @@ function unitCardHTML(u) {
 
   return `<div class="card" onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
     <div class="card-header">
+      ${u.icon_url ? `<img class="card-icon" src="${u.icon_url}" alt="${u.name}" loading="lazy">` : ''}
       <div class="card-name">${u.name}</div>
       <div class="card-badges">
         <span class="badge badge-ur">UR</span>
