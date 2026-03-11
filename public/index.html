@@ -619,15 +619,8 @@ function showUnitDetail(name) {
     </div>
   `).join('');
 
-  const garbageNames = ['リセマラ評価','キャラ一覧の関連記事','解放キャラ','スキル','UR','EXキャラアビリティ','対象ユニット','サポーターの一覧記事','レア度','2×2','SD','支援','攻撃'];
-  const isGarbage = (name) => garbageNames.includes(name) || /^戦闘力[\(（]/.test(name) || /[\(（]SP:\d+[\)）]/.test(name);
-  const isMechanism = (name) => /フィールド|アーマー|装甲|シールド|脱出|変形/.test(name);
-
-  const cleanAbilities = (u.abilities||[]).filter(a => !isGarbage(a.name));
-  const mechFromAbilities = cleanAbilities.filter(a => isMechanism(a.name));
-  const pureAbilities = cleanAbilities.filter(a => !isMechanism(a.name));
-  const mechFromSkills = (u.skills||[]);
-  const allMechanisms = [...mechFromSkills, ...mechFromAbilities];
+  const pureAbilities = u.abilities||[];
+  const allMechanisms = u.mechanisms||[];
 
   const abHTML = pureAbilities.map(a => `
     <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.effect}</span></div>
