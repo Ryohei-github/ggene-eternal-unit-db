@@ -4,6 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Gジェネエターナル DB</title>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PHTSGSZ19J"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PHTSGSZ19J');
+</script>
+<!-- Google AdSense -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0a0e17;--card:#131a2b;--card-hover:#1a2540;--border:#2a3655;--accent:#00d4ff;--accent2:#ff6b35;--text:#e0e8f0;--text2:#8899aa;--gold:#ffd700;--ur:#ff4466}
@@ -17,8 +27,24 @@ a:hover{text-decoration:underline}
 .header-icon{width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);flex-shrink:0}
 .header h1{font-size:1.4em;letter-spacing:2px;background:linear-gradient(90deg,var(--accent),#80e0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 .header .sub{font-size:.75em;color:var(--text2);margin-top:2px}
-.header .yt-link{display:inline-block;margin-top:5px;font-size:.7em;color:var(--accent2);border:1px solid var(--accent2);padding:2px 10px;border-radius:12px}
+.header-links{display:flex;justify-content:center;gap:10px;margin-top:6px;flex-wrap:wrap}
+.header-links a{display:inline-flex;align-items:center;gap:4px;font-size:.7em;padding:3px 12px;border-radius:14px;font-weight:600;transition:all .2s}
+.btn-yt{color:#fff;background:linear-gradient(135deg,#ff0000,#cc0000);border:none}
+.btn-yt:hover{background:linear-gradient(135deg,#ff2222,#ee0000);text-decoration:none;transform:scale(1.05)}
+.btn-x{color:#fff;background:#000;border:1px solid #333}
+.btn-x:hover{background:#1a1a1a;text-decoration:none;transform:scale(1.05)}
 .header .yt-cta{margin-top:4px;font-size:.65em;color:var(--text2);letter-spacing:.02em}.yt-cta a{color:#ff6b35;font-weight:bold;text-decoration:underline}
+
+/* Ad slots */
+.ad-slot{max-width:1200px;margin:0 auto;padding:8px 16px;text-align:center;min-height:90px}
+.ad-slot-footer{border-top:1px solid var(--border);padding-top:12px;margin-top:20px}
+
+/* Footer */
+.site-footer{max-width:1200px;margin:0 auto;padding:20px 16px 40px;text-align:center}
+.footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
+.footer-links a{display:inline-flex;align-items:center;gap:4px;font-size:.75em;color:var(--text2);transition:color .2s}
+.footer-links a:hover{color:var(--accent);text-decoration:none}
+.footer-copy{font-size:.65em;color:var(--text2);opacity:.6}
 
 /* Accent line */
 .accent-line{height:3px;background:linear-gradient(90deg,transparent 5%,var(--accent) 20%,var(--accent2) 50%,var(--accent) 80%,transparent 95%);opacity:.4;margin:0}
@@ -219,12 +245,21 @@ a:hover{text-decoration:underline}
     <h1>Gジェネエターナル DB</h1>
   </div>
   <div class="sub">全レアリティ対応データベース ・ 検索＆フィルタ</div>
-  <a class="yt-link" href="https://www.youtube.com/@MH_GAMES_JP" target="_blank">▶ MH GAMES YouTube</a>
-  <div class="yt-cta">このサイトをもっと充実させてほしいと思ったら<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank">チャンネル登録</a>で応援！</div>
+  <div class="header-links">
+    <a class="btn-yt" href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank">▶ チャンネル登録</a>
+    <a class="btn-x" href="https://x.com/mh_games_jp" target="_blank">𝕏 ご意見・お問い合わせ</a>
+  </div>
+  <div class="yt-cta">サイトの充実はチャンネル登録数が目標！<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank">登録して応援</a>してくれると嬉しいです</div>
   <div class="accent-line"></div>
   <div class="tab-bar" id="tabBar">
     <button class="tab-btn active" data-tab="unit">ユニット<span class="tab-count" id="unitTabCount"></span></button>
   </div>
+</div>
+
+<!-- Ad: Header Banner -->
+<div class="ad-slot" id="adSlotTop">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
 <div class="controls">
@@ -1236,5 +1271,21 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal()
 bindSortButtons();
 init();
 </script>
+
+<!-- Ad: Footer Banner -->
+<div class="ad-slot ad-slot-footer" id="adSlotBottom">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+</div>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="footer-links">
+    <a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank">▶ YouTube チャンネル登録</a>
+    <a href="https://x.com/mh_games_jp" target="_blank">𝕏 公式X（ご意見はこちら）</a>
+  </div>
+  <div class="footer-copy">© 2025 MH GAMES — Gジェネエターナル DB</div>
+</footer>
+
 </body>
 </html>
