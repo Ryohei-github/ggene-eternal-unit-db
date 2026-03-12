@@ -143,6 +143,12 @@ a:hover{text-decoration:underline}
 .modal .skill-name{font-weight:600;font-size:.85em;color:var(--gold)}
 .modal .skill-effect{color:var(--text2);font-size:.8em;margin-top:2px}
 .terrain-grid{display:flex;gap:12px;font-size:.85em}
+.combat-power-display{font-size:.9em;color:var(--text2);margin-bottom:6px;text-align:center}
+.rarity-note{font-size:.75em;color:var(--gold);font-weight:normal}
+.card-combat-power{font-size:.7em;color:var(--gold);text-align:center;margin:4px 0 2px;font-weight:600}
+.card-rarity-note{font-size:.6em;color:var(--text2);text-align:center;margin-bottom:2px;font-style:italic}
+.card-mechanism{font-size:.65em;color:var(--text2);padding:4px 8px;margin-top:4px;border-top:1px solid var(--border);line-height:1.3}
+.card-mechanism .mechanism-label{color:var(--accent);font-weight:600}
 
 /* Supporter modal */
 .modal .supporter-detail-block{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;margin-bottom:8px}
@@ -606,6 +612,8 @@ function unitCardHTML(u) {
       </div>
     </div>
     <div class="card-series">${(u.series||[]).join(' / ')}</div>
+    ${u.normal?.combat_power ? `<div class="card-combat-power">戦闘力: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
+    ${u.rarity==='UR' ? '<div class="card-rarity-note">※最大強化時のステータス</div>' : u.rarity==='SSR' ? '<div class="card-rarity-note">※SP化時のステータス</div>' : ''}
     <div class="card-stats">
       <div class="stat"><div class="stat-label">攻撃力</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
@@ -613,10 +621,11 @@ function unitCardHTML(u) {
     </div>
     <div class="card-stats card-stats-sub">
       <div class="stat"><div class="stat-label">EN</div><div class="stat-val">${(parseInt(s.en)||0).toLocaleString()}</div></div>
-      <div class="stat"><div class="stat-label">運動性</div><div class="stat-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
-      <div class="stat"><div class="stat-label">機動力</div><div class="stat-val">${parseInt(s.mobility)||0}</div></div>
+      <div class="stat"><div class="stat-label">機動力</div><div class="stat-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">移動力</div><div class="stat-val">${parseInt(s.mobility)||0}</div></div>
       ${u.transformed ? '<div class="stat" style="border:1px solid var(--accent);"><div class="stat-label" style="color:var(--accent)">変形</div><div class="stat-val" style="color:var(--accent)">可</div></div>' : '<div class="stat"></div>'}
     </div>
+    ${(u.normal?.mechanism) ? `<div class="card-mechanism"><span class="mechanism-label">機構:</span> ${u.normal.mechanism}</div>` : ''}
     <div class="card-terrain">
       <span class="terrain-item">宇${terrainIcon(t['宇宙'])}</span>
       <span class="terrain-item">空${terrainIcon(t['空中'])}</span>
@@ -706,6 +715,7 @@ function unitTableHTML(items) {
       <td class="cell-name">${iconTd}${u.name}</td>
       <td class="cell-center"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.7em">${u.rarity||'?'}</span></td>
       <td class="cell-center">${u.type ? typeIconHTML(u.type)+' '+u.type : '-'}</td>
+      <td class="cell-num">${u.normal?.combat_power ? u.normal.combat_power.toLocaleString() : '-'}</td>
       <td class="cell-num">${(parseInt(s.attack)||0).toLocaleString()}</td>
       <td class="cell-num">${(parseInt(s.hp)||0).toLocaleString()}</td>
       <td class="cell-num">${(parseInt(s.defense)||0).toLocaleString()}</td>
@@ -717,7 +727,7 @@ function unitTableHTML(items) {
     </tr>`;
   }).join('');
   return `<table class="data-table"><thead><tr>
-    <th>ユニット名</th><th>レア</th><th>タイプ</th><th>攻撃力</th><th>HP</th><th>防御力</th><th>EN</th><th>運動性</th><th>機動力</th><th>地形</th><th>MAP兵器</th>
+    <th>ユニット名</th><th>レア</th><th>タイプ</th><th>戦闘力</th><th>攻撃力</th><th>HP</th><th>防御力</th><th>EN</th><th>機動力</th><th>移動力</th><th>地形</th><th>MAP兵器</th>
   </tr></thead><tbody>${rows}</tbody></table>`;
 }
 
@@ -807,8 +817,38 @@ function renderUnitDetail(u, form) {
     </div>
   `}).join('');
 
-  const pureAbilities = formData.abilities||[];
+  const allAbilities = formData.abilities||[];
   const mechText = formData.mechanism || '';
+
+  // Filter: remove 強い点/弱い点, weapons (desc starts with digit = range data), character data (name contains 戦闘力), スキル
+  const pureAbilities = allAbilities.filter(a => {
+    if (a.name === '強い点' || a.name === '弱い点') return false;
+    if (a.name === 'スキル') return false;
+    if (/戦闘力/.test(a.name)) return false;
+    if (/^\d/.test(a.desc||'')) return false;
+    return true;
+  });
+
+  // Extract skill entry and parse concatenated skills
+  const skillEntry = allAbilities.find(a => a.name === 'スキル');
+  let skillsHTML = '';
+  if (skillEntry && skillEntry.desc) {
+    const skillRegex = /([\u3000-\u9fff\u30a0-\u30ff\uff00-\uffefA-Za-z\u30fb\-\u30fc\uff08\uff09]+Lv\d+)\(SP:(\d+)\)/g;
+    const anchors = [];
+    let m;
+    while ((m = skillRegex.exec(skillEntry.desc)) !== null) {
+      anchors.push({name: m[1], sp: m[2], start: m.index, end: m.index + m[0].length});
+    }
+    if (anchors.length) {
+      skillsHTML = anchors.map((a, i) => {
+        const descEnd = i + 1 < anchors.length ? anchors[i+1].start : skillEntry.desc.length;
+        const desc = skillEntry.desc.slice(a.end, descEnd);
+        return `<div class="ability-item"><span class="ability-name">${a.name} (SP:${a.sp})</span><br><span class="ability-effect">${desc}</span></div>`;
+      }).join('');
+    } else {
+      skillsHTML = `<div class="ability-item"><span class="ability-effect">${skillEntry.desc}</span></div>`;
+    }
+  }
 
   const abHTML = pureAbilities.map(a => `
     <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.desc||''}</span></div>
@@ -835,16 +875,16 @@ function renderUnitDetail(u, form) {
       <div class="card-tags">${(u.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
     </div>
     <div class="detail-section">
-      <h3>ステータス${isTransform ? ' (変形後)' : ''}</h3>
+      <h3>ステータス${isTransform ? ' (変形後)' : ''}${!isTransform && u.rarity==='UR' ? ' <span class="rarity-note">※最大強化時のステータス</span>' : !isTransform && u.rarity==='SSR' ? ' <span class="rarity-note">※SP化時のステータス</span>' : ''}</h3>
+      ${formData.combat_power ? `<div class="combat-power-display">戦闘力: <span style="color:var(--gold);font-weight:bold">${formData.combat_power.toLocaleString()}</span></div>` : ''}
       <div class="stats-grid">
         <div class="stat-box"><div class="label">HP</div><div class="val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
         <div class="stat-box"><div class="label">EN</div><div class="val">${s.en||'-'}</div></div>
         <div class="stat-box"><div class="label">攻撃力</div><div class="val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
         <div class="stat-box"><div class="label">防御力</div><div class="val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
-        <div class="stat-box"><div class="label">運動性</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
-        <div class="stat-box"><div class="label">機動力</div><div class="val">${s.mobility||'-'}</div></div>
+        <div class="stat-box"><div class="label">機動力</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
+        <div class="stat-box"><div class="label">移動力</div><div class="val">${s.mobility||'-'}</div></div>
       </div>
-      ${formData.combat_power ? `<div style="text-align:right;font-size:.8em;color:var(--text2);margin-top:4px">戦闘力: ${formData.combat_power.toLocaleString()}</div>` : ''}
     </div>
     <div class="detail-section">
       <h3>地形適性</h3>
@@ -861,6 +901,7 @@ function renderUnitDetail(u, form) {
       ${weaponsHTML}
     </div>
     ${pureAbilities.length ? `<div class="detail-section"><h3>アビリティ (${pureAbilities.length})</h3>${abHTML}</div>` : ''}
+    ${skillsHTML ? `<div class="detail-section"><h3>スキル</h3>${skillsHTML}</div>` : ''}
     ${mechText ? `<div class="detail-section"><h3>機構</h3><div class="mechanism-item"><span class="mechanism-effect">${mechText}</span></div></div>` : ''}
   `;
 }
