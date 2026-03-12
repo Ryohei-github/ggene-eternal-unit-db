@@ -401,7 +401,12 @@ let currentView = 'card';
 
 async function init() {
   const uResp = await fetch('/units.json');
-  allUnits = await uResp.json();
+  const allData = await uResp.json();
+  // ステータスが全て0のエントリ（キャラ・サポーター）を除外し、ユニットのみ表示
+  allUnits = allData.filter(u => {
+    const s = u.normal?.stats;
+    return s && (s.hp > 0 || s.attack > 0 || s.defense > 0 || s.en > 0);
+  });
   allCharas = [];
   allSupporters = [];
 
