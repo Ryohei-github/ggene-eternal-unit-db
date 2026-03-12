@@ -1,1 +1,9 @@
 scrape_errors.json
+scrape_log.txt
+scrape_progress.json
+ggene_units.json
+overrides.json
+image_map.json
+download_images.py
+download_log.txt
+*.py
