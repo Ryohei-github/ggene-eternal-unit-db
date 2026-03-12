@@ -90,6 +90,7 @@ a:hover{text-decoration:underline}
 .weapon-tag.map{background:rgba(255,68,102,.15);border-color:rgba(255,68,102,.3);color:#ff6688}
 .card-tags{display:flex;flex-wrap:wrap;gap:3px}
 .tag{padding:1px 5px;background:rgba(255,255,255,.05);border-radius:3px;font-size:.6em;color:var(--text2)}
+.clickable-tag{cursor:pointer;transition:background .15s,color .15s}.clickable-tag:hover{background:var(--accent);color:#fff}
 
 /* Transform Toggle */
 .transform-toggle{display:flex;gap:0;margin-bottom:8px;border:1px solid var(--border);border-radius:6px;overflow:hidden}
@@ -235,6 +236,26 @@ a:hover{text-decoration:underline}
         <option value="水中">水中◯</option>
       </select>
     </div>
+    <div class="filter-group" id="filterWeaponEffectGroup">
+      <label>武装効果</label>
+      <select id="filterWeaponEffect">
+        <option value="">すべて</option>
+        <option value="絶対命中">絶対命中</option>
+        <option value="属性軽減無効">属性軽減無効</option>
+        <option value="先制攻撃">先制攻撃</option>
+        <option value="攻撃力.*減少">攻撃力減少</option>
+        <option value="防御力.*減少">防御力減少</option>
+        <option value="機動力.*減少">機動力減少</option>
+        <option value="命中率.*減少">命中率減少</option>
+        <option value="ビーム">ビーム系効果</option>
+        <option value="物理">物理系効果</option>
+        <option value="特殊">特殊系効果</option>
+        <option value="クリティカル">クリティカル</option>
+        <option value="近いほど|遠いほど">距離POWER上昇</option>
+        <option value="HP.*POWER|HPが.*上昇">HP依存POWER</option>
+        <option value="回復">回復系</option>
+      </select>
+    </div>
     <div class="filter-group" id="filterRarityGroup">
       <label>レア</label>
       <select id="filterRarity"><option value="">すべて</option></select>
@@ -325,6 +346,7 @@ function resetFilters() {
   document.getElementById('filterSeries').innerHTML = '<option value="">すべて</option>';
   document.getElementById('filterTag').innerHTML = '<option value="">すべて</option>';
   document.getElementById('filterTerrain').value = '';
+  document.getElementById('filterWeaponEffect').value = '';
   document.getElementById('filterRarity').innerHTML = '<option value="">すべて</option>';
   document.getElementById('filterCharaType').innerHTML = '<option value="">すべて</option>';
   document.getElementById('filterTarget').innerHTML = '<option value="">すべて</option>';
@@ -336,7 +358,7 @@ function updateUI() {
   const isSupporter = currentTab === 'supporter';
 
   const placeholders = {
-    unit: 'ユニット名で検索...（例: サザビー、ガンダム）',
+    unit: 'ユニット名・武装名・武装効果で検索...',
     chara: 'キャラ名で検索...（例: アムロ、シャア）',
     supporter: 'サポーター名で検索...（例: ブライト、ホワイトベース）'
   };
@@ -345,6 +367,7 @@ function updateUI() {
   document.getElementById('filterSeriesGroup').style.display = isUnit || isChara ? '' : 'none';
   document.getElementById('filterTagGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterTerrainGroup').style.display = isUnit ? '' : 'none';
+  document.getElementById('filterWeaponEffectGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterRarityGroup').style.display = '';
   document.getElementById('filterCharaTypeGroup').style.display = isChara ? '' : 'none';
   document.getElementById('filterTargetGroup').style.display = isSupporter ? '' : 'none';
@@ -445,13 +468,25 @@ function getFiltered() {
     const series = document.getElementById('filterSeries').value;
     const tag = document.getElementById('filterTag').value;
     const terrain = document.getElementById('filterTerrain').value;
+    const weaponEffect = document.getElementById('filterWeaponEffect').value;
     return data.filter(u => {
-      if (q && !u.name.toLowerCase().includes(q)) return false;
+      if (q) {
+        const nameMatch = u.name.toLowerCase().includes(q);
+        const weaponMatch = (u.normal_weapons||[]).concat(u.transformed_weapons||[]).some(w =>
+          (w.name||'').toLowerCase().includes(q) || (w.effect||'').toLowerCase().includes(q)
+        );
+        if (!nameMatch && !weaponMatch) return false;
+      }
       if (type && u.type !== type) return false;
       if (rarity && u.rarity !== rarity) return false;
       if (series && !(u.series||[]).includes(series)) return false;
       if (tag && !(u.tags||[]).includes(tag)) return false;
       if (terrain && (!u.normal?.terrain || u.normal.terrain[terrain] !== '◯')) return false;
+      if (weaponEffect) {
+        const re = new RegExp(weaponEffect);
+        const hasEffect = (u.normal_weapons||[]).concat(u.transformed_weapons||[]).some(w => re.test(w.effect||''));
+        if (!hasEffect) return false;
+      }
       return true;
     });
   } else if (currentTab === 'chara') {
@@ -598,7 +633,7 @@ function unitCardHTML(u) {
     if (isMap) label += ` [${w.ammo && w.ammo !== '-' ? w.ammo + '回' : '-回'}]`;
     return `<span class="weapon-tag${isEx?' ex':''}${isMap?' map':''}">${mapIcon}${label}</span>`;
   }).join('');
-  const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag">${t}</span>`).join('');
+  const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('');
 
   const iconHTML = u.image ? `<img class="card-icon" src="${u.image}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
 
@@ -625,7 +660,7 @@ function unitCardHTML(u) {
       <div class="stat"><div class="stat-label">移動力</div><div class="stat-val">${parseInt(s.mobility)||0}</div></div>
       ${u.transformed ? '<div class="stat" style="border:1px solid var(--accent);"><div class="stat-label" style="color:var(--accent)">変形</div><div class="stat-val" style="color:var(--accent)">可</div></div>' : '<div class="stat"></div>'}
     </div>
-    ${(u.normal?.mechanism) ? `<div class="card-mechanism"><span class="mechanism-label">機構:</span> ${u.normal.mechanism}</div>` : ''}
+    ${(() => { const mech = u.normal?.mechanism || ((u.normal?.abilities||[]).find(a=>a.name==='シールド防御')||{}).desc || ''; return mech ? `<div class="card-mechanism"><span class="mechanism-label">機構:</span> ${mech}</div>` : ''; })()}
     <div class="card-terrain">
       <span class="terrain-item">宇${terrainIcon(t['宇宙'])}</span>
       <span class="terrain-item">空${terrainIcon(t['空中'])}</span>
@@ -818,12 +853,19 @@ function renderUnitDetail(u, form) {
   `}).join('');
 
   const allAbilities = formData.abilities||[];
-  const mechText = formData.mechanism || '';
+  let mechText = formData.mechanism || '';
 
-  // Filter: remove 強い点/弱い点, weapons (desc starts with digit = range data), character data (name contains 戦闘力), スキル
+  // If mechanism is empty, try to use シールド防御 ability as mechanism
+  if (!mechText) {
+    const shieldAbility = allAbilities.find(a => a.name === 'シールド防御');
+    if (shieldAbility) mechText = shieldAbility.desc || '';
+  }
+
+  // Filter: remove 強い点/弱い点, weapons (desc starts with digit = range data), character data (name contains 戦闘力), スキル, シールド防御
   const pureAbilities = allAbilities.filter(a => {
     if (a.name === '強い点' || a.name === '弱い点') return false;
     if (a.name === 'スキル') return false;
+    if (a.name === 'シールド防御') return false;
     if (/戦闘力/.test(a.name)) return false;
     if (/^\d/.test(a.desc||'')) return false;
     return true;
@@ -865,14 +907,14 @@ function renderUnitDetail(u, form) {
         <div class="detail-badges">
           <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
           ${typeBadgeHTML(u.type)}
-          <span class="badge badge-type">${u.obtain||''}</span>
+          <span class="badge badge-type">${(u.obtain||'').replace(/ピックアップガ[シチ]ャ/g,'ガシャ')}</span>
         </div>
       </div>
     </div>
     ${transformToggle}
     <div class="detail-section">
       <div style="font-size:.8em;color:var(--text2);margin-bottom:4px">${(u.series||[]).join(' / ')}</div>
-      <div class="card-tags">${(u.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
+      <div class="card-tags">${(u.tags||[]).map(t=>`<span class="tag clickable-tag" onclick="filterByTag('${t.replace(/'/g,"\\'")}');closeModal()">${t}</span>`).join('')}</div>
     </div>
     <div class="detail-section">
       <h3>ステータス${isTransform ? ' (変形後)' : ''}${!isTransform && u.rarity==='UR' ? ' <span class="rarity-note">※最大強化時のステータス</span>' : !isTransform && u.rarity==='SSR' ? ' <span class="rarity-note">※SP化時のステータス</span>' : ''}</h3>
@@ -901,7 +943,6 @@ function renderUnitDetail(u, form) {
       ${weaponsHTML}
     </div>
     ${pureAbilities.length ? `<div class="detail-section"><h3>アビリティ (${pureAbilities.length})</h3>${abHTML}</div>` : ''}
-    ${skillsHTML ? `<div class="detail-section"><h3>スキル</h3>${skillsHTML}</div>` : ''}
     ${mechText ? `<div class="detail-section"><h3>機構</h3><div class="mechanism-item"><span class="mechanism-effect">${mechText}</span></div></div>` : ''}
   `;
 }
@@ -1010,12 +1051,31 @@ function closeModal() {
   document.getElementById('modalOverlay').classList.remove('open');
 }
 
+function filterByTag(tagName) {
+  // Switch to unit tab if not already
+  if (currentTab !== 'unit') {
+    document.querySelector('.tab-btn[data-tab="unit"]').click();
+  }
+  const sel = document.getElementById('filterTag');
+  // Set the tag filter value
+  for (let i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === tagName) { sel.value = tagName; render(); return; }
+  }
+  // If not in dropdown, add it temporarily and select
+  const opt = document.createElement('option');
+  opt.value = tagName; opt.textContent = tagName;
+  sel.appendChild(opt);
+  sel.value = tagName;
+  render();
+}
+
 // Event listeners
 document.getElementById('searchInput').addEventListener('input', render);
 document.getElementById('filterType').addEventListener('change', render);
 document.getElementById('filterSeries').addEventListener('change', render);
 document.getElementById('filterTag').addEventListener('change', render);
 document.getElementById('filterTerrain').addEventListener('change', render);
+document.getElementById('filterWeaponEffect').addEventListener('change', render);
 document.getElementById('filterRarity').addEventListener('change', render);
 document.getElementById('filterCharaType').addEventListener('change', render);
 document.getElementById('filterTarget').addEventListener('change', render);
