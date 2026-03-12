@@ -369,10 +369,12 @@ a:hover{text-decoration:underline}
     <span id="resultCount">読込中...</span>
     <div style="display:flex;align-items:center">
       <div class="sort-btns" id="sortBtns">
-        <button class="sort-btn active" data-sort="atk">攻撃力順</button>
+        <button class="sort-btn active" data-sort="cp">戦闘力順</button>
+        <button class="sort-btn" data-sort="atk">攻撃力順</button>
         <button class="sort-btn" data-sort="hp">HP順</button>
         <button class="sort-btn" data-sort="def">防御力順</button>
         <button class="sort-btn" data-sort="en">EN順</button>
+        <button class="sort-btn" data-sort="agi">機動力順</button>
         <button class="sort-btn" data-sort="name">名前順</button>
       </div>
       <div class="view-toggle" id="viewToggle">
@@ -477,12 +479,14 @@ function updateUI() {
   const sortContainer = document.getElementById('sortBtns');
   if (isUnit) {
     sortContainer.innerHTML = `
-      <button class="sort-btn active" data-sort="atk">攻撃力順</button>
+      <button class="sort-btn active" data-sort="cp">戦闘力順</button>
+      <button class="sort-btn" data-sort="atk">攻撃力順</button>
       <button class="sort-btn" data-sort="hp">HP順</button>
       <button class="sort-btn" data-sort="def">防御力順</button>
       <button class="sort-btn" data-sort="en">EN順</button>
+      <button class="sort-btn" data-sort="agi">機動力順</button>
       <button class="sort-btn" data-sort="name">名前順</button>`;
-    currentSort = 'atk'; currentDir = -1;
+    currentSort = 'cp'; currentDir = -1;
   } else if (isChara) {
     sortContainer.innerHTML = `
       <button class="sort-btn active" data-sort="cp">戦闘力順</button>
@@ -735,6 +739,8 @@ function sortItems(items) {
         va = parseInt(a.normal?.stats?.defense)||0; vb = parseInt(b.normal?.stats?.defense)||0; break;
       case 'en':
         va = parseInt(a.normal?.stats?.en)||0; vb = parseInt(b.normal?.stats?.en)||0; break;
+      case 'agi':
+        va = parseInt(a.normal?.stats?.agility)||0; vb = parseInt(b.normal?.stats?.agility)||0; break;
       case 'name': return dir * a.name.localeCompare(b.name, 'ja');
     }
     return dir * (va - vb);
