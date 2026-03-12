@@ -12,14 +12,19 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
 /* Header */
-.header{background:linear-gradient(135deg,#0d1525,#1a2844);border-bottom:none;padding:16px 20px 0;text-align:center;position:sticky;top:0;z-index:100}
+.header{background:linear-gradient(135deg,#0d1525,#1a2844);border-bottom:2px solid transparent;border-image:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent) 1;padding:14px 20px 0;text-align:center;position:sticky;top:0;z-index:100}
+.header-brand{display:flex;align-items:center;justify-content:center;gap:10px}
+.header-icon{width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);flex-shrink:0}
 .header h1{font-size:1.4em;letter-spacing:2px;background:linear-gradient(90deg,var(--accent),#80e0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.header .sub{font-size:.75em;color:var(--text2);margin-top:4px}
-.header .yt-link{display:inline-block;margin-top:6px;font-size:.7em;color:var(--accent2);border:1px solid var(--accent2);padding:2px 10px;border-radius:12px}
-.header .yt-cta{margin-top:5px;font-size:.65em;color:var(--text2);letter-spacing:.02em}.yt-cta a{color:#ff6b35;font-weight:bold;text-decoration:underline}
+.header .sub{font-size:.75em;color:var(--text2);margin-top:2px}
+.header .yt-link{display:inline-block;margin-top:5px;font-size:.7em;color:var(--accent2);border:1px solid var(--accent2);padding:2px 10px;border-radius:12px}
+.header .yt-cta{margin-top:4px;font-size:.65em;color:var(--text2);letter-spacing:.02em}.yt-cta a{color:#ff6b35;font-weight:bold;text-decoration:underline}
+
+/* Accent line */
+.accent-line{height:3px;background:linear-gradient(90deg,transparent 5%,var(--accent) 20%,var(--accent2) 50%,var(--accent) 80%,transparent 95%);opacity:.4;margin:0}
 
 /* Tabs */
-.tab-bar{display:flex;justify-content:center;gap:0;margin-top:14px;background:linear-gradient(135deg,#0d1525,#1a2844);position:sticky;top:0;z-index:100}
+.tab-bar{display:flex;justify-content:center;gap:0;margin-top:10px;background:linear-gradient(135deg,#0d1525,#1a2844);position:sticky;top:0;z-index:100}
 .tab-btn{padding:10px 28px;font-size:.9em;font-weight:600;color:var(--text2);background:transparent;border:none;border-bottom:3px solid transparent;cursor:pointer;transition:all .2s;letter-spacing:1px}
 .tab-btn:hover{color:var(--text)}
 .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
@@ -37,7 +42,7 @@ a:hover{text-decoration:underline}
 .filter-group select{padding:6px 10px;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.85em;outline:none}
 .filter-group select:focus{border-color:var(--accent)}
 .stats-bar{display:flex;justify-content:space-between;align-items:center;font-size:.8em;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border);margin-bottom:12px}
-.sort-btns{display:flex;gap:4px}
+.sort-btns{display:flex;gap:4px;flex-wrap:wrap}
 .sort-btn{padding:3px 8px;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--text2);cursor:pointer;font-size:.75em}
 .sort-btn.active{border-color:var(--accent);color:var(--accent)}
 
@@ -50,7 +55,7 @@ a:hover{text-decoration:underline}
 .card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:8px}
 .card-icon{width:48px;height:48px;border-radius:6px;border:1px solid var(--border);flex-shrink:0;object-fit:cover}
 .card-name{font-size:1.05em;font-weight:700;color:#fff;flex:1;min-width:0}
-.card-badges{display:flex;gap:4px;flex-shrink:0}
+.card-badges{display:flex;gap:4px;flex-shrink:0;flex-wrap:wrap}
 .badge{padding:2px 8px;border-radius:4px;font-size:.65em;font-weight:700;letter-spacing:.5px}
 .badge-ur{background:linear-gradient(135deg,#9b30ff,#bf5fff);color:#fff}
 .badge-ssr{background:linear-gradient(135deg,#daa520,#ffd700);color:#1a1a1a}
@@ -62,6 +67,7 @@ a:hover{text-decoration:underline}
 .badge-def{border-color:#4488ff;color:#6699ff}
 .badge-sup{border-color:#daa520;color:#ffd700}
 .badge-ex{background:linear-gradient(135deg,var(--accent2),#ff8844);color:#fff}
+
 .card-series{font-size:.7em;color:var(--text2);margin-bottom:8px}
 .card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:8px}
 .card-stats-sub{grid-template-columns:repeat(4,1fr);margin-bottom:8px;margin-top:-4px}
@@ -80,6 +86,12 @@ a:hover{text-decoration:underline}
 .weapon-tag.map{background:rgba(255,68,102,.15);border-color:rgba(255,68,102,.3);color:#ff6688}
 .card-tags{display:flex;flex-wrap:wrap;gap:3px}
 .tag{padding:1px 5px;background:rgba(255,255,255,.05);border-radius:3px;font-size:.6em;color:var(--text2)}
+
+/* Transform Toggle */
+.transform-toggle{display:flex;gap:0;margin-bottom:8px;border:1px solid var(--border);border-radius:6px;overflow:hidden}
+.transform-btn{flex:1;padding:4px 8px;font-size:.7em;font-weight:600;background:var(--bg);color:var(--text2);border:none;cursor:pointer;transition:all .2s;text-align:center}
+.transform-btn.active{background:linear-gradient(135deg,rgba(0,212,255,.2),rgba(0,212,255,.1));color:var(--accent);border-bottom:2px solid var(--accent)}
+.transform-btn:hover:not(.active){color:var(--text)}
 
 /* Character card specifics */
 .card-skills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px}
@@ -163,16 +175,22 @@ a:hover{text-decoration:underline}
   .data-table{font-size:.7em}
   .data-table td,.data-table th{padding:5px 6px}
   .view-toggle{margin-left:6px}
+  .header-brand{gap:6px}
+  .header-icon{width:28px;height:28px}
 }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>Gジェネエターナル DB</h1>
-  <div class="sub">UR データベース ・ 検索＆フィルタ</div>
+  <div class="header-brand">
+    <img class="header-icon" src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj" alt="MH GAMES">
+    <h1>Gジェネエターナル DB</h1>
+  </div>
+  <div class="sub">全レアリティ対応データベース ・ 検索＆フィルタ</div>
   <a class="yt-link" href="https://www.youtube.com/@MH_GAMES_JP" target="_blank">▶ MH GAMES YouTube</a>
-  <div class="yt-cta">📢 このサイトをもっと充実させてほしいと思ったら<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank">チャンネル登録</a>で応援！</div>
+  <div class="yt-cta">このサイトをもっと充実させてほしいと思ったら<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank">チャンネル登録</a>で応援！</div>
+  <div class="accent-line"></div>
   <div class="tab-bar" id="tabBar">
     <button class="tab-btn active" data-tab="unit">ユニット<span class="tab-count" id="unitTabCount"></span></button>
     <button class="tab-btn" data-tab="chara">キャラ<span class="tab-count" id="charaTabCount"></span></button>
@@ -208,7 +226,7 @@ a:hover{text-decoration:underline}
         <option value="water">水中◯</option>
       </select>
     </div>
-    <div class="filter-group" id="filterRarityGroup" style="display:none">
+    <div class="filter-group" id="filterRarityGroup">
       <label>レア</label>
       <select id="filterRarity"><option value="">すべて</option></select>
     </div>
@@ -225,8 +243,7 @@ a:hover{text-decoration:underline}
     <span id="resultCount">読込中...</span>
     <div style="display:flex;align-items:center">
       <div class="sort-btns" id="sortBtns">
-        <button class="sort-btn active" data-sort="cp">戦闘力順</button>
-        <button class="sort-btn" data-sort="atk">攻撃力順</button>
+        <button class="sort-btn active" data-sort="atk">攻撃力順</button>
         <button class="sort-btn" data-sort="hp">HP順</button>
         <button class="sort-btn" data-sort="def">防御力順</button>
         <button class="sort-btn" data-sort="en">EN順</button>
@@ -250,7 +267,7 @@ a:hover{text-decoration:underline}
 <script>
 let allUnits = [], allCharas = [], allSupporters = [];
 let currentTab = 'unit';
-let currentSort = 'cp';
+let currentSort = 'atk';
 let currentDir = -1;
 let currentView = 'card';
 
@@ -313,7 +330,6 @@ function updateUI() {
   const isChara = currentTab === 'chara';
   const isSupporter = currentTab === 'supporter';
 
-  // Search placeholder
   const placeholders = {
     unit: 'ユニット名で検索...（例: サザビー、ガンダム）',
     chara: 'キャラ名で検索...（例: アムロ、シャア）',
@@ -321,28 +337,23 @@ function updateUI() {
   };
   document.getElementById('searchInput').placeholder = placeholders[currentTab];
 
-  // Show/hide filter groups
-  document.getElementById('filterSeriesGroup').style.display = isUnit ? '' : (isChara ? '' : 'none');
+  document.getElementById('filterSeriesGroup').style.display = isUnit || isChara ? '' : 'none';
   document.getElementById('filterTagGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterTerrainGroup').style.display = isUnit ? '' : 'none';
-  document.getElementById('filterRarityGroup').style.display = !isUnit ? '' : 'none';
+  document.getElementById('filterRarityGroup').style.display = '';
   document.getElementById('filterCharaTypeGroup').style.display = isChara ? '' : 'none';
   document.getElementById('filterTargetGroup').style.display = isSupporter ? '' : 'none';
-
-  // Show/hide type filter (unit_type for units, hide for others since we have charaType)
   document.querySelector('#filterType').parentElement.style.display = isUnit ? '' : 'none';
 
-  // Sort buttons
   const sortContainer = document.getElementById('sortBtns');
   if (isUnit) {
     sortContainer.innerHTML = `
-      <button class="sort-btn active" data-sort="cp">戦闘力順</button>
-      <button class="sort-btn" data-sort="atk">攻撃力順</button>
+      <button class="sort-btn active" data-sort="atk">攻撃力順</button>
       <button class="sort-btn" data-sort="hp">HP順</button>
       <button class="sort-btn" data-sort="def">防御力順</button>
       <button class="sort-btn" data-sort="en">EN順</button>
       <button class="sort-btn" data-sort="name">名前順</button>`;
-    currentSort = 'cp'; currentDir = -1;
+    currentSort = 'atk'; currentDir = -1;
   } else if (isChara) {
     sortContainer.innerHTML = `
       <button class="sort-btn active" data-sort="cp">戦闘力順</button>
@@ -375,15 +386,18 @@ function bindSortButtons() {
 
 function buildFilters() {
   if (currentTab === 'unit') {
-    const types = new Set(), series = new Set(), tags = new Set();
+    const types = new Set(), series = new Set(), tags = new Set(), rarities = new Set();
     allUnits.forEach(u => {
       if (u.unit_type) types.add(u.unit_type);
+      if (u.rarity) rarities.add(u.rarity);
       (u.series||[]).forEach(s => series.add(s));
       (u.tags||[]).forEach(t => tags.add(t));
     });
     fillSelect('filterType', [...types].sort());
     fillSelect('filterSeries', [...series].sort());
     fillSelect('filterTag', [...tags].sort());
+    const rarityOrder = ['UR','SSR','SR','R','N'];
+    fillSelect('filterRarity', rarityOrder.filter(r => rarities.has(r)));
   } else if (currentTab === 'chara') {
     const rarities = new Set(), types = new Set(), series = new Set();
     allCharas.forEach(c => {
@@ -419,6 +433,7 @@ function getData() {
 function getFiltered() {
   const q = document.getElementById('searchInput').value.toLowerCase();
   const data = getData();
+  const rarity = document.getElementById('filterRarity').value;
 
   if (currentTab === 'unit') {
     const type = document.getElementById('filterType').value;
@@ -428,13 +443,13 @@ function getFiltered() {
     return data.filter(u => {
       if (q && !u.name.toLowerCase().includes(q)) return false;
       if (type && u.unit_type !== type) return false;
+      if (rarity && u.rarity !== rarity) return false;
       if (series && !(u.series||[]).includes(series)) return false;
       if (tag && !(u.tags||[]).includes(tag)) return false;
       if (terrain && (!u.terrain || u.terrain[terrain] !== '◯')) return false;
       return true;
     });
   } else if (currentTab === 'chara') {
-    const rarity = document.getElementById('filterRarity').value;
     const cType = document.getElementById('filterCharaType').value;
     const series = document.getElementById('filterSeries').value;
     return data.filter(c => {
@@ -445,7 +460,6 @@ function getFiltered() {
       return true;
     });
   } else {
-    const rarity = document.getElementById('filterRarity').value;
     const target = document.getElementById('filterTarget').value;
     return data.filter(s => {
       if (q && !s.name.toLowerCase().includes(q)) return false;
@@ -543,6 +557,12 @@ function isEXChara(c) {
   return c.name.includes('(EX)') || c.name.includes('（EX）');
 }
 
+function rangeDisplay(w) {
+  if (w.is_map) return 'MAP';
+  if (w.range_min === w.range_max) return w.range_min;
+  return `${w.range_min}-${w.range_max}`;
+}
+
 // === UNIT CARD ===
 function unitCardHTML(u) {
   const s = u.stats || {};
@@ -560,21 +580,21 @@ function unitCardHTML(u) {
       ${u.icon_url ? `<img class="card-icon" src="${u.icon_url}" alt="${u.name}" loading="lazy">` : ''}
       <div class="card-name">${u.name}</div>
       <div class="card-badges">
-        <span class="badge badge-ur">UR</span>
+        <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
         ${u.unit_type ? `<span class="badge badge-type ${typeClass(u.unit_type)}">${u.unit_type}</span>` : ''}
       </div>
     </div>
     <div class="card-series">${(u.series||[]).join(' / ')}</div>
     <div class="card-stats">
-      <div class="stat"><div class="stat-label">戦闘力</div><div class="stat-val cp-val">${(parseInt(u.combat_power)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">攻撃力</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">防御力</div><div class="stat-val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
     </div>
     <div class="card-stats card-stats-sub">
-      <div class="stat"><div class="stat-label">防御力</div><div class="stat-val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">EN</div><div class="stat-val">${(parseInt(s.en)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">運動性</div><div class="stat-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">機動力</div><div class="stat-val">${parseInt(s.mobility)||0}</div></div>
+      ${u.has_transform ? '<div class="stat" style="border:1px solid var(--accent);"><div class="stat-label" style="color:var(--accent)">変形</div><div class="stat-val" style="color:var(--accent)">可</div></div>' : '<div class="stat"></div>'}
     </div>
     <div class="card-terrain">
       <span class="terrain-item">宇${terrainIcon(t.space)}</span>
@@ -662,8 +682,8 @@ function unitTableHTML(items) {
     const terrStr = ['space','air','ground','surface','water'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
     return `<tr onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
       <td class="cell-name">${u.icon_url?`<img class="cell-icon" src="${u.icon_url}" alt="" loading="lazy">`:''}${u.name}</td>
+      <td class="cell-center"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.7em">${u.rarity||'?'}</span></td>
       <td class="cell-center">${u.unit_type||'-'}</td>
-      <td class="cell-num">${(parseInt(u.combat_power)||0).toLocaleString()}</td>
       <td class="cell-num">${(parseInt(s.attack)||0).toLocaleString()}</td>
       <td class="cell-num">${(parseInt(s.hp)||0).toLocaleString()}</td>
       <td class="cell-num">${(parseInt(s.defense)||0).toLocaleString()}</td>
@@ -675,7 +695,7 @@ function unitTableHTML(items) {
     </tr>`;
   }).join('');
   return `<table class="data-table"><thead><tr>
-    <th>ユニット名</th><th>タイプ</th><th>戦闘力</th><th>攻撃力</th><th>HP</th><th>防御力</th><th>EN</th><th>運動性</th><th>機動力</th><th>地形(宇/空/地/水上/水中)</th><th>MAP兵器</th>
+    <th>ユニット名</th><th>レア</th><th>タイプ</th><th>攻撃力</th><th>HP</th><th>防御力</th><th>EN</th><th>運動性</th><th>機動力</th><th>地形</th><th>MAP兵器</th>
   </tr></thead><tbody>${rows}</tbody></table>`;
 }
 
@@ -720,24 +740,41 @@ function supporterTableHTML(items) {
   </tr></thead><tbody>${rows}</tbody></table>`;
 }
 
-// === UNIT DETAIL ===
+// === UNIT DETAIL (with transform toggle) ===
 function showUnitDetail(name) {
   const u = allUnits.find(x => x.name === name);
   if (!u) return;
-  const s = u.stats || {};
-  const t = u.terrain || {};
+  window._currentDetailUnit = u;
+  window._currentDetailForm = 'base';
+  renderUnitDetail(u, 'base');
+  openModal();
+}
 
-  const weaponsHTML = (u.weapons||[]).map(w => `
+function renderUnitDetail(u, form) {
+  const isTransform = form === 'transform' && u.transform_form;
+  const s = isTransform ? (u.transform_form.stats || u.stats || {}) : (u.stats || {});
+  const t = isTransform ? (u.transform_form.terrain || u.terrain || {}) : (u.terrain || {});
+  const weapons = isTransform ? (u.transform_form.weapons || u.weapons || []) : (u.weapons || []);
+
+  let transformToggle = '';
+  if (u.has_transform && u.transform_form) {
+    const formName = u.transform_form.form_name || '変形後';
+    transformToggle = `<div class="transform-toggle">
+      <button class="transform-btn ${form==='base'?'active':''}" onclick="switchForm('base')">通常形態</button>
+      <button class="transform-btn ${form==='transform'?'active':''}" onclick="switchForm('transform')">${formName}</button>
+    </div>`;
+  }
+
+  const weaponsHTML = weapons.map(w => `
     <div class="weapon-detail">
       <div class="weapon-name">${w.is_map?'<span class="map-badge">MAP兵器</span>':''}${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}${w.is_map ? ` <span style="color:var(--accent2);font-size:.75em">[${w.use_count != null ? w.use_count + '回' : '-回'}]</span>` : ''}</div>
       <div class="weapon-info">
-        <div><span>属性:</span> <strong>${w.attribute}</strong></div>
-        <div><span>タイプ:</span> <strong>${w.attack_type}</strong></div>
-        <div><span>射程:</span> <strong>${w.range_min}-${w.range_max}</strong></div>
-        <div><span>威力:</span> <strong>${w.power_min}~${w.power_max}</strong></div>
-        <div><span>EN:</span> <strong>${w.en_min}~${w.en_max}</strong></div>
-        <div><span>命中:</span> <strong>${w.hit}</strong></div>
-        <div><span>クリ:</span> <strong>${w.critical}</strong></div>
+        <div><span>属性:</span> <strong>${w.attribute||'-'}</strong></div>
+        <div><span>射程:</span> <strong>${rangeDisplay(w)}</strong></div>
+        <div><span>威力:</span> <strong>${w.power||'-'}</strong></div>
+        <div><span>EN:</span> <strong>${w.en||'-'}</strong></div>
+        <div><span>命中:</span> <strong>${w.hit||'-'}</strong></div>
+        <div><span>クリ:</span> <strong>${w.critical||'-'}</strong></div>
       </div>
       ${w.weapon_effect && w.weapon_effect !== 'なし' ? `<div class="weapon-effect">効果: ${w.weapon_effect}</div>` : ''}
       ${w.use_limit && w.use_limit !== 'なし' ? `<div class="weapon-effect">制限: ${w.use_limit}</div>` : ''}
@@ -759,24 +796,24 @@ function showUnitDetail(name) {
     <button class="modal-close" onclick="closeModal()">&times;</button>
     <h2>${u.name}</h2>
     <div class="detail-badges">
-      <span class="badge badge-ur">UR</span>
+      <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
       ${u.unit_type ? `<span class="badge badge-type ${typeClass(u.unit_type)}">${u.unit_type}</span>` : ''}
       <span class="badge badge-type">${u.obtain_method||''}</span>
     </div>
+    ${transformToggle}
     <div class="detail-section">
       <div style="font-size:.8em;color:var(--text2);margin-bottom:4px">${(u.series||[]).join(' / ')}</div>
       <div class="card-tags">${(u.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
     </div>
     <div class="detail-section">
-      <h3>ステータス</h3>
+      <h3>ステータス${isTransform ? ' ('+u.transform_form.form_name+')' : ''}</h3>
       <div class="stats-grid">
-        <div class="stat-box"><div class="label">戦闘力</div><div class="val" style="color:var(--gold)">${(parseInt(u.combat_power)||0).toLocaleString()}</div></div>
         <div class="stat-box"><div class="label">HP</div><div class="val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
         <div class="stat-box"><div class="label">EN</div><div class="val">${s.en||'-'}</div></div>
         <div class="stat-box"><div class="label">攻撃力</div><div class="val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
         <div class="stat-box"><div class="label">防御力</div><div class="val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
-        <div class="stat-box"><div class="label">機動力</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
-        <div class="stat-box"><div class="label">移動力</div><div class="val">${s.mobility||'-'}</div></div>
+        <div class="stat-box"><div class="label">運動性</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
+        <div class="stat-box"><div class="label">機動力</div><div class="val">${s.mobility||'-'}</div></div>
       </div>
     </div>
     <div class="detail-section">
@@ -790,13 +827,19 @@ function showUnitDetail(name) {
       </div>
     </div>
     <div class="detail-section">
-      <h3>武装 (${(u.weapons||[]).length})</h3>
+      <h3>武装 (${weapons.length})</h3>
       ${weaponsHTML}
     </div>
     ${pureAbilities.length ? `<div class="detail-section"><h3>アビリティ (${pureAbilities.length})</h3>${abHTML}</div>` : ''}
     ${allMechanisms.length ? `<div class="detail-section"><h3>機構 (${allMechanisms.length})</h3>${mechHTML}</div>` : ''}
+    ${u.source_url ? `<a class="source-link" href="${u.source_url}" target="_blank">Altemaで見る →</a>` : ''}
   `;
-  openModal();
+}
+
+function switchForm(form) {
+  if (!window._currentDetailUnit) return;
+  window._currentDetailForm = form;
+  renderUnitDetail(window._currentDetailUnit, form);
 }
 
 // === CHARA DETAIL ===
