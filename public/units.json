@@ -7395,7 +7395,7 @@
         "is_ex": false,
         "weapon_effect": "絶対命中戦闘開始時、自身のMPが多いほど武装POWERが上昇(最大10~15%上昇)",
         "use_limit": "移動前限定で使用可能",
-        "use_count": null
+        "use_count": 1
       },
       {
         "name": "ハイパービームソード",

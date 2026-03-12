@@ -132,6 +132,25 @@ a:hover{text-decoration:underline}
 .modal .supporter-detail-block .sd-label{font-size:.7em;color:var(--accent);font-weight:600;margin-bottom:4px}
 .modal .supporter-detail-block .sd-text{font-size:.85em;color:var(--text);line-height:1.5}
 
+/* View Toggle */
+.view-toggle{display:flex;gap:2px;margin-left:12px}
+.view-btn{padding:3px 10px;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--text2);cursor:pointer;font-size:.75em;display:flex;align-items:center;gap:3px}
+.view-btn.active{border-color:var(--accent);color:var(--accent)}
+.view-btn svg{width:14px;height:14px;fill:currentColor}
+
+/* Table View */
+.data-table-wrap{max-width:1200px;margin:0 auto;padding:0 16px 40px;overflow-x:auto}
+.data-table{width:100%;border-collapse:collapse;font-size:.8em}
+.data-table th{position:sticky;top:0;background:var(--card);color:var(--accent);font-weight:600;padding:8px 10px;text-align:left;border-bottom:2px solid var(--accent);white-space:nowrap;font-size:.85em;cursor:pointer;user-select:none}
+.data-table th:hover{color:#fff}
+.data-table td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:middle;white-space:nowrap}
+.data-table tr{cursor:pointer;transition:background .15s}
+.data-table tr:hover{background:var(--card-hover)}
+.data-table .cell-name{font-weight:600;color:#fff;white-space:normal;max-width:200px}
+.data-table .cell-icon{width:32px;height:32px;border-radius:4px;border:1px solid var(--border);vertical-align:middle;margin-right:6px}
+.data-table .cell-num{text-align:right;font-variant-numeric:tabular-nums}
+.data-table .cell-center{text-align:center}
+
 @media(max-width:600px){
   .grid{grid-template-columns:1fr}
   .filters{flex-direction:column}
@@ -141,6 +160,9 @@ a:hover{text-decoration:underline}
   .modal .mechanism-item{flex-direction:column;align-items:flex-start}
   .modal .weapon-info{grid-template-columns:repeat(2,1fr)}
   .tab-btn{padding:10px 16px;font-size:.8em}
+  .data-table{font-size:.7em}
+  .data-table td,.data-table th{padding:5px 6px}
+  .view-toggle{margin-left:6px}
 }
 </style>
 </head>
@@ -201,18 +223,25 @@ a:hover{text-decoration:underline}
   </div>
   <div class="stats-bar">
     <span id="resultCount">読込中...</span>
-    <div class="sort-btns" id="sortBtns">
-      <button class="sort-btn active" data-sort="cp">戦闘力順</button>
-      <button class="sort-btn" data-sort="atk">攻撃力順</button>
-      <button class="sort-btn" data-sort="hp">HP順</button>
-      <button class="sort-btn" data-sort="def">防御力順</button>
-      <button class="sort-btn" data-sort="en">EN順</button>
-      <button class="sort-btn" data-sort="name">名前順</button>
+    <div style="display:flex;align-items:center">
+      <div class="sort-btns" id="sortBtns">
+        <button class="sort-btn active" data-sort="cp">戦闘力順</button>
+        <button class="sort-btn" data-sort="atk">攻撃力順</button>
+        <button class="sort-btn" data-sort="hp">HP順</button>
+        <button class="sort-btn" data-sort="def">防御力順</button>
+        <button class="sort-btn" data-sort="en">EN順</button>
+        <button class="sort-btn" data-sort="name">名前順</button>
+      </div>
+      <div class="view-toggle" id="viewToggle">
+        <button class="view-btn active" data-view="card" title="カード表示"><svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button>
+        <button class="view-btn" data-view="table" title="テーブル表示"><svg viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="3" rx=".5"/><rect x="1" y="6" width="14" height="3" rx=".5"/><rect x="1" y="11" width="14" height="3" rx=".5"/></svg></button>
+      </div>
     </div>
   </div>
 </div>
 
 <div class="grid" id="mainGrid"></div>
+<div class="data-table-wrap" id="tableWrap" style="display:none"></div>
 
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal" id="modalContent"></div>
@@ -223,6 +252,7 @@ let allUnits = [], allCharas = [], allSupporters = [];
 let currentTab = 'unit';
 let currentSort = 'cp';
 let currentDir = -1;
+let currentView = 'card';
 
 async function init() {
   const [uResp, cResp, sResp] = await Promise.all([
@@ -237,6 +267,7 @@ async function init() {
   document.getElementById('supporterTabCount').textContent = `(${allSupporters.length})`;
 
   setupTabs();
+  setupViewToggle();
   buildFilters();
   render();
 }
@@ -250,6 +281,17 @@ function setupTabs() {
       resetFilters();
       buildFilters();
       updateUI();
+      render();
+    });
+  });
+}
+
+function setupViewToggle() {
+  document.querySelectorAll('.view-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentView = btn.dataset.view;
+      document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
       render();
     });
   });
@@ -449,13 +491,28 @@ function render() {
   const labels = { unit: 'ユニット', chara: 'キャラ', supporter: 'サポーター' };
   document.getElementById('resultCount').textContent = `${filtered.length} / ${data.length} ${labels[currentTab]}`;
   const grid = document.getElementById('mainGrid');
+  const tableWrap = document.getElementById('tableWrap');
 
-  if (currentTab === 'unit') {
-    grid.innerHTML = filtered.map(u => unitCardHTML(u)).join('');
-  } else if (currentTab === 'chara') {
-    grid.innerHTML = filtered.map(c => charaCardHTML(c)).join('');
+  if (currentView === 'card') {
+    grid.style.display = '';
+    tableWrap.style.display = 'none';
+    if (currentTab === 'unit') {
+      grid.innerHTML = filtered.map(u => unitCardHTML(u)).join('');
+    } else if (currentTab === 'chara') {
+      grid.innerHTML = filtered.map(c => charaCardHTML(c)).join('');
+    } else {
+      grid.innerHTML = filtered.map(s => supporterCardHTML(s)).join('');
+    }
   } else {
-    grid.innerHTML = filtered.map(s => supporterCardHTML(s)).join('');
+    grid.style.display = 'none';
+    tableWrap.style.display = '';
+    if (currentTab === 'unit') {
+      tableWrap.innerHTML = unitTableHTML(filtered);
+    } else if (currentTab === 'chara') {
+      tableWrap.innerHTML = charaTableHTML(filtered);
+    } else {
+      tableWrap.innerHTML = supporterTableHTML(filtered);
+    }
   }
 }
 
@@ -493,7 +550,7 @@ function unitCardHTML(u) {
   const weapons = (u.weapons||[]).map(w => {
     let label = w.name;
     if (w.is_map) label = '（MAP兵器）' + label;
-    if (w.is_map && w.use_count) label += ` [${w.use_count}回]`;
+    if (w.is_map) label += ` [${w.use_count != null ? w.use_count + '回' : '-回'}]`;
     return `<span class="weapon-tag${w.is_ex?' ex':''}${w.is_map?' map':''}">${label}</span>`;
   }).join('');
   const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag">${t}</span>`).join('');
@@ -595,6 +652,74 @@ function supporterCardHTML(s) {
   </div>`;
 }
 
+// === TABLE VIEWS ===
+function unitTableHTML(items) {
+  const rows = items.map(u => {
+    const s = u.stats||{};
+    const t = u.terrain||{};
+    const mapW = (u.weapons||[]).filter(w=>w.is_map);
+    const mapLabel = mapW.length ? mapW.map(w=>w.name+(w.use_count!=null?`[${w.use_count}回]`:'[-回]')).join(', ') : '-';
+    const terrStr = ['space','air','ground','surface','water'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
+    return `<tr onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
+      <td class="cell-name">${u.icon_url?`<img class="cell-icon" src="${u.icon_url}" alt="" loading="lazy">`:''}${u.name}</td>
+      <td class="cell-center">${u.unit_type||'-'}</td>
+      <td class="cell-num">${(parseInt(u.combat_power)||0).toLocaleString()}</td>
+      <td class="cell-num">${(parseInt(s.attack)||0).toLocaleString()}</td>
+      <td class="cell-num">${(parseInt(s.hp)||0).toLocaleString()}</td>
+      <td class="cell-num">${(parseInt(s.defense)||0).toLocaleString()}</td>
+      <td class="cell-num">${(parseInt(s.en)||0).toLocaleString()}</td>
+      <td class="cell-num">${parseInt(s.agility)||0}</td>
+      <td class="cell-num">${parseInt(s.mobility)||0}</td>
+      <td class="cell-center" style="font-size:.85em">${terrStr}</td>
+      <td style="font-size:.8em;white-space:normal;max-width:180px">${mapLabel}</td>
+    </tr>`;
+  }).join('');
+  return `<table class="data-table"><thead><tr>
+    <th>ユニット名</th><th>タイプ</th><th>戦闘力</th><th>攻撃力</th><th>HP</th><th>防御力</th><th>EN</th><th>運動性</th><th>機動力</th><th>地形(宇/空/地/水上/水中)</th><th>MAP兵器</th>
+  </tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function charaTableHTML(items) {
+  const rows = items.map(c => {
+    const s = c.stats||{};
+    const skillNames = (c.skills||[]).map(sk=>`${sk.name.replace(/\(SP:\d+\)/,'').trim()} SP:${sk.sp_cost||'?'}`).join(', ');
+    return `<tr onclick="showCharaDetail('${c.name.replace(/'/g,"\\'")}')">
+      <td class="cell-name">${c.name}</td>
+      <td class="cell-center">${c.rarity||'-'}</td>
+      <td class="cell-center">${c.chara_type||'-'}</td>
+      <td class="cell-num">${s.combat_power||'-'}</td>
+      <td class="cell-num">${s.shooting||'-'}</td>
+      <td class="cell-num">${s.melee||'-'}</td>
+      <td class="cell-num">${s.awakening||'-'}</td>
+      <td class="cell-num">${s.defense||'-'}</td>
+      <td class="cell-num">${s.reaction||'-'}</td>
+      <td style="font-size:.75em;white-space:normal;max-width:250px">${skillNames||'-'}</td>
+    </tr>`;
+  }).join('');
+  return `<table class="data-table"><thead><tr>
+    <th>キャラ名</th><th>レア</th><th>タイプ</th><th>戦闘力</th><th>射撃</th><th>格闘</th><th>覚醒</th><th>守備</th><th>反応</th><th>スキル</th>
+  </tr></thead><tbody>${rows}</tbody></table>`;
+}
+
+function supporterTableHTML(items) {
+  const rows = items.map(s => {
+    const leaderShort = s.leader_skill?(s.leader_skill.length>80?s.leader_skill.substring(0,80)+'...':s.leader_skill):'-';
+    const supportShort = s.support_skill?(s.support_skill.length>80?s.support_skill.substring(0,80)+'...':s.support_skill):'-';
+    return `<tr onclick="showSupporterDetail('${s.name.replace(/'/g,"\\'")}')">
+      <td class="cell-name">${s.name}</td>
+      <td class="cell-center">${s.rarity||'-'}</td>
+      <td class="cell-num">${s.hp||'-'}</td>
+      <td class="cell-num">${s.attack||'-'}</td>
+      <td class="cell-center" style="font-size:.8em">${s.target_series||'-'}</td>
+      <td style="font-size:.75em;white-space:normal;max-width:250px">${leaderShort}</td>
+      <td style="font-size:.75em;white-space:normal;max-width:250px">${supportShort}</td>
+    </tr>`;
+  }).join('');
+  return `<table class="data-table"><thead><tr>
+    <th>サポーター名</th><th>レア</th><th>HP</th><th>攻撃力</th><th>対象</th><th>リーダースキル</th><th>サポートスキル</th>
+  </tr></thead><tbody>${rows}</tbody></table>`;
+}
+
 // === UNIT DETAIL ===
 function showUnitDetail(name) {
   const u = allUnits.find(x => x.name === name);
@@ -604,7 +729,7 @@ function showUnitDetail(name) {
 
   const weaponsHTML = (u.weapons||[]).map(w => `
     <div class="weapon-detail">
-      <div class="weapon-name">${w.is_map?'<span class="map-badge">MAP兵器</span>':''}${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}${w.is_map && w.use_count ? ` <span style="color:var(--accent2);font-size:.75em">[${w.use_count}回]</span>` : ''}</div>
+      <div class="weapon-name">${w.is_map?'<span class="map-badge">MAP兵器</span>':''}${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}${w.is_map ? ` <span style="color:var(--accent2);font-size:.75em">[${w.use_count != null ? w.use_count + '回' : '-回'}]</span>` : ''}</div>
       <div class="weapon-info">
         <div><span>属性:</span> <strong>${w.attribute}</strong></div>
         <div><span>タイプ:</span> <strong>${w.attack_type}</strong></div>

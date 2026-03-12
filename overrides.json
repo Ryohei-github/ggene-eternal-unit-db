@@ -1,0 +1,18 @@
+{
+  "_comment": "手動補正データ: GameWithから取得できない/誤っているデータをここで上書きする。スクリーンショット等で確認した正確な値を記載。apply_overrides.py で units.json に適用される。",
+  "units": [
+    {
+      "name": "ガンダムDX(EX)",
+      "verified_date": "2026-03-12",
+      "source": "ゲーム内スクリーンショット",
+      "overrides": {
+        "weapons": [
+          {
+            "match": { "name": "ツインサテライトキャノン", "is_map": true },
+            "set": { "use_count": 1 }
+          }
+        ]
+      }
+    }
+  ]
+}
