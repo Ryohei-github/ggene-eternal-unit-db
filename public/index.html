@@ -41,6 +41,22 @@ a:hover{text-decoration:underline}
 .filter-group label{font-size:.75em;color:var(--text2);white-space:nowrap}
 .filter-group select{padding:6px 10px;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.85em;outline:none}
 .filter-group select:focus{border-color:var(--accent)}
+.filter-btn-group{display:flex;flex-wrap:wrap;gap:4px}
+.filter-btn{padding:4px 10px;background:var(--card);border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;font-size:.78em;transition:all .15s;white-space:nowrap;display:inline-flex;align-items:center;gap:3px}
+.filter-btn:hover{border-color:var(--accent);color:var(--text)}
+.filter-btn.active{background:rgba(0,212,255,.15);border-color:var(--accent);color:var(--accent);font-weight:600}
+.filter-btn img{width:14px;height:14px;vertical-align:middle;filter:drop-shadow(0 0 1px rgba(0,0,0,.5))}
+.filter-btn-ur.active{background:rgba(155,48,255,.2);border-color:#bf5fff;color:#bf5fff}
+.filter-btn-ssr.active{background:rgba(255,215,0,.15);border-color:var(--gold);color:var(--gold)}
+.filter-btn-sr.active{background:rgba(192,192,192,.15);border-color:#c0c0c0;color:#c0c0c0}
+.filter-btn-r.active{background:rgba(205,133,63,.15);border-color:#cd853f;color:#cd853f}
+.filter-btn-n.active{background:rgba(119,119,119,.15);border-color:#999;color:#999}
+.filter-group-wide{flex-basis:100%}
+.debuff-filter-row{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
+.debuff-rate-wrap{display:inline-flex;align-items:center;gap:4px;margin-left:4px}
+.debuff-rate-wrap label{font-size:.7em;color:var(--accent);white-space:nowrap}
+.debuff-rate-wrap select{padding:4px 8px;background:var(--card);border:1px solid var(--accent);border-radius:6px;color:var(--accent);font-size:.8em;outline:none}
+.debuff-divider{width:1px;height:20px;background:var(--border);margin:0 4px}
 .stats-bar{display:flex;justify-content:space-between;align-items:center;font-size:.8em;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border);margin-bottom:12px}
 .sort-btns{display:flex;gap:4px;flex-wrap:wrap}
 .sort-btn{padding:3px 8px;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--text2);cursor:pointer;font-size:.75em}
@@ -178,6 +194,9 @@ a:hover{text-decoration:underline}
 @media(max-width:600px){
   .grid{grid-template-columns:1fr}
   .filters{flex-direction:column}
+  .filter-btn{padding:3px 7px;font-size:.7em}
+  .filter-group-wide{flex-basis:auto}
+  .debuff-filter-row{flex-wrap:wrap}
   .card-stats{grid-template-columns:repeat(2,1fr)}
   .card-stats-sub{grid-template-columns:repeat(2,1fr)}
   .modal .stats-grid{grid-template-columns:repeat(2,1fr)}
@@ -213,9 +232,13 @@ a:hover{text-decoration:underline}
     <input type="text" id="searchInput" placeholder="ユニット名で検索...（例: サザビー、ガンダム）">
   </div>
   <div class="filters" id="filtersContainer">
-    <div class="filter-group">
+    <div class="filter-group" id="filterTypeGroup">
       <label>タイプ</label>
-      <select id="filterType"><option value="">すべて</option></select>
+      <div class="filter-btn-group" id="filterTypeButtons"></div>
+    </div>
+    <div class="filter-group" id="filterRarityGroup">
+      <label>レア</label>
+      <div class="filter-btn-group" id="filterRarityButtons"></div>
     </div>
     <div class="filter-group" id="filterSeriesGroup">
       <label>シリーズ</label>
@@ -236,29 +259,17 @@ a:hover{text-decoration:underline}
         <option value="水中">水中◯</option>
       </select>
     </div>
-    <div class="filter-group" id="filterWeaponEffectGroup">
-      <label>武装効果</label>
-      <select id="filterWeaponEffect">
-        <option value="">すべて</option>
-        <option value="絶対命中">絶対命中</option>
-        <option value="属性軽減無効">属性軽減無効</option>
-        <option value="先制攻撃">先制攻撃</option>
-        <option value="攻撃力.*減少">攻撃力減少</option>
-        <option value="防御力.*減少">防御力減少</option>
-        <option value="機動力.*減少">機動力減少</option>
-        <option value="命中率.*減少">命中率減少</option>
-        <option value="ビーム">ビーム系効果</option>
-        <option value="物理">物理系効果</option>
-        <option value="特殊">特殊系効果</option>
-        <option value="クリティカル">クリティカル</option>
-        <option value="近いほど|遠いほど">距離POWER上昇</option>
-        <option value="HP.*POWER|HPが.*上昇">HP依存POWER</option>
-        <option value="回復">回復系</option>
-      </select>
-    </div>
-    <div class="filter-group" id="filterRarityGroup">
-      <label>レア</label>
-      <select id="filterRarity"><option value="">すべて</option></select>
+    <div class="filter-group filter-group-wide" id="filterDebuffGroup">
+      <label>デバフ効果</label>
+      <div class="debuff-filter-row" id="debuffFilterRow">
+        <div class="filter-btn-group" id="debuffCategoryButtons"></div>
+        <div class="debuff-rate-wrap" id="debuffRateWrap" style="display:none">
+          <label>最低効果率</label>
+          <select id="debuffMinRate"><option value="">すべて</option></select>
+        </div>
+        <div class="debuff-divider" id="debuffDivider"></div>
+        <div class="filter-btn-group" id="specialEffectButtons"></div>
+      </div>
     </div>
     <div class="filter-group" id="filterCharaTypeGroup" style="display:none">
       <label>キャラタイプ</label>
@@ -342,14 +353,19 @@ function setupViewToggle() {
 
 function resetFilters() {
   document.getElementById('searchInput').value = '';
-  document.getElementById('filterType').innerHTML = '<option value="">すべて</option>';
+  document.getElementById('filterTypeButtons').innerHTML = '';
   document.getElementById('filterSeries').innerHTML = '<option value="">すべて</option>';
   document.getElementById('filterTag').innerHTML = '<option value="">すべて</option>';
   document.getElementById('filterTerrain').value = '';
-  document.getElementById('filterWeaponEffect').value = '';
-  document.getElementById('filterRarity').innerHTML = '<option value="">すべて</option>';
+  document.getElementById('filterRarityButtons').innerHTML = '';
   document.getElementById('filterCharaType').innerHTML = '<option value="">すべて</option>';
   document.getElementById('filterTarget').innerHTML = '<option value="">すべて</option>';
+  activeDebuffKey = '';
+  activeSpecialKey = '';
+  debuffMinRate = 0;
+  document.getElementById('debuffRateWrap').style.display = 'none';
+  document.getElementById('debuffMinRate').innerHTML = '<option value="">すべて</option>';
+  document.querySelectorAll('#debuffCategoryButtons .filter-btn, #specialEffectButtons .filter-btn').forEach(b => b.classList.remove('active'));
 }
 
 function updateUI() {
@@ -364,14 +380,14 @@ function updateUI() {
   };
   document.getElementById('searchInput').placeholder = placeholders[currentTab];
 
+  document.getElementById('filterTypeGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterSeriesGroup').style.display = isUnit || isChara ? '' : 'none';
   document.getElementById('filterTagGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterTerrainGroup').style.display = isUnit ? '' : 'none';
-  document.getElementById('filterWeaponEffectGroup').style.display = isUnit ? '' : 'none';
+  document.getElementById('filterDebuffGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterRarityGroup').style.display = '';
   document.getElementById('filterCharaTypeGroup').style.display = isChara ? '' : 'none';
   document.getElementById('filterTargetGroup').style.display = isSupporter ? '' : 'none';
-  document.querySelector('#filterType').parentElement.style.display = isUnit ? '' : 'none';
 
   const sortContainer = document.getElementById('sortBtns');
   if (isUnit) {
@@ -421,11 +437,76 @@ function buildFilters() {
       (u.series||[]).forEach(s => series.add(s));
       (u.tags||[]).forEach(t => tags.add(t));
     });
-    fillSelect('filterType', [...types].sort());
+    // Type buttons
+    const typeOrder = ['攻撃','耐久','支援','射撃','格闘','覚醒'];
+    const typeBtns = typeOrder.filter(t => types.has(t)).map(t => {
+      const icon = TYPE_ICON_MAP[t] ? `<img src="${TYPE_ICON_MAP[t]}" alt="${t}">` : '';
+      return `<button class="filter-btn" data-value="${t}">${icon}${t}</button>`;
+    }).join('');
+    document.getElementById('filterTypeButtons').innerHTML = typeBtns;
+    document.querySelectorAll('#filterTypeButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
+    });
+    // Rarity buttons
+    const rarityOrder = ['UR','SSR','SR','R','N'];
+    const rarBtns = rarityOrder.filter(r => rarities.has(r)).map(r =>
+      `<button class="filter-btn filter-btn-${r.toLowerCase()}" data-value="${r}">${r}</button>`
+    ).join('');
+    document.getElementById('filterRarityButtons').innerHTML = rarBtns;
+    document.querySelectorAll('#filterRarityButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
+    });
     fillSelect('filterSeries', [...series].sort());
     fillSelect('filterTag', [...tags].sort());
-    const rarityOrder = ['UR','SSR','SR','R','N'];
-    fillSelect('filterRarity', rarityOrder.filter(r => rarities.has(r)));
+    // Debuff category buttons
+    const debuffBtns = DEBUFF_CATEGORIES.map(d =>
+      `<button class="filter-btn" data-debuff="${d.key}">${d.label}</button>`
+    ).join('');
+    document.getElementById('debuffCategoryButtons').innerHTML = debuffBtns;
+    document.querySelectorAll('#debuffCategoryButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.debuff;
+        if (activeDebuffKey === key) {
+          activeDebuffKey = ''; btn.classList.remove('active');
+          document.getElementById('debuffRateWrap').style.display = 'none';
+          debuffMinRate = 0;
+        } else {
+          activeDebuffKey = key; activeSpecialKey = '';
+          document.querySelectorAll('#debuffCategoryButtons .filter-btn, #specialEffectButtons .filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const cat = DEBUFF_CATEGORIES.find(d => d.key === key);
+          const rateSel = document.getElementById('debuffMinRate');
+          rateSel.innerHTML = '<option value="">すべて</option>';
+          (cat.rates||[]).forEach(r => { const op = document.createElement('option'); op.value = r; op.textContent = r + '%以上'; rateSel.appendChild(op); });
+          document.getElementById('debuffRateWrap').style.display = '';
+          debuffMinRate = 0;
+        }
+        render();
+      });
+    });
+    // Special effect buttons
+    const specBtns = SPECIAL_EFFECTS.map(s =>
+      `<button class="filter-btn" data-special="${s.key}">${s.label}</button>`
+    ).join('');
+    document.getElementById('specialEffectButtons').innerHTML = specBtns;
+    document.querySelectorAll('#specialEffectButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.special;
+        if (activeSpecialKey === key) {
+          activeSpecialKey = ''; btn.classList.remove('active');
+        } else {
+          activeSpecialKey = key; activeDebuffKey = ''; debuffMinRate = 0;
+          document.querySelectorAll('#debuffCategoryButtons .filter-btn, #specialEffectButtons .filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById('debuffRateWrap').style.display = 'none';
+        }
+        render();
+      });
+    });
+    document.getElementById('debuffMinRate').addEventListener('change', (e) => {
+      debuffMinRate = parseInt(e.target.value) || 0;
+      render();
+    });
   } else if (currentTab === 'chara') {
     const rarities = new Set(), types = new Set(), series = new Set();
     allCharas.forEach(c => {
@@ -433,7 +514,14 @@ function buildFilters() {
       if (c.chara_type) types.add(c.chara_type);
       if (c.series) series.add(c.series);
     });
-    fillSelect('filterRarity', [...rarities].sort());
+    const rarityOrder = ['UR','SSR','SR','R','N'];
+    const rarBtns = rarityOrder.filter(r => rarities.has(r)).map(r =>
+      `<button class="filter-btn filter-btn-${r.toLowerCase()}" data-value="${r}">${r}</button>`
+    ).join('');
+    document.getElementById('filterRarityButtons').innerHTML = rarBtns;
+    document.querySelectorAll('#filterRarityButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
+    });
     fillSelect('filterCharaType', [...types].sort());
     fillSelect('filterSeries', [...series].sort());
   } else {
@@ -442,7 +530,14 @@ function buildFilters() {
       if (s.rarity) rarities.add(s.rarity);
       if (s.target_series) targets.add(s.target_series);
     });
-    fillSelect('filterRarity', [...rarities].sort());
+    const rarityOrder = ['UR','SSR','SR','R','N'];
+    const rarBtns = rarityOrder.filter(r => rarities.has(r)).map(r =>
+      `<button class="filter-btn filter-btn-${r.toLowerCase()}" data-value="${r}">${r}</button>`
+    ).join('');
+    document.getElementById('filterRarityButtons').innerHTML = rarBtns;
+    document.querySelectorAll('#filterRarityButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
+    });
     fillSelect('filterTarget', [...targets].sort());
   }
 }
@@ -458,17 +553,23 @@ function getData() {
   return allSupporters;
 }
 
+function getActiveTypes() {
+  return [...document.querySelectorAll('#filterTypeButtons .filter-btn.active')].map(b => b.dataset.value);
+}
+function getActiveRarities() {
+  return [...document.querySelectorAll('#filterRarityButtons .filter-btn.active')].map(b => b.dataset.value);
+}
+
 function getFiltered() {
   const q = document.getElementById('searchInput').value.toLowerCase();
   const data = getData();
-  const rarity = document.getElementById('filterRarity').value;
+  const activeRarities = getActiveRarities();
 
   if (currentTab === 'unit') {
-    const type = document.getElementById('filterType').value;
+    const activeTypes = getActiveTypes();
     const series = document.getElementById('filterSeries').value;
     const tag = document.getElementById('filterTag').value;
     const terrain = document.getElementById('filterTerrain').value;
-    const weaponEffect = document.getElementById('filterWeaponEffect').value;
     return data.filter(u => {
       if (q) {
         const nameMatch = u.name.toLowerCase().includes(q);
@@ -477,15 +578,36 @@ function getFiltered() {
         );
         if (!nameMatch && !weaponMatch) return false;
       }
-      if (type && u.type !== type) return false;
-      if (rarity && u.rarity !== rarity) return false;
+      if (activeTypes.length > 0 && !activeTypes.includes(u.type)) return false;
+      if (activeRarities.length > 0 && !activeRarities.includes(u.rarity)) return false;
       if (series && !(u.series||[]).includes(series)) return false;
       if (tag && !(u.tags||[]).includes(tag)) return false;
       if (terrain && (!u.normal?.terrain || u.normal.terrain[terrain] !== '◯')) return false;
-      if (weaponEffect) {
-        const re = new RegExp(weaponEffect);
-        const hasEffect = (u.normal_weapons||[]).concat(u.transformed_weapons||[]).some(w => re.test(w.effect||''));
-        if (!hasEffect) return false;
+      // Debuff category filter with min rate
+      if (activeDebuffKey) {
+        const cat = DEBUFF_CATEGORIES.find(d => d.key === activeDebuffKey);
+        if (cat) {
+          const allWeapons = (u.normal_weapons||[]).concat(u.transformed_weapons||[]);
+          const hasDebuff = allWeapons.some(w => {
+            const eff = w.effect || '';
+            if (!cat.pattern.test(eff)) return false;
+            if (debuffMinRate > 0) {
+              const maxRate = getMaxDebuffRate(eff, cat.pattern);
+              return maxRate >= debuffMinRate;
+            }
+            return true;
+          });
+          if (!hasDebuff) return false;
+        }
+      }
+      // Special effect filter
+      if (activeSpecialKey) {
+        const spec = SPECIAL_EFFECTS.find(s => s.key === activeSpecialKey);
+        if (spec) {
+          const allWeapons = (u.normal_weapons||[]).concat(u.transformed_weapons||[]);
+          const hasEffect = allWeapons.some(w => spec.pattern.test(w.effect||''));
+          if (!hasEffect) return false;
+        }
       }
       return true;
     });
@@ -494,7 +616,7 @@ function getFiltered() {
     const series = document.getElementById('filterSeries').value;
     return data.filter(c => {
       if (q && !c.name.toLowerCase().includes(q)) return false;
-      if (rarity && c.rarity !== rarity) return false;
+      if (activeRarities.length > 0 && !activeRarities.includes(c.rarity)) return false;
       if (cType && c.chara_type !== cType) return false;
       if (series && c.series !== series) return false;
       return true;
@@ -503,7 +625,7 @@ function getFiltered() {
     const target = document.getElementById('filterTarget').value;
     return data.filter(s => {
       if (q && !s.name.toLowerCase().includes(q)) return false;
-      if (rarity && s.rarity !== rarity) return false;
+      if (activeRarities.length > 0 && !activeRarities.includes(s.rarity)) return false;
       if (target && s.target_series !== target) return false;
       return true;
     });
@@ -575,6 +697,38 @@ const TYPE_ICON_MAP = {
   '覚醒': '/assets/type_icons/UI_Common_TypeIcon_Awaken_S.png',
   'なし': '/assets/type_icons/UI_Common_TypeIcon_None_S.png'
 };
+// === Debuff Filter Config ===
+const DEBUFF_CATEGORIES = [
+  { key:'atkDown', label:'攻撃力↓', pattern:/攻撃力(\d+)(?:~(\d+))?%減少/, rates:[15,20,25,30,35] },
+  { key:'defDown', label:'防御力↓', pattern:/防御力(\d+)(?:~(\d+))?%減少/, rates:[20,25,30,35] },
+  { key:'mobDown', label:'機動力↓', pattern:/機動力(\d+)(?:~(\d+))?%減少/, rates:[20,25,30] },
+  { key:'hitDown', label:'命中率↓', pattern:/命中率(\d+)(?:~(\d+))?%減少/, rates:[5,10,12,15,17] },
+  { key:'beamDmgUp', label:'ビーム被ダメ↑', pattern:/ビーム武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?%上昇/, rates:[20,25,30,35] },
+  { key:'physDmgUp', label:'物理被ダメ↑', pattern:/物理武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?%上昇/, rates:[10,20,25,30,35] },
+  { key:'specDmgUp', label:'特殊被ダメ↑', pattern:/特殊武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?%上昇/, rates:[20,25,30,35] },
+  { key:'beamPwDown', label:'ビームPW↓', pattern:/ビーム武装POWER(\d+)(?:~(\d+))?%減少/, rates:[20,25,30,35] },
+  { key:'physPwDown', label:'物理PW↓', pattern:/物理武装POWER(\d+)(?:~(\d+))?%減少/, rates:[20,25,30,35] },
+  { key:'specPwDown', label:'特殊PW↓', pattern:/特殊武装POWER(\d+)(?:~(\d+))?%減少/, rates:[20,25,30,35] },
+];
+const SPECIAL_EFFECTS = [
+  { key:'absHit', label:'絶対命中', pattern:/絶対命中/ },
+  { key:'noReduce', label:'属性軽減無効', pattern:/属性軽減無効/ },
+  { key:'preempt', label:'先制攻撃', pattern:/先制攻撃/ },
+  { key:'crit', label:'クリティカル↑', pattern:/クリティカルダメージ.*上昇/ },
+  { key:'heal', label:'回復', pattern:/回復/ },
+];
+let activeDebuffKey = '';
+let activeSpecialKey = '';
+let debuffMinRate = 0;
+
+function getMaxDebuffRate(effectText, pattern) {
+  const m = effectText.match(pattern);
+  if (!m) return 0;
+  const base = parseInt(m[2] || m[1]) || 0;
+  const bonusMatch = effectText.match(/さらに[^\d]*(\d+)%/);
+  return base + (bonusMatch ? parseInt(bonusMatch[1]) : 0);
+}
+
 const MAP_WEAPON_ICON = '/assets/map_weapon/UI_Battle_MapUI_MapWeapon_Icon_Red.png';
 const MAP_WEAPON_ICON_BLUE = '/assets/map_weapon/UI_Battle_MapUI_MapWeapon_Icon_Blue.png';
 const WEAPON_MAP_ICON = '/assets/weapon_icons/UI_Common_WeaponIcon_map.png';
@@ -1071,12 +1225,9 @@ function filterByTag(tagName) {
 
 // Event listeners
 document.getElementById('searchInput').addEventListener('input', render);
-document.getElementById('filterType').addEventListener('change', render);
 document.getElementById('filterSeries').addEventListener('change', render);
 document.getElementById('filterTag').addEventListener('change', render);
 document.getElementById('filterTerrain').addEventListener('change', render);
-document.getElementById('filterWeaponEffect').addEventListener('change', render);
-document.getElementById('filterRarity').addEventListener('change', render);
 document.getElementById('filterCharaType').addEventListener('change', render);
 document.getElementById('filterTarget').addEventListener('change', render);
 document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
