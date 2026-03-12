@@ -303,6 +303,7 @@ a:hover{text-decoration:underline}
   <div class="accent-line"></div>
   <div class="tab-bar" id="tabBar">
     <button class="tab-btn active" data-tab="unit">ユニット<span class="tab-count" id="unitTabCount"></span></button>
+    <button class="tab-btn" data-tab="chara">キャラ<span class="tab-count" id="charaTabCount"></span></button>
   </div>
 </div>
 
@@ -407,10 +408,39 @@ async function init() {
     const s = u.normal?.stats;
     return s && (s.hp > 0 || s.attack > 0 || s.defense > 0 || s.en > 0);
   });
-  allCharas = [];
+  // キャラデータ: ステータス全0 かつ名前に(UR/ (SSR/ 等のパターンを含むエントリ
+  allCharas = allData.filter(u => {
+    const s = u.normal?.stats;
+    const isZero = !s || (s.hp === 0 && s.attack === 0 && s.defense === 0 && s.en === 0);
+    return isZero && /\((UR|SSR|SR|R|N)\//.test(u.name);
+  }).map(u => {
+    // units.jsonのキャラデータをcharaCardHTML/showCharaDetailが期待する形式に変換
+    const abilities = (u.normal?.abilities || []);
+    // スキル: SP付きのアビリティを分離
+    const skills = abilities.filter(a => /\(SP:\d+\)/.test(a.name)).map(a => {
+      const spMatch = a.name.match(/\(SP:(\d+)\)/);
+      return { name: a.name, effect: a.desc, sp_cost: spMatch ? parseInt(spMatch[1]) : 0 };
+    });
+    // アビリティ: SPなしのもの
+    const charaAbilities = abilities.filter(a => !/\(SP:\d+\)/.test(a.name)).map(a => ({
+      name: a.name, effect: a.desc
+    }));
+    return {
+      name: u.name,
+      image: u.image,
+      rarity: u.rarity,
+      chara_type: u.type,
+      obtain_method: u.obtain || '',
+      series: (u.series || []).join(' / '),
+      stats: {},
+      skills: skills,
+      abilities: charaAbilities
+    };
+  });
   allSupporters = [];
 
   document.getElementById('unitTabCount').textContent = `(${allUnits.length})`;
+  document.getElementById('charaTabCount').textContent = `(${allCharas.length})`;
 
   setupTabs();
   setupViewToggle();
@@ -947,8 +977,11 @@ function charaCardHTML(c) {
 
   const abilCount = (c.abilities||[]).length;
 
+  const iconHTML = c.image ? `<img class="card-icon" src="${c.image}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
+
   return `<div class="card" onclick="showCharaDetail('${c.name.replace(/'/g,"\\'")}')">
     <div class="card-header">
+      ${iconHTML}
       <div class="card-name">${c.name}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
@@ -1241,9 +1274,12 @@ function showCharaDetail(name) {
     <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.effect}</span></div>
   `).join('');
 
+  const charaImgHTML = c.image ? `<div style="text-align:center;margin:10px 0"><img src="${c.image}" alt="${c.name}" style="max-width:120px;border-radius:8px;border:1px solid var(--border)" onerror="this.style.display='none'"></div>` : '';
+
   document.getElementById('modalContent').innerHTML = `
     <button class="modal-close" onclick="closeModal()">&times;</button>
     <h2>${c.name}</h2>
+    ${charaImgHTML}
     <div class="detail-badges">
       <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
       ${typeBadgeHTML(c.chara_type)}
