@@ -53,6 +53,7 @@ a:hover{text-decoration:underline}
 .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;transition:all .2s}
 .card:hover{background:var(--card-hover);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,212,255,.1)}
 .card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:8px}
+.card-icon{width:48px;height:48px;border-radius:6px;border:1px solid var(--border);object-fit:cover;flex-shrink:0;background:var(--bg)}
 .card-name{font-size:1.05em;font-weight:700;color:#fff;flex:1;min-width:0}
 .card-badges{display:flex;gap:4px;flex-shrink:0;flex-wrap:wrap}
 .badge{padding:2px 8px;border-radius:4px;font-size:.65em;font-weight:700;letter-spacing:.5px}
@@ -109,6 +110,8 @@ a:hover{text-decoration:underline}
 .modal{background:var(--card);border:1px solid var(--accent);border-radius:12px;max-width:700px;width:100%;padding:24px;position:relative}
 .modal-close{position:absolute;top:12px;right:16px;font-size:1.5em;color:var(--text2);cursor:pointer;background:none;border:none}
 .modal-close:hover{color:#fff}
+.modal-header-row{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+.modal-icon{width:64px;height:64px;border-radius:8px;border:1px solid var(--border);object-fit:cover;flex-shrink:0;background:var(--bg)}
 .modal h2{font-size:1.3em;margin-bottom:4px;color:#fff}
 .modal .detail-badges{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
 .modal .detail-section{margin-bottom:16px}
@@ -157,6 +160,7 @@ a:hover{text-decoration:underline}
 .data-table tr{cursor:pointer;transition:background .15s}
 .data-table tr:hover{background:var(--card-hover)}
 .data-table .cell-name{font-weight:600;color:#fff;white-space:normal;max-width:200px}
+.data-table .cell-icon{width:32px;height:32px;border-radius:4px;vertical-align:middle;margin-right:6px;border:1px solid var(--border)}
 .data-table .cell-num{text-align:right;font-variant-numeric:tabular-nums}
 .data-table .cell-center{text-align:center}
 
@@ -572,8 +576,11 @@ function unitCardHTML(u) {
   }).join('');
   const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag">${t}</span>`).join('');
 
+  const iconHTML = u.icon_url ? `<img class="card-icon" src="${u.icon_url}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
+
   return `<div class="card" onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
     <div class="card-header">
+      ${iconHTML}
       <div class="card-name">${u.name}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
@@ -676,8 +683,9 @@ function unitTableHTML(items) {
     const mapW = (u.weapons||[]).filter(w=>w.is_map);
     const mapLabel = mapW.length ? mapW.map(w=>w.name+(w.use_count!=null?`[${w.use_count}回]`:'[-回]')).join(', ') : '-';
     const terrStr = ['space','air','ground','surface','water'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
+    const iconTd = u.icon_url ? `<img class="cell-icon" src="${u.icon_url}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
     return `<tr onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
-      <td class="cell-name">${u.name}</td>
+      <td class="cell-name">${iconTd}${u.name}</td>
       <td class="cell-center"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.7em">${u.rarity||'?'}</span></td>
       <td class="cell-center">${u.unit_type||'-'}</td>
       <td class="cell-num">${(parseInt(s.attack)||0).toLocaleString()}</td>
@@ -788,13 +796,20 @@ function renderUnitDetail(u, form) {
     <div class="mechanism-item"><span class="mechanism-name">${m.name}</span><span class="mechanism-effect">${m.effect||''}</span></div>
   `).join('');
 
+  const modalIconHTML = u.icon_url ? `<img class="modal-icon" src="${u.icon_url}" alt="" onerror="this.style.display='none'">` : '';
+
   document.getElementById('modalContent').innerHTML = `
     <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2>${u.name}</h2>
-    <div class="detail-badges">
-      <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
-      ${u.unit_type ? `<span class="badge badge-type ${typeClass(u.unit_type)}">${u.unit_type}</span>` : ''}
-      <span class="badge badge-type">${u.obtain_method||''}</span>
+    <div class="modal-header-row">
+      ${modalIconHTML}
+      <div>
+        <h2>${u.name}</h2>
+        <div class="detail-badges">
+          <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
+          ${u.unit_type ? `<span class="badge badge-type ${typeClass(u.unit_type)}">${u.unit_type}</span>` : ''}
+          <span class="badge badge-type">${u.obtain_method||''}</span>
+        </div>
+      </div>
     </div>
     ${transformToggle}
     <div class="detail-section">
