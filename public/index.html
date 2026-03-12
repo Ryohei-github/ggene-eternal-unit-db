@@ -67,6 +67,10 @@ a:hover{text-decoration:underline}
 .badge-def{border-color:#4488ff;color:#6699ff}
 .badge-sup{border-color:#daa520;color:#ffd700}
 .badge-ex{background:linear-gradient(135deg,var(--accent2),#ff8844);color:#fff}
+.badge-icon{display:inline-flex;align-items:center;gap:3px}
+.badge-icon img{width:16px;height:16px;vertical-align:middle;filter:drop-shadow(0 0 2px rgba(0,0,0,.5))}
+.map-icon{width:18px;height:18px;vertical-align:middle;filter:drop-shadow(0 0 3px rgba(255,68,102,.4))}
+.weapon-attr-icon{width:14px;height:14px;vertical-align:middle;margin-right:2px;filter:drop-shadow(0 0 1px rgba(0,0,0,.5))}
 
 .card-series{font-size:.7em;color:var(--text2);margin-bottom:8px}
 .card-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-bottom:8px}
@@ -532,6 +536,31 @@ function render() {
 }
 
 // === Type utilities ===
+const TYPE_ICON_MAP = {
+  '攻撃': '/assets/type_icons/UI_Common_TypeIcon_Attack_S.png',
+  '耐久': '/assets/type_icons/UI_Common_TypeIcon_Defense_S.png',
+  '支援': '/assets/type_icons/UI_Common_TypeIcon_Support_S.png',
+  '射撃': '/assets/type_icons/UI_Common_TypeIcon_Ranged_S.png',
+  '格闘': '/assets/type_icons/UI_Common_TypeIcon_Melee_S.png',
+  '覚醒': '/assets/type_icons/UI_Common_TypeIcon_Awaken_S.png',
+  'なし': '/assets/type_icons/UI_Common_TypeIcon_None_S.png'
+};
+const MAP_WEAPON_ICON = '/assets/map_weapon/UI_Battle_MapUI_MapWeapon_Icon_Red.png';
+const MAP_WEAPON_ICON_BLUE = '/assets/map_weapon/UI_Battle_MapUI_MapWeapon_Icon_Blue.png';
+const WEAPON_MAP_ICON = '/assets/weapon_icons/UI_Common_WeaponIcon_map.png';
+
+function typeIconHTML(t) {
+  const src = TYPE_ICON_MAP[t];
+  if (!src) return '';
+  return `<img src="${src}" alt="${t}" style="width:16px;height:16px;vertical-align:middle;filter:drop-shadow(0 0 2px rgba(0,0,0,.5))">`;
+}
+
+function typeBadgeHTML(t) {
+  const icon = typeIconHTML(t);
+  if (icon) return `<span class="badge badge-type badge-icon ${typeClass(t)}">${icon}${t}</span>`;
+  return t ? `<span class="badge badge-type ${typeClass(t)}">${t}</span>` : '';
+}
+
 function typeClass(t) {
   if (t === '攻撃') return 'badge-atk';
   if (t === '耐久') return 'badge-def';
@@ -570,9 +599,9 @@ function unitCardHTML(u) {
   const t = u.terrain || {};
   const weapons = (u.weapons||[]).map(w => {
     let label = w.name;
-    if (w.is_map) label = '（MAP兵器）' + label;
+    const mapIcon = w.is_map ? `<img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">` : '';
     if (w.is_map) label += ` [${w.use_count != null ? w.use_count + '回' : '-回'}]`;
-    return `<span class="weapon-tag${w.is_ex?' ex':''}${w.is_map?' map':''}">${label}</span>`;
+    return `<span class="weapon-tag${w.is_ex?' ex':''}${w.is_map?' map':''}">${mapIcon}${label}</span>`;
   }).join('');
   const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag">${t}</span>`).join('');
 
@@ -584,7 +613,7 @@ function unitCardHTML(u) {
       <div class="card-name">${u.name}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
-        ${u.unit_type ? `<span class="badge badge-type ${typeClass(u.unit_type)}">${u.unit_type}</span>` : ''}
+        ${typeBadgeHTML(u.unit_type)}
       </div>
     </div>
     <div class="card-series">${(u.series||[]).join(' / ')}</div>
@@ -640,7 +669,7 @@ function charaCardHTML(c) {
       <div class="card-name">${c.name}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
-        ${c.chara_type ? `<span class="badge badge-type ${typeClass(c.chara_type)}">${c.chara_type}</span>` : ''}
+        ${typeBadgeHTML(c.chara_type)}
         ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
       </div>
     </div>
@@ -681,13 +710,13 @@ function unitTableHTML(items) {
     const s = u.stats||{};
     const t = u.terrain||{};
     const mapW = (u.weapons||[]).filter(w=>w.is_map);
-    const mapLabel = mapW.length ? mapW.map(w=>w.name+(w.use_count!=null?`[${w.use_count}回]`:'[-回]')).join(', ') : '-';
+    const mapLabel = mapW.length ? mapW.map(w=>`<img src="${WEAPON_MAP_ICON}" style="width:14px;height:14px;vertical-align:middle;margin-right:2px">`+w.name+(w.use_count!=null?`[${w.use_count}回]`:'[-回]')).join(', ') : '-';
     const terrStr = ['space','air','ground','surface','water'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
     const iconTd = u.icon_url ? `<img class="cell-icon" src="${u.icon_url}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
     return `<tr onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
       <td class="cell-name">${iconTd}${u.name}</td>
       <td class="cell-center"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.7em">${u.rarity||'?'}</span></td>
-      <td class="cell-center">${u.unit_type||'-'}</td>
+      <td class="cell-center">${u.unit_type ? typeIconHTML(u.unit_type)+' '+u.unit_type : '-'}</td>
       <td class="cell-num">${(parseInt(s.attack)||0).toLocaleString()}</td>
       <td class="cell-num">${(parseInt(s.hp)||0).toLocaleString()}</td>
       <td class="cell-num">${(parseInt(s.defense)||0).toLocaleString()}</td>
@@ -710,7 +739,7 @@ function charaTableHTML(items) {
     return `<tr onclick="showCharaDetail('${c.name.replace(/'/g,"\\'")}')">
       <td class="cell-name">${c.name}</td>
       <td class="cell-center">${c.rarity||'-'}</td>
-      <td class="cell-center">${c.chara_type||'-'}</td>
+      <td class="cell-center">${c.chara_type ? typeIconHTML(c.chara_type)+' '+c.chara_type : '-'}</td>
       <td class="cell-num">${s.combat_power||'-'}</td>
       <td class="cell-num">${s.shooting||'-'}</td>
       <td class="cell-num">${s.melee||'-'}</td>
@@ -771,7 +800,7 @@ function renderUnitDetail(u, form) {
 
   const weaponsHTML = weapons.map(w => `
     <div class="weapon-detail">
-      <div class="weapon-name">${w.is_map?'<span class="map-badge">MAP兵器</span>':''}${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}${w.is_map ? ` <span style="color:var(--accent2);font-size:.75em">[${w.use_count != null ? w.use_count + '回' : '-回'}]</span>` : ''}</div>
+      <div class="weapon-name">${w.is_map?`<span class="map-badge"><img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">MAP兵器</span>`:''}${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}${w.is_map ? ` <span style="color:var(--accent2);font-size:.75em">[${w.use_count != null ? w.use_count + '回' : '-回'}]</span>` : ''}</div>
       <div class="weapon-info">
         <div><span>属性:</span> <strong>${w.attribute||'-'}</strong></div>
         <div><span>射程:</span> <strong>${rangeDisplay(w)}</strong></div>
@@ -806,7 +835,7 @@ function renderUnitDetail(u, form) {
         <h2>${u.name}</h2>
         <div class="detail-badges">
           <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
-          ${u.unit_type ? `<span class="badge badge-type ${typeClass(u.unit_type)}">${u.unit_type}</span>` : ''}
+          ${typeBadgeHTML(u.unit_type)}
           <span class="badge badge-type">${u.obtain_method||''}</span>
         </div>
       </div>
@@ -895,7 +924,7 @@ function showCharaDetail(name) {
     <h2>${c.name}</h2>
     <div class="detail-badges">
       <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
-      ${c.chara_type ? `<span class="badge badge-type ${typeClass(c.chara_type)}">${c.chara_type}</span>` : ''}
+      ${typeBadgeHTML(c.chara_type)}
       ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
       ${c.obtain_method ? `<span class="badge badge-type">${c.obtain_method}</span>` : ''}
     </div>
