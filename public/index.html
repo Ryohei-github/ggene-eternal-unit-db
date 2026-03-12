@@ -192,14 +192,12 @@ a:hover{text-decoration:underline}
     <img class="header-icon" src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj" alt="MH GAMES">
     <h1>Gジェネエターナル DB</h1>
   </div>
-  <div class="sub">全レアリティ対応データベース ・ 検索＆フィルタ</div>
+  <div class="sub">全レアリティ対応データベース ・ 検索＆フィルタ ・ データ提供: <a href="https://gamewith.jp/ggene-eternal/" target="_blank" style="color:var(--text2)">GameWith</a></div>
   <a class="yt-link" href="https://www.youtube.com/@MH_GAMES_JP" target="_blank">▶ MH GAMES YouTube</a>
   <div class="yt-cta">このサイトをもっと充実させてほしいと思ったら<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank">チャンネル登録</a>で応援！</div>
   <div class="accent-line"></div>
   <div class="tab-bar" id="tabBar">
     <button class="tab-btn active" data-tab="unit">ユニット<span class="tab-count" id="unitTabCount"></span></button>
-    <button class="tab-btn" data-tab="chara">キャラ<span class="tab-count" id="charaTabCount"></span></button>
-    <button class="tab-btn" data-tab="supporter">サポーター<span class="tab-count" id="supporterTabCount"></span></button>
   </div>
 </div>
 
@@ -224,11 +222,11 @@ a:hover{text-decoration:underline}
       <label>地形</label>
       <select id="filterTerrain">
         <option value="">すべて</option>
-        <option value="space">宇宙◯</option>
-        <option value="air">空中◯</option>
-        <option value="ground">地上◯</option>
-        <option value="surface">水上◯</option>
-        <option value="water">水中◯</option>
+        <option value="宇宙">宇宙◯</option>
+        <option value="空中">空中◯</option>
+        <option value="地上">地上◯</option>
+        <option value="水上">水上◯</option>
+        <option value="水中">水中◯</option>
       </select>
     </div>
     <div class="filter-group" id="filterRarityGroup">
@@ -277,16 +275,12 @@ let currentDir = -1;
 let currentView = 'card';
 
 async function init() {
-  const [uResp, cResp, sResp] = await Promise.all([
-    fetch('/units.json'), fetch('/characters.json'), fetch('/supporters.json')
-  ]);
+  const uResp = await fetch('/units.json');
   allUnits = await uResp.json();
-  allCharas = await cResp.json();
-  allSupporters = await sResp.json();
+  allCharas = [];
+  allSupporters = [];
 
   document.getElementById('unitTabCount').textContent = `(${allUnits.length})`;
-  document.getElementById('charaTabCount').textContent = `(${allCharas.length})`;
-  document.getElementById('supporterTabCount').textContent = `(${allSupporters.length})`;
 
   setupTabs();
   setupViewToggle();
@@ -393,7 +387,7 @@ function buildFilters() {
   if (currentTab === 'unit') {
     const types = new Set(), series = new Set(), tags = new Set(), rarities = new Set();
     allUnits.forEach(u => {
-      if (u.unit_type) types.add(u.unit_type);
+      if (u.type) types.add(u.type);
       if (u.rarity) rarities.add(u.rarity);
       (u.series||[]).forEach(s => series.add(s));
       (u.tags||[]).forEach(t => tags.add(t));
@@ -447,11 +441,11 @@ function getFiltered() {
     const terrain = document.getElementById('filterTerrain').value;
     return data.filter(u => {
       if (q && !u.name.toLowerCase().includes(q)) return false;
-      if (type && u.unit_type !== type) return false;
+      if (type && u.type !== type) return false;
       if (rarity && u.rarity !== rarity) return false;
       if (series && !(u.series||[]).includes(series)) return false;
       if (tag && !(u.tags||[]).includes(tag)) return false;
-      if (terrain && (!u.terrain || u.terrain[terrain] !== '◯')) return false;
+      if (terrain && (!u.normal?.terrain || u.normal.terrain[terrain] !== '◯')) return false;
       return true;
     });
   } else if (currentTab === 'chara') {
@@ -481,23 +475,18 @@ function sortItems(items) {
     let va, vb;
     switch(currentSort) {
       case 'cp':
-        if (currentTab === 'unit') { va = parseInt(a.combat_power)||0; vb = parseInt(b.combat_power)||0; }
-        else { va = a.stats?.combat_power||0; vb = b.stats?.combat_power||0; }
+        va = parseInt(a.normal?.combat_power)||0; vb = parseInt(b.normal?.combat_power)||0;
         break;
       case 'atk':
-        if (currentTab === 'unit') { va = parseInt(a.stats?.attack)||0; vb = parseInt(b.stats?.attack)||0; }
-        else { va = parseInt(a.attack)||0; vb = parseInt(b.attack)||0; }
+        va = parseInt(a.normal?.stats?.attack)||0; vb = parseInt(b.normal?.stats?.attack)||0;
         break;
       case 'hp':
-        if (currentTab === 'unit') { va = parseInt(a.stats?.hp)||0; vb = parseInt(b.stats?.hp)||0; }
-        else { va = parseInt(a.hp)||0; vb = parseInt(b.hp)||0; }
+        va = parseInt(a.normal?.stats?.hp)||0; vb = parseInt(b.normal?.stats?.hp)||0;
         break;
       case 'def':
-        va = parseInt(a.stats?.defense)||0; vb = parseInt(b.stats?.defense)||0; break;
+        va = parseInt(a.normal?.stats?.defense)||0; vb = parseInt(b.normal?.stats?.defense)||0; break;
       case 'en':
-        va = parseInt(a.stats?.en)||0; vb = parseInt(b.stats?.en)||0; break;
-      case 'shoot': va = a.stats?.shooting||0; vb = b.stats?.shooting||0; break;
-      case 'react': va = a.stats?.reaction||0; vb = b.stats?.reaction||0; break;
+        va = parseInt(a.normal?.stats?.en)||0; vb = parseInt(b.normal?.stats?.en)||0; break;
       case 'name': return dir * a.name.localeCompare(b.name, 'ja');
     }
     return dir * (va - vb);
@@ -588,24 +577,24 @@ function isEXChara(c) {
 }
 
 function rangeDisplay(w) {
-  if (w.is_map) return 'MAP';
-  if (w.range_min === w.range_max) return w.range_min;
-  return `${w.range_min}-${w.range_max}`;
+  return w.range || '-';
 }
 
 // === UNIT CARD ===
 function unitCardHTML(u) {
-  const s = u.stats || {};
-  const t = u.terrain || {};
-  const weapons = (u.weapons||[]).map(w => {
+  const s = u.normal?.stats || {};
+  const t = u.normal?.terrain || {};
+  const weapons = (u.normal_weapons||[]).map(w => {
     let label = w.name;
-    const mapIcon = w.is_map ? `<img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">` : '';
-    if (w.is_map) label += ` [${w.use_count != null ? w.use_count + '回' : '-回'}]`;
-    return `<span class="weapon-tag${w.is_ex?' ex':''}${w.is_map?' map':''}">${mapIcon}${label}</span>`;
+    const isMap = w.range === 'MAP';
+    const isEx = w.name.includes('EX');
+    const mapIcon = isMap ? `<img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">` : '';
+    if (isMap) label += ` [${w.ammo && w.ammo !== '-' ? w.ammo + '回' : '-回'}]`;
+    return `<span class="weapon-tag${isEx?' ex':''}${isMap?' map':''}">${mapIcon}${label}</span>`;
   }).join('');
   const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag">${t}</span>`).join('');
 
-  const iconHTML = u.icon_url ? `<img class="card-icon" src="${u.icon_url}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
+  const iconHTML = u.image ? `<img class="card-icon" src="${u.image}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
 
   return `<div class="card" onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
     <div class="card-header">
@@ -613,7 +602,7 @@ function unitCardHTML(u) {
       <div class="card-name">${u.name}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
-        ${typeBadgeHTML(u.unit_type)}
+        ${typeBadgeHTML(u.type)}
       </div>
     </div>
     <div class="card-series">${(u.series||[]).join(' / ')}</div>
@@ -626,14 +615,14 @@ function unitCardHTML(u) {
       <div class="stat"><div class="stat-label">EN</div><div class="stat-val">${(parseInt(s.en)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">運動性</div><div class="stat-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">機動力</div><div class="stat-val">${parseInt(s.mobility)||0}</div></div>
-      ${u.has_transform ? '<div class="stat" style="border:1px solid var(--accent);"><div class="stat-label" style="color:var(--accent)">変形</div><div class="stat-val" style="color:var(--accent)">可</div></div>' : '<div class="stat"></div>'}
+      ${u.transformed ? '<div class="stat" style="border:1px solid var(--accent);"><div class="stat-label" style="color:var(--accent)">変形</div><div class="stat-val" style="color:var(--accent)">可</div></div>' : '<div class="stat"></div>'}
     </div>
     <div class="card-terrain">
-      <span class="terrain-item">宇${terrainIcon(t.space)}</span>
-      <span class="terrain-item">空${terrainIcon(t.air)}</span>
-      <span class="terrain-item">地${terrainIcon(t.ground)}</span>
-      <span class="terrain-item">水上${terrainIcon(t.surface)}</span>
-      <span class="terrain-item">水中${terrainIcon(t.water)}</span>
+      <span class="terrain-item">宇${terrainIcon(t['宇宙'])}</span>
+      <span class="terrain-item">空${terrainIcon(t['空中'])}</span>
+      <span class="terrain-item">地${terrainIcon(t['地上'])}</span>
+      <span class="terrain-item">水上${terrainIcon(t['水上'])}</span>
+      <span class="terrain-item">水中${terrainIcon(t['水中'])}</span>
     </div>
     <div class="card-weapons">${weapons}</div>
     <div class="card-tags">${topTags}</div>
@@ -707,16 +696,16 @@ function supporterCardHTML(s) {
 // === TABLE VIEWS ===
 function unitTableHTML(items) {
   const rows = items.map(u => {
-    const s = u.stats||{};
-    const t = u.terrain||{};
-    const mapW = (u.weapons||[]).filter(w=>w.is_map);
-    const mapLabel = mapW.length ? mapW.map(w=>`<img src="${WEAPON_MAP_ICON}" style="width:14px;height:14px;vertical-align:middle;margin-right:2px">`+w.name+(w.use_count!=null?`[${w.use_count}回]`:'[-回]')).join(', ') : '-';
-    const terrStr = ['space','air','ground','surface','water'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
-    const iconTd = u.icon_url ? `<img class="cell-icon" src="${u.icon_url}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
+    const s = u.normal?.stats||{};
+    const t = u.normal?.terrain||{};
+    const mapW = (u.normal_weapons||[]).filter(w=>w.range==='MAP');
+    const mapLabel = mapW.length ? mapW.map(w=>`<img src="${WEAPON_MAP_ICON}" style="width:14px;height:14px;vertical-align:middle;margin-right:2px">`+w.name+(w.ammo&&w.ammo!=='-'?`[${w.ammo}回]`:'[-回]')).join(', ') : '-';
+    const terrStr = ['宇宙','空中','地上','水上','水中'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
+    const iconTd = u.image ? `<img class="cell-icon" src="${u.image}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
     return `<tr onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
       <td class="cell-name">${iconTd}${u.name}</td>
       <td class="cell-center"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.7em">${u.rarity||'?'}</span></td>
-      <td class="cell-center">${u.unit_type ? typeIconHTML(u.unit_type)+' '+u.unit_type : '-'}</td>
+      <td class="cell-center">${u.type ? typeIconHTML(u.type)+' '+u.type : '-'}</td>
       <td class="cell-num">${(parseInt(s.attack)||0).toLocaleString()}</td>
       <td class="cell-num">${(parseInt(s.hp)||0).toLocaleString()}</td>
       <td class="cell-num">${(parseInt(s.defense)||0).toLocaleString()}</td>
@@ -784,23 +773,26 @@ function showUnitDetail(name) {
 }
 
 function renderUnitDetail(u, form) {
-  const isTransform = form === 'transform' && u.transform_form;
-  const s = isTransform ? (u.transform_form.stats || u.stats || {}) : (u.stats || {});
-  const t = isTransform ? (u.transform_form.terrain || u.terrain || {}) : (u.terrain || {});
-  const weapons = isTransform ? (u.transform_form.weapons || u.weapons || []) : (u.weapons || []);
+  const isTransform = form === 'transform' && u.transformed;
+  const formData = isTransform ? u.transformed : (u.normal || {});
+  const s = formData.stats || {};
+  const t = formData.terrain || {};
+  const weapons = isTransform ? (u.transformed_weapons || []) : (u.normal_weapons || []);
 
   let transformToggle = '';
-  if (u.has_transform && u.transform_form) {
-    const formName = u.transform_form.form_name || '変形後';
+  if (u.transformed) {
     transformToggle = `<div class="transform-toggle">
       <button class="transform-btn ${form==='base'?'active':''}" onclick="switchForm('base')">通常形態</button>
-      <button class="transform-btn ${form==='transform'?'active':''}" onclick="switchForm('transform')">${formName}</button>
+      <button class="transform-btn ${form==='transform'?'active':''}" onclick="switchForm('transform')">変形後</button>
     </div>`;
   }
 
-  const weaponsHTML = weapons.map(w => `
+  const weaponsHTML = weapons.map(w => {
+    const isMap = w.range === 'MAP';
+    const isEx = w.name.includes('EX');
+    return `
     <div class="weapon-detail">
-      <div class="weapon-name">${w.is_map?`<span class="map-badge"><img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">MAP兵器</span>`:''}${w.name}${w.is_ex?'<span class="ex-badge">EX</span>':''}${w.is_map ? ` <span style="color:var(--accent2);font-size:.75em">[${w.use_count != null ? w.use_count + '回' : '-回'}]</span>` : ''}</div>
+      <div class="weapon-name">${isMap?`<span class="map-badge"><img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">MAP兵器</span>`:''}${w.name}${isEx?'<span class="ex-badge">EX</span>':''}${isMap ? ` <span style="color:var(--accent2);font-size:.75em">[${w.ammo && w.ammo !== '-' ? w.ammo + '回' : '-回'}]</span>` : ''}</div>
       <div class="weapon-info">
         <div><span>属性:</span> <strong>${w.attribute||'-'}</strong></div>
         <div><span>射程:</span> <strong>${rangeDisplay(w)}</strong></div>
@@ -809,23 +801,20 @@ function renderUnitDetail(u, form) {
         <div><span>命中:</span> <strong>${w.hit||'-'}</strong></div>
         <div><span>クリ:</span> <strong>${w.critical||'-'}</strong></div>
       </div>
-      ${w.weapon_effect && w.weapon_effect !== 'なし' ? `<div class="weapon-effect">効果: ${w.weapon_effect}</div>` : ''}
-      ${w.use_limit && w.use_limit !== 'なし' ? `<div class="weapon-effect">制限: ${w.use_limit}</div>` : ''}
+      ${w.weapon_type ? `<div class="weapon-effect">タイプ: ${w.weapon_type}</div>` : ''}
+      ${w.effect && w.effect !== 'なし' ? `<div class="weapon-effect">効果: ${w.effect}</div>` : ''}
+      ${w.restriction && w.restriction !== 'なし' ? `<div class="weapon-effect">制限: ${w.restriction}</div>` : ''}
     </div>
-  `).join('');
+  `}).join('');
 
-  const pureAbilities = u.abilities||[];
-  const allMechanisms = u.mechanisms||[];
+  const pureAbilities = formData.abilities||[];
+  const mechText = formData.mechanism || '';
 
   const abHTML = pureAbilities.map(a => `
-    <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.effect}</span></div>
+    <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.desc||''}</span></div>
   `).join('');
 
-  const mechHTML = allMechanisms.map(m => `
-    <div class="mechanism-item"><span class="mechanism-name">${m.name}</span><span class="mechanism-effect">${m.effect||''}</span></div>
-  `).join('');
-
-  const modalIconHTML = u.icon_url ? `<img class="modal-icon" src="${u.icon_url}" alt="" onerror="this.style.display='none'">` : '';
+  const modalIconHTML = u.image ? `<img class="modal-icon" src="${u.image}" alt="" onerror="this.style.display='none'">` : '';
 
   document.getElementById('modalContent').innerHTML = `
     <button class="modal-close" onclick="closeModal()">&times;</button>
@@ -835,8 +824,8 @@ function renderUnitDetail(u, form) {
         <h2>${u.name}</h2>
         <div class="detail-badges">
           <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
-          ${typeBadgeHTML(u.unit_type)}
-          <span class="badge badge-type">${u.obtain_method||''}</span>
+          ${typeBadgeHTML(u.type)}
+          <span class="badge badge-type">${u.obtain||''}</span>
         </div>
       </div>
     </div>
@@ -846,7 +835,7 @@ function renderUnitDetail(u, form) {
       <div class="card-tags">${(u.tags||[]).map(t=>`<span class="tag">${t}</span>`).join('')}</div>
     </div>
     <div class="detail-section">
-      <h3>ステータス${isTransform ? ' ('+u.transform_form.form_name+')' : ''}</h3>
+      <h3>ステータス${isTransform ? ' (変形後)' : ''}</h3>
       <div class="stats-grid">
         <div class="stat-box"><div class="label">HP</div><div class="val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
         <div class="stat-box"><div class="label">EN</div><div class="val">${s.en||'-'}</div></div>
@@ -855,15 +844,16 @@ function renderUnitDetail(u, form) {
         <div class="stat-box"><div class="label">運動性</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
         <div class="stat-box"><div class="label">機動力</div><div class="val">${s.mobility||'-'}</div></div>
       </div>
+      ${formData.combat_power ? `<div style="text-align:right;font-size:.8em;color:var(--text2);margin-top:4px">戦闘力: ${formData.combat_power.toLocaleString()}</div>` : ''}
     </div>
     <div class="detail-section">
       <h3>地形適性</h3>
       <div class="terrain-grid">
-        <span>宇宙${terrainIcon(t.space)}</span>
-        <span>空中${terrainIcon(t.air)}</span>
-        <span>地上${terrainIcon(t.ground)}</span>
-        <span>水上${terrainIcon(t.surface)}</span>
-        <span>水中${terrainIcon(t.water)}</span>
+        <span>宇宙${terrainIcon(t['宇宙'])}</span>
+        <span>空中${terrainIcon(t['空中'])}</span>
+        <span>地上${terrainIcon(t['地上'])}</span>
+        <span>水上${terrainIcon(t['水上'])}</span>
+        <span>水中${terrainIcon(t['水中'])}</span>
       </div>
     </div>
     <div class="detail-section">
@@ -871,7 +861,7 @@ function renderUnitDetail(u, form) {
       ${weaponsHTML}
     </div>
     ${pureAbilities.length ? `<div class="detail-section"><h3>アビリティ (${pureAbilities.length})</h3>${abHTML}</div>` : ''}
-    ${allMechanisms.length ? `<div class="detail-section"><h3>機構 (${allMechanisms.length})</h3>${mechHTML}</div>` : ''}
+    ${mechText ? `<div class="detail-section"><h3>機構</h3><div class="mechanism-item"><span class="mechanism-effect">${mechText}</span></div></div>` : ''}
   `;
 }
 
