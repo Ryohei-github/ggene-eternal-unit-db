@@ -403,26 +403,24 @@ let currentView = 'card';
 async function init() {
   const uResp = await fetch('/units.json');
   const allData = await uResp.json();
-  // ステータスが全て0のエントリ（キャラ・サポーター）を除外し、ユニットのみ表示
+  // ユニット: キャラタグを持たないエントリ（MSなど）
   allUnits = allData.filter(u => {
+    const tags = u.tags || [];
+    if (tags.includes('キャラ')) return false;
     const s = u.normal?.stats;
     return s && (s.hp > 0 || s.attack > 0 || s.defense > 0 || s.en > 0);
   });
-  // キャラデータ: ステータス全0 かつ名前に(UR/ (SSR/ 等のパターンを含むエントリ
-  allCharas = allData.filter(u => {
-    const s = u.normal?.stats;
-    const isZero = !s || (s.hp === 0 && s.attack === 0 && s.defense === 0 && s.en === 0);
-    return isZero && /\((UR|SSR|SR|R|N)\//.test(u.name);
-  }).map(u => {
-    // units.jsonのキャラデータをcharaCardHTML/showCharaDetailが期待する形式に変換
-    const abilities = (u.normal?.abilities || []);
-    // スキル: SP付きのアビリティを分離
-    const skills = abilities.filter(a => /\(SP:\d+\)/.test(a.name)).map(a => {
-      const spMatch = a.name.match(/\(SP:(\d+)\)/);
-      return { name: a.name, effect: a.desc, sp_cost: spMatch ? parseInt(spMatch[1]) : 0 };
+  // キャラデータ: タグに「キャラ」を持つエントリ
+  allCharas = allData.filter(u => (u.tags || []).includes('キャラ')).map(u => {
+    const n = u.normal || {};
+    const stats = n.stats || {};
+    // スキル: skills配列から取得（SP付き）
+    const skills = (n.skills || []).map(sk => {
+      const spMatch = sk.name.match(/\(SP:(\d+)\)/);
+      return { name: sk.name, effect: sk.desc, sp_cost: spMatch ? parseInt(spMatch[1]) : 0 };
     });
-    // アビリティ: SPなしのもの
-    const charaAbilities = abilities.filter(a => !/\(SP:\d+\)/.test(a.name)).map(a => ({
+    // アビリティ: abilities配列から取得
+    const charaAbilities = (n.abilities || []).map(a => ({
       name: a.name, effect: a.desc
     }));
     return {
@@ -432,7 +430,14 @@ async function init() {
       chara_type: u.type,
       obtain_method: u.obtain || '',
       series: (u.series || []).join(' / '),
-      stats: {},
+      stats: {
+        combat_power: n.combat_power || 0,
+        shooting: stats.shooting || 0,
+        melee: stats.melee || 0,
+        awakening: stats.awakening || 0,
+        defense: stats.defense || 0,
+        reaction: stats.reaction || 0
+      },
       skills: skills,
       abilities: charaAbilities
     };
@@ -526,6 +531,8 @@ function updateUI() {
     sortContainer.innerHTML = `
       <button class="sort-btn active" data-sort="cp">戦闘力順</button>
       <button class="sort-btn" data-sort="shoot">射撃値順</button>
+      <button class="sort-btn" data-sort="melee">格闘値順</button>
+      <button class="sort-btn" data-sort="awaken">覚醒値順</button>
       <button class="sort-btn" data-sort="react">反応値順</button>
       <button class="sort-btn" data-sort="name">名前順</button>`;
     currentSort = 'cp'; currentDir = -1;
@@ -758,17 +765,21 @@ function getFiltered() {
 
 function sortItems(items) {
   const dir = currentDir;
+  const isChara = currentTab === 'chara';
   return [...items].sort((a, b) => {
     let va, vb;
     switch(currentSort) {
       case 'cp':
-        va = parseInt(a.normal?.combat_power)||0; vb = parseInt(b.normal?.combat_power)||0;
+        if (isChara) { va = parseInt(a.stats?.combat_power)||0; vb = parseInt(b.stats?.combat_power)||0; }
+        else { va = parseInt(a.normal?.combat_power)||0; vb = parseInt(b.normal?.combat_power)||0; }
         break;
       case 'atk':
-        va = parseInt(a.normal?.stats?.attack)||0; vb = parseInt(b.normal?.stats?.attack)||0;
+        if (isChara) { va = parseInt(a.stats?.shooting)||0; vb = parseInt(b.stats?.shooting)||0; }
+        else { va = parseInt(a.normal?.stats?.attack)||0; vb = parseInt(b.normal?.stats?.attack)||0; }
         break;
       case 'hp':
-        va = parseInt(a.normal?.stats?.hp)||0; vb = parseInt(b.normal?.stats?.hp)||0;
+        if (isChara) { va = parseInt(a.stats?.defense)||0; vb = parseInt(b.stats?.defense)||0; }
+        else { va = parseInt(a.normal?.stats?.hp)||0; vb = parseInt(b.normal?.stats?.hp)||0; }
         break;
       case 'def':
         va = parseInt(a.normal?.stats?.defense)||0; vb = parseInt(b.normal?.stats?.defense)||0; break;
@@ -776,6 +787,14 @@ function sortItems(items) {
         va = parseInt(a.normal?.stats?.en)||0; vb = parseInt(b.normal?.stats?.en)||0; break;
       case 'agi':
         va = parseInt(a.normal?.stats?.agility)||0; vb = parseInt(b.normal?.stats?.agility)||0; break;
+      case 'shoot':
+        va = parseInt(a.stats?.shooting)||0; vb = parseInt(b.stats?.shooting)||0; break;
+      case 'react':
+        va = parseInt(a.stats?.reaction)||0; vb = parseInt(b.stats?.reaction)||0; break;
+      case 'melee':
+        va = parseInt(a.stats?.melee)||0; vb = parseInt(b.stats?.melee)||0; break;
+      case 'awaken':
+        va = parseInt(a.stats?.awakening)||0; vb = parseInt(b.stats?.awakening)||0; break;
       case 'name': return dir * a.name.localeCompare(b.name, 'ja');
     }
     return dir * (va - vb);
