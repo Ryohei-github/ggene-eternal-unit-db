@@ -53,7 +53,6 @@ a:hover{text-decoration:underline}
 .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;cursor:pointer;transition:all .2s}
 .card:hover{background:var(--card-hover);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,212,255,.1)}
 .card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;gap:8px}
-.card-icon{width:48px;height:48px;border-radius:6px;border:1px solid var(--border);flex-shrink:0;object-fit:cover}
 .card-name{font-size:1.05em;font-weight:700;color:#fff;flex:1;min-width:0}
 .card-badges{display:flex;gap:4px;flex-shrink:0;flex-wrap:wrap}
 .badge{padding:2px 8px;border-radius:4px;font-size:.65em;font-weight:700;letter-spacing:.5px}
@@ -136,7 +135,6 @@ a:hover{text-decoration:underline}
 .modal .skill-item{padding:8px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;margin-bottom:4px}
 .modal .skill-name{font-weight:600;font-size:.85em;color:var(--gold)}
 .modal .skill-effect{color:var(--text2);font-size:.8em;margin-top:2px}
-.modal .source-link{display:inline-block;margin-top:8px;font-size:.75em}
 .terrain-grid{display:flex;gap:12px;font-size:.85em}
 
 /* Supporter modal */
@@ -159,7 +157,6 @@ a:hover{text-decoration:underline}
 .data-table tr{cursor:pointer;transition:background .15s}
 .data-table tr:hover{background:var(--card-hover)}
 .data-table .cell-name{font-weight:600;color:#fff;white-space:normal;max-width:200px}
-.data-table .cell-icon{width:32px;height:32px;border-radius:4px;border:1px solid var(--border);vertical-align:middle;margin-right:6px}
 .data-table .cell-num{text-align:right;font-variant-numeric:tabular-nums}
 .data-table .cell-center{text-align:center}
 
@@ -577,7 +574,6 @@ function unitCardHTML(u) {
 
   return `<div class="card" onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
     <div class="card-header">
-      ${u.icon_url ? `<img class="card-icon" src="${u.icon_url}" alt="${u.name}" loading="lazy">` : ''}
       <div class="card-name">${u.name}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
@@ -681,7 +677,7 @@ function unitTableHTML(items) {
     const mapLabel = mapW.length ? mapW.map(w=>w.name+(w.use_count!=null?`[${w.use_count}回]`:'[-回]')).join(', ') : '-';
     const terrStr = ['space','air','ground','surface','water'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
     return `<tr onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
-      <td class="cell-name">${u.icon_url?`<img class="cell-icon" src="${u.icon_url}" alt="" loading="lazy">`:''}${u.name}</td>
+      <td class="cell-name">${u.name}</td>
       <td class="cell-center"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.7em">${u.rarity||'?'}</span></td>
       <td class="cell-center">${u.unit_type||'-'}</td>
       <td class="cell-num">${(parseInt(s.attack)||0).toLocaleString()}</td>
@@ -832,7 +828,6 @@ function renderUnitDetail(u, form) {
     </div>
     ${pureAbilities.length ? `<div class="detail-section"><h3>アビリティ (${pureAbilities.length})</h3>${abHTML}</div>` : ''}
     ${allMechanisms.length ? `<div class="detail-section"><h3>機構 (${allMechanisms.length})</h3>${mechHTML}</div>` : ''}
-    ${u.source_url ? `<a class="source-link" href="${u.source_url}" target="_blank">Altemaで見る →</a>` : ''}
   `;
 }
 
