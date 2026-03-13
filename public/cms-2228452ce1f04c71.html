@@ -137,6 +137,7 @@ tr:hover{background:rgba(0,212,255,.03)}
   <div class="sidebar">
     <a href="#" class="active" data-section="units">ユニット</a>
     <a href="#" data-section="characters">キャラクター</a>
+    <a href="#" data-section="supporters">サポーター</a>
   </div>
   <div class="main" id="mainContent"></div>
 </div>
@@ -242,6 +243,7 @@ document.querySelectorAll('.sidebar a').forEach(a => {
 function loadSection(section) {
   if (section === 'units') loadUnits();
   else if (section === 'characters') loadCharacters();
+  else if (section === 'supporters') loadSupporters();
 }
 
 // =============== UNITS ===============
@@ -565,10 +567,160 @@ async function deleteChar(id, name) {
   } catch (e) { toast(e.message, 'error'); }
 }
 
+// =============== SUPPORTERS ===============
+let supData = [];
+let supSearch = '';
+
+async function loadSupporters() {
+  const main = document.getElementById('mainContent');
+  main.innerHTML = `
+    <div class="panel">
+      <div class="panel-header">
+        <h2>サポーター一覧</h2>
+        <div class="toolbar">
+          <input type="text" id="supSearch" placeholder="名前で検索..." value="${supSearch}" oninput="onSupSearch(this.value)">
+          <button class="btn btn-primary" onclick="openSupCreate()">+ 新規追加</button>
+        </div>
+      </div>
+      <div id="supTable"><div class="loading">読み込み中...</div></div>
+      <div class="pagination" id="supPagination"></div>
+    </div>
+  `;
+  await fetchSups();
+}
+
+async function fetchSups() {
+  try {
+    const r = await apiFetch(`/api/supporters?limit=${PAGE_SIZE}&offset=${currentPage * PAGE_SIZE}`);
+    supData = await r.json();
+    renderSupTable();
+  } catch (e) {
+    document.getElementById('supTable').innerHTML = `<div class="empty">エラー: ${e.message}</div>`;
+  }
+}
+
+function onSupSearch(val) {
+  supSearch = val.toLowerCase();
+  renderSupTable();
+}
+
+function renderSupTable() {
+  const filtered = supSearch
+    ? supData.filter(s => (s.name || '').toLowerCase().includes(supSearch))
+    : supData;
+  const tbody = filtered.map(s => {
+    const rarity = s.rarity || '';
+    const badgeCls = rarity === 'UR' ? 'badge-ur' : rarity === 'SSR' ? 'badge-ssr' : rarity === 'SR' ? 'badge-sr' : 'badge-r';
+    return `<tr>
+      <td>${s.id}</td>
+      <td>${s.name || '-'}</td>
+      <td><span class="badge ${badgeCls}">${rarity}</span></td>
+      <td>${s.hp ?? '-'}</td>
+      <td>${s.attack ?? '-'}</td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.target_series || '-'}</td>
+      <td>
+        <button class="btn btn-outline btn-sm" onclick="openSupEdit(${s.id})">編集</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteSup(${s.id},'${(s.name||'').replace(/'/g,"\\'")}')">削除</button>
+      </td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('supTable').innerHTML = filtered.length === 0
+    ? '<div class="empty">データがありません</div>'
+    : `<table>
+        <thead><tr><th>ID</th><th>名前</th><th>レアリティ</th><th>HP</th><th>攻撃</th><th>対象シリーズ</th><th>操作</th></tr></thead>
+        <tbody>${tbody}</tbody>
+      </table>`;
+
+  const pag = document.getElementById('supPagination');
+  pag.innerHTML = `
+    <button onclick="currentPage--;fetchSups()" ${currentPage === 0 ? 'disabled' : ''}>← 前へ</button>
+    <span>ページ ${currentPage + 1}</span>
+    <button onclick="currentPage++;fetchSups()" ${supData.length < PAGE_SIZE ? 'disabled' : ''}>次へ →</button>
+  `;
+}
+
+function openSupCreate() {
+  editingId = null;
+  document.getElementById('modalTitle').textContent = 'サポーター新規追加';
+  document.getElementById('modalBody').innerHTML = supFormHTML({});
+  document.getElementById('modal').classList.add('show');
+}
+
+async function openSupEdit(id) {
+  try {
+    const r = await apiFetch(`/api/supporters?id=${id}`);
+    const s = await r.json();
+    if (!s) { toast('サポーターが見つかりません', 'error'); return; }
+    editingId = id;
+    document.getElementById('modalTitle').textContent = `サポーター編集: ${s.name}`;
+    document.getElementById('modalBody').innerHTML = supFormHTML(s);
+    document.getElementById('modal').classList.add('show');
+  } catch (e) { toast(e.message, 'error'); }
+}
+
+function supFormHTML(s) {
+  return `
+    <div class="form-row">
+      <div class="form-group"><label>名前</label><input id="f_name" value="${esc(s.name || '')}"></div>
+      <div class="form-group"><label>画像パス</label><input id="f_image" value="${esc(s.image || '')}"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>レアリティ</label>
+        <select id="f_rarity">
+          ${['UR','SSR','SR','R'].map(r => `<option ${s.rarity===r?'selected':''}>${r}</option>`).join('')}
+        </select>
+      </div>
+      <div class="form-group"><label>対象シリーズ</label><input id="f_target_series" value="${esc(s.target_series || '')}"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>HP</label><input id="f_hp" type="number" value="${s.hp ?? ''}"></div>
+      <div class="form-group"><label>攻撃力</label><input id="f_attack" type="number" value="${s.attack ?? ''}"></div>
+    </div>
+    <div class="form-group"><label>リーダースキル</label><textarea id="f_leader_skill" rows="3">${esc(s.leader_skill || '')}</textarea></div>
+    <div class="form-group"><label>サポートスキル</label><textarea id="f_support_skill" rows="3">${esc(s.support_skill || '')}</textarea></div>
+  `;
+}
+
+async function saveSupporter() {
+  try {
+    const body = {
+      name: val('f_name'),
+      image: val('f_image'),
+      rarity: val('f_rarity'),
+      target_series: val('f_target_series'),
+      hp: parseInt(val('f_hp')) || null,
+      attack: parseInt(val('f_attack')) || null,
+      leader_skill: val('f_leader_skill'),
+      support_skill: val('f_support_skill'),
+    };
+
+    if (editingId) {
+      await apiFetch(`/api/supporters?id=${editingId}`, { method: 'PUT', body: JSON.stringify(body) });
+      toast('サポーターを更新しました');
+    } else {
+      await apiFetch('/api/supporters', { method: 'POST', body: JSON.stringify(body) });
+      toast('サポーターを作成しました');
+    }
+    closeModal();
+    fetchSups();
+  } catch (e) { toast(e.message, 'error'); }
+}
+
+async function deleteSup(id, name) {
+  if (!confirm(`「${name}」を削除しますか？`)) return;
+  try {
+    await apiFetch(`/api/supporters?id=${id}`, { method: 'DELETE' });
+    toast('削除しました');
+    fetchSups();
+  } catch (e) { toast(e.message, 'error'); }
+}
+
 // ---- Modal ----
 function saveModal() {
   if (currentSection === 'units') saveUnit();
-  else saveChar();
+  else if (currentSection === 'characters') saveChar();
+  else if (currentSection === 'supporters') saveSupporter();
 }
 
 function closeModal() {
