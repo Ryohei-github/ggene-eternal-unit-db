@@ -1,0 +1,8 @@
+# GジェネエターナルDB - robots.txt
+User-agent: *
+Allow: /
+Disallow: /cms-*
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://mh-dev-gget-db.vercel.app/sitemap.xml

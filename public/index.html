@@ -3,7 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GジェネエターナルDB by MH GAMES</title>
+<title>GジェネエターナルDB｜Gジェネ エターナル ユニット・キャラ・サポーター検索データベース</title>
+<meta name="description" content="Gジェネレーション エターナル（Gジェネ エターナル）の全ユニット・キャラクター・サポーターを網羅したデータベース。レアリティ・シリーズ・タイプ・デバフ効果など多彩なフィルタで検索可能。ステータス比較やスキル確認に。">
+<meta name="keywords" content="Gジェネ エターナル,G Generation Eternal,GジェネエターナルDB,ユニット一覧,キャラクター,サポーター,データベース,ステータス,スキル,攻略,検索">
+<link rel="canonical" href="https://mh-dev-gget-db.vercel.app/">
+
+<!-- OGP (Open Graph) -->
+<meta property="og:title" content="GジェネエターナルDB｜ユニット・キャラ・サポーター検索データベース">
+<meta property="og:description" content="Gジェネ エターナルの全ユニット・キャラクター・サポーターを網羅。レアリティ・シリーズ・デバフ効果など多彩なフィルタで検索可能。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mh-dev-gget-db.vercel.app/">
+<meta property="og:site_name" content="GジェネエターナルDB by MH GAMES">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:image" content="https://mh-dev-gget-db.vercel.app/assets/ogp.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@mh_games_jp">
+<meta name="twitter:title" content="GジェネエターナルDB｜ユニット・キャラ・サポーター検索">
+<meta name="twitter:description" content="Gジェネ エターナルの全ユニット・キャラ・サポーターDB。多彩なフィルタで検索。">
+<meta name="twitter:image" content="https://mh-dev-gget-db.vercel.app/assets/ogp.png">
+
+<!-- その他SEO -->
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#0a0e17">
+<link rel="icon" type="image/png" href="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj">
+
+<!-- 構造化データ (JSON-LD) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebApplication",
+  "name": "GジェネエターナルDB",
+  "alternateName": "G Generation Eternal Database",
+  "url": "https://mh-dev-gget-db.vercel.app/",
+  "description": "Gジェネレーション エターナルの全ユニット・キャラクター・サポーターを網羅したデータベース。レアリティ・シリーズ・タイプ・デバフ効果など多彩なフィルタで検索可能。",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Web",
+  "browserRequirements": "Requires JavaScript",
+  "inLanguage": "ja",
+  "author": {
+    "@type": "Organization",
+    "name": "MH GAMES",
+    "url": "https://www.youtube.com/@MH_GAMES_JP",
+    "sameAs": [
+      "https://x.com/mh_games_jp",
+      "https://www.youtube.com/@MH_GAMES_JP"
+    ]
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "JPY"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "GジェネエターナルDB",
+  "url": "https://mh-dev-gget-db.vercel.app/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": {
+      "@type": "EntryPoint",
+      "urlTemplate": "https://mh-dev-gget-db.vercel.app/?q={search_term_string}"
+    },
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PHTSGSZ19J"></script>
 <script>
@@ -26,6 +99,7 @@ a:hover{text-decoration:underline}
 .header-brand{display:flex;align-items:center;justify-content:center;gap:10px}
 .header-icon{width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);flex-shrink:0}
 .header h1{font-size:1.4em;letter-spacing:2px;background:linear-gradient(90deg,var(--accent),#80e0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sub-brand{font-size:.6em;letter-spacing:1px;opacity:.7}
 .header .sub{font-size:.75em;color:var(--text2);margin-top:2px}
 .header-links{display:flex;justify-content:center;gap:10px;margin-top:6px;flex-wrap:wrap}
 .header-links a{display:inline-flex;align-items:center;gap:4px;font-size:.7em;padding:3px 12px;border-radius:14px;font-weight:600;transition:all .2s}
@@ -289,31 +363,32 @@ a:hover{text-decoration:underline}
 </head>
 <body>
 
-<div class="header">
+<header class="header" role="banner">
   <div class="header-brand">
-    <img class="header-icon" src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj" alt="MH GAMES">
-    <h1>GジェネエターナルDB by MH GAMES</h1>
+    <img class="header-icon" src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj" alt="MH GAMES - Gジェネエターナル ゲーム実況チャンネル" width="36" height="36" loading="eager">
+    <h1>GジェネエターナルDB <span class="sub-brand">by MH GAMES</span></h1>
   </div>
-  <div class="sub">全レアリティ対応データベース ・ 検索＆フィルタ</div>
-  <div class="header-links">
-    <a class="btn-yt" href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank">▶ チャンネル登録</a>
-    <a class="btn-x" href="https://x.com/mh_games_jp" target="_blank">𝕏 ご意見はこちら</a>
-  </div>
-  <div class="yt-cta">サイトの充実はチャンネル登録数が目標！<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank">登録して応援</a>してくれると嬉しいです</div>
+  <p class="sub">Gジェネ エターナル 全レアリティ対応データベース ・ ユニット/キャラ/サポーター検索＆フィルタ</p>
+  <nav class="header-links" aria-label="外部リンク">
+    <a class="btn-yt" href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">▶ チャンネル登録</a>
+    <a class="btn-x" href="https://x.com/mh_games_jp" target="_blank" rel="noopener">𝕏 ご意見はこちら</a>
+  </nav>
+  <p class="yt-cta">サイトの充実はチャンネル登録数が目標！<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">登録して応援</a>してくれると嬉しいです</p>
   <div class="accent-line"></div>
-  <div class="tab-bar" id="tabBar">
+  <nav class="tab-bar" id="tabBar" aria-label="データカテゴリ切り替え">
     <button class="tab-btn active" data-tab="unit">ユニット<span class="tab-count" id="unitTabCount"></span></button>
     <button class="tab-btn" data-tab="chara">キャラ<span class="tab-count" id="charaTabCount"></span></button>
-  </div>
-</div>
+  </nav>
+</header>
 
+<main role="main">
 <!-- Ad: GGeneDB_Top -->
 <div class="ad-slot" id="adSlotTop">
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3746333245586627" data-ad-slot="2907106881" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 
-<div class="controls">
+<section class="controls" aria-label="検索・フィルタ">
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="ユニット名で検索...（例: サザビー、ガンダム）">
   </div>
@@ -384,12 +459,12 @@ a:hover{text-decoration:underline}
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<div class="grid" id="mainGrid"></div>
-<div class="data-table-wrap" id="tableWrap" style="display:none"></div>
+<div class="grid" id="mainGrid" role="list" aria-label="検索結果一覧"></div>
+<div class="data-table-wrap" id="tableWrap" style="display:none" role="table" aria-label="データテーブル"></div>
 
-<div class="modal-overlay" id="modalOverlay">
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="詳細情報">
   <div class="modal" id="modalContent"></div>
 </div>
 
@@ -934,7 +1009,7 @@ function unitCardHTML(u) {
   }).join('');
   const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('');
 
-  const iconHTML = u.image ? `<img class="card-icon" src="${u.image}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
+  const iconHTML = u.image ? `<img class="card-icon" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'" loading="lazy" width="48" height="48">` : '';
 
   return `<div class="card" onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
     <div class="card-header">
@@ -996,7 +1071,7 @@ function charaCardHTML(c) {
 
   const abilCount = (c.abilities||[]).length;
 
-  const iconHTML = c.image ? `<img class="card-icon" src="${c.image}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
+  const iconHTML = c.image ? `<img class="card-icon" src="${c.image}" alt="${c.name}" onerror="this.style.display='none'" loading="lazy" width="48" height="48">` : '';
 
   return `<div class="card" onclick="showCharaDetail('${c.name.replace(/'/g,"\\'")}')">
     <div class="card-header">
@@ -1047,7 +1122,7 @@ function unitTableHTML(items) {
     const mapW = (u.normal_weapons||[]).filter(w=>w.range==='MAP');
     const mapLabel = mapW.length ? mapW.map(w=>`<img src="${WEAPON_MAP_ICON}" style="width:14px;height:14px;vertical-align:middle;margin-right:2px">`+w.name+(w.ammo&&w.ammo!=='-'?`[${w.ammo}回]`:'[-回]')).join(', ') : '-';
     const terrStr = ['宇宙','空中','地上','水上','水中'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
-    const iconTd = u.image ? `<img class="cell-icon" src="${u.image}" alt="" onerror="this.style.display='none'" loading="lazy">` : '';
+    const iconTd = u.image ? `<img class="cell-icon" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'" loading="lazy">` : '';
     return `<tr onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
       <td class="cell-name">${iconTd}${u.name}</td>
       <td class="cell-center"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.7em">${u.rarity||'?'}</span></td>
@@ -1198,7 +1273,7 @@ function renderUnitDetail(u, form) {
     <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.desc||''}</span></div>
   `).join('');
 
-  const modalIconHTML = u.image ? `<img class="modal-icon" src="${u.image}" alt="" onerror="this.style.display='none'">` : '';
+  const modalIconHTML = u.image ? `<img class="modal-icon" src="${u.image}" alt="${u.name}の詳細画像" onerror="this.style.display='none'">` : '';
 
   document.getElementById('modalContent').innerHTML = `
     <button class="modal-close" onclick="closeModal()">&times;</button>
@@ -1393,14 +1468,15 @@ init();
   <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3746333245586627" data-ad-slot="7371985568" data-ad-format="auto" data-full-width-responsive="true"></ins>
   <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
+</main>
 
 <!-- Footer -->
-<footer class="site-footer">
-  <div class="footer-links">
-    <a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank">▶ YouTube チャンネル登録</a>
-    <a href="https://x.com/mh_games_jp" target="_blank">𝕏 公式X（ご意見はこちら）</a>
-  </div>
-  <div class="footer-copy">© 2025 MH GAMES — GジェネエターナルDB by MH GAMES</div>
+<footer class="site-footer" role="contentinfo">
+  <nav class="footer-links" aria-label="フッターリンク">
+    <a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">▶ YouTube チャンネル登録</a>
+    <a href="https://x.com/mh_games_jp" target="_blank" rel="noopener">𝕏 公式X（ご意見はこちら）</a>
+  </nav>
+  <p class="footer-copy">© 2025 MH GAMES — GジェネエターナルDB by MH GAMES｜当サイトはゲームの攻略情報を提供するファンサイトです</p>
 </footer>
 
 </body>
