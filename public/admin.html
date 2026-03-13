@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GジェネエターナルDB - 管理画面</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0e17;--bg2:#111827;--bg3:#1a2236;--bg4:#243049;
+  --accent:#00d4ff;--accent2:#0099cc;--text:#e0e6ed;--text2:#8899aa;
+  --danger:#ff4757;--success:#2ed573;--warn:#ffa502;
+  --border:#1e2d42;--radius:8px;
+}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+a{color:var(--accent);text-decoration:none}
+
+/* Login */
+.login-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.login-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:40px;width:360px;text-align:center}
+.login-box h1{font-size:1.3em;margin-bottom:8px;color:var(--accent)}
+.login-box p{color:var(--text2);font-size:.85em;margin-bottom:24px}
+.login-box input{width:100%;padding:12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font-size:1em;margin-bottom:16px}
+.login-box input:focus{outline:none;border-color:var(--accent)}
+.login-box button{width:100%;padding:12px;border:none;border-radius:var(--radius);background:var(--accent);color:#000;font-weight:700;font-size:1em;cursor:pointer}
+.login-box button:hover{background:var(--accent2)}
+.login-error{color:var(--danger);font-size:.85em;margin-bottom:12px;display:none}
+
+/* Layout */
+.app{display:none;min-height:100vh}
+.topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar h1{font-size:1.1em;color:var(--accent)}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.topbar-right a{color:var(--text2);font-size:.85em}
+.topbar-right a:hover{color:var(--accent)}
+.btn-logout{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:var(--radius);cursor:pointer;font-size:.85em}
+.btn-logout:hover{border-color:var(--danger);color:var(--danger)}
+
+.sidebar{position:fixed;left:0;top:49px;bottom:0;width:200px;background:var(--bg2);border-right:1px solid var(--border);padding:16px 0}
+.sidebar a{display:block;padding:10px 24px;color:var(--text2);font-size:.9em;transition:.15s}
+.sidebar a:hover,.sidebar a.active{color:var(--accent);background:rgba(0,212,255,.06)}
+.sidebar a.active{border-left:3px solid var(--accent)}
+
+.main{margin-left:200px;padding:24px}
+
+/* Table */
+.panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px}
+.panel-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
+.panel-header h2{font-size:1em}
+.toolbar{display:flex;gap:8px;align-items:center}
+.toolbar input{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font-size:.85em;width:220px}
+.toolbar input:focus{outline:none;border-color:var(--accent)}
+.btn{padding:8px 16px;border:none;border-radius:var(--radius);cursor:pointer;font-size:.85em;font-weight:600;transition:.15s}
+.btn-primary{background:var(--accent);color:#000}
+.btn-primary:hover{background:var(--accent2)}
+.btn-sm{padding:5px 10px;font-size:.8em}
+.btn-danger{background:var(--danger);color:#fff}
+.btn-danger:hover{background:#e8414f}
+.btn-outline{background:none;border:1px solid var(--border);color:var(--text2)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+table{width:100%;border-collapse:collapse}
+thead{background:var(--bg3)}
+th{padding:10px 16px;text-align:left;font-size:.8em;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+td{padding:10px 16px;border-top:1px solid var(--border);font-size:.85em;vertical-align:middle}
+tr:hover{background:rgba(0,212,255,.03)}
+.unit-img{width:40px;height:40px;border-radius:4px;object-fit:cover;background:var(--bg)}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.75em;font-weight:600}
+.badge-ur{background:rgba(255,215,0,.15);color:#ffd700}
+.badge-ssr{background:rgba(255,71,87,.15);color:#ff4757}
+.badge-sr{background:rgba(155,89,182,.15);color:#b57edc}
+.badge-r{background:rgba(46,213,115,.15);color:#2ed573}
+
+.pagination{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px}
+.pagination button{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 14px;border-radius:var(--radius);cursor:pointer;font-size:.85em}
+.pagination button:hover{border-color:var(--accent)}
+.pagination button:disabled{opacity:.4;cursor:default}
+.pagination span{color:var(--text2);font-size:.85em}
+
+/* Modal */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:flex-start;justify-content:center;padding:60px 20px;overflow-y:auto}
+.modal-overlay.show{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:12px;width:100%;max-width:700px;max-height:85vh;overflow-y:auto}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
+.modal-header h3{font-size:1em}
+.modal-close{background:none;border:none;color:var(--text2);font-size:1.4em;cursor:pointer;line-height:1}
+.modal-close:hover{color:var(--danger)}
+.modal-body{padding:20px}
+.modal-footer{display:flex;justify-content:flex-end;gap:8px;padding:16px 20px;border-top:1px solid var(--border)}
+
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.8em;color:var(--text2);margin-bottom:4px;font-weight:600}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font-size:.9em;font-family:inherit}
+.form-group textarea{min-height:80px;resize:vertical}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--accent)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-hint{font-size:.75em;color:var(--text2);margin-top:2px}
+
+.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:var(--radius);font-size:.9em;font-weight:600;z-index:300;transition:.3s;opacity:0;transform:translateY(10px)}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast-success{background:var(--success);color:#000}
+.toast-error{background:var(--danger);color:#fff}
+
+.loading{text-align:center;padding:40px;color:var(--text2)}
+.empty{text-align:center;padding:40px;color:var(--text2)}
+
+@media(max-width:768px){
+  .sidebar{display:none}
+  .main{margin-left:0}
+  .form-row{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- Login Screen -->
+<div class="login-wrap" id="loginScreen">
+  <div class="login-box">
+    <h1>GジェネエターナルDB</h1>
+    <p>管理画面にログイン</p>
+    <div class="login-error" id="loginError"></div>
+    <input type="password" id="loginPass" placeholder="パスワードを入力" autofocus>
+    <button onclick="doLogin()">ログイン</button>
+  </div>
+</div>
+
+<!-- App -->
+<div class="app" id="app">
+  <div class="topbar">
+    <h1>GジェネDB 管理画面</h1>
+    <div class="topbar-right">
+      <a href="/" target="_blank">公開サイトを見る</a>
+      <button class="btn-logout" onclick="doLogout()">ログアウト</button>
+    </div>
+  </div>
+  <div class="sidebar">
+    <a href="#" class="active" data-section="units">ユニット</a>
+    <a href="#" data-section="characters">キャラクター</a>
+  </div>
+  <div class="main" id="mainContent"></div>
+</div>
+
+<!-- Edit Modal -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 id="modalTitle">編集</h3>
+      <button class="modal-close" onclick="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeModal()">キャンセル</button>
+      <button class="btn btn-primary" id="modalSave" onclick="saveModal()">保存</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const API = '';
+let token = localStorage.getItem('admin_token') || '';
+let currentSection = 'units';
+let currentPage = 0;
+const PAGE_SIZE = 30;
+let editingId = null;
+
+// ---- Auth ----
+async function doLogin() {
+  const pass = document.getElementById('loginPass').value;
+  const errEl = document.getElementById('loginError');
+  errEl.style.display = 'none';
+  try {
+    const r = await fetch(API + '/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ password: pass })
+    });
+    const d = await r.json();
+    if (!r.ok) throw new Error(d.error || 'ログイン失敗');
+    token = d.token;
+    localStorage.setItem('admin_token', token);
+    showApp();
+  } catch (e) {
+    errEl.textContent = e.message;
+    errEl.style.display = 'block';
+  }
+}
+
+function doLogout() {
+  token = '';
+  localStorage.removeItem('admin_token');
+  document.getElementById('app').style.display = 'none';
+  document.getElementById('loginScreen').style.display = 'flex';
+}
+
+function showApp() {
+  document.getElementById('loginScreen').style.display = 'none';
+  document.getElementById('app').style.display = 'block';
+  loadSection(currentSection);
+}
+
+document.getElementById('loginPass').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doLogin();
+});
+
+// ---- API helpers ----
+async function apiFetch(path, opts = {}) {
+  const r = await fetch(API + path, {
+    ...opts,
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token,
+      ...(opts.headers || {})
+    }
+  });
+  if (r.status === 401) { doLogout(); throw new Error('セッション切れ'); }
+  return r;
+}
+
+function toast(msg, type = 'success') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = 'toast toast-' + type + ' show';
+  setTimeout(() => el.classList.remove('show'), 3000);
+}
+
+// ---- Sidebar nav ----
+document.querySelectorAll('.sidebar a').forEach(a => {
+  a.addEventListener('click', e => {
+    e.preventDefault();
+    document.querySelectorAll('.sidebar a').forEach(x => x.classList.remove('active'));
+    a.classList.add('active');
+    currentSection = a.dataset.section;
+    currentPage = 0;
+    loadSection(currentSection);
+  });
+});
+
+// ---- Load section ----
+function loadSection(section) {
+  if (section === 'units') loadUnits();
+  else if (section === 'characters') loadCharacters();
+}
+
+// =============== UNITS ===============
+let unitsData = [];
+let unitsSearch = '';
+
+async function loadUnits() {
+  const main = document.getElementById('mainContent');
+  main.innerHTML = `
+    <div class="panel">
+      <div class="panel-header">
+        <h2>ユニット一覧</h2>
+        <div class="toolbar">
+          <input type="text" id="unitSearch" placeholder="名前で検索..." value="${unitsSearch}" oninput="onUnitSearch(this.value)">
+          <button class="btn btn-primary" onclick="openUnitCreate()">+ 新規追加</button>
+        </div>
+      </div>
+      <div id="unitTable"><div class="loading">読み込み中...</div></div>
+      <div class="pagination" id="unitPagination"></div>
+    </div>
+  `;
+  await fetchUnits();
+}
+
+async function fetchUnits() {
+  try {
+    const r = await apiFetch(`/api/units?limit=${PAGE_SIZE}&offset=${currentPage * PAGE_SIZE}`);
+    unitsData = await r.json();
+    renderUnitTable();
+  } catch (e) {
+    document.getElementById('unitTable').innerHTML = `<div class="empty">エラー: ${e.message}</div>`;
+  }
+}
+
+function onUnitSearch(val) {
+  unitsSearch = val.toLowerCase();
+  renderUnitTable();
+}
+
+function renderUnitTable() {
+  const filtered = unitsSearch
+    ? unitsData.filter(u => (u.name || '').toLowerCase().includes(unitsSearch))
+    : unitsData;
+  const tbody = filtered.map(u => {
+    const rarity = u.rarity || '';
+    const badgeCls = rarity === 'UR' ? 'badge-ur' : rarity === 'SSR' ? 'badge-ssr' : rarity === 'SR' ? 'badge-sr' : 'badge-r';
+    const img = u.image ? `<img class="unit-img" src="${u.image}" alt="" onerror="this.style.display='none'">` : '-';
+    const series = Array.isArray(u.series) ? u.series.join(', ') : (u.series || '-');
+    return `<tr>
+      <td>${u.id}</td>
+      <td>${img}</td>
+      <td>${u.name || '-'}</td>
+      <td><span class="badge ${badgeCls}">${rarity}</span></td>
+      <td>${u.type || '-'}</td>
+      <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${series}</td>
+      <td>
+        <button class="btn btn-outline btn-sm" onclick="openUnitEdit(${u.id})">編集</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteUnit(${u.id},'${(u.name||'').replace(/'/g,"\\'")}')">削除</button>
+      </td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('unitTable').innerHTML = filtered.length === 0
+    ? '<div class="empty">データがありません</div>'
+    : `<table>
+        <thead><tr><th>ID</th><th>画像</th><th>名前</th><th>レアリティ</th><th>タイプ</th><th>シリーズ</th><th>操作</th></tr></thead>
+        <tbody>${tbody}</tbody>
+      </table>`;
+
+  const pag = document.getElementById('unitPagination');
+  pag.innerHTML = `
+    <button onclick="currentPage--;fetchUnits()" ${currentPage === 0 ? 'disabled' : ''}>← 前へ</button>
+    <span>ページ ${currentPage + 1}</span>
+    <button onclick="currentPage++;fetchUnits()" ${unitsData.length < PAGE_SIZE ? 'disabled' : ''}>次へ →</button>
+  `;
+}
+
+function openUnitCreate() {
+  editingId = null;
+  document.getElementById('modalTitle').textContent = 'ユニット新規追加';
+  document.getElementById('modalBody').innerHTML = unitFormHTML({});
+  document.getElementById('modal').classList.add('show');
+}
+
+async function openUnitEdit(id) {
+  try {
+    const r = await apiFetch(`/api/units?id=${id}`);
+    const unit = await r.json();
+    if (!unit) { toast('ユニットが見つかりません', 'error'); return; }
+    editingId = id;
+    document.getElementById('modalTitle').textContent = `ユニット編集: ${unit.name}`;
+    document.getElementById('modalBody').innerHTML = unitFormHTML(unit);
+    document.getElementById('modal').classList.add('show');
+  } catch (e) { toast(e.message, 'error'); }
+}
+
+function unitFormHTML(u) {
+  const seriesVal = Array.isArray(u.series) ? JSON.stringify(u.series) : (u.series || '[]');
+  const tagsVal = Array.isArray(u.tags) ? JSON.stringify(u.tags) : (u.tags || '[]');
+  const normalVal = u.normal ? JSON.stringify(u.normal, null, 2) : '{}';
+  const nwVal = u.normal_weapons ? JSON.stringify(u.normal_weapons, null, 2) : '[]';
+  const transVal = u.transformed ? JSON.stringify(u.transformed, null, 2) : '';
+  const twVal = u.transformed_weapons ? JSON.stringify(u.transformed_weapons, null, 2) : '';
+  return `
+    <div class="form-row">
+      <div class="form-group"><label>名前</label><input id="f_name" value="${esc(u.name || '')}"></div>
+      <div class="form-group"><label>画像パス</label><input id="f_image" value="${esc(u.image || '')}"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>レアリティ</label>
+        <select id="f_rarity">
+          ${['UR','SSR','SR','R'].map(r => `<option ${u.rarity===r?'selected':''}>${r}</option>`).join('')}
+        </select>
+      </div>
+      <div class="form-group"><label>タイプ</label><input id="f_type" value="${esc(u.type || '')}"></div>
+    </div>
+    <div class="form-group"><label>入手方法</label><input id="f_obtain" value="${esc(u.obtain || '')}"></div>
+    <div class="form-group"><label>シリーズ (JSON配列)</label><input id="f_series" value='${esc(seriesVal)}'><div class="form-hint">例: ["機動戦士ガンダム"]</div></div>
+    <div class="form-group"><label>タグ (JSON配列)</label><input id="f_tags" value='${esc(tagsVal)}'><div class="form-hint">例: ["宇宙世紀","連邦"]</div></div>
+    <div class="form-group"><label>通常ステータス (JSON)</label><textarea id="f_normal" rows="5">${esc(normalVal)}</textarea></div>
+    <div class="form-group"><label>通常武装 (JSON配列)</label><textarea id="f_nw" rows="4">${esc(nwVal)}</textarea></div>
+    <div class="form-group"><label>変形ステータス (JSON, 空欄可)</label><textarea id="f_trans" rows="4">${esc(transVal)}</textarea></div>
+    <div class="form-group"><label>変形武装 (JSON配列, 空欄可)</label><textarea id="f_tw" rows="4">${esc(twVal)}</textarea></div>
+  `;
+}
+
+async function saveUnit() {
+  try {
+    const body = {
+      name: val('f_name'),
+      image: val('f_image'),
+      rarity: val('f_rarity'),
+      type: val('f_type'),
+      obtain: val('f_obtain'),
+      series: safeJSON(val('f_series'), []),
+      tags: safeJSON(val('f_tags'), []),
+      normal: safeJSON(val('f_normal'), {}),
+      normal_weapons: safeJSON(val('f_nw'), []),
+    };
+    const trans = val('f_trans').trim();
+    const tw = val('f_tw').trim();
+    if (trans) body.transformed = safeJSON(trans, null);
+    else body.transformed = null;
+    if (tw) body.transformed_weapons = safeJSON(tw, null);
+    else body.transformed_weapons = null;
+
+    if (editingId) {
+      await apiFetch(`/api/units?id=${editingId}`, { method: 'PUT', body: JSON.stringify(body) });
+      toast('ユニットを更新しました');
+    } else {
+      await apiFetch('/api/units', { method: 'POST', body: JSON.stringify(body) });
+      toast('ユニットを作成しました');
+    }
+    closeModal();
+    fetchUnits();
+  } catch (e) { toast(e.message, 'error'); }
+}
+
+async function deleteUnit(id, name) {
+  if (!confirm(`「${name}」を削除しますか？`)) return;
+  try {
+    await apiFetch(`/api/units?id=${id}`, { method: 'DELETE' });
+    toast('削除しました');
+    fetchUnits();
+  } catch (e) { toast(e.message, 'error'); }
+}
+
+// =============== CHARACTERS ===============
+let charsData = [];
+let charsSearch = '';
+
+async function loadCharacters() {
+  const main = document.getElementById('mainContent');
+  main.innerHTML = `
+    <div class="panel">
+      <div class="panel-header">
+        <h2>キャラクター一覧</h2>
+        <div class="toolbar">
+          <input type="text" id="charSearch" placeholder="名前で検索..." value="${charsSearch}" oninput="onCharSearch(this.value)">
+          <button class="btn btn-primary" onclick="openCharCreate()">+ 新規追加</button>
+        </div>
+      </div>
+      <div id="charTable"><div class="loading">読み込み中...</div></div>
+      <div class="pagination" id="charPagination"></div>
+    </div>
+  `;
+  await fetchChars();
+}
+
+async function fetchChars() {
+  try {
+    const r = await apiFetch(`/api/characters?limit=${PAGE_SIZE}&offset=${currentPage * PAGE_SIZE}`);
+    charsData = await r.json();
+    renderCharTable();
+  } catch (e) {
+    document.getElementById('charTable').innerHTML = `<div class="empty">エラー: ${e.message}</div>`;
+  }
+}
+
+function onCharSearch(val) {
+  charsSearch = val.toLowerCase();
+  renderCharTable();
+}
+
+function renderCharTable() {
+  const filtered = charsSearch
+    ? charsData.filter(c => (c.name || '').toLowerCase().includes(charsSearch))
+    : charsData;
+  const tbody = filtered.map(c => {
+    const rarity = c.rarity || '';
+    const badgeCls = rarity === 'UR' ? 'badge-ur' : rarity === 'SSR' ? 'badge-ssr' : rarity === 'SR' ? 'badge-sr' : 'badge-r';
+    const img = c.image ? `<img class="unit-img" src="${c.image}" alt="" onerror="this.style.display='none'">` : '-';
+    const series = Array.isArray(c.series) ? c.series.join(', ') : (c.series || '-');
+    return `<tr>
+      <td>${c.id}</td>
+      <td>${img}</td>
+      <td>${c.name || '-'}</td>
+      <td><span class="badge ${badgeCls}">${rarity}</span></td>
+      <td>${c.type || '-'}</td>
+      <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${series}</td>
+      <td>
+        <button class="btn btn-outline btn-sm" onclick="openCharEdit(${c.id})">編集</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteChar(${c.id},'${(c.name||'').replace(/'/g,"\\'")}')">削除</button>
+      </td>
+    </tr>`;
+  }).join('');
+
+  document.getElementById('charTable').innerHTML = filtered.length === 0
+    ? '<div class="empty">データがありません</div>'
+    : `<table>
+        <thead><tr><th>ID</th><th>画像</th><th>名前</th><th>レアリティ</th><th>タイプ</th><th>シリーズ</th><th>操作</th></tr></thead>
+        <tbody>${tbody}</tbody>
+      </table>`;
+
+  const pag = document.getElementById('charPagination');
+  pag.innerHTML = `
+    <button onclick="currentPage--;fetchChars()" ${currentPage === 0 ? 'disabled' : ''}>← 前へ</button>
+    <span>ページ ${currentPage + 1}</span>
+    <button onclick="currentPage++;fetchChars()" ${charsData.length < PAGE_SIZE ? 'disabled' : ''}>次へ →</button>
+  `;
+}
+
+function openCharCreate() {
+  editingId = null;
+  document.getElementById('modalTitle').textContent = 'キャラクター新規追加';
+  document.getElementById('modalBody').innerHTML = charFormHTML({});
+  document.getElementById('modal').classList.add('show');
+}
+
+async function openCharEdit(id) {
+  try {
+    const r = await apiFetch(`/api/characters?id=${id}`);
+    const ch = await r.json();
+    if (!ch) { toast('キャラクターが見つかりません', 'error'); return; }
+    editingId = id;
+    document.getElementById('modalTitle').textContent = `キャラクター編集: ${ch.name}`;
+    document.getElementById('modalBody').innerHTML = charFormHTML(ch);
+    document.getElementById('modal').classList.add('show');
+  } catch (e) { toast(e.message, 'error'); }
+}
+
+function charFormHTML(c) {
+  const seriesVal = Array.isArray(c.series) ? JSON.stringify(c.series) : (c.series || '[]');
+  const tagsVal = Array.isArray(c.tags) ? JSON.stringify(c.tags) : (c.tags || '[]');
+  const statsVal = c.stats ? JSON.stringify(c.stats, null, 2) : '{}';
+  const skillsVal = c.skills ? JSON.stringify(c.skills, null, 2) : '[]';
+  const abilitiesVal = c.abilities ? JSON.stringify(c.abilities, null, 2) : '[]';
+  return `
+    <div class="form-row">
+      <div class="form-group"><label>名前</label><input id="f_name" value="${esc(c.name || '')}"></div>
+      <div class="form-group"><label>画像パス</label><input id="f_image" value="${esc(c.image || '')}"></div>
+    </div>
+    <div class="form-row">
+      <div class="form-group"><label>レアリティ</label>
+        <select id="f_rarity">
+          ${['UR','SSR','SR','R'].map(r => `<option ${c.rarity===r?'selected':''}>${r}</option>`).join('')}
+        </select>
+      </div>
+      <div class="form-group"><label>タイプ</label><input id="f_type" value="${esc(c.type || '')}"></div>
+    </div>
+    <div class="form-group"><label>シリーズ (JSON配列)</label><input id="f_series" value='${esc(seriesVal)}'></div>
+    <div class="form-group"><label>タグ (JSON配列)</label><input id="f_tags" value='${esc(tagsVal)}'></div>
+    <div class="form-group"><label>ステータス (JSON)</label><textarea id="f_stats" rows="5">${esc(statsVal)}</textarea></div>
+    <div class="form-group"><label>スキル (JSON配列)</label><textarea id="f_skills" rows="4">${esc(skillsVal)}</textarea></div>
+    <div class="form-group"><label>アビリティ (JSON配列)</label><textarea id="f_abilities" rows="4">${esc(abilitiesVal)}</textarea></div>
+  `;
+}
+
+async function saveChar() {
+  try {
+    const body = {
+      name: val('f_name'),
+      image: val('f_image'),
+      rarity: val('f_rarity'),
+      type: val('f_type'),
+      series: safeJSON(val('f_series'), []),
+      tags: safeJSON(val('f_tags'), []),
+      stats: safeJSON(val('f_stats'), {}),
+      skills: safeJSON(val('f_skills'), []),
+      abilities: safeJSON(val('f_abilities'), []),
+    };
+
+    if (editingId) {
+      await apiFetch(`/api/characters?id=${editingId}`, { method: 'PUT', body: JSON.stringify(body) });
+      toast('キャラクターを更新しました');
+    } else {
+      await apiFetch('/api/characters', { method: 'POST', body: JSON.stringify(body) });
+      toast('キャラクターを作成しました');
+    }
+    closeModal();
+    fetchChars();
+  } catch (e) { toast(e.message, 'error'); }
+}
+
+async function deleteChar(id, name) {
+  if (!confirm(`「${name}」を削除しますか？`)) return;
+  try {
+    await apiFetch(`/api/characters?id=${id}`, { method: 'DELETE' });
+    toast('削除しました');
+    fetchChars();
+  } catch (e) { toast(e.message, 'error'); }
+}
+
+// ---- Modal ----
+function saveModal() {
+  if (currentSection === 'units') saveUnit();
+  else saveChar();
+}
+
+function closeModal() {
+  document.getElementById('modal').classList.remove('show');
+  editingId = null;
+}
+
+document.getElementById('modal').addEventListener('click', e => {
+  if (e.target === document.getElementById('modal')) closeModal();
+});
+
+// ---- Helpers ----
+function val(id) { return document.getElementById(id).value; }
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function safeJSON(str, fallback) {
+  try { return JSON.parse(str); } catch { return fallback; }
+}
+
+// ---- Init ----
+if (token) {
+  // Verify token still works
+  fetch(API + '/api/units?limit=1', {
+    headers: { 'Authorization': 'Bearer ' + token }
+  }).then(r => {
+    if (r.ok) showApp();
+    else doLogout();
+  }).catch(() => doLogout());
+} else {
+  document.getElementById('loginScreen').style.display = 'flex';
+}
+</script>
+</body>
+</html>
