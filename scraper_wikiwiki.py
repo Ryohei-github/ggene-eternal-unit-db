@@ -200,12 +200,17 @@ def parse_unit_page(soup, page_name):
                     mechanism_parts.append(label)
         result["mechanism"] = "・".join(mechanism_parts) if mechanism_parts else ""
 
-    # --- Table 2: Stats by limit break (★) ---
+    # --- Table 2: Stats by limit break (★) or evolution stage (段階 for ULT) ---
     stats_table = None
+    is_stage_table = False
     for t in tables:
         headers = [th.get_text(strip=True) for th in t.select("tr:first-child th, tr:first-child td")]
         if "★の数" in headers or "☆の数" in headers:
             stats_table = t
+            break
+        if "段階" in headers and "HP" in headers:
+            stats_table = t
+            is_stage_table = True
             break
 
     result["stats_by_star"] = []
@@ -214,7 +219,7 @@ def parse_unit_page(soup, page_name):
         header_cells = rows[0].select("th, td")
         col_names = [c.get_text(strip=True) for c in header_cells]
 
-        for row in rows[1:]:
+        for row_idx, row in enumerate(rows[1:]):
             cells = row.select("th, td")
             if len(cells) < len(col_names):
                 continue
@@ -225,6 +230,9 @@ def parse_unit_page(soup, page_name):
                     entry["star"] = val.count("★") + val.count("☆")
                     if val in ("無し", "なし", "無", "0"):
                         entry["star"] = 0
+                elif k == "段階":
+                    # ULT stage table: "1段階SSR", "2段階UR", "3段階ULT"
+                    entry["star"] = row_idx
                 elif k == "LV":
                     entry["lv"] = clean_number(val)
                 elif k == "HP":
