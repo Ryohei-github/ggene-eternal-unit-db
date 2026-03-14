@@ -541,11 +541,19 @@ def parse_pilot_page(soup, page_name):
                 if len(cells) >= 2:
                     name = cells[0].get_text(strip=True)
                     desc = cells[1].get_text(strip=True)
+                    # Skip sub-header rows
+                    if name in ("名称", "スキル名", "名前") and desc in ("SP", "消費SP", "説明"):
+                        continue
+                    sp_val = 0
                     sp_match = re.search(r'SP\s*[:：]?\s*(\d+)', name + " " + desc)
+                    if sp_match:
+                        sp_val = int(sp_match.group(1))
+                    elif desc.isdigit():
+                        sp_val = int(desc)
                     result["skills"].append({
                         "name": name,
                         "effect": desc,
-                        "sp_cost": int(sp_match.group(1)) if sp_match else 0,
+                        "sp_cost": sp_val,
                     })
             break
 

@@ -507,6 +507,7 @@ async function init() {
       name: a.name, effect: a.desc
     }));
     return {
+      id: u.id,
       name: u.name,
       image: u.image,
       rarity: u.rarity,
@@ -1019,7 +1020,7 @@ function unitCardHTML(u) {
 
   const iconHTML = u.image ? `<img class="card-icon" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'" loading="lazy" width="48" height="48">` : '';
 
-  return `<div class="card" onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
+  return `<div class="card" onclick="showUnitDetail(${u.id})">
     <div class="card-header">
       ${iconHTML}
       <div class="card-name">${u.name}</div>
@@ -1081,7 +1082,7 @@ function charaCardHTML(c) {
 
   const iconHTML = c.image ? `<img class="card-icon" src="${c.image}" alt="${c.name}" onerror="this.style.display='none'" loading="lazy" width="48" height="48">` : '';
 
-  return `<div class="card" onclick="showCharaDetail('${c.name.replace(/'/g,"\\'")}')">
+  return `<div class="card" onclick="showCharaDetail(${c.id})">
     <div class="card-header">
       ${iconHTML}
       <div class="card-name">${c.name}</div>
@@ -1103,7 +1104,7 @@ function supporterCardHTML(s) {
   const leaderShort = s.leader_skill ? (s.leader_skill.length > 60 ? s.leader_skill.substring(0, 60) + '...' : s.leader_skill) : '-';
   const supportShort = s.support_skill ? (s.support_skill.length > 60 ? s.support_skill.substring(0, 60) + '...' : s.support_skill) : '-';
 
-  return `<div class="card" onclick="showSupporterDetail('${s.name.replace(/'/g,"\\'")}')">
+  return `<div class="card" onclick="showSupporterDetail(${s.id})">
     <div class="card-header">
       <div class="card-name">${s.name}</div>
       <div class="card-badges">
@@ -1131,7 +1132,7 @@ function unitTableHTML(items) {
     const mapLabel = mapW.length ? mapW.map(w=>`<img src="${WEAPON_MAP_ICON}" style="width:14px;height:14px;vertical-align:middle;margin-right:2px">`+w.name+(w.ammo&&w.ammo!=='-'?`[${w.ammo}回]`:'[-回]')).join(', ') : '-';
     const terrStr = ['宇宙','空中','地上','水上','水中'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
     const iconTd = u.image ? `<img class="cell-icon" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'" loading="lazy">` : '';
-    return `<tr onclick="showUnitDetail('${u.name.replace(/'/g,"\\'")}')">
+    return `<tr onclick="showUnitDetail(${u.id})">
       <td class="cell-name">${iconTd}${u.name}</td>
       <td class="cell-center"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.7em">${u.rarity||'?'}</span></td>
       <td class="cell-center">${u.type ? typeIconHTML(u.type)+' '+u.type : '-'}</td>
@@ -1155,7 +1156,7 @@ function charaTableHTML(items) {
   const rows = items.map(c => {
     const s = c.stats||{};
     const skillNames = (c.skills||[]).map(sk=>`${sk.name.replace(/\(SP:\d+\)/,'').trim()} SP:${sk.sp_cost||'?'}`).join(', ');
-    return `<tr onclick="showCharaDetail('${c.name.replace(/'/g,"\\'")}')">
+    return `<tr onclick="showCharaDetail(${c.id})">
       <td class="cell-name">${c.name}</td>
       <td class="cell-center">${c.rarity||'-'}</td>
       <td class="cell-center">${c.chara_type ? typeIconHTML(c.chara_type)+' '+c.chara_type : '-'}</td>
@@ -1177,7 +1178,7 @@ function supporterTableHTML(items) {
   const rows = items.map(s => {
     const leaderShort = s.leader_skill?(s.leader_skill.length>80?s.leader_skill.substring(0,80)+'...':s.leader_skill):'-';
     const supportShort = s.support_skill?(s.support_skill.length>80?s.support_skill.substring(0,80)+'...':s.support_skill):'-';
-    return `<tr onclick="showSupporterDetail('${s.name.replace(/'/g,"\\'")}')">
+    return `<tr onclick="showSupporterDetail(${s.id})">
       <td class="cell-name">${s.name}</td>
       <td class="cell-center">${s.rarity||'-'}</td>
       <td class="cell-num">${s.hp||'-'}</td>
@@ -1193,8 +1194,8 @@ function supporterTableHTML(items) {
 }
 
 // === UNIT DETAIL (with transform toggle) ===
-function showUnitDetail(name) {
-  const u = allUnits.find(x => x.name === name);
+function showUnitDetail(id) {
+  const u = allUnits.find(x => x.id === id);
   if (!u) return;
   window._currentDetailUnit = u;
   window._currentDetailForm = 'base';
@@ -1357,8 +1358,8 @@ function switchForm(form) {
 }
 
 // === CHARA DETAIL ===
-function showCharaDetail(name) {
-  const c = allCharas.find(x => x.name === name);
+function showCharaDetail(id) {
+  const c = allCharas.find(x => x.id === id);
   if (!c) return;
   const s = c.stats || {};
   const ex = isEXChara(c);
@@ -1415,8 +1416,8 @@ function showCharaDetail(name) {
 }
 
 // === SUPPORTER DETAIL ===
-function showSupporterDetail(name) {
-  const s = allSupporters.find(x => x.name === name);
+function showSupporterDetail(id) {
+  const s = allSupporters.find(x => x.id === id);
   if (!s) return;
 
   document.getElementById('modalContent').innerHTML = `
