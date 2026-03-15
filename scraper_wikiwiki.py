@@ -367,6 +367,8 @@ def parse_unit_page(soup, page_name):
                         weapon["hit"] = val
                     elif h in ("CL", "クリ"):
                         weapon["critical"] = val
+                    elif h == "弾数":
+                        weapon["ammo"] = val
 
             # Effect/restriction from remaining rows
             effects = []
@@ -381,9 +383,10 @@ def parse_unit_page(soup, page_name):
             if "MAP" in weapon["name"].upper():
                 weapon["range"] = "MAP"
             if weapon.get("name"):
-                # Extract ammo info if present
-                ammo_match = re.search(r'(\d+)発', weapon.get("effect", ""))
-                weapon["ammo"] = ammo_match.group(1) if ammo_match else ""
+                # Use ammo from 弾数 header if available, otherwise try extracting from effect
+                if not weapon.get("ammo"):
+                    ammo_match = re.search(r'(\d+)発', weapon.get("effect", ""))
+                    weapon["ammo"] = ammo_match.group(1) if ammo_match else ""
 
                 result["weapons"].append(weapon)
 
@@ -465,18 +468,23 @@ def parse_pilot_page(soup, page_name):
     result = {}
 
     # Look for stats table with 射撃/格闘/覚醒/守備/反応
+    # Wiki format: 4-row table with alternating header/data rows
+    # Row 0: [射撃, 格闘, 覚醒]  Row 1: [634, 551, 897]
+    # Row 2: [守備, 反応, SP]    Row 3: [541, 727, 15]
     for t in tables:
-        headers = [c.get_text(strip=True) for c in t.select("tr:first-child th, tr:first-child td")]
-        header_text = " ".join(headers)
-        if "射撃" in header_text and "格闘" in header_text:
+        all_text = t.get_text()
+        if "射撃" in all_text and "格闘" in all_text:
             rows = t.select("tr")
-            if len(rows) >= 2:
-                col_names = headers
-                # Find data row (last row = max stars)
-                for row in rows[1:]:
-                    cells = row.select("th, td")
-                    entry = {}
-                    for k, cell in zip(col_names, cells):
+            entry = {}
+            i = 0
+            while i < len(rows) - 1:
+                header_cells = rows[i].select("th, td")
+                data_cells = rows[i + 1].select("th, td")
+                header_names = [c.get_text(strip=True) for c in header_cells]
+                # Check if this row looks like a header row (contains stat names)
+                stat_names = {"射撃", "格闘", "覚醒", "守備", "反応", "SP", "射撃値", "格闘値", "覚醒値", "守備値", "反応値"}
+                if any(h in stat_names for h in header_names):
+                    for k, cell in zip(header_names, data_cells):
                         val = cell.get_text(strip=True)
                         if k in ("射撃", "射撃値"):
                             entry["shooting"] = clean_number(val)
@@ -490,8 +498,11 @@ def parse_pilot_page(soup, page_name):
                             entry["reaction"] = clean_number(val)
                         elif k == "SP":
                             entry["sp"] = clean_number(val)
-                    if entry.get("shooting", 0) > 0:
-                        result["stats"] = entry
+                    i += 2  # Skip data row
+                else:
+                    i += 1
+            if entry.get("shooting", 0) > 0:
+                result["stats"] = entry
             break
 
     # Type
@@ -532,6 +543,7 @@ def parse_pilot_page(soup, page_name):
                 result["tags"] = [t.strip() for t in re.split(r'\s*/\s*', val) if t.strip()]
 
     # Skills
+    # Wiki format: title row [スキル], header row [名称, SP, 効果], then data rows
     result["skills"] = []
     for t in tables:
         first_row = t.select_one("tr")
@@ -540,35 +552,102 @@ def parse_pilot_page(soup, page_name):
                 cells = row.select("th, td")
                 if len(cells) >= 2:
                     name = cells[0].get_text(strip=True)
-                    desc = cells[1].get_text(strip=True)
                     # Skip sub-header rows
-                    if name in ("名称", "スキル名", "名前") and desc in ("SP", "消費SP", "説明"):
+                    if name in ("名称", "スキル名", "名前"):
                         continue
-                    sp_val = 0
-                    sp_match = re.search(r'SP\s*[:：]?\s*(\d+)', name + " " + desc)
-                    if sp_match:
-                        sp_val = int(sp_match.group(1))
-                    elif desc.isdigit():
-                        sp_val = int(desc)
+                    if len(cells) >= 3:
+                        # 3-column format: [名称, SP, 効果]
+                        sp_text = cells[1].get_text(strip=True)
+                        effect = cells[2].get_text(strip=True)
+                        sp_val = int(sp_text) if sp_text.isdigit() else 0
+                    else:
+                        # 2-column fallback
+                        desc = cells[1].get_text(strip=True)
+                        sp_val = 0
+                        if desc.isdigit():
+                            sp_val = int(desc)
+                            effect = ""
+                        else:
+                            effect = desc
                     result["skills"].append({
                         "name": name,
-                        "effect": desc,
+                        "effect": effect,
                         "sp_cost": sp_val,
                     })
             break
 
     # Abilities
+    # Wiki format: title [アビリティ], then rows of [name, desc, (optional condition)]
+    # EXアビリティ uses rowspan - first row has "EXアビリティ" in name col,
+    # subsequent rows in the EX block only have [effect, unit/condition]
     result["abilities"] = []
     for t in tables:
         first_row = t.select_one("tr")
         if first_row and first_row.get_text(strip=True) == "アビリティ":
+            in_ex_block = False
             for row in t.select("tr")[1:]:
                 cells = row.select("th, td")
-                if len(cells) >= 2:
+                if not cells:
+                    continue
+
+                if len(cells) >= 3:
+                    # 3-column row: [name, desc, condition]
                     name = cells[0].get_text(strip=True)
                     desc = cells[1].get_text(strip=True)
-                    if name and desc:
-                        result["abilities"].append({"name": name, "desc": desc})
+                    condition = cells[2].get_text(strip=True)
+                    if name == "EXアビリティ":
+                        in_ex_block = True
+                        # First EX ability effect is in desc
+                        if desc:
+                            result["abilities"].append({
+                                "name": "EXアビリティ",
+                                "desc": desc,
+                                "condition": condition
+                            })
+                    elif name:
+                        in_ex_block = False
+                        if desc:
+                            result["abilities"].append({
+                                "name": name,
+                                "desc": desc,
+                                "condition": condition
+                            })
+                elif len(cells) == 2:
+                    c0 = cells[0].get_text(strip=True)
+                    c1 = cells[1].get_text(strip=True)
+                    if in_ex_block:
+                        # Continuation of EX block: [effect, unit/condition]
+                        if c0:
+                            result["abilities"].append({
+                                "name": "EXアビリティ",
+                                "desc": c0,
+                                "condition": c1
+                            })
+                    else:
+                        # Normal 2-column ability
+                        if c0 == "EXアビリティ":
+                            in_ex_block = True
+                            if c1:
+                                result["abilities"].append({
+                                    "name": "EXアビリティ",
+                                    "desc": c1,
+                                    "condition": ""
+                                })
+                        elif c0 and c1:
+                            result["abilities"].append({
+                                "name": c0,
+                                "desc": c1,
+                                "condition": ""
+                            })
+                elif len(cells) == 1:
+                    # Single cell - might be EX block continuation
+                    text = cells[0].get_text(strip=True)
+                    if text and in_ex_block:
+                        result["abilities"].append({
+                            "name": "EXアビリティ",
+                            "desc": text,
+                            "condition": ""
+                        })
             break
 
     return result

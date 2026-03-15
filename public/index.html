@@ -1014,7 +1014,7 @@ function unitCardHTML(u) {
     const isMap = w.range === 'MAP';
     const isEx = w.name.includes('EX');
     const mapIcon = isMap ? `<img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">` : '';
-    if (isMap) label += ` [${w.ammo && w.ammo !== '-' ? w.ammo + '回' : '-回'}]`;
+    if (isMap && w.ammo && w.ammo !== '-') label += ` [${w.ammo}回]`;
     return `<span class="weapon-tag${isEx?' ex':''}${isMap?' map':''}">${mapIcon}${label}</span>`;
   }).join('');
   const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('');
@@ -1130,7 +1130,7 @@ function unitTableHTML(items) {
     const s = u.normal?.stats||{};
     const t = u.normal?.terrain||{};
     const mapW = (u.normal_weapons||[]).filter(w=>w.range==='MAP');
-    const mapLabel = mapW.length ? mapW.map(w=>`<img src="${WEAPON_MAP_ICON}" style="width:14px;height:14px;vertical-align:middle;margin-right:2px">`+w.name+(w.ammo&&w.ammo!=='-'?`[${w.ammo}回]`:'[-回]')).join(', ') : '-';
+    const mapLabel = mapW.length ? mapW.map(w=>`<img src="${WEAPON_MAP_ICON}" style="width:14px;height:14px;vertical-align:middle;margin-right:2px">`+w.name+(w.ammo&&w.ammo!=='-'?` [${w.ammo}回]`:'')).join(', ') : '-';
     const terrStr = ['宇宙','空中','地上','水上','水中'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
     const iconTd = u.image ? `<img class="cell-icon" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'" loading="lazy">` : '';
     return `<tr onclick="showUnitDetail(${u.id})">
@@ -1384,8 +1384,8 @@ function showCharaDetail(id) {
 
   const skillsHTML = (c.skills||[]).map(sk => `
     <div class="skill-item">
-      <div class="skill-name">${sk.name}</div>
-      <div class="skill-effect">${sk.effect}</div>
+      <div class="skill-name">${sk.name}${sk.sp_cost ? ` <span style="color:var(--accent);font-size:.8em">SP: ${sk.sp_cost}</span>` : ''}</div>
+      <div class="skill-effect">${sk.effect || sk.desc || ''}</div>
     </div>
   `).join('');
 
@@ -1393,9 +1393,26 @@ function showCharaDetail(id) {
   const isGarbage = (n) => garbageNames.includes(n) || /^戦闘力[\(（]/.test(n) || /[\(（]SP:\d+[\)）]/.test(n);
   const cleanAbilities = (c.abilities||[]).filter(a => !isGarbage(a.name));
 
-  const abHTML = cleanAbilities.map(a => `
-    <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.effect}</span></div>
+  // Group EX abilities together
+  const exAbilities = cleanAbilities.filter(a => a.name === 'EXアビリティ');
+  const normalAbilities = cleanAbilities.filter(a => a.name !== 'EXアビリティ');
+
+  let abHTML = normalAbilities.map(a => `
+    <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.desc || a.effect || ''}</span></div>
   `).join('');
+
+  if (exAbilities.length) {
+    const exInner = exAbilities.map(a => `
+      <div style="padding:4px 0;border-bottom:1px solid var(--border)">
+        <span class="ability-effect">${a.desc || a.effect || ''}</span>
+        ${a.condition ? `<span style="display:inline-block;margin-left:8px;padding:1px 6px;background:rgba(0,212,255,.1);border:1px solid var(--accent);border-radius:4px;font-size:.75em;color:var(--accent)">${a.condition}</span>` : ''}
+      </div>
+    `).join('');
+    abHTML += `<div class="ability-item" style="border:1px solid var(--accent);border-radius:8px;padding:8px 12px">
+      <span class="ability-name" style="color:var(--accent)">EXアビリティ</span>
+      ${exInner}
+    </div>`;
+  }
 
   const charaImgHTML = c.image ? `<div style="text-align:center;margin:10px 0"><img src="${c.image}" alt="${c.name}" style="max-width:120px;border-radius:8px;border:1px solid var(--border)" onerror="this.style.display='none'"></div>` : '';
 
