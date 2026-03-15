@@ -595,7 +595,7 @@ def parse_pilot_page(soup, page_name):
                     name = cells[0].get_text(strip=True)
                     desc = cells[1].get_text(strip=True)
                     condition = cells[2].get_text(strip=True)
-                    if name == "EXアビリティ":
+                    if name in ("EXアビリティ", "EXキャラアビリティ"):
                         in_ex_block = True
                         # First EX ability effect is in desc
                         if desc:
@@ -625,7 +625,7 @@ def parse_pilot_page(soup, page_name):
                             })
                     else:
                         # Normal 2-column ability
-                        if c0 == "EXアビリティ":
+                        if c0 in ("EXアビリティ", "EXキャラアビリティ"):
                             in_ex_block = True
                             if c1:
                                 result["abilities"].append({

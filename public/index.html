@@ -1392,13 +1392,14 @@ function showCharaDetail(id) {
     </div>
   `).join('');
 
-  const garbageNames = ['リセマラ評価','キャラ一覧の関連記事','解放キャラ','スキル','UR','EXキャラアビリティ','対象ユニット','サポーターの一覧記事','レア度','2×2','SD','支援','攻撃'];
+  const garbageNames = ['リセマラ評価','キャラ一覧の関連記事','解放キャラ','スキル','UR','対象ユニット','サポーターの一覧記事','レア度','2×2','SD','支援','攻撃'];
   const isGarbage = (n) => garbageNames.includes(n) || /^戦闘力[\(（]/.test(n) || /[\(（]SP:\d+[\)）]/.test(n);
   const cleanAbilities = (c.abilities||[]).filter(a => !isGarbage(a.name));
 
-  // Group EX abilities together
-  const exAbilities = cleanAbilities.filter(a => a.name === 'EXアビリティ');
-  const normalAbilities = cleanAbilities.filter(a => a.name !== 'EXアビリティ');
+  // Group EX abilities together (match both EXアビリティ and EXキャラアビリティ)
+  const isEX = (a) => a.name === 'EXアビリティ' || a.name === 'EXキャラアビリティ';
+  const exAbilities = cleanAbilities.filter(isEX);
+  const normalAbilities = cleanAbilities.filter(a => !isEX(a));
 
   let abHTML = normalAbilities.map(a => `
     <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.desc || a.effect || ''}</span></div>
