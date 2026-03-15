@@ -499,13 +499,14 @@ async function init() {
     const n = u.normal || {};
     const stats = n.stats || {};
     // スキル: skills配列から取得（SP付き）
-    const skills = (n.skills || []).map(sk => {
-      const spMatch = sk.name.match(/\(SP:(\d+)\)/);
-      return { name: sk.name, effect: sk.desc, sp_cost: spMatch ? parseInt(spMatch[1]) : 0 };
-    });
+    const skills = (n.skills || []).map(sk => ({
+      name: sk.name,
+      effect: sk.effect || sk.desc || '',
+      sp_cost: sk.sp_cost || 0
+    }));
     // アビリティ: abilities配列から取得
     const charaAbilities = (n.abilities || []).map(a => ({
-      name: a.name, effect: a.desc
+      name: a.name, desc: a.desc || a.effect || '', condition: a.condition || ''
     }));
     return {
       id: u.id,
@@ -521,7 +522,8 @@ async function init() {
         melee: stats.melee || 0,
         awakening: stats.awakening || 0,
         defense: stats.defense || 0,
-        reaction: stats.reaction || 0
+        reaction: stats.reaction || 0,
+        sp: stats.sp || 0
       },
       skills: skills,
       abilities: charaAbilities
@@ -1378,6 +1380,7 @@ function showCharaDetail(id) {
         <div class="stat-box"><div class="label">覚醒値</div><div class="val">${s.awakening||'-'}</div></div>
         <div class="stat-box"><div class="label">守備力</div><div class="val">${s.defense||'-'}</div></div>
         <div class="stat-box"><div class="label">反応値</div><div class="val">${s.reaction||'-'}</div></div>
+        <div class="stat-box"><div class="label">SP</div><div class="val">${s.sp||'-'}</div></div>
       </div>
     </div>`;
   }
