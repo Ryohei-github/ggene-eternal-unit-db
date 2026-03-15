@@ -147,8 +147,8 @@ a:hover{text-decoration:underline}
 .filter-btn:hover{border-color:var(--accent);color:var(--text)}
 .filter-btn.active{background:rgba(0,212,255,.15);border-color:var(--accent);color:var(--accent);font-weight:600}
 .filter-btn img{width:14px;height:14px;vertical-align:middle;filter:drop-shadow(0 0 1px rgba(0,0,0,.5))}
-.filter-btn-ult.active{background:rgba(255,50,50,.2);border-color:#ff4444;color:#ff4444}
-.filter-btn-ur.active{background:rgba(155,48,255,.2);border-color:#bf5fff;color:#bf5fff}
+.filter-btn-ur.active{background:linear-gradient(135deg,rgba(255,0,0,.12),rgba(255,165,0,.12),rgba(255,255,0,.12),rgba(0,200,0,.12),rgba(0,150,255,.12),rgba(130,0,255,.12));border-image:linear-gradient(90deg,#ff0000,#ff8800,#ffdd00,#00cc00,#0088ff,#8800ff) 1;color:#ff8800;font-weight:700}
+.filter-btn-ult.active{background:rgba(100,60,255,.2);border-color:#7c4dff;color:#7c4dff}
 .filter-btn-ssr.active{background:rgba(255,215,0,.15);border-color:var(--gold);color:var(--gold)}
 .filter-btn-sr.active{background:rgba(192,192,192,.15);border-color:#c0c0c0;color:#c0c0c0}
 .filter-btn-r.active{background:rgba(205,133,63,.15);border-color:#cd853f;color:#cd853f}
@@ -175,8 +175,8 @@ a:hover{text-decoration:underline}
 .card-name{font-size:1.05em;font-weight:700;color:#fff;flex:1;min-width:0}
 .card-badges{display:flex;gap:4px;flex-shrink:0;flex-wrap:wrap}
 .badge{padding:2px 8px;border-radius:4px;font-size:.65em;font-weight:700;letter-spacing:.5px}
-.badge-ult{background:linear-gradient(135deg,#cc0000,#ff4444);color:#fff}
-.badge-ur{background:linear-gradient(135deg,#9b30ff,#bf5fff);color:#fff}
+.badge-ur{background:linear-gradient(90deg,#ff0000,#ff8800,#eecc00,#00bb00,#0088ff,#8800ff);color:#fff;text-shadow:0 1px 2px rgba(0,0,0,.5)}
+.badge-ult{background:linear-gradient(135deg,#4a00e0,#7c4dff);color:#fff}
 .badge-ssr{background:linear-gradient(135deg,#daa520,#ffd700);color:#1a1a1a}
 .badge-sr{background:linear-gradient(135deg,#a0a0a0,#c0c0c0);color:#1a1a1a}
 .badge-r{background:linear-gradient(135deg,#b87333,#cd853f);color:#fff}
@@ -664,7 +664,7 @@ function buildFilters() {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
     // Rarity buttons
-    const rarityOrder = ['ULT','UR','SSR','SR','R','N'];
+    const rarityOrder = ['UR','ULT','SSR','SR','R','N'];
     const rarBtns = rarityOrder.filter(r => rarities.has(r)).map(r =>
       `<button class="filter-btn filter-btn-${r.toLowerCase()}" data-value="${r}">${r}</button>`
     ).join('');
@@ -730,7 +730,7 @@ function buildFilters() {
       if (c.chara_type) types.add(c.chara_type);
       if (c.series) series.add(c.series);
     });
-    const rarityOrder = ['ULT','UR','SSR','SR','R','N'];
+    const rarityOrder = ['UR','ULT','SSR','SR','R','N'];
     const rarBtns = rarityOrder.filter(r => rarities.has(r)).map(r =>
       `<button class="filter-btn filter-btn-${r.toLowerCase()}" data-value="${r}">${r}</button>`
     ).join('');
@@ -746,7 +746,7 @@ function buildFilters() {
       if (s.rarity) rarities.add(s.rarity);
       if (s.target_series) targets.add(s.target_series);
     });
-    const rarityOrder = ['ULT','UR','SSR','SR','R','N'];
+    const rarityOrder = ['UR','ULT','SSR','SR','R','N'];
     const rarBtns = rarityOrder.filter(r => rarities.has(r)).map(r =>
       `<button class="filter-btn filter-btn-${r.toLowerCase()}" data-value="${r}">${r}</button>`
     ).join('');
