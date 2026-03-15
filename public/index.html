@@ -99,7 +99,7 @@ a:hover{text-decoration:underline}
 .header-brand{display:flex;align-items:center;justify-content:center;gap:10px}
 .header-icon{width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);flex-shrink:0}
 .header h1{font-size:1.4em;letter-spacing:2px;background:linear-gradient(90deg,var(--accent),#80e0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.sub-brand{font-size:.6em;letter-spacing:1px;opacity:.7}
+.sub-brand{font-size:.6em;letter-spacing:1px;color:#aab4c0;-webkit-text-fill-color:#aab4c0}
 .header .sub{font-size:.75em;color:var(--text2);margin-top:2px}
 .header-links{display:flex;justify-content:center;gap:10px;margin-top:6px;flex-wrap:wrap}
 .header-links a{display:inline-flex;align-items:center;gap:4px;font-size:.7em;padding:3px 12px;border-radius:14px;font-weight:600;transition:all .2s}
@@ -110,7 +110,8 @@ a:hover{text-decoration:underline}
 .header .yt-cta{margin-top:4px;font-size:.65em;color:var(--text2);letter-spacing:.02em}.yt-cta a{color:#ff6b35;font-weight:bold;text-decoration:underline}
 
 /* Ad slots */
-.ad-slot{max-width:1800px;margin:0 auto;padding:8px 16px;text-align:center;min-height:90px}
+.ad-slot{max-width:1800px;margin:0 auto;padding:8px 16px;text-align:center;min-height:0;overflow:hidden}
+.ad-slot ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
 .ad-slot-footer{border-top:1px solid var(--border);padding-top:12px;margin-top:20px}
 
 /* Footer */
@@ -361,7 +362,7 @@ a:hover{text-decoration:underline}
   .view-toggle{margin-left:6px}
 
   /* Ad slots */
-  .ad-slot{min-height:50px;padding:4px 10px}
+  .ad-slot{min-height:0;padding:4px 10px}
 
   /* Footer */
   .footer-links{gap:10px}
