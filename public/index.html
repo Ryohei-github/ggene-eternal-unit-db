@@ -1224,7 +1224,7 @@ function renderUnitDetail(u, form) {
     const isEx = w.name.includes('EX');
     return `
     <div class="weapon-detail">
-      <div class="weapon-name">${isMap?`<span class="map-badge"><img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">MAP兵器</span>`:''}${w.name}${isEx?'<span class="ex-badge">EX</span>':''}${isMap ? ` <span style="color:var(--accent2);font-size:.75em">[${w.ammo && w.ammo !== '-' ? w.ammo + '回' : '-回'}]</span>` : ''}</div>
+      <div class="weapon-name">${isMap?`<span class="map-badge"><img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">MAP兵器</span>`:''}${w.name}${isEx?'<span class="ex-badge">EX</span>':''}</div>
       <div class="weapon-info">
         <div><span>属性:</span> <strong>${w.attribute||'-'}</strong></div>
         <div><span>射程:</span> <strong>${rangeDisplay(w)}</strong></div>
@@ -1232,9 +1232,10 @@ function renderUnitDetail(u, form) {
         <div><span>EN:</span> <strong>${w.en||'-'}</strong></div>
         <div><span>命中:</span> <strong>${w.hit||'-'}</strong></div>
         <div><span>クリ:</span> <strong>${w.critical||'-'}</strong></div>
+        ${isMap ? `<div><span>使用回数:</span> <strong>${w.ammo && w.ammo !== '-' ? w.ammo + '回' : '-'}</strong></div>` : ''}
       </div>
       ${w.weapon_type ? `<div class="weapon-effect">タイプ: ${w.weapon_type}</div>` : ''}
-      ${w.effect && w.effect !== 'なし' ? `<div class="weapon-effect">効果: ${w.effect}</div>` : ''}
+      ${(() => { let eff = w.effect || ''; eff = eff.replace(/\s*\[添付\]/g, '').trim(); return eff && eff !== 'なし' ? `<div class="weapon-effect">効果: ${eff}</div>` : ''; })()}
       ${w.restriction && w.restriction !== 'なし' ? `<div class="weapon-effect">制限: ${w.restriction}</div>` : ''}
     </div>
   `}).join('');
