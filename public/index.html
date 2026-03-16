@@ -762,16 +762,15 @@ function setupTabs() {
       document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
       if (isTagLookup) {
         renderTagLookup();
-        syncURL();
       } else if (isTeam) {
         renderTeamSim();
-        syncURL();
       } else {
         resetFilters();
         buildFilters();
         updateUI();
         render();
       }
+      syncURL();
     });
   });
 }
@@ -783,6 +782,7 @@ function setupViewToggle() {
       document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       render();
+      syncURL();
     });
   });
 }
@@ -2333,12 +2333,12 @@ function syncURL() {
     return;
   }
 
-  // Tag lookup
-  if (currentTab === 'taglookup' && activeTagLookup) {
-    params.set('ltag', activeTagLookup);
+  // Tag lookup — always early-return (don't read filter DOM)
+  if (currentTab === 'taglookup') {
+    if (activeTagLookup) params.set('ltag', activeTagLookup);
     const tagQ = document.getElementById('tagSearchInput')?.value || '';
     if (tagQ) params.set('tq', tagQ);
-    history.replaceState(null, '', '?' + params.toString());
+    history.replaceState(null, '', params.toString() ? '?' + params.toString() : window.location.pathname);
     return;
   }
 
