@@ -2692,7 +2692,6 @@ function shareTeamURL() {
 }
 
 async function shareTeamImage() {
-  // Preload all unit/chara images
   function loadImg(src) {
     return new Promise(resolve => {
       if (!src) return resolve(null);
@@ -2711,70 +2710,170 @@ async function shareTeamImage() {
     imgPromises.push(loadImg(unit?.image));
     imgPromises.push(loadImg(chara?.image));
   }
+  const sup = teamSupporterId ? allSupporters.find(s => s.id === teamSupporterId) : null;
+  imgPromises.push(loadImg(sup?.image));
   const loadedImgs = await Promise.all(imgPromises);
+  const supImg = loadedImgs[10];
 
-  const W = 800, H = 540;
+  const W = 820, H = 580;
   const canvas = document.createElement('canvas');
   canvas.width = W; canvas.height = H;
   const ctx = canvas.getContext('2d');
+
   // Background
   ctx.fillStyle = '#0d1117'; ctx.fillRect(0, 0, W, H);
+
   // Accent line top
   const grad = ctx.createLinearGradient(0, 0, W, 0);
   grad.addColorStop(0, '#00d4ff'); grad.addColorStop(1, '#0066ff');
   ctx.fillStyle = grad; ctx.fillRect(0, 0, W, 4);
+
   // Title area
   const teamName = document.getElementById('teamNameInput').value || 'My Team';
   ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 22px sans-serif';
   ctx.fillText(teamName, 24, 40);
-  // Site URL
+
+  // Filled count
+  const filledCount = teamSlots.filter(s => s.unitId).length;
+  ctx.fillStyle = '#8b949e'; ctx.font = '13px sans-serif';
+  ctx.fillText(`${filledCount}/5機`, 24, 60);
+
+  // Site branding
   ctx.fillStyle = '#484f58'; ctx.font = '12px sans-serif';
   ctx.textAlign = 'right';
-  ctx.fillText('GジェネエターナルDB by MH GAMES', W - 24, 40);
-  ctx.fillText(window.location.origin, W - 24, 58);
+  ctx.fillText('GジェネエターナルDB by MH GAMES', W - 24, 36);
+  ctx.fillText(window.location.origin, W - 24, 54);
   ctx.textAlign = 'left';
-  // Slot cards
-  const slotW = 148, slotH = 350, gap = 8, startX = 12, startY = 86;
+
+  // --- Supporter section (top, below title) ---
+  const supY = 72;
+  ctx.fillStyle = '#161b22'; ctx.beginPath();
+  roundRect(ctx, 12, supY, W - 24, 58, 8); ctx.fill();
+  ctx.strokeStyle = '#30363d'; ctx.lineWidth = 1; ctx.beginPath();
+  roundRect(ctx, 12, supY, W - 24, 58, 8); ctx.stroke();
+
+  ctx.fillStyle = '#00d4ff'; ctx.font = 'bold 11px sans-serif';
+  ctx.fillText('サポーター', 18, supY + 16);
+
+  if (sup) {
+    // Supporter image
+    if (supImg) {
+      ctx.save();
+      ctx.beginPath();
+      roundRect(ctx, 90, supY + 6, 44, 44, 6);
+      ctx.clip();
+      ctx.drawImage(supImg, 90, supY + 6, 44, 44);
+      ctx.restore();
+      ctx.strokeStyle = '#30363d'; ctx.lineWidth = 1; ctx.beginPath();
+      roundRect(ctx, 90, supY + 6, 44, 44, 6); ctx.stroke();
+    }
+    // Name + rarity
+    const rarCol = sup.rarity === 'UR' ? '#ff6b6b' : sup.rarity === 'ULT' ? '#ff44ff' : sup.rarity === 'SSR' ? '#ffd93d' : '#b388ff';
+    ctx.fillStyle = rarCol; ctx.font = 'bold 10px sans-serif';
+    ctx.fillText(sup.rarity || '', 142, supY + 18);
+    ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 13px sans-serif';
+    ctx.fillText(sup.name, 165, supY + 18);
+
+    // Leader skill info (compact)
+    const maxLS1 = sup.leader_3 || sup.leader_2 || sup.leader_1 || sup.leader_0 || '';
+    const maxLS2 = sup.leader2_3 || sup.leader2_2 || sup.leader2_1 || sup.leader2_0 || '';
+    const target1 = sup.target_series || '';
+    const target2 = sup.leader2_target || '';
+
+    let lsText = '';
+    if (target1) lsText += `[${target1}] ${maxLS1}`;
+    if (target2) lsText += `  /  [${target2.replace(/ and /g,' & ')}] ${maxLS2}`;
+
+    ctx.fillStyle = '#8b949e'; ctx.font = '10px sans-serif';
+    ctx.fillText('LS: ' + (lsText.length > 90 ? lsText.substring(0, 90) + '…' : lsText), 142, supY + 34);
+
+    // Support skill
+    ctx.fillText('サポスキ: ' + (sup.support_skill || '-'), 142, supY + 48);
+
+    // LS match count badge
+    let matchCount = 0;
+    teamSlots.forEach(slot => {
+      if (!slot.unitId) return;
+      const u = allUnits.find(x => x.id === slot.unitId);
+      if (u && checkLeaderSkillMatch(u)) matchCount++;
+    });
+    if (matchCount > 0) {
+      const badgeX = W - 100;
+      ctx.fillStyle = 'rgba(34,197,94,.15)'; ctx.beginPath();
+      roundRect(ctx, badgeX, supY + 8, 76, 22, 4); ctx.fill();
+      ctx.strokeStyle = 'rgba(34,197,94,.4)'; ctx.lineWidth = 1; ctx.beginPath();
+      roundRect(ctx, badgeX, supY + 8, 76, 22, 4); ctx.stroke();
+      ctx.fillStyle = '#22c55e'; ctx.font = 'bold 11px sans-serif';
+      ctx.fillText(`⚡ 適用 ${matchCount}/5`, badgeX + 8, supY + 23);
+    }
+  } else {
+    ctx.fillStyle = '#484f58'; ctx.font = '12px sans-serif';
+    ctx.fillText('未選択', 100, supY + 34);
+  }
+
+  // --- Unit Slot cards ---
+  const slotW = 152, slotH = 340, slotGap = 8, startX = 12, startY = supY + 68;
   for (let i = 0; i < 5; i++) {
-    const x = startX + i * (slotW + gap);
+    const x = startX + i * (slotW + slotGap);
     const slot = teamSlots[i];
     const unit = slot.unitId ? allUnits.find(u => u.id === slot.unitId) : null;
     const chara = slot.charaId ? allCharas.find(c => c.id === slot.charaId) : null;
     const unitImg = loadedImgs[i * 2];
     const charaImg = loadedImgs[i * 2 + 1];
-    // Card bg
+    const lsMatch = unit ? checkLeaderSkillMatch(unit) : null;
+
+    // Card background
     ctx.fillStyle = '#161b22'; ctx.beginPath();
     roundRect(ctx, x, startY, slotW, slotH, 8); ctx.fill();
-    ctx.strokeStyle = '#30363d'; ctx.lineWidth = 1; ctx.beginPath();
-    roundRect(ctx, x, startY, slotW, slotH, 8); ctx.stroke();
+
+    // If LS matched, green glow border
+    if (lsMatch) {
+      ctx.strokeStyle = 'rgba(34,197,94,.5)'; ctx.lineWidth = 2;
+    } else {
+      ctx.strokeStyle = '#30363d'; ctx.lineWidth = 1;
+    }
+    ctx.beginPath(); roundRect(ctx, x, startY, slotW, slotH, 8); ctx.stroke();
+
     // Position label
     const posLabel = i < 3 ? '前方' : '後方';
     ctx.fillStyle = '#484f58'; ctx.font = '11px sans-serif';
     ctx.fillText(`${i+1}. ${posLabel}`, x + 8, startY + 18);
+
     if (unit) {
       // Rarity badge
-      const rarCol = unit.rarity === 'UR' ? '#ff6b6b' : unit.rarity === 'SSR' ? '#ffd93d' : unit.rarity === 'SR' ? '#b388ff' : '#aaa';
+      const rarCol = unit.rarity === 'UR' ? '#ff6b6b' : unit.rarity === 'ULT' ? '#ff44ff' : unit.rarity === 'SSR' ? '#ffd93d' : unit.rarity === 'SR' ? '#b388ff' : '#aaa';
       ctx.fillStyle = rarCol; ctx.font = 'bold 11px sans-serif';
       ctx.fillText(unit.rarity || '?', x + slotW - 30, startY + 18);
+
       // Unit image
       if (unitImg) {
-        ctx.save();
-        ctx.beginPath();
-        roundRect(ctx, x + 8, startY + 26, 44, 44, 6);
-        ctx.clip();
+        ctx.save(); ctx.beginPath();
+        roundRect(ctx, x + 8, startY + 26, 44, 44, 6); ctx.clip();
         ctx.drawImage(unitImg, x + 8, startY + 26, 44, 44);
         ctx.restore();
         ctx.strokeStyle = '#30363d'; ctx.lineWidth = 1; ctx.beginPath();
         roundRect(ctx, x + 8, startY + 26, 44, 44, 6); ctx.stroke();
       }
-      // Unit name (beside image)
+
+      // Unit name
       ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 11px sans-serif';
       const uName = unit.name.length > 8 ? unit.name.substring(0, 8) + '…' : unit.name;
       ctx.fillText(uName, x + 58, startY + 42);
-      
+
+      // LS buff badge next to name
+      if (lsMatch) {
+        ctx.fillStyle = 'rgba(34,197,94,.15)'; ctx.beginPath();
+        roundRect(ctx, x + 58, startY + 48, 50, 16, 3); ctx.fill();
+        ctx.strokeStyle = 'rgba(34,197,94,.4)'; ctx.lineWidth = 1; ctx.beginPath();
+        roundRect(ctx, x + 58, startY + 48, 50, 16, 3); ctx.stroke();
+        ctx.fillStyle = '#22c55e'; ctx.font = 'bold 10px sans-serif';
+        ctx.fillText('⚡' + lsMatch.buff, x + 62, startY + 60);
+      }
+
       // Stats
       const us = unit.normal?.stats || {};
       ctx.font = '10px sans-serif';
+      const statsStartY = startY + (lsMatch ? 76 : 76);
       const stats = [
         ['ATK', (parseInt(us.attack)||0).toLocaleString()],
         ['HP', (parseInt(us.hp)||0).toLocaleString()],
@@ -2784,95 +2883,74 @@ async function shareTeamImage() {
         ['移動', us.mobility||'-']
       ];
       stats.forEach(([label, val], si) => {
-        const sy = startY + 84 + si * 15;
-        ctx.fillStyle = '#8b949e'; ctx.fillText(label, x + 8, sy);
-        ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 10px sans-serif';
-        ctx.fillText(val, x + 48, sy);
-        ctx.font = '10px sans-serif';
+        const sy = statsStartY + si * 14;
+        ctx.fillStyle = '#8b949e'; ctx.font = '10px sans-serif'; ctx.fillText(label, x + 8, sy);
+        ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 10px sans-serif'; ctx.fillText(val, x + 48, sy);
       });
+
       // Terrain
       const t = unit.normal?.terrain || {};
       const terrains = ['宇宙','空中','地上','水上','水中'];
-      ctx.font = '10px sans-serif';
+      const terrY = statsStartY + 90;
       terrains.forEach((tk, ti) => {
         const tx = x + 8 + ti * 27;
-        const ty = startY + 180;
         const tv = t[tk] || '-';
         ctx.fillStyle = tv === '◯' ? '#3fb950' : tv === '△' ? '#d29922' : '#484f58';
-        ctx.fillText(tv, tx + 6, ty);
-        ctx.fillStyle = '#8b949e'; ctx.font = '9px sans-serif';
-        ctx.fillText(tk[0], tx + 4, ty + 13);
-        ctx.font = '10px sans-serif';
+        ctx.font = '10px sans-serif'; ctx.fillText(tv, tx + 6, terrY);
+        ctx.fillStyle = '#8b949e'; ctx.font = '9px sans-serif'; ctx.fillText(tk[0], tx + 4, terrY + 12);
       });
     } else {
       ctx.fillStyle = '#484f58'; ctx.font = '12px sans-serif';
-      ctx.fillText('未選択', x + 44, startY + 80);
+      ctx.fillText('未選択', x + 50, startY + 80);
     }
-    // Chara section
-    const charaY = startY + 200;
-    ctx.fillStyle = '#21262d'; ctx.fillRect(x + 1, charaY, slotW - 2, slotH - 202);
+
+    // --- Chara section ---
+    const charaY = startY + 192;
+    ctx.fillStyle = '#21262d';
+    ctx.beginPath(); roundRect(ctx, x + 1, charaY, slotW - 2, slotH - 194, 0); ctx.fill();
+
+    // Divider line
+    ctx.strokeStyle = '#30363d'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(x + 4, charaY); ctx.lineTo(x + slotW - 4, charaY); ctx.stroke();
+
     if (chara) {
-      // Chara image
       if (charaImg) {
-        ctx.save();
-        ctx.beginPath();
-        roundRect(ctx, x + 8, charaY + 6, 36, 36, 6);
-        ctx.clip();
+        ctx.save(); ctx.beginPath();
+        roundRect(ctx, x + 8, charaY + 6, 36, 36, 6); ctx.clip();
         ctx.drawImage(charaImg, x + 8, charaY + 6, 36, 36);
         ctx.restore();
         ctx.strokeStyle = '#30363d'; ctx.lineWidth = 1; ctx.beginPath();
         roundRect(ctx, x + 8, charaY + 6, 36, 36, 6); ctx.stroke();
       }
-      // Chara name (beside image)
       ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 11px sans-serif';
       const cName = chara.name.length > 8 ? chara.name.substring(0, 8) + '…' : chara.name;
       ctx.fillText(cName, x + 50, charaY + 20);
-      // Rarity
-      const cRarCol = chara.rarity === 'UR' ? '#ff6b6b' : chara.rarity === 'SSR' ? '#ffd93d' : '#b388ff';
+      const cRarCol = chara.rarity === 'UR' ? '#ff6b6b' : chara.rarity === 'ULT' ? '#ff44ff' : chara.rarity === 'SSR' ? '#ffd93d' : '#b388ff';
       ctx.fillStyle = cRarCol; ctx.font = 'bold 9px sans-serif';
       ctx.fillText(chara.rarity || '', x + 50, charaY + 34);
-      // Stats
+
       const cs = chara.stats || {};
       ctx.font = '10px sans-serif';
       const cStats = [['射撃', cs.shooting], ['格闘', cs.melee], ['覚醒', cs.awakening], ['守備', cs.defense], ['反応', cs.reaction]];
       cStats.forEach(([cl, cv], ci) => {
-        const cy = charaY + 54 + ci * 15;
-        ctx.fillStyle = '#8b949e'; ctx.fillText(cl, x + 8, cy);
-        ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 10px sans-serif';
-        ctx.fillText(String(cv||'-'), x + 42, cy);
-        ctx.font = '10px sans-serif';
+        const cy = charaY + 52 + ci * 14;
+        ctx.fillStyle = '#8b949e'; ctx.font = '10px sans-serif'; ctx.fillText(cl, x + 8, cy);
+        ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 10px sans-serif'; ctx.fillText(String(cv||'-'), x + 42, cy);
       });
+
       // Skills (up to 2)
       (chara.skills||[]).slice(0, 2).forEach((sk, si) => {
-        const sy = charaY + 132 + si * 14;
+        const sy = charaY + 126 + si * 13;
         ctx.fillStyle = '#00d4ff'; ctx.font = '9px sans-serif';
         const skName = sk.name.length > 14 ? sk.name.substring(0, 14) + '…' : sk.name;
-        ctx.fillText(`${skName}`, x + 8, sy);
+        ctx.fillText(skName, x + 8, sy);
       });
     } else {
       ctx.fillStyle = '#484f58'; ctx.font = '11px sans-serif';
       ctx.fillText('キャラ未選択', x + 28, charaY + 50);
     }
   }
-  // Supporter section at bottom
-  const supY = startY + slotH + 14;
-  const sup = teamSupporterId ? allSupporters.find(s => s.id === teamSupporterId) : null;
-  ctx.fillStyle = '#161b22'; ctx.beginPath();
-  roundRect(ctx, startX, supY, W - 32, 60, 6); ctx.fill();
-  ctx.fillStyle = '#00d4ff'; ctx.font = 'bold 11px sans-serif';
-  ctx.fillText('サポーター', startX + 10, supY + 18);
-  if (sup) {
-    ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 13px sans-serif';
-    ctx.fillText(sup.name, startX + 90, supY + 18);
-    ctx.fillStyle = '#8b949e'; ctx.font = '10px sans-serif';
-    const lText = sup.leader_skill ? (sup.leader_skill.length > 80 ? sup.leader_skill.substring(0, 80) + '…' : sup.leader_skill) : '';
-    ctx.fillText('リーダー: ' + lText, startX + 10, supY + 40);
-    const sText = sup.support_skill ? (sup.support_skill.length > 80 ? sup.support_skill.substring(0, 80) + '…' : sup.support_skill) : '';
-    ctx.fillText('サポート: ' + sText, startX + 10, supY + 54);
-  } else {
-    ctx.fillStyle = '#484f58'; ctx.font = '12px sans-serif';
-    ctx.fillText('未選択', startX + 90, supY + 18);
-  }
+
   // Export
   canvas.toBlob(blob => {
     if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], 'team.png', { type: 'image/png' })] })) {
