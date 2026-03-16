@@ -536,6 +536,11 @@ a:hover{text-decoration:underline}
   .team-supporter-section{flex-direction:column}
 
 }
+
+/* Leader Skill Buff Indicator */
+.ls-buff-indicator{position:absolute;top:4px;right:40px;display:flex;align-items:center;gap:2px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);border-radius:4px;padding:1px 6px 1px 3px;font-size:.7em;font-weight:700;color:#22c55e;z-index:2;animation:lsBuff .4s ease}
+.ls-matched{box-shadow:inset 0 0 0 1px rgba(34,197,94,.25)}
+@keyframes lsBuff{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 </style>
 </head>
 <body>
@@ -2075,6 +2080,40 @@ function selectTagLookup(tag) {
 
 
 // === TEAM SIMULATOR FUNCTIONS ===
+
+// === LEADER SKILL MATCH CHECK ===
+function checkLeaderSkillMatch(unit) {
+  if (!teamSupporterId) return null;
+  const sup = allSupporters.find(s => s.id === teamSupporterId);
+  if (!sup) return null;
+  const uSeries = unit.seriesArr || unit.series || [];
+  const uTags = unit.tags || [];
+  const allUnitTags = [...uSeries, ...uTags];
+
+  // Check tier2 first (stricter condition, higher buff)
+  if (sup.leader2_target) {
+    const parts = sup.leader2_target.split(/ and /i).map(p => p.trim()).filter(Boolean);
+    const allMatch = parts.every(part => {
+      return allUnitTags.some(t => t.includes(part) || part.includes(t));
+    });
+    if (allMatch) {
+      const val = sup.leader2_3 || sup.leader2_2 || sup.leader2_1 || sup.leader2_0 || '';
+      return { tier: 2, buff: val };
+    }
+  }
+
+  // Check tier1 (or-based matching)
+  const target = sup.target_series || teamLeaderTag;
+  if (!target || target === '-') return null;
+  const seriesList = target.split(/or/i).map(s => s.trim()).filter(Boolean);
+  const match = seriesList.some(ts => allUnitTags.some(ut => ut.includes(ts) || ts.includes(ut)));
+  if (match) {
+    const val = sup.leader_3 || sup.leader_2 || sup.leader_1 || sup.leader_0 || '';
+    return { tier: 1, buff: val };
+  }
+  return null;
+}
+
 function renderTeamSim() {
   renderTeamSlots('teamSlotsAll', 0, 5);
   renderTeamSupporter();
@@ -2122,9 +2161,15 @@ function renderSlotUnit(u, slotIdx) {
   }).join('');
   const iconHTML = u.image ? `<img class="slot-img" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'">` : '';
   const terrStr = ['宇宙','空中','地上','水上','水中'].map(k => `${k.charAt(0)}${t[k]==='◯'?'<span style="color:#44cc44">◯</span>':t[k]==='△'?'<span style="color:#ffaa00">△</span>':'<span style="color:#555">-</span>'}`).join(' ');
-  return `<div class="slot-filled">
+  const lsMatch = checkLeaderSkillMatch(u);
+  const buffBadge = lsMatch ? `<div class="ls-buff-indicator" title="リーダースキル適用: ${lsMatch.buff}">
+    <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 2L6 10h3v8l5-10h-3z" fill="#22c55e" stroke="#16a34a" stroke-width="1"/></svg>
+    <span>${lsMatch.buff}</span>
+  </div>` : '';
+  return `<div class="slot-filled${lsMatch ? ' ls-matched' : ''}">
     <button class="slot-remove-btn" onclick="removeSlot(${slotIdx},'unit')">✕</button>
     <button class="slot-change-btn" onclick="openTeamPicker('unit',${slotIdx})">変更</button>
+    ${buffBadge}
     <div class="slot-top-row">
       ${iconHTML}
       <div class="slot-info">
@@ -2206,18 +2251,24 @@ function renderTeamSupporter() {
     pickHTML = `<div class="slot-empty" style="min-height:80px;min-width:120px" onclick="openTeamPicker('supporter',0)">+ サポーター選択</div>`;
   }
 
-  // Calculate leader skill match count
+  // Calculate leader skill match count using helper
   let matchInfo = '';
-  if (sup && teamLeaderTag) {
-    const matchUnits = [];
+  if (sup) {
+    let t1Count = 0, t2Count = 0;
     teamSlots.forEach((slot, i) => {
       if (!slot.unitId) return;
       const u = allUnits.find(x => x.id === slot.unitId);
       if (!u) return;
-      const allTags = [...(u.tags||[]), ...(u.series||[])];
-      if (allTags.includes(teamLeaderTag)) matchUnits.push(u.name);
+      const m = checkLeaderSkillMatch(u);
+      if (m) { if (m.tier === 2) t2Count++; else t1Count++; }
     });
-    matchInfo = `<div class="team-leader-match">リーダースキル適用: ${matchUnits.length}/5機${matchUnits.length ? ` (${matchUnits.join(', ')})` : ''}</div>`;
+    const total = t1Count + t2Count;
+    if (total > 0 || sup.target_series) {
+      let detail = '';
+      if (sup.leader2_target && t2Count > 0) detail += `<span style="color:#22c55e">${sup.leader2_3||sup.leader2_0||''}: ${t2Count}機</span>`;
+      if (t1Count > 0) detail += `${detail?' / ':''}<span style="color:#4ade80">${sup.leader_3||sup.leader_0||''}: ${t1Count}機</span>`;
+      matchInfo = `<div class="team-leader-match" style="margin-top:6px;font-size:.8em;color:var(--text2)"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" style="vertical-align:middle"><path d="M10 2L6 10h3v8l5-10h-3z" fill="#22c55e"/></svg> 適用: ${total}/5機${detail ? ' ('+detail+')' : ''}</div>`;
+    }
   }
 
   container.innerHTML = `
