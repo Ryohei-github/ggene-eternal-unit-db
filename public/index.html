@@ -886,6 +886,7 @@ function updateUI() {
     sortContainer.innerHTML = `
       <button class="sort-btn active" data-sort="hp">HP順</button>
       <button class="sort-btn" data-sort="atk">攻撃力順</button>
+      <button class="sort-btn" data-sort="ls">LS%順</button>
       <button class="sort-btn" data-sort="name">名前順</button>`;
     currentSort = 'hp'; currentDir = -1;
   }
@@ -1164,6 +1165,12 @@ function sortItems(items) {
         va = parseInt(a.stats?.melee)||0; vb = parseInt(b.stats?.melee)||0; break;
       case 'awaken':
         va = parseInt(a.stats?.awakening)||0; vb = parseInt(b.stats?.awakening)||0; break;
+      case 'ls':
+        if (isSupporter) {
+          const parseLS = s => { const m = (s.leader_3||s.leader_2||s.leader_1||s.leader_0||'0').match(/\d+/); return m ? parseInt(m[0]) : 0; };
+          va = parseLS(a); vb = parseLS(b);
+        } else { va = 0; vb = 0; }
+        break;
       case 'name': return dir * a.name.localeCompare(b.name, 'ja');
     }
     return dir * (va - vb);
@@ -1473,12 +1480,11 @@ function supporterCardHTML(s) {
     </div>
     <div style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2);border-radius:6px;padding:8px;margin-bottom:6px">
       <div style="font-size:.65em;color:var(--accent);font-weight:600;margin-bottom:2px">リーダースキル</div>
-      <div style="display:flex;align-items:baseline;gap:4px;flex-wrap:nowrap;overflow:hidden">
-        <span class="tag leader-tag-clickable" style="font-size:.68em;background:rgba(0,212,255,.15);border-color:var(--accent);cursor:pointer;flex-shrink:0;white-space:nowrap" onclick="event.stopPropagation();showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')">${s.target_series||'-'}</span>
-        ${base ? `<span style="font-size:.85em;font-weight:700;color:var(--text);white-space:nowrap">${base}</span>` : ''}
-        ${max && max !== base ? `<span style="font-size:.68em;color:var(--text2);white-space:nowrap">→MAX <span style="color:#3fb950;font-weight:700">${max}</span></span>` : ''}
+      <div style="display:flex;align-items:baseline;gap:4px;min-width:0">
+        <span class="tag leader-tag-clickable" style="font-size:.65em;background:rgba(0,212,255,.15);border-color:var(--accent);cursor:pointer;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" onclick="event.stopPropagation();showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')" title="${s.target_series||''}">${s.target_series||'-'}</span>
+        <span style="white-space:nowrap;flex-shrink:0;display:flex;align-items:baseline;gap:3px">${base ? `<span style="font-size:.75em;color:var(--text2)">${base}</span>` : ''}${max && max !== base ? `<span style="font-size:.65em;color:var(--text2)">→</span><span style="font-size:.88em;font-weight:700;color:#3fb950">${max}</span>` : (base ? '' : '')}</span>
       </div>
-      <div style="font-size:.65em;color:var(--text2);margin-top:1px">${effectLabel}</div>
+      <div style="font-size:.62em;color:var(--text2);margin-top:1px">${effectLabel}</div>
     </div>
     <div style="display:flex;align-items:center;gap:6px;font-size:.78em;color:var(--text2)">
       ${recIcon}
