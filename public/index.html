@@ -538,7 +538,7 @@ a:hover{text-decoration:underline}
 }
 
 /* Leader Skill Buff Indicator */
-.ls-buff-indicator{position:absolute;top:4px;right:40px;display:flex;align-items:center;gap:2px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);border-radius:4px;padding:1px 6px 1px 3px;font-size:.7em;font-weight:700;color:#22c55e;z-index:2;animation:lsBuff .4s ease}
+.ls-buff-indicator{display:inline-flex;align-items:center;gap:2px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);border-radius:4px;padding:1px 6px 1px 3px;font-size:.65em;font-weight:700;color:#22c55e;white-space:nowrap;flex-shrink:0;animation:lsBuff .4s ease}
 .ls-matched{box-shadow:inset 0 0 0 1px rgba(34,197,94,.25)}
 @keyframes lsBuff{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 </style>
@@ -2169,13 +2169,14 @@ function renderSlotUnit(u, slotIdx) {
   return `<div class="slot-filled${lsMatch ? ' ls-matched' : ''}">
     <button class="slot-remove-btn" onclick="removeSlot(${slotIdx},'unit')">✕</button>
     <button class="slot-change-btn" onclick="openTeamPicker('unit',${slotIdx})">変更</button>
-    ${buffBadge}
     <div class="slot-top-row">
       ${iconHTML}
       <div class="slot-info">
-        <div class="slot-name">${u.name}</div>
+        <div style="display:flex;align-items:center;gap:4px">
+          <div class="slot-name" style="flex:1;min-width:0">${u.name}</div>
+          ${buffBadge}
+        </div>
         <div style="font-size:.65em;color:var(--text2)">${(u.series||[]).join(' / ')}</div>
-        
       </div>
     </div>
     <div class="slot-filled slot-stats wide">
