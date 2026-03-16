@@ -1359,24 +1359,35 @@ function charaCardHTML(c) {
 
 // === SUPPORTER CARD ===
 function supporterCardHTML(s) {
-  const leaderShort = s.leader_skill ? (s.leader_skill.length > 60 ? s.leader_skill.substring(0, 60) + '...' : s.leader_skill) : '-';
-  const supportShort = s.support_skill ? (s.support_skill.length > 60 ? s.support_skill.substring(0, 60) + '...' : s.support_skill) : '-';
+  const base = s.leader_0 || '';
+  const max = s.leader_3 || s.leader_2 || s.leader_1 || base;
+  const effectLabel = s.leader_effect || 'ステータス上昇(EN除く)';
+  const recIcon = (s.recovery_type||'').includes('EN') ? '⚡' : '❤️';
+  const obtainBadge = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">限定</span>' : '';
 
   return `<div class="card" onclick="showSupporterDetail(${s.id})">
     <div class="card-header">
-      <div class="card-name">${s.name}</div>
+      <div class="card-name">${s.name}${obtainBadge}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
       </div>
     </div>
-    <div style="margin-bottom:8px">
-      <span class="supporter-stat">HP <span class="sv">${s.hp||'-'}</span></span>
+    <div style="display:flex;gap:6px;align-items:center;margin-bottom:6px;flex-wrap:wrap">
+      <span class="supporter-stat">HP <span class="sv">${s.hp ? s.hp.toLocaleString() : '-'}</span></span>
       <span class="supporter-stat">攻撃 <span class="sv">${s.attack||'-'}</span></span>
-      ${s.target_series ? `<span class="tag" style="font-size:.7em">${s.target_series}</span>` : ''}
     </div>
-    <div class="supporter-info">
-      <div><strong>リーダー:</strong> ${leaderShort}</div>
-      <div><strong>サポート:</strong> ${supportShort}</div>
+    <div style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2);border-radius:6px;padding:8px;margin-bottom:6px">
+      <div style="font-size:.68em;color:var(--accent);font-weight:600;margin-bottom:3px">リーダースキル</div>
+      <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap">
+        <span class="tag" style="font-size:.75em;background:rgba(0,212,255,.15);border-color:var(--accent)">${s.target_series||'-'}</span>
+        ${base ? `<span style="font-size:1.1em;font-weight:700;color:var(--text)">${base}</span>` : ''}
+        ${max && max !== base ? `<span style="font-size:.75em;color:var(--text2)">→ MAX <span style="color:#3fb950;font-weight:700">${max}</span></span>` : ''}
+      </div>
+      <div style="font-size:.7em;color:var(--text2);margin-top:2px">${effectLabel}</div>
+    </div>
+    <div style="font-size:.78em;color:var(--text2)">
+      ${recIcon} <strong style="color:var(--text)">${s.recovery_type||'-'}回復 ${s.recovery_amount||''}</strong>
+      <span style="margin-left:6px;font-size:.85em">範囲${s.range||'-'}マス</span>
     </div>
   </div>`;
 }
@@ -1434,20 +1445,24 @@ function charaTableHTML(items) {
 
 function supporterTableHTML(items) {
   const rows = items.map(s => {
-    const leaderShort = s.leader_skill?(s.leader_skill.length>80?s.leader_skill.substring(0,80)+'...':s.leader_skill):'-';
-    const supportShort = s.support_skill?(s.support_skill.length>80?s.support_skill.substring(0,80)+'...':s.support_skill):'-';
+    const base = s.leader_0 || '';
+    const max = s.leader_3 || s.leader_2 || s.leader_1 || base;
+    const lsDisplay = base ? `${base}${max && max !== base ? ' → '+max : ''}` : '-';
+    const recIcon = (s.recovery_type||'').includes('EN') ? '⚡' : '❤️';
     return `<tr onclick="showSupporterDetail(${s.id})">
       <td class="cell-name">${s.name}</td>
-      <td class="cell-center">${s.rarity||'-'}</td>
-      <td class="cell-num">${s.hp||'-'}</td>
+      <td class="cell-center"><span class="badge ${rarityClass(s.rarity)}" style="font-size:.7em">${s.rarity||'-'}</span></td>
+      <td class="cell-num">${s.hp ? s.hp.toLocaleString() : '-'}</td>
       <td class="cell-num">${s.attack||'-'}</td>
+      <td class="cell-center" style="font-size:.8em">${s.obtain||'-'}</td>
       <td class="cell-center" style="font-size:.8em">${s.target_series||'-'}</td>
-      <td style="font-size:.75em;white-space:normal;max-width:250px">${leaderShort}</td>
-      <td style="font-size:.75em;white-space:normal;max-width:250px">${supportShort}</td>
+      <td class="cell-center" style="font-weight:700">${lsDisplay}</td>
+      <td class="cell-center">${recIcon} ${s.recovery_type||'-'} ${s.recovery_amount||''}</td>
+      <td class="cell-center">${s.range||'-'}</td>
     </tr>`;
   }).join('');
   return `<table class="data-table"><thead><tr>
-    <th>サポーター名</th><th>レア</th><th>HP</th><th>攻撃力</th><th>対象</th><th>リーダースキル</th><th>サポートスキル</th>
+    <th>サポーター名</th><th>レア</th><th>HP</th><th>攻撃力</th><th>入手</th><th>対象</th><th>効果量</th><th>サポートスキル</th><th>範囲</th>
   </tr></thead><tbody>${rows}</tbody></table>`;
 }
 
@@ -1698,9 +1713,25 @@ function showSupporterDetail(id) {
   const s = allSupporters.find(x => x.id === id);
   if (!s) return;
 
+  const base = s.leader_0 || '';
+  const max = s.leader_3 || s.leader_2 || s.leader_1 || base;
+  const obtainLabel = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.7em;padding:2px 8px;border-radius:4px;margin-left:6px">限定</span>' : (s.obtain ? `<span style="font-size:.7em;color:var(--text2);margin-left:6px">${s.obtain}</span>` : '');
+  const recIcon = (s.recovery_type||'').includes('EN') ? '⚡' : '❤️';
+  // Leader skill convex table
+  let convexHTML = '';
+  if (base) {
+    const rows = [['0凸', base], ['1凸', s.leader_1||'-'], ['2凸', s.leader_2||'-'], ['3凸', s.leader_3||'-']];
+    convexHTML = `<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">${rows.map(([label, val]) =>
+      `<div style="text-align:center;padding:6px 12px;background:var(--bg);border-radius:6px;border:1px solid var(--border);min-width:60px">
+        <div style="font-size:.65em;color:var(--text2)">${label}</div>
+        <div style="font-size:1em;font-weight:700;color:${label === '3凸' ? '#3fb950' : 'var(--text)'}">${val}</div>
+      </div>`
+    ).join('')}</div>`;
+  }
+
   document.getElementById('modalContent').innerHTML = `
     <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2>${s.name}</h2>
+    <h2>${s.name}${obtainLabel}</h2>
     <div class="detail-badges">
       <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
       ${s.target_series ? `<span class="badge badge-type">${s.target_series}</span>` : ''}
@@ -1708,22 +1739,32 @@ function showSupporterDetail(id) {
     <div class="detail-section">
       <h3>基本ステータス</h3>
       <div class="stats-grid" style="grid-template-columns:repeat(2,1fr)">
-        <div class="stat-box"><div class="label">HP</div><div class="val">${s.hp||'-'}</div></div>
+        <div class="stat-box"><div class="label">HP</div><div class="val">${s.hp ? s.hp.toLocaleString() : '-'}</div></div>
         <div class="stat-box"><div class="label">攻撃力</div><div class="val">${s.attack||'-'}</div></div>
       </div>
     </div>
-    ${s.leader_skill ? `<div class="detail-section">
+    <div class="detail-section">
       <h3>リーダースキル</h3>
-      <div class="supporter-detail-block">
-        <div class="sd-text">${s.leader_skill}</div>
+      <div class="supporter-detail-block" style="border-color:rgba(0,212,255,.3)">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+          <span class="tag" style="font-size:.8em;background:rgba(0,212,255,.15);border-color:var(--accent)">${s.target_series||'-'}</span>
+          ${base ? `<span style="font-size:1.2em;font-weight:700;color:var(--text)">${base}</span>` : ''}
+          ${max && max !== base ? `<span style="color:var(--text2)">→</span><span style="font-size:1.2em;font-weight:700;color:#3fb950">${max}</span>` : ''}
+        </div>
+        <div class="sd-text">${s.leader_effect || 'ステータス上昇(EN除く)'}</div>
+        ${convexHTML}
       </div>
-    </div>` : ''}
-    ${s.support_skill ? `<div class="detail-section">
+    </div>
+    <div class="detail-section">
       <h3>サポートスキル</h3>
       <div class="supporter-detail-block">
-        <div class="sd-text">${s.support_skill}</div>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+          <span style="font-size:1.2em">${recIcon}</span>
+          <span style="font-weight:700;color:var(--text)">${s.recovery_type||'-'}回復 ${s.recovery_amount||''}</span>
+        </div>
+        <div class="sd-text">効果範囲: 半径${s.range||'-'}マス</div>
       </div>
-    </div>` : ''}
+    </div>
   `;
   openModal();
 }
