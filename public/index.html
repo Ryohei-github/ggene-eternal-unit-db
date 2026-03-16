@@ -538,7 +538,10 @@ a:hover{text-decoration:underline}
 }
 
 /* Leader Skill Buff Indicator */
-.ls-buff-indicator{display:inline-flex;align-items:center;gap:2px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);border-radius:4px;padding:1px 6px 1px 3px;font-size:.65em;font-weight:700;color:#22c55e;white-space:nowrap;flex-shrink:0;animation:lsBuff .4s ease}
+
+.picker-buff-badge{display:inline-flex;align-items:center;gap:2px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);border-radius:3px;padding:1px 5px 1px 2px;font-size:.7em;font-weight:700;color:#22c55e;white-space:nowrap;margin-left:6px}
+.picker-item.ls-target{border-left:3px solid #22c55e}
+.ls-buff-indicator{display:inline-flex;align-items:center;gap:3px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);border-radius:4px;padding:2px 8px 2px 4px;font-size:.7em;font-weight:700;color:#22c55e;white-space:nowrap;margin-top:3px;animation:lsBuff .4s ease}
 .ls-matched{box-shadow:inset 0 0 0 1px rgba(34,197,94,.25)}
 @keyframes lsBuff{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
 </style>
@@ -2172,11 +2175,9 @@ function renderSlotUnit(u, slotIdx) {
     <div class="slot-top-row">
       ${iconHTML}
       <div class="slot-info">
-        <div style="display:flex;align-items:center;gap:4px">
-          <div class="slot-name" style="flex:1;min-width:0">${u.name}</div>
-          ${buffBadge}
-        </div>
+        <div class="slot-name">${u.name}</div>
         <div style="font-size:.65em;color:var(--text2)">${(u.series||[]).join(' / ')}</div>
+        ${buffBadge}
       </div>
     </div>
     <div class="slot-filled slot-stats wide">
@@ -2358,10 +2359,12 @@ function openTeamPicker(mode, slotIdx) {
   if (mode === 'unit') {
     title.textContent = `ユニット選択 (スロット${slotIdx+1})`;
     const types = ['攻撃','耐久','支援','射撃','格闘','覚醒'];
-    filtersDiv.innerHTML = types.map(t => {
+    const typeButtons = types.map(t => {
       const icon = TYPE_ICON_MAP[t] ? `<img src="${TYPE_ICON_MAP[t]}" style="width:14px;height:14px;vertical-align:middle"> ` : '';
       return `<button class="filter-btn picker-type-btn" data-value="${t}" onclick="this.classList.toggle('active');renderPickerList()">${icon}${t}</button>`;
     }).join('');
+    const lsBtn = teamSupporterId ? `<button class="filter-btn" id="pickerLsFilter" onclick="this.classList.toggle('active');renderPickerList()" style="border-color:rgba(34,197,94,.5);color:#22c55e"><svg width="12" height="12" viewBox="0 0 20 20" fill="none" style="vertical-align:middle"><path d="M10 2L6 10h3v8l5-10h-3z" fill="#22c55e"/></svg> LS対象</button>` : '';
+    filtersDiv.innerHTML = typeButtons + lsBtn;
   } else if (mode === 'chara') {
     title.textContent = `キャラ選択 (スロット${slotIdx+1})`;
     const types = ['攻撃','支援','耐久'];
@@ -2426,15 +2429,33 @@ function renderPickerList() {
       if (activeTypes.length && !activeTypes.includes(u.type)) return false;
       return true;
     });
-    items.sort((a,b) => (parseInt(b.normal?.combat_power)||0) - (parseInt(a.normal?.combat_power)||0));
+    // Sort: buff-matched first, then by combat power
+    const lsFilterActive = document.getElementById('pickerLsFilter')?.classList.contains('active');
+    if (lsFilterActive && teamSupporterId) {
+      items = items.filter(u => checkLeaderSkillMatch(u));
+    }
+    items.sort((a,b) => {
+      if (teamSupporterId) {
+        const ma = checkLeaderSkillMatch(a);
+        const mb = checkLeaderSkillMatch(b);
+        if (ma && !mb) return -1;
+        if (!ma && mb) return 1;
+        if (ma && mb) {
+          if (ma.tier !== mb.tier) return mb.tier - ma.tier;
+        }
+      }
+      return (parseInt(b.normal?.combat_power)||0) - (parseInt(a.normal?.combat_power)||0);
+    });
     list.innerHTML = items.slice(0, 100).map(u => {
       const s = u.normal?.stats || {};
       const img = u.image ? `<img src="${u.image}" alt="${u.name}" onerror="this.style.display='none'">` : '';
       const used = usedUnitIds.has(u.id);
-      return `<div class="picker-item${used ? ' picker-item-used' : ''}" ${used ? '' : `onclick="selectPickerUnit(${u.id})"`}>
+      const lsM = teamSupporterId ? checkLeaderSkillMatch(u) : null;
+      const lsBadge = lsM ? `<span class="picker-buff-badge"><svg width="12" height="12" viewBox="0 0 20 20" fill="none"><path d="M10 2L6 10h3v8l5-10h-3z" fill="#22c55e"/></svg>${lsM.buff}</span>` : '';
+      return `<div class="picker-item${used ? ' picker-item-used' : ''}${lsM ? ' ls-target' : ''}" ${used ? '' : `onclick="selectPickerUnit(${u.id})"`}>
         ${img}
         <div class="picker-item-info">
-          <div class="picker-item-name">${u.name}${used ? ' <span style="color:var(--accent);font-size:.75em">選択済</span>' : ''}</div>
+          <div class="picker-item-name">${u.name}${lsBadge}${used ? ' <span style="color:var(--accent);font-size:.75em">選択済</span>' : ''}</div>
           <div class="picker-item-sub"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.6em;padding:1px 4px">${u.rarity}</span> ${typeBadgeHTML(u.type)} ATK:${(parseInt(s.attack)||0).toLocaleString()}</div>
         </div>
       </div>`;
