@@ -1167,7 +1167,12 @@ function sortItems(items) {
         va = parseInt(a.stats?.awakening)||0; vb = parseInt(b.stats?.awakening)||0; break;
       case 'ls':
         if (isSupporter) {
-          const parseLS = s => { const m = (s.leader_3||s.leader_2||s.leader_1||s.leader_0||'0').match(/\d+/); return m ? parseInt(m[0]) : 0; };
+          const parseLS = s => {
+            const t2 = s.leader2_3||s.leader2_2||s.leader2_1||s.leader2_0||'';
+            const t1 = s.leader_3||s.leader_2||s.leader_1||s.leader_0||'';
+            const src = t2 || t1 || '0';
+            const m = src.match(/\d+/); return m ? parseInt(m[0]) : 0;
+          };
           va = parseLS(a); vb = parseLS(b);
         } else { va = 0; vb = 0; }
         break;
@@ -1462,6 +1467,9 @@ function supporterCardHTML(s) {
   const effectLabel = s.leader_effect || 'ステータス上昇(EN除く)';
   const recIcon = supportSkillIcon(s.recovery_type);
   const obtainBadge = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">限定</span>' : '';
+  const hasTier2 = !!s.leader2_target;
+  const base2 = s.leader2_0 || '';
+  const max2 = s.leader2_3 || s.leader2_2 || s.leader2_1 || base2;
 
   const supImg = s.image ? `<img src="${s.image}" alt="${s.name}" style="width:44px;height:44px;border-radius:6px;object-fit:cover;border:1px solid var(--border);flex-shrink:0" onerror="this.style.display='none'" loading="lazy">` : '';
   return `<div class="card" onclick="showSupporterDetail(${s.id})">
@@ -1480,11 +1488,15 @@ function supporterCardHTML(s) {
     </div>
     <div style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2);border-radius:6px;padding:8px;margin-bottom:6px">
       <div style="font-size:.65em;color:var(--accent);font-weight:600;margin-bottom:2px">リーダースキル</div>
-      <div style="display:flex;align-items:baseline;gap:4px;min-width:0">
-        <span class="tag leader-tag-clickable" style="font-size:.65em;background:rgba(0,212,255,.15);border-color:var(--accent);cursor:pointer;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" onclick="event.stopPropagation();showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')" title="${s.target_series||''}">${s.target_series||'-'}</span>
-        <span style="white-space:nowrap;flex-shrink:0;display:flex;align-items:baseline;gap:3px">${base ? `<span style="font-size:.75em;color:var(--text2)">${base}</span>` : ''}${max && max !== base ? `<span style="font-size:.65em;color:var(--text2)">→</span><span style="font-size:.88em;font-weight:700;color:#3fb950">${max}</span>` : (base ? '' : '')}</span>
+      <div class="ls-row" style="display:flex;align-items:baseline;gap:4px;min-width:0">
+        <span class="tag leader-tag-clickable" style="font-size:.62em;background:rgba(0,212,255,.15);border-color:var(--accent);cursor:pointer;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" onclick="event.stopPropagation();showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')" title="${s.target_series||''}">${s.target_series||'-'}</span>
+        <span style="white-space:nowrap;flex-shrink:0;display:flex;align-items:baseline;gap:3px">${base ? `<span style="font-size:.72em;color:var(--text2)">${base}</span>` : ''}${max && max !== base ? `<span style="font-size:.6em;color:var(--text2)">→</span><span style="font-size:${hasTier2 ? '.78' : '.88'}em;font-weight:700;color:${hasTier2 ? 'var(--text)' : '#3fb950'}">${max}</span>` : ''}</span>
       </div>
-      <div style="font-size:.62em;color:var(--text2);margin-top:1px">${effectLabel}</div>
+      ${hasTier2 ? `<div class="ls-row" style="display:flex;align-items:baseline;gap:4px;min-width:0;margin-top:3px;padding-top:3px;border-top:1px dashed rgba(0,212,255,.15)">
+        <span class="tag" style="font-size:.58em;background:rgba(63,185,80,.12);border-color:rgba(63,185,80,.4);color:#3fb950;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${s.leader2_target||''}">${(s.leader2_target||'').replace(/ and /g,' & ')}</span>
+        <span style="white-space:nowrap;flex-shrink:0;display:flex;align-items:baseline;gap:3px">${base2 ? `<span style="font-size:.72em;color:var(--text2)">${base2}</span>` : ''}<span style="font-size:.6em;color:var(--text2)">→</span><span style="font-size:.88em;font-weight:700;color:#3fb950">${max2}</span></span>
+      </div>` : ''}
+      <div style="font-size:.6em;color:var(--text2);margin-top:1px">${effectLabel}</div>
     </div>
     <div style="display:flex;align-items:center;gap:6px;font-size:.78em;color:var(--text2)">
       ${recIcon}
@@ -1818,18 +1830,29 @@ function showSupporterDetail(id) {
 
   const base = s.leader_0 || '';
   const max = s.leader_3 || s.leader_2 || s.leader_1 || base;
+  const hasTier2 = !!s.leader2_target;
+  const base2 = s.leader2_0 || '';
+  const max2 = s.leader2_3 || s.leader2_2 || s.leader2_1 || base2;
   const obtainLabel = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.7em;padding:2px 8px;border-radius:4px;margin-left:6px">限定</span>' : (s.obtain ? `<span style="font-size:.7em;color:var(--text2);margin-left:6px">${s.obtain}</span>` : '');
   const recIcon = supportSkillIcon(s.recovery_type, 24);
   // Leader skill convex table
   let convexHTML = '';
   if (base) {
-    const rows = [['0凸', base], ['1凸', s.leader_1||'-'], ['2凸', s.leader_2||'-'], ['3凸', s.leader_3||'-']];
-    convexHTML = `<div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap">${rows.map(([label, val]) =>
-      `<div style="text-align:center;padding:6px 12px;background:var(--bg);border-radius:6px;border:1px solid var(--border);min-width:60px">
-        <div style="font-size:.65em;color:var(--text2)">${label}</div>
-        <div style="font-size:1em;font-weight:700;color:${label === '3凸' ? '#3fb950' : 'var(--text)'}">${val}</div>
-      </div>`
-    ).join('')}</div>`;
+    const mkRow = (label, vals, color) => `<div style="display:flex;gap:6px;align-items:center">
+      <div style="font-size:.7em;color:var(--text2);min-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${label}">${label}</div>
+      ${vals.map(([lbl, val], i) => `<div style="text-align:center;padding:4px 8px;background:var(--bg);border-radius:6px;border:1px solid var(--border);min-width:52px;flex:1">
+        <div style="font-size:.6em;color:var(--text2)">${lbl}</div>
+        <div style="font-size:.9em;font-weight:700;color:${i === vals.length-1 ? color : 'var(--text)'}">${val}</div>
+      </div>`).join('')}
+    </div>`;
+    const tier1Vals = [['0凸', base], ['1凸', s.leader_1||'-'], ['2凸', s.leader_2||'-'], ['3凸', s.leader_3||'-']];
+    convexHTML = `<div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">`;
+    convexHTML += mkRow(s.target_series||'対象', tier1Vals, hasTier2 ? 'var(--text)' : '#3fb950');
+    if (hasTier2) {
+      const tier2Vals = [['0凸', base2], ['1凸', s.leader2_1||'-'], ['2凸', s.leader2_2||'-'], ['3凸', s.leader2_3||'-']];
+      convexHTML += mkRow((s.leader2_target||'').replace(/ and /g,' & '), tier2Vals, '#3fb950');
+    }
+    convexHTML += '</div>';
   }
 
   document.getElementById('modalContent').innerHTML = `
@@ -1854,11 +1877,16 @@ function showSupporterDetail(id) {
     <div class="detail-section">
       <h3>リーダースキル</h3>
       <div class="supporter-detail-block" style="border-color:rgba(0,212,255,.3)">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap">
           <span class="tag leader-tag-clickable" style="font-size:.8em;background:rgba(0,212,255,.15);border-color:var(--accent);cursor:pointer" onclick="showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')">${s.target_series||'-'}</span>
-          ${base ? `<span style="font-size:1em;font-weight:700;color:var(--text)">${base}</span>` : ''}
-          ${max && max !== base ? `<span style="color:var(--text2)">→</span><span style="font-size:1em;font-weight:700;color:#3fb950">${max}</span>` : ''}
+          ${base ? `<span style="font-size:.95em;font-weight:700;color:var(--text)">${base}</span>` : ''}
+          ${max && max !== base ? `<span style="color:var(--text2)">→</span><span style="font-size:.95em;font-weight:700;color:${hasTier2 ? 'var(--text)' : '#3fb950'}">${max}</span>` : ''}
         </div>
+        ${hasTier2 ? `<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;padding-top:4px;border-top:1px dashed rgba(63,185,80,.2);flex-wrap:wrap">
+          <span class="tag" style="font-size:.75em;background:rgba(63,185,80,.12);border-color:rgba(63,185,80,.4);color:#3fb950">${(s.leader2_target||'').replace(/ and /g,' & ')}</span>
+          <span style="font-size:.95em;font-weight:700;color:var(--text)">${base2}</span>
+          <span style="color:var(--text2)">→</span><span style="font-size:.95em;font-weight:700;color:#3fb950">${max2}</span>
+        </div>` : ''}
         <div class="sd-text">${s.leader_effect || 'ステータス上昇(EN除く)'}</div>
         ${convexHTML}
       </div>

@@ -100,7 +100,7 @@
     "obtain": "恒常",
     "hp": 2800,
     "attack": 420,
-    "target_series": "機動新世紀ガンダムX(andフリーデン)",
+    "target_series": "機動新世紀ガンダムX",
     "recovery_type": "HP",
     "recovery_amount": "40%",
     "range": "1-4",
@@ -111,7 +111,12 @@
     "leader_3": "+28%",
     "leader_skill": "対象ユニットのステータス上昇(EN除く) +20%（MAX +28%）【対象】：「機動新世紀ガンダムX(andフリーデン)」",
     "support_skill": "範囲内の味方のHPを40%回復",
-    "image": "/unit-images/gw-supporter-65.png"
+    "image": "/unit-images/gw-supporter-65.png",
+    "leader2_target": "フリーデン and 機動新世紀ガンダムX",
+    "leader2_0": "+30%",
+    "leader2_1": "+36%",
+    "leader2_2": "+40%",
+    "leader2_3": "+44%"
   },
   {
     "name": "マリュー・ラミアス＆アークエンジェル",
@@ -176,7 +181,7 @@
     "obtain": "恒常",
     "hp": 2800,
     "attack": 420,
-    "target_series": "機動戦士ガンダム 鉄血のオルフェンズ(and阿頼耶識システム)",
+    "target_series": "機動戦士ガンダム 鉄血のオルフェンズ",
     "recovery_type": "EN",
     "recovery_amount": "50%",
     "range": "1-4",
@@ -187,7 +192,12 @@
     "leader_3": "+28%",
     "leader_skill": "対象ユニットのステータス上昇(EN除く) +20%（MAX +28%）【対象】：「機動戦士ガンダム 鉄血のオルフェンズ(and阿頼耶識システム)」",
     "support_skill": "範囲内の味方のENを50%回復",
-    "image": "/unit-images/gw-supporter-56.png"
+    "image": "/unit-images/gw-supporter-56.png",
+    "leader2_target": "阿頼耶識システム and 機動戦士ガンダム 鉄血のオルフェンズ",
+    "leader2_0": "+30%",
+    "leader2_1": "+36%",
+    "leader2_2": "+40%",
+    "leader2_3": "+44%"
   },
   {
     "name": "ミオリネ・レンブラン＆学園艦",
@@ -214,7 +224,7 @@
     "obtain": "恒常",
     "hp": 3080,
     "attack": 392,
-    "target_series": "SEEDシリーズ(and機動戦士ガンダムSEED ASTRAY)",
+    "target_series": "SEEDシリーズ",
     "recovery_type": "EN",
     "recovery_amount": "50%",
     "range": "1-4",
@@ -225,7 +235,12 @@
     "leader_3": "+28%",
     "leader_skill": "対象ユニットのステータス上昇(EN除く) +20%（MAX +28%）【対象】：「SEEDシリーズ(and機動戦士ガンダムSEED ASTRAY)」",
     "support_skill": "範囲内の味方のENを50%回復",
-    "image": "/unit-images/gw-supporter-66.png"
+    "image": "/unit-images/gw-supporter-66.png",
+    "leader2_target": "SEEDシリーズ and 機動戦士ガンダムSEED ASTRAY",
+    "leader2_0": "+30%",
+    "leader2_1": "+36%",
+    "leader2_2": "+40%",
+    "leader2_3": "+44%"
   },
   {
     "name": "キョウジ・カッシュ＆デビルガンダム第2形態",
