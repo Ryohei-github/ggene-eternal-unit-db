@@ -165,6 +165,24 @@ a:hover{text-decoration:underline}
 .sort-btn{padding:3px 8px;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--text2);cursor:pointer;font-size:.75em}
 .sort-btn.active{border-color:var(--accent);color:var(--accent)}
 
+/* Tag Lookup */
+.tag-lookup-container{max-width:1400px;margin:0 auto;padding:0 16px 40px}
+.tag-section{margin-bottom:24px}
+.tag-section-title{font-size:.9em;color:var(--accent);border-bottom:1px solid var(--border);padding-bottom:4px;margin-bottom:10px;display:flex;align-items:center;gap:6px}
+.tag-cloud{display:flex;flex-wrap:wrap;gap:6px}
+.tag-chip{padding:5px 12px;background:var(--card);border:1px solid var(--border);border-radius:16px;color:var(--text);cursor:pointer;font-size:.8em;transition:all .15s;display:inline-flex;align-items:center;gap:5px}
+.tag-chip:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,212,255,.08)}
+.tag-chip.active{background:rgba(0,212,255,.15);border-color:var(--accent);color:var(--accent);font-weight:600}
+.tag-chip .tag-count{font-size:.75em;color:var(--text2);background:var(--bg);padding:1px 5px;border-radius:8px}
+.tag-chip.active .tag-count{color:var(--accent);background:rgba(0,212,255,.1)}
+.tag-results-header{font-size:.95em;color:var(--text);margin:16px 0 8px;display:flex;align-items:center;gap:8px}
+.tag-results-header .tag-results-label{color:var(--accent);font-weight:700;font-size:1.1em}
+.tag-results-category{font-size:.8em;color:var(--text2);margin:12px 0 6px;padding:4px 0;border-bottom:1px solid var(--border)}
+.tag-search-box{margin-bottom:16px}
+.tag-search-box input{width:100%;max-width:400px;padding:8px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:.9em;outline:none}
+.tag-search-box input:focus{border-color:var(--accent)}
+.tag-search-box input::placeholder{color:var(--text2)}
+
 /* Grid */
 .grid{max-width:1800px;margin:0 auto;padding:0 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
 
@@ -368,6 +386,13 @@ a:hover{text-decoration:underline}
   /* Footer */
   .footer-links{gap:10px}
   .footer-links a{font-size:.68em}
+
+  /* Tag Lookup mobile */
+  .tag-lookup-container{padding:0 10px 30px}
+  .tag-chip{font-size:.72em;padding:4px 8px}
+  .tag-chip .tag-count{font-size:.7em}
+  .tag-section-title{font-size:.82em}
+  .tag-results-header{font-size:.85em;flex-wrap:wrap}
 }
 </style>
 </head>
@@ -388,6 +413,7 @@ a:hover{text-decoration:underline}
   <nav class="tab-bar" id="tabBar" aria-label="データカテゴリ切り替え">
     <button class="tab-btn active" data-tab="unit">ユニット<span class="tab-count" id="unitTabCount"></span></button>
     <button class="tab-btn" data-tab="chara">キャラ<span class="tab-count" id="charaTabCount"></span></button>
+    <button class="tab-btn" data-tab="taglookup">タグ逆引き</button>
   </nav>
 </header>
 
@@ -474,6 +500,15 @@ a:hover{text-decoration:underline}
 <div class="grid" id="mainGrid" role="list" aria-label="検索結果一覧"></div>
 <div class="data-table-wrap" id="tableWrap" style="display:none" role="table" aria-label="データテーブル"></div>
 
+<!-- Tag Lookup Section -->
+<div class="tag-lookup-container" id="tagLookupContainer" style="display:none">
+  <div class="tag-search-box">
+    <input type="text" id="tagSearchInput" placeholder="タグ・シリーズ名で検索...（例: SEED、ジオン、主人公）">
+  </div>
+  <div id="tagSections"></div>
+  <div id="tagResults"></div>
+</div>
+
 <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="詳細情報">
   <div class="modal" id="modalContent"></div>
 </div>
@@ -484,6 +519,8 @@ let currentTab = 'unit';
 let currentSort = 'atk';
 let currentDir = -1;
 let currentView = 'card';
+let activeTagLookup = '';  // currently selected tag in tag lookup
+let allTagData = {};       // {tagName: {units:[], charas:[], total:N}}
 
 async function init() {
   const uResp = await fetch('/units.json');
@@ -517,6 +554,8 @@ async function init() {
       chara_type: u.type,
       obtain_method: u.obtain || '',
       series: (u.series || []).join(' / '),
+      seriesArr: u.series || [],
+      tags: (u.tags || []).filter(t => t !== 'キャラ'),
       stats: {
         combat_power: n.combat_power || 0,
         shooting: stats.shooting || 0,
@@ -535,6 +574,7 @@ async function init() {
   document.getElementById('unitTabCount').textContent = `(${allUnits.length})`;
   document.getElementById('charaTabCount').textContent = `(${allCharas.length})`;
 
+  buildTagData();
   setupTabs();
   setupViewToggle();
   buildFilters();
@@ -547,10 +587,19 @@ function setupTabs() {
       currentTab = btn.dataset.tab;
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-      resetFilters();
-      buildFilters();
-      updateUI();
-      render();
+      const isTagLookup = currentTab === 'taglookup';
+      document.querySelector('.controls').style.display = isTagLookup ? 'none' : '';
+      document.getElementById('mainGrid').style.display = isTagLookup ? 'none' : '';
+      document.getElementById('tableWrap').style.display = isTagLookup ? 'none' : (currentView === 'table' ? '' : 'none');
+      document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
+      if (isTagLookup) {
+        renderTagLookup();
+      } else {
+        resetFilters();
+        buildFilters();
+        updateUI();
+        render();
+      }
     });
   });
 }
@@ -585,19 +634,20 @@ function resetFilters() {
 
 function updateUI() {
   const isUnit = currentTab === 'unit';
+  if (currentTab === 'taglookup') return;
   const isChara = currentTab === 'chara';
   const isSupporter = currentTab === 'supporter';
 
   const placeholders = {
     unit: 'ユニット名・武装名・武装効果で検索...',
-    chara: 'キャラ名で検索...（例: アムロ、シャア）',
+    chara: 'キャラ名・スキル名・アビリティで検索...',
     supporter: 'サポーター名で検索...（例: ブライト、ホワイトベース）'
   };
   document.getElementById('searchInput').placeholder = placeholders[currentTab];
 
   document.getElementById('filterTypeGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterSeriesGroup').style.display = isUnit || isChara ? '' : 'none';
-  document.getElementById('filterTagGroup').style.display = isUnit ? '' : 'none';
+  document.getElementById('filterTagGroup').style.display = (isUnit || isChara) ? '' : 'none';
   document.getElementById('filterTerrainGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterDebuffGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterRarityGroup').style.display = '';
@@ -727,11 +777,22 @@ function buildFilters() {
       render();
     });
   } else if (currentTab === 'chara') {
-    const rarities = new Set(), types = new Set(), series = new Set();
+    const rarities = new Set(), types = new Set(), series = new Set(), tags = new Set();
     allCharas.forEach(c => {
       if (c.rarity) rarities.add(c.rarity);
       if (c.chara_type) types.add(c.chara_type);
       if (c.series) series.add(c.series);
+      (c.tags||[]).forEach(t => tags.add(t));
+    });
+    // Type buttons for chara
+    const charaTypeOrder = ['攻撃','支援','耐久'];
+    const ctBtns = charaTypeOrder.filter(t => types.has(t)).map(t => {
+      const icon = TYPE_ICON_MAP[t] ? `<img src="${TYPE_ICON_MAP[t]}" alt="${t}">` : '';
+      return `<button class="filter-btn" data-value="${t}">${icon}${t}</button>`;
+    }).join('');
+    document.getElementById('filterCharaType').parentElement.innerHTML = '<label>タイプ</label><div class="filter-btn-group" id="charaTypeButtons">' + ctBtns + '</div>';
+    document.querySelectorAll('#charaTypeButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
     const rarityOrder = ['UR','ULT','SSR','SR','R','N'];
     const rarBtns = rarityOrder.filter(r => rarities.has(r)).map(r =>
@@ -741,8 +802,10 @@ function buildFilters() {
     document.querySelectorAll('#filterRarityButtons .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
-    fillSelect('filterCharaType', [...types].sort());
     fillSelect('filterSeries', [...series].sort());
+    // Show tag filter for chara too
+    document.getElementById('filterTagGroup').style.display = '';
+    fillSelect('filterTag', [...tags].sort());
   } else {
     const rarities = new Set(), targets = new Set();
     allSupporters.forEach(s => {
@@ -831,13 +894,20 @@ function getFiltered() {
       return true;
     });
   } else if (currentTab === 'chara') {
-    const cType = document.getElementById('filterCharaType').value;
+    const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].map(b => b.dataset.value);
     const series = document.getElementById('filterSeries').value;
+    const tag = document.getElementById('filterTag').value;
     return data.filter(c => {
-      if (q && !c.name.toLowerCase().includes(q)) return false;
+      if (q) {
+        const nameMatch = c.name.toLowerCase().includes(q);
+        const skillMatch = (c.skills||[]).some(sk => (sk.name||'').toLowerCase().includes(q) || (sk.effect||'').toLowerCase().includes(q));
+        const abilMatch = (c.abilities||[]).some(a => (a.name||'').toLowerCase().includes(q) || (a.desc||'').toLowerCase().includes(q));
+        if (!nameMatch && !skillMatch && !abilMatch) return false;
+      }
       if (activeRarities.length > 0 && !activeRarities.includes(c.rarity)) return false;
-      if (cType && c.chara_type !== cType) return false;
+      if (activeCharaTypes.length > 0 && !activeCharaTypes.includes(c.chara_type)) return false;
       if (series && c.series !== series) return false;
+      if (tag && !(c.tags||[]).includes(tag)) return false;
       return true;
     });
   } else {
@@ -1100,6 +1170,7 @@ function charaCardHTML(c) {
     ${statsHTML}
     ${skillTags ? `<div class="card-skills">${skillTags}</div>` : ''}
     ${abilCount ? `<div class="card-abilities-count">アビリティ: ${abilCount}個</div>` : ''}
+    <div class="card-tags">${(c.tags||[]).slice(0,4).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('')}</div>
   </div>`;
 }
 
@@ -1483,16 +1554,39 @@ function closeModal() {
 }
 
 function filterByTag(tagName) {
-  // Switch to unit tab if not already
-  if (currentTab !== 'unit') {
-    document.querySelector('.tab-btn[data-tab="unit"]').click();
+  // If in tag lookup, activate that tag
+  if (currentTab === 'taglookup') {
+    activeTagLookup = tagName;
+    renderTagLookup();
+    return;
+  }
+  // Check if the tag exists in current tab's data
+  const currentData = getData();
+  const tagInCurrentTab = currentData.some(item => {
+    if (currentTab === 'unit') return (item.tags||[]).includes(tagName);
+    if (currentTab === 'chara') return (item.tags||[]).includes(tagName);
+    return false;
+  });
+  // If tag doesn't exist in current tab, switch to the one that has it, or go to tag lookup
+  if (!tagInCurrentTab) {
+    // Check if tag exists in units
+    const inUnits = allUnits.some(u => (u.tags||[]).includes(tagName));
+    const inCharas = allCharas.some(c => (c.tags||[]).includes(tagName));
+    if (inUnits && inCharas) {
+      // Both have it — go to tag lookup for cross-category view
+      activeTagLookup = tagName;
+      document.querySelector('.tab-btn[data-tab="taglookup"]').click();
+      return;
+    } else if (inUnits) {
+      document.querySelector('.tab-btn[data-tab="unit"]').click();
+    } else if (inCharas) {
+      document.querySelector('.tab-btn[data-tab="chara"]').click();
+    }
   }
   const sel = document.getElementById('filterTag');
-  // Set the tag filter value
   for (let i = 0; i < sel.options.length; i++) {
     if (sel.options[i].value === tagName) { sel.value = tagName; render(); return; }
   }
-  // If not in dropdown, add it temporarily and select
   const opt = document.createElement('option');
   opt.value = tagName; opt.textContent = tagName;
   sel.appendChild(opt);
@@ -1500,15 +1594,120 @@ function filterByTag(tagName) {
   render();
 }
 
+// === TAG LOOKUP SYSTEM ===
+function buildTagData() {
+  allTagData = {};
+  // Collect tags from units
+  allUnits.forEach(u => {
+    (u.tags||[]).forEach(t => {
+      if (!allTagData[t]) allTagData[t] = {units:[], charas:[], total:0};
+      allTagData[t].units.push(u);
+    });
+    // Also index series as tags
+    (u.series||[]).forEach(s => {
+      const key = '📺 ' + s;
+      if (!allTagData[key]) allTagData[key] = {units:[], charas:[], total:0};
+      allTagData[key].units.push(u);
+    });
+  });
+  // Collect tags from characters
+  allCharas.forEach(c => {
+    (c.tags||[]).forEach(t => {
+      if (!allTagData[t]) allTagData[t] = {units:[], charas:[], total:0};
+      allTagData[t].charas.push(c);
+    });
+    (c.seriesArr||[]).forEach(s => {
+      const key = '📺 ' + s;
+      if (!allTagData[key]) allTagData[key] = {units:[], charas:[], total:0};
+      allTagData[key].charas.push(c);
+    });
+  });
+  Object.values(allTagData).forEach(v => v.total = v.units.length + v.charas.length);
+}
+
+function renderTagLookup() {
+  const searchQ = (document.getElementById('tagSearchInput')?.value || '').toLowerCase();
+  const container = document.getElementById('tagSections');
+  const resultsDiv = document.getElementById('tagResults');
+
+  // Group tags into categories
+  const seriesTags = [], factionTags = [], roleTags = [], otherTags = [];
+  const factionKeywords = ['軍','ジオン','連邦','エゥーゴ','ティターンズ','ザフト','オーブ','連合','ネオ','アクシズ','マフティー','三隻同盟','学園','SDガンダム'];
+  const roleKeywords = ['主人公','ライバル','リーダー','ルーキー','ベテラン','ニュータイプ','パイロット','民間人','軍人','マスク','身体強化','コーディネイター'];
+
+  Object.keys(allTagData).forEach(tag => {
+    if (searchQ && !tag.toLowerCase().includes(searchQ)) return;
+    const d = allTagData[tag];
+    if (d.total === 0) return;
+    if (tag.startsWith('📺 ')) { seriesTags.push(tag); return; }
+    if (factionKeywords.some(k => tag.includes(k))) { factionTags.push(tag); return; }
+    if (roleKeywords.some(k => tag.includes(k))) { roleTags.push(tag); return; }
+    otherTags.push(tag);
+  });
+
+  const sortByTotal = (a,b) => allTagData[b].total - allTagData[a].total;
+  seriesTags.sort(sortByTotal); factionTags.sort(sortByTotal); roleTags.sort(sortByTotal); otherTags.sort(sortByTotal);
+
+  function chipHTML(tag) {
+    const d = allTagData[tag];
+    const active = activeTagLookup === tag ? ' active' : '';
+    const label = tag.startsWith('📺 ') ? tag.slice(3) : tag;
+    const counts = [];
+    if (d.units.length) counts.push(`MS:${d.units.length}`);
+    if (d.charas.length) counts.push(`キャラ:${d.charas.length}`);
+    return `<span class="tag-chip${active}" onclick="selectTagLookup('${tag.replace(/'/g,"\\'")}')">${label} <span class="tag-count">${counts.join(' / ')}</span></span>`;
+  }
+
+  function sectionHTML(title, tags) {
+    if (!tags.length) return '';
+    return `<div class="tag-section"><div class="tag-section-title">${title} (${tags.length})</div><div class="tag-cloud">${tags.map(chipHTML).join('')}</div></div>`;
+  }
+
+  container.innerHTML =
+    sectionHTML('シリーズ', seriesTags) +
+    sectionHTML('所属・勢力', factionTags) +
+    sectionHTML('役割・特性', roleTags) +
+    sectionHTML('その他', otherTags);
+
+  // Render results if a tag is selected
+  if (activeTagLookup && allTagData[activeTagLookup]) {
+    const d = allTagData[activeTagLookup];
+    const label = activeTagLookup.startsWith('📺 ') ? activeTagLookup.slice(3) : activeTagLookup;
+    let html = `<div class="tag-results-header"><span class="tag-results-label">${label}</span> 該当: ユニット${d.units.length}件 / キャラ${d.charas.length}件</div>`;
+    if (d.units.length) {
+      html += `<div class="tag-results-category">ユニット (${d.units.length})</div>`;
+      html += '<div class="grid" role="list">' + d.units.map(u => unitCardHTML(u)).join('') + '</div>';
+    }
+    if (d.charas.length) {
+      html += `<div class="tag-results-category">キャラクター (${d.charas.length})</div>`;
+      html += '<div class="grid" role="list">' + d.charas.map(c => charaCardHTML(c)).join('') + '</div>';
+    }
+    resultsDiv.innerHTML = html;
+  } else {
+    resultsDiv.innerHTML = '<div style="text-align:center;color:var(--text2);padding:40px 0;font-size:.9em">タグを選択すると、該当するユニットとキャラクターが一覧表示されます</div>';
+  }
+}
+
+function selectTagLookup(tag) {
+  activeTagLookup = activeTagLookup === tag ? '' : tag;
+  renderTagLookup();
+  // Scroll to results
+  if (activeTagLookup) {
+    const el = document.getElementById('tagResults');
+    if (el) el.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+}
+
 // Event listeners
 document.getElementById('searchInput').addEventListener('input', render);
 document.getElementById('filterSeries').addEventListener('change', render);
 document.getElementById('filterTag').addEventListener('change', render);
 document.getElementById('filterTerrain').addEventListener('change', render);
-document.getElementById('filterCharaType').addEventListener('change', render);
+document.getElementById('filterCharaType')?.addEventListener('change', render);
 document.getElementById('filterTarget').addEventListener('change', render);
 document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.getElementById('tagSearchInput')?.addEventListener('input', () => renderTagLookup());
 
 bindSortButtons();
 init();
