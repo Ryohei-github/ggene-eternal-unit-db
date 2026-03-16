@@ -183,6 +183,91 @@ a:hover{text-decoration:underline}
 .tag-search-box input:focus{border-color:var(--accent)}
 .tag-search-box input::placeholder{color:var(--text2)}
 
+/* Team Simulator */
+.team-sim-container{max-width:1400px;margin:0 auto;padding:16px 16px 40px}
+.team-sim-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
+.team-name-input{background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1em;padding:8px 14px;width:200px;outline:none}
+.team-name-input:focus{border-color:var(--accent)}
+.team-combat-power{font-size:1.3em;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:8px}
+.team-actions{display:flex;gap:6px;flex-wrap:wrap}
+.team-action-btn{padding:6px 14px;border-radius:6px;font-size:.8em;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--text);transition:all .2s}
+.team-action-btn:hover{border-color:var(--accent);color:var(--accent)}
+.team-action-btn.primary{background:linear-gradient(135deg,rgba(0,212,255,.2),rgba(0,212,255,.1));border-color:var(--accent);color:var(--accent)}
+.team-formation-label{font-size:.85em;color:var(--text2);margin:12px 0 8px;font-weight:600;letter-spacing:1px}
+.team-slots{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
+.team-slot-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;transition:all .2s}
+.team-slot-card:hover{border-color:rgba(0,212,255,.3)}
+.team-slot-card .slot-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.team-slot-card .slot-number{width:28px;height:28px;background:var(--bg);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8em;font-weight:700;color:var(--accent);flex-shrink:0}
+.team-slot-card .slot-position{font-size:.7em;color:var(--text2);padding:2px 8px;background:var(--bg);border-radius:4px}
+.team-slot-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.team-slot-unit-area,.team-slot-chara-area{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;min-height:60px}
+.team-slot-unit-area .area-label,.team-slot-chara-area .area-label{font-size:.65em;color:var(--accent);font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
+.slot-empty{display:flex;align-items:center;justify-content:center;min-height:50px;border:1px dashed var(--border);border-radius:6px;cursor:pointer;color:var(--text2);font-size:.82em;transition:all .15s}
+.slot-empty:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,212,255,.05)}
+.slot-filled{position:relative}
+.slot-filled .slot-top-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.slot-filled .slot-img{width:40px;height:40px;border-radius:6px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
+.slot-filled .slot-info{flex:1;min-width:0}
+.slot-filled .slot-name{font-size:.9em;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slot-filled .slot-badges{display:flex;gap:3px;margin-top:2px;flex-wrap:wrap}
+.slot-filled .slot-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:6px}
+.slot-filled .slot-stats.wide{grid-template-columns:repeat(6,1fr)}
+.slot-filled .slot-stat{text-align:center;padding:3px;background:rgba(255,255,255,.03);border-radius:3px;font-size:.7em}
+.slot-filled .slot-stat .ss-label{color:var(--text2);font-size:.85em}
+.slot-filled .slot-stat .ss-val{font-weight:700;color:var(--text)}
+.slot-filled .slot-weapons{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
+.slot-filled .slot-skills{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
+.slot-filled .slot-abilities{margin-top:6px;font-size:.72em;color:var(--text2);line-height:1.5}
+.slot-filled .slot-abilities .abil-name{color:var(--accent);font-weight:600}
+.slot-change-btn{position:absolute;top:4px;right:4px;font-size:.65em;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:4px;padding:2px 6px;cursor:pointer;transition:all .15s}
+.slot-change-btn:hover{color:var(--accent);border-color:var(--accent)}
+.slot-remove-btn{position:absolute;top:4px;right:48px;font-size:.65em;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:4px;padding:2px 6px;cursor:pointer}
+.slot-remove-btn:hover{color:#ff4466;border-color:#ff4466}
+.team-supporter-section{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:20px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
+.team-supporter-pick{min-width:140px}
+.team-supporter-info{flex:1;min-width:200px}
+.team-supporter-info .leader-skill-label{font-size:.75em;color:var(--accent);font-weight:600;margin-bottom:4px}
+.team-supporter-info .leader-skill-text{font-size:.82em;color:var(--text);line-height:1.5;background:var(--bg);padding:8px 12px;border-radius:6px;border:1px solid var(--border)}
+.team-supporter-info .leader-tag{display:inline-block;padding:3px 10px;background:rgba(0,212,255,.1);border:1px solid var(--accent);border-radius:12px;font-size:.78em;color:var(--accent);font-weight:600;margin-top:6px}
+.team-leader-match{font-size:.8em;color:var(--gold);margin-top:8px;font-weight:600}
+.team-stats-summary{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px}
+.team-stats-summary h3{font-size:.9em;color:var(--accent);margin-bottom:10px;border-bottom:1px solid var(--border);padding-bottom:6px}
+.team-stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px}
+.team-stat-box{text-align:center;padding:8px;background:var(--bg);border-radius:6px;border:1px solid var(--border)}
+.team-stat-box .ts-label{font-size:.6em;color:var(--text2)}
+.team-stat-box .ts-val{font-size:1em;font-weight:700}
+.team-type-balance{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
+.team-type-chip{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:6px;font-size:.8em;font-weight:600;background:var(--bg);border:1px solid var(--border)}
+.team-type-chip img{width:16px;height:16px}
+.team-picker-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:300;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto}
+.team-picker-overlay.open{display:flex}
+.team-picker{background:var(--card);border:1px solid var(--accent);border-radius:12px;max-width:900px;width:100%;max-height:85vh;display:flex;flex-direction:column}
+.team-picker-header{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.team-picker-header h3{font-size:.95em;color:var(--accent);white-space:nowrap}
+.team-picker-header input{flex:1;min-width:150px;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.9em;outline:none}
+.team-picker-header input:focus{border-color:var(--accent)}
+.team-picker-close{font-size:1.3em;color:var(--text2);cursor:pointer;background:none;border:none;padding:4px 8px}
+.team-picker-close:hover{color:#fff}
+.team-picker-filters{padding:8px 16px;border-bottom:1px solid var(--border);display:flex;gap:4px;flex-wrap:wrap}
+.team-picker-list{flex:1;overflow-y:auto;padding:8px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
+.picker-item{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px}
+.picker-item:hover{border-color:var(--accent);background:rgba(0,212,255,.05)}
+.picker-item img{width:40px;height:40px;border-radius:6px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
+.picker-item-info{flex:1;min-width:0}
+.picker-item-name{font-size:.85em;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.picker-item-sub{font-size:.68em;color:var(--text2)}
+.team-saved-list{margin-top:16px}
+.team-saved-list h3{font-size:.85em;color:var(--text2);margin-bottom:8px}
+.team-saved-item{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;margin-bottom:4px;cursor:pointer;transition:all .15s}
+.team-saved-item:hover{border-color:var(--accent);background:rgba(0,212,255,.05)}
+.team-saved-item .saved-name{flex:1;font-size:.85em;font-weight:600;color:var(--text)}
+.team-saved-item .saved-cp{font-size:.8em;color:var(--gold)}
+.team-saved-delete{font-size:.75em;color:var(--text2);background:none;border:none;cursor:pointer;padding:2px 6px}
+.team-saved-delete:hover{color:#ff4466}
+.team-toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--accent);color:#000;padding:10px 24px;border-radius:8px;font-size:.85em;font-weight:600;z-index:400;opacity:0;transition:opacity .3s;pointer-events:none}
+.team-toast.show{opacity:1}
+
 /* Grid */
 .grid{max-width:1800px;margin:0 auto;padding:0 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:12px}
 
@@ -393,6 +478,16 @@ a:hover{text-decoration:underline}
   .tag-chip .tag-count{font-size:.7em}
   .tag-section-title{font-size:.82em}
   .tag-results-header{font-size:.85em;flex-wrap:wrap}
+
+  /* Team Simulator mobile */
+  .team-sim-header{flex-direction:column;align-items:flex-start}
+  .team-combat-power{font-size:1.1em}
+  .team-slot-pair{grid-template-columns:1fr}
+  .team-stats-grid{grid-template-columns:repeat(3,1fr)}
+  .team-picker-list{grid-template-columns:1fr}
+  .team-supporter-section{flex-direction:column}
+  .slot-filled .slot-stats.wide{grid-template-columns:repeat(3,1fr)}
+
 }
 </style>
 </head>
@@ -414,6 +509,7 @@ a:hover{text-decoration:underline}
     <button class="tab-btn active" data-tab="unit">ユニット<span class="tab-count" id="unitTabCount"></span></button>
     <button class="tab-btn" data-tab="chara">キャラ<span class="tab-count" id="charaTabCount"></span></button>
     <button class="tab-btn" data-tab="taglookup">タグ逆引き</button>
+    <button class="tab-btn" data-tab="team">編成</button>
   </nav>
 </header>
 
@@ -509,6 +605,46 @@ a:hover{text-decoration:underline}
   <div id="tagResults"></div>
 </div>
 
+<!-- Team Simulator -->
+<div class="team-sim-container" id="teamSimContainer" style="display:none">
+  <div class="team-sim-header">
+    <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+      <input type="text" class="team-name-input" id="teamNameInput" value="My Team" placeholder="編成名">
+      <div class="team-combat-power">⚔ 戦闘力 <span id="teamTotalCP">0</span></div>
+    </div>
+    <div class="team-actions">
+      <button class="team-action-btn primary" onclick="saveTeam()">保存</button>
+      <button class="team-action-btn" onclick="shareTeamURL()">URLコピー</button>
+      <button class="team-action-btn" onclick="clearTeam()">クリア</button>
+    </div>
+  </div>
+  <div class="team-formation-label">前方配置 (1~3)</div>
+  <div class="team-slots" id="teamSlotsFront"></div>
+  <div class="team-formation-label">後方配置 (4~5)</div>
+  <div class="team-slots" id="teamSlotsRear"></div>
+  <div class="team-formation-label">サポーター</div>
+  <div class="team-supporter-section" id="teamSupporterSection"></div>
+  <div class="team-stats-summary" id="teamStatsSummary"></div>
+  <div class="team-saved-list" id="teamSavedList"></div>
+</div>
+
+<!-- Team Picker Modal -->
+<div class="team-picker-overlay" id="teamPickerOverlay">
+  <div class="team-picker">
+    <div class="team-picker-header">
+      <h3 id="pickerTitle">ユニット選択</h3>
+      <input type="text" id="pickerSearch" placeholder="名前で検索...">
+      <button class="team-picker-close" onclick="closeTeamPicker()">&times;</button>
+    </div>
+    <div class="team-picker-filters" id="pickerFilters"></div>
+    <div class="team-picker-list" id="pickerList"></div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="team-toast" id="teamToast"></div>
+
+
 <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="詳細情報">
   <div class="modal" id="modalContent"></div>
 </div>
@@ -521,6 +657,20 @@ let currentDir = -1;
 let currentView = 'card';
 let activeTagLookup = '';  // currently selected tag in tag lookup
 let allTagData = {};       // {tagName: {units:[], charas:[], total:N}}
+
+// === TEAM SIMULATOR STATE ===
+let teamSlots = [
+  { unitId: null, charaId: null },
+  { unitId: null, charaId: null },
+  { unitId: null, charaId: null },
+  { unitId: null, charaId: null },
+  { unitId: null, charaId: null }
+];
+let teamSupporterId = null;
+let teamLeaderTag = '';
+let teamLeaderEffect = '';
+let pickerMode = null;  // 'unit' | 'chara' | 'supporter'
+let pickerSlotIndex = -1;
 
 async function init() {
   const uResp = await fetch('/units.json');
@@ -579,6 +729,11 @@ async function init() {
   setupViewToggle();
   buildFilters();
   render();
+
+  // Check for team data in URL params
+  if (loadTeamFromURL()) {
+    document.querySelector('.tab-btn[data-tab="team"]').click();
+  }
 }
 
 function setupTabs() {
@@ -588,12 +743,17 @@ function setupTabs() {
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       const isTagLookup = currentTab === 'taglookup';
-      document.querySelector('.controls').style.display = isTagLookup ? 'none' : '';
-      document.getElementById('mainGrid').style.display = isTagLookup ? 'none' : '';
-      document.getElementById('tableWrap').style.display = isTagLookup ? 'none' : (currentView === 'table' ? '' : 'none');
+      const isTeam = currentTab === 'team';
+      const isSpecial = isTagLookup || isTeam;
+      document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
+      document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
+      document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
       document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
+      document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
       if (isTagLookup) {
         renderTagLookup();
+      } else if (isTeam) {
+        renderTeamSim();
       } else {
         resetFilters();
         buildFilters();
@@ -634,7 +794,7 @@ function resetFilters() {
 
 function updateUI() {
   const isUnit = currentTab === 'unit';
-  if (currentTab === 'taglookup') return;
+  if (currentTab === 'taglookup' || currentTab === 'team') return;
   const isChara = currentTab === 'chara';
   const isSupporter = currentTab === 'supporter';
 
@@ -1698,6 +1858,450 @@ function selectTagLookup(tag) {
   }
 }
 
+
+// === TEAM SIMULATOR FUNCTIONS ===
+function renderTeamSim() {
+  renderTeamSlots('teamSlotsFront', 0, 3);
+  renderTeamSlots('teamSlotsRear', 3, 5);
+  renderTeamSupporter();
+  renderTeamStats();
+  renderSavedTeams();
+}
+
+function renderTeamSlots(containerId, from, to) {
+  const container = document.getElementById(containerId);
+  let html = '';
+  for (let i = from; i < to; i++) {
+    const slot = teamSlots[i];
+    const unit = slot.unitId ? allUnits.find(u => u.id === slot.unitId) : null;
+    const chara = slot.charaId ? allCharas.find(c => c.id === slot.charaId) : null;
+    const posLabel = i < 3 ? '前方' : '後方';
+    html += `<div class="team-slot-card">
+      <div class="slot-header">
+        <div class="slot-number">${i+1}</div>
+        <div class="slot-position">${posLabel}</div>
+        ${unit ? `<div style="flex:1"></div><span class="badge ${rarityClass(unit.rarity)}" style="font-size:.65em">${unit.rarity||'?'}</span> ${typeBadgeHTML(unit.type)}` : ''}
+      </div>
+      <div class="team-slot-pair">
+        <div class="team-slot-unit-area">
+          <div class="area-label">ユニット (MS)</div>
+          ${unit ? renderSlotUnit(unit, i) : `<div class="slot-empty" onclick="openTeamPicker('unit',${i})">+ ユニットを選択</div>`}
+        </div>
+        <div class="team-slot-chara-area">
+          <div class="area-label">キャラクター</div>
+          ${chara ? renderSlotChara(chara, i) : `<div class="slot-empty" onclick="openTeamPicker('chara',${i})">+ キャラを選択</div>`}
+        </div>
+      </div>
+    </div>`;
+  }
+  container.innerHTML = html;
+}
+
+function renderSlotUnit(u, slotIdx) {
+  const s = u.normal?.stats || {};
+  const t = u.normal?.terrain || {};
+  const weapons = (u.normal_weapons||[]).slice(0, 6).map(w => {
+    const isMap = w.range === 'MAP';
+    const isEx = w.name.includes('EX');
+    const mapIcon = isMap ? `<img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP" style="width:14px;height:14px;vertical-align:middle">` : '';
+    return `<span class="weapon-tag${isEx?' ex':''}${isMap?' map':''}" style="font-size:.62em">${mapIcon}${w.name}</span>`;
+  }).join('');
+  const iconHTML = u.image ? `<img class="slot-img" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'">` : '';
+  const terrStr = ['宇宙','空中','地上','水上','水中'].map(k => `${k.charAt(0)}${t[k]==='◯'?'<span style="color:#44cc44">◯</span>':t[k]==='△'?'<span style="color:#ffaa00">△</span>':'<span style="color:#555">-</span>'}`).join(' ');
+  return `<div class="slot-filled">
+    <button class="slot-remove-btn" onclick="removeSlot(${slotIdx},'unit')">✕</button>
+    <button class="slot-change-btn" onclick="openTeamPicker('unit',${slotIdx})">変更</button>
+    <div class="slot-top-row">
+      ${iconHTML}
+      <div class="slot-info">
+        <div class="slot-name">${u.name}</div>
+        <div style="font-size:.65em;color:var(--text2)">${(u.series||[]).join(' / ')}</div>
+        ${u.normal?.combat_power ? `<div style="font-size:.7em;color:var(--gold)">戦闘力: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
+      </div>
+    </div>
+    <div class="slot-filled slot-stats wide">
+      <div class="slot-stat"><div class="ss-label">HP</div><div class="ss-val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
+      <div class="slot-stat"><div class="ss-label">攻撃</div><div class="ss-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
+      <div class="slot-stat"><div class="ss-label">防御</div><div class="ss-val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
+      <div class="slot-stat"><div class="ss-label">EN</div><div class="ss-val">${(parseInt(s.en)||0).toLocaleString()}</div></div>
+      <div class="slot-stat"><div class="ss-label">機動</div><div class="ss-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
+      <div class="slot-stat"><div class="ss-label">移動</div><div class="ss-val">${parseInt(s.mobility)||0}</div></div>
+    </div>
+    <div style="font-size:.68em;color:var(--text2);margin-top:4px">地形: ${terrStr}</div>
+    ${weapons ? `<div class="slot-weapons">${weapons}</div>` : ''}
+  </div>`;
+}
+
+function renderSlotChara(c, slotIdx) {
+  const s = c.stats || {};
+  const iconHTML = c.image ? `<img class="slot-img" src="${c.image}" alt="${c.name}" onerror="this.style.display='none'">` : '';
+  const skillTags = (c.skills||[]).map(sk => {
+    const short = sk.name.replace(/\(SP:\d+\)/, '').replace(/Lv\d+/, '').trim();
+    return `<span class="skill-tag" style="font-size:.62em">${short} SP:${sk.sp_cost||'?'}</span>`;
+  }).join('');
+  const abilHTML = (c.abilities||[]).filter(a => {
+    const garbage = ['リセマラ評価','キャラ一覧の関連記事','解放キャラ','スキル','UR','対象ユニット','サポーターの一覧記事','レア度','2×2','SD','支援','攻撃'];
+    return !garbage.includes(a.name) && !/^戦闘力[\(（]/.test(a.name) && !/[\(（]SP:\d+[\)）]/.test(a.name);
+  }).slice(0, 4).map(a => `<span class="abil-name">${a.name}</span>: ${(a.desc||a.effect||'').substring(0,40)}${(a.desc||a.effect||'').length>40?'...':''}`).join('<br>');
+
+  return `<div class="slot-filled">
+    <button class="slot-remove-btn" onclick="removeSlot(${slotIdx},'chara')">✕</button>
+    <button class="slot-change-btn" onclick="openTeamPicker('chara',${slotIdx})">変更</button>
+    <div class="slot-top-row">
+      ${iconHTML}
+      <div class="slot-info">
+        <div class="slot-name">${c.name}</div>
+        <div class="slot-badges">
+          <span class="badge ${rarityClass(c.rarity)}" style="font-size:.6em">${c.rarity||'?'}</span>
+          ${typeBadgeHTML(c.chara_type)}
+        </div>
+      </div>
+    </div>
+    <div class="slot-filled slot-stats">
+      <div class="slot-stat"><div class="ss-label">射撃</div><div class="ss-val">${s.shooting||'-'}</div></div>
+      <div class="slot-stat"><div class="ss-label">格闘</div><div class="ss-val">${s.melee||'-'}</div></div>
+      <div class="slot-stat"><div class="ss-label">覚醒</div><div class="ss-val">${s.awakening||'-'}</div></div>
+      <div class="slot-stat"><div class="ss-label">守備</div><div class="ss-val">${s.defense||'-'}</div></div>
+      <div class="slot-stat"><div class="ss-label">反応</div><div class="ss-val">${s.reaction||'-'}</div></div>
+      <div class="slot-stat"><div class="ss-label">SP</div><div class="ss-val">${s.sp||'-'}</div></div>
+    </div>
+    ${skillTags ? `<div class="slot-skills">${skillTags}</div>` : ''}
+    ${abilHTML ? `<div class="slot-abilities">${abilHTML}</div>` : ''}
+  </div>`;
+}
+
+function renderTeamSupporter() {
+  const container = document.getElementById('teamSupporterSection');
+  const chara = teamSupporterId ? allCharas.find(c => c.id === teamSupporterId) : null;
+
+  let pickHTML = '';
+  if (chara) {
+    const iconHTML = chara.image ? `<img style="width:48px;height:48px;border-radius:6px;border:1px solid var(--border);object-fit:cover" src="${chara.image}" alt="${chara.name}" onerror="this.style.display='none'">` : '';
+    pickHTML = `<div style="text-align:center">
+      ${iconHTML}
+      <div style="font-size:.82em;font-weight:600;color:var(--text);margin-top:4px">${chara.name}</div>
+      <div style="margin-top:4px;display:flex;gap:4px;justify-content:center">
+        <button class="slot-change-btn" style="position:static" onclick="openTeamPicker('supporter',0)">変更</button>
+        <button class="slot-remove-btn" style="position:static" onclick="teamSupporterId=null;renderTeamSim()">✕</button>
+      </div>
+    </div>`;
+  } else {
+    pickHTML = `<div class="slot-empty" style="min-height:80px;min-width:120px" onclick="openTeamPicker('supporter',0)">+ サポーター選択</div>`;
+  }
+
+  // Calculate leader skill match count
+  let matchInfo = '';
+  if (chara && teamLeaderTag) {
+    const matchUnits = [];
+    teamSlots.forEach((slot, i) => {
+      if (!slot.unitId) return;
+      const u = allUnits.find(x => x.id === slot.unitId);
+      if (!u) return;
+      const allTags = [...(u.tags||[]), ...(u.series||[])];
+      if (allTags.includes(teamLeaderTag)) matchUnits.push(u.name);
+    });
+    matchInfo = `<div class="team-leader-match">リーダースキル適用: ${matchUnits.length}/5機${matchUnits.length ? ` (${matchUnits.join(', ')})` : ''}</div>`;
+  }
+
+  container.innerHTML = `
+    <div class="team-supporter-pick">${pickHTML}</div>
+    <div class="team-supporter-info">
+      <div class="leader-skill-label">リーダースキル</div>
+      <div class="leader-skill-text">${teamLeaderEffect || '（サポーターを選択してください）'}</div>
+      ${teamLeaderTag ? `<div class="leader-tag">TAG: ${teamLeaderTag}</div>` : ''}
+      <div style="margin-top:8px">
+        <div style="font-size:.7em;color:var(--text2);margin-bottom:4px">リーダースキル設定 (手動入力)</div>
+        <div style="display:flex;gap:6px;flex-wrap:wrap">
+          <input type="text" id="leaderTagInput" placeholder="対象タグ (例: エース機)" value="${teamLeaderTag}" style="padding:4px 8px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text);font-size:.8em;width:140px;outline:none" onchange="teamLeaderTag=this.value;renderTeamSim()">
+          <input type="text" id="leaderEffectInput" placeholder="効果 (例: 全ステ+44%)" value="${teamLeaderEffect.replace(/"/g,'&quot;')}" style="padding:4px 8px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text);font-size:.8em;width:200px;outline:none" onchange="teamLeaderEffect=this.value;renderTeamSim()">
+        </div>
+      </div>
+      ${matchInfo}
+    </div>
+  `;
+}
+
+function renderTeamStats() {
+  const container = document.getElementById('teamStatsSummary');
+  let totalCP = 0, totalHP = 0, totalATK = 0, totalDEF = 0, totalEN = 0, totalAGI = 0;
+  const typeCounts = {};
+  let filledCount = 0;
+
+  teamSlots.forEach(slot => {
+    if (slot.unitId) {
+      const u = allUnits.find(x => x.id === slot.unitId);
+      if (u) {
+        filledCount++;
+        const s = u.normal?.stats || {};
+        totalCP += parseInt(u.normal?.combat_power) || 0;
+        totalHP += parseInt(s.hp) || 0;
+        totalATK += parseInt(s.attack) || 0;
+        totalDEF += parseInt(s.defense) || 0;
+        totalEN += parseInt(s.en) || 0;
+        totalAGI += parseInt(s.agility) || 0;
+        const t = u.type || '不明';
+        typeCounts[t] = (typeCounts[t] || 0) + 1;
+      }
+    }
+  });
+
+  document.getElementById('teamTotalCP').textContent = totalCP.toLocaleString();
+
+  const typeChips = Object.entries(typeCounts).map(([t, count]) => {
+    const icon = TYPE_ICON_MAP[t] ? `<img src="${TYPE_ICON_MAP[t]}" alt="${t}">` : '';
+    return `<div class="team-type-chip">${icon}${t} x${count}</div>`;
+  }).join('');
+
+  container.innerHTML = `
+    <h3>部隊ステータス合計 (${filledCount}/5機)</h3>
+    <div class="team-stats-grid">
+      <div class="team-stat-box"><div class="ts-label">合計戦闘力</div><div class="ts-val" style="color:var(--gold)">${totalCP.toLocaleString()}</div></div>
+      <div class="team-stat-box"><div class="ts-label">HP合計</div><div class="ts-val">${totalHP.toLocaleString()}</div></div>
+      <div class="team-stat-box"><div class="ts-label">攻撃力合計</div><div class="ts-val">${totalATK.toLocaleString()}</div></div>
+      <div class="team-stat-box"><div class="ts-label">防御力合計</div><div class="ts-val">${totalDEF.toLocaleString()}</div></div>
+      <div class="team-stat-box"><div class="ts-label">EN合計</div><div class="ts-val">${totalEN.toLocaleString()}</div></div>
+      <div class="team-stat-box"><div class="ts-label">機動力合計</div><div class="ts-val">${totalAGI.toLocaleString()}</div></div>
+    </div>
+    <div style="font-size:.8em;color:var(--text2);margin-bottom:6px">タイプバランス</div>
+    <div class="team-type-balance">${typeChips || '<span style="color:var(--text2);font-size:.8em">ユニット未選択</span>'}</div>
+  `;
+}
+
+function renderSavedTeams() {
+  const container = document.getElementById('teamSavedList');
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem('ggene_saved_teams') || '[]'); } catch(e) {}
+  if (!saved.length) { container.innerHTML = ''; return; }
+  const items = saved.map((t, i) => `<div class="team-saved-item" onclick="loadSavedTeam(${i})">
+    <span class="saved-name">${t.name||'編成'+(i+1)}</span>
+    <span class="saved-cp">⚔ ${(t.totalCP||0).toLocaleString()}</span>
+    <button class="team-saved-delete" onclick="event.stopPropagation();deleteSavedTeam(${i})">削除</button>
+  </div>`).join('');
+  container.innerHTML = `<h3>保存済み編成</h3>${items}`;
+}
+
+// === PICKER ===
+function openTeamPicker(mode, slotIdx) {
+  pickerMode = mode;
+  pickerSlotIndex = slotIdx;
+  const overlay = document.getElementById('teamPickerOverlay');
+  const title = document.getElementById('pickerTitle');
+  const searchInput = document.getElementById('pickerSearch');
+  const filtersDiv = document.getElementById('pickerFilters');
+  searchInput.value = '';
+
+  if (mode === 'unit') {
+    title.textContent = `ユニット選択 (スロット${slotIdx+1})`;
+    const types = ['攻撃','耐久','支援','射撃','格闘','覚醒'];
+    filtersDiv.innerHTML = types.map(t => {
+      const icon = TYPE_ICON_MAP[t] ? `<img src="${TYPE_ICON_MAP[t]}" style="width:14px;height:14px;vertical-align:middle"> ` : '';
+      return `<button class="filter-btn picker-type-btn" data-value="${t}" onclick="this.classList.toggle('active');renderPickerList()">${icon}${t}</button>`;
+    }).join('');
+  } else if (mode === 'chara') {
+    title.textContent = `キャラ選択 (スロット${slotIdx+1})`;
+    const types = ['攻撃','支援','耐久'];
+    filtersDiv.innerHTML = types.map(t => {
+      const icon = TYPE_ICON_MAP[t] ? `<img src="${TYPE_ICON_MAP[t]}" style="width:14px;height:14px;vertical-align:middle"> ` : '';
+      return `<button class="filter-btn picker-type-btn" data-value="${t}" onclick="this.classList.toggle('active');renderPickerList()">${icon}${t}</button>`;
+    }).join('');
+  } else {
+    title.textContent = 'サポーター選択';
+    filtersDiv.innerHTML = '';
+  }
+
+  overlay.classList.add('open');
+  renderPickerList();
+  searchInput.focus();
+  searchInput.addEventListener('input', renderPickerList);
+}
+
+function closeTeamPicker() {
+  document.getElementById('teamPickerOverlay').classList.remove('open');
+}
+
+function renderPickerList() {
+  const list = document.getElementById('pickerList');
+  const q = (document.getElementById('pickerSearch').value || '').toLowerCase();
+  const activeTypes = [...document.querySelectorAll('.picker-type-btn.active')].map(b => b.dataset.value);
+
+  let items = [];
+  if (pickerMode === 'unit') {
+    items = allUnits.filter(u => {
+      if (q && !u.name.toLowerCase().includes(q)) return false;
+      if (activeTypes.length && !activeTypes.includes(u.type)) return false;
+      return true;
+    });
+    items.sort((a,b) => (parseInt(b.normal?.combat_power)||0) - (parseInt(a.normal?.combat_power)||0));
+    list.innerHTML = items.slice(0, 100).map(u => {
+      const s = u.normal?.stats || {};
+      const img = u.image ? `<img src="${u.image}" alt="${u.name}" onerror="this.style.display='none'">` : '';
+      return `<div class="picker-item" onclick="selectPickerUnit(${u.id})">
+        ${img}
+        <div class="picker-item-info">
+          <div class="picker-item-name">${u.name}</div>
+          <div class="picker-item-sub"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.6em;padding:1px 4px">${u.rarity}</span> ${typeBadgeHTML(u.type)} CP:${(u.normal?.combat_power||0).toLocaleString()} ATK:${(parseInt(s.attack)||0).toLocaleString()}</div>
+        </div>
+      </div>`;
+    }).join('');
+  } else if (pickerMode === 'chara') {
+    items = allCharas.filter(c => {
+      if (q && !c.name.toLowerCase().includes(q)) return false;
+      if (activeTypes.length && !activeTypes.includes(c.chara_type)) return false;
+      return true;
+    });
+    items.sort((a,b) => (parseInt(b.stats?.combat_power)||0) - (parseInt(a.stats?.combat_power)||0));
+    list.innerHTML = items.slice(0, 100).map(c => {
+      const s = c.stats || {};
+      const img = c.image ? `<img src="${c.image}" alt="${c.name}" onerror="this.style.display='none'">` : '';
+      return `<div class="picker-item" onclick="selectPickerChara(${c.id})">
+        ${img}
+        <div class="picker-item-info">
+          <div class="picker-item-name">${c.name}</div>
+          <div class="picker-item-sub"><span class="badge ${rarityClass(c.rarity)}" style="font-size:.6em;padding:1px 4px">${c.rarity}</span> ${typeBadgeHTML(c.chara_type)} 射:${s.shooting||'-'} 格:${s.melee||'-'} 覚:${s.awakening||'-'}</div>
+        </div>
+      </div>`;
+    }).join('');
+  } else {
+    items = allCharas.filter(c => {
+      if (q && !c.name.toLowerCase().includes(q)) return false;
+      return true;
+    });
+    items.sort((a,b) => (parseInt(b.stats?.combat_power)||0) - (parseInt(a.stats?.combat_power)||0));
+    list.innerHTML = items.slice(0, 100).map(c => {
+      const img = c.image ? `<img src="${c.image}" alt="${c.name}" onerror="this.style.display='none'">` : '';
+      return `<div class="picker-item" onclick="selectPickerSupporter(${c.id})">
+        ${img}
+        <div class="picker-item-info">
+          <div class="picker-item-name">${c.name}</div>
+          <div class="picker-item-sub"><span class="badge ${rarityClass(c.rarity)}" style="font-size:.6em;padding:1px 4px">${c.rarity}</span> ${c.series||''}</div>
+        </div>
+      </div>`;
+    }).join('');
+  }
+
+  if (!list.innerHTML) list.innerHTML = '<div style="padding:40px;text-align:center;color:var(--text2)">該当なし</div>';
+}
+
+function selectPickerUnit(id) {
+  teamSlots[pickerSlotIndex].unitId = id;
+  closeTeamPicker();
+  renderTeamSim();
+}
+function selectPickerChara(id) {
+  teamSlots[pickerSlotIndex].charaId = id;
+  closeTeamPicker();
+  renderTeamSim();
+}
+function selectPickerSupporter(id) {
+  teamSupporterId = id;
+  closeTeamPicker();
+  renderTeamSim();
+}
+
+function removeSlot(idx, type) {
+  if (type === 'unit') teamSlots[idx].unitId = null;
+  else teamSlots[idx].charaId = null;
+  renderTeamSim();
+}
+
+function clearTeam() {
+  teamSlots = teamSlots.map(() => ({ unitId: null, charaId: null }));
+  teamSupporterId = null;
+  teamLeaderTag = '';
+  teamLeaderEffect = '';
+  document.getElementById('teamNameInput').value = 'My Team';
+  renderTeamSim();
+}
+
+// === SAVE / LOAD / SHARE ===
+function saveTeam() {
+  const name = document.getElementById('teamNameInput').value || 'My Team';
+  let totalCP = 0;
+  teamSlots.forEach(slot => {
+    if (slot.unitId) {
+      const u = allUnits.find(x => x.id === slot.unitId);
+      if (u) totalCP += parseInt(u.normal?.combat_power) || 0;
+    }
+  });
+  const data = {
+    name, totalCP,
+    slots: teamSlots.map(s => ({ u: s.unitId, c: s.charaId })),
+    supporter: teamSupporterId,
+    leaderTag: teamLeaderTag,
+    leaderEffect: teamLeaderEffect
+  };
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem('ggene_saved_teams') || '[]'); } catch(e) {}
+  saved.push(data);
+  localStorage.setItem('ggene_saved_teams', JSON.stringify(saved));
+  renderSavedTeams();
+  showToast('編成を保存しました');
+}
+
+function loadSavedTeam(idx) {
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem('ggene_saved_teams') || '[]'); } catch(e) {}
+  const data = saved[idx];
+  if (!data) return;
+  document.getElementById('teamNameInput').value = data.name || 'My Team';
+  teamSlots = (data.slots || []).map(s => ({ unitId: s.u || null, charaId: s.c || null }));
+  while (teamSlots.length < 5) teamSlots.push({ unitId: null, charaId: null });
+  teamSupporterId = data.supporter || null;
+  teamLeaderTag = data.leaderTag || '';
+  teamLeaderEffect = data.leaderEffect || '';
+  renderTeamSim();
+  showToast(`「${data.name}」を読み込みました`);
+}
+
+function deleteSavedTeam(idx) {
+  let saved = [];
+  try { saved = JSON.parse(localStorage.getItem('ggene_saved_teams') || '[]'); } catch(e) {}
+  saved.splice(idx, 1);
+  localStorage.setItem('ggene_saved_teams', JSON.stringify(saved));
+  renderSavedTeams();
+}
+
+function shareTeamURL() {
+  const name = document.getElementById('teamNameInput').value || '';
+  const parts = teamSlots.map(s => `${s.unitId||0},${s.charaId||0}`);
+  const params = new URLSearchParams();
+  params.set('team', parts.join('|'));
+  if (teamSupporterId) params.set('sup', teamSupporterId);
+  if (name) params.set('tn', name);
+  if (teamLeaderTag) params.set('lt', teamLeaderTag);
+  if (teamLeaderEffect) params.set('le', teamLeaderEffect);
+  const url = window.location.origin + window.location.pathname + '?' + params.toString();
+  navigator.clipboard.writeText(url).then(() => {
+    showToast('URLをコピーしました');
+  }).catch(() => {
+    prompt('以下のURLをコピーしてください:', url);
+  });
+}
+
+function loadTeamFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  const teamStr = params.get('team');
+  if (!teamStr) return false;
+  const parts = teamStr.split('|');
+  teamSlots = parts.map(p => {
+    const [u, c] = p.split(',').map(Number);
+    return { unitId: u || null, charaId: c || null };
+  });
+  while (teamSlots.length < 5) teamSlots.push({ unitId: null, charaId: null });
+  teamSupporterId = parseInt(params.get('sup')) || null;
+  document.getElementById('teamNameInput').value = params.get('tn') || 'Shared Team';
+  teamLeaderTag = params.get('lt') || '';
+  teamLeaderEffect = params.get('le') || '';
+  return true;
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('teamToast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
 // Event listeners
 document.getElementById('searchInput').addEventListener('input', render);
 document.getElementById('filterSeries').addEventListener('change', render);
@@ -1706,7 +2310,8 @@ document.getElementById('filterTerrain').addEventListener('change', render);
 document.getElementById('filterCharaType')?.addEventListener('change', render);
 document.getElementById('filterTarget').addEventListener('change', render);
 document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
-document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeTeamPicker(); } });
+document.getElementById('teamPickerOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeTeamPicker(); });
 document.getElementById('tagSearchInput')?.addEventListener('input', () => renderTagLookup());
 
 bindSortButtons();
