@@ -625,8 +625,16 @@ a:hover{text-decoration:underline}
       <select id="filterCharaType"><option value="">すべて</option></select>
     </div>
     <div class="filter-group" id="filterTargetGroup" style="display:none">
-      <label>対象</label>
+      <label>対象シリーズ</label>
       <select id="filterTarget"><option value="">すべて</option></select>
+    </div>
+    <div class="filter-group" id="filterSupTagGroup" style="display:none">
+      <label>対象タグ</label>
+      <div class="filter-btn-group" id="filterSupTagButtons"></div>
+    </div>
+    <div class="filter-group" id="filterSupSkillGroup" style="display:none">
+      <label>サポートスキル</label>
+      <div class="filter-btn-group" id="filterSupSkillButtons"></div>
     </div>
   </div>
   <div style="text-align:center;margin:6px 0">
@@ -854,6 +862,7 @@ function resetFilters() {
   if (charaTypeEl) charaTypeEl.innerHTML = '<option value="">すべて</option>';
   else { const g = document.getElementById('filterCharaTypeGroup'); if (g) g.innerHTML = '<label>キャラタイプ</label><select id="filterCharaType"><option value="">すべて</option></select>'; }
   document.getElementById('filterTarget').innerHTML = '<option value="">すべて</option>';
+  document.querySelectorAll('#filterSupTagButtons .filter-btn, #filterSupSkillButtons .filter-btn').forEach(b => b.classList.remove('active'));
   activeDebuffKey = '';
   activeSpecialKey = '';
   debuffMinRate = 0;
@@ -883,6 +892,8 @@ function updateUI() {
   document.getElementById('filterRarityGroup').style.display = '';
   document.getElementById('filterCharaTypeGroup').style.display = isChara ? '' : 'none';
   document.getElementById('filterTargetGroup').style.display = isSupporter ? '' : 'none';
+  document.getElementById('filterSupTagGroup').style.display = isSupporter ? '' : 'none';
+  document.getElementById('filterSupSkillGroup').style.display = isSupporter ? '' : 'none';
 
   const sortContainer = document.getElementById('sortBtns');
   if (isUnit) {
@@ -1039,9 +1050,30 @@ function buildFilters() {
     fillSelect('filterTag', [...tags].sort());
   } else {
     const rarities = new Set(), targets = new Set();
+    const tagSet = new Set();
+    const skillSet = new Set();
     allSupporters.forEach(s => {
       if (s.rarity) rarities.add(s.rarity);
       if (s.target_series) targets.add(s.target_series);
+      // Extract individual tags from target_series (split by "or")
+      if (s.target_series) {
+        s.target_series.split(/or/i).map(t => t.trim()).filter(Boolean).forEach(t => {
+          // Categorize: if it's a series name (contains ガンダム or known series), skip for tag filter
+          // Otherwise it's a tag
+          if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) {
+            tagSet.add(t);
+          }
+        });
+      }
+      // Also check leader2_target for tags
+      if (s.leader2_target) {
+        s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => {
+          if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) {
+            tagSet.add(t);
+          }
+        });
+      }
+      if (s.recovery_type) skillSet.add(s.recovery_type);
     });
     const rarityOrder = ['UR','ULT','SSR','SR','R','N'];
     const rarBtns = rarityOrder.filter(r => rarities.has(r)).map(r =>
@@ -1052,6 +1084,24 @@ function buildFilters() {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
     fillSelect('filterTarget', [...targets].sort());
+    // Tag filter buttons
+    const tagBtns = [...tagSet].sort().map(t =>
+      `<button class="filter-btn" data-value="${t}">${t}</button>`
+    ).join('');
+    document.getElementById('filterSupTagButtons').innerHTML = tagBtns;
+    document.querySelectorAll('#filterSupTagButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
+    });
+    // Support skill filter buttons (HP / EN / HP・EN)
+    const skillOrder = ['HP', 'EN', 'HP・EN'];
+    const skillLabels = { 'HP': 'HP回復', 'EN': 'EN回復', 'HP・EN': 'HP&EN回復' };
+    const skBtns = skillOrder.filter(s => skillSet.has(s)).map(s =>
+      `<button class="filter-btn" data-value="${s}">${skillLabels[s]||s}</button>`
+    ).join('');
+    document.getElementById('filterSupSkillButtons').innerHTML = skBtns;
+    document.querySelectorAll('#filterSupSkillButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
+    });
   }
 }
 
@@ -1143,10 +1193,22 @@ function getFiltered() {
     });
   } else {
     const target = document.getElementById('filterTarget').value;
+    const activeSupTags = [...document.querySelectorAll('#filterSupTagButtons .filter-btn.active')].map(b => b.dataset.value);
+    const activeSupSkills = [...document.querySelectorAll('#filterSupSkillButtons .filter-btn.active')].map(b => b.dataset.value);
     return data.filter(s => {
       if (q && !s.name.toLowerCase().includes(q)) return false;
       if (activeRarities.length > 0 && !activeRarities.includes(s.rarity)) return false;
       if (target && s.target_series !== target) return false;
+      // Tag filter: check if any of the supporter's target tags match active tag filters
+      if (activeSupTags.length > 0) {
+        const supAllTags = [];
+        if (s.target_series) s.target_series.split(/or/i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
+        if (s.leader2_target) s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
+        const hasTag = activeSupTags.some(ft => supAllTags.some(st => st.includes(ft) || ft.includes(st)));
+        if (!hasTag) return false;
+      }
+      // Support skill filter
+      if (activeSupSkills.length > 0 && !activeSupSkills.includes(s.recovery_type)) return false;
       return true;
     });
   }
@@ -2374,7 +2436,25 @@ function openTeamPicker(mode, slotIdx) {
     }).join('');
   } else {
     title.textContent = 'サポーター選択';
-    filtersDiv.innerHTML = '';
+    // Build tag and skill filter buttons for supporter picker
+    const supTagSet = new Set(), supSkillSet = new Set();
+    allSupporters.forEach(s => {
+      if (s.target_series) s.target_series.split(/or/i).map(t => t.trim()).filter(Boolean).forEach(t => {
+        if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) supTagSet.add(t);
+      });
+      if (s.leader2_target) s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => {
+        if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) supTagSet.add(t);
+      });
+      if (s.recovery_type) supSkillSet.add(s.recovery_type);
+    });
+    const skillLabels = { 'HP': 'HP回復', 'EN': 'EN回復', 'HP・EN': 'HP&EN回復' };
+    const skBtns = ['HP','EN','HP・EN'].filter(s => supSkillSet.has(s)).map(s =>
+      `<button class="filter-btn picker-sup-skill-btn" data-value="${s}" onclick="this.classList.toggle('active');renderPickerList()">${skillLabels[s]}</button>`
+    ).join('');
+    const tagBtns = [...supTagSet].sort().map(t =>
+      `<button class="filter-btn picker-sup-tag-btn" data-value="${t}" onclick="this.classList.toggle('active');renderPickerList()" style="font-size:.75em">${t}</button>`
+    ).join('');
+    filtersDiv.innerHTML = skBtns + (tagBtns ? '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px">' + tagBtns + '</div>' : '');
   }
 
   overlay.classList.add('open');
@@ -2480,9 +2560,19 @@ function renderPickerList() {
       </div>`;
     }).join('');
   } else {
-    // Supporter picker — use allSupporters
+    // Supporter picker — use allSupporters with tag/skill filters
+    const activePickerSkills = [...document.querySelectorAll('.picker-sup-skill-btn.active')].map(b => b.dataset.value);
+    const activePickerTags = [...document.querySelectorAll('.picker-sup-tag-btn.active')].map(b => b.dataset.value);
     items = allSupporters.filter(s => {
       if (q && !s.name.toLowerCase().includes(q)) return false;
+      if (activePickerSkills.length > 0 && !activePickerSkills.includes(s.recovery_type)) return false;
+      if (activePickerTags.length > 0) {
+        const supAllTags = [];
+        if (s.target_series) s.target_series.split(/or/i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
+        if (s.leader2_target) s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
+        const hasTag = activePickerTags.some(ft => supAllTags.some(st => st.includes(ft) || ft.includes(st)));
+        if (!hasTag) return false;
+      }
       return true;
     });
     items.sort((a,b) => (parseInt(b.hp)||0) - (parseInt(a.hp)||0));
@@ -3048,6 +3138,11 @@ function updateClearButton() {
     const series = document.getElementById('filterSeries')?.value || '';
     const tag = document.getElementById('filterTag')?.value || '';
     hasFilter = activeCharaTypes > 0 || series || tag;
+  } else if (currentTab === 'supporter') {
+    const target = document.getElementById('filterTarget').value;
+    const activeSupTags = document.querySelectorAll('#filterSupTagButtons .filter-btn.active').length;
+    const activeSupSkills = document.querySelectorAll('#filterSupSkillButtons .filter-btn.active').length;
+    hasFilter = activeRarities > 0 || target || activeSupTags > 0 || activeSupSkills > 0;
   }
   const cb = document.getElementById('clearFiltersBtn'); if (cb) cb.style.display = hasFilter ? '' : 'none';
 }
