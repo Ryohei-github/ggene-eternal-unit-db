@@ -735,14 +735,11 @@ async function init() {
   setupViewToggle();
   buildFilters();
 
-  // Restore state from URL params (if any)
-  if (!restoreFromURL()) {
-    render();
-  }
-
-  // Check for team data in URL params
+  // Check for team data in URL params FIRST (before render/syncURL can wipe them)
   if (loadTeamFromURL()) {
     document.querySelector('.tab-btn[data-tab="team"]').click();
+  } else if (!restoreFromURL()) {
+    render();
   }
 }
 
@@ -2280,6 +2277,7 @@ function shareTeamURL() {
   const name = document.getElementById('teamNameInput').value || '';
   const parts = teamSlots.map(s => `${s.unitId||0},${s.charaId||0}`);
   const params = new URLSearchParams();
+  params.set('tab', 'team');
   params.set('team', parts.join('|'));
   if (teamSupporterId) params.set('sup', teamSupporterId);
   if (name) params.set('tn', name);
