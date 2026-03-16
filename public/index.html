@@ -96,7 +96,7 @@ a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
 /* Header */
-.header{background:linear-gradient(135deg,#0d1525,#1a2844);border-bottom:2px solid transparent;border-image:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent) 1;padding:14px 20px 0;text-align:center;position:sticky;top:0;z-index:100}
+.header{background:linear-gradient(135deg,#0d1525,#1a2844);border-bottom:2px solid transparent;border-image:linear-gradient(90deg,transparent,var(--accent),var(--accent2),transparent) 1;padding:14px 20px 0;text-align:center;position:sticky;top:0;z-index:100;position:relative;position:sticky}
 .header-brand{display:flex;align-items:center;justify-content:center;gap:10px}
 .header-icon{width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);flex-shrink:0}
 .header h1{font-size:1.4em;letter-spacing:2px;background:linear-gradient(90deg,var(--accent),#80e0ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
@@ -109,6 +109,13 @@ a:hover{text-decoration:underline}
 .btn-x{color:#fff;background:#000;border:1px solid #333}
 .btn-x:hover{background:#1a1a1a;text-decoration:none;transform:scale(1.05)}
 .header .yt-cta{margin-top:4px;font-size:.65em;color:var(--text2);letter-spacing:.02em}.yt-cta a{color:#ff6b35;font-weight:bold;text-decoration:underline}
+
+/* Language Toggle */
+.lang-toggle{position:absolute;top:14px;right:16px;display:flex;align-items:center;gap:0;border-radius:16px;overflow:hidden;border:1px solid var(--border);font-size:.7em;z-index:101}
+.lang-toggle button{padding:4px 10px;border:none;cursor:pointer;font-weight:700;transition:all .2s;background:transparent;color:var(--text2);font-family:inherit}
+.lang-toggle button.active{background:var(--accent);color:#000}
+.lang-toggle button:hover:not(.active){background:rgba(0,212,255,.15)}
+
 
 /* Ad slots */
 .ad-slot{max-width:1800px;margin:0 auto;padding:8px 16px;text-align:center;min-height:0;overflow:hidden}
@@ -553,6 +560,10 @@ a:hover{text-decoration:underline}
 <body>
 
 <header class="header" role="banner">
+  <div class="lang-toggle" id="langToggle">
+    <button class="active" data-lang="ja">JA</button>
+    <button data-lang="en">EN</button>
+  </div>
   <div class="header-brand">
     <img class="header-icon" src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj" alt="MH GAMES - Gジェネエターナル ゲーム実況チャンネル" width="36" height="36" loading="eager">
     <h1>GジェネエターナルDB <span class="sub-brand">by MH GAMES</span></h1>
@@ -722,6 +733,189 @@ a:hover{text-decoration:underline}
 
 <script>
 let allUnits = [], allCharas = [], allSupporters = [];
+
+// ============================================
+// i18n Internationalization System
+// ============================================
+let currentLang = localStorage.getItem('ggenedb_lang') || 'ja';
+let translationsEN = null;
+
+async function loadTranslations() {
+  try {
+    const res = await fetch('/translations_en.json');
+    translationsEN = await res.json();
+  } catch(e) {
+    console.warn('Failed to load translations:', e);
+    translationsEN = {};
+  }
+}
+
+// Translate UI label
+function t(jaText) {
+  if (currentLang === 'ja' || !translationsEN) return jaText;
+  return translationsEN.ui?.[jaText] || jaText;
+}
+
+// Translate game data (series, tags, characters, supporters, abilities, skills)
+function tData(jaText, category) {
+  if (currentLang === 'ja' || !translationsEN) return jaText;
+  if (category) {
+    return translationsEN[category]?.[jaText] || jaText;
+  }
+  // Auto-detect category
+  return translationsEN.series?.[jaText]
+    || translationsEN.tags?.[jaText]
+    || translationsEN.characters?.[jaText]
+    || translationsEN.supporters?.[jaText]
+    || translationsEN.abilities?.[jaText]
+    || translationsEN.skills?.[jaText]
+    || translationsEN.ui?.[jaText]
+    || jaText;
+}
+
+// Translate type names
+function tType(jaType) {
+  if (currentLang === 'ja' || !translationsEN) return jaType;
+  const map = {'攻撃':'Attacker','耐久':'Defender','支援':'Supporter'};
+  return map[jaType] || jaType;
+}
+
+// Translate terrain
+function tTerrain(jaTerrain) {
+  if (currentLang === 'ja' || !translationsEN) return jaTerrain;
+  const map = {'宇宙':'Space','空中':'Aerial','地上':'Ground','水上':'Surface','水中':'Underwater'};
+  return map[jaTerrain] || jaTerrain;
+}
+
+// Translate mechanism
+function tMechanism(jaMech) {
+  if (currentLang === 'ja' || !translationsEN) return jaMech;
+  const map = {'シールド':'Shield','変形':'Transform','大型':'Large','脱出':'Escape','SD':'SD',
+    'シールド・変形':'Shield/Transform','シールド・脱出':'Shield/Escape',
+    '大型・脱出':'Large/Escape','シールド・SD':'Shield/SD'};
+  return map[jaMech] || jaMech;
+}
+
+// Switch language and re-render everything
+function switchLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('ggenedb_lang', lang);
+  document.querySelectorAll('#langToggle button').forEach(b => {
+    b.classList.toggle('active', b.dataset.lang === lang);
+  });
+  document.documentElement.lang = lang === 'en' ? 'en' : 'ja';
+  applyStaticTranslations();
+  buildFilters();
+  updateUI();
+  if (currentTab === 'taglookup') renderTagLookup();
+  else if (currentTab === 'team') renderTeamSim();
+  else render();
+}
+
+// Apply translations to static HTML elements
+function applyStaticTranslations() {
+  // Update select default options
+  document.querySelectorAll('#filtersContainer select').forEach(sel => {
+    if (sel.options[0]) sel.options[0].textContent = t('すべて');
+  });
+  // Update terrain filter options
+  const terrainSel = document.getElementById('filterTerrain');
+  if (terrainSel) {
+    const terrainOpts = [
+      {v:'宇宙', ja:'宇宙◯', en:'Space ◯'},
+      {v:'空中', ja:'空中◯', en:'Aerial ◯'},
+      {v:'地上', ja:'地上◯', en:'Ground ◯'},
+      {v:'水上', ja:'水上◯', en:'Surface ◯'},
+      {v:'水中', ja:'水中◯', en:'Underwater ◯'}
+    ];
+    for (let i = 1; i < terrainSel.options.length; i++) {
+      const opt = terrainSel.options[i];
+      const match = terrainOpts.find(t => t.v === opt.value);
+      if (match) opt.textContent = currentLang === 'en' ? match.en : match.ja;
+    }
+  }
+  // Header
+  const h1 = document.querySelector('.header h1');
+  if (h1) {
+    h1.childNodes[0].textContent = currentLang === 'en' ? 'G Gen Eternal DB ' : 'GジェネエターナルDB ';
+  }
+  const sub = document.querySelector('.header .sub');
+  if (sub) sub.textContent = t('Gジェネ エターナル 全レアリティ対応データベース ・ ユニット/キャラ/サポーター検索＆フィルタ');
+  
+  // Tab labels
+  const tabLabels = {
+    'unit': t('ユニット'), 'chara': t('キャラ'), 'supporter': t('サポ'),
+    'taglookup': t('タグ'), 'team': t('編成シム')
+  };
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    const tab = btn.dataset.tab;
+    const label = btn.querySelector('.tab-label');
+    if (label && tabLabels[tab]) label.textContent = tabLabels[tab];
+  });
+  
+  // Search placeholder
+  const searchInput = document.getElementById('searchInput');
+  if (searchInput) {
+    if (currentTab === 'chara') searchInput.placeholder = t('キャラ名で検索...');
+    else if (currentTab === 'supporter') searchInput.placeholder = t('サポーター名で検索...');
+    else searchInput.placeholder = t('ユニット名で検索...（例: サザビー、ガンダム）');
+  }
+  
+  // Filter labels
+  const filterLabels = {
+    'filterTypeGroup': t('タイプ'), 'filterRarityGroup': t('レア'),
+    'filterSeriesGroup': t('シリーズ'), 'filterTagGroup': t('タグ'),
+    'filterTerrainGroup': t('地形'), 'filterDebuffGroup': t('デバフ効果'),
+    'filterCharaTypeGroup': t('キャラタイプ'), 'filterTargetGroup': t('対象シリーズ')
+  };
+  for (const [id, text] of Object.entries(filterLabels)) {
+    const el = document.getElementById(id);
+    if (el) {
+      const label = el.querySelector('label');
+      if (label && !label.querySelector('span')) label.textContent = text;
+    }
+  }
+  
+  // Sort buttons
+  const sortMap = {
+    'cp': t('戦闘力順'), 'atk': t('攻撃力順'), 'hp': t('HP順'),
+    'def': t('防御力順'), 'en': t('EN順'), 'agi': t('機動力順'), 'name': t('名前順')
+  };
+  document.querySelectorAll('.sort-btn').forEach(btn => {
+    const sort = btn.dataset.sort;
+    if (sortMap[sort]) btn.textContent = sortMap[sort];
+  });
+  
+  // Clear filters button
+  const clearBtn = document.getElementById('clearFiltersBtn');
+  if (clearBtn) clearBtn.textContent = t('✕ フィルタークリア');
+  
+  // YT CTA
+  const ytCta = document.querySelector('.yt-cta');
+  if (ytCta && currentLang === 'en') {
+    ytCta.innerHTML = 'Help us grow! <a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">Subscribe & Support</a> us!';
+  } else if (ytCta && currentLang === 'ja') {
+    ytCta.innerHTML = 'サイトの充実はチャンネル登録数が目標！<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">登録して応援</a>してくれると嬉しいです';
+  }
+  
+  // Header links
+  const btnYt = document.querySelector('.btn-yt');
+  const btnX = document.querySelector('.btn-x');
+  if (btnYt) btnYt.textContent = t('▶ チャンネル登録');
+  if (btnX) btnX.textContent = t('𝕏 ご意見はこちら');
+}
+
+// Initialize language toggle
+function initLangToggle() {
+  document.querySelectorAll('#langToggle button').forEach(btn => {
+    btn.addEventListener('click', () => switchLang(btn.dataset.lang));
+    btn.classList.toggle('active', btn.dataset.lang === currentLang);
+  });
+  if (currentLang === 'en') {
+    document.documentElement.lang = 'en';
+  }
+}
+
 let currentTab = 'unit';
 let currentSort = 'atk';
 let currentDir = -1;
@@ -744,6 +938,8 @@ let pickerMode = null;  // 'unit' | 'chara' | 'supporter'
 let pickerSlotIndex = -1;
 
 async function init() {
+  await loadTranslations();
+  initLangToggle();
   const uResp = await fetch('/units.json');
   const allData = await uResp.json();
   // ユニット: キャラタグを持たないエントリ（MSなど）
@@ -805,6 +1001,7 @@ async function init() {
   setupTabs();
   setupViewToggle();
   buildFilters();
+  applyStaticTranslations();
 
   // Check for team data in URL params FIRST (before render/syncURL can wipe them)
   if (loadTeamFromURL()) {
@@ -881,7 +1078,11 @@ function updateUI() {
   const isChara = currentTab === 'chara';
   const isSupporter = currentTab === 'supporter';
 
-  const placeholders = {
+  const placeholders = currentLang === 'en' ? {
+    unit: 'Search by unit name, weapon, effect...',
+    chara: 'Search by character name, skill, ability...',
+    supporter: 'Search by supporter name... (e.g. Bright, White Base)'
+  } : {
     unit: 'ユニット名・武装名・武装効果で検索...',
     chara: 'キャラ名・スキル名・アビリティで検索...',
     supporter: 'サポーター名で検索...（例: ブライト、ホワイトベース）'
@@ -902,29 +1103,29 @@ function updateUI() {
   const sortContainer = document.getElementById('sortBtns');
   if (isUnit) {
     sortContainer.innerHTML = `
-      <button class="sort-btn active" data-sort="cp">戦闘力順</button>
-      <button class="sort-btn" data-sort="atk">攻撃力順</button>
-      <button class="sort-btn" data-sort="hp">HP順</button>
-      <button class="sort-btn" data-sort="def">防御力順</button>
-      <button class="sort-btn" data-sort="en">EN順</button>
-      <button class="sort-btn" data-sort="agi">機動力順</button>
-      <button class="sort-btn" data-sort="name">名前順</button>`;
+      <button class="sort-btn active" data-sort="cp">${t("戦闘力順")}</button>
+      <button class="sort-btn" data-sort="atk">${t("攻撃力順")}</button>
+      <button class="sort-btn" data-sort="hp">${t("HP順")}</button>
+      <button class="sort-btn" data-sort="def">${t("防御力順")}</button>
+      <button class="sort-btn" data-sort="en">${t("EN順")}</button>
+      <button class="sort-btn" data-sort="agi">${t("機動力順")}</button>
+      <button class="sort-btn" data-sort="name">${t("名前順")}</button>`;
     currentSort = 'cp'; currentDir = -1;
   } else if (isChara) {
     sortContainer.innerHTML = `
-      <button class="sort-btn active" data-sort="cp">戦闘力順</button>
-      <button class="sort-btn" data-sort="shoot">射撃値順</button>
-      <button class="sort-btn" data-sort="melee">格闘値順</button>
-      <button class="sort-btn" data-sort="awaken">覚醒値順</button>
-      <button class="sort-btn" data-sort="react">反応値順</button>
-      <button class="sort-btn" data-sort="name">名前順</button>`;
+      <button class="sort-btn active" data-sort="cp">${t("戦闘力順")}</button>
+      <button class="sort-btn" data-sort="shoot">${currentLang==="en"?"Shooting":"射撃値順"}</button>
+      <button class="sort-btn" data-sort="melee">${currentLang==="en"?"Melee":"格闘値順"}</button>
+      <button class="sort-btn" data-sort="awaken">${currentLang==="en"?"Awakening":"覚醒値順"}</button>
+      <button class="sort-btn" data-sort="react">${currentLang==="en"?"Reaction":"反応値順"}</button>
+      <button class="sort-btn" data-sort="name">${t("名前順")}</button>`;
     currentSort = 'cp'; currentDir = -1;
   } else {
     sortContainer.innerHTML = `
-      <button class="sort-btn active" data-sort="hp">HP順</button>
-      <button class="sort-btn" data-sort="atk">攻撃力順</button>
-      <button class="sort-btn" data-sort="ls">LS%順</button>
-      <button class="sort-btn" data-sort="name">名前順</button>`;
+      <button class="sort-btn active" data-sort="hp">${t("HP順")}</button>
+      <button class="sort-btn" data-sort="atk">${t("攻撃力順")}</button>
+      <button class="sort-btn" data-sort="ls">LS%</button>
+      <button class="sort-btn" data-sort="name">${t("名前順")}</button>`;
     currentSort = 'hp'; currentDir = -1;
   }
   bindSortButtons();
@@ -956,7 +1157,7 @@ function buildFilters() {
     const typeOrder = ['攻撃','耐久','支援','射撃','格闘','覚醒'];
     const typeBtns = typeOrder.filter(t => types.has(t)).map(t => {
       const icon = TYPE_ICON_MAP[t] ? `<img src="${TYPE_ICON_MAP[t]}" alt="${t}">` : '';
-      return `<button class="filter-btn" data-value="${t}">${icon}${t}</button>`;
+      return `<button class="filter-btn" data-value="${t}">${icon}${tType(t)}</button>`;
     }).join('');
     document.getElementById('filterTypeButtons').innerHTML = typeBtns;
     document.querySelectorAll('#filterTypeButtons .filter-btn').forEach(btn => {
@@ -1111,7 +1312,13 @@ function buildFilters() {
 
 function fillSelect(id, opts) {
   const sel = document.getElementById(id);
-  opts.forEach(o => { const op = document.createElement('option'); op.value = o; op.textContent = o; sel.appendChild(op); });
+  const isSeriesOrTag = id === 'filterSeries' || id === 'filterTag' || id === 'filterTarget';
+  opts.forEach(o => {
+    const op = document.createElement('option');
+    op.value = o;
+    op.textContent = isSeriesOrTag ? tData(o) : o;
+    sel.appendChild(op);
+  });
 }
 
 function getData() {
@@ -1139,7 +1346,7 @@ function getFiltered() {
     const terrain = document.getElementById('filterTerrain').value;
     return data.filter(u => {
       if (q) {
-        const nameMatch = u.name.toLowerCase().includes(q);
+        const nameMatch = u.name.toLowerCase().includes(q) || (currentLang==='en' && tData(u.name).toLowerCase().includes(q));
         const weaponMatch = (u.normal_weapons||[]).concat(u.transformed_weapons||[]).some(w =>
           (w.name||'').toLowerCase().includes(q) || (w.effect||'').toLowerCase().includes(q)
         );
@@ -1184,7 +1391,7 @@ function getFiltered() {
     const tag = document.getElementById('filterTag').value;
     return data.filter(c => {
       if (q) {
-        const nameMatch = c.name.toLowerCase().includes(q);
+        const nameMatch = c.name.toLowerCase().includes(q) || (currentLang==='en' && tData(c.name).toLowerCase().includes(q));
         const skillMatch = (c.skills||[]).some(sk => (sk.name||'').toLowerCase().includes(q) || (sk.effect||'').toLowerCase().includes(q));
         const abilMatch = (c.abilities||[]).some(a => (a.name||'').toLowerCase().includes(q) || (a.desc||'').toLowerCase().includes(q));
         if (!nameMatch && !skillMatch && !abilMatch) return false;
@@ -1200,7 +1407,7 @@ function getFiltered() {
     const activeSupTags = [...document.querySelectorAll('#filterSupTagButtons .filter-btn.active')].map(b => b.dataset.value);
     const activeSupSkills = [...document.querySelectorAll('#filterSupSkillButtons .filter-btn.active')].map(b => b.dataset.value);
     return data.filter(s => {
-      if (q && !s.name.toLowerCase().includes(q)) return false;
+      if (q && !s.name.toLowerCase().includes(q) && !(currentLang==='en' && tData(s.name,'supporters').toLowerCase().includes(q))) return false;
       if (activeRarities.length > 0 && !activeRarities.includes(s.rarity)) return false;
       if (target && s.target_series !== target) return false;
       // Tag filter: check if any of the supporter's target tags match active tag filters
@@ -1273,7 +1480,7 @@ function sortItems(items) {
 function render() {
   const filtered = sortItems(getFiltered());
   const data = getData();
-  const labels = { unit: 'ユニット', chara: 'キャラ', supporter: 'サポーター' };
+  const labels = { unit: t('ユニット'), chara: t('キャラ'), supporter: t('サポーター') };
   document.getElementById('resultCount').textContent = `${filtered.length} / ${data.length} ${labels[currentTab]}`;
   const grid = document.getElementById('mainGrid');
   const tableWrap = document.getElementById('tableWrap');
@@ -1357,8 +1564,8 @@ function typeIconHTML(t) {
 
 function typeBadgeHTML(t) {
   const icon = typeIconHTML(t);
-  if (icon) return `<span class="badge badge-type badge-icon ${typeClass(t)}">${icon}${t}</span>`;
-  return t ? `<span class="badge badge-type ${typeClass(t)}">${t}</span>` : '';
+  if (icon) return `<span class="badge badge-type badge-icon ${typeClass(t)}">${icon}${tType(t)}</span>`;
+  return t ? `<span class="badge badge-type ${typeClass(t)}">${tType(t)}</span>` : '';
 }
 
 function typeClass(t) {
@@ -1416,27 +1623,27 @@ function unitCardHTML(u) {
         ${typeBadgeHTML(u.type)}
       </div>
     </div>
-    <div class="card-series">${(u.series||[]).join(' / ')}</div>
-    ${u.normal?.combat_power ? `<div class="card-combat-power">戦闘力: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
-    ${u.rarity==='UR' ? '<div class="card-rarity-note">※最大強化時のステータス</div>' : u.rarity==='SSR' ? '<div class="card-rarity-note">※SP化時のステータス</div>' : ''}
+    <div class="card-series">${(u.series||[]).map(s=>tData(s,"series")).join(' / ')}</div>
+    ${u.normal?.combat_power ? `<div class="card-combat-power">${t('戦闘力')}: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
+    ${u.rarity==='UR' ? '<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>' : u.rarity==='SSR' ? '<div class="card-rarity-note">${currentLang==="en"?"※ SP stats":"※SP化時のステータス"}</div>' : ''}
     <div class="card-stats">
-      <div class="stat"><div class="stat-label">攻撃力</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">${t("攻撃力")}</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
-      <div class="stat"><div class="stat-label">防御力</div><div class="stat-val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">${t("防御力")}</div><div class="stat-val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
     </div>
     <div class="card-stats card-stats-sub">
       <div class="stat"><div class="stat-label">EN</div><div class="stat-val">${(parseInt(s.en)||0).toLocaleString()}</div></div>
-      <div class="stat"><div class="stat-label">機動力</div><div class="stat-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
-      <div class="stat"><div class="stat-label">移動力</div><div class="stat-val">${parseInt(s.mobility)||0}</div></div>
-      ${u.transformed ? '<div class="stat" style="border:1px solid var(--accent);"><div class="stat-label" style="color:var(--accent)">変形</div><div class="stat-val" style="color:var(--accent)">可</div></div>' : '<div class="stat"></div>'}
+      <div class="stat"><div class="stat-label">${t("機動力")}</div><div class="stat-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">${t("移動力")}</div><div class="stat-val">${parseInt(s.mobility)||0}</div></div>
+      ${u.transformed ? '<div class="stat" style="border:1px solid var(--accent);"><div class="stat-label" style="color:var(--accent)">${t("変形")}</div><div class="stat-val" style="color:var(--accent)">可</div></div>' : '<div class="stat"></div>'}
     </div>
-    ${(() => { const mech = u.normal?.mechanism || ((u.normal?.abilities||[]).find(a=>a.name==='シールド防御')||{}).desc || ''; return mech ? `<div class="card-mechanism"><span class="mechanism-label">機構:</span> ${mech}</div>` : ''; })()}
+    ${(() => { const mech = u.normal?.mechanism || ((u.normal?.abilities||[]).find(a=>a.name==='シールド防御')||{}).desc || ''; return mech ? `<div class="card-mechanism"><span class="mechanism-label">${t("機構")}:</span> ${tMechanism(mech)}</div>` : ''; })()}
     <div class="card-terrain">
-      <span class="terrain-item">宇${terrainIcon(t['宇宙'])}</span>
-      <span class="terrain-item">空${terrainIcon(t['空中'])}</span>
-      <span class="terrain-item">地${terrainIcon(t['地上'])}</span>
-      <span class="terrain-item">水上${terrainIcon(t['水上'])}</span>
-      <span class="terrain-item">水中${terrainIcon(t['水中'])}</span>
+      <span class="terrain-item">${currentLang==="en"?"Sp":"宇"}${terrainIcon(t['宇宙'])}</span>
+      <span class="terrain-item">${currentLang==="en"?"Ai":"空"}${terrainIcon(t['空中'])}</span>
+      <span class="terrain-item">${currentLang==="en"?"Gr":"地"}${terrainIcon(t['地上'])}</span>
+      <span class="terrain-item">${currentLang==="en"?"Su":"水上"}${terrainIcon(t['水上'])}</span>
+      <span class="terrain-item">${currentLang==="en"?"Uw":"水中"}${terrainIcon(t['水中'])}</span>
     </div>
     <div class="card-weapons">${weapons}</div>
     <div class="card-tags">${topTags}</div>
@@ -1452,11 +1659,11 @@ function charaCardHTML(c) {
   let statsHTML = '';
   if (hasStats) {
     statsHTML = `<div class="card-stats" style="grid-template-columns:repeat(5,1fr)">
-      <div class="stat"><div class="stat-label">射撃</div><div class="stat-val">${s.shooting||'-'}</div></div>
-      <div class="stat"><div class="stat-label">格闘</div><div class="stat-val">${s.melee||'-'}</div></div>
-      <div class="stat"><div class="stat-label">覚醒</div><div class="stat-val">${s.awakening||'-'}</div></div>
-      <div class="stat"><div class="stat-label">守備</div><div class="stat-val">${s.defense||'-'}</div></div>
-      <div class="stat"><div class="stat-label">反応</div><div class="stat-val">${s.reaction||'-'}</div></div>
+      <div class="stat"><div class="stat-label">${t("射撃")}</div><div class="stat-val">${s.shooting||'-'}</div></div>
+      <div class="stat"><div class="stat-label">${t("格闘")}</div><div class="stat-val">${s.melee||'-'}</div></div>
+      <div class="stat"><div class="stat-label">${t("覚醒")}</div><div class="stat-val">${s.awakening||'-'}</div></div>
+      <div class="stat"><div class="stat-label">${t("防御力")}</div><div class="stat-val">${s.defense||'-'}</div></div>
+      <div class="stat"><div class="stat-label">${t("反応")}</div><div class="stat-val">${s.reaction||'-'}</div></div>
     </div>`;
   }
 
@@ -1479,10 +1686,10 @@ function charaCardHTML(c) {
         ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
       </div>
     </div>
-    ${c.series ? `<div class="card-series">${c.series}</div>` : ''}
+    ${c.series ? `<div class="card-series">${tData(c.series,"series")}</div>` : ''}
     ${statsHTML}
     ${skillTags ? `<div class="card-skills">${skillTags}</div>` : ''}
-    ${abilCount ? `<div class="card-abilities-count">アビリティ: ${abilCount}個</div>` : ''}
+    ${abilCount ? `<div class="card-abilities-count">${t("アビリティ")}: ${abilCount}${currentLang==="en"?"":"個"}</div>` : ''}
     <div class="card-tags">${(c.tags||[]).slice(0,4).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('')}</div>
   </div>`;
 }
@@ -1554,7 +1761,7 @@ function supporterCardHTML(s) {
   const max = s.leader_3 || s.leader_2 || s.leader_1 || base;
   const effectLabel = s.leader_effect || 'ステータス上昇(EN除く)';
   const recIcon = supportSkillIcon(s.recovery_type);
-  const obtainBadge = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">限定</span>' : '';
+  const obtainBadge = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">${currentLang==="en"?"Limited":"限定"}</span>' : '';
   const hasTier2 = !!s.leader2_target;
   const base2 = s.leader2_0 || '';
   const max2 = s.leader2_3 || s.leader2_2 || s.leader2_1 || base2;
@@ -1572,10 +1779,10 @@ function supporterCardHTML(s) {
     </div>
     <div style="display:flex;gap:6px;align-items:center;margin-bottom:6px;flex-wrap:wrap">
       <span class="supporter-stat">HP <span class="sv">${s.hp ? s.hp.toLocaleString() : '-'}</span></span>
-      <span class="supporter-stat">攻撃 <span class="sv">${s.attack||'-'}</span></span>
+      <span class="supporter-stat">${t("攻撃力")} <span class="sv">${s.attack||'-'}</span></span>
     </div>
     <div style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2);border-radius:6px;padding:8px;margin-bottom:6px">
-      <div style="font-size:.65em;color:var(--accent);font-weight:600;margin-bottom:2px">リーダースキル</div>
+      <div style="font-size:.65em;color:var(--accent);font-weight:600;margin-bottom:2px">${t("リーダースキル")}</div>
       <div class="ls-row" style="display:flex;align-items:baseline;gap:4px;min-width:0">
         <span class="tag leader-tag-clickable" style="font-size:.62em;background:rgba(0,212,255,.15);border-color:var(--accent);cursor:pointer;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" onclick="event.stopPropagation();showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')" title="${s.target_series||''}">${s.target_series||'-'}</span>
         <span style="white-space:nowrap;flex-shrink:0;display:flex;align-items:baseline;gap:3px">${base ? `<span style="font-size:.72em;color:var(--text2)">${base}</span>` : ''}${max && max !== base ? `<span style="font-size:.6em;color:var(--text2)">→</span><span style="font-size:${hasTier2 ? '.78' : '.88'}em;font-weight:700;color:${hasTier2 ? 'var(--text)' : '#3fb950'}">${max}</span>` : ''}</span>
@@ -1588,8 +1795,8 @@ function supporterCardHTML(s) {
     </div>
     <div style="display:flex;align-items:center;gap:6px;font-size:.78em;color:var(--text2)">
       ${recIcon}
-      <strong style="color:var(--text)">${s.recovery_type||'-'}回復 ${s.recovery_amount||''}</strong>
-      <span style="font-size:.85em">範囲${s.range||'-'}マス</span>
+      <strong style="color:var(--text)">${s.recovery_type||'-'} ${currentLang==="en"?"Recovery":"回復"} ${s.recovery_amount||''}</strong>
+      <span style="font-size:.85em">${currentLang==="en"?"Range ":"範囲"}${s.range||'-'}${currentLang==="en"?"":"マス"}</span>
     </div>
   </div>`;
 }
@@ -1619,7 +1826,7 @@ function unitTableHTML(items) {
     </tr>`;
   }).join('');
   return `<table class="data-table"><thead><tr>
-    <th>ユニット名</th><th>レア</th><th>タイプ</th><th>戦闘力</th><th>攻撃力</th><th>HP</th><th>防御力</th><th>EN</th><th>機動力</th><th>移動力</th><th>地形</th><th>MAP兵器</th>
+    <th>${t("ユニット")}</th><th>${t("レア")}</th><th>${t("タイプ")}</th><th>${t("戦闘力")}</th><th>${t("攻撃力")}</th><th>HP</th><th>${t("防御力")}</th><th>EN</th><th>${t("機動力")}</th><th>${currentLang==="en"?"Move":"移動力"}</th><th>${t("地形")}</th><th>MAP</th>
   </tr></thead><tbody>${rows}</tbody></table>`;
 }
 
@@ -1641,7 +1848,7 @@ function charaTableHTML(items) {
     </tr>`;
   }).join('');
   return `<table class="data-table"><thead><tr>
-    <th>キャラ名</th><th>レア</th><th>タイプ</th><th>戦闘力</th><th>射撃</th><th>格闘</th><th>覚醒</th><th>守備</th><th>反応</th><th>スキル</th>
+    <th>${t("キャラ")}</th><th>${t("レア")}</th><th>${t("タイプ")}</th><th>${t("戦闘力")}</th><th>${t("射撃")}</th><th>${t("格闘")}</th><th>${t("覚醒")}</th><th>${t("防御力")}</th><th>${t("反応")}</th><th>${t("スキル")}</th>
   </tr></thead><tbody>${rows}</tbody></table>`;
 }
 
@@ -2101,8 +2308,8 @@ function renderTagLookup() {
     const active = activeTagLookup === tag ? ' active' : '';
     const label = tag.startsWith('📺 ') ? tag.slice(3) : tag;
     const counts = [];
-    if (d.units.length) counts.push(`MS:${d.units.length}`);
-    if (d.charas.length) counts.push(`キャラ:${d.charas.length}`);
+    if (d.units.length) counts.push(`${currentLang==='en'?'Units':'MS'}:${d.units.length}`);
+    if (d.charas.length) counts.push(`${currentLang==='en'?'Chars':'キャラ'}:${d.charas.length}`);
     return `<span class="tag-chip${active}" onclick="selectTagLookup('${tag.replace(/'/g,"\\'")}')">${label} <span class="tag-count">${counts.join(' / ')}</span></span>`;
   }
 
@@ -2112,27 +2319,27 @@ function renderTagLookup() {
   }
 
   container.innerHTML =
-    sectionHTML('シリーズ', seriesTags) +
-    sectionHTML('所属・勢力', factionTags) +
-    sectionHTML('役割・特性', roleTags) +
-    sectionHTML('その他', otherTags);
+    sectionHTML(currentLang==='en'?'Series':'シリーズ', seriesTags) +
+    sectionHTML(currentLang==='en'?'Factions':'所属・勢力', factionTags) +
+    sectionHTML(currentLang==='en'?'Roles & Traits':'役割・特性', roleTags) +
+    sectionHTML(currentLang==='en'?'Other':'その他', otherTags);
 
   // Render results if a tag is selected
   if (activeTagLookup && allTagData[activeTagLookup]) {
     const d = allTagData[activeTagLookup];
     const label = activeTagLookup.startsWith('📺 ') ? activeTagLookup.slice(3) : activeTagLookup;
-    let html = `<div class="tag-results-header"><span class="tag-results-label">${label}</span> 該当: ユニット${d.units.length}件 / キャラ${d.charas.length}件</div>`;
+    let html = `<div class="tag-results-header"><span class="tag-results-label">${label}</span> ${currentLang==='en'?`Units: ${d.units.length} / Chars: ${d.charas.length}`:`該当: ユニット${d.units.length}件 / キャラ${d.charas.length}件`}</div>`;
     if (d.units.length) {
-      html += `<div class="tag-results-category">ユニット (${d.units.length})</div>`;
+      html += `<div class="tag-results-category">${currentLang==='en'?'Units':'ユニット'} (${d.units.length})</div>`;
       html += '<div class="grid" role="list">' + d.units.map(u => unitCardHTML(u)).join('') + '</div>';
     }
     if (d.charas.length) {
-      html += `<div class="tag-results-category">キャラクター (${d.charas.length})</div>`;
+      html += `<div class="tag-results-category">${currentLang==='en'?'Characters':'キャラクター'} (${d.charas.length})</div>`;
       html += '<div class="grid" role="list">' + d.charas.map(c => charaCardHTML(c)).join('') + '</div>';
     }
     resultsDiv.innerHTML = html;
   } else {
-    resultsDiv.innerHTML = '<div style="text-align:center;color:var(--text2);padding:40px 0;font-size:.9em">タグを選択すると、該当するユニットとキャラクターが一覧表示されます</div>';
+    resultsDiv.innerHTML = '<div style="text-align:center;color:var(--text2);padding:40px 0;font-size:.9em">${currentLang==="en"?"Select a tag to see matching units and characters":"タグを選択すると、該当するユニットとキャラクターが一覧表示されます"}</div>';
   }
 }
 
@@ -2197,7 +2404,7 @@ function renderTeamSlots(containerId, from, to) {
     const slot = teamSlots[i];
     const unit = slot.unitId ? allUnits.find(u => u.id === slot.unitId) : null;
     const chara = slot.charaId ? allCharas.find(c => c.id === slot.charaId) : null;
-    const posLabel = i < 3 ? '前方' : '後方';
+    const posLabel = i < 3 ? (currentLang==='en'?'Front':'前方') : (currentLang==='en'?'Rear':'後方');
     html += `<div class="team-slot-card">
       <div class="slot-header">
         <div class="slot-number">${i+1}</div>
@@ -2206,12 +2413,12 @@ function renderTeamSlots(containerId, from, to) {
       </div>
       <div class="team-slot-pair">
         <div class="team-slot-unit-area">
-          <div class="area-label">ユニット (MS)</div>
-          ${unit ? renderSlotUnit(unit, i) : `<div class="slot-empty" onclick="openTeamPicker('unit',${i})">+ ユニットを選択</div>`}
+          <div class="area-label">${currentLang==="en"?"Unit (MS)":t("ユニット")+" (MS)"}</div>
+          ${unit ? renderSlotUnit(unit, i) : `<div class="slot-empty" onclick="openTeamPicker('unit',${i})">+ ${currentLang==="en"?"Select Unit":t("ユニット")+"を選択"}</div>`}
         </div>
         <div class="team-slot-chara-area">
-          <div class="area-label">キャラクター</div>
-          ${chara ? renderSlotChara(chara, i) : `<div class="slot-empty" onclick="openTeamPicker('chara',${i})">+ キャラを選択</div>`}
+          <div class="area-label">${currentLang==="en"?"Character":t("キャラ")}</div>
+          ${chara ? renderSlotChara(chara, i) : `<div class="slot-empty" onclick="openTeamPicker('chara',${i})">+ ${currentLang==="en"?"Select Chara":t("キャラ")+"を選択"}</div>`}
         </div>
       </div>
     </div>`;
@@ -2231,7 +2438,7 @@ function renderSlotUnit(u, slotIdx) {
   const iconHTML = u.image ? `<img class="slot-img" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'">` : '';
   const terrStr = ['宇宙','空中','地上','水上','水中'].map(k => `${k.charAt(0)}${t[k]==='◯'?'<span style="color:#44cc44">◯</span>':t[k]==='△'?'<span style="color:#ffaa00">△</span>':'<span style="color:#555">-</span>'}`).join(' ');
   const lsMatch = checkLeaderSkillMatch(u);
-  const buffBadge = lsMatch ? `<div class="ls-buff-indicator" title="リーダースキル適用: ${lsMatch.buff}">
+  const buffBadge = lsMatch ? `<div class="ls-buff-indicator" title="${currentLang==="en"?"Leader Skill Applied":"リーダースキル適用"}: ${lsMatch.buff}">
     <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 2L6 10h3v8l5-10h-3z" fill="#22c55e" stroke="#16a34a" stroke-width="1"/></svg>
     <span>${lsMatch.buff}</span>
   </div>` : '';
@@ -2247,13 +2454,13 @@ function renderSlotUnit(u, slotIdx) {
     </div>
     <div class="slot-filled slot-stats wide">
       <div class="slot-stat"><div class="ss-label">HP</div><div class="ss-val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
-      <div class="slot-stat"><div class="ss-label">攻撃</div><div class="ss-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
-      <div class="slot-stat"><div class="ss-label">防御</div><div class="ss-val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
+      <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"ATK":"攻撃"}</div><div class="ss-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
+      <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"DEF":"防御"}</div><div class="ss-val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
       <div class="slot-stat"><div class="ss-label">EN</div><div class="ss-val">${(parseInt(s.en)||0).toLocaleString()}</div></div>
-      <div class="slot-stat"><div class="ss-label">機動</div><div class="ss-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
-      <div class="slot-stat"><div class="ss-label">移動</div><div class="ss-val">${parseInt(s.mobility)||0}</div></div>
+      <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"AGI":"機動"}</div><div class="ss-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
+      <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"MOV":"移動"}</div><div class="ss-val">${parseInt(s.mobility)||0}</div></div>
     </div>
-    <div style="font-size:.68em;color:var(--text2);margin-top:4px">地形: ${terrStr}</div>
+    <div style="font-size:.68em;color:var(--text2);margin-top:4px">${currentLang==="en"?"Terrain":"地形"}: ${terrStr}</div>
     ${weapons ? `<div class="slot-weapons">${weapons}</div>` : ''}
   </div>`;
 }
@@ -2283,11 +2490,11 @@ function renderSlotChara(c, slotIdx) {
       </div>
     </div>
     <div class="slot-filled slot-stats">
-      <div class="slot-stat"><div class="ss-label">射撃</div><div class="ss-val">${s.shooting||'-'}</div></div>
-      <div class="slot-stat"><div class="ss-label">格闘</div><div class="ss-val">${s.melee||'-'}</div></div>
-      <div class="slot-stat"><div class="ss-label">覚醒</div><div class="ss-val">${s.awakening||'-'}</div></div>
-      <div class="slot-stat"><div class="ss-label">守備</div><div class="ss-val">${s.defense||'-'}</div></div>
-      <div class="slot-stat"><div class="ss-label">反応</div><div class="ss-val">${s.reaction||'-'}</div></div>
+      <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"SHT":"射撃"}</div><div class="ss-val">${s.shooting||'-'}</div></div>
+      <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"MEL":"格闘"}</div><div class="ss-val">${s.melee||'-'}</div></div>
+      <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"AWK":"覚醒"}</div><div class="ss-val">${s.awakening||'-'}</div></div>
+      <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"DEF":"守備"}</div><div class="ss-val">${s.defense||'-'}</div></div>
+      <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"REA":"反応"}</div><div class="ss-val">${s.reaction||'-'}</div></div>
       <div class="slot-stat"><div class="ss-label">SP</div><div class="ss-val">${s.sp||'-'}</div></div>
     </div>
     ${skillTags ? `<div class="slot-skills">${skillTags}</div>` : ''}
@@ -2313,7 +2520,7 @@ function renderTeamSupporter() {
     if (!teamLeaderTag && sup.target_series) teamLeaderTag = sup.target_series;
     if (!teamLeaderEffect && sup.leader_skill) teamLeaderEffect = sup.leader_skill;
   } else {
-    pickHTML = `<div class="slot-empty" style="min-height:80px;min-width:120px" onclick="openTeamPicker('supporter',0)">+ サポーター選択</div>`;
+    pickHTML = `<div class="slot-empty" style="min-height:80px;min-width:120px" onclick="openTeamPicker('supporter',0)">+ ${currentLang==="en"?"Select Supporter":t("サポーター")+"選択"}</div>`;
   }
 
   // Calculate leader skill match count using helper
@@ -2567,7 +2774,7 @@ function renderPickerList() {
     const activePickerSkills = [...document.querySelectorAll('.picker-sup-skill-btn.active')].map(b => b.dataset.value);
     const activePickerTags = [...document.querySelectorAll('.picker-sup-tag-btn.active')].map(b => b.dataset.value);
     items = allSupporters.filter(s => {
-      if (q && !s.name.toLowerCase().includes(q)) return false;
+      if (q && !s.name.toLowerCase().includes(q) && !(currentLang==='en' && tData(s.name,'supporters').toLowerCase().includes(q))) return false;
       if (activePickerSkills.length > 0 && !activePickerSkills.includes(s.recovery_type)) return false;
       if (activePickerTags.length > 0) {
         const supAllTags = [];
@@ -2799,7 +3006,7 @@ async function shareTeamImage() {
   ctx.fillText(teamName, 24, 42);
   const filledCount = teamSlots.filter(s => s.unitId).length;
   ctx.fillStyle = '#8b949e'; ctx.font = '14px sans-serif';
-  ctx.fillText(`${filledCount}/5機`, 24, 64);
+  ctx.fillText(`${filledCount}/5${currentLang==='en'?' Units':'機'}`, 24, 64);
   // --- Branding area (top right) ---
   ctx.textAlign = 'right';
   // Site name
@@ -2862,7 +3069,7 @@ async function shareTeamImage() {
       ctx.strokeStyle = 'rgba(34,197,94,.4)'; ctx.lineWidth = 1; ctx.beginPath();
       roundRect(ctx, badgeX, supY + 8, 84, 24, 4); ctx.stroke();
       ctx.fillStyle = '#22c55e'; ctx.font = 'bold 12px sans-serif';
-      ctx.fillText(`⚡ 適用 ${matchCount}/5`, badgeX + 10, supY + 24);
+      ctx.fillText(`⚡ ${currentLang==='en'?'Applied':'適用'} ${matchCount}/5`, badgeX + 10, supY + 24);
     }
   } else {
     ctx.fillStyle = '#484f58'; ctx.font = '13px sans-serif';
@@ -2959,7 +3166,7 @@ async function shareTeamImage() {
       // Unit abilities
       if (sd.unitAbils.length > 0) {
         ctx.fillStyle = '#00d4ff'; ctx.font = 'bold 10px sans-serif';
-        ctx.fillText('アビリティ', x + slotPadX, curY);
+        ctx.fillText(currentLang==='en'?'Abilities':t('アビリティ'), x + slotPadX, curY);
         curY += LABEL_H - 2;
         sd.unitAbils.forEach(a => {
           ctx.fillStyle = '#c9d1d9'; ctx.font = '10px sans-serif';
@@ -3014,7 +3221,7 @@ async function shareTeamImage() {
       if (sd.charaSkills.length > 0) {
         cY += 3;
         ctx.fillStyle = '#58a6ff'; ctx.font = 'bold 10px sans-serif';
-        ctx.fillText('スキル', x + slotPadX, cY);
+        ctx.fillText(currentLang==='en'?'Skills':t('スキル'), x + slotPadX, cY);
         cY += LABEL_H - 2;
         sd.charaSkills.forEach(sk => {
           ctx.fillStyle = '#58a6ff'; ctx.font = '10px sans-serif';
@@ -3029,7 +3236,7 @@ async function shareTeamImage() {
       if (sd.charaAbils.length > 0) {
         cY += 3;
         ctx.fillStyle = '#d2a8ff'; ctx.font = 'bold 10px sans-serif';
-        ctx.fillText('アビリティ', x + slotPadX, cY);
+        ctx.fillText(currentLang==='en'?'Abilities':t('アビリティ'), x + slotPadX, cY);
         cY += LABEL_H - 2;
         sd.charaAbils.forEach(a => {
           ctx.fillStyle = '#c9d1d9'; ctx.font = '10px sans-serif';
@@ -3057,7 +3264,7 @@ async function shareTeamImage() {
   ctx.strokeStyle = '#30363d'; ctx.lineWidth = 1; ctx.beginPath();
   roundRect(ctx, 12, typeBarY, W - 24, 30, 6); ctx.stroke();
   ctx.fillStyle = '#8b949e'; ctx.font = 'bold 11px sans-serif';
-  ctx.fillText('タイプバランス', 22, typeBarY + 20);
+  ctx.fillText(currentLang==='en'?'Type Balance':t('タイプバランス'), 22, typeBarY + 20);
   let typeX = 120;
   Object.entries(typeCounts).forEach(([t, count]) => {
     const iconImg = typeIcons[t];
@@ -3100,7 +3307,7 @@ async function shareTeamImage() {
   // CTA text
   ctx.textAlign = 'right';
   ctx.fillStyle = '#00d4ff'; ctx.font = 'bold 12px sans-serif';
-  ctx.fillText('編成シミュレーターで自分だけの部隊を作ろう！', W - 28, ctaY + 20);
+  ctx.fillText(currentLang==='en'?'Build your own squad with Team Simulator!':'編成シミュレーターで自分だけの部隊を作ろう！', W - 28, ctaY + 20);
   ctx.fillStyle = '#8b949e'; ctx.font = '11px sans-serif';
   ctx.fillText(window.location.origin + ' でアクセス', W - 28, ctaY + 36);
   ctx.textAlign = 'left';
@@ -3109,7 +3316,7 @@ async function shareTeamImage() {
   canvas.toBlob(blob => {
     if (navigator.share && navigator.canShare && navigator.canShare({ files: [new File([blob], 'team.png', { type: 'image/png' })] })) {
       const file = new File([blob], 'team.png', { type: 'image/png' });
-      navigator.share({ files: [file], title: teamName + ' - GジェネエターナルDB by MH GAMES', text: `${teamName}の編成！\nGジェネエターナルDB: ${window.location.origin}\nYouTube: https://www.youtube.com/@MH_GAMES_JP` }).catch(() => {});
+      navigator.share({ files: [file], title: teamName + ' - G Gen Eternal DB by MH GAMES', text: currentLang==='en' ? `${teamName} Team!\nG Gen Eternal DB: ${window.location.origin}\nYouTube: https://www.youtube.com/@MH_GAMES_JP` : `${teamName}の編成！\nGジェネエターナルDB: ${window.location.origin}\nYouTube: https://www.youtube.com/@MH_GAMES_JP` }).catch(() => {});
     } else {
       const a = document.createElement('a');
       a.href = URL.createObjectURL(blob);
