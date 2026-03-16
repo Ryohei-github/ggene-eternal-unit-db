@@ -51971,7 +51971,7 @@
   {
     "id": 371,
     "name": "アムロ・レイ(1st)",
-    "image": "",
+    "image": "/unit-images/gw-chara-3.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -65361,7 +65361,7 @@
   {
     "id": 584,
     "name": "アムロ・レイ(1st)",
-    "image": "",
+    "image": "/unit-images/gw-chara-50.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -66473,7 +66473,7 @@
   {
     "id": 601,
     "name": "アムロ・レイ(Z)",
-    "image": "",
+    "image": "/unit-images/gw-chara-69.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
