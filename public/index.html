@@ -194,7 +194,7 @@ a:hover{text-decoration:underline}
 .team-sim-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
 .team-name-input{background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:1em;padding:8px 14px;width:200px;outline:none}
 .team-name-input:focus{border-color:var(--accent)}
-.team-combat-power{font-size:1.3em;font-weight:700;color:var(--gold);display:flex;align-items:center;gap:8px}
+
 .team-actions{display:flex;gap:6px;flex-wrap:wrap}
 .team-action-btn{padding:6px 14px;border-radius:6px;font-size:.8em;font-weight:600;cursor:pointer;border:1px solid var(--border);background:var(--card);color:var(--text);transition:all .2s}
 .team-action-btn:hover{border-color:var(--accent);color:var(--accent)}
@@ -661,7 +661,7 @@ a:hover{text-decoration:underline}
   <div class="team-sim-header">
     <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
       <input type="text" class="team-name-input" id="teamNameInput" value="My Team" placeholder="編成名">
-      <div class="team-combat-power">⚔ 戦闘力 <span id="teamTotalCP">0</span></div>
+      <!-- team combat power removed -->
     </div>
     <div class="team-actions">
       <button class="team-action-btn primary" onclick="saveTeam()">保存</button>
@@ -2130,7 +2130,7 @@ function renderSlotUnit(u, slotIdx) {
       <div class="slot-info">
         <div class="slot-name">${u.name}</div>
         <div style="font-size:.65em;color:var(--text2)">${(u.series||[]).join(' / ')}</div>
-        ${u.normal?.combat_power ? `<div style="font-size:.7em;color:var(--gold)">戦闘力: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
+        
       </div>
     </div>
     <div class="slot-filled slot-stats wide">
@@ -2240,7 +2240,7 @@ function renderTeamSupporter() {
 
 function renderTeamStats() {
   const container = document.getElementById('teamStatsSummary');
-  let totalCP = 0, totalHP = 0, totalATK = 0, totalDEF = 0, totalEN = 0, totalAGI = 0;
+  let totalHP = 0, totalATK = 0, totalDEF = 0, totalEN = 0, totalAGI = 0;
   const typeCounts = {};
   let filledCount = 0;
 
@@ -2250,7 +2250,6 @@ function renderTeamStats() {
       if (u) {
         filledCount++;
         const s = u.normal?.stats || {};
-        totalCP += parseInt(u.normal?.combat_power) || 0;
         totalHP += parseInt(s.hp) || 0;
         totalATK += parseInt(s.attack) || 0;
         totalDEF += parseInt(s.defense) || 0;
@@ -2262,8 +2261,6 @@ function renderTeamStats() {
     }
   });
 
-  document.getElementById('teamTotalCP').textContent = totalCP.toLocaleString();
-
   const typeChips = Object.entries(typeCounts).map(([t, count]) => {
     const icon = TYPE_ICON_MAP[t] ? `<img src="${TYPE_ICON_MAP[t]}" alt="${t}">` : '';
     return `<div class="team-type-chip">${icon}${t} x${count}</div>`;
@@ -2272,7 +2269,6 @@ function renderTeamStats() {
   container.innerHTML = `
     <h3>部隊ステータス合計 (${filledCount}/5機)</h3>
     <div class="team-stats-grid">
-      <div class="team-stat-box"><div class="ts-label">合計戦闘力</div><div class="ts-val" style="color:var(--gold)">${totalCP.toLocaleString()}</div></div>
       <div class="team-stat-box"><div class="ts-label">HP合計</div><div class="ts-val">${totalHP.toLocaleString()}</div></div>
       <div class="team-stat-box"><div class="ts-label">攻撃力合計</div><div class="ts-val">${totalATK.toLocaleString()}</div></div>
       <div class="team-stat-box"><div class="ts-label">防御力合計</div><div class="ts-val">${totalDEF.toLocaleString()}</div></div>
@@ -2291,7 +2287,7 @@ function renderSavedTeams() {
   if (!saved.length) { container.innerHTML = ''; return; }
   const items = saved.map((t, i) => `<div class="team-saved-item" onclick="loadSavedTeam(${i})">
     <span class="saved-name">${t.name||'編成シミュレーター'+(i+1)}</span>
-    <span class="saved-cp">⚔ ${(t.totalCP||0).toLocaleString()}</span>
+    <span class="saved-cp">${t.slots?.filter(s=>s.unitId).length||0}/5機</span>
     <button class="team-saved-delete" onclick="event.stopPropagation();deleteSavedTeam(${i})">削除</button>
   </div>`).join('');
   container.innerHTML = `<h3>保存済み編成シミュレーター</h3>${items}`;
@@ -2387,7 +2383,7 @@ function renderPickerList() {
         ${img}
         <div class="picker-item-info">
           <div class="picker-item-name">${u.name}${used ? ' <span style="color:var(--accent);font-size:.75em">選択済</span>' : ''}</div>
-          <div class="picker-item-sub"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.6em;padding:1px 4px">${u.rarity}</span> ${typeBadgeHTML(u.type)} CP:${(u.normal?.combat_power||0).toLocaleString()} ATK:${(parseInt(s.attack)||0).toLocaleString()}</div>
+          <div class="picker-item-sub"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.6em;padding:1px 4px">${u.rarity}</span> ${typeBadgeHTML(u.type)} ATK:${(parseInt(s.attack)||0).toLocaleString()}</div>
         </div>
       </div>`;
     }).join('');
@@ -2471,15 +2467,8 @@ function clearTeam() {
 // === SAVE / LOAD / SHARE ===
 function saveTeam() {
   const name = document.getElementById('teamNameInput').value || 'My Team';
-  let totalCP = 0;
-  teamSlots.forEach(slot => {
-    if (slot.unitId) {
-      const u = allUnits.find(x => x.id === slot.unitId);
-      if (u) totalCP += parseInt(u.normal?.combat_power) || 0;
-    }
-  });
   const data = {
-    name, totalCP,
+    name,
     slots: teamSlots.map(s => ({ u: s.unitId, c: s.charaId })),
     supporter: teamSupporterId,
     leaderTag: teamLeaderTag,
@@ -2570,16 +2559,6 @@ async function shareTeamImage() {
   const teamName = document.getElementById('teamNameInput').value || 'My Team';
   ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 22px sans-serif';
   ctx.fillText(teamName, 24, 40);
-  // Total CP
-  let totalCP = 0;
-  teamSlots.forEach(slot => {
-    if (slot.unitId) {
-      const u = allUnits.find(x => x.id === slot.unitId);
-      if (u) totalCP += parseInt(u.normal?.combat_power) || 0;
-    }
-  });
-  ctx.fillStyle = '#00d4ff'; ctx.font = 'bold 16px sans-serif';
-  ctx.fillText(`⚔ 戦闘力 ${totalCP.toLocaleString()}`, 24, 66);
   // Site URL
   ctx.fillStyle = '#484f58'; ctx.font = '12px sans-serif';
   ctx.textAlign = 'right';
@@ -2624,9 +2603,7 @@ async function shareTeamImage() {
       ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 11px sans-serif';
       const uName = unit.name.length > 8 ? unit.name.substring(0, 8) + '…' : unit.name;
       ctx.fillText(uName, x + 58, startY + 42);
-      // CP below name
-      ctx.fillStyle = '#d29922'; ctx.font = 'bold 10px sans-serif';
-      ctx.fillText(`CP ${(unit.normal?.combat_power||0).toLocaleString()}`, x + 58, startY + 56);
+      
       // Stats
       const us = unit.normal?.stats || {};
       ctx.font = '10px sans-serif';
