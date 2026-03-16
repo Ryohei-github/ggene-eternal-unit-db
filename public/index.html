@@ -2580,10 +2580,12 @@ function renderPickerList() {
     });
     items.sort((a,b) => (parseInt(b.hp)||0) - (parseInt(a.hp)||0));
     list.innerHTML = items.slice(0, 100).map(s => {
+      const maxLS = s.leader2_3||s.leader2_2||s.leader2_1||s.leader2_0||s.leader_3||s.leader_2||s.leader_1||s.leader_0||'';
+      const lsBadge = maxLS ? `<span style="display:inline-flex;align-items:center;gap:2px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.35);border-radius:3px;padding:1px 5px;font-size:.7em;font-weight:700;color:#22c55e;white-space:nowrap;margin-left:4px">LS ${maxLS}</span>` : '';
       return `<div class="picker-item" onclick="selectPickerSupporter(${s.id})">
         ${s.image ? `<img src="${s.image}" alt="${s.name}" onerror="this.style.display='none'" loading="lazy">` : ''}
         <div class="picker-item-info">
-          <div class="picker-item-name">${s.name}</div>
+          <div class="picker-item-name">${s.name}${lsBadge}</div>
           <div class="picker-item-sub"><span class="badge ${rarityClass(s.rarity)}" style="font-size:.6em;padding:1px 4px">${s.rarity}</span> HP:${s.hp||'-'} ATK:${s.attack||'-'} ${s.target_series ? '<span class="tag" style="font-size:.7em">'+s.target_series+'</span>' : ''}</div>
         </div>
       </div>`;
