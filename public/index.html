@@ -1391,9 +1391,13 @@ function supporterCardHTML(s) {
   const recIcon = supportSkillIcon(s.recovery_type);
   const obtainBadge = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">限定</span>' : '';
 
+  const supImg = s.image ? `<img src="${s.image}" alt="${s.name}" style="width:44px;height:44px;border-radius:6px;object-fit:cover;border:1px solid var(--border);flex-shrink:0" onerror="this.style.display='none'" loading="lazy">` : '';
   return `<div class="card" onclick="showSupporterDetail(${s.id})">
     <div class="card-header">
-      <div class="card-name">${s.name}${obtainBadge}</div>
+      <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:0">
+        ${supImg}
+        <div class="card-name" style="flex:1;min-width:0">${s.name}${obtainBadge}</div>
+      </div>
       <div class="card-badges">
         <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
       </div>
@@ -1476,8 +1480,9 @@ function supporterTableHTML(items) {
     const max = s.leader_3 || s.leader_2 || s.leader_1 || base;
     const lsDisplay = base ? `${base}${max && max !== base ? ' → '+max : ''}` : '-';
     const recIcon = supportSkillIcon(s.recovery_type, 18);
+    const sIconTd = s.image ? `<img class="cell-icon" src="${s.image}" alt="${s.name}" onerror="this.style.display='none'" loading="lazy">` : '';
     return `<tr onclick="showSupporterDetail(${s.id})">
-      <td class="cell-name">${s.name}</td>
+      <td class="cell-name">${sIconTd}${s.name}</td>
       <td class="cell-center"><span class="badge ${rarityClass(s.rarity)}" style="font-size:.7em">${s.rarity||'-'}</span></td>
       <td class="cell-num">${s.hp ? s.hp.toLocaleString() : '-'}</td>
       <td class="cell-num">${s.attack||'-'}</td>
@@ -1758,10 +1763,15 @@ function showSupporterDetail(id) {
 
   document.getElementById('modalContent').innerHTML = `
     <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2>${s.name}${obtainLabel}</h2>
-    <div class="detail-badges">
-      <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
-      ${s.target_series ? `<span class="badge badge-type">${s.target_series}</span>` : ''}
+    <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px">
+      ${s.image ? `<img src="${s.image}" alt="${s.name}" style="width:64px;height:64px;border-radius:8px;object-fit:cover;border:2px solid var(--border);flex-shrink:0" onerror="this.style.display='none'">` : ''}
+      <div>
+        <h2 style="margin:0">${s.name}${obtainLabel}</h2>
+        <div class="detail-badges" style="margin-top:4px">
+          <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
+          ${s.target_series ? `<span class="badge badge-type">${s.target_series}</span>` : ''}
+        </div>
+      </div>
     </div>
     <div class="detail-section">
       <h3>基本ステータス</h3>
@@ -2069,6 +2079,7 @@ function renderTeamSupporter() {
   let pickHTML = '';
   if (sup) {
     pickHTML = `<div style="text-align:center">
+      ${sup.image ? `<img src="${sup.image}" alt="${sup.name}" style="width:48px;height:48px;border-radius:8px;object-fit:cover;border:1px solid var(--border)" onerror="this.style.display='none'">` : ''}
       <div style="font-size:.82em;font-weight:600;color:var(--text);margin-top:4px">${sup.name}</div>
       <div style="font-size:.7em;color:var(--text2);margin-top:2px"><span class="badge ${rarityClass(sup.rarity)}" style="font-size:.85em">${sup.rarity}</span> HP:${sup.hp||'-'} ATK:${sup.attack||'-'}</div>
       <div style="margin-top:4px;display:flex;gap:4px;justify-content:center">
@@ -2296,6 +2307,7 @@ function renderPickerList() {
     items.sort((a,b) => (parseInt(b.hp)||0) - (parseInt(a.hp)||0));
     list.innerHTML = items.slice(0, 100).map(s => {
       return `<div class="picker-item" onclick="selectPickerSupporter(${s.id})">
+        ${s.image ? `<img src="${s.image}" alt="${s.name}" onerror="this.style.display='none'" loading="lazy">` : ''}
         <div class="picker-item-info">
           <div class="picker-item-name">${s.name}</div>
           <div class="picker-item-sub"><span class="badge ${rarityClass(s.rarity)}" style="font-size:.6em;padding:1px 4px">${s.rarity}</span> HP:${s.hp||'-'} ATK:${s.attack||'-'} ${s.target_series ? '<span class="tag" style="font-size:.7em">'+s.target_series+'</span>' : ''}</div>
