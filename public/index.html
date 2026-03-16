@@ -126,11 +126,13 @@ a:hover{text-decoration:underline}
 .accent-line{height:3px;background:linear-gradient(90deg,transparent 5%,var(--accent) 20%,var(--accent2) 50%,var(--accent) 80%,transparent 95%);opacity:.4;margin:0}
 
 /* Tabs */
-.tab-bar{display:flex;justify-content:center;gap:0;margin-top:10px;background:linear-gradient(135deg,#0d1525,#1a2844);position:sticky;top:0;z-index:100}
-.tab-btn{padding:10px 28px;font-size:.9em;font-weight:600;color:var(--text2);background:transparent;border:none;border-bottom:3px solid transparent;cursor:pointer;transition:all .2s;letter-spacing:1px}
+.tab-bar{display:flex;justify-content:center;gap:0;margin-top:10px;background:linear-gradient(135deg,#0d1525,#1a2844);position:sticky;top:0;z-index:100;flex-wrap:nowrap;overflow-x:auto}
+.tab-btn{padding:8px 12px;font-size:.82em;font-weight:600;color:var(--text2);background:transparent;border:none;border-bottom:3px solid transparent;cursor:pointer;transition:all .2s;letter-spacing:.5px;display:flex;flex-direction:column;align-items:center;gap:2px;white-space:nowrap;min-width:0}
 .tab-btn:hover{color:var(--text)}
 .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent)}
-.tab-btn .tab-count{font-size:.7em;font-weight:400;margin-left:4px;opacity:.7}
+.tab-btn .tab-count{font-size:.65em;font-weight:400;opacity:.7}
+.tab-icon{width:18px;height:18px;fill:currentColor;flex-shrink:0}
+.tab-label{font-size:.85em;line-height:1}
 
 /* Controls */
 .controls{max-width:1800px;margin:16px auto;padding:0 16px}
@@ -184,9 +186,8 @@ a:hover{text-decoration:underline}
 .tag-search-box input::placeholder{color:var(--text2)}
 
 /* Clear filters button */
-.clear-filters-btn{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.78em;transition:all .2s;white-space:nowrap;display:none}
+.clear-filters-btn{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.78em;transition:all .2s;white-space:nowrap}
 .clear-filters-btn:hover{border-color:#ff4466;color:#ff4466;background:rgba(255,68,102,.05)}
-.clear-filters-btn.visible{display:inline-flex;align-items:center;gap:4px}
 
 /* Team Simulator */
 .team-sim-container{max-width:1400px;margin:0 auto;padding:16px 16px 40px}
@@ -444,7 +445,9 @@ a:hover{text-decoration:underline}
   .header-links{gap:6px;margin-top:4px}
   .header-links a{font-size:.62em;padding:3px 8px}
   .header .yt-cta{font-size:.58em;margin-top:2px}
-  .tab-btn{padding:8px 14px;font-size:.78em}
+  .tab-btn{padding:6px 8px;font-size:.7em;gap:1px}
+  .tab-icon{width:16px;height:16px}
+  .tab-label{font-size:.78em}
 
   /* Filters: collapsible */
   .controls{margin:8px auto;padding:0 10px}
@@ -459,25 +462,29 @@ a:hover{text-decoration:underline}
   .stats-bar{flex-direction:column;gap:6px;align-items:flex-start}
   .sort-btns{justify-content:flex-start}
 
-  /* Grid & Cards: compact */
-  .grid{grid-template-columns:1fr;gap:8px;padding:0 10px 30px}
-  .card{padding:10px}
-  .card-header{margin-bottom:6px}
-  .card-icon{width:40px;height:40px}
-  .card-name{font-size:.92em}
-  .badge{font-size:.6em;padding:1px 6px}
-  .card-series{font-size:.68em}
-  .card-combat{font-size:.82em}
-  .card-stats{grid-template-columns:repeat(3,1fr);gap:2px}
-  .card-stats .stat-val{font-size:1em}
-  .card-stats .stat-label{font-size:.55em}
-  .card-stats-sub{grid-template-columns:repeat(3,1fr);gap:2px}
-  .card-mechanism{font-size:.7em}
-  .card-terrain{font-size:.68em}
-  .card-weapons{gap:3px}
-  .card-weapons .weapon-tag{font-size:.62em;padding:1px 5px}
-  .card-tags{gap:3px}
-  .card-tags span{font-size:.6em}
+  /* Grid & Cards: compact for ~4 visible */
+  .grid{grid-template-columns:1fr;gap:6px;padding:0 8px 30px}
+  .card{padding:8px}
+  .card-header{margin-bottom:4px}
+  .card-icon{width:34px;height:34px}
+  .card-name{font-size:.82em}
+  .badge{font-size:.55em;padding:1px 5px}
+  .card-series{font-size:.6em;margin-bottom:2px}
+  .card-combat{font-size:.72em;margin-bottom:2px}
+  .card-stats{grid-template-columns:repeat(5,1fr);gap:2px}
+  .card-stats .stat-val{font-size:.85em}
+  .card-stats .stat-label{font-size:.5em}
+  .card-stats-sub{grid-template-columns:repeat(5,1fr);gap:2px}
+  .card-mechanism{font-size:.62em}
+  .card-terrain{font-size:.6em;margin-bottom:2px}
+  .card-weapons{gap:2px}
+  .card-weapons .weapon-tag{font-size:.58em;padding:1px 4px}
+  .card-tags{gap:2px}
+  .card-tags span{font-size:.55em}
+
+  /* Supporter card compact */
+  .card .supporter-stat{font-size:.72em}
+  .card .supporter-stat .sv{font-size:.9em}
 
   /* Modal */
   .modal .stats-grid{grid-template-columns:repeat(2,1fr)}
@@ -530,11 +537,11 @@ a:hover{text-decoration:underline}
   <p class="yt-cta">サイトの充実はチャンネル登録数が目標！<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">登録して応援</a>してくれると嬉しいです</p>
   <div class="accent-line"></div>
   <nav class="tab-bar" id="tabBar" aria-label="データカテゴリ切り替え">
-    <button class="tab-btn active" data-tab="unit">ユニット<span class="tab-count" id="unitTabCount"></span></button>
-    <button class="tab-btn" data-tab="chara">キャラ<span class="tab-count" id="charaTabCount"></span></button>
-    <button class="tab-btn" data-tab="supporter">サポーター<span class="tab-count" id="supporterTabCount"></span></button>
-    <button class="tab-btn" data-tab="taglookup">タグ逆引き</button>
-    <button class="tab-btn" data-tab="team">編成シミュレーター</button>
+    <button class="tab-btn active" data-tab="unit"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M10 2l2 4h4l-3 3 1 5-4-3-4 3 1-5-3-3h4z"/></svg><span class="tab-label">ユニット</span><span class="tab-count" id="unitTabCount"></span></button>
+    <button class="tab-btn" data-tab="chara"><svg class="tab-icon" viewBox="0 0 20 20"><circle cx="10" cy="7" r="4"/><path d="M3 18c0-4 3-7 7-7s7 3 7 7"/></svg><span class="tab-label">キャラ</span><span class="tab-count" id="charaTabCount"></span></button>
+    <button class="tab-btn" data-tab="supporter"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M10 3a4 4 0 00-4 4c0 3 4 7 4 7s4-4 4-7a4 4 0 00-4-4z"/><path d="M6 16h8" stroke="currentColor" stroke-width="1.5" fill="none"/></svg><span class="tab-label">サポ</span><span class="tab-count" id="supporterTabCount"></span></button>
+    <button class="tab-btn" data-tab="taglookup"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg><span class="tab-label">タグ</span></button>
+    <button class="tab-btn" data-tab="team"><svg class="tab-icon" viewBox="0 0 20 20"><rect x="2" y="4" width="5" height="5" rx="1"/><rect x="8" y="4" width="5" height="5" rx="1"/><rect x="14" y="4" width="4" height="5" rx="1"/><rect x="2" y="11" width="5" height="5" rx="1"/><rect x="8" y="11" width="5" height="5" rx="1"/></svg><span class="tab-label">編成</span></button>
   </nav>
 </header>
 
@@ -546,9 +553,8 @@ a:hover{text-decoration:underline}
 </div>
 
 <section class="controls" aria-label="検索・フィルタ">
-  <div class="search-box" style="display:flex;gap:8px;align-items:center">
-    <input type="text" id="searchInput" placeholder="ユニット名で検索...（例: サザビー、ガンダム）" style="flex:1">
-    <button class="clear-filters-btn" id="clearFiltersBtn" onclick="clearAllFilters()">✕ クリア</button>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="ユニット名で検索...（例: サザビー、ガンダム）" style="width:100%">
   </div>
   <div class="filters" id="filtersContainer">
     <div class="filter-group" id="filterTypeGroup">
@@ -598,6 +604,9 @@ a:hover{text-decoration:underline}
       <label>対象</label>
       <select id="filterTarget"><option value="">すべて</option></select>
     </div>
+  </div>
+  <div style="text-align:center;margin:6px 0">
+    <button class="clear-filters-btn" id="clearFiltersBtn" onclick="clearAllFilters()" style="display:none">✕ フィルタークリア</button>
   </div>
   <div class="stats-bar">
     <span id="resultCount">読込中...</span>
@@ -819,7 +828,9 @@ function resetFilters() {
   document.getElementById('filterTag').innerHTML = '<option value="">すべて</option>';
   document.getElementById('filterTerrain').value = '';
   document.getElementById('filterRarityButtons').innerHTML = '';
-  document.getElementById('filterCharaType').innerHTML = '<option value="">すべて</option>';
+  const charaTypeEl = document.getElementById('filterCharaType');
+  if (charaTypeEl) charaTypeEl.innerHTML = '<option value="">すべて</option>';
+  else { const g = document.getElementById('filterCharaTypeGroup'); if (g) g.innerHTML = '<label>キャラタイプ</label><select id="filterCharaType"><option value="">すべて</option></select>'; }
   document.getElementById('filterTarget').innerHTML = '<option value="">すべて</option>';
   activeDebuffKey = '';
   activeSpecialKey = '';
@@ -2941,7 +2952,7 @@ function updateClearButton() {
     const tag = document.getElementById('filterTag')?.value || '';
     hasFilter = activeCharaTypes > 0 || series || tag;
   }
-  document.getElementById('clearFiltersBtn')?.classList.toggle('visible', !!hasFilter);
+  const cb = document.getElementById('clearFiltersBtn'); if (cb) cb.style.display = hasFilter ? '' : 'none';
 }
 
 // Event listeners
