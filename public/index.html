@@ -226,8 +226,8 @@ a:hover{text-decoration:underline}
 .slot-filled .slot-skills{display:flex;flex-wrap:wrap;gap:2px;margin-top:4px}
 .slot-filled .slot-abilities{margin-top:4px;font-size:.6em;color:var(--text2);line-height:1.4}
 .slot-filled .slot-abilities .abil-name{color:var(--accent);font-weight:600}
-.slot-change-btn{position:absolute;top:2px;right:2px;font-size:.55em;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1px 4px;cursor:pointer;transition:all .15s;z-index:2}
-.slot-change-btn:hover{color:var(--accent);border-color:var(--accent)}
+
+
 .slot-remove-btn{position:absolute;top:2px;right:32px;font-size:.55em;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1px 4px;cursor:pointer;z-index:2}
 .slot-remove-btn:hover{color:#ff4466;border-color:#ff4466}
 .team-supporter-section{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:20px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
@@ -529,7 +529,7 @@ a:hover{text-decoration:underline}
   .slot-filled .slot-weapons{display:none}
   .slot-filled .slot-abilities{display:none}
   .slot-filled .slot-skills{display:none}
-  .slot-change-btn{font-size:.45em;padding:1px 3px}
+
   .slot-remove-btn{font-size:.45em;padding:1px 3px;right:22px}
   .team-stats-grid{grid-template-columns:repeat(3,1fr)}
   .team-picker{width:100%!important;border-left:none;border-top:2px solid var(--accent)}
@@ -540,6 +540,10 @@ a:hover{text-decoration:underline}
 /* Leader Skill Buff Indicator */
 
 .picker-buff-badge{display:inline-flex;align-items:center;gap:2px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);border-radius:3px;padding:1px 5px 1px 2px;font-size:.7em;font-weight:700;color:#22c55e;white-space:nowrap;margin-left:6px}
+
+#pickerList{align-content:flex-start}
+
+#pickerList .picker-item{flex-shrink:0}
 .picker-item.ls-target{border-left:3px solid #22c55e}
 .ls-buff-indicator{display:inline-flex;align-items:center;gap:3px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);border-radius:4px;padding:2px 8px 2px 4px;font-size:.7em;font-weight:700;color:#22c55e;white-space:nowrap;margin-top:3px;animation:lsBuff .4s ease}
 .ls-matched{box-shadow:inset 0 0 0 1px rgba(34,197,94,.25)}
@@ -629,11 +633,11 @@ a:hover{text-decoration:underline}
       <select id="filterTarget"><option value="">すべて</option></select>
     </div>
     <div class="filter-group" id="filterSupTagGroup" style="display:none">
-      <label>対象タグ</label>
+      <label style="display:flex;align-items:center;gap:6px"><span>対象タグ</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
       <div class="filter-btn-group" id="filterSupTagButtons"></div>
     </div>
     <div class="filter-group" id="filterSupSkillGroup" style="display:none">
-      <label>サポートスキル</label>
+      <label style="display:flex;align-items:center;gap:6px"><span>サポートスキル</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
       <div class="filter-btn-group" id="filterSupSkillButtons"></div>
     </div>
   </div>
@@ -1057,7 +1061,7 @@ function buildFilters() {
       if (s.target_series) targets.add(s.target_series);
       // Extract individual tags from target_series (split by "or")
       if (s.target_series) {
-        s.target_series.split(/or/i).map(t => t.trim()).filter(Boolean).forEach(t => {
+        s.target_series.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(t => t.trim()).filter(Boolean).forEach(t => {
           // Categorize: if it's a series name (contains ガンダム or known series), skip for tag filter
           // Otherwise it's a tag
           if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) {
@@ -1202,7 +1206,7 @@ function getFiltered() {
       // Tag filter: check if any of the supporter's target tags match active tag filters
       if (activeSupTags.length > 0) {
         const supAllTags = [];
-        if (s.target_series) s.target_series.split(/or/i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
+        if (s.target_series) s.target_series.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
         if (s.leader2_target) s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
         const hasTag = activeSupTags.some(ft => supAllTags.some(st => st.includes(ft) || ft.includes(st)));
         if (!hasTag) return false;
@@ -1506,7 +1510,7 @@ function supportSkillIcon(type, size = 22) {
 function showTargetUnits(targetSeries) {
   if (!targetSeries || targetSeries === '-') return;
   // Parse target: may contain "or" separating multiple series
-  const seriesList = targetSeries.split(/or/i).map(s => s.trim()).filter(Boolean);
+  const seriesList = targetSeries.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(s => s.trim()).filter(Boolean);
   // Find matching units
   const matched = allUnits.filter(u => {
     const uSeries = u.seriesArr || [];
@@ -2170,7 +2174,7 @@ function checkLeaderSkillMatch(unit) {
   // Check tier1 (or-based matching)
   const target = sup.target_series || teamLeaderTag;
   if (!target || target === '-') return null;
-  const seriesList = target.split(/or/i).map(s => s.trim()).filter(Boolean);
+  const seriesList = target.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(s => s.trim()).filter(Boolean);
   const match = seriesList.some(ts => allUnitTags.some(ut => ut.includes(ts) || ts.includes(ut)));
   if (match) {
     const val = sup.leader_3 || sup.leader_2 || sup.leader_1 || sup.leader_0 || '';
@@ -2233,8 +2237,7 @@ function renderSlotUnit(u, slotIdx) {
   </div>` : '';
   return `<div class="slot-filled${lsMatch ? ' ls-matched' : ''}">
     <button class="slot-remove-btn" onclick="removeSlot(${slotIdx},'unit')">✕</button>
-    <button class="slot-change-btn" onclick="openTeamPicker('unit',${slotIdx})">変更</button>
-    <div class="slot-top-row">
+    <div class="slot-top-row" style="cursor:pointer" onclick="openTeamPicker('unit',${slotIdx})" title="クリックで変更">
       ${iconHTML}
       <div class="slot-info">
         <div class="slot-name">${u.name}</div>
@@ -2269,8 +2272,7 @@ function renderSlotChara(c, slotIdx) {
 
   return `<div class="slot-filled">
     <button class="slot-remove-btn" onclick="removeSlot(${slotIdx},'chara')">✕</button>
-    <button class="slot-change-btn" onclick="openTeamPicker('chara',${slotIdx})">変更</button>
-    <div class="slot-top-row">
+    <div class="slot-top-row" style="cursor:pointer" onclick="openTeamPicker('chara',${slotIdx})" title="クリックで変更">
       ${iconHTML}
       <div class="slot-info">
         <div class="slot-name">${c.name}</div>
@@ -2300,11 +2302,10 @@ function renderTeamSupporter() {
   let pickHTML = '';
   if (sup) {
     pickHTML = `<div style="text-align:center">
-      ${sup.image ? `<img src="${sup.image}" alt="${sup.name}" style="width:48px;height:48px;border-radius:8px;object-fit:cover;border:1px solid var(--border)" onerror="this.style.display='none'">` : ''}
-      <div style="font-size:.82em;font-weight:600;color:var(--text);margin-top:4px">${sup.name}</div>
+      ${sup.image ? `<img src="${sup.image}" alt="${sup.name}" style="width:48px;height:48px;border-radius:8px;object-fit:cover;border:1px solid var(--border);cursor:pointer" onclick="openTeamPicker('supporter',0)" title="クリックで変更" onerror="this.style.display='none'">` : ''}
+      <div style="font-size:.82em;font-weight:600;color:var(--text);margin-top:4px;cursor:pointer" onclick="openTeamPicker('supporter',0)" title="クリックで変更">${sup.name}</div>
       <div style="font-size:.7em;color:var(--text2);margin-top:2px"><span class="badge ${rarityClass(sup.rarity)}" style="font-size:.85em">${sup.rarity}</span> HP:${sup.hp||'-'} ATK:${sup.attack||'-'}</div>
       <div style="margin-top:4px;display:flex;gap:4px;justify-content:center">
-        <button class="slot-change-btn" style="position:static" onclick="openTeamPicker('supporter',0)">変更</button>
         <button class="slot-remove-btn" style="position:static" onclick="teamSupporterId=null;teamLeaderTag='';teamLeaderEffect='';renderTeamSim()">✕</button>
       </div>
     </div>`;
@@ -2439,7 +2440,7 @@ function openTeamPicker(mode, slotIdx) {
     // Build tag and skill filter buttons for supporter picker
     const supTagSet = new Set(), supSkillSet = new Set();
     allSupporters.forEach(s => {
-      if (s.target_series) s.target_series.split(/or/i).map(t => t.trim()).filter(Boolean).forEach(t => {
+      if (s.target_series) s.target_series.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(t => t.trim()).filter(Boolean).forEach(t => {
         if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) supTagSet.add(t);
       });
       if (s.leader2_target) s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => {
@@ -2454,7 +2455,9 @@ function openTeamPicker(mode, slotIdx) {
     const tagBtns = [...supTagSet].sort().map(t =>
       `<button class="filter-btn picker-sup-tag-btn" data-value="${t}" onclick="this.classList.toggle('active');renderPickerList()" style="font-size:.75em">${t}</button>`
     ).join('');
-    filtersDiv.innerHTML = skBtns + (tagBtns ? '<div style="display:flex;flex-wrap:wrap;gap:4px;margin-top:4px">' + tagBtns + '</div>' : '');
+    const skillSection = skBtns ? `<div style="margin-bottom:6px"><div style="font-size:.7em;color:var(--text2);margin-bottom:4px;display:flex;align-items:center;gap:6px"><span>サポートスキル</span><span style="flex:1;height:1px;background:var(--border)"></span></div><div style="display:flex;flex-wrap:wrap;gap:4px">${skBtns}</div></div>` : '';
+    const tagSection = tagBtns ? `<div><div style="font-size:.7em;color:var(--text2);margin-bottom:4px;display:flex;align-items:center;gap:6px"><span>対象タグ</span><span style="flex:1;height:1px;background:var(--border)"></span></div><div style="display:flex;flex-wrap:wrap;gap:4px">${tagBtns}</div></div>` : '';
+    filtersDiv.innerHTML = skillSection + tagSection;
   }
 
   overlay.classList.add('open');
@@ -2568,7 +2571,7 @@ function renderPickerList() {
       if (activePickerSkills.length > 0 && !activePickerSkills.includes(s.recovery_type)) return false;
       if (activePickerTags.length > 0) {
         const supAllTags = [];
-        if (s.target_series) s.target_series.split(/or/i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
+        if (s.target_series) s.target_series.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
         if (s.leader2_target) s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
         const hasTag = activePickerTags.some(ft => supAllTags.some(st => st.includes(ft) || ft.includes(st)));
         if (!hasTag) return false;
