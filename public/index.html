@@ -200,35 +200,35 @@ a:hover{text-decoration:underline}
 .team-action-btn:hover{border-color:var(--accent);color:var(--accent)}
 .team-action-btn.primary{background:linear-gradient(135deg,rgba(0,212,255,.2),rgba(0,212,255,.1));border-color:var(--accent);color:var(--accent)}
 .team-formation-label{font-size:.85em;color:var(--text2);margin:12px 0 8px;font-weight:600;letter-spacing:1px}
-.team-slots{display:flex;flex-direction:column;gap:8px;margin-bottom:20px}
-.team-slot-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;transition:all .2s}
+.team-slots{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-bottom:12px}
+.team-slot-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;transition:all .2s;min-width:0}
 .team-slot-card:hover{border-color:rgba(0,212,255,.3)}
-.team-slot-card .slot-header{display:flex;align-items:center;gap:10px;margin-bottom:8px}
-.team-slot-card .slot-number{width:28px;height:28px;background:var(--bg);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.8em;font-weight:700;color:var(--accent);flex-shrink:0}
-.team-slot-card .slot-position{font-size:.7em;color:var(--text2);padding:2px 8px;background:var(--bg);border-radius:4px}
-.team-slot-pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.team-slot-unit-area,.team-slot-chara-area{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;min-height:60px}
-.team-slot-unit-area .area-label,.team-slot-chara-area .area-label{font-size:.65em;color:var(--accent);font-weight:600;margin-bottom:6px;text-transform:uppercase;letter-spacing:1px}
-.slot-empty{display:flex;align-items:center;justify-content:center;min-height:50px;border:1px dashed var(--border);border-radius:6px;cursor:pointer;color:var(--text2);font-size:.82em;transition:all .15s}
+.team-slot-card .slot-header{display:flex;align-items:center;gap:4px;margin-bottom:4px}
+.team-slot-card .slot-number{width:22px;height:22px;background:var(--bg);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7em;font-weight:700;color:var(--accent);flex-shrink:0}
+.team-slot-card .slot-position{font-size:.6em;color:var(--text2);padding:1px 5px;background:var(--bg);border-radius:3px}
+.team-slot-pair{display:flex;flex-direction:column;gap:6px}
+.team-slot-unit-area,.team-slot-chara-area{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px;min-height:40px}
+.team-slot-unit-area .area-label,.team-slot-chara-area .area-label{font-size:.58em;color:var(--accent);font-weight:600;margin-bottom:3px;letter-spacing:.5px}
+.slot-empty{display:flex;align-items:center;justify-content:center;min-height:36px;border:1px dashed var(--border);border-radius:4px;cursor:pointer;color:var(--text2);font-size:.68em;transition:all .15s}
 .slot-empty:hover{border-color:var(--accent);color:var(--accent);background:rgba(0,212,255,.05)}
 .slot-filled{position:relative}
-.slot-filled .slot-top-row{display:flex;align-items:center;gap:8px;margin-bottom:6px}
-.slot-filled .slot-img{width:40px;height:40px;border-radius:6px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
+.slot-filled .slot-top-row{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.slot-filled .slot-img{width:32px;height:32px;border-radius:4px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
 .slot-filled .slot-info{flex:1;min-width:0}
-.slot-filled .slot-name{font-size:.9em;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.slot-filled .slot-badges{display:flex;gap:3px;margin-top:2px;flex-wrap:wrap}
-.slot-filled .slot-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;margin-top:6px}
-.slot-filled .slot-stats.wide{grid-template-columns:repeat(6,1fr)}
-.slot-filled .slot-stat{text-align:center;padding:3px;background:rgba(255,255,255,.03);border-radius:3px;font-size:.7em}
-.slot-filled .slot-stat .ss-label{color:var(--text2);font-size:.85em}
+.slot-filled .slot-name{font-size:.72em;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slot-filled .slot-badges{display:flex;gap:2px;margin-top:1px;flex-wrap:wrap}
+.slot-filled .slot-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:4px}
+.slot-filled .slot-stats.wide{grid-template-columns:repeat(3,1fr)}
+.slot-filled .slot-stat{text-align:center;padding:2px;background:rgba(255,255,255,.03);border-radius:2px;font-size:.6em}
+.slot-filled .slot-stat .ss-label{color:var(--text2);font-size:.8em}
 .slot-filled .slot-stat .ss-val{font-weight:700;color:var(--text)}
-.slot-filled .slot-weapons{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
-.slot-filled .slot-skills{display:flex;flex-wrap:wrap;gap:3px;margin-top:6px}
-.slot-filled .slot-abilities{margin-top:6px;font-size:.72em;color:var(--text2);line-height:1.5}
+.slot-filled .slot-weapons{display:flex;flex-wrap:wrap;gap:2px;margin-top:4px}
+.slot-filled .slot-skills{display:flex;flex-wrap:wrap;gap:2px;margin-top:4px}
+.slot-filled .slot-abilities{margin-top:4px;font-size:.6em;color:var(--text2);line-height:1.4}
 .slot-filled .slot-abilities .abil-name{color:var(--accent);font-weight:600}
-.slot-change-btn{position:absolute;top:4px;right:4px;font-size:.65em;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:4px;padding:2px 6px;cursor:pointer;transition:all .15s}
+.slot-change-btn{position:absolute;top:2px;right:2px;font-size:.55em;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1px 4px;cursor:pointer;transition:all .15s;z-index:2}
 .slot-change-btn:hover{color:var(--accent);border-color:var(--accent)}
-.slot-remove-btn{position:absolute;top:4px;right:48px;font-size:.65em;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:4px;padding:2px 6px;cursor:pointer}
+.slot-remove-btn{position:absolute;top:2px;right:32px;font-size:.55em;color:var(--text2);background:var(--card);border:1px solid var(--border);border-radius:3px;padding:1px 4px;cursor:pointer;z-index:2}
 .slot-remove-btn:hover{color:#ff4466;border-color:#ff4466}
 .team-supporter-section{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:14px;margin-bottom:20px;display:flex;gap:16px;align-items:flex-start;flex-wrap:wrap}
 .team-supporter-pick{min-width:140px}
@@ -513,11 +513,27 @@ a:hover{text-decoration:underline}
   /* Team Simulator mobile */
   .team-sim-header{flex-direction:column;align-items:flex-start}
   .team-combat-power{font-size:1.1em}
-  .team-slot-pair{grid-template-columns:1fr}
+  .team-slots{grid-template-columns:repeat(5,1fr);gap:4px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .team-slot-card{padding:6px;min-width:0}
+  .team-slot-card .slot-header{gap:3px;margin-bottom:3px}
+  .team-slot-card .slot-number{width:18px;height:18px;font-size:.6em}
+  .team-slot-card .slot-position{font-size:.5em;padding:1px 3px}
+  .team-slot-pair{gap:4px}
+  .team-slot-unit-area,.team-slot-chara-area{padding:4px}
+  .team-slot-unit-area .area-label,.team-slot-chara-area .area-label{font-size:.5em;margin-bottom:2px}
+  .slot-empty{min-height:28px;font-size:.55em}
+  .slot-filled .slot-img{width:24px;height:24px}
+  .slot-filled .slot-name{font-size:.6em}
+  .slot-filled .slot-top-row{gap:4px;margin-bottom:2px}
+  .slot-filled .slot-stat{padding:1px;font-size:.5em}
+  .slot-filled .slot-weapons{display:none}
+  .slot-filled .slot-abilities{display:none}
+  .slot-filled .slot-skills{display:none}
+  .slot-change-btn{font-size:.45em;padding:1px 3px}
+  .slot-remove-btn{font-size:.45em;padding:1px 3px;right:22px}
   .team-stats-grid{grid-template-columns:repeat(3,1fr)}
   .team-picker{width:100%!important;border-left:none;border-top:2px solid var(--accent)}
   .team-supporter-section{flex-direction:column}
-  .slot-filled .slot-stats.wide{grid-template-columns:repeat(3,1fr)}
 
 }
 </style>
@@ -654,10 +670,8 @@ a:hover{text-decoration:underline}
       <button class="team-action-btn" onclick="clearTeam()">クリア</button>
     </div>
   </div>
-  <div class="team-formation-label">前方配置 (1~3)</div>
-  <div class="team-slots" id="teamSlotsFront"></div>
-  <div class="team-formation-label">後方配置 (4~5)</div>
-  <div class="team-slots" id="teamSlotsRear"></div>
+  <div class="team-formation-label" style="display:flex;gap:12px;align-items:center"><span>編成スロット</span><span style="font-size:.8em;font-weight:400;color:var(--text2)">(1~3: 前方 / 4~5: 後方)</span></div>
+  <div class="team-slots" id="teamSlotsAll"></div>
   <div class="team-formation-label">サポーター</div>
   <div class="team-supporter-section" id="teamSupporterSection"></div>
   <div class="team-stats-summary" id="teamStatsSummary"></div>
@@ -2062,8 +2076,7 @@ function selectTagLookup(tag) {
 
 // === TEAM SIMULATOR FUNCTIONS ===
 function renderTeamSim() {
-  renderTeamSlots('teamSlotsFront', 0, 3);
-  renderTeamSlots('teamSlotsRear', 3, 5);
+  renderTeamSlots('teamSlotsAll', 0, 5);
   renderTeamSupporter();
   renderTeamStats();
   renderSavedTeams();
