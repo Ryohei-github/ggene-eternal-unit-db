@@ -245,24 +245,30 @@ a:hover{text-decoration:underline}
 .team-type-balance{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .team-type-chip{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:6px;font-size:.8em;font-weight:600;background:var(--bg);border:1px solid var(--border)}
 .team-type-chip img{width:16px;height:16px}
-.team-picker-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:300;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto}
+.team-picker-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:300;overflow:hidden}
 .team-picker-overlay.open{display:flex}
-.team-picker{background:var(--card);border:1px solid var(--accent);border-radius:12px;max-width:900px;width:100%;max-height:85vh;display:flex;flex-direction:column}
+.team-picker{background:var(--card);border-left:2px solid var(--accent);position:absolute;right:0;top:0;width:420px;height:100%;display:flex;flex-direction:column;box-shadow:-4px 0 24px rgba(0,0,0,.5)}
 .picker-item-used{opacity:.35;cursor:not-allowed;pointer-events:none;position:relative}
-.team-picker-header{padding:14px 16px;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-.team-picker-header h3{font-size:.95em;color:var(--accent);white-space:nowrap}
-.team-picker-header input{flex:1;min-width:150px;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.9em;outline:none}
+.team-picker-header{padding:12px 14px;border-bottom:1px solid var(--border);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.team-picker-header h3{font-size:.9em;color:var(--accent);white-space:nowrap}
+.team-picker-header input{flex:1;min-width:120px;padding:7px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.85em;outline:none}
 .team-picker-header input:focus{border-color:var(--accent)}
 .team-picker-close{font-size:1.3em;color:var(--text2);cursor:pointer;background:none;border:none;padding:4px 8px}
 .team-picker-close:hover{color:#fff}
-.team-picker-filters{padding:8px 16px;border-bottom:1px solid var(--border);display:flex;gap:4px;flex-wrap:wrap}
-.team-picker-list{flex:1;overflow-y:auto;padding:8px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
-.picker-item{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:10px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px}
+.team-picker-filters{padding:6px 14px;border-bottom:1px solid var(--border);display:flex;gap:4px;flex-wrap:wrap}
+.team-picker-team-summary{padding:10px 14px;border-bottom:1px solid var(--border);background:var(--bg);display:flex;gap:6px;align-items:center;overflow-x:auto;flex-shrink:0}
+.picker-summary-slot{min-width:56px;text-align:center;padding:4px;border-radius:6px;border:1px solid var(--border);background:var(--card);font-size:.6em;color:var(--text2);position:relative}
+.picker-summary-slot.active{border-color:var(--accent);box-shadow:0 0 8px rgba(0,212,255,.3)}
+.picker-summary-slot.filled{color:var(--text)}
+.picker-summary-slot img{width:28px;height:28px;border-radius:4px;object-fit:cover;display:block;margin:0 auto 2px}
+.picker-summary-slot .pss-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:54px;display:block}
+.team-picker-list{flex:1;overflow-y:auto;padding:8px;display:grid;grid-template-columns:1fr;gap:6px}
+.picker-item{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 10px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px}
 .picker-item:hover{border-color:var(--accent);background:rgba(0,212,255,.05)}
-.picker-item img{width:40px;height:40px;border-radius:6px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
+.picker-item img{width:36px;height:36px;border-radius:6px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
 .picker-item-info{flex:1;min-width:0}
-.picker-item-name{font-size:.85em;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.picker-item-sub{font-size:.68em;color:var(--text2)}
+.picker-item-name{font-size:.82em;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.picker-item-sub{font-size:.65em;color:var(--text2)}
 .team-saved-list{margin-top:16px}
 .team-saved-list h3{font-size:.85em;color:var(--text2);margin-bottom:8px}
 .team-saved-item{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;margin-bottom:4px;cursor:pointer;transition:all .15s}
@@ -490,7 +496,7 @@ a:hover{text-decoration:underline}
   .team-combat-power{font-size:1.1em}
   .team-slot-pair{grid-template-columns:1fr}
   .team-stats-grid{grid-template-columns:repeat(3,1fr)}
-  .team-picker-list{grid-template-columns:1fr}
+  .team-picker{width:100%!important;border-left:none;border-top:2px solid var(--accent)}
   .team-supporter-section{flex-direction:column}
   .slot-filled .slot-stats.wide{grid-template-columns:repeat(3,1fr)}
 
@@ -516,7 +522,7 @@ a:hover{text-decoration:underline}
     <button class="tab-btn" data-tab="chara">キャラ<span class="tab-count" id="charaTabCount"></span></button>
     <button class="tab-btn" data-tab="supporter">サポーター<span class="tab-count" id="supporterTabCount"></span></button>
     <button class="tab-btn" data-tab="taglookup">タグ逆引き</button>
-    <button class="tab-btn" data-tab="team">編成</button>
+    <button class="tab-btn" data-tab="team">編成シミュレーター</button>
   </nav>
 </header>
 
@@ -637,14 +643,15 @@ a:hover{text-decoration:underline}
   <div class="team-saved-list" id="teamSavedList"></div>
 </div>
 
-<!-- Team Picker Modal -->
-<div class="team-picker-overlay" id="teamPickerOverlay">
+<!-- Team Picker Side Panel -->
+<div class="team-picker-overlay" id="teamPickerOverlay" onclick="if(event.target===this)closeTeamPicker()">
   <div class="team-picker">
     <div class="team-picker-header">
       <h3 id="pickerTitle">ユニット選択</h3>
       <input type="text" id="pickerSearch" placeholder="名前で検索...">
       <button class="team-picker-close" onclick="closeTeamPicker()">&times;</button>
     </div>
+    <div class="team-picker-team-summary" id="pickerTeamSummary"></div>
     <div class="team-picker-filters" id="pickerFilters"></div>
     <div class="team-picker-list" id="pickerList"></div>
   </div>
@@ -2160,11 +2167,11 @@ function renderSavedTeams() {
   try { saved = JSON.parse(localStorage.getItem('ggene_saved_teams') || '[]'); } catch(e) {}
   if (!saved.length) { container.innerHTML = ''; return; }
   const items = saved.map((t, i) => `<div class="team-saved-item" onclick="loadSavedTeam(${i})">
-    <span class="saved-name">${t.name||'編成'+(i+1)}</span>
+    <span class="saved-name">${t.name||'編成シミュレーター'+(i+1)}</span>
     <span class="saved-cp">⚔ ${(t.totalCP||0).toLocaleString()}</span>
     <button class="team-saved-delete" onclick="event.stopPropagation();deleteSavedTeam(${i})">削除</button>
   </div>`).join('');
-  container.innerHTML = `<h3>保存済み編成</h3>${items}`;
+  container.innerHTML = `<h3>保存済み編成シミュレーター</h3>${items}`;
 }
 
 // === PICKER ===
@@ -2197,9 +2204,35 @@ function openTeamPicker(mode, slotIdx) {
   }
 
   overlay.classList.add('open');
+  renderPickerSummary();
   renderPickerList();
   searchInput.focus();
   searchInput.addEventListener('input', renderPickerList);
+}
+
+function renderPickerSummary() {
+  const container = document.getElementById('pickerTeamSummary');
+  let html = '';
+  for (let i = 0; i < 5; i++) {
+    const slot = teamSlots[i];
+    const unit = slot.unitId ? allUnits.find(u => u.id === slot.unitId) : null;
+    const chara = slot.charaId ? allCharas.find(c => c.id === slot.charaId) : null;
+    const isActive = (pickerMode === 'unit' || pickerMode === 'chara') && pickerSlotIndex === i;
+    const filled = unit || chara;
+    html += `<div class="picker-summary-slot${isActive ? ' active' : ''}${filled ? ' filled' : ''}" onclick="if(pickerMode==='unit'||pickerMode==='chara'){pickerSlotIndex=${i};renderPickerSummary();renderPickerList();document.getElementById('pickerTitle').textContent=(pickerMode==='unit'?'ユニット':'キャラ')+'選択 (スロット${i+1})';}">
+      ${unit && unit.image ? `<img src="${unit.image}" alt="">` : `<div style="width:28px;height:28px;border-radius:4px;background:var(--bg);border:1px dashed var(--border);margin:0 auto 2px"></div>`}
+      <span class="pss-name">${unit ? (unit.name.length > 5 ? unit.name.substring(0,5)+'…' : unit.name) : (i < 3 ? '前方'+(i+1) : '後方'+(i-2))}</span>
+      <span class="pss-name" style="color:var(--accent);font-size:.9em">${chara ? (chara.name.length > 5 ? chara.name.substring(0,5)+'…' : chara.name) : '-'}</span>
+    </div>`;
+  }
+  // Supporter mini slot
+  const sup = teamSupporterId ? allSupporters.find(s => s.id === teamSupporterId) : null;
+  const isSupActive = pickerMode === 'supporter';
+  html += `<div class="picker-summary-slot${isSupActive ? ' active' : ''}${sup ? ' filled' : ''}" style="border-color:var(--accent);border-style:${sup?'solid':'dashed'}" onclick="pickerMode='supporter';pickerSlotIndex=0;renderPickerSummary();document.getElementById('pickerTitle').textContent='サポーター選択';document.getElementById('pickerFilters').innerHTML='';renderPickerList();">
+    <div style="width:28px;height:28px;border-radius:4px;background:rgba(0,212,255,.1);margin:0 auto 2px;display:flex;align-items:center;justify-content:center;font-size:.7em;color:var(--accent)">S</div>
+    <span class="pss-name">${sup ? (sup.name.length > 5 ? sup.name.substring(0,5)+'…' : sup.name) : 'サポ'}</span>
+  </div>`;
+  container.innerHTML = html;
 }
 
 function closeTeamPicker() {
@@ -2377,8 +2410,29 @@ function shareTeamURL() {
   });
 }
 
-function shareTeamImage() {
-  const W = 800, H = 520;
+async function shareTeamImage() {
+  // Preload all unit/chara images
+  function loadImg(src) {
+    return new Promise(resolve => {
+      if (!src) return resolve(null);
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.onload = () => resolve(img);
+      img.onerror = () => resolve(null);
+      img.src = src;
+    });
+  }
+  const imgPromises = [];
+  for (let i = 0; i < 5; i++) {
+    const slot = teamSlots[i];
+    const unit = slot.unitId ? allUnits.find(u => u.id === slot.unitId) : null;
+    const chara = slot.charaId ? allCharas.find(c => c.id === slot.charaId) : null;
+    imgPromises.push(loadImg(unit?.image));
+    imgPromises.push(loadImg(chara?.image));
+  }
+  const loadedImgs = await Promise.all(imgPromises);
+
+  const W = 800, H = 540;
   const canvas = document.createElement('canvas');
   canvas.width = W; canvas.height = H;
   const ctx = canvas.getContext('2d');
@@ -2405,16 +2459,18 @@ function shareTeamImage() {
   // Site URL
   ctx.fillStyle = '#484f58'; ctx.font = '12px sans-serif';
   ctx.textAlign = 'right';
-  ctx.fillText('GジェネエターナルDB', W - 24, 40);
+  ctx.fillText('GジェネエターナルDB by MH GAMES', W - 24, 40);
   ctx.fillText(window.location.origin, W - 24, 58);
   ctx.textAlign = 'left';
   // Slot cards
-  const slotW = 144, slotH = 340, gap = 10, startX = 16, startY = 86;
+  const slotW = 148, slotH = 350, gap = 8, startX = 12, startY = 86;
   for (let i = 0; i < 5; i++) {
     const x = startX + i * (slotW + gap);
     const slot = teamSlots[i];
     const unit = slot.unitId ? allUnits.find(u => u.id === slot.unitId) : null;
     const chara = slot.charaId ? allCharas.find(c => c.id === slot.charaId) : null;
+    const unitImg = loadedImgs[i * 2];
+    const charaImg = loadedImgs[i * 2 + 1];
     // Card bg
     ctx.fillStyle = '#161b22'; ctx.beginPath();
     roundRect(ctx, x, startY, slotW, slotH, 8); ctx.fill();
@@ -2429,15 +2485,28 @@ function shareTeamImage() {
       const rarCol = unit.rarity === 'UR' ? '#ff6b6b' : unit.rarity === 'SSR' ? '#ffd93d' : unit.rarity === 'SR' ? '#b388ff' : '#aaa';
       ctx.fillStyle = rarCol; ctx.font = 'bold 11px sans-serif';
       ctx.fillText(unit.rarity || '?', x + slotW - 30, startY + 18);
-      // Unit name
-      ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 13px sans-serif';
-      const uName = unit.name.length > 10 ? unit.name.substring(0, 10) + '…' : unit.name;
-      ctx.fillText(uName, x + 8, startY + 40);
+      // Unit image
+      if (unitImg) {
+        ctx.save();
+        ctx.beginPath();
+        roundRect(ctx, x + 8, startY + 26, 44, 44, 6);
+        ctx.clip();
+        ctx.drawImage(unitImg, x + 8, startY + 26, 44, 44);
+        ctx.restore();
+        ctx.strokeStyle = '#30363d'; ctx.lineWidth = 1; ctx.beginPath();
+        roundRect(ctx, x + 8, startY + 26, 44, 44, 6); ctx.stroke();
+      }
+      // Unit name (beside image)
+      ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 11px sans-serif';
+      const uName = unit.name.length > 8 ? unit.name.substring(0, 8) + '…' : unit.name;
+      ctx.fillText(uName, x + 58, startY + 42);
+      // CP below name
+      ctx.fillStyle = '#d29922'; ctx.font = 'bold 10px sans-serif';
+      ctx.fillText(`CP ${(unit.normal?.combat_power||0).toLocaleString()}`, x + 58, startY + 56);
       // Stats
       const us = unit.normal?.stats || {};
-      ctx.font = '11px sans-serif'; ctx.fillStyle = '#8b949e';
+      ctx.font = '10px sans-serif';
       const stats = [
-        ['CP', (unit.normal?.combat_power||0).toLocaleString()],
         ['ATK', (parseInt(us.attack)||0).toLocaleString()],
         ['HP', (parseInt(us.hp)||0).toLocaleString()],
         ['DEF', (parseInt(us.defense)||0).toLocaleString()],
@@ -2446,11 +2515,11 @@ function shareTeamImage() {
         ['移動', us.mobility||'-']
       ];
       stats.forEach(([label, val], si) => {
-        const sy = startY + 58 + si * 17;
+        const sy = startY + 84 + si * 15;
         ctx.fillStyle = '#8b949e'; ctx.fillText(label, x + 8, sy);
-        ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 11px sans-serif';
-        ctx.fillText(val, x + 50, sy);
-        ctx.font = '11px sans-serif';
+        ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 10px sans-serif';
+        ctx.fillText(val, x + 48, sy);
+        ctx.font = '10px sans-serif';
       });
       // Terrain
       const t = unit.normal?.terrain || {};
@@ -2458,7 +2527,7 @@ function shareTeamImage() {
       ctx.font = '10px sans-serif';
       terrains.forEach((tk, ti) => {
         const tx = x + 8 + ti * 27;
-        const ty = startY + 186;
+        const ty = startY + 180;
         const tv = t[tk] || '-';
         ctx.fillStyle = tv === '◯' ? '#3fb950' : tv === '△' ? '#d29922' : '#484f58';
         ctx.fillText(tv, tx + 6, ty);
@@ -2471,25 +2540,42 @@ function shareTeamImage() {
       ctx.fillText('未選択', x + 44, startY + 80);
     }
     // Chara section
-    const charaY = startY + 210;
-    ctx.fillStyle = '#21262d'; ctx.fillRect(x + 1, charaY, slotW - 2, slotH - 212);
+    const charaY = startY + 200;
+    ctx.fillStyle = '#21262d'; ctx.fillRect(x + 1, charaY, slotW - 2, slotH - 202);
     if (chara) {
-      ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 12px sans-serif';
-      const cName = chara.name.length > 10 ? chara.name.substring(0, 10) + '…' : chara.name;
-      ctx.fillText(cName, x + 8, charaY + 18);
+      // Chara image
+      if (charaImg) {
+        ctx.save();
+        ctx.beginPath();
+        roundRect(ctx, x + 8, charaY + 6, 36, 36, 6);
+        ctx.clip();
+        ctx.drawImage(charaImg, x + 8, charaY + 6, 36, 36);
+        ctx.restore();
+        ctx.strokeStyle = '#30363d'; ctx.lineWidth = 1; ctx.beginPath();
+        roundRect(ctx, x + 8, charaY + 6, 36, 36, 6); ctx.stroke();
+      }
+      // Chara name (beside image)
+      ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 11px sans-serif';
+      const cName = chara.name.length > 8 ? chara.name.substring(0, 8) + '…' : chara.name;
+      ctx.fillText(cName, x + 50, charaY + 20);
+      // Rarity
+      const cRarCol = chara.rarity === 'UR' ? '#ff6b6b' : chara.rarity === 'SSR' ? '#ffd93d' : '#b388ff';
+      ctx.fillStyle = cRarCol; ctx.font = 'bold 9px sans-serif';
+      ctx.fillText(chara.rarity || '', x + 50, charaY + 34);
+      // Stats
       const cs = chara.stats || {};
       ctx.font = '10px sans-serif';
       const cStats = [['射撃', cs.shooting], ['格闘', cs.melee], ['覚醒', cs.awakening], ['守備', cs.defense], ['反応', cs.reaction]];
       cStats.forEach(([cl, cv], ci) => {
-        const cy = charaY + 36 + ci * 16;
+        const cy = charaY + 54 + ci * 15;
         ctx.fillStyle = '#8b949e'; ctx.fillText(cl, x + 8, cy);
         ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 10px sans-serif';
-        ctx.fillText(String(cv||'-'), x + 45, cy);
+        ctx.fillText(String(cv||'-'), x + 42, cy);
         ctx.font = '10px sans-serif';
       });
       // Skills (up to 2)
       (chara.skills||[]).slice(0, 2).forEach((sk, si) => {
-        const sy = charaY + 120 + si * 14;
+        const sy = charaY + 132 + si * 14;
         ctx.fillStyle = '#00d4ff'; ctx.font = '9px sans-serif';
         const skName = sk.name.length > 14 ? sk.name.substring(0, 14) + '…' : sk.name;
         ctx.fillText(`${skName}`, x + 8, sy);
