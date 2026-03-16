@@ -183,6 +183,11 @@ a:hover{text-decoration:underline}
 .tag-search-box input:focus{border-color:var(--accent)}
 .tag-search-box input::placeholder{color:var(--text2)}
 
+/* Clear filters button */
+.clear-filters-btn{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.78em;transition:all .2s;white-space:nowrap;display:none}
+.clear-filters-btn:hover{border-color:#ff4466;color:#ff4466;background:rgba(255,68,102,.05)}
+.clear-filters-btn.visible{display:inline-flex;align-items:center;gap:4px}
+
 /* Team Simulator */
 .team-sim-container{max-width:1400px;margin:0 auto;padding:16px 16px 40px}
 .team-sim-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:8px}
@@ -521,8 +526,9 @@ a:hover{text-decoration:underline}
 </div>
 
 <section class="controls" aria-label="検索・フィルタ">
-  <div class="search-box">
-    <input type="text" id="searchInput" placeholder="ユニット名で検索...（例: サザビー、ガンダム）">
+  <div class="search-box" style="display:flex;gap:8px;align-items:center">
+    <input type="text" id="searchInput" placeholder="ユニット名で検索...（例: サザビー、ガンダム）" style="flex:1">
+    <button class="clear-filters-btn" id="clearFiltersBtn" onclick="clearAllFilters()">✕ クリア</button>
   </div>
   <div class="filters" id="filtersContainer">
     <div class="filter-group" id="filterTypeGroup">
@@ -728,7 +734,11 @@ async function init() {
   setupTabs();
   setupViewToggle();
   buildFilters();
-  render();
+
+  // Restore state from URL params (if any)
+  if (!restoreFromURL()) {
+    render();
+  }
 
   // Check for team data in URL params
   if (loadTeamFromURL()) {
@@ -752,8 +762,10 @@ function setupTabs() {
       document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
       if (isTagLookup) {
         renderTagLookup();
+        syncURL();
       } else if (isTeam) {
         renderTeamSim();
+        syncURL();
       } else {
         resetFilters();
         buildFilters();
@@ -1148,6 +1160,8 @@ function render() {
       tableWrap.innerHTML = supporterTableHTML(filtered);
     }
   }
+  syncURL();
+  updateClearButton();
 }
 
 // === Type utilities ===
@@ -1851,6 +1865,7 @@ function renderTagLookup() {
 function selectTagLookup(tag) {
   activeTagLookup = activeTagLookup === tag ? '' : tag;
   renderTagLookup();
+  syncURL();
   // Scroll to results
   if (activeTagLookup) {
     const el = document.getElementById('tagResults');
@@ -2302,6 +2317,232 @@ function showToast(msg) {
   setTimeout(() => toast.classList.remove('show'), 2000);
 }
 
+// === URL STATE SYNC ===
+function syncURL() {
+  const params = new URLSearchParams();
+
+  // Tab
+  if (currentTab !== 'unit') params.set('tab', currentTab);
+
+  // Team tab has its own params — don't mix
+  if (currentTab === 'team') {
+    // Keep existing team params if any
+    const existing = new URLSearchParams(window.location.search);
+    ['team','sup','tn','lt','le'].forEach(k => { if (existing.get(k)) params.set(k, existing.get(k)); });
+    history.replaceState(null, '', params.toString() ? '?' + params.toString() : window.location.pathname);
+    return;
+  }
+
+  // Tag lookup
+  if (currentTab === 'taglookup' && activeTagLookup) {
+    params.set('ltag', activeTagLookup);
+    const tagQ = document.getElementById('tagSearchInput')?.value || '';
+    if (tagQ) params.set('tq', tagQ);
+    history.replaceState(null, '', '?' + params.toString());
+    return;
+  }
+
+  // Search
+  const q = document.getElementById('searchInput')?.value || '';
+  if (q) params.set('q', q);
+
+  // View mode
+  if (currentView !== 'card') params.set('view', currentView);
+
+  // Sort
+  if (currentSort !== 'atk') params.set('sort', currentSort);
+  if (currentDir !== -1) params.set('dir', currentDir > 0 ? 'asc' : 'desc');
+
+  // Rarity filter
+  const activeRarities = [...document.querySelectorAll('#filterRarityButtons .filter-btn.active')].map(b => b.dataset.value);
+  if (activeRarities.length) params.set('rarity', activeRarities.join(','));
+
+  if (currentTab === 'unit') {
+    const activeTypes = [...document.querySelectorAll('#filterTypeButtons .filter-btn.active')].map(b => b.dataset.value);
+    if (activeTypes.length) params.set('type', activeTypes.join(','));
+    const series = document.getElementById('filterSeries')?.value || '';
+    if (series) params.set('series', series);
+    const tag = document.getElementById('filterTag')?.value || '';
+    if (tag) params.set('tag', tag);
+    const terrain = document.getElementById('filterTerrain')?.value || '';
+    if (terrain) params.set('terrain', terrain);
+    if (activeDebuffKey) params.set('debuff', activeDebuffKey);
+    if (debuffMinRate > 0) params.set('drate', debuffMinRate);
+    if (activeSpecialKey) params.set('special', activeSpecialKey);
+  } else if (currentTab === 'chara') {
+    const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].map(b => b.dataset.value);
+    if (activeCharaTypes.length) params.set('ctype', activeCharaTypes.join(','));
+    const series = document.getElementById('filterSeries')?.value || '';
+    if (series) params.set('series', series);
+    const tag = document.getElementById('filterTag')?.value || '';
+    if (tag) params.set('tag', tag);
+  }
+
+  const url = params.toString() ? '?' + params.toString() : window.location.pathname;
+  history.replaceState(null, '', url);
+}
+
+function restoreFromURL() {
+  const params = new URLSearchParams(window.location.search);
+  if (!params.toString()) return false;
+
+  // Team tab handled separately
+  if (params.get('team')) return false; // let loadTeamFromURL handle it
+
+  const tab = params.get('tab') || 'unit';
+  const q = params.get('q') || '';
+  const view = params.get('view') || 'card';
+  const sort = params.get('sort') || 'atk';
+  const dir = params.get('dir') === 'asc' ? 1 : -1;
+  const rarities = (params.get('rarity') || '').split(',').filter(Boolean);
+  const types = (params.get('type') || '').split(',').filter(Boolean);
+  const series = params.get('series') || '';
+  const tag = params.get('tag') || '';
+  const terrain = params.get('terrain') || '';
+  const debuff = params.get('debuff') || '';
+  const drate = parseInt(params.get('drate')) || 0;
+  const special = params.get('special') || '';
+  const charaTypes = (params.get('ctype') || '').split(',').filter(Boolean);
+  const lookupTag = params.get('ltag') || '';
+  const tagQ = params.get('tq') || '';
+
+  // Set global state
+  currentTab = tab;
+  currentSort = sort;
+  currentDir = dir;
+  currentView = view;
+
+  // Activate correct tab button
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  const tabBtn = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+  if (tabBtn) tabBtn.classList.add('active');
+
+  // View mode
+  document.querySelectorAll('.view-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.view === currentView);
+  });
+
+  // Show/hide sections
+  const isTagLookup = tab === 'taglookup';
+  const isTeam = tab === 'team';
+  const isSpecial = isTagLookup || isTeam;
+  document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
+  document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
+  document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
+  document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
+  document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
+
+  if (isTagLookup) {
+    if (tagQ) document.getElementById('tagSearchInput').value = tagQ;
+    activeTagLookup = lookupTag;
+    renderTagLookup();
+    return true;
+  }
+
+  if (isTeam) {
+    renderTeamSim();
+    return true;
+  }
+
+  // Build filters first so DOM elements exist
+  buildFilters();
+  updateUI();
+
+  // Set search
+  document.getElementById('searchInput').value = q;
+
+  // Set rarity buttons
+  if (rarities.length) {
+    document.querySelectorAll('#filterRarityButtons .filter-btn').forEach(b => {
+      if (rarities.includes(b.dataset.value)) b.classList.add('active');
+    });
+  }
+
+  if (tab === 'unit') {
+    // Type buttons
+    if (types.length) {
+      document.querySelectorAll('#filterTypeButtons .filter-btn').forEach(b => {
+        if (types.includes(b.dataset.value)) b.classList.add('active');
+      });
+    }
+    if (series) document.getElementById('filterSeries').value = series;
+    if (tag) document.getElementById('filterTag').value = tag;
+    if (terrain) document.getElementById('filterTerrain').value = terrain;
+    if (debuff) {
+      activeDebuffKey = debuff;
+      document.querySelectorAll('#debuffCategoryButtons .filter-btn').forEach(b => {
+        if (b.dataset.key === debuff) b.classList.add('active');
+      });
+      // Trigger rate dropdown build
+      const cat = DEBUFF_CATEGORIES.find(d => d.key === debuff);
+      if (cat) {
+        document.getElementById('debuffRateWrap').style.display = '';
+        const rates = new Set();
+        allUnits.forEach(u => {
+          (u.normal_weapons||[]).concat(u.transformed_weapons||[]).forEach(w => {
+            const m = (w.effect||'').match(cat.pattern);
+            if (m) rates.add(parseInt(m[1]));
+          });
+        });
+        const sortedRates = [...rates].sort((a,b)=>a-b);
+        const rateSel = document.getElementById('debuffMinRate');
+        rateSel.innerHTML = '<option value="">すべて</option>' + sortedRates.map(r => `<option value="${r}">${r}%以上</option>`).join('');
+        if (drate) { rateSel.value = drate; debuffMinRate = drate; }
+      }
+    }
+    if (special) {
+      activeSpecialKey = special;
+      document.querySelectorAll('#specialEffectButtons .filter-btn').forEach(b => {
+        if (b.dataset.key === special) b.classList.add('active');
+      });
+    }
+  } else if (tab === 'chara') {
+    if (charaTypes.length) {
+      document.querySelectorAll('#charaTypeButtons .filter-btn').forEach(b => {
+        if (charaTypes.includes(b.dataset.value)) b.classList.add('active');
+      });
+    }
+    if (series) document.getElementById('filterSeries').value = series;
+    if (tag) document.getElementById('filterTag').value = tag;
+  }
+
+  // Set sort button active
+  document.querySelectorAll('.sort-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.sort === currentSort);
+  });
+
+  render();
+  return true;
+}
+
+function clearAllFilters() {
+  resetFilters();
+  buildFilters();
+  updateUI();
+  render();
+  syncURL();
+}
+
+function updateClearButton() {
+  const q = document.getElementById('searchInput')?.value || '';
+  const activeRarities = [...document.querySelectorAll('#filterRarityButtons .filter-btn.active')].length;
+  let hasFilter = q || activeRarities > 0 || activeDebuffKey || activeSpecialKey;
+  if (!hasFilter && currentTab === 'unit') {
+    const activeTypes = [...document.querySelectorAll('#filterTypeButtons .filter-btn.active')].length;
+    const series = document.getElementById('filterSeries')?.value || '';
+    const tag = document.getElementById('filterTag')?.value || '';
+    const terrain = document.getElementById('filterTerrain')?.value || '';
+    hasFilter = activeTypes > 0 || series || tag || terrain;
+  }
+  if (!hasFilter && currentTab === 'chara') {
+    const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].length;
+    const series = document.getElementById('filterSeries')?.value || '';
+    const tag = document.getElementById('filterTag')?.value || '';
+    hasFilter = activeCharaTypes > 0 || series || tag;
+  }
+  document.getElementById('clearFiltersBtn')?.classList.toggle('visible', !!hasFilter);
+}
+
 // Event listeners
 document.getElementById('searchInput').addEventListener('input', render);
 document.getElementById('filterSeries').addEventListener('change', render);
@@ -2312,7 +2553,7 @@ document.getElementById('filterTarget').addEventListener('change', render);
 document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
 document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal(); closeTeamPicker(); } });
 document.getElementById('teamPickerOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeTeamPicker(); });
-document.getElementById('tagSearchInput')?.addEventListener('input', () => renderTagLookup());
+document.getElementById('tagSearchInput')?.addEventListener('input', () => { renderTagLookup(); syncURL(); });
 
 bindSortButtons();
 init();
