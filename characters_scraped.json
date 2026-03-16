@@ -1,0 +1,5512 @@
+[
+  {
+    "name": "マーク・ギルダー(UR/支援)",
+    "stats": {
+      "combat_power": 3739,
+      "shooting": 564,
+      "defense": 624,
+      "melee": 568,
+      "reaction": 627,
+      "awakening": 729
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "desc": "効果を発動した次の移動時自身の移動力が1上昇"
+      },
+      {
+        "name": "ロックオンLv1(SP:5)",
+        "desc": "効果を発動した次の戦闘時自身の命中率が100%上昇"
+      },
+      {
+        "name": "ENチャージLv3(SP:10)",
+        "desc": "自身のENが50%回復"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "desc": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "覚醒値上昇Lv4",
+        "desc": "自身の覚醒値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "「支援攻撃/反撃」+1回【ナノスキン】かつ【GGENERATIONシリーズ】搭乗ユニットが上記の「シリーズ/タグ」を含む時毎ターン開始時、自部隊のHPが5%回復"
+      }
+    ]
+  },
+  {
+    "name": "刹那・F・セイエイ(UR/攻撃)",
+    "stats": {
+      "combat_power": 3574,
+      "shooting": 552,
+      "defense": 524,
+      "melee": 770,
+      "reaction": 565,
+      "awakening": 448
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [
+      {
+        "name": "MPアップLv4(SP:3)",
+        "desc": "自身のMPが6上昇"
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "desc": "効果を発動した次の移動時自身の移動力が1上昇"
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "desc": "敵に与えるダメージが20%上昇(1ターン)"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "desc": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "MP上昇Lv3",
+        "desc": "自身のMPが6上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "「チャンスステップ」+1回【ソレスタルビーイング】搭乗ユニットが上記の「タグ」を含む時自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "アムロ・レイ(UR/耐久)",
+    "stats": {
+      "combat_power": 3971,
+      "shooting": 571,
+      "defense": 670,
+      "melee": 532,
+      "reaction": 802,
+      "awakening": 658
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "desc": "自身の受けるダメージが20%軽減(1ターン)"
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "desc": "効果を発動した次の移動時自身の移動力が1上昇"
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "desc": "効果を発動した次の戦闘時自身の回避率が100%上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "desc": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "desc": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "自身が支援防御時自身の防御力が20%上昇【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "シャア・アズナブル(CCA)(UR/攻撃)",
+    "stats": {
+      "combat_power": 4038,
+      "shooting": 595,
+      "defense": 530,
+      "melee": 614,
+      "reaction": 643,
+      "awakening": 876
+    },
+    "series": "機動戦士ガンダム 逆襲のシャア",
+    "skills": [
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "desc": "自身の武装の消費ENが20%軽減(1ターン)"
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "desc": "敵に与えるダメージが20%上昇(1ターン)"
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "desc": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "desc": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "desc": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "「チャンスステップ」+1回【ネオ・ジオン】搭乗ユニットが上記の「タグ」を含む時自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "シロー・アマダ(UR/攻撃)",
+    "stats": {
+      "combat_power": 3584,
+      "shooting": 736,
+      "defense": 620,
+      "melee": 613,
+      "reaction": 559,
+      "awakening": 466
+    },
+    "series": "機動戦士ガンダム 第08MS小隊機動戦士ガンダム",
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "desc": "効果を発動した次の移動時自身の移動力が1上昇"
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "desc": "敵に与えるダメージが20%上昇(1ターン)"
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "desc": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "desc": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "MP上昇Lv3",
+        "desc": "自身のMPが6上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "イットウ・ツルギ(UR/攻撃)",
+    "stats": {
+      "combat_power": 3595,
+      "shooting": 496,
+      "defense": 603,
+      "melee": 818,
+      "reaction": 580,
+      "awakening": 506
+    },
+    "series": "機動戦士ガンダム カタナ機動戦士ガンダム",
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "desc": "敵に与えるダメージが20%上昇(1ターン)"
+      },
+      {
+        "name": "ロックオンLv1(SP:5)",
+        "desc": "効果を発動した次の戦闘時自身の命中率が100%上昇"
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "desc": "効果を発動した次の戦闘時自身の回避率が100%上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "desc": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "強化人間Lv3",
+        "desc": "自身のMPが6上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "アスナ・エルマリート(UR/支援)",
+    "stats": {
+      "combat_power": 3874,
+      "shooting": 678,
+      "defense": 561,
+      "melee": 578,
+      "reaction": 705,
+      "awakening": 717
+    },
+    "series": "機動戦士ガンダム エコール・デュ・シエル 天空の学校機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [
+      {
+        "name": "MPアップLv4(SP:3)",
+        "desc": "自身のMPが6上昇"
+      },
+      {
+        "name": "ロックオンLv1(SP:5)",
+        "desc": "効果を発動した次の戦闘時自身の命中率が100%上昇"
+      },
+      {
+        "name": "ENチャージLv3(SP:10)",
+        "desc": "自身のENが50%回復"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "desc": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "desc": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "「支援攻撃/反撃」+1回【エゥーゴ】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "アムロ・レイ(CCA)(UR/支援)",
+    "stats": {
+      "combat_power": 3870,
+      "shooting": 629,
+      "defense": 543,
+      "melee": 585,
+      "reaction": 688,
+      "awakening": 807
+    },
+    "series": "機動戦士ガンダム 逆襲のシャア",
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "desc": "敵に与えるダメージが20%上昇(1ターン)"
+      },
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "desc": "自身の武装の消費ENが20%軽減(1ターン)"
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "desc": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "desc": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "desc": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "「支援攻撃/反撃」+1回【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "バナージ・リンクス(UR/攻撃)",
+    "stats": {
+      "combat_power": 3608,
+      "shooting": 583,
+      "defense": 525,
+      "melee": 700,
+      "reaction": 559,
+      "awakening": 628
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "desc": "効果を発動した次の移動時自身の移動力が1上昇"
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "desc": "敵に与えるダメージが20%上昇(1ターン)"
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "desc": "効果を発動した次の戦闘時自身の回避率が100%上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "desc": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "ニュータイプ(UC)Lv2",
+        "desc": "【NT-D】搭乗ユニットが上記の「タグ」を含む時自身の命中率と回避率が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ヨナ・バシュタ(UR/耐久)",
+    "stats": {
+      "combat_power": 3755,
+      "shooting": 567,
+      "defense": 701,
+      "melee": 527,
+      "reaction": 665,
+      "awakening": 538
+    },
+    "series": "機動戦士ガンダムNT",
+    "skills": [
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "desc": "自身の武装の消費ENが20%軽減(1ターン)"
+      },
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "desc": "自身の受けるダメージが20%軽減(1ターン)"
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "desc": "自身のHPが50%回復"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "desc": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "ニュータイプ(UC)Lv2",
+        "desc": "【NT-D】搭乗ユニットが上記の「タグ」を含む時自身の命中率と回避率が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "「支援防御」+1回【地球連邦軍(宇宙世紀)】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "キンケドゥ・ナウ(UR/攻撃)",
+    "stats": {
+      "combat_power": 3875,
+      "shooting": 640,
+      "defense": 593,
+      "melee": 640,
+      "reaction": 703,
+      "awakening": 650
+    },
+    "series": "機動戦士クロスボーン・ガンダム",
+    "skills": [
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "desc": "敵に与えるダメージが20%上昇(1ターン)"
+      },
+      {
+        "name": "クリティカルブーストLv4(SP:5)",
+        "desc": "自身のクリティカル率が40%上昇(1ターン)"
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "desc": "効果を発動した次の戦闘時自身の回避率が100%上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "desc": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "ニュータイプLv4",
+        "desc": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "【宇宙海賊クロスボーン・バンガード】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "キラ・ヤマト(UR/支援)",
+    "stats": {
+      "combat_power": 3865,
+      "shooting": 695,
+      "defense": 556,
+      "melee": 612,
+      "reaction": 706,
+      "awakening": 663
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "desc": "効果を発動した次の移動時自身の移動力が1上昇"
+      },
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "desc": "自身の武装の消費ENが20%軽減(1ターン)"
+      },
+      {
+        "name": "スウェーLv1(SP:10)",
+        "desc": "効果を発動した次の戦闘時自身の回避率が100%上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "desc": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "コーディネイターLv4",
+        "desc": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "「支援攻撃/反撃」+1回【三隻同盟】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "三日月・オーガス(UR/耐久)",
+    "stats": {
+      "combat_power": 3689,
+      "shooting": 477,
+      "defense": 627,
+      "melee": 612,
+      "reaction": 747,
+      "awakening": 538
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [
+      {
+        "name": "フォースガードLv4(SP:5)",
+        "desc": "自身の受けるダメージが20%軽減(1ターン)"
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "desc": "敵に与えるダメージが20%上昇(1ターン)"
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "desc": "自身のHPが50%回復"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "desc": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "相性：阿頼耶識Lv4",
+        "desc": "【阿頼耶識システム】搭乗ユニットが上記の「タグ」を含む時自身のクリティカル率が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "「支援防御」+1回【鉄華団】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "スレッタ・マーキュリー(UR/支援)",
+    "stats": {
+      "combat_power": 3702,
+      "shooting": 774,
+      "defense": 559,
+      "melee": 558,
+      "reaction": 584,
+      "awakening": 655
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "desc": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇"
+      },
+      {
+        "name": "ENセーブLv4(SP:5)",
+        "desc": "自身の武装の消費ENが20%軽減(1ターン)"
+      },
+      {
+        "name": "アタックバーストLv4(SP:5)",
+        "desc": "敵に与えるダメージが20%上昇(1ターン)"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv4",
+        "desc": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが20%軽減"
+      },
+      {
+        "name": "射撃値上昇Lv4",
+        "desc": "自身の射撃値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "「支援攻撃/反撃」+1回【機動戦士ガンダム水星の魔女】搭乗ユニットが上記の「シリーズ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "キラ・ヤマト(UR/攻撃)",
+    "stats": {
+      "combat_power": 4136,
+      "shooting": 734,
+      "defense": 498,
+      "melee": 580,
+      "reaction": 707,
+      "awakening": 816
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [
+      {
+        "name": "アタックバーストLv5(SP:5)",
+        "desc": "敵に与えるダメージが25%上昇(1ターン)"
+      },
+      {
+        "name": "ロックオンLv2(SP:3)",
+        "desc": "効果を発動した次の戦闘時自身の命中率が100%上昇"
+      },
+      {
+        "name": "スウェーLv2(SP:7)",
+        "desc": "効果を発動した次の戦闘時自身の回避率が100%上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv4",
+        "desc": "自身の与ダメージが20%上昇"
+      },
+      {
+        "name": "スーパーコーディネイターLv5",
+        "desc": "自身の覚醒値と反応値が25%上昇"
+      },
+      {
+        "name": "覚醒値上昇Lv1",
+        "desc": "自身の覚醒値が5%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "「チャンスステップ」+1回【オーブ】搭乗ユニットが上記の「タグ」を含む時自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "アスラン・ザラ(UR/耐久)",
+    "stats": {
+      "combat_power": 4002,
+      "shooting": 541,
+      "defense": 736,
+      "melee": 576,
+      "reaction": 792,
+      "awakening": 592
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "desc": "効果を発動した次の移動時自身の移動力が1上昇"
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "desc": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇"
+      },
+      {
+        "name": "HPリペアLv3(SP:10)",
+        "desc": "自身のHPが50%回復"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv4",
+        "desc": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が20%上昇"
+      },
+      {
+        "name": "コーディネイターLv4",
+        "desc": "自身の覚醒値と反応値が20%上昇"
+      },
+      {
+        "name": "EXキャラアビリティ",
+        "desc": "自身が支援防御時自身の防御力が20%上昇【三隻同盟】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが15%上昇自身の被ダメージが15%軽減"
+      }
+    ]
+  },
+  {
+    "name": "カガリ・ユラ・アスハ(SSR/支援)",
+    "stats": {
+      "combat_power": 2892,
+      "shooting": 610,
+      "defense": 459,
+      "melee": 515,
+      "reaction": 470,
+      "awakening": 372
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [
+      {
+        "name": "アタックバーストLv3(SP:5)",
+        "desc": "敵に与えるダメージが15%上昇(1ターン)"
+      },
+      {
+        "name": "EnチャージLv2(SP:10)",
+        "desc": "自身のENが40%回復"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv3",
+        "desc": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが15%軽減"
+      },
+      {
+        "name": "射撃値上昇Lv3",
+        "desc": "自身の射撃値が15%上昇"
+      },
+      {
+        "name": "相性：オーブLv2",
+        "desc": "【オーブ】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが10%上昇自身の被ダメージが10%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ロウ・ギュール(SSR/耐久)",
+    "stats": {
+      "combat_power": 2794,
+      "shooting": 339,
+      "defense": 580,
+      "melee": 513,
+      "reaction": 451,
+      "awakening": 394
+    },
+    "series": "機動戦士ガンダムSEED ASTRAY機動戦士ガンダムSEED",
+    "skills": [
+      {
+        "name": "フォースガードLv3(SP:5)",
+        "desc": "自身の受けるダメージが15%軽減(1ターン)"
+      },
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "desc": "効果を発動した次の移動時自身の移動力が1上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援防御Lv3",
+        "desc": "「支援防御」+1回【耐久型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援防御時自身の防御力が15%上昇"
+      },
+      {
+        "name": "守備値上昇Lv3",
+        "desc": "自身の守備値が15%上昇"
+      },
+      {
+        "name": "相性：ジャンク屋組合Lv2",
+        "desc": "【ジャンク屋組合】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが10%上昇自身の被ダメージが10%軽減"
+      }
+    ]
+  },
+  {
+    "name": "ロンド・ギナ・サハク(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2831,
+      "shooting": 585,
+      "defense": 367,
+      "melee": 591,
+      "reaction": 430,
+      "awakening": 458
+    },
+    "series": "機動戦士ガンダムSEED ASTRAY機動戦士ガンダムSEED",
+    "skills": [
+      {
+        "name": "アタックバーストLv3(SP:5)",
+        "desc": "敵に与えるダメージが15%上昇(1ターン)"
+      },
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "desc": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "与ダメージ上昇Lv3",
+        "desc": "自身の与ダメージが15%上昇"
+      },
+      {
+        "name": "コーディネイターLv3",
+        "desc": "自身の覚醒値と反応値が15%上昇"
+      },
+      {
+        "name": "相性：オーブLv2",
+        "desc": "【オーブ】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが10%上昇自身の被ダメージが10%軽減"
+      }
+    ]
+  },
+  {
+    "name": "叢雲劾(SSR/支援)",
+    "stats": {
+      "combat_power": 2929,
+      "shooting": 571,
+      "defense": 442,
+      "melee": 511,
+      "reaction": 493,
+      "awakening": 443
+    },
+    "series": "機動戦士ガンダムSEED ASTRAY機動戦士ガンダムSEED",
+    "skills": [
+      {
+        "name": "ハイスピードLv1(SP:5)",
+        "desc": "効果を発動した次の移動時自身の移動力が1上昇"
+      },
+      {
+        "name": "ENチャージLv2(SP:10)",
+        "desc": "自身のENが40%回復"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv3",
+        "desc": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが15%軽減"
+      },
+      {
+        "name": "戦闘用コーディネイターLv3",
+        "desc": "自身の覚醒値と反応値が15%上昇"
+      },
+      {
+        "name": "相性：傭兵Lv2",
+        "desc": "【傭兵】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが10%上昇自身の被ダメージが10%軽減"
+      }
+    ]
+  },
+  {
+    "name": "マリーン(SR/支援)",
+    "stats": {
+      "combat_power": 2235,
+      "shooting": 463,
+      "defense": 315,
+      "melee": 401,
+      "reaction": 315,
+      "awakening": 425
+    },
+    "series": "機動戦士ガンダムSEED ASTRAY機動戦士ガンダムSEED",
+    "skills": [
+      {
+        "name": "レンジブーストLv1(SP:5)",
+        "desc": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇"
+      }
+    ],
+    "abilities": [
+      {
+        "name": "支援攻撃/支援反撃Lv2",
+        "desc": "「支援攻撃/反撃」+1回【支援型タイプ】搭乗ユニットが上記の「タイプ」を含む、自身が支援攻撃、支援反撃時自身の武装の消費ENが10%軽減"
+      },
+      {
+        "name": "射撃値上昇Lv2",
+        "desc": "自身の射撃値が10%上昇"
+      },
+      {
+        "name": "相性：ジャンク屋組合Lv1",
+        "desc": "【ジャンク屋組合】搭乗ユニットが上記の「タグ」を含む時敵への与ダメージが5%上昇自身の被ダメージが5%軽減"
+      }
+    ]
+  },
+  {
+    "name": "イライジャ・キール(SR/支援)",
+    "stats": {
+      "combat_power": 2402,
+      "shooting": 425,
+      "defense": 392,
+      "melee": 485,
+      "reaction": 392,
+      "awakening": 315
+    },
+    "series": "機動戦士ガンダムSEED ASTRAY機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "リーアム・ガーフィールド(SR/耐久)",
+    "stats": {
+      "combat_power": 2558,
+      "shooting": 361,
+      "defense": 450,
+      "melee": 353,
+      "reaction": 552,
+      "awakening": 339
+    },
+    "series": "機動戦士ガンダムSEED ASTRAY機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "蘊・奥(SR/攻撃)",
+    "stats": {
+      "combat_power": 2312,
+      "shooting": 287,
+      "defense": 319,
+      "melee": 589,
+      "reaction": 376,
+      "awakening": 392
+    },
+    "series": "機動戦士ガンダムSEED ASTRAY R",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アマテ・ユズリハ(マチュ)(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2913,
+      "shooting": 494,
+      "defense": 388,
+      "melee": 635,
+      "reaction": 427,
+      "awakening": 475
+    },
+    "series": "機動戦士Gundam GQuuuuuuX(ジークアクス)機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シュウジ・イトウ(SSR/支援)",
+    "stats": {
+      "combat_power": 2845,
+      "shooting": 478,
+      "defense": 425,
+      "melee": 477,
+      "reaction": 444,
+      "awakening": 586
+    },
+    "series": "機動戦士Gundam GQuuuuuuX(ジークアクス)機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ドズル・ザビ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2887,
+      "shooting": 456,
+      "defense": 475,
+      "melee": 727,
+      "reaction": 404,
+      "awakening": 384
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジョニー・ライデン(SSR/支援)",
+    "stats": {
+      "combat_power": 2893,
+      "shooting": 646,
+      "defense": 453,
+      "melee": 486,
+      "reaction": 470,
+      "awakening": 376
+    },
+    "series": "MSV機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジャン・リュック・デュバル(SSR/支援)",
+    "stats": {
+      "combat_power": 2893,
+      "shooting": 621,
+      "defense": 458,
+      "melee": 491,
+      "reaction": 470,
+      "awakening": 389
+    },
+    "series": "機動戦士ガンダム MS IGLOO機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "デメジエール・ソンネン(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2891,
+      "shooting": 732,
+      "defense": 440,
+      "melee": 457,
+      "reaction": 424,
+      "awakening": 405
+    },
+    "series": "機動戦士ガンダム MS IGLOO機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ポルク・クライ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2878,
+      "shooting": 477,
+      "defense": 443,
+      "melee": 698,
+      "reaction": 433,
+      "awakening": 388
+    },
+    "series": "機動戦士ガンダム CROSS DIMENSION 0079機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ヘンリー・ブーン(SSR/支援)",
+    "stats": {
+      "combat_power": 2888,
+      "shooting": 599,
+      "defense": 478,
+      "melee": 509,
+      "reaction": 451,
+      "awakening": 386
+    },
+    "series": "機動戦士ガンダム CROSS DIMENSION 0079機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ラカン・ダカラン(SSR/耐久)",
+    "stats": {
+      "combat_power": 3052,
+      "shooting": 441,
+      "defense": 781,
+      "melee": 451,
+      "reaction": 520,
+      "awakening": 343
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シン・マツナガ(SSR/耐久)",
+    "stats": {
+      "combat_power": 3050,
+      "shooting": 437,
+      "defense": 683,
+      "melee": 460,
+      "reaction": 526,
+      "awakening": 339
+    },
+    "series": "MSV機動戦士ガンダムG GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レッド・ウェイライン(SSR/耐久)",
+    "stats": {
+      "combat_power": 3044,
+      "shooting": 457,
+      "defense": 523,
+      "melee": 444,
+      "reaction": 680,
+      "awakening": 337
+    },
+    "series": "機動戦士ガンダム MSV-R ジョニー・ライデンの帰還",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "デフ・スタリオン(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2896,
+      "shooting": 635,
+      "defense": 482,
+      "melee": 479,
+      "reaction": 455,
+      "awakening": 375
+    },
+    "series": "機動戦士ガンダムF90",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "オデル・バーネット(SSR/耐久)",
+    "stats": {
+      "combat_power": 3157,
+      "shooting": 458,
+      "defense": 663,
+      "melee": 444,
+      "reaction": 541,
+      "awakening": 448
+    },
+    "series": "新機動戦記ガンダムW デュアルストーリー G-UNIT新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャア・アズナブル(SR/支援)",
+    "stats": {
+      "combat_power": 2437,
+      "shooting": 405,
+      "defense": 359,
+      "melee": 405,
+      "reaction": 411,
+      "awakening": 470
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ララァ・スン(SR/耐久)",
+    "stats": {
+      "combat_power": 2531,
+      "shooting": 365,
+      "defense": 415,
+      "melee": 359,
+      "reaction": 526,
+      "awakening": 393
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エニル・エル(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3155,
+      "shooting": 692,
+      "defense": 448,
+      "melee": 481,
+      "reaction": 448,
+      "awakening": 637
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "デニム(SR/耐久)",
+    "stats": {
+      "combat_power": 2397,
+      "shooting": 350,
+      "defense": 512,
+      "melee": 350,
+      "reaction": 427,
+      "awakening": 287
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ポゥ・エイジ(SSR/支援)",
+    "stats": {
+      "combat_power": 2881,
+      "shooting": 704,
+      "defense": 445,
+      "melee": 474,
+      "reaction": 434,
+      "awakening": 383
+    },
+    "series": "∀ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エドワード・ハレルソン(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2894,
+      "shooting": 445,
+      "defense": 442,
+      "melee": 841,
+      "reaction": 442,
+      "awakening": 378
+    },
+    "series": "機動戦士ガンダムSEED機動戦士ガンダムSEED MSV",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アカハナ(SR/耐久)",
+    "stats": {
+      "combat_power": 2390,
+      "shooting": 349,
+      "defense": 468,
+      "melee": 349,
+      "reaction": 465,
+      "awakening": 291
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ランバ・ラル(SR/攻撃)",
+    "stats": {
+      "combat_power": 2281,
+      "shooting": 367,
+      "defense": 366,
+      "melee": 561,
+      "reaction": 338,
+      "awakening": 297
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "グラーベ・ヴィオレント(SSR/支援)",
+    "stats": {
+      "combat_power": 3165,
+      "shooting": 530,
+      "defense": 557,
+      "melee": 530,
+      "reaction": 539,
+      "awakening": 459
+    },
+    "series": "機動戦士ガンダム00機動戦士ガンダム00P",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "マ・クベ(SR/耐久)",
+    "stats": {
+      "combat_power": 2387,
+      "shooting": 329,
+      "defense": 417,
+      "melee": 382,
+      "reaction": 511,
+      "awakening": 283
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャル・アクスティカ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2879,
+      "shooting": 491,
+      "defense": 431,
+      "melee": 677,
+      "reaction": 462,
+      "awakening": 371
+    },
+    "series": "機動戦士ガンダム00機動戦士ガンダム00P",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ビサイド・ペイン(SSR/耐久)",
+    "stats": {
+      "combat_power": 3253,
+      "shooting": 472,
+      "defense": 596,
+      "melee": 474,
+      "reaction": 645,
+      "awakening": 444
+    },
+    "series": "機動戦士ガンダム00I機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ガイア(SR/攻撃)",
+    "stats": {
+      "combat_power": 2267,
+      "shooting": 530,
+      "defense": 342,
+      "melee": 402,
+      "reaction": 345,
+      "awakening": 304
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エイミー・ジンバリスト(SSR/支援)",
+    "stats": {
+      "combat_power": 2891,
+      "shooting": 630,
+      "defense": 462,
+      "melee": 498,
+      "reaction": 462,
+      "awakening": 376
+    },
+    "series": "機動戦士ガンダム00v機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "マッシュ(SR/支援)",
+    "stats": {
+      "combat_power": 2282,
+      "shooting": 484,
+      "defense": 364,
+      "melee": 397,
+      "reaction": 365,
+      "awakening": 307
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "オルテガ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2271,
+      "shooting": 397,
+      "defense": 345,
+      "melee": 528,
+      "reaction": 347,
+      "awakening": 307
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アミダ・アルカ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2876,
+      "shooting": 702,
+      "defense": 421,
+      "melee": 509,
+      "reaction": 442,
+      "awakening": 369
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ガルマ・ザビ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2280,
+      "shooting": 562,
+      "defense": 361,
+      "melee": 351,
+      "reaction": 337,
+      "awakening": 319
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カルタ・イシュー(SSR/耐久)",
+    "stats": {
+      "combat_power": 3054,
+      "shooting": 458,
+      "defense": 680,
+      "melee": 430,
+      "reaction": 536,
+      "awakening": 340
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カミーユ・ビダン(SR/支援)",
+    "stats": {
+      "combat_power": 2451,
+      "shooting": 388,
+      "defense": 359,
+      "melee": 388,
+      "reaction": 410,
+      "awakening": 520
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "イレイ・ハル(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3266,
+      "shooting": 547,
+      "defense": 485,
+      "melee": 711,
+      "reaction": 502,
+      "awakening": 526
+    },
+    "series": "模型戦士ガンプラビルダーズ ビギニングG",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カミーユ・ビダン(SR/耐久)",
+    "stats": {
+      "combat_power": 2518,
+      "shooting": 349,
+      "defense": 454,
+      "melee": 349,
+      "reaction": 475,
+      "awakening": 425
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "クワトロ・バジーナ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2414,
+      "shooting": 406,
+      "defense": 337,
+      "melee": 487,
+      "reaction": 387,
+      "awakening": 434
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ノヤマ・リナ(SSR/支援)",
+    "stats": {
+      "combat_power": 3293,
+      "shooting": 621,
+      "defense": 522,
+      "melee": 595,
+      "reaction": 538,
+      "awakening": 486
+    },
+    "series": "模型戦士ガンプラビルダーズ ビギニングG機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャア・アズナブル(GQuuuuuuX)(SSR/耐久)",
+    "stats": {
+      "combat_power": 3059,
+      "shooting": 426,
+      "defense": 519,
+      "melee": 426,
+      "reaction": 637,
+      "awakening": 472
+    },
+    "series": "機動戦士ガンダム機動戦士Gundam GQuuuuuuX(ジークアクス)",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ファ・ユイリィ(SR/支援)",
+    "stats": {
+      "combat_power": 2329,
+      "shooting": 424,
+      "defense": 367,
+      "melee": 383,
+      "reaction": 408,
+      "awakening": 358
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エマ・シーン(SR/耐久)",
+    "stats": {
+      "combat_power": 2508,
+      "shooting": 363,
+      "defense": 445,
+      "melee": 363,
+      "reaction": 533,
+      "awakening": 314
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アムロ・レイ(初代)(SR/支援)",
+    "stats": {
+      "combat_power": 2439,
+      "shooting": 419,
+      "defense": 345,
+      "melee": 388,
+      "reaction": 419,
+      "awakening": 485
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カツ・コバヤシ(SR/支援)",
+    "stats": {
+      "combat_power": 2442,
+      "shooting": 463,
+      "defense": 371,
+      "melee": 378,
+      "reaction": 413,
+      "awakening": 423
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "セイラ・マス(SR/攻撃)",
+    "stats": {
+      "combat_power": 3470,
+      "shooting": 731,
+      "defense": 483,
+      "melee": 495,
+      "reaction": 593,
+      "awakening": 627
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "スレッガー・ロウ(SR/耐久)",
+    "stats": {
+      "combat_power": 2408,
+      "shooting": 385,
+      "defense": 536,
+      "melee": 315,
+      "reaction": 414,
+      "awakening": 281
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アムロ・レイ(カラバ)(SR/支援)",
+    "stats": {
+      "combat_power": 2437,
+      "shooting": 440,
+      "defense": 346,
+      "melee": 408,
+      "reaction": 419,
+      "awakening": 441
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジェリド・メサ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2266,
+      "shooting": 388,
+      "defense": 352,
+      "melee": 511,
+      "reaction": 343,
+      "awakening": 324
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "マウアー・ファラオ(SR/耐久)",
+    "stats": {
+      "combat_power": 2402,
+      "shooting": 352,
+      "defense": 517,
+      "melee": 352,
+      "reaction": 430,
+      "awakening": 277
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "パプテマス・シロッコ(SR/耐久)",
+    "stats": {
+      "combat_power": 2520,
+      "shooting": 349,
+      "defense": 414,
+      "melee": 373,
+      "reaction": 522,
+      "awakening": 392
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "サラ・ザビアロフ(SR/支援)",
+    "stats": {
+      "combat_power": 2440,
+      "shooting": 396,
+      "defense": 375,
+      "melee": 440,
+      "reaction": 416,
+      "awakening": 415
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レコア・ロンド(SR/耐久)",
+    "stats": {
+      "combat_power": 2391,
+      "shooting": 366,
+      "defense": 507,
+      "melee": 343,
+      "reaction": 428,
+      "awakening": 279
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ヤザン・ゲーブル(SR/攻撃)",
+    "stats": {
+      "combat_power": 2272,
+      "shooting": 407,
+      "defense": 350,
+      "melee": 537,
+      "reaction": 341,
+      "awakening": 290
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ラムサス・ハサ(SR/支援)",
+    "stats": {
+      "combat_power": 2279,
+      "shooting": 471,
+      "defense": 367,
+      "melee": 393,
+      "reaction": 367,
+      "awakening": 313
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ダンケル・クーパー(SR/攻撃)",
+    "stats": {
+      "combat_power": 2277,
+      "shooting": 412,
+      "defense": 367,
+      "melee": 451,
+      "reaction": 367,
+      "awakening": 313
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ロザミア・バダム(SR/耐久)",
+    "stats": {
+      "combat_power": 2415,
+      "shooting": 380,
+      "defense": 415,
+      "melee": 342,
+      "reaction": 472,
+      "awakening": 362
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ブラン・ブルターク(SR/攻撃)",
+    "stats": {
+      "combat_power": 2273,
+      "shooting": 521,
+      "defense": 367,
+      "melee": 391,
+      "reaction": 341,
+      "awakening": 298
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "フォウ・ムラサメ(SR/耐久)",
+    "stats": {
+      "combat_power": 3389,
+      "shooting": 530,
+      "defense": 597,
+      "melee": 461,
+      "reaction": 664,
+      "awakening": 505
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ハマーン・カーン(Z)(SR/支援)",
+    "stats": {
+      "combat_power": 2443,
+      "shooting": 444,
+      "defense": 355,
+      "melee": 384,
+      "reaction": 422,
+      "awakening": 448
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジュドー・アーシタ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2425,
+      "shooting": 386,
+      "defense": 360,
+      "melee": 463,
+      "reaction": 396,
+      "awakening": 441
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ルー・ルカ(SR/支援)",
+    "stats": {
+      "combat_power": 2441,
+      "shooting": 443,
+      "defense": 374,
+      "melee": 400,
+      "reaction": 418,
+      "awakening": 409
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ハマーン・カーン(ZZ)(SR/支援)",
+    "stats": {
+      "combat_power": 2448,
+      "shooting": 423,
+      "defense": 355,
+      "melee": 365,
+      "reaction": 422,
+      "awakening": 493
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "マシュマー・セロ(SR/耐久)",
+    "stats": {
+      "combat_power": 2384,
+      "shooting": 356,
+      "defense": 498,
+      "melee": 356,
+      "reaction": 426,
+      "awakening": 285
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "イリア・パゾム(SR/攻撃)",
+    "stats": {
+      "combat_power": 2426,
+      "shooting": 415,
+      "defense": 358,
+      "melee": 497,
+      "reaction": 403,
+      "awakening": 370
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "キャラ・スーン(SR/攻撃)",
+    "stats": {
+      "combat_power": 2267,
+      "shooting": 523,
+      "defense": 339,
+      "melee": 394,
+      "reaction": 351,
+      "awakening": 314
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "グレミー・トト(SR/攻撃)",
+    "stats": {
+      "combat_power": 2420,
+      "shooting": 481,
+      "defense": 361,
+      "melee": 400,
+      "reaction": 397,
+      "awakening": 401
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エルピー・プル(SR/攻撃)",
+    "stats": {
+      "combat_power": 2427,
+      "shooting": 404,
+      "defense": 332,
+      "melee": 391,
+      "reaction": 404,
+      "awakening": 525
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "プルツー(SR/耐久)",
+    "stats": {
+      "combat_power": 2532,
+      "shooting": 364,
+      "defense": 406,
+      "melee": 353,
+      "reaction": 540,
+      "awakening": 394
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ヤザン・ゲーブル(SR/耐久)",
+    "stats": {
+      "combat_power": 2421,
+      "shooting": 401,
+      "defense": 510,
+      "melee": 365,
+      "reaction": 415,
+      "awakening": 266
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ドモン・カッシュ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2284,
+      "shooting": 344,
+      "defense": 358,
+      "melee": 527,
+      "reaction": 362,
+      "awakening": 288
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ドモン・カッシュ(SR/耐久)",
+    "stats": {
+      "combat_power": 2390,
+      "shooting": 310,
+      "defense": 437,
+      "melee": 395,
+      "reaction": 482,
+      "awakening": 259
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "チボデー・クロケット(SR/攻撃)",
+    "stats": {
+      "combat_power": 2270,
+      "shooting": 491,
+      "defense": 347,
+      "melee": 388,
+      "reaction": 355,
+      "awakening": 293
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "サイサイシー(SR/支援)",
+    "stats": {
+      "combat_power": 2291,
+      "shooting": 368,
+      "defense": 358,
+      "melee": 469,
+      "reaction": 386,
+      "awakening": 293
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジョルジュ・ド・サンド(SR/支援)",
+    "stats": {
+      "combat_power": 2287,
+      "shooting": 474,
+      "defense": 363,
+      "melee": 372,
+      "reaction": 372,
+      "awakening": 293
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アルゴ・ガルスキー(SR/耐久)",
+    "stats": {
+      "combat_power": 2380,
+      "shooting": 317,
+      "defense": 487,
+      "melee": 399,
+      "reaction": 415,
+      "awakening": 264
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シュバルツ・ブルーダー(SR/支援)",
+    "stats": {
+      "combat_power": 2303,
+      "shooting": 342,
+      "defense": 366,
+      "melee": 496,
+      "reaction": 392,
+      "awakening": 282
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レインミカムラ(SR/支援)",
+    "stats": {
+      "combat_power": 2327,
+      "shooting": 485,
+      "defense": 373,
+      "melee": 409,
+      "reaction": 355,
+      "awakening": 295
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "東方不敗マスター・アジア(SR/耐久)",
+    "stats": {
+      "combat_power": 2387,
+      "shooting": 304,
+      "defense": 404,
+      "melee": 410,
+      "reaction": 508,
+      "awakening": 258
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "東方不敗マスター・アジア(SR/攻撃)",
+    "stats": {
+      "combat_power": 2297,
+      "shooting": 362,
+      "defense": 355,
+      "melee": 484,
+      "reaction": 397,
+      "awakening": 277
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ヒイロ・ユイ(SR/支援)",
+    "stats": {
+      "combat_power": 2287,
+      "shooting": 449,
+      "defense": 362,
+      "melee": 396,
+      "reaction": 375,
+      "awakening": 291
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "デュオ・マックスウェル(SR/攻撃)",
+    "stats": {
+      "combat_power": 2286,
+      "shooting": 365,
+      "defense": 337,
+      "melee": 581,
+      "reaction": 362,
+      "awakening": 290
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "トロワ・バートン(SR/耐久)",
+    "stats": {
+      "combat_power": 2404,
+      "shooting": 388,
+      "defense": 531,
+      "melee": 332,
+      "reaction": 417,
+      "awakening": 261
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カトル・ラバーバ・ウィナー(SR/支援)",
+    "stats": {
+      "combat_power": 2284,
+      "shooting": 424,
+      "defense": 382,
+      "melee": 456,
+      "reaction": 360,
+      "awakening": 290
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "張五飛(SR/攻撃)",
+    "stats": {
+      "combat_power": 2288,
+      "shooting": 361,
+      "defense": 354,
+      "melee": 581,
+      "reaction": 349,
+      "awakening": 290
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ゼクス・マーキス(SR/耐久)",
+    "stats": {
+      "combat_power": 2373,
+      "shooting": 363,
+      "defense": 399,
+      "melee": 363,
+      "reaction": 495,
+      "awakening": 259
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ミリアルド・ピースクラフト(SR/攻撃)",
+    "stats": {
+      "combat_power": 2274,
+      "shooting": 395,
+      "defense": 321,
+      "melee": 554,
+      "reaction": 370,
+      "awakening": 288
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ルクレツィア・ノイン(SR/攻撃)",
+    "stats": {
+      "combat_power": 2280,
+      "shooting": 564,
+      "defense": 345,
+      "melee": 369,
+      "reaction": 354,
+      "awakening": 298
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "トレーズ・クシュリナーダ(SR/耐久)",
+    "stats": {
+      "combat_power": 2393,
+      "shooting": 350,
+      "defense": 426,
+      "melee": 377,
+      "reaction": 511,
+      "awakening": 259
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ガロード・ラン(SR/攻撃)",
+    "stats": {
+      "combat_power": 2266,
+      "shooting": 493,
+      "defense": 358,
+      "melee": 423,
+      "reaction": 346,
+      "awakening": 293
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ウィッツ・スー(SR/支援)",
+    "stats": {
+      "combat_power": 2286,
+      "shooting": 522,
+      "defense": 367,
+      "melee": 370,
+      "reaction": 357,
+      "awakening": 307
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ロアビィ・ロイ(SR/支援)",
+    "stats": {
+      "combat_power": 2287,
+      "shooting": 529,
+      "defense": 354,
+      "melee": 363,
+      "reaction": 371,
+      "awakening": 307
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジャミル・ニート(SR/耐久)",
+    "stats": {
+      "combat_power": 2535,
+      "shooting": 398,
+      "defense": 431,
+      "melee": 343,
+      "reaction": 536,
+      "awakening": 342
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カリス・ノーティラス(SR/支援)",
+    "stats": {
+      "combat_power": 2447,
+      "shooting": 408,
+      "defense": 358,
+      "melee": 378,
+      "reaction": 408,
+      "awakening": 511
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャギア・フロスト(SR/攻撃)",
+    "stats": {
+      "combat_power": 2427,
+      "shooting": 578,
+      "defense": 354,
+      "melee": 411,
+      "reaction": 364,
+      "awakening": 359
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "オルバ・フロスト(SR/耐久)",
+    "stats": {
+      "combat_power": 2504,
+      "shooting": 370,
+      "defense": 484,
+      "melee": 434,
+      "reaction": 433,
+      "awakening": 323
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "キラ・ヤマト(SR/支援)",
+    "stats": {
+      "combat_power": 2439,
+      "shooting": 415,
+      "defense": 364,
+      "melee": 403,
+      "reaction": 425,
+      "awakening": 435
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "キラ・ヤマト(SR/攻撃)",
+    "stats": {
+      "combat_power": 2416,
+      "shooting": 415,
+      "defense": 345,
+      "melee": 483,
+      "reaction": 403,
+      "awakening": 394
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ムウ・ラ・フラガ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2408,
+      "shooting": 525,
+      "defense": 341,
+      "melee": 373,
+      "reaction": 375,
+      "awakening": 435
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "オルガ・サブナック(SR/支援)",
+    "stats": {
+      "combat_power": 2468,
+      "shooting": 478,
+      "defense": 378,
+      "melee": 380,
+      "reaction": 391,
+      "awakening": 341
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "クロト・ブエル(SR/攻撃)",
+    "stats": {
+      "combat_power": 2445,
+      "shooting": 378,
+      "defense": 349,
+      "melee": 524,
+      "reaction": 379,
+      "awakening": 341
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャニ・アンドラス(SR/耐久)",
+    "stats": {
+      "combat_power": 2578,
+      "shooting": 379,
+      "defense": 459,
+      "melee": 355,
+      "reaction": 472,
+      "awakening": 307
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アスラン・ザラ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2437,
+      "shooting": 415,
+      "defense": 383,
+      "melee": 442,
+      "reaction": 411,
+      "awakening": 388
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ラウ・ル・クルーゼ(SR/耐久)",
+    "stats": {
+      "combat_power": 2498,
+      "shooting": 395,
+      "defense": 411,
+      "melee": 341,
+      "reaction": 508,
+      "awakening": 382
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "イザーク・ジュール(SR/耐久)",
+    "stats": {
+      "combat_power": 2529,
+      "shooting": 354,
+      "defense": 493,
+      "melee": 382,
+      "reaction": 474,
+      "awakening": 342
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ディアッカ・エルスマン(SR/支援)",
+    "stats": {
+      "combat_power": 2444,
+      "shooting": 503,
+      "defense": 398,
+      "melee": 359,
+      "reaction": 398,
+      "awakening": 387
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ニコル・アマルフィ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2450,
+      "shooting": 408,
+      "defense": 362,
+      "melee": 439,
+      "reaction": 447,
+      "awakening": 388
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ミゲル・アイマン(SR/支援)",
+    "stats": {
+      "combat_power": 2444,
+      "shooting": 447,
+      "defense": 378,
+      "melee": 407,
+      "reaction": 430,
+      "awakening": 377
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アンドリュー・バルトフェルド(SR/攻撃)",
+    "stats": {
+      "combat_power": 2443,
+      "shooting": 390,
+      "defense": 370,
+      "melee": 470,
+      "reaction": 426,
+      "awakening": 387
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アサギ・コードウェル(SR/耐久)",
+    "stats": {
+      "combat_power": 2393,
+      "shooting": 375,
+      "defense": 504,
+      "melee": 338,
+      "reaction": 432,
+      "awakening": 274
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジュリ・ウー・ニェン(SR/攻撃)",
+    "stats": {
+      "combat_power": 2277,
+      "shooting": 375,
+      "defense": 349,
+      "melee": 550,
+      "reaction": 349,
+      "awakening": 304
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "マユラ・ラバッツ(SR/支援)",
+    "stats": {
+      "combat_power": 2285,
+      "shooting": 474,
+      "defense": 367,
+      "melee": 392,
+      "reaction": 373,
+      "awakening": 308
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シホ・ハーネンフース(SR/攻撃)",
+    "stats": {
+      "combat_power": 2443,
+      "shooting": 444,
+      "defense": 379,
+      "melee": 399,
+      "reaction": 427,
+      "awakening": 389
+    },
+    "series": "機動戦士ガンダムSEED機動戦士ガンダムSEED MSV",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "メイア・シヴァ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2425,
+      "shooting": 448,
+      "defense": 391,
+      "melee": 479,
+      "reaction": 408,
+      "awakening": 299
+    },
+    "series": "機動戦士ガンダムSEED機動戦士ガンダムSEED Recollection",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アラン・ローランド(SR/攻撃)",
+    "stats": {
+      "combat_power": 2436,
+      "shooting": 373,
+      "defense": 358,
+      "melee": 520,
+      "reaction": 423,
+      "awakening": 370
+    },
+    "series": "機動戦士ガンダムSEED機動戦士ガンダムSEED Recollection",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "刹那・F・セイエイ(SR/耐久)",
+    "stats": {
+      "combat_power": 2407,
+      "shooting": 327,
+      "defense": 462,
+      "melee": 381,
+      "reaction": 497,
+      "awakening": 260
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ロックオン・ストラトス(SR/支援)",
+    "stats": {
+      "combat_power": 2297,
+      "shooting": 541,
+      "defense": 386,
+      "melee": 356,
+      "reaction": 354,
+      "awakening": 289
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アレルヤ・ハプティズム(SR/支援)",
+    "stats": {
+      "combat_power": 2445,
+      "shooting": 421,
+      "defense": 355,
+      "melee": 435,
+      "reaction": 440,
+      "awakening": 396
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ハレルヤ・ハプティズム(SR/攻撃)",
+    "stats": {
+      "combat_power": 2416,
+      "shooting": 496,
+      "defense": 309,
+      "melee": 413,
+      "reaction": 422,
+      "awakening": 409
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ティエリア・アーデ(SR/耐久)",
+    "stats": {
+      "combat_power": 2497,
+      "shooting": 397,
+      "defense": 511,
+      "melee": 340,
+      "reaction": 452,
+      "awakening": 315
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ヨハン・トリニティ(SR/耐久)",
+    "stats": {
+      "combat_power": 2397,
+      "shooting": 394,
+      "defense": 435,
+      "melee": 323,
+      "reaction": 508,
+      "awakening": 265
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ミハエル・トリニティ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2396,
+      "shooting": 388,
+      "defense": 377,
+      "melee": 519,
+      "reaction": 386,
+      "awakening": 344
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ネーナ・トリニティ(SR/支援)",
+    "stats": {
+      "combat_power": 2290,
+      "shooting": 473,
+      "defense": 363,
+      "melee": 391,
+      "reaction": 390,
+      "awakening": 296
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アレハンドロ・コーナー(SR/攻撃)",
+    "stats": {
+      "combat_power": 2277,
+      "shooting": 545,
+      "defense": 356,
+      "melee": 389,
+      "reaction": 344,
+      "awakening": 292
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "グラハム・エーカー(SR/支援)",
+    "stats": {
+      "combat_power": 2299,
+      "shooting": 351,
+      "defense": 353,
+      "melee": 534,
+      "reaction": 394,
+      "awakening": 292
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "パドリック・コーラサワー(SR/支援)",
+    "stats": {
+      "combat_power": 2288,
+      "shooting": 477,
+      "defense": 365,
+      "melee": 395,
+      "reaction": 379,
+      "awakening": 299
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "セルゲイ・スミルノフ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2272,
+      "shooting": 397,
+      "defense": 366,
+      "melee": 523,
+      "reaction": 340,
+      "awakening": 292
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ソーマ・ピーリス(SR/支援)",
+    "stats": {
+      "combat_power": 2444,
+      "shooting": 434,
+      "defense": 363,
+      "melee": 422,
+      "reaction": 438,
+      "awakening": 385
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アリー・アル・サーシェス(SR/攻撃)",
+    "stats": {
+      "combat_power": 2269,
+      "shooting": 407,
+      "defense": 341,
+      "melee": 537,
+      "reaction": 345,
+      "awakening": 295
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "三日月・オーガス(SR/攻撃)",
+    "stats": {
+      "combat_power": 2336,
+      "shooting": 348,
+      "defense": 336,
+      "melee": 538,
+      "reaction": 369,
+      "awakening": 392
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ビスケット・グリフォン(SR/支援)",
+    "stats": {
+      "combat_power": 2352,
+      "shooting": 412,
+      "defense": 398,
+      "melee": 412,
+      "reaction": 378,
+      "awakening": 364
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ユージン・セブンスターク(SR/攻撃)",
+    "stats": {
+      "combat_power": 2348,
+      "shooting": 423,
+      "defense": 373,
+      "melee": 423,
+      "reaction": 388,
+      "awakening": 360
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ノルバ・シノ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2350,
+      "shooting": 395,
+      "defense": 385,
+      "melee": 457,
+      "reaction": 376,
+      "awakening": 356
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "デルマ(SR/攻撃)",
+    "stats": {
+      "combat_power": 2327,
+      "shooting": 416,
+      "defense": 367,
+      "melee": 473,
+      "reaction": 358,
+      "awakening": 350
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アストン(SR/耐久)",
+    "stats": {
+      "combat_power": 2438,
+      "shooting": 354,
+      "defense": 437,
+      "melee": 373,
+      "reaction": 494,
+      "awakening": 314
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ラフタ・フランクランド(SR/支援)",
+    "stats": {
+      "combat_power": 2280,
+      "shooting": 488,
+      "defense": 355,
+      "melee": 403,
+      "reaction": 369,
+      "awakening": 302
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アジー・グルミン(SR/支援)",
+    "stats": {
+      "combat_power": 2277,
+      "shooting": 420,
+      "defense": 367,
+      "melee": 456,
+      "reaction": 363,
+      "awakening": 305
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "マクギリス・ファリド(SR/攻撃)",
+    "stats": {
+      "combat_power": 2267,
+      "shooting": 410,
+      "defense": 340,
+      "melee": 501,
+      "reaction": 363,
+      "awakening": 300
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ガエリオ・ボードウィン(SR/耐久)",
+    "stats": {
+      "combat_power": 2403,
+      "shooting": 343,
+      "defense": 524,
+      "melee": 369,
+      "reaction": 422,
+      "awakening": 270
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アイン・ダルトン(SR/攻撃)",
+    "stats": {
+      "combat_power": 2273,
+      "shooting": 521,
+      "defense": 342,
+      "melee": 395,
+      "reaction": 360,
+      "awakening": 303
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "クランク・ゼント(SR/耐久)",
+    "stats": {
+      "combat_power": 2398,
+      "shooting": 356,
+      "defense": 426,
+      "melee": 356,
+      "reaction": 517,
+      "awakening": 271
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "クダル・カデル(SR/耐久)",
+    "stats": {
+      "combat_power": 2393,
+      "shooting": 331,
+      "defense": 435,
+      "melee": 383,
+      "reaction": 502,
+      "awakening": 272
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "モンターク(SR/攻撃)",
+    "stats": {
+      "combat_power": 2280,
+      "shooting": 374,
+      "defense": 337,
+      "melee": 569,
+      "reaction": 358,
+      "awakening": 293
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "スレッタ・マーキュリー(SR/攻撃)",
+    "stats": {
+      "combat_power": 2377,
+      "shooting": 424,
+      "defense": 348,
+      "melee": 367,
+      "reaction": 365,
+      "awakening": 515
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "スレッタ・マーキュリー(SR/支援)",
+    "stats": {
+      "combat_power": 2398,
+      "shooting": 513,
+      "defense": 367,
+      "melee": 367,
+      "reaction": 384,
+      "awakening": 390
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "グエル・ジェターク(SR/耐久)",
+    "stats": {
+      "combat_power": 3452,
+      "shooting": 611,
+      "defense": 728,
+      "melee": 634,
+      "reaction": 520,
+      "awakening": 334
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アセム・アスノ(SR/攻撃)",
+    "stats": {
+      "combat_power": 3340,
+      "shooting": 763,
+      "defense": 411,
+      "melee": 719,
+      "reaction": 610,
+      "awakening": 324
+    },
+    "series": "機動戦士ガンダムAGE",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャディク・ゼネリ(SR/支援)",
+    "stats": {
+      "combat_power": 2393,
+      "shooting": 392,
+      "defense": 236,
+      "melee": 493,
+      "reaction": 525,
+      "awakening": 365
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ソフィ・ブロネ(SR/耐久)",
+    "stats": {
+      "combat_power": 3538,
+      "shooting": 568,
+      "defense": 669,
+      "melee": 494,
+      "reaction": 696,
+      "awakening": 427
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ノレア・デュノク(SR/支援)",
+    "stats": {
+      "combat_power": 2403,
+      "shooting": 514,
+      "defense": 383,
+      "melee": 395,
+      "reaction": 390,
+      "awakening": 333
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カイ・シデン(R/耐久)",
+    "stats": {
+      "combat_power": 1781,
+      "shooting": 294,
+      "defense": 344,
+      "melee": 254,
+      "reaction": 332,
+      "awakening": 219
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ハヤト・コバヤシ(R/支援)",
+    "stats": {
+      "combat_power": 1724,
+      "shooting": 282,
+      "defense": 287,
+      "melee": 358,
+      "reaction": 274,
+      "awakening": 242
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "リュウ・ホセイ(R/攻撃)",
+    "stats": {
+      "combat_power": 1710,
+      "shooting": 302,
+      "defense": 288,
+      "melee": 363,
+      "reaction": 251,
+      "awakening": 236
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アポリー・ベイ(R/攻撃)",
+    "stats": {
+      "combat_power": 1713,
+      "shooting": 364,
+      "defense": 270,
+      "melee": 302,
+      "reaction": 270,
+      "awakening": 236
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ロベルト(R/支援)",
+    "stats": {
+      "combat_power": 1728,
+      "shooting": 302,
+      "defense": 285,
+      "melee": 334,
+      "reaction": 285,
+      "awakening": 236
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ビーチャ・オーレグ(R/攻撃)",
+    "stats": {
+      "combat_power": 1837,
+      "shooting": 322,
+      "defense": 287,
+      "melee": 322,
+      "reaction": 305,
+      "awakening": 303
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エル・ビアンノ(R/支援)",
+    "stats": {
+      "combat_power": 1841,
+      "shooting": 328,
+      "defense": 289,
+      "melee": 311,
+      "reaction": 309,
+      "awakening": 303
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "イーノ・アッバーブ(R/耐久)",
+    "stats": {
+      "combat_power": 1906,
+      "shooting": 284,
+      "defense": 370,
+      "melee": 265,
+      "reaction": 351,
+      "awakening": 274
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "モンド・アガケ(R/攻撃)",
+    "stats": {
+      "combat_power": 1824,
+      "shooting": 297,
+      "defense": 278,
+      "melee": 378,
+      "reaction": 285,
+      "awakening": 303
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ミケロ・チャリオット(R/攻撃)",
+    "stats": {
+      "combat_power": 1759,
+      "shooting": 287,
+      "defense": 248,
+      "melee": 356,
+      "reaction": 321,
+      "awakening": 228
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジェントル・チャップマン(R/支援)",
+    "stats": {
+      "combat_power": 1765,
+      "shooting": 395,
+      "defense": 273,
+      "melee": 222,
+      "reaction": 297,
+      "awakening": 258
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ラシード・クラマ(R/耐久)",
+    "stats": {
+      "combat_power": 1742,
+      "shooting": 238,
+      "defense": 337,
+      "melee": 245,
+      "reaction": 284,
+      "awakening": 327
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ムウ・ラ・フラガ(R/耐久)",
+    "stats": {
+      "combat_power": 1894,
+      "shooting": 303,
+      "defense": 320,
+      "melee": 258,
+      "reaction": 385,
+      "awakening": 275
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "トール・ケーニヒ(R/支援)",
+    "stats": {
+      "combat_power": 1723,
+      "shooting": 322,
+      "defense": 277,
+      "melee": 305,
+      "reaction": 293,
+      "awakening": 241
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ラッセ・アイオン(R/攻撃)",
+    "stats": {
+      "combat_power": 1714,
+      "shooting": 374,
+      "defense": 279,
+      "melee": 293,
+      "reaction": 265,
+      "awakening": 231
+    },
+    "series": "機動戦士ガンダム00",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ケナンジ・アベリー(R/耐久)",
+    "stats": {
+      "combat_power": 1820,
+      "shooting": 257,
+      "defense": 398,
+      "melee": 259,
+      "reaction": 333,
+      "awakening": 207
+    },
+    "series": "機動戦士ガンダム 水星の魔女機動戦士ガンダム 水星の魔女 PROLOGUE",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "チュアチュリー・パンランチ(R/攻撃)",
+    "stats": {
+      "combat_power": 1730,
+      "shooting": 237,
+      "defense": 272,
+      "melee": 484,
+      "reaction": 267,
+      "awakening": 200
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ラナロウ・シェイド(R/攻撃)",
+    "stats": {
+      "combat_power": 1722,
+      "shooting": 321,
+      "defense": 287,
+      "melee": 321,
+      "reaction": 273,
+      "awakening": 239
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エリス・クロード(R/支援)",
+    "stats": {
+      "combat_power": 1803,
+      "shooting": 318,
+      "defense": 275,
+      "melee": 318,
+      "reaction": 301,
+      "awakening": 302
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "クレア・ヒースロー(R/耐久)",
+    "stats": {
+      "combat_power": 1859,
+      "shooting": 268,
+      "defense": 357,
+      "melee": 268,
+      "reaction": 328,
+      "awakening": 295
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジュナス・リアム(R/攻撃)",
+    "stats": {
+      "combat_power": 1720,
+      "shooting": 268,
+      "defense": 272,
+      "melee": 356,
+      "reaction": 287,
+      "awakening": 257
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エルンスト・イェーガー(R/攻撃)",
+    "stats": {
+      "combat_power": 1705,
+      "shooting": 372,
+      "defense": 261,
+      "melee": 310,
+      "reaction": 261,
+      "awakening": 240
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ケイ・ニムロッド(R/耐久)",
+    "stats": {
+      "combat_power": 1808,
+      "shooting": 254,
+      "defense": 353,
+      "melee": 254,
+      "reaction": 361,
+      "awakening": 229
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シェルド・フォーリー(R/支援)",
+    "stats": {
+      "combat_power": 1722,
+      "shooting": 316,
+      "defense": 283,
+      "melee": 316,
+      "reaction": 283,
+      "awakening": 241
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ビリー・ブレイズ(R/支援)",
+    "stats": {
+      "combat_power": 1722,
+      "shooting": 316,
+      "defense": 295,
+      "melee": 319,
+      "reaction": 269,
+      "awakening": 241
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ニキ・テイラー(R/攻撃)",
+    "stats": {
+      "combat_power": 1728,
+      "shooting": 348,
+      "defense": 286,
+      "melee": 263,
+      "reaction": 293,
+      "awakening": 248
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ラ・ミラ・ルナ(R/支援)",
+    "stats": {
+      "combat_power": 1716,
+      "shooting": 342,
+      "defense": 275,
+      "melee": 290,
+      "reaction": 275,
+      "awakening": 258
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "フローレンス・キリシマ(R/耐久)",
+    "stats": {
+      "combat_power": 1801,
+      "shooting": 256,
+      "defense": 304,
+      "melee": 256,
+      "reaction": 400,
+      "awakening": 233
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エルフリーデ・シュルツ(R/攻撃)",
+    "stats": {
+      "combat_power": 1726,
+      "shooting": 246,
+      "defense": 306,
+      "melee": 373,
+      "reaction": 268,
+      "awakening": 246
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "イワン・イワノフ(R/攻撃)",
+    "stats": {
+      "combat_power": 1810,
+      "shooting": 295,
+      "defense": 267,
+      "melee": 295,
+      "reaction": 267,
+      "awakening": 419
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エターナ・フレイル(R/支援)",
+    "stats": {
+      "combat_power": 1804,
+      "shooting": 387,
+      "defense": 283,
+      "melee": 256,
+      "reaction": 306,
+      "awakening": 277
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エイブラム・M・ラムザット(R/支援)",
+    "stats": {
+      "combat_power": 1719,
+      "shooting": 323,
+      "defense": 278,
+      "melee": 323,
+      "reaction": 278,
+      "awakening": 238
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ネリィ・オルソン(R/攻撃)",
+    "stats": {
+      "combat_power": 1722,
+      "shooting": 362,
+      "defense": 289,
+      "melee": 268,
+      "reaction": 275,
+      "awakening": 245
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ブラッド(R/攻撃)",
+    "stats": {
+      "combat_power": 1717,
+      "shooting": 313,
+      "defense": 271,
+      "melee": 334,
+      "reaction": 281,
+      "awakening": 242
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ブランド・フリーズ(R/耐久)",
+    "stats": {
+      "combat_power": 1791,
+      "shooting": 294,
+      "defense": 316,
+      "melee": 246,
+      "reaction": 371,
+      "awakening": 220
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カチュア・リィス(R/耐久)",
+    "stats": {
+      "combat_power": 1888,
+      "shooting": 244,
+      "defense": 397,
+      "melee": 244,
+      "reaction": 325,
+      "awakening": 317
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シス・ミットヴィル(R/攻撃)",
+    "stats": {
+      "combat_power": 1807,
+      "shooting": 302,
+      "defense": 273,
+      "melee": 302,
+      "reaction": 298,
+      "awakening": 346
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ゴート・ローガン(R/耐久)",
+    "stats": {
+      "combat_power": 1866,
+      "shooting": 274,
+      "defense": 334,
+      "melee": 274,
+      "reaction": 364,
+      "awakening": 270
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャボー・チェレンシィ(R/攻撃)",
+    "stats": {
+      "combat_power": 1716,
+      "shooting": 333,
+      "defense": 277,
+      "melee": 312,
+      "reaction": 277,
+      "awakening": 240
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アゼリア・ツィー(R/耐久)",
+    "stats": {
+      "combat_power": 1797,
+      "shooting": 265,
+      "defense": 361,
+      "melee": 265,
+      "reaction": 338,
+      "awakening": 218
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レリーレ・アルナイル(R/支援)",
+    "stats": {
+      "combat_power": 1804,
+      "shooting": 318,
+      "defense": 288,
+      "melee": 318,
+      "reaction": 289,
+      "awakening": 302
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "デネボラ・シャヒム(R/攻撃)",
+    "stats": {
+      "combat_power": 1716,
+      "shooting": 324,
+      "defense": 283,
+      "melee": 324,
+      "reaction": 268,
+      "awakening": 241
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジュウゾー・オハラ(R/攻撃)",
+    "stats": {
+      "combat_power": 1714,
+      "shooting": 323,
+      "defense": 280,
+      "melee": 323,
+      "reaction": 263,
+      "awakening": 253
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レッセル・ミズカ(R/支援)",
+    "stats": {
+      "combat_power": 1723,
+      "shooting": 311,
+      "defense": 281,
+      "melee": 311,
+      "reaction": 281,
+      "awakening": 258
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "サダニ・アルマーズ(R/耐久)",
+    "stats": {
+      "combat_power": 1801,
+      "shooting": 258,
+      "defense": 310,
+      "melee": 258,
+      "reaction": 392,
+      "awakening": 232
+    },
+    "series": "G GENERATIONシリーズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カミーユ・ビダン(UR/攻撃)",
+    "stats": {
+      "combat_power": 3938,
+      "shooting": 589,
+      "defense": 519,
+      "melee": 595,
+      "reaction": 670,
+      "awakening": 970
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "パプテマス・シロッコ(UR/支援)",
+    "stats": {
+      "combat_power": 3868,
+      "shooting": 589,
+      "defense": 552,
+      "melee": 627,
+      "reaction": 685,
+      "awakening": 795
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シイコ・スガイ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2838,
+      "shooting": 444,
+      "defense": 382,
+      "melee": 686,
+      "reaction": 424,
+      "awakening": 498
+    },
+    "series": "機動戦士ガンダム機動戦士Gundam GQuuuuuuX(ジークアクス)",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ボカタ(SR/支援)",
+    "stats": {
+      "combat_power": 2282,
+      "shooting": 452,
+      "defense": 366,
+      "melee": 411,
+      "reaction": 371,
+      "awakening": 313
+    },
+    "series": "機動戦士Gundam GQuuuuuuX(ジークアクス)機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ガイア(GQuuuuuuX)(SSR/支援)",
+    "stats": {
+      "combat_power": 2725,
+      "shooting": 601,
+      "defense": 427,
+      "melee": 475,
+      "reaction": 430,
+      "awakening": 363
+    },
+    "series": "機動戦士ガンダム機動戦士Gundam GQuuuuuuX(ジークアクス)",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "オルテガ(GQuuuuuuX)(SSR/耐久)",
+    "stats": {
+      "combat_power": 2862,
+      "shooting": 422,
+      "defense": 624,
+      "melee": 425,
+      "reaction": 500,
+      "awakening": 328
+    },
+    "series": "機動戦士ガンダム機動戦士Gundam GQuuuuuuX(ジークアクス)",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ニャアン(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2844,
+      "shooting": 504,
+      "defense": 421,
+      "melee": 579,
+      "reaction": 440,
+      "awakening": 468
+    },
+    "series": "機動戦士Gundam GQuuuuuuX(ジークアクス)機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アナベル・ガトー(UR/支援)",
+    "stats": {
+      "combat_power": 3587,
+      "shooting": 822,
+      "defense": 594,
+      "melee": 598,
+      "reaction": 543,
+      "awakening": 460
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャア・アズナブル(THE ORIGIN版)(UR/攻撃)",
+    "stats": {
+      "combat_power": 3860,
+      "shooting": 602,
+      "defense": 537,
+      "melee": 697,
+      "reaction": 704,
+      "awakening": 698
+    },
+    "series": "機動戦士ガンダム THE ORIGIN",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ゼロ・ムラサメ(SSR/支援)",
+    "stats": {
+      "combat_power": 2927,
+      "shooting": 507,
+      "defense": 431,
+      "melee": 507,
+      "reaction": 473,
+      "awakening": 557
+    },
+    "series": "機動戦士ガンダム ギレンの野望機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アナベル・ガトー(SR/支援)",
+    "stats": {
+      "combat_power": 2400,
+      "shooting": 354,
+      "defense": 496,
+      "melee": 354,
+      "reaction": 453,
+      "awakening": 268
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "チャップ・アデル(SR/支援)",
+    "stats": {
+      "combat_power": 2290,
+      "shooting": 484,
+      "defense": 375,
+      "melee": 378,
+      "reaction": 370,
+      "awakening": 310
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ベルナルド・モンシア(SR/攻撃)",
+    "stats": {
+      "combat_power": 2282,
+      "shooting": 415,
+      "defense": 364,
+      "melee": 453,
+      "reaction": 373,
+      "awakening": 308
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アルファ・A・ベイト(SR/耐久)",
+    "stats": {
+      "combat_power": 2394,
+      "shooting": 354,
+      "defense": 511,
+      "melee": 354,
+      "reaction": 427,
+      "awakening": 278
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "サウス・バニング(SR/攻撃)",
+    "stats": {
+      "combat_power": 2271,
+      "shooting": 529,
+      "defense": 345,
+      "melee": 401,
+      "reaction": 345,
+      "awakening": 305
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "チャック・キース(SR/支援)",
+    "stats": {
+      "combat_power": 2285,
+      "shooting": 458,
+      "defense": 380,
+      "melee": 390,
+      "reaction": 365,
+      "awakening": 318
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "コウ・ウラキ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2723,
+      "shooting": 624,
+      "defense": 444,
+      "melee": 453,
+      "reaction": 414,
+      "awakening": 358
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ケリィ・レズナー(SSR/耐久)",
+    "stats": {
+      "combat_power": 2872,
+      "shooting": 455,
+      "defense": 600,
+      "melee": 377,
+      "reaction": 538,
+      "awakening": 332
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ドゥー・ムラサメ(SSR/耐久)",
+    "stats": {
+      "combat_power": 2859,
+      "shooting": 453,
+      "defense": 485,
+      "melee": 383,
+      "reaction": 569,
+      "awakening": 432
+    },
+    "series": "機動戦士Gundam GQuuuuuuX(ジークアクス)機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カトル・ラバーバ・ウィナー(SSR/支援)",
+    "stats": {
+      "combat_power": 2729,
+      "shooting": 576,
+      "defense": 452,
+      "melee": 490,
+      "reaction": 426,
+      "awakening": 345
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "デュオ・マックスウェル(EW版)(UR/耐久)",
+    "stats": {
+      "combat_power": 3651,
+      "shooting": 514,
+      "defense": 681,
+      "melee": 652,
+      "reaction": 715,
+      "awakening": 390
+    },
+    "series": "新機動戦記ガンダムW Endless Waltz新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レイジ(UR/支援)",
+    "stats": {
+      "combat_power": 3577,
+      "shooting": 665,
+      "defense": 561,
+      "melee": 604,
+      "reaction": 588,
+      "awakening": 584
+    },
+    "series": "ガンダムビルドファイターズ機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ソリス・アルモニア(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2985,
+      "shooting": 675,
+      "defense": 528,
+      "melee": 453,
+      "reaction": 411,
+      "awakening": 361
+    },
+    "series": "新機動戦記ガンダムW デュアルストーリー G-UNIT新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エグザベ・オリベ(SSR/支援)",
+    "stats": {
+      "combat_power": 2843,
+      "shooting": 493,
+      "defense": 448,
+      "melee": 493,
+      "reaction": 438,
+      "awakening": 527
+    },
+    "series": "機動戦士Gundam GQuuuuuuX(ジークアクス)機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャリア・ブル(GQ)(0079)(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2923,
+      "shooting": 478,
+      "defense": 402,
+      "melee": 478,
+      "reaction": 484,
+      "awakening": 637
+    },
+    "series": "機動戦士Gundam GQuuuuuuX(ジークアクス)機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アムロ・レイ (UR/攻撃)",
+    "stats": {
+      "combat_power": 4154,
+      "shooting": 604,
+      "defense": 541,
+      "melee": 551,
+      "reaction": 727,
+      "awakening": 897
+    },
+    "series": "機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シン・アスカ(UR/支援)",
+    "stats": {
+      "combat_power": 3857,
+      "shooting": 638,
+      "defense": 503,
+      "melee": 617,
+      "reaction": 711,
+      "awakening": 780
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レズン・シュナイダー(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2880,
+      "shooting": 679,
+      "defense": 378,
+      "melee": 471,
+      "reaction": 509,
+      "awakening": 398
+    },
+    "series": "機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ルナマリア・ホーク(SSR/支援)",
+    "stats": {
+      "combat_power": 3110,
+      "shooting": 521,
+      "defense": 460,
+      "melee": 583,
+      "reaction": 545,
+      "awakening": 497
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レイ・ザ・バレル(SSR/耐久)",
+    "stats": {
+      "combat_power": 3190,
+      "shooting": 446,
+      "defense": 608,
+      "melee": 410,
+      "reaction": 536,
+      "awakening": 617
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ダリル・ローレンツ(UR/支援)",
+    "stats": {
+      "combat_power": 3794,
+      "shooting": 687,
+      "defense": 589,
+      "melee": 634,
+      "reaction": 589,
+      "awakening": 499
+    },
+    "series": "機動戦士ガンダム サンダーボルト機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "イオ・フレミング(UR/耐久)",
+    "stats": {
+      "combat_power": 3916,
+      "shooting": 588,
+      "defense": 798,
+      "melee": 573,
+      "reaction": 747,
+      "awakening": 437
+    },
+    "series": "機動戦士ガンダム サンダーボルト機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ダリル・ローレンツ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2757,
+      "shooting": 532,
+      "defense": 435,
+      "melee": 448,
+      "reaction": 435,
+      "awakening": 365
+    },
+    "series": "機動戦士ガンダム サンダーボルト機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "イオ・フレミング(SSR/支援)",
+    "stats": {
+      "combat_power": 2731,
+      "shooting": 593,
+      "defense": 443,
+      "melee": 469,
+      "reaction": 434,
+      "awakening": 353
+    },
+    "series": "機動戦士ガンダム サンダーボルト機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "リディ・マーセナス(UR/耐久)",
+    "stats": {
+      "combat_power": 4017,
+      "shooting": 544,
+      "defense": 725,
+      "melee": 544,
+      "reaction": 665,
+      "awakening": 526
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "東方不敗マスター・アジア(UR/攻撃)",
+    "stats": {
+      "combat_power": 3542,
+      "shooting": 529,
+      "defense": 520,
+      "melee": 819,
+      "reaction": 577,
+      "awakening": 412
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ラクス・クライン(UR/支援)",
+    "stats": {
+      "combat_power": 3669,
+      "shooting": 619,
+      "defense": 534,
+      "melee": 579,
+      "reaction": 649,
+      "awakening": 696
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "モンスターブラックドラゴン(UR/支援)",
+    "stats": {
+      "combat_power": 3747,
+      "shooting": 620,
+      "defense": 576,
+      "melee": 564,
+      "reaction": 590,
+      "awakening": 813
+    },
+    "series": "SDガンダム外伝 ジークジオン編",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "劉備ユニコーンガンダム(UR/攻撃)",
+    "stats": {
+      "combat_power": 3709,
+      "shooting": 615,
+      "defense": 530,
+      "melee": 855,
+      "reaction": 588,
+      "awakening": 561
+    },
+    "series": "SDガンダムワールド 三国創傑伝",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "騎士ザザビー(SSR/耐久)",
+    "stats": {
+      "combat_power": 3182,
+      "shooting": 449,
+      "defense": 688,
+      "melee": 449,
+      "reaction": 549,
+      "awakening": 427
+    },
+    "series": "SDガンダム外伝 ジークジオン編",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "騎士ガンダム(SSR/耐久)",
+    "stats": {
+      "combat_power": 3032,
+      "shooting": 440,
+      "defense": 718,
+      "melee": 467,
+      "reaction": 475,
+      "awakening": 334
+    },
+    "series": "SDガンダム外伝 ジークジオン編",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "武者頑駄無(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2879,
+      "shooting": 676,
+      "defense": 441,
+      "melee": 490,
+      "reaction": 410,
+      "awakening": 407
+    },
+    "series": "SD戦国伝 武者七人衆編",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "コマンドガンダム(SSR/耐久)",
+    "stats": {
+      "combat_power": 3038,
+      "shooting": 465,
+      "defense": 616,
+      "melee": 432,
+      "reaction": 606,
+      "awakening": 307
+    },
+    "series": "SDコマンド戦記 G-ARMS",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジュドー・アーシタ(UR/耐久)",
+    "stats": {
+      "combat_power": 3988,
+      "shooting": 541,
+      "defense": 736,
+      "melee": 531,
+      "reaction": 759,
+      "awakening": 672
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ハマーン・カーン(UR/攻撃)",
+    "stats": {
+      "combat_power": 3928,
+      "shooting": 635,
+      "defense": 533,
+      "melee": 621,
+      "reaction": 706,
+      "awakening": 812
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エルピー・プル(SSR/支援)",
+    "stats": {
+      "combat_power": 3477,
+      "shooting": 586,
+      "defense": 489,
+      "melee": 570,
+      "reaction": 616,
+      "awakening": 662
+    },
+    "series": "機動戦士ガンダムZZ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "騎士ジオング(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2813,
+      "shooting": 535,
+      "defense": 410,
+      "melee": 547,
+      "reaction": 436,
+      "awakening": 461
+    },
+    "series": "SDガンダム外伝 ジークジオン編",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "魔王サタンガンダム(SSR/支援)",
+    "stats": {
+      "combat_power": 2870,
+      "shooting": 699,
+      "defense": 425,
+      "melee": 417,
+      "reaction": 441,
+      "awakening": 454
+    },
+    "series": "SDガンダム外伝 ジークジオン編",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アルジ・ミラージ(UR/支援)",
+    "stats": {
+      "combat_power": 3415,
+      "shooting": 600,
+      "defense": 555,
+      "melee": 703,
+      "reaction": 562,
+      "awakening": 436
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ機動戦士ガンダム 鉄血のオルフェンズ 月鋼",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャア・アズナブル(UR/攻撃)",
+    "stats": {
+      "combat_power": 3839,
+      "shooting": 613,
+      "defense": 521,
+      "melee": 613,
+      "reaction": 649,
+      "awakening": 856
+    },
+    "series": "機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ザディエル・ザルムフォート(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2955,
+      "shooting": 609,
+      "defense": 483,
+      "melee": 491,
+      "reaction": 524,
+      "awakening": 314
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ機動戦士ガンダム 鉄血のオルフェンズ 月鋼",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "デイラ・ナディラ(SSR/支援)",
+    "stats": {
+      "combat_power": 2909,
+      "shooting": 470,
+      "defense": 530,
+      "melee": 733,
+      "reaction": 393,
+      "awakening": 320
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ機動戦士ガンダム 鉄血のオルフェンズ 月鋼",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アルジ・ミラージ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2659,
+      "shooting": 457,
+      "defense": 409,
+      "melee": 583,
+      "reaction": 414,
+      "awakening": 358
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ機動戦士ガンダム 鉄血のオルフェンズ 月鋼",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "サンポ・ハクリ(SSR/耐久)",
+    "stats": {
+      "combat_power": 2849,
+      "shooting": 531,
+      "defense": 603,
+      "melee": 392,
+      "reaction": 265,
+      "awakening": 265
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ機動戦士ガンダム 鉄血のオルフェンズ 月鋼",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "バナージ・リンクス(UR/支援)",
+    "stats": {
+      "combat_power": 3867,
+      "shooting": 545,
+      "defense": 524,
+      "melee": 528,
+      "reaction": 582,
+      "awakening": 815
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ドモン・カッシュ(UR/攻撃)",
+    "stats": {
+      "combat_power": 3780,
+      "shooting": 527,
+      "defense": 502,
+      "melee": 896,
+      "reaction": 513,
+      "awakening": 449
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シーブック・アノー(UR/耐久)",
+    "stats": {
+      "combat_power": 4021,
+      "shooting": 538,
+      "defense": 735,
+      "melee": 538,
+      "reaction": 808,
+      "awakening": 628
+    },
+    "series": "機動戦士ガンダムF91",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アンジェロ・ザウパー(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2845,
+      "shooting": 718,
+      "defense": 367,
+      "melee": 607,
+      "reaction": 406,
+      "awakening": 359
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ダグザ・マックール(SSR/耐久)",
+    "stats": {
+      "combat_power": 3068,
+      "shooting": 436,
+      "defense": 717,
+      "melee": 434,
+      "reaction": 518,
+      "awakening": 344
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "チボデー・クロケット(SSR/耐久)",
+    "stats": {
+      "combat_power": 3016,
+      "shooting": 486,
+      "defense": 549,
+      "melee": 486,
+      "reaction": 627,
+      "awakening": 220
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "サイ・サイシー(SSR/攻撃)",
+    "stats": {
+      "combat_power": 2930,
+      "shooting": 504,
+      "defense": 480,
+      "melee": 598,
+      "reaction": 516,
+      "awakening": 248
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジョルジュ・ド・サンド(SSR/耐久)",
+    "stats": {
+      "combat_power": 2969,
+      "shooting": 485,
+      "defense": 575,
+      "melee": 420,
+      "reaction": 540,
+      "awakening": 333
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アルゴ・ガルスキー(SSR/支援)",
+    "stats": {
+      "combat_power": 2898,
+      "shooting": 492,
+      "defense": 513,
+      "melee": 618,
+      "reaction": 477,
+      "awakening": 246
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "コウ・ウラキ(UR/耐久)",
+    "stats": {
+      "combat_power": 3880,
+      "shooting": 569,
+      "defense": 820,
+      "melee": 531,
+      "reaction": 675,
+      "awakening": 424
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アナベル・ガトー(UR/攻撃)",
+    "stats": {
+      "combat_power": 3543,
+      "shooting": 861,
+      "defense": 563,
+      "melee": 669,
+      "reaction": 513,
+      "awakening": 398
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "三日月・オーガス(UR/攻撃)",
+    "stats": {
+      "combat_power": 3634,
+      "shooting": 517,
+      "defense": 507,
+      "melee": 880,
+      "reaction": 584,
+      "awakening": 563
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "スレッタ・マーキュリー(UR/耐久)",
+    "stats": {
+      "combat_power": 3791,
+      "shooting": 567,
+      "defense": 814,
+      "melee": 491,
+      "reaction": 659,
+      "awakening": 522
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジュリエッタ・ジュリス(SSR/耐久)",
+    "stats": {
+      "combat_power": 3430,
+      "shooting": 350,
+      "defense": 644,
+      "melee": 632,
+      "reaction": 758,
+      "awakening": 344
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "イオク・クジャン(SSR/支援)",
+    "stats": {
+      "combat_power": 3217,
+      "shooting": 707,
+      "defense": 504,
+      "melee": 642,
+      "reaction": 476,
+      "awakening": 397
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ミオリネ・レンブラン(UR/攻撃)",
+    "stats": {
+      "combat_power": 3390,
+      "shooting": 643,
+      "defense": 500,
+      "melee": 783,
+      "reaction": 522,
+      "awakening": 429
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ウィスタリオ・アファム(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3306,
+      "shooting": 566,
+      "defense": 552,
+      "melee": 784,
+      "reaction": 540,
+      "awakening": 284
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ ウルズハント機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ユウ・カジマ(UR/攻撃)",
+    "stats": {
+      "combat_power": 3810,
+      "shooting": 639,
+      "defense": 581,
+      "melee": 848,
+      "reaction": 620,
+      "awakening": 483
+    },
+    "series": "機動戦士ガンダム外伝 THE BLUE DESTINY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "フル・フロンタル(UR/支援)",
+    "stats": {
+      "combat_power": 3588,
+      "shooting": 695,
+      "defense": 505,
+      "melee": 753,
+      "reaction": 569,
+      "awakening": 528
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ユウ・カジマ(SSR/耐久)",
+    "stats": {
+      "combat_power": 3331,
+      "shooting": 456,
+      "defense": 731,
+      "melee": 538,
+      "reaction": 614,
+      "awakening": 318
+    },
+    "series": "機動戦士ガンダム外伝 THE BLUE DESTINY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ニムバス・シュターゼン(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3292,
+      "shooting": 484,
+      "defense": 567,
+      "melee": 741,
+      "reaction": 518,
+      "awakening": 406
+    },
+    "series": "機動戦士ガンダム外伝 THE BLUE DESTINY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アナベル・ガトー(SSR/耐久)",
+    "stats": {
+      "combat_power": 2859,
+      "shooting": 454,
+      "defense": 617,
+      "melee": 460,
+      "reaction": 504,
+      "awakening": 262
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ヒイロ・ユイ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3315,
+      "shooting": 783,
+      "defense": 478,
+      "melee": 562,
+      "reaction": 494,
+      "awakening": 414
+    },
+    "series": "新機動戦記ガンダムW",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ワッツ・ステップニー(SR/支援)",
+    "stats": {
+      "combat_power": 3216,
+      "shooting": 821,
+      "defense": 486,
+      "melee": 519,
+      "reaction": 479,
+      "awakening": 428
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ハサウェイ・ノア(UR/攻撃)",
+    "stats": {
+      "combat_power": 4088,
+      "shooting": 594,
+      "defense": 524,
+      "melee": 626,
+      "reaction": 607,
+      "awakening": 832
+    },
+    "series": "機動戦士ガンダム 閃光のハサウェイ機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レーン・エイム(UR/耐久)",
+    "stats": {
+      "combat_power": 3827,
+      "shooting": 558,
+      "defense": 749,
+      "melee": 522,
+      "reaction": 613,
+      "awakening": 702
+    },
+    "series": "機動戦士ガンダム 閃光のハサウェイ機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "クワトロ・バジーナ(SSR/支援)",
+    "stats": {
+      "combat_power": 3470,
+      "shooting": 660,
+      "defense": 496,
+      "melee": 551,
+      "reaction": 587,
+      "awakening": 632
+    },
+    "series": "機動戦士Zガンダム機動戦士Zガンダム A New Translation",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ラウ・ル・クルーゼ(UR/支援)",
+    "stats": {
+      "combat_power": 3818,
+      "shooting": 780,
+      "defense": 526,
+      "melee": 571,
+      "reaction": 576,
+      "awakening": 813
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ミハイル・カミンスキー(UR/攻撃)",
+    "stats": {
+      "combat_power": 3770,
+      "shooting": 819,
+      "defense": 574,
+      "melee": 682,
+      "reaction": 622,
+      "awakening": 473
+    },
+    "series": "機動戦士ガンダム0080 ポケットの中の戦争機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "イザーク・ジュール(SEED)(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3473,
+      "shooting": 709,
+      "defense": 450,
+      "melee": 686,
+      "reaction": 588,
+      "awakening": 484
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "バーナード・ワイズマン(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3208,
+      "shooting": 537,
+      "defense": 499,
+      "melee": 775,
+      "reaction": 467,
+      "awakening": 446
+    },
+    "series": "機動戦士ガンダム0080 ポケットの中の戦争機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "クリスチーナ・マッケンジー(SSR/耐久)",
+    "stats": {
+      "combat_power": 3410,
+      "shooting": 480,
+      "defense": 754,
+      "melee": 504,
+      "reaction": 601,
+      "awakening": 392
+    },
+    "series": "機動戦士ガンダム0080 ポケットの中の戦争機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "スレッタ・マーキュリー(UR/攻撃)",
+    "stats": {
+      "combat_power": 3943,
+      "shooting": 645,
+      "defense": 561,
+      "melee": 588,
+      "reaction": 571,
+      "awakening": 824
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シン・アスカ(UR/攻撃)",
+    "stats": {
+      "combat_power": 3949,
+      "shooting": 608,
+      "defense": 488,
+      "melee": 742,
+      "reaction": 718,
+      "awakening": 787
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ミーア・キャンベル(SSR/支援)",
+    "stats": {
+      "combat_power": 3507,
+      "shooting": 567,
+      "defense": 546,
+      "melee": 523,
+      "reaction": 627,
+      "awakening": 655
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ソフィ・ブロネ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3482,
+      "shooting": 776,
+      "defense": 500,
+      "melee": 622,
+      "reaction": 523,
+      "awakening": 447
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ノレア・デュノク(SSR/耐久)",
+    "stats": {
+      "combat_power": 3583,
+      "shooting": 533,
+      "defense": 753,
+      "melee": 497,
+      "reaction": 676,
+      "awakening": 408
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "グエル・ジェターク(SSR/支援)",
+    "stats": {
+      "combat_power": 3393,
+      "shooting": 632,
+      "defense": 557,
+      "melee": 790,
+      "reaction": 485,
+      "awakening": 407
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "イザーク・ジュール(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3470,
+      "shooting": 553,
+      "defense": 434,
+      "melee": 764,
+      "reaction": 633,
+      "awakening": 550
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ディアッカ・エルスマン(SSR/支援)",
+    "stats": {
+      "combat_power": 3460,
+      "shooting": 728,
+      "defense": 535,
+      "melee": 547,
+      "reaction": 535,
+      "awakening": 577
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アンドリュー・バルトフェルド(SSR/耐久)",
+    "stats": {
+      "combat_power": 3684,
+      "shooting": 475,
+      "defense": 747,
+      "melee": 500,
+      "reaction": 726,
+      "awakening": 496
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レイ・ザ・バレル(SR/攻撃)",
+    "stats": {
+      "combat_power": 3451,
+      "shooting": 580,
+      "defense": 509,
+      "melee": 534,
+      "reaction": 517,
+      "awakening": 797
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ヴィダール(SR/攻撃)",
+    "stats": {
+      "combat_power": 3338,
+      "shooting": 681,
+      "defense": 446,
+      "melee": 738,
+      "reaction": 507,
+      "awakening": 404
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "エラン・ケレス(SR/攻撃)",
+    "stats": {
+      "combat_power": 3260,
+      "shooting": 739,
+      "defense": 565,
+      "melee": 400,
+      "reaction": 469,
+      "awakening": 568
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アムロ・レイ(SR/攻撃)",
+    "stats": {
+      "combat_power": 3516,
+      "shooting": 567,
+      "defense": 543,
+      "melee": 561,
+      "reaction": 675,
+      "awakening": 560
+    },
+    "series": "機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シーマ・ガラハウ(SR/攻撃)",
+    "stats": {
+      "combat_power": 3171,
+      "shooting": 790,
+      "defense": 434,
+      "melee": 611,
+      "reaction": 419,
+      "awakening": 489
+    },
+    "series": "機動戦士ガンダム0083 STARDUST MEMORY機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アレンビー・ビアズリー(SR/攻撃)",
+    "stats": {
+      "combat_power": 3238,
+      "shooting": 389,
+      "defense": 485,
+      "melee": 766,
+      "reaction": 618,
+      "awakening": 364
+    },
+    "series": "機動武闘伝Gガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "フル・フロンタル(SR/攻撃)",
+    "stats": {
+      "combat_power": 3282,
+      "shooting": 613,
+      "defense": 505,
+      "melee": 584,
+      "reaction": 534,
+      "awakening": 526
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ロニ・ガーベイ(SR/攻撃)",
+    "stats": {
+      "combat_power": 3502,
+      "shooting": 580,
+      "defense": 549,
+      "melee": 456,
+      "reaction": 595,
+      "awakening": 748
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "リディ・マーセナス(SR/支援)",
+    "stats": {
+      "combat_power": 3340,
+      "shooting": 529,
+      "defense": 512,
+      "melee": 624,
+      "reaction": 512,
+      "awakening": 584
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "マリーダ・クルス(SR/支援)",
+    "stats": {
+      "combat_power": 3475,
+      "shooting": 568,
+      "defense": 474,
+      "melee": 548,
+      "reaction": 602,
+      "awakening": 744
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アスラン・ザラ(SR/支援)",
+    "stats": {
+      "combat_power": 3417,
+      "shooting": 645,
+      "defense": 441,
+      "melee": 715,
+      "reaction": 526,
+      "awakening": 604
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャア・アズナブル(CCA)(SR/支援)",
+    "stats": {
+      "combat_power": 3458,
+      "shooting": 592,
+      "defense": 505,
+      "melee": 592,
+      "reaction": 589,
+      "awakening": 631
+    },
+    "series": "機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジュリエッタ・ジュリス(SR/支援)",
+    "stats": {
+      "combat_power": 3245,
+      "shooting": 515,
+      "defense": 428,
+      "melee": 817,
+      "reaction": 601,
+      "awakening": 368
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ガエリオ・ボードウィン(SR/支援)",
+    "stats": {
+      "combat_power": 3354,
+      "shooting": 592,
+      "defense": 493,
+      "melee": 692,
+      "reaction": 526,
+      "awakening": 475
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "フェルシー・ロロ(SR/攻撃)",
+    "stats": {
+      "combat_power": 3219,
+      "shooting": 612,
+      "defense": 514,
+      "melee": 611,
+      "reaction": 519,
+      "awakening": 444
+    },
+    "series": "機動戦士ガンダム 水星の魔女",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アウル・ニーダ(SR/耐久)",
+    "stats": {
+      "combat_power": 3684,
+      "shooting": 747,
+      "defense": 755,
+      "melee": 320,
+      "reaction": 498,
+      "awakening": 454
+    },
+    "series": "機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "バナージ・リンクス(SR/耐久)",
+    "stats": {
+      "combat_power": 3480,
+      "shooting": 485,
+      "defense": 678,
+      "melee": 485,
+      "reaction": 611,
+      "awakening": 507
+    },
+    "series": "機動戦士ガンダムUC",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シン・アスカ(SR/耐久)",
+    "stats": {
+      "combat_power": 3584,
+      "shooting": 476,
+      "defense": 606,
+      "melee": 506,
+      "reaction": 718,
+      "awakening": 612
+    },
+    "series": "機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "クェス・パラヤ(SR/耐久)",
+    "stats": {
+      "combat_power": 3617,
+      "shooting": 480,
+      "defense": 622,
+      "melee": 399,
+      "reaction": 731,
+      "awakening": 706
+    },
+    "series": "機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "オリヴァー・マイ(UR/支援)",
+    "stats": {
+      "combat_power": 3570,
+      "shooting": 763,
+      "defense": 583,
+      "melee": 628,
+      "reaction": 536,
+      "awakening": 499
+    },
+    "series": "機動戦士ガンダム MS IGLOO機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ガエリオ・ボードウィン(UR/耐久)",
+    "stats": {
+      "combat_power": 4060,
+      "shooting": 537,
+      "defense": 670,
+      "melee": 778,
+      "reaction": 702,
+      "awakening": 468
+    },
+    "series": "機動戦士ガンダム 鉄血のオルフェンズ",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "モニク・キャディラック(SSR/支援)",
+    "stats": {
+      "combat_power": 3204,
+      "shooting": 734,
+      "defense": 481,
+      "melee": 580,
+      "reaction": 475,
+      "awakening": 455
+    },
+    "series": "機動戦士ガンダム MS IGLOO機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "オリヴァー・マイ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3224,
+      "shooting": 708,
+      "defense": 509,
+      "melee": 560,
+      "reaction": 505,
+      "awakening": 434
+    },
+    "series": "機動戦士ガンダム MS IGLOO機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ヘルベルト・フォン・カスペン(SSR/耐久)",
+    "stats": {
+      "combat_power": 3393,
+      "shooting": 491,
+      "defense": 745,
+      "melee": 525,
+      "reaction": 586,
+      "awakening": 380
+    },
+    "series": "機動戦士ガンダム MS IGLOO機動戦士ガンダム",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ガロード・ラン(UR/攻撃)",
+    "stats": {
+      "combat_power": 3611,
+      "shooting": 871,
+      "defense": 568,
+      "melee": 630,
+      "reaction": 542,
+      "awakening": 445
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "シャギア・フロスト(UR/支援)",
+    "stats": {
+      "combat_power": 3866,
+      "shooting": 795,
+      "defense": 589,
+      "melee": 738,
+      "reaction": 577,
+      "awakening": 584
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ウィッツ・スー(SSR/支援)",
+    "stats": {
+      "combat_power": 3224,
+      "shooting": 750,
+      "defense": 497,
+      "melee": 545,
+      "reaction": 504,
+      "awakening": 427
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ロアビィ・ロイ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3267,
+      "shooting": 781,
+      "defense": 484,
+      "melee": 531,
+      "reaction": 524,
+      "awakening": 410
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ランスロー・ダーウェル(SSR/耐久)",
+    "stats": {
+      "combat_power": 3513,
+      "shooting": 598,
+      "defense": 739,
+      "melee": 636,
+      "reaction": 556,
+      "awakening": 334
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ティファ・アディール(UR/耐久)",
+    "stats": {
+      "combat_power": 3910,
+      "shooting": 431,
+      "defense": 642,
+      "melee": 431,
+      "reaction": 862,
+      "awakening": 789
+    },
+    "series": "機動新世紀ガンダムX",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "レーン・エイム(SSR/支援)",
+    "stats": {
+      "combat_power": 3421,
+      "shooting": 711,
+      "defense": 489,
+      "melee": 554,
+      "reaction": 555,
+      "awakening": 616
+    },
+    "series": "機動戦士ガンダム 閃光のハサウェイ機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ロウ・ギュール(UR/攻撃)",
+    "stats": {
+      "combat_power": 4473,
+      "shooting": 585,
+      "defense": 610,
+      "melee": 852,
+      "reaction": 624,
+      "awakening": 376
+    },
+    "series": "機動戦士ガンダムSEED VS ASTRAY機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ロンド・ミナ・サハク(UR/耐久)",
+    "stats": {
+      "combat_power": 4120,
+      "shooting": 518,
+      "defense": 782,
+      "melee": 582,
+      "reaction": 871,
+      "awakening": 538
+    },
+    "series": "機動戦士ガンダムSEED ASTRAY機動戦士ガンダムSEED機動戦士ガンダムSEED DESTINY",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "プレア・レヴェリー(SSR/支援)",
+    "stats": {
+      "combat_power": 3467,
+      "shooting": 581,
+      "defense": 491,
+      "melee": 514,
+      "reaction": 555,
+      "awakening": 802
+    },
+    "series": "機動戦士ガンダムSEED X ASTRAY機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "カナード・パルス(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3499,
+      "shooting": 617,
+      "defense": 595,
+      "melee": 663,
+      "reaction": 606,
+      "awakening": 381
+    },
+    "series": "機動戦士ガンダムSEED X ASTRAY機動戦士ガンダムSEED",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ギギ・アンダルシア(SSR/耐久)",
+    "stats": {
+      "combat_power": 3542,
+      "shooting": 480,
+      "defense": 615,
+      "melee": 470,
+      "reaction": 721,
+      "awakening": 644
+    },
+    "series": "機動戦士ガンダム 閃光のハサウェイ機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ケネス・スレッグ(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3235,
+      "shooting": 602,
+      "defense": 583,
+      "melee": 724,
+      "reaction": 438,
+      "awakening": 375
+    },
+    "series": "機動戦士ガンダム 閃光のハサウェイ機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ハサウェイ・ノア(SSR/支援)",
+    "stats": {
+      "combat_power": 3426,
+      "shooting": 588,
+      "defense": 422,
+      "melee": 601,
+      "reaction": 641,
+      "awakening": 681
+    },
+    "series": "機動戦士ガンダム 閃光のハサウェイ機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アセム・アスノ(UR/支援)",
+    "stats": {
+      "combat_power": 3920,
+      "shooting": 845,
+      "defense": 511,
+      "melee": 801,
+      "reaction": 689,
+      "awakening": 359
+    },
+    "series": "機動戦士ガンダムAGE",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "フリット・アスノ(UR/攻撃)",
+    "stats": {
+      "combat_power": 3804,
+      "shooting": 738,
+      "defense": 465,
+      "melee": 823,
+      "reaction": 600,
+      "awakening": 644
+    },
+    "series": "機動戦士ガンダムAGE",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ユリン・ルシェル(SSR/耐久)",
+    "stats": {
+      "combat_power": 3555,
+      "shooting": 555,
+      "defense": 525,
+      "melee": 371,
+      "reaction": 741,
+      "awakening": 729
+    },
+    "series": "機動戦士ガンダムAGE",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "アリーサ・ガンヘイル(SSR/攻撃)",
+    "stats": {
+      "combat_power": 3261,
+      "shooting": 662,
+      "defense": 496,
+      "melee": 737,
+      "reaction": 497,
+      "awakening": 339
+    },
+    "series": "機動戦士ガンダムAGE",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "フリット・アスノ(SSR/支援)",
+    "stats": {
+      "combat_power": 3485,
+      "shooting": 633,
+      "defense": 534,
+      "melee": 603,
+      "reaction": 614,
+      "awakening": 526
+    },
+    "series": "機動戦士ガンダムAGE",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ぜハート・ガレット(SR/攻撃)",
+    "stats": {
+      "combat_power": 3449,
+      "shooting": 622,
+      "defense": 459,
+      "melee": 663,
+      "reaction": 584,
+      "awakening": 598
+    },
+    "series": "機動戦士ガンダムAGE",
+    "skills": [],
+    "abilities": []
+  },
+  {
+    "name": "ジュリア・スガ(SSR/耐久)",
+    "stats": {
+      "combat_power": 3309,
+      "shooting": 512,
+      "defense": 718,
+      "melee": 503,
+      "reaction": 598,
+      "awakening": 319
+    },
+    "series": "機動戦士ガンダム 閃光のハサウェイ機動戦士ガンダム 逆襲のシャア",
+    "skills": [],
+    "abilities": []
+  }
+]

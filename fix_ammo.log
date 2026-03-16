@@ -1,0 +1,309 @@
+/Users/RH/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[INFO] Found 98 units with MAP weapons
+[1/98] Scraping: ル・シーニュ(EX) (UR)
+    Found ammo: メガ・ビーム・ランチャー = 2
+    Updated: メガ・ビーム・ランチャー ammo: '' -> '2'
+[2/98] Scraping: フリーダムガンダム(EX) (UR)
+    Found ammo: フルバーストモード = 2
+    Updated: フルバーストモード ammo: '' -> '2'
+[3/98] Scraping: ナラティブガンダムA装備(EX) (UR)
+    Found ammo: ハイメガ・キャノン = 3
+    Updated: ハイメガ・キャノン ammo: '' -> '3'
+[4/98] Scraping: ガンダム試作2号機(EX) (UR)
+    Found ammo: アトミック・バズーカ = 1
+    Updated: アトミック・バズーカ ammo: '' -> '1'
+[5/98] Scraping: ビルドストライクガンダム(フルパッケージ)(EX) (UR)
+    Found ammo: 大型ビームキャノン = 2
+    Updated: 大型ビームキャノン ammo: '' -> '2'
+[6/98] Scraping: Hi-νガンダム(EX) (UR)
+    Found ammo: ハイパー・メガ・バズーカ・ランチャー = 1
+    Updated: ハイパー・メガ・バズーカ・ランチャー ammo: '' -> '1'
+[7/98] Scraping: フルアーマー・ガンダム(サンダーボルト版)(EX) (UR)
+    Found ammo: 一斉射撃 = 2
+    Updated: 一斉射撃 ammo: '' -> '2'
+[8/98] Scraping: フルアーマーZZガンダム(EX) (UR)
+    Found ammo: ハイ・メガ・キャノン = 1
+    Updated: ハイ・メガ・キャノン ammo: '' -> '1'
+[9/98] Scraping: ユニコーンガンダム(デストロイモード／覚醒)(EX) (UR)
+    Found ammo: サイコ・フィールド = 1
+    Updated: サイコ・フィールド ammo: '' -> '1'
+[10/98] Scraping: ノイエ・ジール(EX) (UR)
+    Found ammo: 偏向メガ粒子砲 = 1
+    Updated: 偏向メガ粒子砲 ammo: '' -> '1'
+[11/98] Scraping: ガンダム試作3号機(EX) (UR)
+    Found ammo: 爆導索 = 2
+    Updated: 爆導索 ammo: '' -> '2'
+[12/98] Scraping: Ξガンダム(EX) (UR)
+    Found ammo: ミサイル・ランチャー = 1
+    Updated: ミサイル・ランチャー ammo: '' -> '1'
+[13/98] Scraping: ケンプファー(EX) (UR)
+    Found ammo: 一斉射撃 = 1
+    Updated: 一斉射撃 ammo: '' -> '1'
+[14/98] Scraping: ビグ・ラング(EX) (UR)
+    Found ammo: 補給機能 = 1
+    Updated: 補給機能 ammo: '' -> '1'
+[15/98] Scraping: ガンダムDX(EX) (UR)
+    Found ammo: ツインサテライトキャノン = 1
+    Updated: ツインサテライトキャノン ammo: '' -> '1'
+[16/98] Scraping: ガンダムヴァサーゴチェストブレイク(EX) (UR)
+    Found ammo: トリプルメガソニック砲 = 2
+    Updated: トリプルメガソニック砲 ammo: '' -> '2'
+[17/98] Scraping: ガンダムアストレイ レッドフレーム改(EX) (UR)
+    Found ammo: タクティカルアームズⅡL「マガノイクタチ」 = 1
+    Updated: タクティカルアームズⅡL「マガノイクタチ」 ammo: '' -> '1'
+[18/98] Scraping: ガンダムアストレイ ゴールドフレーム天ミナ(EX) (UR)
+    Found ammo: マガノイクタチ = 2
+    Updated: マガノイクタチ ammo: '' -> '2'
+[19/98] Scraping: ガンダムAGE-1 ノーマル(EX) (UR)
+    Found ammo: TITUS = 1
+    Updated: TITUS ammo: '' -> '1'
+[20/98] Scraping: ガンダムAGE-2 ノーマル(EX) (UR)
+    Found ammo: ツインドッズキャノン = 1
+    Updated: ツインドッズキャノン ammo: '' -> '1'
+[21/98] Scraping: サイコ・ガンダムMk-Ⅲ (ULT)
+    Found ammo: メガ・ビーム・アタック = 3
+    Updated: メガ・ビーム・アタック ammo: '' -> '3'
+[22/98] Scraping: ガンダムアストレイ ゴールドフレームアマテラス (ULT)
+    Found ammo: 天鳥船(アメノトリフネ) = 1
+    Updated: 天鳥船(アメノトリフネ) ammo: '' -> '1'
+[23/98] Scraping: ベギルペンデ(ドミニコス隊仕様) (ULT)
+    Found ammo: スナイパーライフル = 2
+    Updated: スナイパーライフル ammo: '' -> '2'
+[24/98] Scraping: ガンダムベルフェゴール (ULT)
+    Found ammo: ソニックスマッシュ砲 = 1
+    Updated: ソニックスマッシュ砲 ammo: '' -> '1'
+[25/98] Scraping: ビグ・ザム (SSR)
+    Found ammo: 全周囲メガ粒子砲 = 1
+    Updated: 全周囲メガ粒子砲 ammo: '' -> '1'
+[26/98] Scraping: 百式 (SSR)
+    Found ammo: メガ・バズーカ・ランチャー = 2
+    Updated: メガ・バズーカ・ランチャー ammo: '' -> '2'
+[27/98] Scraping: サイコ・ガンダム (SSR)
+    Found ammo: 拡散メガ粒子砲 = 2
+    Found ammo: 拡散メガ粒子砲 = 2
+    Updated: 拡散メガ粒子砲 ammo: '' -> '2'
+    Updated: 拡散メガ粒子砲 ammo: '' -> '2'
+[28/98] Scraping: ジャスティスガンダム(ミーティア) (SSR)
+    Found ammo: 一斉射撃 = 2
+    Updated: 一斉射撃 ammo: '' -> '2'
+[29/98] Scraping: フリーダムガンダム(ミーティア) (SSR)
+    Found ammo: 一斉射撃 = 2
+    Updated: 一斉射撃 ammo: '' -> '2'
+[30/98] Scraping: ウイングガンダムゼロ (SSR)
+    Found ammo: ローリングバスターライフル = 2
+    Updated: ローリングバスターライフル ammo: '' -> '2'
+[31/98] Scraping: フルアーマーZZガンダム (SSR)
+    Found ammo: ハイ・メガ・キャノン = 2
+    Updated: ハイ・メガ・キャノン ammo: '' -> '2'
+[32/98] Scraping: クィン・マンサ (SSR)
+    Found ammo: 拡散メガ粒子砲 = 3
+    Updated: 拡散メガ粒子砲 ammo: '' -> '3'
+[33/98] Scraping: ベルティゴ (SSR)
+    Found ammo: ビット = 1
+    Updated: ビット ammo: '' -> '1'
+[34/98] Scraping: ガンダム・グシオンリベイク (SSR)
+    Found ammo: 狙撃 = 3
+    Updated: 狙撃 ammo: '' -> '3'
+[35/98] Scraping: マスターガンダム (SSR)
+    Found ammo: 超級覇王電影弾 = 1
+    Updated: 超級覇王電影弾 ammo: '' -> '1'
+[36/98] Scraping: アルヴァトーレ (SSR)
+    Found ammo: 巨大ビーム砲 = 2
+    Updated: 巨大ビーム砲 ammo: '' -> '2'
+[37/98] Scraping: レジェンドガンダム (SSR)
+    Found ammo: ドラグーンシステム = 1
+    Updated: ドラグーンシステム ammo: '' -> '1'
+[38/98] Scraping: デストロイガンダム (SSR)
+    Found ammo: 一斉射撃 = 2
+    Found ammo: 高エネルギー砲 アウフプラール・ドライツェーン = 2
+    Updated: 一斉射撃 ammo: '' -> '2'
+    Updated: 高エネルギー砲 アウフプラール・ドライツェーン ammo: '' -> '2'
+[39/98] Scraping: νガンダム (SSR)
+    Found ammo: フィン・ファンネル = 1
+    Updated: フィン・ファンネル ammo: '' -> '1'
+[40/98] Scraping: ナイチンゲール (SSR)
+    Found ammo: 大型メガ・ビーム・ライフル(収束) = 2
+    Updated: 大型メガ・ビーム・ライフル(収束) ammo: '' -> '2'
+[41/98] Scraping: サザビー (SSR)
+    Found ammo: ファンネル = 1
+    Updated: ファンネル ammo: '' -> '1'
+[42/98] Scraping: Hi-νガンダム (SSR)
+    Found ammo: ハイパー・メガ・バズーカ・ランチャー = 2
+    Updated: ハイパー・メガ・バズーカ・ランチャー ammo: '' -> '2'
+[43/98] Scraping: デビルガンダム(最終形態) (SSR)
+    Found ammo: デビルオーダー = 1
+    Updated: デビルオーダー ammo: '' -> '1'
+[44/98] Scraping: グランドマスターガンダム (SSR)
+    Found ammo: ダークネスフィンガー = 2
+    Updated: ダークネスフィンガー ammo: '' -> '2'
+[45/98] Scraping: シャンブロ (SSR)
+    Found ammo: 大口径メガ粒子砲 = 1
+    Updated: 大口径メガ粒子砲 ammo: '' -> '1'
+[46/98] Scraping: ネオ・ジオング (SSR)
+    Found ammo: 大口径ハイメガ粒子砲 = 1
+    Updated: 大口径ハイメガ粒子砲 ammo: '' -> '1'
+[47/98] Scraping: クシャトリヤ・リペアード (SSR)
+    Found ammo: 一斉射撃 = 1
+    Updated: 一斉射撃 ammo: '' -> '1'
+[48/98] Scraping: フルアーマー・ユニコーンガンダム(デストロイモード) (SSR)
+    Found ammo: 一斉射撃 = 2
+    Updated: 一斉射撃 ammo: '' -> '2'
+[49/98] Scraping: ハシュマル (SSR)
+    Found ammo: ビーム兵器 = 2
+    Updated: ビーム兵器 ammo: '' -> '2'
+[50/98] Scraping: ガンダム・グシオンリベイクフルシティ (SSR)
+    Found ammo: 狙撃 = 1
+    Updated: 狙撃 ammo: '' -> '1'
+[51/98] Scraping: Ξガンダム (SSR)
+    Found ammo: ミサイル・ランチャー = 1
+    Updated: ミサイル・ランチャー ammo: '' -> '1'
+[52/98] Scraping: ペーネロペー (SSR)
+    Found ammo: ミサイル・ランチャー = 1
+    Updated: ミサイル・ランチャー ammo: '' -> '1'
+[53/98] Scraping: ストライクフリーダムガンダム(ミーティア) (SSR)
+    Found ammo: 一斉射撃 = 1
+    Updated: 一斉射撃 ammo: '' -> '1'
+[54/98] Scraping: インフィニットジャスティスガンダム(ミーティア) (SSR)
+    Found ammo: 一斉射撃 = 1
+    Updated: 一斉射撃 ammo: '' -> '1'
+[55/98] Scraping: ガンダム・キャリバーン (SSR)
+    Found ammo: バリアブルロッドライフル = 2
+    Updated: バリアブルロッドライフル ammo: '' -> '2'
+[56/98] Scraping: ガンダム・ファラクト(Season2仕様) (SSR)
+    Found ammo: ビームマスケット = 1
+    Updated: ビームマスケット ammo: '' -> '1'
+[57/98] Scraping: ガンダムDX (SSR)
+    Found ammo: ツインサテライトキャノン = 1
+    Updated: ツインサテライトキャノン ammo: '' -> '1'
+[58/98] Scraping: GファルコンDX (SSR)
+    Found ammo: ツインサテライトキャノン = 1
+    Found ammo: ツインサテライトキャノン = 1
+    Found ammo: ツインサテライトキャノン = 3
+    Updated: ツインサテライトキャノン ammo: '' -> '3'
+    Updated: ツインサテライトキャノン ammo: '' -> '3'
+    Updated: ツインサテライトキャノン ammo: '' -> '3'
+[59/98] Scraping: ガンダムレオパルドデストロイ (SSR)
+    Found ammo: 一斉射撃 = 1
+    Updated: 一斉射撃 ammo: '' -> '1'
+[60/98] Scraping: ガンダムヴァサーゴチェストブレイク (SSR)
+    Found ammo: トリプルメガソニック砲 = 1
+    Updated: トリプルメガソニック砲 ammo: '' -> '1'
+[61/98] Scraping: ガンダムアシュタロンハーミットクラブ (SSR)
+    Found ammo: サテライトランチャー = 1
+    Found ammo: サテライトランチャー = 1
+    Updated: サテライトランチャー ammo: '' -> '1'
+    Updated: サテライトランチャー ammo: '' -> '1'
+[62/98] Scraping: ガンダムAGE-1 2号機 アサルトジャケット (SSR)
+    Found ammo: ドッズランチャー = 1
+    Updated: ドッズランチャー ammo: '' -> '1'
+[63/98] Scraping: ガンダムAGE-2 ダブルバレット (SSR)
+    Found ammo: ツインビームソード = 1
+    Updated: ツインビームソード ammo: '' -> '1'
+[64/98] Scraping: ガンダムAGE-2 アルティメス (SSR)
+    Found ammo: アルティメス・ロングレンジライフル = 1
+    Updated: アルティメス・ロングレンジライフル ammo: '' -> '1'
+[65/98] Scraping: デファース (SSR)
+    Found ammo: デファースキャノン = 1
+    Updated: デファースキャノン ammo: '' -> '1'
+[66/98] Scraping: ガンダムアストレイ ゴールドフレーム天 (SSR)
+    Found ammo: マガノイクタチ = 1
+    Updated: マガノイクタチ ammo: '' -> '1'
+[67/98] Scraping: ヴァル・ヴァロ (SSR)
+    Found ammo: プラズマ・リーダー = 2
+    Updated: プラズマ・リーダー ammo: '' -> '2'
+[68/98] Scraping: フルアーマー・ガンダム(サンダーボルト版) (SSR)
+    Found ammo: 一斉射撃 = 1
+    Updated: 一斉射撃 ammo: '' -> '1'
+[69/98] Scraping: サイコ・ザク (SSR)
+    Found ammo: 一斉射撃 = 1
+    Updated: 一斉射撃 ammo: '' -> '1'
+[70/98] Scraping: ガンダム・ウヴァルユハナ (SSR)
+    Found ammo: 狙撃 = 3
+    Updated: 狙撃 ammo: '' -> '3'
+[71/98] Scraping: ガンダム試作3号機 (SSR)
+    Found ammo: 爆導索 = 1
+    Updated: 爆導索 ammo: '' -> '1'
+[72/98] Scraping: ノイエ・ジール (SSR)
+    Found ammo: 偏向メガ粒子砲 = 2
+    Updated: 偏向メガ粒子砲 ammo: '' -> '2'
+[73/98] Scraping: ビグ・ラング(攻撃) (SSR)
+    Found ammo: 大出力メガ粒子砲 = 1
+    Updated: 大出力メガ粒子砲 ammo: '' -> '1'
+[74/98] Scraping: ヒルドルブ(支援) (SSR)
+    Found ammo: 狙撃 = 3
+    Updated: 狙撃 ammo: '' -> '3'
+[75/98] Scraping: Xアストレイ (SSR)
+    Found ammo: ドラグーンシステム = 2
+    Updated: ドラグーンシステム ammo: '' -> '2'
+[76/98] Scraping: タイタニア【強敵襲来】 (SSR)
+    Found ammo: ファンネル = 1
+    Updated: ファンネル ammo: '' -> '1'
+[77/98] Scraping: シャイニングガンダム(スーパーモード)【強敵襲来】 (SSR)
+    Found ammo: シャイニングフィンガーソード = 1
+    Updated: シャイニングフィンガーソード ammo: '' -> '1'
+[78/98] Scraping: ザクウォーリア(ライブ仕様)【強敵襲来】 (SSR)
+    Found ammo: LACUS CLYNE LIVE = 1
+    Updated: LACUS CLYNE LIVE ammo: '' -> '1'
+[79/98] Scraping: GファルコンGX【強敵襲来】 (SSR)
+    Found ammo: サテライトキャノン = 1
+    Updated: サテライトキャノン ammo: '' -> '1'
+[80/98] Scraping: フェニックスガンダム(能力解放) (SSR)
+    Found ammo: バーニング・ファイア = 1
+    Updated: バーニング・ファイア ammo: '' -> '1'
+[81/98] Scraping: キュベレイMk-II(エルピー・プル専用機) (SSR)
+    Found ammo: ファンネル = 1
+    Updated: ファンネル ammo: '' -> '1'
+[82/98] Scraping: ウイングガンダム(EW版) (SSR)
+    Found ammo: バスターライフル = 2
+    Updated: バスターライフル ammo: '' -> '2'
+[83/98] Scraping: 百式(支援) (SSR)
+    Found ammo: メガ・バズーカ・ランチャー = 2
+    Updated: メガ・バズーカ・ランチャー ammo: '' -> '2'
+[84/98] Scraping: ヒルドルブ (SSR)
+    Found ammo: 狙撃 = 3
+    Updated: 狙撃 ammo: '' -> '3'
+[85/98] Scraping: ウォドム (SSR)
+    Found ammo: 対艦用ビーム砲 = 1
+    Updated: 対艦用ビーム砲 ammo: '' -> '1'
+[86/98] Scraping: ジム・スナイパーⅡ (SSR)
+    Found ammo: 狙撃 = 3
+    Updated: 狙撃 ammo: '' -> '3'
+[87/98] Scraping: ライジングフリーダムガンダム (SSR)
+    Found ammo: フルバーストモード = 1
+    Updated: フルバーストモード ammo: '' -> '1'
+[88/98] Scraping: ガンダム試作0号機 (SSR)
+    Found ammo: 狙撃 = 3
+    Updated: 狙撃 ammo: '' -> '3'
+[89/98] Scraping: ドーベン・ウルフ(指揮官機) (SSR)
+    Found ammo: メガ・ランチャー = 3
+    Updated: メガ・ランチャー ammo: '' -> '3'
+[90/98] Scraping: 1.5ガンダム (SSR)
+    Found ammo: アルヴァアロンキャノン = 3
+    Updated: アルヴァアロンキャノン ammo: '' -> '3'
+[91/98] Scraping: ヴァイエイト・シュイヴァン (SSR)
+    Found ammo: ダブルビームキャノン = 1
+    Updated: ダブルビームキャノン ammo: '' -> '1'
+[92/98] Scraping: リゼル(隊長機) (SSR)
+    Found ammo: メガ・ビーム・ランチャー = 1
+    Updated: メガ・ビーム・ランチャー ammo: '' -> '1'
+[93/98] Scraping: ガンダムローズ(スーパーモード) (SSR)
+    Found ammo: ローゼス・ハリケーン = 1
+    Updated: ローゼス・ハリケーン ammo: '' -> '1'
+[94/98] Scraping: ノイエ・ジールⅡ (SSR)
+    Found ammo: 一斉射撃 = 1
+    Updated: 一斉射撃 ammo: '' -> '1'
+[95/98] Scraping: レギンレイズ(イオク機) (SSR)
+    Found ammo: 狙撃 = 3
+    Updated: 狙撃 ammo: '' -> '3'
+[96/98] Scraping: Gファルコンエアマスター (SSR)
+    Found ammo: 一斉射撃 = 2
+    Updated: 一斉射撃 ammo: '' -> '2'
+[97/98] Scraping: Gファルコンレオパルド (SSR)
+    Found ammo: 一斉射撃 = 1
+    Updated: 一斉射撃 ammo: '' -> '1'
+[98/98] Scraping: ガンダムアストレイ ブルーフレームセカンドGスナイパーパック (SSR)
+    Found ammo: 狙撃 = 3
+    Updated: 狙撃 ammo: '' -> '3'
+
+[DONE] Updated 103 MAP weapon ammo values

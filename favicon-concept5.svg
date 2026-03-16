@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="gGrad5" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00e5ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2979ff;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background - dark with subtle border -->
+  <rect width="64" height="64" rx="8" ry="8" fill="#0d1117"/>
+  <rect x="1" y="1" width="62" height="62" rx="7" ry="7" fill="none" stroke="#1e2a3a" stroke-width="1"/>
+
+  <!-- Pixel art "G" - each pixel is 4x4, grid starts at (8,6) -->
+  <!-- Row 1: columns 3-8 -->
+  <rect x="20" y="6" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="24" y="6" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="28" y="6" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="32" y="6" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="36" y="6" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="40" y="6" width="4" height="4" fill="url(#gGrad5)"/>
+
+  <!-- Row 2: columns 2-3, 8-9 -->
+  <rect x="16" y="10" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="20" y="10" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="40" y="10" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="44" y="10" width="4" height="4" fill="url(#gGrad5)"/>
+
+  <!-- Row 3: columns 1-2 -->
+  <rect x="12" y="14" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="16" y="14" width="4" height="4" fill="url(#gGrad5)"/>
+
+  <!-- Row 4: columns 1-2 -->
+  <rect x="12" y="18" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="16" y="18" width="4" height="4" fill="url(#gGrad5)"/>
+
+  <!-- Row 5: columns 1-2 -->
+  <rect x="12" y="22" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="16" y="22" width="4" height="4" fill="url(#gGrad5)"/>
+
+  <!-- Row 6: columns 1-2, 6-9 (G's horizontal bar) -->
+  <rect x="12" y="26" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="16" y="26" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="32" y="26" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="36" y="26" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="40" y="26" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="44" y="26" width="4" height="4" fill="url(#gGrad5)"/>
+
+  <!-- Row 7: columns 1-2, 8-9 -->
+  <rect x="12" y="30" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="16" y="30" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="40" y="30" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="44" y="30" width="4" height="4" fill="url(#gGrad5)"/>
+
+  <!-- Row 8: columns 2-3, 8-9 -->
+  <rect x="16" y="34" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="20" y="34" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="40" y="34" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="44" y="34" width="4" height="4" fill="url(#gGrad5)"/>
+
+  <!-- Row 9: columns 3-8 (bottom curve) -->
+  <rect x="20" y="38" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="24" y="38" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="28" y="38" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="32" y="38" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="36" y="38" width="4" height="4" fill="url(#gGrad5)"/>
+  <rect x="40" y="38" width="4" height="4" fill="url(#gGrad5)"/>
+
+  <!-- "MH" text below G - pixel style small text -->
+  <!-- M pixel art (3x3 pixels each 3px) -->
+  <rect x="16" y="46" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="16" y="49" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="16" y="52" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="19" y="46" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="22" y="46" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="22" y="49" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="25" y="46" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="28" y="46" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="28" y="49" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="28" y="52" width="3" height="3" fill="#ff6b6b"/>
+
+  <!-- H pixel art -->
+  <rect x="34" y="46" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="34" y="49" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="34" y="52" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="37" y="49" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="40" y="49" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="43" y="46" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="43" y="49" width="3" height="3" fill="#ff6b6b"/>
+  <rect x="43" y="52" width="3" height="3" fill="#ff6b6b"/>
+
+  <!-- Small game controller icon hint - d-pad between M and H -->
+  <rect x="31" y="55" width="2" height="2" fill="#4a5568" opacity="0.5"/>
+</svg>

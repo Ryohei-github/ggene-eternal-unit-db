@@ -325,6 +325,18 @@ a:hover{text-decoration:underline}
 .weapon-tag.map{background:rgba(255,68,102,.15);border-color:rgba(255,68,102,.3);color:#ff6688}
 .card-tags{display:flex;flex-wrap:wrap;gap:3px}
 .tag{padding:1px 5px;background:rgba(255,255,255,.05);border-radius:3px;font-size:.6em;color:var(--text2)}
+.leader-tag-clickable:hover{filter:brightness(1.3);box-shadow:0 0 6px rgba(0,212,255,.4)}
+.target-units-popup-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:400;overflow:auto;padding:40px 16px}
+.target-units-popup{background:var(--card);border:1px solid var(--accent);border-radius:12px;max-width:560px;margin:0 auto;padding:16px;max-height:80vh;display:flex;flex-direction:column}
+.target-units-popup h3{margin:0 0 10px;font-size:.95em;color:var(--accent);display:flex;align-items:center;justify-content:space-between}
+.target-units-popup .close-btn{background:none;border:none;color:var(--text2);font-size:1.2em;cursor:pointer;padding:4px 8px}
+.target-units-popup .close-btn:hover{color:var(--text)}
+.target-units-list{overflow-y:auto;flex:1;display:flex;flex-direction:column;gap:4px}
+.target-unit-item{display:flex;align-items:center;gap:8px;padding:6px 8px;border-radius:6px;background:rgba(255,255,255,.03);cursor:pointer;transition:background .15s}
+.target-unit-item:hover{background:rgba(0,212,255,.1)}
+.target-unit-item img{width:36px;height:36px;border-radius:4px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
+.target-unit-item .tui-name{font-size:.82em;font-weight:600;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.target-unit-item .tui-meta{font-size:.7em;color:var(--text2);white-space:nowrap}
 .clickable-tag{cursor:pointer;transition:background .15s,color .15s}.clickable-tag:hover{background:var(--accent);color:#fff}
 
 /* Transform Toggle */
@@ -1383,6 +1395,48 @@ function supportSkillIcon(type, size = 22) {
   return hpSvg;
 }
 
+// === TARGET UNITS POPUP ===
+function showTargetUnits(targetSeries) {
+  if (!targetSeries || targetSeries === '-') return;
+  // Parse target: may contain "or" separating multiple series
+  const seriesList = targetSeries.split(/or/i).map(s => s.trim()).filter(Boolean);
+  // Find matching units
+  const matched = allUnits.filter(u => {
+    const uSeries = u.seriesArr || [];
+    return seriesList.some(ts => uSeries.some(us => us.includes(ts) || ts.includes(us)));
+  });
+  // Also check tags
+  const matchedByTag = allUnits.filter(u => {
+    if (matched.includes(u)) return false;
+    const tags = u.tags || [];
+    return seriesList.some(ts => tags.some(t => t.includes(ts) || ts.includes(t)));
+  });
+  const all = [...matched, ...matchedByTag];
+  // Build popup
+  let overlay = document.getElementById('targetUnitsOverlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.id = 'targetUnitsOverlay';
+    overlay.className = 'target-units-popup-overlay';
+    overlay.onclick = e => { if (e.target === overlay) overlay.style.display = 'none'; };
+    document.body.appendChild(overlay);
+  }
+  const listHTML = all.length
+    ? all.map(u => `<div class="target-unit-item" onclick="document.getElementById('targetUnitsOverlay').style.display='none';showUnitDetail(${u.id})">
+        ${u.image ? `<img src="${u.image}" alt="${u.name}" onerror="this.style.display='none'" loading="lazy">` : '<div style="width:36px;height:36px;border-radius:4px;background:var(--border)"></div>'}
+        <span class="tui-name">${u.name}</span>
+        <span class="badge ${rarityClass(u.rarity)}" style="font-size:.6em">${u.rarity||'?'}</span>
+        <span class="tui-meta">${u.type||''}</span>
+      </div>`).join('')
+    : '<div style="text-align:center;padding:24px;color:var(--text2);font-size:.85em">対象ユニットが見つかりませんでした</div>';
+  overlay.innerHTML = `<div class="target-units-popup">
+    <h3><span>対象ユニット一覧：${targetSeries}</span><button class="close-btn" onclick="document.getElementById('targetUnitsOverlay').style.display='none'">✕</button></h3>
+    <div style="font-size:.72em;color:var(--text2);margin-bottom:8px">${all.length}体のユニットが該当</div>
+    <div class="target-units-list">${listHTML}</div>
+  </div>`;
+  overlay.style.display = 'block';
+}
+
 // === SUPPORTER CARD ===
 function supporterCardHTML(s) {
   const base = s.leader_0 || '';
@@ -1407,13 +1461,13 @@ function supporterCardHTML(s) {
       <span class="supporter-stat">攻撃 <span class="sv">${s.attack||'-'}</span></span>
     </div>
     <div style="background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2);border-radius:6px;padding:8px;margin-bottom:6px">
-      <div style="font-size:.68em;color:var(--accent);font-weight:600;margin-bottom:3px">リーダースキル</div>
-      <div style="display:flex;align-items:baseline;gap:6px;flex-wrap:wrap">
-        <span class="tag" style="font-size:.75em;background:rgba(0,212,255,.15);border-color:var(--accent)">${s.target_series||'-'}</span>
-        ${base ? `<span style="font-size:1.1em;font-weight:700;color:var(--text)">${base}</span>` : ''}
-        ${max && max !== base ? `<span style="font-size:.75em;color:var(--text2)">→ MAX <span style="color:#3fb950;font-weight:700">${max}</span></span>` : ''}
+      <div style="font-size:.65em;color:var(--accent);font-weight:600;margin-bottom:2px">リーダースキル</div>
+      <div style="display:flex;align-items:baseline;gap:4px;flex-wrap:nowrap;overflow:hidden">
+        <span class="tag leader-tag-clickable" style="font-size:.68em;background:rgba(0,212,255,.15);border-color:var(--accent);cursor:pointer;flex-shrink:0;white-space:nowrap" onclick="event.stopPropagation();showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')">${s.target_series||'-'}</span>
+        ${base ? `<span style="font-size:.85em;font-weight:700;color:var(--text);white-space:nowrap">${base}</span>` : ''}
+        ${max && max !== base ? `<span style="font-size:.68em;color:var(--text2);white-space:nowrap">→MAX <span style="color:#3fb950;font-weight:700">${max}</span></span>` : ''}
       </div>
-      <div style="font-size:.7em;color:var(--text2);margin-top:2px">${effectLabel}</div>
+      <div style="font-size:.65em;color:var(--text2);margin-top:1px">${effectLabel}</div>
     </div>
     <div style="display:flex;align-items:center;gap:6px;font-size:.78em;color:var(--text2)">
       ${recIcon}
@@ -1487,7 +1541,7 @@ function supporterTableHTML(items) {
       <td class="cell-num">${s.hp ? s.hp.toLocaleString() : '-'}</td>
       <td class="cell-num">${s.attack||'-'}</td>
       <td class="cell-center" style="font-size:.8em">${s.obtain||'-'}</td>
-      <td class="cell-center" style="font-size:.8em">${s.target_series||'-'}</td>
+      <td class="cell-center" style="font-size:.8em"><span class="leader-tag-clickable" style="cursor:pointer;padding:1px 4px;border-radius:3px;background:rgba(0,212,255,.1)" onclick="event.stopPropagation();showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')">${s.target_series||'-'}</span></td>
       <td class="cell-center" style="font-weight:700">${lsDisplay}</td>
       <td class="cell-center"><span style="display:inline-flex;align-items:center;gap:4px">${recIcon} ${s.recovery_type||'-'} ${s.recovery_amount||''}</span></td>
       <td class="cell-center">${s.range||'-'}</td>
@@ -1769,7 +1823,7 @@ function showSupporterDetail(id) {
         <h2 style="margin:0">${s.name}${obtainLabel}</h2>
         <div class="detail-badges" style="margin-top:4px">
           <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
-          ${s.target_series ? `<span class="badge badge-type">${s.target_series}</span>` : ''}
+          ${s.target_series ? `<span class="badge badge-type leader-tag-clickable" style="cursor:pointer" onclick="showTargetUnits('${s.target_series.replace(/'/g,"\\'")}')">${s.target_series}</span>` : ''}
         </div>
       </div>
     </div>
@@ -1784,9 +1838,9 @@ function showSupporterDetail(id) {
       <h3>リーダースキル</h3>
       <div class="supporter-detail-block" style="border-color:rgba(0,212,255,.3)">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px;flex-wrap:wrap">
-          <span class="tag" style="font-size:.8em;background:rgba(0,212,255,.15);border-color:var(--accent)">${s.target_series||'-'}</span>
-          ${base ? `<span style="font-size:1.2em;font-weight:700;color:var(--text)">${base}</span>` : ''}
-          ${max && max !== base ? `<span style="color:var(--text2)">→</span><span style="font-size:1.2em;font-weight:700;color:#3fb950">${max}</span>` : ''}
+          <span class="tag leader-tag-clickable" style="font-size:.8em;background:rgba(0,212,255,.15);border-color:var(--accent);cursor:pointer" onclick="showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')">${s.target_series||'-'}</span>
+          ${base ? `<span style="font-size:1em;font-weight:700;color:var(--text)">${base}</span>` : ''}
+          ${max && max !== base ? `<span style="color:var(--text2)">→</span><span style="font-size:1em;font-weight:700;color:#3fb950">${max}</span>` : ''}
         </div>
         <div class="sd-text">${s.leader_effect || 'ステータス上昇(EN除く)'}</div>
         ${convexHTML}

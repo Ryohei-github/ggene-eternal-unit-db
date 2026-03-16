@@ -1,0 +1,1919 @@
+/Users/RH/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+[INFO] Found 467 characters to re-scrape
+[1/467] シャア・アズナブル (UR)
+  Stats: shooting=643, melee=613, awakening=856, defense=521, reaction=649, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[2/467] シャア・アズナブル(THE ORIGIN版) (UR)
+  Stats: shooting=602, melee=697, awakening=698, defense=537, reaction=733, sp=15
+  Skills: 3 items
+  Abilities: 4 items (0 EX)
+[3/467] シロー・アマダ (UR)
+  Stats: shooting=772, melee=613, awakening=466, defense=620, reaction=559, sp=15
+  Skills: 3 items
+  Abilities: 4 items (1 EX)
+[4/467] ミハイル・カミンスキー (UR)
+  Stats: shooting=819, melee=682, awakening=473, defense=574, reaction=622, sp=15
+  Skills: 3 items
+  Abilities: 4 items (1 EX)
+[5/467] ユウ・カジマ (UR)
+  Stats: shooting=639, melee=848, awakening=483, defense=581, reaction=620, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[6/467] アナベル・ガトー(攻撃) (UR)
+  Stats: shooting=861, melee=669, awakening=398, defense=591, reaction=513, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[7/467] イットウ・ツルギ (UR)
+  Stats: shooting=496, melee=858, awakening=506, defense=603, reaction=580, sp=15
+  Skills: 3 items
+  Abilities: 4 items (1 EX)
+[8/467] カミーユ・ビダン (UR)
+  Stats: shooting=589, melee=595, awakening=970, defense=519, reaction=696, sp=15
+  Skills: 3 items
+  Abilities: 4 items (1 EX)
+[9/467] ハマーン・カーン (UR)
+  Stats: shooting=635, melee=652, awakening=812, defense=533, reaction=706, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[10/467] アムロ・レイ(CCA)(攻撃) (UR)
+  Stats: shooting=634, melee=551, awakening=897, defense=541, reaction=727, sp=15
+  Skills: 3 items
+  Abilities: 6 items (3 EX)
+  [SAVE] Progress saved (10 updated)
+[11/467] シャア・アズナブル(CCA) (UR)
+  Stats: shooting=595, melee=614, awakening=912, defense=530, reaction=643, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[12/467] バナージ・リンクス(攻撃) (UR)
+  Stats: shooting=583, melee=700, awakening=659, defense=525, reaction=559, sp=15
+  Skills: 3 items
+  Abilities: 4 items (1 EX)
+[13/467] ハサウェイ・ノア (UR)
+  Stats: shooting=594, melee=626, awakening=832, defense=524, reaction=607, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[14/467] キンケドゥ・ナウ (UR)
+  Stats: shooting=640, melee=672, awakening=650, defense=593, reaction=703, sp=15
+  Skills: 3 items
+  Abilities: 4 items (1 EX)
+[15/467] ドモン・カッシュ (UR)
+  Stats: shooting=553, melee=896, awakening=449, defense=502, reaction=513, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[16/467] 東方不敗マスター・アジア (UR)
+  Stats: shooting=529, melee=859, awakening=412, defense=520, reaction=577, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[17/467] ガロード・ラン (UR)
+  Stats: shooting=871, melee=630, awakening=445, defense=568, reaction=542, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[18/467] キラ・ヤマト(DESTINY) (UR)
+  Stats: shooting=734, melee=580, awakening=816, defense=498, reaction=707, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[19/467] シン・アスカ(攻撃) (UR)
+  Stats: shooting=608, melee=742, awakening=787, defense=488, reaction=718, sp=15
+  Skills: 3 items
+  Abilities: 7 items (4 EX)
+[20/467] ロウ・ギュール (UR)
+  Stats: shooting=585, melee=852, awakening=376, defense=610, reaction=624, sp=15
+  Skills: 3 items
+  Abilities: 6 items (3 EX)
+  [SAVE] Progress saved (20 updated)
+[21/467] 刹那・F・セイエイ (UR)
+  Stats: shooting=552, melee=808, awakening=448, defense=524, reaction=565, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[22/467] フリット・アスノ (UR)
+  Stats: shooting=738, melee=823, awakening=644, defense=465, reaction=600, sp=15
+  Skills: 3 items
+  Abilities: 6 items (3 EX)
+[23/467] 三日月・オーガス(攻撃) (UR)
+  Stats: shooting=517, melee=880, awakening=563, defense=507, reaction=584, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[24/467] スレッタ・マーキュリー(攻撃) (UR)
+  Stats: shooting=645, melee=588, awakening=824, defense=561, reaction=571, sp=15
+  Skills: 3 items
+  Abilities: 6 items (3 EX)
+[25/467] ミオリネ・レンブラン (UR)
+  Stats: shooting=643, melee=783, awakening=429, defense=500, reaction=522, sp=15
+  Skills: 3 items
+  Abilities: 4 items (0 EX)
+[26/467] 劉備ユニコーンガンダム (UR)
+  Stats: shooting=645, melee=855, awakening=561, defense=530, reaction=588, sp=15
+  Skills: 3 items
+  Abilities: 5 items (2 EX)
+[27/467] サイコ・ハロ (UR)
+  Stats: shooting=686, melee=686, awakening=860, defense=586, reaction=315, sp=15
+  Skills: 3 items
+  Abilities: 4 items (1 EX)
+[28/467] オリヴァー・マイ (UR)
+  Stats: shooting=763, melee=628, awakening=499, defense=583, reaction=536, sp=15
+  Skills: 3 items
+  Abilities: 7 items (3 EX)
+[29/467] ダリル・ローレンツ (UR)
+  Stats: shooting=721, melee=634, awakening=499, defense=589, reaction=589, sp=15
+  Skills: 3 items
+  Abilities: 7 items (3 EX)
+[30/467] アナベル・ガトー(支援) (UR)
+  Stats: shooting=855, melee=598, awakening=460, defense=594, reaction=543, sp=15
+  Skills: 3 items
+  Abilities: 7 items (0 EX)
+  [SAVE] Progress saved (30 updated)
+[31/467] アスナ・エルマリート (UR)
+  Stats: shooting=711, melee=578, awakening=717, defense=561, reaction=705, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[32/467] パプテマス・シロッコ (UR)
+  Stats: shooting=589, melee=627, awakening=828, defense=552, reaction=685, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[33/467] アムロ・レイ(CCA)(支援) (UR)
+  Stats: shooting=629, melee=585, awakening=841, defense=543, reaction=688, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[34/467] バナージ・リンクス(支援) (UR)
+  Stats: shooting=545, melee=528, awakening=855, defense=524, reaction=582, sp=15
+  Skills: 3 items
+  Abilities: 7 items (3 EX)
+[35/467] フル・フロンタル (UR)
+  Stats: shooting=695, melee=753, awakening=528, defense=505, reaction=569, sp=15
+  Skills: 3 items
+  Abilities: 7 items (3 EX)
+[36/467] シャギア・フロスト (UR)
+  Stats: shooting=795, melee=738, awakening=584, defense=589, reaction=577, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[37/467] キラ・ヤマト (UR)
+  Stats: shooting=729, melee=612, awakening=663, defense=556, reaction=706, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[38/467] ラウ・ル・クルーゼ (UR)
+  Stats: shooting=780, melee=571, awakening=813, defense=526, reaction=576, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[39/467] ラクス・クライン (UR)
+  Stats: shooting=649, melee=579, awakening=696, defense=534, reaction=649, sp=15
+  Skills: 3 items
+  Abilities: 5 items (0 EX)
+[40/467] シン・アスカ (UR)
+  Stats: shooting=669, melee=617, awakening=780, defense=503, reaction=711, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+  [SAVE] Progress saved (40 updated)
+[41/467] アセム・アスノ (UR)
+  Stats: shooting=845, melee=801, awakening=359, defense=511, reaction=689, sp=15
+  Skills: 3 items
+  Abilities: 7 items (3 EX)
+[42/467] アルジ・ミラージ (UR)
+  Stats: shooting=600, melee=738, awakening=436, defense=555, reaction=562, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[43/467] スレッタ・マーキュリー(支援) (UR)
+  Stats: shooting=774, melee=558, awakening=687, defense=559, reaction=584, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[44/467] レイジ (UR)
+  Stats: shooting=698, melee=604, awakening=584, defense=561, reaction=588, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[45/467] モンスターブラックドラゴン (UR)
+  Stats: shooting=620, melee=564, awakening=813, defense=576, reaction=619, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[46/467] マーク・ギルダー (UR)
+  Stats: shooting=564, melee=568, awakening=760, defense=624, reaction=627, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[47/467] アムロ・レイ(1st) (UR)
+  Stats: shooting=571, melee=532, awakening=658, defense=703, reaction=802, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[48/467] ノリス・パッカード (UR)
+  Stats: shooting=543, melee=678, awakening=394, defense=781, reaction=604, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[49/467] イオ・フレミング (UR)
+  Stats: shooting=617, melee=573, awakening=437, defense=798, reaction=747, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[50/467] コウ・ウラキ (UR)
+  Stats: shooting=597, melee=531, awakening=424, defense=820, reaction=675, sp=15
+  Skills: 3 items
+  Abilities: 7 items (3 EX)
+  [SAVE] Progress saved (50 updated)
+[51/467] ジュドー・アーシタ (UR)
+  Stats: shooting=568, melee=531, awakening=672, defense=736, reaction=759, sp=15
+  Skills: 3 items
+  Abilities: 7 items (0 EX)
+[52/467] リディ・マーセナス (UR)
+  Stats: shooting=544, melee=544, awakening=526, defense=725, reaction=698, sp=15
+  Skills: 3 items
+  Abilities: 7 items (3 EX)
+[53/467] ヨナ・バシュタ (UR)
+  Stats: shooting=567, melee=527, awakening=538, defense=736, reaction=665, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[54/467] レーン・エイム (UR)
+  Stats: shooting=558, melee=522, awakening=702, defense=749, reaction=613, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[55/467] シーブック・アノー (UR)
+  Stats: shooting=538, melee=538, awakening=628, defense=771, reaction=808, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[56/467] デュオ・マックスウェル(EW版) (UR)
+  Stats: shooting=514, melee=684, awakening=390, defense=681, reaction=715, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[57/467] ティファ・アディール (UR)
+  Stats: shooting=431, melee=431, awakening=789, defense=642, reaction=862, sp=15
+  Skills: 3 items
+  Abilities: 5 items (0 EX)
+[58/467] アスラン・ザラ (UR)
+  Stats: shooting=541, melee=576, awakening=592, defense=772, reaction=792, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[59/467] ロンド・ミナ・サハク (UR)
+  Stats: shooting=518, melee=582, awakening=538, defense=782, reaction=871, sp=15
+  Skills: 3 items
+  Abilities: 7 items (3 EX)
+[60/467] 三日月・オーガス(耐久) (UR)
+  Stats: shooting=477, melee=612, awakening=536, defense=658, reaction=747, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+  [SAVE] Progress saved (60 updated)
+[61/467] ガエリオ・ボードウィン (UR)
+  Stats: shooting=537, melee=778, awakening=468, defense=670, reaction=702, sp=15
+  Skills: 3 items
+  Abilities: 6 items (2 EX)
+[62/467] スレッタ・マーキュリー(耐久) (UR)
+  Stats: shooting=567, melee=491, awakening=522, defense=814, reaction=659, sp=15
+  Skills: 3 items
+  Abilities: 5 items (1 EX)
+[63/467] ドズル・ザビ (SSR)
+  Stats: shooting=456, melee=727, awakening=384, defense=498, reaction=404, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[64/467] デメジエール・ソンネン (SSR)
+  Stats: shooting=732, melee=457, awakening=405, defense=440, reaction=445, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[65/467] オリヴァー・マイ (SSR)
+  Stats: shooting=602, melee=478, awakening=367, defense=434, reaction=429, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[66/467] アイナ・サハリン (SSR)
+  Stats: shooting=636, melee=439, awakening=318, defense=454, reaction=472, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[67/467] バーナード・ワイズマン (SSR)
+  Stats: shooting=460, melee=663, awakening=377, defense=427, reaction=399, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[68/467] ボルク・クライ (SSR)
+  Stats: shooting=500, melee=698, awakening=388, defense=443, reaction=433, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[69/467] ニムバス・シュターゼン (SSR)
+  Stats: shooting=414, melee=635, awakening=344, defense=484, reaction=442, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[70/467] ダリル・ローレンツ (SSR)
+  Stats: shooting=532, melee=448, awakening=365, defense=435, reaction=456, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (70 updated)
+[71/467] アマテ・ユズリハ(マチュ) (SSR)
+  Stats: shooting=494, melee=635, awakening=475, defense=388, reaction=448, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[72/467] シイコ・スガイ (SSR)
+  Stats: shooting=444, melee=686, awakening=498, defense=382, reaction=445, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[73/467] ニャアン (SSR)
+  Stats: shooting=504, melee=604, awakening=468, defense=421, reaction=440, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[74/467] シャリア・ブル(GQ)(0079) (SSR)
+  Stats: shooting=501, melee=478, awakening=637, defense=402, reaction=484, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[75/467] コウ・ウラキ (SSR)
+  Stats: shooting=651, melee=453, awakening=358, defense=444, reaction=414, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[76/467] レズン・シュナイダー (SSR)
+  Stats: shooting=679, melee=494, awakening=398, defense=378, reaction=509, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[77/467] アンジェロ・ザウパー (SSR)
+  Stats: shooting=718, melee=607, awakening=359, defense=367, reaction=426, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[78/467] エメラルダ・ズービン (SSR)
+  Stats: shooting=634, melee=572, awakening=307, defense=372, reaction=448, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[79/467] ケネス・スレッグ (SSR)
+  Stats: shooting=515, melee=619, awakening=318, defense=499, reaction=374, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[80/467] デフ・スタリオン (SSR)
+  Stats: shooting=635, melee=479, awakening=375, defense=482, reaction=477, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (80 updated)
+[81/467] サイ・サイシー (SSR)
+  Stats: shooting=504, melee=598, awakening=248, defense=480, reaction=541, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[82/467] ヒイロ・ユイ (SSR)
+  Stats: shooting=670, melee=480, awakening=349, defense=408, reaction=422, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[83/467] ソリス・アルモニア (SSR)
+  Stats: shooting=675, melee=475, awakening=361, defense=528, reaction=411, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[84/467] ロアビィ・ロイ (SSR)
+  Stats: shooting=709, melee=481, awakening=367, defense=437, reaction=473, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[85/467] エニル・エル (SSR)
+  Stats: shooting=628, melee=437, awakening=575, defense=407, reaction=407, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[86/467] ポゥ・エイジ (SSR)
+  Stats: shooting=704, melee=497, awakening=383, defense=445, reaction=434, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[87/467] イザーク・ジュール (SSR)
+  Stats: shooting=606, melee=586, awakening=410, defense=384, reaction=502, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[88/467] エドワード・ハレルソン (SSR)
+  Stats: shooting=445, melee=744, awakening=378, defense=442, reaction=464, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[89/467] ロンド・ギナ・サハク (SSR)
+  Stats: shooting=585, melee=620, awakening=458, defense=367, reaction=430, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[90/467] カナード・パルス (SSR)
+  Stats: shooting=526, melee=564, awakening=323, defense=509, reaction=517, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (90 updated)
+[91/467] イザーク・ジュール(DESTINY) (SSR)
+  Stats: shooting=500, melee=691, awakening=497, defense=393, reaction=571, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[92/467] シャル・アクスティカ (SSR)
+  Stats: shooting=515, melee=677, awakening=371, defense=431, reaction=462, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[93/467] アリーサ・ガンヘイル (SSR)
+  Stats: shooting=599, melee=667, awakening=303, defense=448, reaction=450, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[94/467] アミダ・アルカ (SSR)
+  Stats: shooting=702, melee=509, awakening=369, defense=421, reaction=464, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[95/467] アルジ・ミラージ (SSR)
+  Stats: shooting=457, melee=612, awakening=358, defense=409, reaction=414, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[96/467] ザディエル・ザルムフォート (SSR)
+  Stats: shooting=609, melee=515, awakening=314, defense=483, reaction=524, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[97/467] ウィスタリオ・アファム【強敵襲来】 (SSR)
+  Stats: shooting=484, melee=670, awakening=241, defense=472, reaction=461, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[98/467] ソフィ・プロネ (SSR)
+  Stats: shooting=702, melee=562, awakening=402, defense=453, reaction=473, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[99/467] イレイ・ハル (SSR)
+  Stats: shooting=495, melee=643, awakening=474, defense=437, reaction=454, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[100/467] 武者頑駄無【強敵襲来】 (SSR)
+  Stats: shooting=676, melee=514, awakening=407, defense=441, reaction=410, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (100 updated)
+[101/467] 騎士ジオング (SSR)
+  Stats: shooting=535, melee=571, awakening=461, defense=410, reaction=436, sp=15
+  Skills: 2 items
+  Abilities: 4 items (0 EX)
+[102/467] ジョニー・ライデン (SSR)
+  Stats: shooting=646, melee=486, awakening=376, defense=453, reaction=493, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[103/467] ジャン・リュック・デュバル (SSR)
+  Stats: shooting=648, melee=491, awakening=389, defense=458, reaction=470, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[104/467] モニク・キャディラック (SSR)
+  Stats: shooting=626, melee=493, awakening=385, defense=410, reaction=405, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[105/467] シロー・アマダ (SSR)
+  Stats: shooting=670, melee=580, awakening=273, defense=423, reaction=394, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[106/467] ヘンリー・ブーン (SSR)
+  Stats: shooting=625, melee=509, awakening=386, defense=478, reaction=451, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[107/467] イオ・フレミング (SSR)
+  Stats: shooting=619, melee=469, awakening=353, defense=443, reaction=434, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[108/467] シュウジ・イトウ【強敵襲来】 (SSR)
+  Stats: shooting=478, melee=477, awakening=612, defense=425, reaction=444, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[109/467] ガイア(GQ) (SSR)
+  Stats: shooting=627, melee=475, awakening=363, defense=427, reaction=430, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[110/467] エグザベ・オリベ (SSR)
+  Stats: shooting=493, melee=493, awakening=550, defense=448, reaction=438, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (110 updated)
+[111/467] クワトロ・バジーナ (SSR)
+  Stats: shooting=565, melee=471, awakening=540, defense=422, reaction=501, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[112/467] エルピー・プル (SSR)
+  Stats: shooting=502, melee=486, awakening=566, defense=416, reaction=527, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[113/467] ハサウェイ・ノア (SSR)
+  Stats: shooting=502, melee=514, awakening=583, defense=360, reaction=547, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[114/467] レーン・エイム (SSR)
+  Stats: shooting=606, melee=473, awakening=526, defense=418, reaction=474, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[115/467] アルゴ・ガルスキー (SSR)
+  Stats: shooting=492, melee=648, awakening=246, defense=513, reaction=477, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[116/467] カトル・ラバーバ・ウィナー (SSR)
+  Stats: shooting=601, melee=490, awakening=345, defense=452, reaction=426, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[117/467] ウィッツ・スー (SSR)
+  Stats: shooting=681, melee=494, awakening=383, defense=449, reaction=455, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[118/467] カガリ・ユラ・アスハ (SSR)
+  Stats: shooting=637, melee=515, awakening=372, defense=459, reaction=470, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[119/467] 叢雲劾 (SSR)
+  Stats: shooting=599, melee=511, awakening=443, defense=442, reaction=493, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[120/467] プレア・レヴェリー (SSR)
+  Stats: shooting=497, melee=440, awakening=681, defense=418, reaction=474, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (120 updated)
+[121/467] ルナマリア・ホーク (SSR)
+  Stats: shooting=521, melee=612, awakening=497, defense=460, reaction=545, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[122/467] ディアッカ・エルスマン(DESTINY) (SSR)
+  Stats: shooting=659, melee=494, awakening=520, defense=484, reaction=484, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[123/467] ミーア・キャンベル【強敵襲来】 (SSR)
+  Stats: shooting=480, melee=443, awakening=556, defense=465, reaction=534, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[124/467] グラーベ・ヴィオレント (SSR)
+  Stats: shooting=556, melee=530, awakening=459, defense=557, reaction=539, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[125/467] エイミー・ジンバリスト (SSR)
+  Stats: shooting=657, melee=498, awakening=376, defense=462, reaction=462, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[126/467] フリット・アスノ (SSR)
+  Stats: shooting=573, melee=546, awakening=476, defense=483, reaction=555, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[127/467] イオク・クジャン (SSR)
+  Stats: shooting=640, melee=581, awakening=356, defense=456, reaction=431, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[128/467] デイラ・ナディラ (SSR)
+  Stats: shooting=470, melee=733, awakening=320, defense=530, reaction=412, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[129/467] グエル・ジェターク (SSR)
+  Stats: shooting=571, melee=715, awakening=365, defense=504, reaction=438, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[130/467] ノヤマ・リナ (SSR)
+  Stats: shooting=561, melee=537, awakening=440, defense=472, reaction=486, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (130 updated)
+[131/467] 魔王サタンガンダム (SSR)
+  Stats: shooting=699, melee=417, awakening=454, defense=425, reaction=463, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[132/467] ゼロ・ムラサメ (SSR)
+  Stats: shooting=532, melee=507, awakening=557, defense=431, reaction=473, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[133/467] シン・マツナガ (SSR)
+  Stats: shooting=437, melee=483, awakening=339, defense=683, reaction=526, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[134/467] ヘルベルト・フォン・カスペン (SSR)
+  Stats: shooting=421, melee=448, awakening=321, defense=638, reaction=500, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[135/467] クリスチーナ・マッケンジー (SSR)
+  Stats: shooting=411, melee=431, awakening=331, defense=645, reaction=514, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[136/467] ユウ・カジマ (SSR)
+  Stats: shooting=390, melee=460, awakening=269, defense=623, reaction=526, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[137/467] シャア・アズナブル(GQ) (SSR)
+  Stats: shooting=426, melee=426, awakening=472, defense=544, reaction=637, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[138/467] オルテガ(GQ) (SSR)
+  Stats: shooting=422, melee=425, awakening=328, defense=624, reaction=525, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[139/467] ドゥー・ムラサメ (SSR)
+  Stats: shooting=453, melee=393, awakening=432, defense=509, reaction=569, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[140/467] アナベル・ガトー (SSR)
+  Stats: shooting=476, melee=460, awakening=262, defense=617, reaction=504, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (140 updated)
+[141/467] ケリィ・レズナー (SSR)
+  Stats: shooting=455, melee=377, awakening=332, defense=626, reaction=538, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[142/467] ラカン・ダカラン (SSR)
+  Stats: shooting=441, melee=473, awakening=343, defense=691, reaction=520, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[143/467] レッド・ウェイライン (SSR)
+  Stats: shooting=457, melee=444, awakening=337, defense=549, reaction=680, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[144/467] ダグザ・マックール (SSR)
+  Stats: shooting=457, melee=434, awakening=344, defense=717, reaction=518, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[145/467] ギギ・アンダルシア (SSR)
+  Stats: shooting=409, melee=401, awakening=550, defense=525, reaction=617, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[146/467] ジュリア・スガ (SSR)
+  Stats: shooting=437, melee=429, awakening=270, defense=615, reaction=512, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[147/467] チボデー・クロケット (SSR)
+  Stats: shooting=486, melee=510, awakening=220, defense=549, reaction=627, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[148/467] ジョルジュ・ド・サンド (SSR)
+  Stats: shooting=485, melee=420, awakening=333, defense=603, reaction=540, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[149/467] オデル・バーネット (SSR)
+  Stats: shooting=458, melee=444, awakening=448, defense=663, reaction=568, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[150/467] ランスロー・ダーウェル (SSR)
+  Stats: shooting=540, melee=574, awakening=300, defense=668, reaction=505, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (150 updated)
+[151/467] ロウ・ギュール (SSR)
+  Stats: shooting=339, melee=538, awakening=394, defense=580, reaction=451, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[152/467] レイ・ザ・バレル (SSR)
+  Stats: shooting=446, melee=410, awakening=617, defense=608, reaction=562, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[153/467] アンドリュー・バルトフェルド(DESTINY) (SSR)
+  Stats: shooting=429, melee=454, awakening=448, defense=676, reaction=656, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[154/467] ビサイド・ペイン (SSR)
+  Stats: shooting=495, melee=474, awakening=444, defense=596, reaction=645, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[155/467] ユリン・ルシェル (SSR)
+  Stats: shooting=502, melee=335, awakening=660, defense=477, reaction=672, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[156/467] カルタ・イシュー (SSR)
+  Stats: shooting=458, melee=451, awakening=340, defense=680, reaction=536, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[157/467] ジュリエッタ・ジュリス (SSR)
+  Stats: shooting=318, melee=571, awakening=307, defense=581, reaction=686, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[158/467] サンポ・ハクリ (SSR)
+  Stats: shooting=557, melee=392, awakening=265, defense=603, reaction=503, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[159/467] ノレア・デュノク (SSR)
+  Stats: shooting=482, melee=448, awakening=366, defense=681, reaction=611, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[160/467] 騎士ガンダム (SSR)
+  Stats: shooting=462, melee=467, awakening=334, defense=718, reaction=475, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (160 updated)
+[161/467] 騎士サザビー (SSR)
+  Stats: shooting=471, melee=449, awakening=427, defense=688, reaction=549, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[162/467] コマンドガンダム【強敵襲来】 (SSR)
+  Stats: shooting=488, melee=432, awakening=307, defense=616, reaction=606, sp=15
+  Skills: 2 items
+  Abilities: 5 items (0 EX)
+[163/467] セイラ・マス (SR)
+  Stats: shooting=528, melee=355, awakening=432, defense=348, reaction=411, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[164/467] ランバ・ラル (SR)
+  Stats: shooting=367, melee=561, awakening=297, defense=384, reaction=338, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[165/467] ガイア (SR)
+  Stats: shooting=530, melee=402, awakening=304, defense=342, reaction=362, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[166/467] オルテガ (SR)
+  Stats: shooting=397, melee=528, awakening=307, defense=362, reaction=347, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[167/467] ガルマ・ザビ (SR)
+  Stats: shooting=562, melee=351, awakening=319, defense=379, reaction=337, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[168/467] アレクサンドロ・ヘンメ (SR)
+  Stats: shooting=527, melee=355, awakening=316, defense=388, reaction=355, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[169/467] ヴェルナー・ホルバイン (SR)
+  Stats: shooting=500, melee=377, awakening=310, defense=358, reaction=390, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[170/467] ノリス・パッカード (SR)
+  Stats: shooting=408, melee=501, awakening=259, defense=393, reaction=374, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (170 updated)
+[171/467] ガブリエル・ラミレス・ガルシア (SR)
+  Stats: shooting=428, melee=452, awakening=312, defense=373, reaction=367, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[172/467] マリオン・ウェルチ (SR)
+  Stats: shooting=363, melee=351, awakening=535, defense=313, reaction=525, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[173/467] ゲーツ・キャパ(GQ) (SR)
+  Stats: shooting=443, melee=420, awakening=370, defense=383, reaction=374, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[174/467] サウス・バニング (SR)
+  Stats: shooting=553, melee=401, awakening=305, defense=345, reaction=345, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[175/467] ベルナルド・モンシア (SR)
+  Stats: shooting=435, melee=453, awakening=308, defense=364, reaction=373, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[176/467] シーマ・ガラハウ (SR)
+  Stats: shooting=548, melee=442, awakening=347, defense=314, reaction=302, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[177/467] クワトロ・バジーナ (SR)
+  Stats: shooting=426, melee=487, awakening=434, defense=337, reaction=387, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[178/467] ジェリド・メサ (SR)
+  Stats: shooting=407, melee=511, awakening=324, defense=352, reaction=343, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[179/467] ヤザン・ゲーブル(Z) (SR)
+  Stats: shooting=407, melee=537, awakening=290, defense=350, reaction=358, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[180/467] ダンケル・クーパー (SR)
+  Stats: shooting=432, melee=451, awakening=313, defense=367, reaction=367, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (180 updated)
+[181/467] ブラン・ブルターク (SR)
+  Stats: shooting=521, melee=391, awakening=298, defense=385, reaction=341, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[182/467] ジュドー・アーシタ (SR)
+  Stats: shooting=405, melee=463, awakening=441, defense=360, reaction=396, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[183/467] イリア・パゾム (SR)
+  Stats: shooting=415, melee=521, awakening=370, defense=358, reaction=403, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[184/467] キャラ・スーン (SR)
+  Stats: shooting=547, melee=394, awakening=314, defense=339, reaction=351, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[185/467] グレミー・トト (SR)
+  Stats: shooting=505, melee=400, awakening=401, defense=361, reaction=397, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[186/467] エルピー・プル (SR)
+  Stats: shooting=404, melee=391, awakening=549, defense=332, reaction=404, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[187/467] アムロ・レイ(CCA) (SR)
+  Stats: shooting=411, melee=406, awakening=385, defense=391, reaction=465, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[188/467] ケーラ・スゥ (SR)
+  Stats: shooting=553, melee=366, awakening=345, defense=342, reaction=343, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[189/467] ナイジェル・ギャレット (SR)
+  Stats: shooting=487, melee=404, awakening=297, defense=316, reaction=430, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[190/467] ダリル・マッギネス (SR)
+  Stats: shooting=381, melee=562, awakening=301, defense=368, reaction=333, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (190 updated)
+[191/467] フル・フロンタル (SR)
+  Stats: shooting=443, melee=422, awakening=378, defense=364, reaction=386, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[192/467] ギルボア・サント (SR)
+  Stats: shooting=405, melee=468, awakening=297, defense=394, reaction=367, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[193/467] ロニ・ガーベイ (SR)
+  Stats: shooting=421, melee=327, awakening=520, defense=396, reaction=411, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[194/467] ガウマン・ノビル (SR)
+  Stats: shooting=421, melee=519, awakening=266, defense=409, reaction=329, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[195/467] フェンサー・メイン (SR)
+  Stats: shooting=516, melee=443, awakening=205, defense=398, reaction=378, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[196/467] レーン・エイム (SR)
+  Stats: shooting=454, melee=409, awakening=454, defense=361, reaction=357, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[197/467] ドモン・カッシュ(攻撃) (SR)
+  Stats: shooting=344, melee=553, awakening=288, defense=358, reaction=362, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[198/467] チボデー・クロケット (SR)
+  Stats: shooting=515, melee=388, awakening=293, defense=347, reaction=355, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[199/467] 東方不敗マスター・アジア(攻撃) (SR)
+  Stats: shooting=362, melee=508, awakening=277, defense=355, reaction=397, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[200/467] ミケロ・チャリオット (SR)
+  Stats: shooting=517, melee=493, awakening=212, defense=342, reaction=342, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (200 updated)
+[201/467] アレンビー・ビアズリー (SR)
+  Stats: shooting=281, melee=553, awakening=258, defense=349, reaction=449, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[202/467] デュオ・マックスウェル (SR)
+  Stats: shooting=365, melee=581, awakening=290, defense=337, reaction=380, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[203/467] 張 五飛 (SR)
+  Stats: shooting=361, melee=581, awakening=290, defense=371, reaction=349, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[204/467] ミリアルド・ピースクラフト (SR)
+  Stats: shooting=395, melee=554, awakening=288, defense=321, reaction=388, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[205/467] ルクレツィア・ノイン (SR)
+  Stats: shooting=564, melee=369, awakening=298, defense=345, reaction=371, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[206/467] ガロード・ラン (SR)
+  Stats: shooting=517, melee=423, awakening=293, defense=358, reaction=346, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[207/467] シャギア・フロスト (SR)
+  Stats: shooting=578, melee=411, awakening=359, defense=354, reaction=382, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[208/467] ランスロー・ダーウェル (SR)
+  Stats: shooting=497, melee=554, awakening=251, defense=436, reaction=315, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[209/467] キラ・ヤマト(攻撃) (SR)
+  Stats: shooting=435, melee=483, awakening=394, defense=345, reaction=403, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[210/467] ムウ・ラ・フラガ (SR)
+  Stats: shooting=525, melee=373, awakening=435, defense=341, reaction=393, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (210 updated)
+[211/467] クロト・ブエル (SR)
+  Stats: shooting=378, melee=550, awakening=341, defense=349, reaction=379, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[212/467] アスラン・ザラ (SR)
+  Stats: shooting=415, melee=464, awakening=388, defense=383, reaction=411, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[213/467] ニコル・アマルフィ (SR)
+  Stats: shooting=408, melee=460, awakening=388, defense=362, reaction=447, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[214/467] アンドリュー・バルトフェルド (SR)
+  Stats: shooting=390, melee=493, awakening=387, defense=370, reaction=426, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[215/467] ジュリ・ウー・ニェン (SR)
+  Stats: shooting=375, melee=550, awakening=304, defense=366, reaction=349, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[216/467] シホ・ハーネンフース (SR)
+  Stats: shooting=466, melee=399, awakening=389, defense=379, reaction=427, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[217/467] モーガン・シュバリエ (SR)
+  Stats: shooting=408, melee=487, awakening=302, defense=369, reaction=369, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[218/467] 蘊・奥 (SR)
+  Stats: shooting=287, melee=589, awakening=392, defense=319, reaction=393, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[219/467] メイア・シヴァ (SR)
+  Stats: shooting=448, melee=502, awakening=299, defense=391, reaction=408, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[220/467] アラン・ローランド (SR)
+  Stats: shooting=373, melee=546, awakening=370, defense=358, reaction=423, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (220 updated)
+[221/467] キラ・ヤマト(DESTINY) (SR)
+  Stats: shooting=485, melee=386, awakening=459, defense=344, reaction=402, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[222/467] ルナマリア・ホーク (SR)
+  Stats: shooting=431, melee=456, awakening=382, defense=372, reaction=422, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[223/467] レイ・ザ・バレル (SR)
+  Stats: shooting=420, melee=386, awakening=531, defense=366, reaction=373, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[224/467] ステラ・ルーシェ (SR)
+  Stats: shooting=457, melee=371, awakening=387, defense=196, reaction=569, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[225/467] ハイネ・ヴェステンフルス (SR)
+  Stats: shooting=459, melee=497, awakening=402, defense=316, reaction=400, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[226/467] ハレルヤ・ハプティズム (SR)
+  Stats: shooting=520, melee=413, awakening=409, defense=309, reaction=422, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[227/467] ミハエル・トリニティ (SR)
+  Stats: shooting=388, melee=542, awakening=344, defense=377, reaction=386, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[228/467] アレハンドロ・コーナー (SR)
+  Stats: shooting=545, melee=389, awakening=292, defense=373, reaction=344, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[229/467] セルゲイ・スミルノフ (SR)
+  Stats: shooting=397, melee=547, awakening=292, defense=366, reaction=340, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[230/467] アリー・アル・サーシェス (SR)
+  Stats: shooting=407, melee=562, awakening=295, defense=341, reaction=345, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (230 updated)
+[231/467] ウルフ・エニアクル (SR)
+  Stats: shooting=449, melee=509, awakening=191, defense=363, reaction=428, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[232/467] デシル・ガレット (SR)
+  Stats: shooting=501, melee=478, awakening=365, defense=348, reaction=377, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[233/467] ギーラ・ゾイ (SR)
+  Stats: shooting=506, melee=453, awakening=230, defense=394, reaction=358, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[234/467] イワーク・ブライア (SR)
+  Stats: shooting=402, melee=595, awakening=234, defense=452, reaction=313, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[235/467] アセム・アスノ (SR)
+  Stats: shooting=526, melee=499, awakening=230, defense=298, reaction=438, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[236/467] ウルフ・エニアクル(アセム編) (SR)
+  Stats: shooting=515, melee=513, awakening=191, defense=383, reaction=387, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[237/467] ゼハート・ガレット (SR)
+  Stats: shooting=448, melee=478, awakening=412, defense=331, reaction=404, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[238/467] メデル・ザント (SR)
+  Stats: shooting=520, melee=440, awakening=188, defense=391, reaction=401, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[239/467] 三日月・オーガス (SR)
+  Stats: shooting=348, melee=564, awakening=392, defense=336, reaction=369, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[240/467] ユージン・セブンスターク (SR)
+  Stats: shooting=444, melee=423, awakening=360, defense=373, reaction=388, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (240 updated)
+[241/467] ノルバ・シノ (SR)
+  Stats: shooting=395, melee=479, awakening=356, defense=385, reaction=376, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[242/467] デルマ (SR)
+  Stats: shooting=416, melee=496, awakening=350, defense=367, reaction=358, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[243/467] マクギリス・ファリド (SR)
+  Stats: shooting=410, melee=524, awakening=300, defense=340, reaction=363, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[244/467] アイン・ダルトン (SR)
+  Stats: shooting=545, melee=395, awakening=303, defense=342, reaction=360, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[245/467] モンターク (SR)
+  Stats: shooting=374, melee=569, awakening=293, defense=337, reaction=375, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[246/467] イオク・クジャン (SR)
+  Stats: shooting=465, melee=441, awakening=281, defense=403, reaction=344, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[247/467] ヴィダール (SR)
+  Stats: shooting=489, melee=532, awakening=290, defense=322, reaction=368, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[248/467] サンドバル・ロイター (SR)
+  Stats: shooting=456, melee=510, awakening=274, defense=372, reaction=366, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[249/467] ロザーリオ・レオーネ (SR)
+  Stats: shooting=448, melee=472, awakening=288, defense=408, reaction=355, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[250/467] ジジル・ジジン (SR)
+  Stats: shooting=362, melee=557, awakening=265, defense=315, reaction=445, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+  [SAVE] Progress saved (250 updated)
+[251/467] スレッタ・マーキュリー(攻撃) (SR)
+  Stats: shooting=424, melee=367, awakening=539, defense=348, reaction=365, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[252/467] エラン・ケレス (SR)
+  Stats: shooting=532, melee=290, awakening=404, defense=409, reaction=338, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[253/467] メイジー・メイ (SR)
+  Stats: shooting=493, melee=469, awakening=226, defense=294, reaction=458, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[254/467] レネ・コスタ (SR)
+  Stats: shooting=546, melee=438, awakening=220, defense=362, reaction=380, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[255/467] ラウダ・ニール (SR)
+  Stats: shooting=335, melee=556, awakening=395, defense=362, reaction=394, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[256/467] フェルシー・ロロ (SR)
+  Stats: shooting=423, melee=443, awakening=315, defense=372, reaction=373, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[257/467] エラン・ケレス(強化人士5号) (SR)
+  Stats: shooting=540, melee=393, awakening=308, defense=354, reaction=310, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[258/467] オルコット (SR)
+  Stats: shooting=424, melee=531, awakening=368, defense=360, reaction=264, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[259/467] 戦士ガンキャノン (SR)
+  Stats: shooting=365, melee=570, awakening=303, defense=361, reaction=350, sp=15
+  Skills: 1 items
+  Abilities: 4 items (0 EX)
+[260/467] アムロ・レイ(1st) (SR)
+  Stats: shooting=439, melee=388, awakening=485, defense=345, reaction=419, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (260 updated)
+[261/467] シャア・アズナブル (SR)
+  Stats: shooting=405, melee=405, awakening=492, defense=359, reaction=411, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[262/467] マッシュ (SR)
+  Stats: shooting=506, melee=397, awakening=307, defense=364, reaction=365, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[263/467] エルヴィン・キャディラック (SR)
+  Stats: shooting=485, melee=408, awakening=292, defense=375, reaction=375, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[264/467] テリー・サンダースJr. (SR)
+  Stats: shooting=508, melee=378, awakening=284, defense=473, reaction=297, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[265/467] ギニアス・サハリン (SR)
+  Stats: shooting=479, melee=400, awakening=293, defense=379, reaction=383, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[266/467] ハーディ・シュタイナー (SR)
+  Stats: shooting=455, melee=434, awakening=310, defense=367, reaction=367, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[267/467] ミハイル・カミンスキー (SR)
+  Stats: shooting=488, melee=444, awakening=304, defense=396, reaction=398, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[268/467] サマナ・フュリス (SR)
+  Stats: shooting=369, melee=514, awakening=326, defense=401, reaction=330, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[269/467] フィリップ・ヒューズ (SR)
+  Stats: shooting=492, melee=428, awakening=284, defense=380, reaction=352, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[270/467] ボカタ (SR)
+  Stats: shooting=472, melee=411, awakening=313, defense=366, reaction=371, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (270 updated)
+[271/467] チャック・キース (SR)
+  Stats: shooting=479, melee=390, awakening=318, defense=380, reaction=365, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[272/467] チャップ・アデル (SR)
+  Stats: shooting=506, melee=378, awakening=310, defense=375, reaction=370, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[273/467] カリウス (SR)
+  Stats: shooting=394, melee=524, awakening=312, defense=351, reaction=359, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[274/467] カミーユ・ビダン(支援) (SR)
+  Stats: shooting=407, melee=388, awakening=520, defense=359, reaction=410, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[275/467] ファ・ユイリィ (SR)
+  Stats: shooting=424, melee=383, awakening=374, defense=367, reaction=408, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[276/467] カツ・コバヤシ (SR)
+  Stats: shooting=486, melee=378, awakening=423, defense=371, reaction=413, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[277/467] アムロ・レイ(Z) (SR)
+  Stats: shooting=440, melee=408, awakening=461, defense=346, reaction=419, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[278/467] サラ・ザビアロフ (SR)
+  Stats: shooting=396, melee=462, awakening=415, defense=375, reaction=416, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[279/467] ラムサス・ハサ (SR)
+  Stats: shooting=471, melee=412, awakening=313, defense=367, reaction=367, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[280/467] ハマーン・カーン(Z) (SR)
+  Stats: shooting=444, melee=384, awakening=469, defense=355, reaction=422, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (280 updated)
+[281/467] ルー・ルカ (SR)
+  Stats: shooting=465, melee=400, awakening=409, defense=374, reaction=418, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[282/467] ハマーン・カーン(ZZ) (SR)
+  Stats: shooting=423, melee=365, awakening=516, defense=355, reaction=422, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[283/467] シャア・アズナブル(CCA) (SR)
+  Stats: shooting=427, melee=427, awakening=433, defense=364, reaction=408, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[284/467] ギュネイ・ガス (SR)
+  Stats: shooting=365, melee=460, awakening=422, defense=355, reaction=389, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[285/467] リディ・マーセナス (SR)
+  Stats: shooting=383, melee=450, awakening=417, defense=369, reaction=369, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[286/467] ワッツ・ステップニー (SR)
+  Stats: shooting=566, melee=377, awakening=304, defense=335, reaction=347, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[287/467] マリーダ・クルス (SR)
+  Stats: shooting=411, melee=395, awakening=514, defense=341, reaction=416, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[288/467] ヨンム・カークス (SR)
+  Stats: shooting=568, melee=429, awakening=327, defense=273, reaction=358, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[289/467] エメラルダ・ズービン (SR)
+  Stats: shooting=368, melee=557, awakening=307, defense=384, reaction=329, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[290/467] サイ・サイシー (SR)
+  Stats: shooting=368, melee=469, awakening=293, defense=358, reaction=386, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (290 updated)
+[291/467] ジョルジュ・ド・サンド (SR)
+  Stats: shooting=497, melee=372, awakening=293, defense=363, reaction=372, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[292/467] シュバルツ・ブルーダー (SR)
+  Stats: shooting=342, melee=496, awakening=282, defense=366, reaction=411, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[293/467] レイン・ミカムラ (SR)
+  Stats: shooting=507, melee=409, awakening=395, defense=373, reaction=355, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[294/467] ウルベ・イシカワ (SR)
+  Stats: shooting=395, melee=528, awakening=197, defense=453, reaction=362, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[295/467] ヒイロ・ユイ (SR)
+  Stats: shooting=471, melee=396, awakening=291, defense=362, reaction=375, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[296/467] カトル・ラバーバ・ウィナー (SR)
+  Stats: shooting=445, melee=456, awakening=290, defense=382, reaction=360, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[297/467] ウィッツ・スー (SR)
+  Stats: shooting=546, melee=370, awakening=307, defense=367, reaction=357, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[298/467] ロアビィ・ロイ (SR)
+  Stats: shooting=553, melee=363, awakening=307, defense=354, reaction=371, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[299/467] カリス・ノーティラス (SR)
+  Stats: shooting=408, melee=378, awakening=534, defense=358, reaction=408, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[300/467] パーラ・シス (SR)
+  Stats: shooting=523, melee=396, awakening=281, defense=363, reaction=377, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (300 updated)
+[301/467] キラ・ヤマト(支援) (SR)
+  Stats: shooting=435, melee=403, awakening=435, defense=364, reaction=425, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[302/467] オルガ・サブナック (SR)
+  Stats: shooting=501, melee=380, awakening=341, defense=378, reaction=391, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[303/467] ディアッカ・エルスマン (SR)
+  Stats: shooting=528, melee=359, awakening=387, defense=398, reaction=398, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[304/467] ミゲル・アイマン (SR)
+  Stats: shooting=447, melee=407, awakening=377, defense=378, reaction=449, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[305/467] マユラ・ラバッツ (SR)
+  Stats: shooting=495, melee=392, awakening=308, defense=367, reaction=373, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[306/467] ミハイル・コースト (SR)
+  Stats: shooting=454, melee=420, awakening=380, defense=363, reaction=445, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[307/467] イライジャ・キール (SR)
+  Stats: shooting=425, melee=507, awakening=315, defense=392, reaction=392, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[308/467] マリーン (SR)
+  Stats: shooting=484, melee=401, awakening=425, defense=315, reaction=315, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[309/467] スティング・オークレー (SR)
+  Stats: shooting=517, melee=303, awakening=378, defense=304, reaction=490, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[310/467] アレックス・ディノ (SR)
+  Stats: shooting=462, melee=427, awakening=360, defense=393, reaction=418, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (310 updated)
+[311/467] アスラン・ザラ(DESTINY) (SR)
+  Stats: shooting=466, melee=516, awakening=415, defense=317, reaction=364, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[312/467] マーズ・シメオン (SR)
+  Stats: shooting=462, melee=438, awakening=361, defense=381, reaction=422, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[313/467] ロックオン・ストラトス (SR)
+  Stats: shooting=541, melee=356, awakening=289, defense=386, reaction=354, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[314/467] アレルヤ・ハプティズム (SR)
+  Stats: shooting=421, melee=456, awakening=396, defense=355, reaction=440, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[315/467] ネーナ・トリニティ (SR)
+  Stats: shooting=494, melee=391, awakening=296, defense=636, reaction=390, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[316/467] グラハム・エーカー (SR)
+  Stats: shooting=351, melee=558, awakening=292, defense=353, reaction=394, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[317/467] パトリック・コーラサワー (SR)
+  Stats: shooting=499, melee=395, awakening=299, defense=365, reaction=379, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[318/467] ソーマ・ピーリス (SR)
+  Stats: shooting=455, melee=422, awakening=385, defense=363, reaction=438, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[319/467] ラーガン・ドレイス (SR)
+  Stats: shooting=475, melee=413, awakening=268, defense=391, reaction=385, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[320/467] ラクト・エルファメル (SR)
+  Stats: shooting=481, melee=514, awakening=250, defense=383, reaction=349, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (320 updated)
+[321/467] オブライト・ローレイン (SR)
+  Stats: shooting=488, melee=415, awakening=250, defense=356, reaction=425, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[322/467] マックス・ハートウェイ (SR)
+  Stats: shooting=504, melee=472, awakening=264, defense=337, reaction=367, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[323/467] デシル・ガレット(支援) (SR)
+  Stats: shooting=487, melee=482, awakening=422, defense=327, reaction=354, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[324/467] ドール・フロスト (SR)
+  Stats: shooting=486, melee=397, awakening=385, defense=405, reaction=390, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[325/467] ビスケット・グリフォン (SR)
+  Stats: shooting=432, melee=412, awakening=364, defense=398, reaction=378, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[326/467] 昭弘・アルトランド (SR)
+  Stats: shooting=405, melee=467, awakening=362, defense=391, reaction=363, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[327/467] ラフタ・フランクランド (SR)
+  Stats: shooting=510, melee=403, awakening=302, defense=355, reaction=369, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[328/467] アジー・グルミン (SR)
+  Stats: shooting=420, melee=477, awakening=305, defense=367, reaction=363, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[329/467] ダンテ・モグロ (SR)
+  Stats: shooting=384, melee=533, awakening=295, defense=393, reaction=382, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[330/467] ハッシュ・ミディ (SR)
+  Stats: shooting=513, melee=488, awakening=240, defense=353, reaction=354, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (330 updated)
+[331/467] ジュリエッタ・ジュリス (SR)
+  Stats: shooting=372, melee=565, awakening=261, defense=309, reaction=434, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[332/467] ガエリオ・ボードウィン(支援) (SR)
+  Stats: shooting=425, melee=494, awakening=340, defense=356, reaction=381, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[333/467] ジャンマルコ・サレルノ (SR)
+  Stats: shooting=473, melee=532, awakening=242, defense=376, reaction=366, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[334/467] ザザ・フォッシル (SR)
+  Stats: shooting=468, melee=452, awakening=268, defense=357, reaction=391, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[335/467] スレッタ・マーキュリー(支援) (SR)
+  Stats: shooting=513, melee=367, awakening=409, defense=367, reaction=684, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[336/467] シャディク・ゼネリ (SR)
+  Stats: shooting=392, melee=516, awakening=365, defense=236, reaction=525, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[337/467] ノレア・デュノク (SR)
+  Stats: shooting=538, melee=395, awakening=333, defense=383, reaction=390, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[338/467] エナオ・ジャズ (SR)
+  Stats: shooting=487, melee=465, awakening=223, defense=311, reaction=453, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[339/467] ケナンジ・アベリー (SR)
+  Stats: shooting=496, melee=425, awakening=300, defense=380, reaction=338, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[340/467] 僧侶ガンタンク (SR)
+  Stats: shooting=541, melee=348, awakening=323, defense=383, reaction=350, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (340 updated)
+[341/467] 騎士グフ (SR)
+  Stats: shooting=337, melee=561, awakening=340, defense=369, reaction=345, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[342/467] 騎士ギャン (SR)
+  Stats: shooting=344, melee=519, awakening=331, defense=383, reaction=359, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[343/467] 騎士ゲルググ (SR)
+  Stats: shooting=437, melee=459, awakening=376, defense=378, reaction=378, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[344/467] スレッガー・ロウ (SR)
+  Stats: shooting=404, melee=315, awakening=281, defense=536, reaction=414, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[345/467] ララァ・スン (SR)
+  Stats: shooting=365, melee=359, awakening=393, defense=435, reaction=526, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[346/467] デニム (SR)
+  Stats: shooting=350, melee=367, awakening=287, defense=512, reaction=427, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[347/467] アカハナ (SR)
+  Stats: shooting=366, melee=349, awakening=291, defense=468, reaction=465, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[348/467] マ・クベ (SR)
+  Stats: shooting=329, melee=382, awakening=283, defense=437, reaction=511, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[349/467] ヒデト・ワシヤ (SR)
+  Stats: shooting=351, melee=351, awakening=283, defense=479, reaction=477, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[350/467] フェデリコ・ツァリアーノ (SR)
+  Stats: shooting=374, melee=374, awakening=275, defense=495, reaction=416, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (350 updated)
+[351/467] カレン・ジョシュワ (SR)
+  Stats: shooting=360, melee=455, awakening=234, defense=525, reaction=364, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[352/467] アンディ・ストロース (SR)
+  Stats: shooting=363, melee=355, awakening=284, defense=497, reaction=439, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[353/467] アルファ・A・ベイト (SR)
+  Stats: shooting=371, melee=354, awakening=278, defense=511, reaction=427, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[354/467] アナベル・ガトー (SR)
+  Stats: shooting=371, melee=354, awakening=268, defense=496, reaction=453, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[355/467] カミーユ・ビダン(耐久) (SR)
+  Stats: shooting=349, melee=349, awakening=425, defense=476, reaction=475, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[356/467] エマ・シーン (SR)
+  Stats: shooting=363, melee=363, awakening=314, defense=467, reaction=533, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[357/467] マウアー・ファラオ (SR)
+  Stats: shooting=352, melee=352, awakening=277, defense=517, reaction=451, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[358/467] パプテマス・シロッコ (SR)
+  Stats: shooting=348, melee=373, awakening=392, defense=434, reaction=522, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[359/467] レコア・ロンド (SR)
+  Stats: shooting=384, melee=343, awakening=279, defense=507, reaction=428, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[360/467] ロザミア・バダム (SR)
+  Stats: shooting=380, melee=342, awakening=362, defense=415, reaction=495, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (360 updated)
+[361/467] フォウ・ムラサメ (SR)
+  Stats: shooting=383, melee=333, awakening=365, defense=429, reaction=481, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[362/467] マシュマー・セロ (SR)
+  Stats: shooting=373, melee=356, awakening=285, defense=498, reaction=426, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[363/467] プルツー (SR)
+  Stats: shooting=364, melee=353, awakening=394, defense=426, reaction=540, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[364/467] ヤザン・ゲーブル(ZZ) (SR)
+  Stats: shooting=401, melee=365, awakening=266, defense=510, reaction=435, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[365/467] クェス・パラヤ (SR)
+  Stats: shooting=348, melee=287, awakening=490, defense=448, reaction=507, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[366/467] レズン・シュナイダー (SR)
+  Stats: shooting=344, melee=313, awakening=390, defense=410, reaction=457, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[367/467] バナージ・リンクス (SR)
+  Stats: shooting=350, melee=350, awakening=366, defense=489, reaction=442, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[368/467] アンジェロ・ザウパー (SR)
+  Stats: shooting=440, melee=440, awakening=215, defense=428, reaction=378, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[369/467] ガエル・チャン (SR)
+  Stats: shooting=426, melee=342, awakening=277, defense=511, reaction=413, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[370/467] ハサウェイ・ノア (SR)
+  Stats: shooting=329, melee=360, awakening=418, defense=465, reaction=459, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (370 updated)
+[371/467] レイモンド・ケイン (SR)
+  Stats: shooting=443, melee=381, awakening=263, defense=475, reaction=359, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[372/467] ドモン・カッシュ(耐久) (SR)
+  Stats: shooting=310, melee=395, awakening=259, defense=458, reaction=482, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[373/467] アルゴ・ガルスキー (SR)
+  Stats: shooting=317, melee=418, awakening=264, defense=487, reaction=415, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[374/467] 東方不敗マスター・アジア(耐久) (SR)
+  Stats: shooting=304, melee=410, awakening=258, defense=424, reaction=508, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[375/467] ジェントル・チャップマン (SR)
+  Stats: shooting=419, melee=259, awakening=303, defense=448, reaction=469, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[376/467] キラル・メキレル (SR)
+  Stats: shooting=331, melee=421, awakening=178, defense=490, reaction=497, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[377/467] トロワ・バートン (SR)
+  Stats: shooting=388, melee=332, awakening=261, defense=555, reaction=417, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[378/467] ゼクス・マーキス (SR)
+  Stats: shooting=363, melee=363, awakening=259, defense=418, reaction=495, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[379/467] トレーズ・クシュリナーダ (SR)
+  Stats: shooting=350, melee=395, awakening=259, defense=426, reaction=511, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[380/467] ジャミル・ニート (SR)
+  Stats: shooting=398, melee=343, awakening=342, defense=452, reaction=536, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (380 updated)
+[381/467] オルバ・フロスト (SR)
+  Stats: shooting=370, melee=434, awakening=323, defense=508, reaction=433, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[382/467] シャニ・アンドラス (SR)
+  Stats: shooting=379, melee=355, awakening=307, defense=481, reaction=472, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[383/467] ラウ・ル・クルーゼ (SR)
+  Stats: shooting=395, melee=341, awakening=382, defense=431, reaction=508, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[384/467] イザーク・ジュール (SR)
+  Stats: shooting=354, melee=401, awakening=342, defense=493, reaction=474, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[385/467] アサギ・コードウェル (SR)
+  Stats: shooting=393, melee=338, awakening=274, defense=504, reaction=432, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[386/467] リーアム・ガーフィールド (SR)
+  Stats: shooting=361, melee=353, awakening=339, defense=472, reaction=552, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[387/467] バルサム・アーレンド (SR)
+  Stats: shooting=393, melee=418, awakening=242, defense=477, reaction=398, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[388/467] シン・アスカ (SR)
+  Stats: shooting=344, melee=366, awakening=421, defense=435, reaction=498, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[389/467] ネオ・ロアノーク (SR)
+  Stats: shooting=387, melee=376, awakening=394, defense=411, reaction=481, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[390/467] アウル・ニーダ (SR)
+  Stats: shooting=537, melee=233, awakening=327, defense=543, reaction=361, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (390 updated)
+[391/467] ヒルダ・ハーケン (SR)
+  Stats: shooting=402, melee=402, awakening=293, defense=484, reaction=481, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[392/467] ヘルベルト・フォン・ラインハルト (SR)
+  Stats: shooting=378, melee=390, awakening=321, defense=474, reaction=503, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[393/467] ネオ・ロアノーク(オーブ所属) (SR)
+  Stats: shooting=391, melee=369, awakening=393, defense=460, reaction=434, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[394/467] 刹那・F・セイエイ (SR)
+  Stats: shooting=327, melee=400, awakening=260, defense=462, reaction=497, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[395/467] ティエリア・アーデ (SR)
+  Stats: shooting=416, melee=340, awakening=315, defense=511, reaction=452, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[396/467] ヨハン・トリニティ (SR)
+  Stats: shooting=394, melee=323, awakening=265, defense=456, reaction=508, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[397/467] フリット・アスノ (SR)
+  Stats: shooting=405, melee=403, awakening=305, defense=501, reaction=437, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[398/467] ドン・ボヤージ (SR)
+  Stats: shooting=369, melee=469, awakening=211, defense=524, reaction=408, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[399/467] アリーサ・ガンヘイル (SR)
+  Stats: shooting=385, melee=410, awakening=214, defense=517, reaction=418, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[400/467] ダズ・ローデン (SR)
+  Stats: shooting=360, melee=397, awakening=210, defense=462, reaction=523, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (400 updated)
+[401/467] アストン (SR)
+  Stats: shooting=354, melee=373, awakening=314, defense=458, reaction=494, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[402/467] ガエリオ・ボードウィン (SR)
+  Stats: shooting=343, melee=369, awakening=270, defense=524, reaction=443, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[403/467] クランク・ゼント (SR)
+  Stats: shooting=356, melee=356, awakening=271, defense=447, reaction=517, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[404/467] クダル・カデル (SR)
+  Stats: shooting=331, melee=402, awakening=272, defense=435, reaction=502, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[405/467] チャド・チャダーン (SR)
+  Stats: shooting=456, melee=330, awakening=266, defense=508, reaction=433, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[406/467] ライド・マッス (SR)
+  Stats: shooting=392, melee=390, awakening=248, defense=446, reaction=408, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[407/467] 石動・カミーチェ (SR)
+  Stats: shooting=350, melee=350, awakening=295, defense=494, reaction=452, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[408/467] タカキ・ウノ (SR)
+  Stats: shooting=392, melee=391, awakening=247, defense=500, reaction=400, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[409/467] ユハナ・ハクリ (SR)
+  Stats: shooting=329, melee=474, awakening=222, defense=510, reaction=407, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[410/467] ナナオ・ナロリナ (SR)
+  Stats: shooting=342, melee=361, awakening=226, defense=529, reaction=553, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+  [SAVE] Progress saved (410 updated)
+[411/467] グエル・ジェターク (SR)
+  Stats: shooting=439, melee=456, awakening=238, defense=504, reaction=375, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[412/467] ソフィ・プロネ (SR)
+  Stats: shooting=391, melee=356, awakening=306, defense=483, reaction=502, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[413/467] サビーナ・ファルディン (SR)
+  Stats: shooting=398, melee=369, awakening=216, defense=510, reaction=445, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[414/467] イリーシャ・プラノ (SR)
+  Stats: shooting=359, melee=348, awakening=272, defense=501, reaction=466, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[415/467] 妖精ジムスナイパーカスタム (SR)
+  Stats: shooting=402, melee=313, awakening=295, defense=431, reaction=493, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[416/467] 戦士ザク (SR)
+  Stats: shooting=340, melee=357, awakening=323, defense=498, reaction=416, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[417/467] 戦士ドム (SR)
+  Stats: shooting=365, melee=305, awakening=301, defense=527, reaction=450, sp=15
+  Skills: 1 items
+  Abilities: 5 items (0 EX)
+[418/467] リュウ・ホセイ (R)
+  Stats: shooting=302, melee=363, awakening=236, defense=288, reaction=251, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[419/467] アポリー・ベイ (R)
+  Stats: shooting=364, melee=302, awakening=236, defense=270, reaction=270, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[420/467] ビーチャ・オーレグ (R)
+  Stats: shooting=322, melee=322, awakening=303, defense=287, reaction=305, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+  [SAVE] Progress saved (420 updated)
+[421/467] モンド・アガケ (R)
+  Stats: shooting=297, melee=378, awakening=303, defense=278, reaction=285, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[422/467] ギュネイ・ガス (R)
+  Stats: shooting=337, melee=306, awakening=325, defense=259, reaction=284, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[423/467] ノーム・バシリコック (R)
+  Stats: shooting=397, melee=279, awakening=243, defense=262, reaction=262, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[424/467] ミケロ・チャリオット (R)
+  Stats: shooting=287, melee=356, awakening=228, defense=348, reaction=321, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[425/467] ラッセ・アイオン (R)
+  Stats: shooting=374, melee=293, awakening=231, defense=279, reaction=265, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[426/467] チュアチュリー・パンランチ (R)
+  Stats: shooting=237, melee=484, awakening=200, defense=272, reaction=267, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[427/467] ラナロウ・シェイド (R)
+  Stats: shooting=321, melee=321, awakening=239, defense=287, reaction=273, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[428/467] ジュナス・リアム (R)
+  Stats: shooting=268, melee=356, awakening=257, defense=272, reaction=287, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[429/467] エルンスト・イェーガー (R)
+  Stats: shooting=372, melee=310, awakening=240, defense=261, reaction=261, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[430/467] ニキ・テイラー (R)
+  Stats: shooting=348, melee=263, awakening=148, defense=286, reaction=293, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+  [SAVE] Progress saved (430 updated)
+[431/467] エルフリーデ・シュルツ (R)
+  Stats: shooting=246, melee=373, awakening=246, defense=306, reaction=268, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[432/467] イワン・イワノフ (R)
+  Stats: shooting=295, melee=295, awakening=419, defense=267, reaction=267, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[433/467] ネリィ・オルソン (R)
+  Stats: shooting=362, melee=268, awakening=245, defense=289, reaction=275, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[434/467] ブラッド (R)
+  Stats: shooting=313, melee=334, awakening=242, defense=271, reaction=281, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[435/467] シス・ミットヴィル (R)
+  Stats: shooting=302, melee=302, awakening=346, defense=273, reaction=298, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[436/467] シャポー・チェレンシィ (R)
+  Stats: shooting=333, melee=312, awakening=240, defense=277, reaction=277, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[437/467] デネボラ・シャヒム (R)
+  Stats: shooting=324, melee=324, awakening=241, defense=283, reaction=268, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[438/467] ジュウゾー・オハラ (R)
+  Stats: shooting=323, melee=323, awakening=253, defense=280, reaction=263, sp=15
+  Skills: 1 items
+  Abilities: 1 items (0 EX)
+[439/467] ハヤト・コバヤシ (R)
+  Stats: shooting=282, melee=358, awakening=242, defense=287, reaction=274, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[440/467] ロベルト (R)
+  Stats: shooting=302, melee=334, awakening=236, defense=285, reaction=185, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+  [SAVE] Progress saved (440 updated)
+[441/467] エル・ビアンノ (R)
+  Stats: shooting=328, melee=311, awakening=303, defense=289, reaction=309, sp=15
+  Skills: 1 items
+  Abilities: 3 items (0 EX)
+[442/467] ハサウェイ・ノア (R)
+  Stats: shooting=334, melee=303, awakening=317, defense=287, reaction=301, sp=15
+  Skills: 1 items
+  Abilities: 3 items (0 EX)
+[443/467] ダグザ・マックール (R)
+  Stats: shooting=294, melee=292, awakening=236, defense=377, reaction=235, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[444/467] ジェントル・チャップマン (R)
+  Stats: shooting=395, melee=222, awakening=258, defense=273, reaction=297, sp=15
+  Skills: 1 items
+  Abilities: 3 items (0 EX)
+[445/467] トール・ケーニヒ (R)
+  Stats: shooting=322, melee=305, awakening=241, defense=277, reaction=293, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[446/467] エリス・クロード (R)
+  Stats: shooting=318, melee=318, awakening=302, defense=275, reaction=301, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[447/467] シェルド・フォーリー (R)
+  Stats: shooting=316, melee=316, awakening=241, defense=283, reaction=283, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[448/467] ビリー・ブレイズ (R)
+  Stats: shooting=316, melee=319, awakening=241, defense=295, reaction=269, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[449/467] ラ・ミラ・ルナ (R)
+  Stats: shooting=342, melee=290, awakening=258, defense=275, reaction=275, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[450/467] エターナ・フレイル (R)
+  Stats: shooting=387, melee=256, awakening=277, defense=283, reaction=306, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+  [SAVE] Progress saved (450 updated)
+[451/467] エイブラム・M・ラムザット (R)
+  Stats: shooting=323, melee=323, awakening=238, defense=278, reaction=278, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[452/467] レリーレ・アルナイル (R)
+  Stats: shooting=318, melee=318, awakening=302, defense=288, reaction=289, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[453/467] レッセル・ミズカ (R)
+  Stats: shooting=311, melee=311, awakening=258, defense=281, reaction=281, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[454/467] カイ・シデン (R)
+  Stats: shooting=294, melee=254, awakening=219, defense=344, reaction=332, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[455/467] イーノ・アッバーブ (R)
+  Stats: shooting=284, melee=265, awakening=274, defense=370, reaction=351, sp=15
+  Skills: 1 items
+  Abilities: 3 items (0 EX)
+[456/467] チェーン・アギ (R)
+  Stats: shooting=265, melee=273, awakening=253, defense=344, reaction=331, sp=15
+  Skills: 1 items
+  Abilities: 3 items (0 EX)
+[457/467] ラシード・クラマ (R)
+  Stats: shooting=238, melee=245, awakening=327, defense=337, reaction=284, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[458/467] ムウ・ラ・フラガ (R)
+  Stats: shooting=303, melee=258, awakening=275, defense=320, reaction=385, sp=15
+  Skills: 1 items
+  Abilities: 3 items (0 EX)
+[459/467] ケナンジ・アベリー (R)
+  Stats: shooting=257, melee=259, awakening=207, defense=398, reaction=333, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[460/467] クレア・ヒースロー (R)
+  Stats: shooting=268, melee=268, awakening=295, defense=357, reaction=328, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+  [SAVE] Progress saved (460 updated)
+[461/467] ケイ・ニムロッド (R)
+  Stats: shooting=254, melee=254, awakening=229, defense=353, reaction=361, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[462/467] フローレンス・キリシマ (R)
+  Stats: shooting=256, melee=256, awakening=233, defense=304, reaction=400, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[463/467] ブランド・フリーズ (R)
+  Stats: shooting=294, melee=246, awakening=220, defense=316, reaction=371, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[464/467] カチュア・リィス (R)
+  Stats: shooting=244, melee=244, awakening=317, defense=397, reaction=325, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[465/467] ゴート・ローガン (R)
+  Stats: shooting=274, melee=274, awakening=270, defense=334, reaction=364, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[466/467] アゼリア・ツィー (R)
+  Stats: shooting=265, melee=265, awakening=218, defense=361, reaction=338, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+[467/467] サダニ・アルマーズ (R)
+  Stats: shooting=258, melee=258, awakening=232, defense=310, reaction=392, sp=15
+  Skills: 1 items
+  Abilities: 2 items (0 EX)
+
+[DONE] Updated 467 characters, 0 errors

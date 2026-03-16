@@ -1,0 +1,294 @@
+/Users/RH/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+Items without image: 271 / 861
+
+=== Fetching unit data from GameWith ===
+  Found 489 units
+=== Fetching character data from GameWith ===
+  Fetching: https://gamewith.jp/ggene-eternal/494682
+  Fetching: https://gamewith.jp/ggene-eternal/496139
+  Fetching: https://gamewith.jp/ggene-eternal/496970
+  Fetching: https://gamewith.jp/ggene-eternal/496971
+  Found 365 characters
+=== Fetching supporter data from GameWith ===
+  Fetching: https://gamewith.jp/ggene-eternal/494683
+  Fetching: https://gamewith.jp/ggene-eternal/494689
+  Found 64 supporters
+
+Total normalized lookup entries: 1189
+  DL: キラ・ヤマト(DESTINY) -> gw-chara-363.png
+  DL: セイラ・マス -> gw-chara-51.png
+  DL: ランバ・ラル -> gw-chara-57.png
+  DL: ガイア -> gw-chara-59.png
+  DL: オルテガ -> gw-chara-61.png
+  DL: ガルマ・ザビ -> gw-chara-62.png
+  DL: サウス・バニング -> gw-chara-232.png
+  DL: ベルナルド・モンシア -> gw-chara-230.png
+  DL: シーマ・ガラハウ -> gw-chara-317.png
+  DL: ジェリド・メサ -> gw-chara-70.png
+  DL: ダンケル・クーパー -> gw-chara-77.png
+  DL: ブラン・ブルターク -> gw-chara-79.png
+  DL: イリア・パゾム -> gw-chara-86.png
+  DL: キャラ・スーン -> gw-chara-87.png
+  DL: グレミー・トト -> gw-chara-88.png
+  DL: ロニ・ガーベイ -> gw-chara-320.png
+  DL: ミケロ・チャリオット -> gw-chara-182.png
+  DL: アレンビー・ビアズリー -> gw-chara-318.png
+  DL: デュオ・マックスウェル -> gw-chara-103.png
+  DL: 張 五飛 -> gw-chara-106.png
+  DL: ミリアルド・ピースクラフト -> gw-chara-108.png
+  DL: ルクレツィア・ノイン -> gw-chara-109.png
+  DL: ムウ・ラ・フラガ -> gw-chara-185.png
+  DL: クロト・ブエル -> gw-chara-122.png
+  DL: ニコル・アマルフィ -> gw-chara-128.png
+  DL: ジュリ・ウー・ニェン -> gw-chara-132.png
+  DL: シホ・ハーネンフース -> gw-chara-134.png
+  DL: 蘊・奥 -> gw-chara-24.png
+  DL: メイア・シヴァ -> gw-chara-135.png
+  DL: アラン・ローランド -> gw-chara-136.png
+  DL: ハレルヤ・ハプティズム -> gw-chara-140.png
+  DL: ミハエル・トリニティ -> gw-chara-143.png
+  DL: アレハンドロ・コーナー -> gw-chara-145.png
+  DL: セルゲイ・スミルノフ -> gw-chara-148.png
+  DL: アリー・アル・サーシェス -> gw-chara-150.png
+  DL: デシル・ガレット -> gw-chara-365.png
+  DL: ゼハート・ガレット -> gw-chara-356.png
+  DL: ユージン・セブンスターク -> gw-chara-153.png
+  DL: ノルバ・シノ -> gw-chara-154.png
+  DL: デルマ -> gw-chara-156.png
+  DL: マクギリス・ファリド -> gw-chara-160.png
+  DL: アイン・ダルトン -> gw-chara-162.png
+  DL: モンターク -> gw-chara-165.png
+  DL: ヴィダール -> gw-chara-314.png
+  DL: エラン・ケレス -> gw-chara-315.png
+  DL: フェルシー・ロロ -> gw-chara-327.png
+  DL: エラン・ケレス(強化人士5号) -> gw-chara-362.png
+  DL: マッシュ -> gw-chara-60.png
+  DL: ボカタ -> gw-chara-221.png
+  DL: チャック・キース -> gw-chara-233.png
+  DL: チャップ・アデル -> gw-chara-229.png
+  DL: ファ・ユイリィ -> gw-chara-66.png
+  DL: カツ・コバヤシ -> gw-chara-68.png
+  DL: サラ・ザビアロフ -> gw-chara-73.png
+  DL: ラムサス・ハサ -> gw-chara-76.png
+  DL: ハマーン・カーン(Z) -> gw-chara-81.png
+  DL: ルー・ルカ -> gw-chara-83.png
+  DL: ハマーン・カーン(ZZ) -> gw-chara-84.png
+  DL: ワッツ・ステップニー -> gw-chara-295.png
+  DL: マリーダ・クルス -> gw-chara-322.png
+  DL: シュバルツ・ブルーダー -> gw-chara-98.png
+  DL: レイン・ミカムラ -> gw-chara-99.png
+  DL: カリス・ノーティラス -> gw-chara-115.png
+  DL: オルガ・サブナック -> gw-chara-121.png
+  DL: ミゲル・アイマン -> gw-chara-129.png
+  DL: マユラ・ラバッツ -> gw-chara-133.png
+  DL: イライジャ・キール -> gw-chara-22.png
+  DL: マリーン -> gw-chara-21.png
+  DL: ロックオン・ストラトス -> gw-chara-138.png
+  DL: アレルヤ・ハプティズム -> gw-chara-139.png
+  DL: ネーナ・トリニティ -> gw-chara-144.png
+  DL: グラハム・エーカー -> gw-chara-146.png
+  DL: ソーマ・ピーリス -> gw-chara-149.png
+  DL: ビスケット・グリフォン -> gw-chara-152.png
+  DL: 昭弘・アルトランド -> gw-chara-155.png
+  DL: ラフタ・フランクランド -> gw-chara-158.png
+  DL: アジー・グルミン -> gw-chara-159.png
+  DL: シャディク・ゼネリ -> gw-chara-170.png
+  DL: ケナンジ・アベリー -> gw-chara-188.png
+  DL: スレッガー・ロウ -> gw-chara-52.png
+  DL: ララァ・スン -> gw-chara-54.png
+  DL: デニム -> gw-chara-55.png
+  DL: アカハナ -> gw-chara-56.png
+  DL: マ・クベ -> gw-chara-58.png
+  DL: アルファ・A・ベイト -> gw-chara-231.png
+  DL: エマ・シーン -> gw-chara-67.png
+  DL: マウアー・ファラオ -> gw-chara-71.png
+  DL: レコア・ロンド -> gw-chara-74.png
+  DL: ロザミア・バダム -> gw-chara-78.png
+  DL: フォウ・ムラサメ -> gw-chara-80.png
+  DL: マシュマー・セロ -> gw-chara-85.png
+  DL: プルツー -> gw-chara-90.png
+  DL: クェス・パラヤ -> gw-chara-331.png
+  DL: ジェントル・チャップマン -> gw-chara-183.png
+  DL: トロワ・バートン -> gw-chara-104.png
+  DL: ゼクス・マーキス -> gw-chara-107.png
+  DL: トレーズ・クシュリナーダ -> gw-chara-110.png
+  DL: ジャミル・ニート -> gw-chara-114.png
+  DL: オルバ・フロスト -> gw-chara-117.png
+  DL: シャニ・アンドラス -> gw-chara-123.png
+  DL: アサギ・コードウェル -> gw-chara-131.png
+  DL: リーアム・ガーフィールド -> gw-chara-23.png
+  DL: アウル・ニーダ -> gw-chara-328.png
+  DL: ティエリア・アーデ -> gw-chara-141.png
+  DL: ヨハン・トリニティ -> gw-chara-142.png
+  DL: アストン -> gw-chara-157.png
+  DL: クランク・ゼント -> gw-chara-163.png
+  DL: クダル・カデル -> gw-chara-164.png
+  DL: リュウ・ホセイ -> gw-chara-175.png
+  DL: アポリー・ベイ -> gw-chara-176.png
+  DL: ビーチャ・オーレグ -> gw-chara-178.png
+  DL: モンド・アガケ -> gw-chara-181.png
+  DL: ラッセ・アイオン -> gw-chara-187.png
+  DL: チュアチュリー・パンランチ -> gw-chara-189.png
+  DL: ラナロウ・シェイド -> gw-chara-190.png
+  DL: ジュナス・リアム -> gw-chara-193.png
+  DL: エルンスト・イェーガー -> gw-chara-194.png
+  DL: ニキ・テイラー -> gw-chara-198.png
+  DL: エルフリーデ・シュルツ -> gw-chara-201.png
+  DL: イワン・イワノフ -> gw-chara-202.png
+  DL: ネリィ・オルソン -> gw-chara-205.png
+  DL: ブラッド -> gw-chara-206.png
+  DL: シス・ミットヴィル -> gw-chara-209.png
+  DL: デネボラ・シャヒム -> gw-chara-214.png
+  DL: ジュウゾー・オハラ -> gw-chara-215.png
+  DL: ハヤト・コバヤシ -> gw-chara-174.png
+  DL: ロベルト -> gw-chara-177.png
+  DL: エル・ビアンノ -> gw-chara-179.png
+  DL: トール・ケーニヒ -> gw-chara-186.png
+  DL: エリス・クロード -> gw-chara-191.png
+  DL: シェルド・フォーリー -> gw-chara-196.png
+  DL: ビリー・ブレイズ -> gw-chara-197.png
+  DL: ラ・ミラ・ルナ -> gw-chara-199.png
+  DL: エターナ・フレイル -> gw-chara-203.png
+  DL: エイブラム・M・ラムザット -> gw-chara-204.png
+  DL: レリーレ・アルナイル -> gw-chara-213.png
+  DL: レッセル・ミズカ -> gw-chara-216.png
+  DL: カイ・シデン -> gw-chara-173.png
+  DL: イーノ・アッバーブ -> gw-chara-180.png
+  DL: ラシード・クラマ -> gw-chara-184.png
+  DL: クレア・ヒースロー -> gw-chara-192.png
+  DL: ケイ・ニムロッド -> gw-chara-195.png
+  DL: フローレンス・キリシマ -> gw-chara-200.png
+  DL: ブランド・フリーズ -> gw-chara-207.png
+  DL: カチュア・リィス -> gw-chara-208.png
+  DL: ゴート・ローガン -> gw-chara-210.png
+  DL: アゼリア・ツィー -> gw-chara-212.png
+  DL: サダニ・アルマーズ -> gw-chara-217.png
+
+==================================================
+Already had image: 590
+Matched: 154
+Downloaded: 154
+Failed downloads: 0
+Unmatched: 117
+
+Unmatched (117):
+  アスラン・ザラ(DESTINY)
+  アムロ・レイ(1st)
+  アムロ・レイ(1st)
+  アムロ・レイ(Z)
+  アレクサンドロ・ヘンメ
+  アレックス・ディノ
+  アンディ・ストロース
+  アンドリュー・バルトフェルド(DESTINY)
+  イザーク・ジュール(DESTINY)
+  イリーシャ・プラノ
+  イワーク・ブライア
+  ウルフ・エニアクル
+  ウルフ・エニアクル(アセム編)
+  ウルベ・イシカワ
+  エックスケー
+  エナオ・ジャズ
+  エルヴィン・キャディラック
+  オブライト・ローレイン
+  オルコット
+  オルテガ(GQ)
+  カリウス
+  カレン・ジョシュワ
+  ガイア(GQ)
+  ガウマン・ノビル
+  ガエル・チャン
+  ガブリエル・ラミレス・ガルシア
+  ガンダムAGE-1 ソ―ディア
+  ガンダムTR-1［ヘイズル・ラー］
+  キシリア・ザビ(GQ)(0085)＆チベ(パープルウィドウ)
+  キラル・メキレル
+  ギニアス・サハリン
+  ギャプランTR-5［フライルー］1号機
+  ギャン改
+  ギュネイ・ガス
+  ギュネイ・ガス
+  ギルボア・サント
+  ギーラ・ゾイ
+  クー・シー＆キャリー・ベース
+  ケーラ・スゥ
+  ゲーツ・キャパ(GQ)
+  サビーナ・ファルディン
+  サマナ・フュリス
+  サンドバル・ロイター
+  ザクⅡ(シン・マツナガ専用)
+  ザザ・フォッシル
+  シャア・アズナブル(GQ)
+  シャポー・チェレンシィ
+  ジジル・ジジン
+  ジャンマルコ・サレルノ
+  スティング・オークレー
+  ステラ・ルーシェ
+  ストライクルージュ(I.W.S.P.)
+  ゼノン・ティーゲル＆キャリー・ベース2
+  ソフィ・プロネ
+  ソフィ・プロネ
+  タカキ・ウノ
+  ダズ・ローデン
+  ダリル・マッギネス
+  ダンテ・モグロ
+  チェーン・アギ
+  チャド・チャダーン
+  ティファ・アディール＆フリーデン
+  テリー・サンダースJr.
+  ディアッカ・エルスマン(DESTINY)
+  ドン・ボヤージ
+  ドール・フロスト
+  ナイジェル・ギャレット
+  ナナオ・ナロリナ
+  ネオ・ロアノーク
+  ネオ・ロアノーク(オーブ所属)
+  ノーム・バシリコック
+  ハイネ・ヴェステンフルス
+  ハッシュ・ミディ
+  ハーディ・シュタイナー
+  バルサム・アーレンド
+  パトリック・コーラサワー
+  パーラ・シス
+  ヒデト・ワシヤ
+  ヒルダ・ハーケン
+  フィリップ・ヒューズ
+  フェデリコ・ツァリアーノ
+  フェンサー・メイン
+  ヘルベルト・フォン・ラインハルト
+  ベギルペンデ(ドミニコス隊仕様)
+  ボルク・クライ
+  マックス・ハートウェイ
+  マリオン・ウェルチ
+  マーズ・シメオン
+  ミハイル・コースト
+  メイジー・メイ
+  メデル・ザント
+  モーガン・シュバリエ
+  ヤザン・ゲーブル(Z)
+  ヤザン・ゲーブル(ZZ)
+  ユハナ・ハクリ
+  ヨンム・カークス
+  ライド・マッス
+  ラウダ・ニール
+  ラクト・エルファメル
+  ラーガン・ドレイス
+  ルーナ・マナ＆キャリー・ベース
+  レイチェル・ランサム＆キャリー・ベース2
+  レイモンド・ケイン
+  レネ・コスタ
+  ロザーリオ・レオーネ
+  ヴェルナー・ホルバイン
+  僧侶ガンタンク
+  戦士ガンキャノン
+  戦士ザク
+  戦士ドム
+  石動・カミーチェ
+  騎士ギャン
+  騎士グフ
+  騎士ゲルググ
+  騎士サザビー
+  騎士サザビー
+  騎士セイラ＆天馬ホワイトベース
+
+Saved units.json
