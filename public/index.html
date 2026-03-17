@@ -371,10 +371,10 @@ a:hover{text-decoration:underline}
 .modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:200;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto}
 .modal-overlay.open{display:flex}
 .modal{background:var(--card);border:1px solid var(--accent);border-radius:12px;max-width:700px;width:100%;padding:24px;position:relative;color:var(--card-text)}
-.modal-close{position:absolute;top:12px;right:16px;font-size:1.5em;color:var(--text2);cursor:pointer;background:none;border:none}
+.modal-close{position:absolute;top:12px;right:16px;font-size:1.5em;color:var(--card-text2);cursor:pointer;background:none;border:none}
 .modal-close:hover{color:#fff}
 .modal-header-row{display:flex;align-items:center;gap:12px;margin-bottom:4px}
-.modal-icon{width:64px;height:64px;border-radius:8px;border:1px solid var(--border);object-fit:cover;flex-shrink:0;background:var(--bg)}
+.modal-icon{width:64px;height:64px;border-radius:8px;border:1px solid var(--card-border);object-fit:cover;flex-shrink:0;background:rgba(0,0,0,.2)}
 .modal h2{font-size:1.3em;margin-bottom:4px;color:#fff}
 .modal .detail-badges{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
 .modal .detail-section{margin-bottom:16px}
@@ -399,20 +399,20 @@ a:hover{text-decoration:underline}
 .modal .weapon-name{font-weight:700;font-size:.9em;margin-bottom:4px}
 .modal .weapon-name .ex-badge{color:var(--accent2);font-size:.7em;margin-left:4px}
 .modal .weapon-name .map-badge{display:inline-block;background:linear-gradient(135deg,#ff4466,#ff8844);color:#fff;font-size:.6em;font-weight:700;padding:1px 6px;border-radius:3px;margin-right:6px;vertical-align:middle}
-.modal .mechanism-item{display:flex;align-items:center;gap:8px;padding:8px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;margin-bottom:4px;font-size:.8em}
+.modal .mechanism-item{display:flex;align-items:center;gap:8px;padding:8px 10px;background:rgba(0,0,0,.2);border:1px solid var(--card-border);border-radius:6px;margin-bottom:4px;font-size:.8em}
 .modal .mechanism-name{font-weight:600;color:var(--accent)}
-.modal .mechanism-effect{color:var(--text2);font-size:.9em}
+.modal .mechanism-effect{color:var(--card-text2);font-size:.9em}
 .modal .weapon-info{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:4px;font-size:.75em}
-.modal .weapon-info span{color:var(--text2)}
-.modal .weapon-info strong{color:var(--text)}
-.modal .weapon-effect{font-size:.7em;color:var(--text2);margin-top:4px;font-style:italic}
+.modal .weapon-info span{color:var(--card-text2)}
+.modal .weapon-info strong{color:var(--card-text)}
+.modal .weapon-effect{font-size:.7em;color:var(--card-text2);margin-top:4px;font-style:italic}
 .modal .ability-item{padding:6px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:.8em}
 .modal .ability-item:last-child{border:none}
 .modal .ability-name{font-weight:600;color:#fff}
-.modal .ability-effect{color:var(--text2);font-size:.85em}
-.modal .skill-item{padding:8px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;margin-bottom:4px}
+.modal .ability-effect{color:var(--card-text2);font-size:.85em}
+.modal .skill-item{padding:8px 10px;background:rgba(0,0,0,.2);border:1px solid var(--card-border);border-radius:6px;margin-bottom:4px}
 .modal .skill-name{font-weight:600;font-size:.85em;color:var(--gold)}
-.modal .skill-effect{color:var(--text2);font-size:.8em;margin-top:2px}
+.modal .skill-effect{color:var(--card-text2);font-size:.8em;margin-top:2px}
 .terrain-grid{display:flex;gap:12px;font-size:.85em}
 .combat-power-display{font-size:.9em;color:var(--text2);margin-bottom:6px;text-align:center}
 .rarity-note{font-size:.75em;color:var(--gold);font-weight:normal}
@@ -422,9 +422,9 @@ a:hover{text-decoration:underline}
 .card-mechanism .mechanism-label{color:var(--accent);font-weight:600}
 
 /* Supporter modal */
-.modal .supporter-detail-block{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:12px;margin-bottom:8px}
+.modal .supporter-detail-block{background:rgba(0,0,0,.2);border:1px solid var(--card-border);border-radius:6px;padding:12px;margin-bottom:8px}
 .modal .supporter-detail-block .sd-label{font-size:.7em;color:var(--accent);font-weight:600;margin-bottom:4px}
-.modal .supporter-detail-block .sd-text{font-size:.85em;color:var(--text);line-height:1.5}
+.modal .supporter-detail-block .sd-text{font-size:.85em;color:var(--card-text);line-height:1.5}
 
 /* View Toggle */
 .view-toggle{display:flex;gap:2px;margin-left:12px}
@@ -1994,7 +1994,7 @@ function renderUnitDetail(u, form) {
     </div>
     ${transformToggle}
     <div class="detail-section">
-      <div style="font-size:.8em;color:var(--text2);margin-bottom:4px">${(u.series||[]).join(' / ')}</div>
+      <div style="font-size:.8em;color:var(--card-text2);margin-bottom:4px">${(u.series||[]).join(' / ')}</div>
       <div class="card-tags">${(u.tags||[]).map(t=>`<span class="tag clickable-tag" onclick="filterByTag('${t.replace(/'/g,"\\'")}');closeModal()">${t}</span>`).join('')}</div>
     </div>
     <div class="detail-section">
@@ -2122,7 +2122,7 @@ function showCharaDetail(id) {
       ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
       ${c.obtain_method ? `<span class="badge badge-type">${c.obtain_method}</span>` : ''}
     </div>
-    ${c.series ? `<div class="detail-section"><div style="font-size:.8em;color:var(--text2)">${c.series}</div></div>` : ''}
+    ${c.series ? `<div class="detail-section"><div style="font-size:.8em;color:var(--card-text2)">${c.series}</div></div>` : ''}
     ${statsHTML}
     ${(c.skills||[]).length ? `<div class="detail-section"><h3>スキル (${c.skills.length})</h3>${skillsHTML}</div>` : ''}
     ${cleanAbilities.length ? `<div class="detail-section"><h3>アビリティ (${cleanAbilities.length})</h3>${abHTML}</div>` : ''}
