@@ -298,8 +298,9 @@ a:hover{text-decoration:underline}
 .compare-fab:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(232,150,30,.6)}
 .compare-fab .fab-count{background:#fff;color:#000;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.8em;font-weight:800}
 @keyframes comparePulse{0%,100%{box-shadow:0 4px 20px rgba(232,150,30,.4)}50%{box-shadow:0 4px 30px rgba(232,150,30,.7)}}
-.compare-check{position:absolute;top:4px;right:4px;width:20px;height:20px;background:var(--accent);border:2px solid var(--card-border);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.6em;color:#000;font-weight:800;opacity:0;transition:all .2s;z-index:5;pointer-events:none}
-.card.compare-selected .compare-check{opacity:1;border-color:var(--accent)}
+.compare-check{position:absolute;top:6px;right:6px;width:26px;height:26px;background:rgba(0,0,0,.5);border:1.5px solid var(--card-border);border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.7em;color:var(--card-text2);font-weight:800;opacity:.5;transition:all .2s;z-index:5;cursor:pointer;pointer-events:auto;backdrop-filter:blur(4px)}
+.compare-check:hover{opacity:1;border-color:var(--accent);color:var(--accent);background:rgba(0,0,0,.7);transform:scale(1.1)}
+.card.compare-selected .compare-check{opacity:1;background:var(--accent);border-color:var(--accent);color:#000}
 .card.compare-selected{box-shadow:0 0 0 2px var(--accent)}
 .compare-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:250;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto}
 .compare-overlay.open{display:flex}
@@ -965,7 +966,7 @@ a:hover{text-decoration:underline}
 
 <!-- Compare FAB -->
 <button class="compare-fab" id="compareFab" onclick="openComparePanel()">
-  <span>⚔ 比較</span>
+  <span id="compareFabText">⚔ 比較する</span>
   <span class="fab-count" id="compareFabCount">0</span>
 </button>
 
@@ -1912,7 +1913,7 @@ function unitCardHTML(u) {
   const iconHTML = u.image ? `<img class="card-icon" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'" loading="lazy" width="40" height="40">` : '';
 
   return `<div class="card" data-unit-id="${u.id}" onclick="showUnitDetail(${u.id})">
-    <div class="compare-check">✓</div>
+    <div class="compare-check" onclick="event.stopPropagation();toggleCompare(${u.id})" title="比較に追加">${_compareList.includes(u.id)?'✓':'⚔'}</div>
     <div class="card-header">
       ${iconHTML}
       <div class="card-name">${u.name}</div>
@@ -3975,14 +3976,6 @@ document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeModal
 document.getElementById('teamPickerOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeTeamPicker(); });
 document.getElementById('tagSearchInput')?.addEventListener('input', () => { renderTagLookup(); syncURL(); });
 
-bindSortButtons();
-init();
-</script>
-
-<!-- Ad: GGeneDB_Bottom -->
-<div class="ad-slot ad-slot-footer" id="adSlotBottom">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3746333245586627" data-ad-slot="7371985568" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});
 // === COMPARE FEATURE ===
 window._compareList = [];
 const COMPARE_MAX = 3;
@@ -4003,20 +3996,25 @@ function toggleCompare(id, evt) {
 function updateCompareUI() {
   const fab = document.getElementById('compareFab');
   const cnt = document.getElementById('compareFabCount');
+  const txt = document.getElementById('compareFabText');
   if (_compareList.length > 0) {
     fab.style.display = 'flex';
     cnt.textContent = _compareList.length;
+    if (_compareList.length === 1) {
+      txt.textContent = '⚔ もう1体選択';
+    } else {
+      txt.textContent = '⚔ 比較する';
+    }
   } else {
     fab.style.display = 'none';
   }
-  // Update card selections
-  document.querySelectorAll('.card').forEach(card => {
+  // Update card selections & icons
+  document.querySelectorAll('.card[data-unit-id]').forEach(card => {
     const uid = parseInt(card.getAttribute('data-unit-id'));
-    if (_compareList.includes(uid)) {
-      card.classList.add('compare-selected');
-    } else {
-      card.classList.remove('compare-selected');
-    }
+    const isSelected = _compareList.includes(uid);
+    card.classList.toggle('compare-selected', isSelected);
+    const check = card.querySelector('.compare-check');
+    if (check) check.textContent = isSelected ? '✓' : '⚔';
   });
 }
 
@@ -4564,7 +4562,16 @@ function exportTierList() {
   });
 }
 
+
+
+bindSortButtons();
+init();
 </script>
+
+<!-- Ad: GGeneDB_Bottom -->
+<div class="ad-slot ad-slot-footer" id="adSlotBottom">
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3746333245586627" data-ad-slot="7371985568" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 </div>
 </main>
 
