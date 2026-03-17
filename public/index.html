@@ -397,6 +397,43 @@ a:hover{text-decoration:underline}
   .ranking-pos{font-size:.9em}
 }
 
+
+/* Tier List */
+.tierlist-container{max-width:1400px;margin:0 auto;padding:0 16px 40px;display:none}
+.tierlist-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
+.tierlist-header h3{font-size:1em;color:var(--text);font-weight:700}
+.tierlist-actions{display:flex;gap:6px;flex-wrap:wrap}
+.tierlist-btn{padding:6px 14px;font-size:.75em;font-weight:600;border:1px solid var(--border);border-radius:6px;cursor:pointer;transition:all .2s;background:var(--bg);color:var(--text)}
+.tierlist-btn:hover{border-color:var(--accent);color:var(--accent)}
+.tierlist-btn.primary{background:var(--accent);color:#000;border-color:var(--accent)}
+.tierlist-btn.primary:hover{background:#d4a200}
+.tierlist-board{margin-bottom:16px}
+.tier-row{display:flex;min-height:60px;margin-bottom:2px;border-radius:6px;overflow:hidden}
+.tier-label{width:50px;min-width:50px;display:flex;align-items:center;justify-content:center;font-size:1.2em;font-weight:800;color:#000;flex-shrink:0}
+.tier-label.tier-s{background:#ff7f7f}
+.tier-label.tier-a{background:#ffbf7f}
+.tier-label.tier-b{background:#ffff7f}
+.tier-label.tier-c{background:#7fbfff}
+.tier-label.tier-d{background:#bf7fff}
+.tier-drop{flex:1;display:flex;flex-wrap:wrap;gap:4px;padding:6px;min-height:52px;background:rgba(0,0,0,.15);transition:background .2s;align-content:flex-start}
+.tier-drop.drag-over{background:rgba(232,150,30,.15)}
+.tier-unit{width:44px;height:44px;border-radius:4px;cursor:grab;position:relative;border:2px solid transparent;transition:all .15s}
+.tier-unit:hover{transform:scale(1.1);z-index:2}
+.tier-unit img{width:100%;height:100%;object-fit:cover;border-radius:3px}
+.tier-unit .tier-unit-name{display:none;position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);background:rgba(0,0,0,.9);color:#fff;font-size:.55em;padding:2px 4px;border-radius:2px;white-space:nowrap;z-index:10;pointer-events:none}
+.tier-unit:hover .tier-unit-name{display:block}
+.tier-unit.dragging{opacity:.4}
+.tierlist-pool-label{font-size:.8em;color:var(--text2);margin:12px 0 6px;font-weight:600}
+.tierlist-pool{display:flex;flex-wrap:wrap;gap:4px;padding:8px;background:var(--card);border:1px solid var(--card-border);border-radius:8px;min-height:52px;align-content:flex-start}
+.tierlist-filter{margin-bottom:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.tierlist-filter input{padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:.8em;background:var(--bg);color:var(--text);flex:1;max-width:280px}
+.tierlist-filter select{padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:.8em;background:var(--bg);color:var(--text)}
+@media(max-width:600px){
+  .tierlist-container{padding:0 10px 30px}
+  .tier-unit{width:36px;height:36px}
+  .tier-label{width:36px;min-width:36px;font-size:1em}
+}
+
 /* Grid */
 .grid{max-width:1800px;margin:0 auto;padding:0 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
 
@@ -721,6 +758,7 @@ a:hover{text-decoration:underline}
     <button class="tab-btn" data-tab="taglookup"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg><span class="tab-label">タグ検索</span></button>
     <button class="tab-btn" data-tab="team"><svg class="tab-icon" viewBox="0 0 20 20"><rect x="1" y="3" width="5" height="5" rx="1"/><rect x="7.5" y="3" width="5" height="5" rx="1"/><rect x="14" y="3" width="5" height="5" rx="1"/><rect x="4" y="11" width="5" height="5" rx="1"/><rect x="11" y="11" width="5" height="5" rx="1"/></svg><span class="tab-label">チーム<br>編成</span></button>
     <button class="tab-btn" data-tab="ranking"><svg class="tab-icon" viewBox="0 0 20 20"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="4" width="4" height="14" rx="1"/><rect x="14" y="7" width="4" height="11" rx="1"/></svg><span class="tab-label">ランキング</span></button>
+    <button class="tab-btn" data-tab="tierlist"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M3 3h14v3H3zM3 8h11v3H3zM3 13h8v3H3z" fill="currentColor"/></svg><span class="tab-label">ティア</span></button>
   </nav>
 </header>
 
@@ -890,6 +928,30 @@ a:hover{text-decoration:underline}
 
 
 
+
+
+<!-- Tier List Container -->
+<div class="tierlist-container" id="tierlistContainer">
+  <div class="tierlist-header">
+    <h3>🏆 マイティアリスト</h3>
+    <div class="tierlist-actions">
+      <button class="tierlist-btn" onclick="resetTierList()">リセット</button>
+      <button class="tierlist-btn primary" onclick="exportTierList()">📷 画像保存</button>
+    </div>
+  </div>
+  <div class="tierlist-board" id="tierlistBoard"></div>
+  <div class="tierlist-filter">
+    <input type="text" id="tierPoolSearch" placeholder="ユニット名で検索..." oninput="renderTierPool()">
+    <select id="tierPoolRarity" onchange="renderTierPool()">
+      <option value="">全レアリティ</option>
+      <option value="UR">UR</option>
+      <option value="SSR">SSR</option>
+      <option value="SR">SR</option>
+    </select>
+  </div>
+  <div class="tierlist-pool-label">未配置ユニット（ドラッグして配置）</div>
+  <div class="tierlist-pool" id="tierlistPool"></div>
+</div>
 
 <!-- Ranking Container -->
 <div class="ranking-container" id="rankingContainer">
@@ -1223,17 +1285,21 @@ function setupTabs() {
       const isTagLookup = currentTab === 'taglookup';
       const isTeam = currentTab === 'team';
       const isRanking = currentTab === 'ranking';
-      const isSpecial = isTagLookup || isTeam || isRanking;
+      const isTierlist = currentTab === 'tierlist';
+      const isSpecial = isTagLookup || isTeam || isRanking || isTierlist;
       document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
       document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
       document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
       document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
       document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
       document.getElementById('rankingContainer').style.display = isRanking ? '' : 'none';
+      document.getElementById('tierlistContainer').style.display = isTierlist ? '' : 'none';
       if (isTagLookup) {
         renderTagLookup();
       } else if (isRanking) {
         renderRanking();
+      } else if (isTierlist) {
+        renderTierList();
       } else if (isTeam) {
         renderTeamSim();
       } else {
@@ -3757,14 +3823,20 @@ function restoreFromURL() {
   const isTagLookup = tab === 'taglookup';
   const isTeam = tab === 'team';
   const isRanking = tab === 'ranking';
-  const isSpecial = isTagLookup || isTeam || isRanking;
+  const isTierlist = tab === 'tierlist';
+  const isSpecial = isTagLookup || isTeam || isRanking || isTierlist;
   document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
   document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
   document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
   document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
   document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
   document.getElementById('rankingContainer').style.display = isRanking ? '' : 'none';
+  document.getElementById('tierlistContainer').style.display = isTierlist ? '' : 'none';
 
+  if (isTierlist) {
+    renderTierList();
+    return true;
+  }
   if (isRanking) {
     renderRanking();
     return true;
@@ -4277,6 +4349,219 @@ function renderRanking() {
       <div class="ranking-bar-wrap"><div class="ranking-bar" style="width:${pct}%"></div></div>
     </div>`;
   }).join('');
+}
+
+
+// === TIER LIST ===
+const TIERS = [
+  {id:'s',label:'S',cls:'tier-s'},
+  {id:'a',label:'A',cls:'tier-a'},
+  {id:'b',label:'B',cls:'tier-b'},
+  {id:'c',label:'C',cls:'tier-c'},
+  {id:'d',label:'D',cls:'tier-d'}
+];
+let _tierData = {s:[],a:[],b:[],c:[],d:[]};
+let _tierInited = false;
+
+function loadTierData() {
+  try {
+    const saved = localStorage.getItem('gget_tierlist');
+    if (saved) _tierData = JSON.parse(saved);
+  } catch(e) {}
+}
+function saveTierData() {
+  try { localStorage.setItem('gget_tierlist', JSON.stringify(_tierData)); } catch(e) {}
+}
+
+function renderTierList() {
+  if (!_tierInited) { loadTierData(); _tierInited = true; }
+  const board = document.getElementById('tierlistBoard');
+  board.innerHTML = TIERS.map(tier => {
+    const units = (_tierData[tier.id]||[]).map(id => allUnits.find(u=>u.id===id)).filter(Boolean);
+    return `<div class="tier-row">
+      <div class="tier-label ${tier.cls}">${tier.label}</div>
+      <div class="tier-drop" data-tier="${tier.id}"
+        ondragover="event.preventDefault();this.classList.add('drag-over')"
+        ondragleave="this.classList.remove('drag-over')"
+        ondrop="dropOnTier(event,'${tier.id}')">
+        ${units.map(u => tierUnitHTML(u)).join('')}
+      </div>
+    </div>`;
+  }).join('');
+  renderTierPool();
+}
+
+function tierUnitHTML(u) {
+  return `<div class="tier-unit" draggable="true" data-uid="${u.id}"
+    ondragstart="event.dataTransfer.setData('text/plain','${u.id}');this.classList.add('dragging')"
+    ondragend="this.classList.remove('dragging')"
+    oncontextmenu="event.preventDefault();removeFromTier(${u.id})"
+    onclick="showUnitDetail(${u.id})">
+    ${u.image ? `<img src="${u.image}" alt="${u.name}" loading="lazy">` : `<div style="width:100%;height:100%;background:var(--card-border);display:flex;align-items:center;justify-content:center;font-size:.5em;color:var(--card-text2)">${u.name.charAt(0)}</div>`}
+    <div class="tier-unit-name">${u.name}</div>
+  </div>`;
+}
+
+function renderTierPool() {
+  const placed = new Set(Object.values(_tierData).flat());
+  const q = (document.getElementById('tierPoolSearch')?.value||'').toLowerCase();
+  const rarity = document.getElementById('tierPoolRarity')?.value||'';
+  const pool = allUnits.filter(u => {
+    if (placed.has(u.id)) return false;
+    if (q && !u.name.toLowerCase().includes(q)) return false;
+    if (rarity && u.rarity !== rarity) return false;
+    return true;
+  });
+  const poolEl = document.getElementById('tierlistPool');
+  poolEl.innerHTML = pool.map(u => tierUnitHTML(u)).join('');
+  poolEl.ondragover = function(e) { e.preventDefault(); this.classList.add('drag-over'); };
+  poolEl.ondragleave = function() { this.classList.remove('drag-over'); };
+  poolEl.ondrop = function(e) {
+    e.preventDefault();
+    this.classList.remove('drag-over');
+    const uid = parseInt(e.dataTransfer.getData('text/plain'));
+    removeFromTier(uid);
+  };
+}
+
+function dropOnTier(e, tierId) {
+  e.preventDefault();
+  e.currentTarget.classList.remove('drag-over');
+  const uid = parseInt(e.dataTransfer.getData('text/plain'));
+  // Remove from all tiers first
+  TIERS.forEach(t => {
+    _tierData[t.id] = (_tierData[t.id]||[]).filter(id => id !== uid);
+  });
+  _tierData[tierId].push(uid);
+  saveTierData();
+  renderTierList();
+}
+
+function removeFromTier(uid) {
+  TIERS.forEach(t => {
+    _tierData[t.id] = (_tierData[t.id]||[]).filter(id => id !== uid);
+  });
+  saveTierData();
+  renderTierList();
+}
+
+function resetTierList() {
+  if (!confirm('ティアリストをリセットしますか？')) return;
+  _tierData = {s:[],a:[],b:[],c:[],d:[]};
+  saveTierData();
+  renderTierList();
+}
+
+function exportTierList() {
+  const board = document.getElementById('tierlistBoard');
+  const rows = board.querySelectorAll('.tier-row');
+  const rowH = 60;
+  const iconS = 44;
+  const pad = 6;
+  const labelW = 50;
+  const maxW = 900;
+
+  // Calculate needed dimensions
+  let totalH = 40; // title
+  const rowData = [];
+  TIERS.forEach(tier => {
+    const units = (_tierData[tier.id]||[]).map(id => allUnits.find(u=>u.id===id)).filter(Boolean);
+    const iconsPerRow = Math.floor((maxW - labelW - pad*2) / (iconS + 4));
+    const rows = Math.max(1, Math.ceil(units.length / iconsPerRow));
+    const h = Math.max(rowH, rows * (iconS + 4) + pad*2);
+    rowData.push({tier, units, h, iconsPerRow});
+    totalH += h + 2;
+  });
+  totalH += 30; // footer
+
+  const canvas = document.createElement('canvas');
+  canvas.width = maxW;
+  canvas.height = totalH;
+  const ctx = canvas.getContext('2d');
+
+  // Background
+  ctx.fillStyle = '#111318';
+  ctx.fillRect(0, 0, maxW, totalH);
+
+  // Title
+  ctx.fillStyle = '#fff';
+  ctx.font = 'bold 16px sans-serif';
+  ctx.fillText('Gジェネエターナル ティアリスト by MH GAMES', 12, 26);
+
+  let y = 40;
+  const tierColors = {s:'#ff7f7f',a:'#ffbf7f',b:'#ffff7f',c:'#7fbfff',d:'#bf7fff'};
+
+  // Pre-load all images and draw
+  const promises = [];
+  rowData.forEach(rd => {
+    rd.units.forEach(u => {
+      if (u.image) {
+        const p = new Promise(resolve => {
+          const img = new Image();
+          img.crossOrigin = 'anonymous';
+          img.onload = () => resolve({id:u.id, img});
+          img.onerror = () => resolve({id:u.id, img:null});
+          img.src = u.image;
+        });
+        promises.push(p);
+      }
+    });
+  });
+
+  Promise.all(promises).then(imgResults => {
+    const imgMap = {};
+    imgResults.forEach(r => { if(r.img) imgMap[r.id] = r.img; });
+
+    let y = 40;
+    rowData.forEach(rd => {
+      // Label
+      ctx.fillStyle = tierColors[rd.tier.id];
+      ctx.fillRect(0, y, labelW, rd.h);
+      ctx.fillStyle = '#000';
+      ctx.font = 'bold 20px sans-serif';
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillText(rd.tier.label, labelW/2, y + rd.h/2);
+      ctx.textAlign = 'left';
+      ctx.textBaseline = 'alphabetic';
+
+      // Drop zone bg
+      ctx.fillStyle = '#1a1d25';
+      ctx.fillRect(labelW, y, maxW - labelW, rd.h);
+
+      // Icons
+      let ix = labelW + pad;
+      let iy = y + pad;
+      rd.units.forEach((u, idx) => {
+        if (ix + iconS > maxW - pad) {
+          ix = labelW + pad;
+          iy += iconS + 4;
+        }
+        if (imgMap[u.id]) {
+          ctx.drawImage(imgMap[u.id], ix, iy, iconS, iconS);
+        } else {
+          ctx.fillStyle = '#2a2d38';
+          ctx.fillRect(ix, iy, iconS, iconS);
+          ctx.fillStyle = '#8a8d98';
+          ctx.font = '10px sans-serif';
+          ctx.fillText(u.name.substring(0,3), ix+2, iy+28);
+        }
+        ix += iconS + 4;
+      });
+      y += rd.h + 2;
+    });
+
+    // Footer
+    ctx.fillStyle = '#5c6070';
+    ctx.font = '11px sans-serif';
+    ctx.fillText('ggene-eternal-unit-db.vercel.app | MH GAMES', 12, y + 18);
+
+    // Download
+    const link = document.createElement('a');
+    link.download = 'gget-tierlist.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  });
 }
 
 </script>
