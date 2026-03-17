@@ -960,17 +960,28 @@ a:hover{text-decoration:underline}
       <button class="tierlist-btn primary" onclick="exportTierList()">📷 画像保存</button>
     </div>
   </div>
+  <div class="ranking-mode-toggle" style="margin-bottom:12px">
+    <button class="ranking-mode-btn active" data-tmode="unit" onclick="switchTierMode('unit')">ユニット</button>
+    <button class="ranking-mode-btn" data-tmode="chara" onclick="switchTierMode('chara')">キャラ</button>
+    <button class="ranking-mode-btn" data-tmode="supporter" onclick="switchTierMode('supporter')">サポーター</button>
+  </div>
   <div class="tierlist-board" id="tierlistBoard"></div>
   <div class="tierlist-filter">
-    <input type="text" id="tierPoolSearch" placeholder="ユニット名で検索..." oninput="renderTierPool()">
+    <input type="text" id="tierPoolSearch" placeholder="名前で検索..." oninput="renderTierPool()">
     <select id="tierPoolRarity" onchange="renderTierPool()">
       <option value="">全レアリティ</option>
       <option value="UR">UR</option>
       <option value="SSR">SSR</option>
       <option value="SR">SR</option>
     </select>
+    <select id="tierPoolType" onchange="renderTierPool()">
+      <option value="">全タイプ</option>
+      <option value="攻撃">攻撃</option>
+      <option value="耐久">耐久</option>
+      <option value="支援">支援</option>
+    </select>
   </div>
-  <div class="tierlist-pool-label">未配置ユニット（ドラッグして配置）</div>
+  <div class="tierlist-pool-label" id="tierPoolLabel">未配置ユニット（ドラッグして配置）</div>
   <div class="tierlist-pool" id="tierlistPool"></div>
 </div>
 
@@ -4581,45 +4592,74 @@ const TIERS = [
   {id:'c',label:'C',cls:'tier-c'},
   {id:'d',label:'D',cls:'tier-d'}
 ];
-let _tierData = {s:[],a:[],b:[],c:[],d:[]};
+let _tierData = {};
+let _tierMode = 'unit';
 let _tierInited = false;
 
+function _tierStorageKey() { return 'gget_tierlist_' + _tierMode; }
 function loadTierData() {
   try {
-    const saved = localStorage.getItem('gget_tierlist');
-    if (saved) _tierData = JSON.parse(saved);
-  } catch(e) {}
+    const saved = localStorage.getItem(_tierStorageKey());
+    _tierData = saved ? JSON.parse(saved) : {s:[],a:[],b:[],c:[],d:[]};
+  } catch(e) { _tierData = {s:[],a:[],b:[],c:[],d:[]}; }
 }
 function saveTierData() {
-  try { localStorage.setItem('gget_tierlist', JSON.stringify(_tierData)); } catch(e) {}
+  try { localStorage.setItem(_tierStorageKey(), JSON.stringify(_tierData)); } catch(e) {}
+}
+
+function switchTierMode(mode) {
+  _tierMode = mode;
+  document.querySelectorAll('[data-tmode]').forEach(b => b.classList.toggle('active', b.dataset.tmode === mode));
+  loadTierData();
+  const labels = {unit:'ユニット',chara:'キャラ',supporter:'サポーター'};
+  document.getElementById('tierPoolLabel').textContent = '未配置' + labels[mode] + '（ドラッグして配置）';
+  // Show/hide type filter for supporters (they don't have attack/defense/support types)
+  const typeSelect = document.getElementById('tierPoolType');
+  if (typeSelect) typeSelect.style.display = mode === 'supporter' ? 'none' : '';
+  renderTierList();
+}
+
+function _tierSource() {
+  if (_tierMode === 'chara') return allCharas;
+  if (_tierMode === 'supporter') return allSupporters;
+  return allUnits;
+}
+
+function _tierDetailFn(id) {
+  if (_tierMode === 'chara') return 'showCharaDetail(' + id + ')';
+  if (_tierMode === 'supporter') return 'showSupporterDetail(' + id + ')';
+  return 'showUnitDetail(' + id + ')';
 }
 
 function renderTierList() {
   if (!_tierInited) { loadTierData(); _tierInited = true; }
+  const source = _tierSource();
   const board = document.getElementById('tierlistBoard');
   board.innerHTML = TIERS.map(tier => {
-    const units = (_tierData[tier.id]||[]).map(id => allUnits.find(u=>u.id===id)).filter(Boolean);
+    const items = (_tierData[tier.id]||[]).map(id => source.find(x=>x.id===id)).filter(Boolean);
     return `<div class="tier-row">
       <div class="tier-label ${tier.cls}">${tier.label}</div>
       <div class="tier-drop" data-tier="${tier.id}"
         ondragover="event.preventDefault();this.classList.add('drag-over')"
         ondragleave="this.classList.remove('drag-over')"
         ondrop="dropOnTier(event,'${tier.id}')">
-        ${units.map(u => tierUnitHTML(u)).join('')}
+        ${items.map(x => tierItemHTML(x)).join('')}
       </div>
     </div>`;
   }).join('');
   renderTierPool();
 }
 
-function tierUnitHTML(u) {
-  return `<div class="tier-unit" draggable="true" data-uid="${u.id}"
-    ondragstart="event.dataTransfer.setData('text/plain','${u.id}');this.classList.add('dragging')"
+function tierItemHTML(x) {
+  const detailFn = _tierDetailFn(x.id);
+  const imgEl = x.image ? `<img src="${x.image}" alt="${x.name}" loading="lazy">` : `<div style="width:100%;height:100%;background:var(--card-border);display:flex;align-items:center;justify-content:center;font-size:.5em;color:var(--card-text2)">${x.name.charAt(0)}</div>`;
+  return `<div class="tier-unit" draggable="true" data-uid="${x.id}"
+    ondragstart="event.dataTransfer.setData('text/plain','${x.id}');this.classList.add('dragging')"
     ondragend="this.classList.remove('dragging')"
-    oncontextmenu="event.preventDefault();removeFromTier(${u.id})"
-    onclick="showUnitDetail(${u.id})">
-    ${u.image ? `<img src="${u.image}" alt="${u.name}" loading="lazy">` : `<div style="width:100%;height:100%;background:var(--card-border);display:flex;align-items:center;justify-content:center;font-size:.5em;color:var(--card-text2)">${u.name.charAt(0)}</div>`}
-    <div class="tier-unit-name">${u.name}</div>
+    oncontextmenu="event.preventDefault();removeFromTier(${x.id})"
+    onclick="${detailFn}">
+    ${imgEl}
+    <div class="tier-unit-name">${x.name}</div>
   </div>`;
 }
 
@@ -4627,14 +4667,17 @@ function renderTierPool() {
   const placed = new Set(Object.values(_tierData).flat());
   const q = (document.getElementById('tierPoolSearch')?.value||'').toLowerCase();
   const rarity = document.getElementById('tierPoolRarity')?.value||'';
-  const pool = allUnits.filter(u => {
-    if (placed.has(u.id)) return false;
-    if (q && !u.name.toLowerCase().includes(q)) return false;
-    if (rarity && u.rarity !== rarity) return false;
+  const unitType = document.getElementById('tierPoolType')?.value||'';
+  const source = _tierSource();
+  const pool = source.filter(x => {
+    if (placed.has(x.id)) return false;
+    if (q && !x.name.toLowerCase().includes(q)) return false;
+    if (rarity && x.rarity !== rarity) return false;
+    if (unitType && (x.type||x.chara_type||'') !== unitType) return false;
     return true;
   });
   const poolEl = document.getElementById('tierlistPool');
-  poolEl.innerHTML = pool.map(u => tierUnitHTML(u)).join('');
+  poolEl.innerHTML = pool.map(x => tierItemHTML(x)).join('');
   poolEl.ondragover = function(e) { e.preventDefault(); this.classList.add('drag-over'); };
   poolEl.ondragleave = function() { this.classList.remove('drag-over'); };
   poolEl.ondrop = function(e) {
@@ -4667,7 +4710,8 @@ function removeFromTier(uid) {
 }
 
 function resetTierList() {
-  if (!confirm('ティアリストをリセットしますか？')) return;
+  const labels = {unit:'ユニット',chara:'キャラ',supporter:'サポーター'};
+  if (!confirm(labels[_tierMode] + 'ティアリストをリセットしますか？')) return;
   _tierData = {s:[],a:[],b:[],c:[],d:[]};
   saveTierData();
   renderTierList();
@@ -4686,7 +4730,7 @@ function exportTierList() {
   let totalH = 40; // title
   const rowData = [];
   TIERS.forEach(tier => {
-    const units = (_tierData[tier.id]||[]).map(id => allUnits.find(u=>u.id===id)).filter(Boolean);
+    const units = (_tierData[tier.id]||[]).map(id => _tierSource().find(u=>u.id===id)).filter(Boolean);
     const iconsPerRow = Math.floor((maxW - labelW - pad*2) / (iconS + 4));
     const rows = Math.max(1, Math.ceil(units.length / iconsPerRow));
     const h = Math.max(rowH, rows * (iconS + 4) + pad*2);
@@ -4707,7 +4751,8 @@ function exportTierList() {
   // Title
   ctx.fillStyle = '#fff';
   ctx.font = 'bold 16px sans-serif';
-  ctx.fillText('Gジェネエターナル ティアリスト by MH GAMES', 12, 26);
+  const modeLabels = {unit:'ユニット',chara:'キャラ',supporter:'サポーター'};
+  ctx.fillText('Gジェネエターナル ' + modeLabels[_tierMode] + 'ティアリスト by MH GAMES', 12, 26);
 
   let y = 40;
   const tierColors = {s:'#ff7f7f',a:'#ffbf7f',b:'#ffff7f',c:'#7fbfff',d:'#bf7fff'};
