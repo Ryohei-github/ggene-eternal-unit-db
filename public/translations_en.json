@@ -126,7 +126,10 @@
     "お問い合わせ": "Contact",
     "コピーしました！": "Copied!",
     "共有に失敗しました": "Share failed",
-    "データ読み込み失敗": "Data load failed"
+    "データ読み込み失敗": "Data load failed",
+    "タグ検索": "Tag Search",
+    "チーム": "Team",
+    "編成": "Builder"
   },
   "series": {
     "機動戦士ガンダム": "Mobile Suit Gundam",

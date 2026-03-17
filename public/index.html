@@ -856,12 +856,12 @@ function applyStaticTranslations() {
   // Tab labels
   const tabLabels = {
     'unit': t('ユニット'), 'chara': t('キャラ'), 'supporter': t('サポ'),
-    'taglookup': t('タグ'), 'team': t('編成シム')
+    'taglookup': t('タグ検索'), 'team': t('チーム編成')
   };
   document.querySelectorAll('.tab-btn').forEach(btn => {
     const tab = btn.dataset.tab;
     const label = btn.querySelector('.tab-label');
-    if (label && tabLabels[tab]) label.textContent = tabLabels[tab];
+    if (label && tabLabels[tab]) { if (tab === 'team') label.innerHTML = t('チーム') + '<br>' + t('編成'); else label.textContent = tabLabels[tab]; }
   });
   
   // Search placeholder
