@@ -298,9 +298,9 @@ a:hover{text-decoration:underline}
 .compare-fab:hover{transform:scale(1.05);box-shadow:0 6px 28px rgba(232,150,30,.6)}
 .compare-fab .fab-count{background:#fff;color:#000;border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.8em;font-weight:800}
 @keyframes comparePulse{0%,100%{box-shadow:0 4px 20px rgba(232,150,30,.4)}50%{box-shadow:0 4px 30px rgba(232,150,30,.7)}}
-.compare-btn{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;padding:5px 0;margin-top:4px;background:rgba(255,255,255,.04);border:1px solid var(--card-border);border-radius:4px;color:var(--card-text2);font-size:.68em;font-weight:600;cursor:pointer;transition:all .2s;pointer-events:auto}
-.compare-btn:hover{border-color:var(--accent);color:var(--accent);background:rgba(232,150,30,.08)}
-.card.compare-selected .compare-btn{background:var(--accent);border-color:var(--accent);color:#000;font-weight:700}
+.compare-btn{display:flex;align-items:center;justify-content:center;gap:5px;width:auto;align-self:flex-end;padding:4px 12px;margin-top:8px;background:rgba(232,150,30,.08);border:1.5px solid rgba(232,150,30,.35);border-radius:5px;color:var(--accent);font-size:.7em;font-weight:700;cursor:pointer;transition:all .2s;pointer-events:auto;letter-spacing:.3px}
+.compare-btn:hover{border-color:var(--accent);background:rgba(232,150,30,.2);transform:scale(1.03)}
+.card.compare-selected .compare-btn{background:var(--accent);border-color:var(--accent);color:#000;font-weight:800}
 .card.compare-selected{box-shadow:0 0 0 2px var(--accent)}
 .compare-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.8);z-index:250;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto}
 .compare-overlay.open{display:flex}
