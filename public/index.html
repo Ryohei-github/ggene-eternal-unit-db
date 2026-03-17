@@ -298,8 +298,8 @@ a:hover{text-decoration:underline}
 /* Card */
 .card{background:var(--card);border:none;border-radius:0;padding:10px;cursor:pointer;transition:all .2s;color:var(--card-text);clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);position:relative}
 .card:hover{background:var(--card-hover);transform:translateY(-2px)}
-.card::before{content:'';position:absolute;inset:0;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px,1px 11px,1px calc(100% - 1px),calc(100% - 11px) calc(100% - 1px),calc(100% - 1px) calc(100% - 11px),calc(100% - 1px) 1px,11px 1px,1px 11px);background:var(--card-border);pointer-events:none;transition:background .2s}
-.card:hover::before{background:var(--accent)}
+.card::before{content:'';position:absolute;inset:0;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px,1px 11px,1px calc(100% - 1px),calc(100% - 11px) calc(100% - 1px),calc(100% - 1px) calc(100% - 11px),calc(100% - 1px) 1px,11px 1px,1px 11px);background:transparent;pointer-events:none;transition:background .2s}
+.card:hover::before{background:linear-gradient(135deg,#ffd700,#ffaa00)}
 .card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;gap:6px}
 .card-icon{width:40px;height:40px;border-radius:5px;border:1px solid var(--border);object-fit:cover;flex-shrink:0;background:var(--bg)}
 .card-name{font-size:.95em;font-weight:700;color:#fff;flex:1;min-width:0}
