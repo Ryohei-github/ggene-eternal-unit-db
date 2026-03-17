@@ -4289,7 +4289,8 @@ function switchRankingMode(mode) {
 function renderRanking() {
   const unitStats = [
     {key:'hp',label:'HP'},{key:'en',label:'EN'},{key:'attack',label:'攻撃力'},
-    {key:'defense',label:'防御力'},{key:'agility',label:'機動力'},{key:'mobility',label:'移動力'}
+    {key:'defense',label:'防御力'},{key:'agility',label:'機動力'},{key:'mobility',label:'移動力'},
+    {key:'maxWeaponPower',label:'最大武装威力'}
   ];
   const charaStats = [
     {key:'shooting',label:'射撃'},{key:'melee',label:'格闘'},{key:'awakening',label:'覚醒'},
@@ -4307,16 +4308,24 @@ function renderRanking() {
   const TOP_N = 20;
   let items;
   if (_rankingMode === 'unit') {
-    items = allUnits.map(u => ({
-      id: u.id,
-      name: u.name,
-      image: u.image,
-      rarity: u.rarity,
-      type: u.type,
-      series: (u.series||[]).join(' / '),
-      val: parseInt((u.normal?.stats||{})[_rankingStat])||0,
-      onclick: `showUnitDetail(${u.id})`
-    }));
+    items = allUnits.map(u => {
+      let val;
+      if (_rankingStat === 'maxWeaponPower') {
+        val = Math.max(0, ...(u.normal_weapons||[]).map(w => parseInt((w.power||'0').replace(/,/g,''))||0));
+      } else {
+        val = parseInt((u.normal?.stats||{})[_rankingStat])||0;
+      }
+      return {
+        id: u.id,
+        name: u.name,
+        image: u.image,
+        rarity: u.rarity,
+        type: u.type,
+        series: (u.series||[]).join(' / '),
+        val,
+        onclick: `showUnitDetail(${u.id})`
+      };
+    });
   } else {
     items = allCharas.map(c => ({
       id: c.id,
