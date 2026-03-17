@@ -456,8 +456,8 @@ a:hover{text-decoration:underline}
   .header{padding:10px 12px 0}
   .header-brand{gap:6px}
   .header-icon{width:28px;height:28px}
-  .header h1{font-size:1.1em;letter-spacing:1px}
-  .header .sub{font-size:.65em;margin-top:1px}
+  .header h1{font-size:1em;letter-spacing:.5px;max-width:calc(100% - 90px)}
+  .header .sub{font-size:.6em;margin-top:1px;padding:0 40px}
   .header-links{gap:6px;margin-top:4px}
   .header-links a{font-size:.62em;padding:3px 8px}
   .header .yt-cta{font-size:.58em;margin-top:2px}
@@ -505,9 +505,13 @@ a:hover{text-decoration:underline}
   .card .supporter-stat .sv{font-size:.9em}
 
   /* Modal */
+  .modal-overlay{padding:10px}
+  .modal{padding:16px;max-width:calc(100vw - 20px);overflow-x:hidden;box-sizing:border-box}
   .modal .stats-grid{grid-template-columns:repeat(2,1fr)}
   .modal .mechanism-item{flex-direction:column;align-items:flex-start}
   .modal .weapon-info{grid-template-columns:repeat(2,1fr)}
+  .limit-break-details{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .lb-table{min-width:480px}
 
   /* Table view */
   .data-table{font-size:.7em}
@@ -633,6 +637,12 @@ a:hover{text-decoration:underline}
         <option value="水上">水上◯</option>
         <option value="水中">水中◯</option>
       </select>
+    </div>
+    <div class="filter-group" id="filterMapGroup">
+      <label>MAP兵器</label>
+      <div class="filter-btn-group">
+        <button class="filter-btn" id="filterMapBtn" onclick="this.classList.toggle('active');renderList()"><img src="/assets/map_weapon/UI_Battle_MapUI_MapWeapon_Icon_Red.png" style="width:14px;height:14px;vertical-align:middle"> MAP所持</button>
+      </div>
     </div>
     <div class="filter-group filter-group-wide" id="filterDebuffGroup">
       <label>デバフ効果</label>
@@ -1081,6 +1091,7 @@ function resetFilters() {
   document.getElementById('debuffRateWrap').style.display = 'none';
   document.getElementById('debuffMinRate').innerHTML = '<option value="">すべて</option>';
   document.querySelectorAll('#debuffCategoryButtons .filter-btn, #specialEffectButtons .filter-btn').forEach(b => b.classList.remove('active'));
+  const mapBtn = document.getElementById('filterMapBtn'); if (mapBtn) mapBtn.classList.remove('active');
 }
 
 function updateUI() {
@@ -1090,11 +1101,11 @@ function updateUI() {
   const isSupporter = currentTab === 'supporter';
 
   const placeholders = currentLang === 'en' ? {
-    unit: 'Search by unit name, weapon, effect...',
+    unit: 'Search by unit name, weapon, attribute, effect...',
     chara: 'Search by character name, skill, ability...',
     supporter: 'Search by supporter name... (e.g. Bright, White Base)'
   } : {
-    unit: 'ユニット名・武装名・武装効果で検索...',
+    unit: 'ユニット名・武装名・属性・効果で検索...',
     chara: 'キャラ名・スキル名・アビリティで検索...',
     supporter: 'サポーター名で検索...（例: ブライト、ホワイトベース）'
   };
@@ -1104,6 +1115,7 @@ function updateUI() {
   document.getElementById('filterSeriesGroup').style.display = isUnit || isChara ? '' : 'none';
   document.getElementById('filterTagGroup').style.display = (isUnit || isChara) ? '' : 'none';
   document.getElementById('filterTerrainGroup').style.display = isUnit ? '' : 'none';
+  document.getElementById('filterMapGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterDebuffGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterRarityGroup').style.display = '';
   document.getElementById('filterCharaTypeGroup').style.display = isChara ? '' : 'none';
@@ -1359,7 +1371,7 @@ function getFiltered() {
       if (q) {
         const nameMatch = u.name.toLowerCase().includes(q) || (currentLang==='en' && tData(u.name).toLowerCase().includes(q));
         const weaponMatch = (u.normal_weapons||[]).concat(u.transformed_weapons||[]).some(w =>
-          (w.name||'').toLowerCase().includes(q) || (w.effect||'').toLowerCase().includes(q)
+          (w.name||'').toLowerCase().includes(q) || (w.effect||'').toLowerCase().includes(q) || (w.attribute||'').toLowerCase().includes(q) || (w.weapon_type||'').toLowerCase().includes(q)
         );
         if (!nameMatch && !weaponMatch) return false;
       }
@@ -1368,6 +1380,12 @@ function getFiltered() {
       if (series && !(u.series||[]).includes(series)) return false;
       if (tag && !(u.tags||[]).includes(tag)) return false;
       if (terrain && (!u.normal?.terrain || u.normal.terrain[terrain] !== '◯')) return false;
+      // MAP weapon filter
+      const mapFilterActive = document.getElementById('filterMapBtn')?.classList.contains('active');
+      if (mapFilterActive) {
+        const allW = (u.normal_weapons||[]).concat(u.transformed_weapons||[]);
+        if (!allW.some(w => w.range === 'MAP')) return false;
+      }
       // Debuff category filter with min rate
       if (activeDebuffKey) {
         const cat = DEBUFF_CATEGORIES.find(d => d.key === activeDebuffKey);
@@ -3587,7 +3605,8 @@ function updateClearButton() {
     const series = document.getElementById('filterSeries')?.value || '';
     const tag = document.getElementById('filterTag')?.value || '';
     const terrain = document.getElementById('filterTerrain')?.value || '';
-    hasFilter = activeTypes > 0 || series || tag || terrain;
+    const mapActive = document.getElementById('filterMapBtn')?.classList.contains('active');
+    hasFilter = activeTypes > 0 || series || tag || terrain || mapActive;
   }
   if (!hasFilter && currentTab === 'chara') {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].length;
