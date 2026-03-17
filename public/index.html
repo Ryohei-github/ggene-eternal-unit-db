@@ -673,6 +673,12 @@ a:hover{text-decoration:underline}
         <button class="filter-btn" id="filterMapBtn" onclick="this.classList.toggle('active');render()"><img src="/assets/map_weapon/UI_Battle_MapUI_MapWeapon_Icon_Red.png" style="width:14px;height:14px;vertical-align:middle"> MAP所持</button>
       </div>
     </div>
+    <div class="filter-group" id="filterCharaGroup">
+      <label>獲得キャラ</label>
+      <div class="filter-btn-group">
+        <button class="filter-btn" id="filterCharaBtn" onclick="this.classList.toggle('active');render()">👤 キャラ付き</button>
+      </div>
+    </div>
     <div class="filter-group filter-group-wide" id="filterDebuffGroup">
       <label>デバフ効果</label>
       <div class="debuff-filter-row" id="debuffFilterRow">
@@ -1128,6 +1134,7 @@ function resetFilters() {
   document.getElementById('debuffMinRate').innerHTML = '<option value="">すべて</option>';
   document.querySelectorAll('#debuffCategoryButtons .filter-btn, #specialEffectButtons .filter-btn').forEach(b => b.classList.remove('active'));
   const mapBtn = document.getElementById('filterMapBtn'); if (mapBtn) mapBtn.classList.remove('active');
+  const charaBtn = document.getElementById('filterCharaBtn'); if (charaBtn) charaBtn.classList.remove('active');
   const rangeEl = document.getElementById('filterRange'); if (rangeEl) rangeEl.value = '';
 }
 
@@ -1154,6 +1161,7 @@ function updateUI() {
   document.getElementById('filterTerrainGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterRangeGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterMapGroup').style.display = isUnit ? '' : 'none';
+  document.getElementById('filterCharaGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterDebuffGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterRarityGroup').style.display = '';
   document.getElementById('filterCharaTypeGroup').style.display = isChara ? '' : 'none';
@@ -1406,6 +1414,7 @@ function getFiltered() {
     const tag = document.getElementById('filterTag').value;
     const activeTerrains = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
     const mapFilterActive = document.getElementById('filterMapBtn')?.classList.contains('active');
+    const charaFilterActive = document.getElementById('filterCharaBtn')?.classList.contains('active');
     const rangeMin = parseInt(document.getElementById('filterRange')?.value) || 0;
     return data.filter(u => {
       if (q) {
@@ -3627,6 +3636,8 @@ function restoreFromURL() {
     if (series) document.getElementById('filterSeries').value = series;
     if (tag) document.getElementById('filterTag').value = tag;
     if (terrain) terrain.split(',').forEach(v => { document.querySelectorAll('#filterTerrainButtons .filter-btn').forEach(b => { if (b.dataset.value === v) b.classList.add('active'); }); });
+    if (params.get('map') === '1') document.getElementById('filterMapBtn')?.classList.add('active');
+    if (params.get('chara') === '1') document.getElementById('filterCharaBtn')?.classList.add('active');
     if (debuff) {
       activeDebuffKey = debuff;
       document.querySelectorAll('#debuffCategoryButtons .filter-btn').forEach(b => {
@@ -3692,8 +3703,11 @@ function updateClearButton() {
     const tag = document.getElementById('filterTag')?.value || '';
     const activeTerrainsBtns = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
     const mapActive = document.getElementById('filterMapBtn')?.classList.contains('active');
+    const charaActive = document.getElementById('filterCharaBtn')?.classList.contains('active');
+    if (mapActive) params.set('map', '1');
+    if (charaActive) params.set('chara', '1');
     const rangeVal = document.getElementById('filterRange')?.value || '';
-    hasFilter = activeTypes > 0 || series || tag || activeTerrainsBtns.length > 0 || mapActive || rangeVal;
+    hasFilter = activeTypes > 0 || series || tag || activeTerrainsBtns.length > 0 || mapActive || charaActive || rangeVal;
   }
   if (!hasFilter && currentTab === 'chara') {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].length;
