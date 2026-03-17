@@ -215,7 +215,7 @@ a:hover{text-decoration:underline}
 .team-slot-card:hover{border-color:rgba(232,150,30,.3)}
 .team-slot-card .slot-header{display:flex;align-items:center;gap:4px;margin-bottom:4px}
 .team-slot-card .slot-number{width:22px;height:22px;background:var(--bg);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7em;font-weight:700;color:var(--accent);flex-shrink:0}
-.team-slot-card .slot-position{font-size:.6em;color:var(--text2);padding:1px 5px;background:var(--bg);border-radius:3px}
+.team-slot-card .slot-position{font-size:.6em;color:var(--card-text2);padding:1px 5px;background:var(--bg);border-radius:3px}
 .team-slot-pair{display:flex;flex-direction:column;gap:6px}
 .team-slot-unit-area,.team-slot-chara-area{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px;min-height:40px}
 .team-slot-unit-area .area-label,.team-slot-chara-area .area-label{font-size:.58em;color:var(--accent);font-weight:600;margin-bottom:3px;letter-spacing:.5px}
@@ -275,11 +275,11 @@ a:hover{text-decoration:underline}
 .picker-summary-slot .pss-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:54px;display:block}
 .team-picker-list{flex:1;overflow-y:auto;padding:8px;display:grid;grid-template-columns:1fr;gap:6px}
 .picker-item{background:var(--bg);border:1px solid var(--border);border-radius:8px;padding:8px 10px;cursor:pointer;transition:all .15s;display:flex;align-items:center;gap:10px}
-.picker-item:hover{border-color:var(--accent);background:rgba(232,150,30,.05)}
+.picker-item:hover{border-color:var(--accent);background:rgba(232,150,30,.12)}
 .picker-item img{width:36px;height:36px;border-radius:6px;object-fit:cover;border:1px solid var(--border);flex-shrink:0}
 .picker-item-info{flex:1;min-width:0}
-.picker-item-name{font-size:.82em;font-weight:600;color:var(--card-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.picker-item-sub{font-size:.65em;color:var(--card-text2)}
+.picker-item-name{font-size:.82em;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.picker-item-sub{font-size:.65em;color:var(--text2)}
 .team-saved-list{margin-top:16px}
 .team-saved-list h3{font-size:.85em;color:var(--text2);margin-bottom:8px}
 .team-saved-item{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg);border:1px solid var(--border);border-radius:6px;margin-bottom:4px;cursor:pointer;transition:all .15s}
@@ -2522,8 +2522,8 @@ function renderTeamSupporter() {
   if (sup) {
     pickHTML = `<div style="text-align:center">
       ${sup.image ? `<img src="${sup.image}" alt="${sup.name}" style="width:48px;height:48px;border-radius:8px;object-fit:cover;border:1px solid var(--border);cursor:pointer" onclick="openTeamPicker('supporter',0)" title="クリックで変更" onerror="this.style.display='none'">` : ''}
-      <div style="font-size:.82em;font-weight:600;color:var(--text);margin-top:4px;cursor:pointer" onclick="openTeamPicker('supporter',0)" title="クリックで変更">${sup.name}</div>
-      <div style="font-size:.7em;color:var(--text2);margin-top:2px"><span class="badge ${rarityClass(sup.rarity)}" style="font-size:.85em">${sup.rarity}</span> HP:${sup.hp||'-'} ATK:${sup.attack||'-'}</div>
+      <div style="font-size:.82em;font-weight:600;color:var(--card-text);margin-top:4px;cursor:pointer" onclick="openTeamPicker('supporter',0)" title="クリックで変更">${sup.name}</div>
+      <div style="font-size:.7em;color:var(--card-text2);margin-top:2px"><span class="badge ${rarityClass(sup.rarity)}" style="font-size:.85em">${sup.rarity}</span> HP:${sup.hp||'-'} ATK:${sup.attack||'-'}</div>
       <div style="margin-top:4px;display:flex;gap:4px;justify-content:center">
         <button class="slot-remove-btn" style="position:static" onclick="teamSupporterId=null;teamLeaderTag='';teamLeaderEffect='';renderTeamSim()">✕</button>
       </div>
@@ -2551,7 +2551,7 @@ function renderTeamSupporter() {
       let detail = '';
       if (sup.leader2_target && t2Count > 0) detail += `<span style="color:#22c55e">${sup.leader2_3||sup.leader2_0||''}: ${t2Count}機</span>`;
       if (t1Count > 0) detail += `${detail?' / ':''}<span style="color:#4ade80">${sup.leader_3||sup.leader_0||''}: ${t1Count}機</span>`;
-      matchInfo = `<div class="team-leader-match" style="margin-top:6px;font-size:.8em;color:var(--text2)"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" style="vertical-align:middle"><path d="M10 2L6 10h3v8l5-10h-3z" fill="#22c55e"/></svg> 適用: ${total}/5機${detail ? ' ('+detail+')' : ''}</div>`;
+      matchInfo = `<div class="team-leader-match" style="margin-top:6px;font-size:.8em;color:var(--card-text2)"><svg width="14" height="14" viewBox="0 0 20 20" fill="none" style="vertical-align:middle"><path d="M10 2L6 10h3v8l5-10h-3z" fill="#22c55e"/></svg> 適用: ${total}/5機${detail ? ' ('+detail+')' : ''}</div>`;
     }
   }
 
@@ -2562,7 +2562,7 @@ function renderTeamSupporter() {
       <div class="leader-skill-text">${teamLeaderEffect || '（サポーターを選択してください）'}</div>
       ${teamLeaderTag ? `<div class="leader-tag">TAG: ${teamLeaderTag}</div>` : ''}
       <div style="margin-top:8px">
-        <div style="font-size:.7em;color:var(--text2);margin-bottom:4px">リーダースキル設定 (手動入力)</div>
+        <div style="font-size:.7em;color:var(--card-text2);margin-bottom:4px">リーダースキル設定 (手動入力)</div>
         <div style="display:flex;gap:6px;flex-wrap:wrap">
           <input type="text" id="leaderTagInput" placeholder="対象タグ (例: エース機)" value="${teamLeaderTag}" style="padding:4px 8px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text);font-size:.8em;width:140px;outline:none" onchange="teamLeaderTag=this.value;renderTeamSim()">
           <input type="text" id="leaderEffectInput" placeholder="効果 (例: 全ステ+44%)" value="${teamLeaderEffect.replace(/"/g,'&quot;')}" style="padding:4px 8px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text);font-size:.8em;width:200px;outline:none" onchange="teamLeaderEffect=this.value;renderTeamSim()">
@@ -2610,8 +2610,8 @@ function renderTeamStats() {
       <div class="team-stat-box"><div class="ts-label">EN合計</div><div class="ts-val">${totalEN.toLocaleString()}</div></div>
       <div class="team-stat-box"><div class="ts-label">機動力合計</div><div class="ts-val">${totalAGI.toLocaleString()}</div></div>
     </div>
-    <div style="font-size:.8em;color:var(--text2);margin-bottom:6px">タイプバランス</div>
-    <div class="team-type-balance">${typeChips || '<span style="color:var(--text2);font-size:.8em">ユニット未選択</span>'}</div>
+    <div style="font-size:.8em;color:var(--card-text2);margin-bottom:6px">タイプバランス</div>
+    <div class="team-type-balance">${typeChips || '<span style="color:var(--card-text2);font-size:.8em">ユニット未選択</span>'}</div>
   `;
 }
 
@@ -2757,7 +2757,7 @@ function renderPickerList() {
       return `<div class="picker-item${used ? ' picker-item-used' : ''}${lsM ? ' ls-target' : ''}" ${used ? '' : `onclick="selectPickerUnit(${u.id})"`}>
         ${img}
         <div class="picker-item-info">
-          <div class="picker-item-name">${u.name}${lsBadge}${used ? ' <span style="color:var(--accent);font-size:.75em">選択済</span>' : ''}</div>
+          <div style="display:flex;align-items:center;gap:4px"><span class="picker-item-name" style="flex:1;min-width:0">${u.name}</span>${lsBadge}${used ? '<span style="color:var(--accent);font-size:.75em;flex-shrink:0">選択済</span>' : ''}</div>
           <div class="picker-item-sub"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.6em;padding:1px 4px">${u.rarity}</span> ${typeBadgeHTML(u.type)} ATK:${(parseInt(s.attack)||0).toLocaleString()}</div>
         </div>
       </div>`;
@@ -2804,7 +2804,7 @@ function renderPickerList() {
       return `<div class="picker-item" onclick="selectPickerSupporter(${s.id})">
         ${s.image ? `<img src="${s.image}" alt="${s.name}" onerror="this.style.display='none'" loading="lazy">` : ''}
         <div class="picker-item-info">
-          <div class="picker-item-name">${s.name}${lsBadge}</div>
+          <div style="display:flex;align-items:center;gap:4px"><span class="picker-item-name" style="flex:1;min-width:0">${s.name}</span>${lsBadge}</div>
           <div class="picker-item-sub"><span class="badge ${rarityClass(s.rarity)}" style="font-size:.6em;padding:1px 4px">${s.rarity}</span> HP:${s.hp||'-'} ATK:${s.attack||'-'} ${s.target_series ? '<span class="tag" style="font-size:.7em">'+s.target_series+'</span>' : ''}</div>
         </div>
       </div>`;
