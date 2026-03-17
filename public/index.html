@@ -638,10 +638,21 @@ a:hover{text-decoration:underline}
         <option value="水中">水中◯</option>
       </select>
     </div>
+    <div class="filter-group" id="filterRangeGroup">
+      <label>最大射程</label>
+      <select id="filterRange" onchange="render()">
+        <option value="">すべて</option>
+        <option value="2">2以上</option>
+        <option value="3">3以上</option>
+        <option value="4">4以上</option>
+        <option value="5">5以上</option>
+        <option value="6">6以上</option>
+      </select>
+    </div>
     <div class="filter-group" id="filterMapGroup">
       <label>MAP兵器</label>
       <div class="filter-btn-group">
-        <button class="filter-btn" id="filterMapBtn" onclick="this.classList.toggle('active');renderList()"><img src="/assets/map_weapon/UI_Battle_MapUI_MapWeapon_Icon_Red.png" style="width:14px;height:14px;vertical-align:middle"> MAP所持</button>
+        <button class="filter-btn" id="filterMapBtn" onclick="this.classList.toggle('active');render()"><img src="/assets/map_weapon/UI_Battle_MapUI_MapWeapon_Icon_Red.png" style="width:14px;height:14px;vertical-align:middle"> MAP所持</button>
       </div>
     </div>
     <div class="filter-group filter-group-wide" id="filterDebuffGroup">
@@ -1092,6 +1103,7 @@ function resetFilters() {
   document.getElementById('debuffMinRate').innerHTML = '<option value="">すべて</option>';
   document.querySelectorAll('#debuffCategoryButtons .filter-btn, #specialEffectButtons .filter-btn').forEach(b => b.classList.remove('active'));
   const mapBtn = document.getElementById('filterMapBtn'); if (mapBtn) mapBtn.classList.remove('active');
+  const rangeEl = document.getElementById('filterRange'); if (rangeEl) rangeEl.value = '';
 }
 
 function updateUI() {
@@ -1115,6 +1127,7 @@ function updateUI() {
   document.getElementById('filterSeriesGroup').style.display = isUnit || isChara ? '' : 'none';
   document.getElementById('filterTagGroup').style.display = (isUnit || isChara) ? '' : 'none';
   document.getElementById('filterTerrainGroup').style.display = isUnit ? '' : 'none';
+  document.getElementById('filterRangeGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterMapGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterDebuffGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterRarityGroup').style.display = '';
@@ -1367,6 +1380,8 @@ function getFiltered() {
     const series = document.getElementById('filterSeries').value;
     const tag = document.getElementById('filterTag').value;
     const terrain = document.getElementById('filterTerrain').value;
+    const mapFilterActive = document.getElementById('filterMapBtn')?.classList.contains('active');
+    const rangeMin = parseInt(document.getElementById('filterRange')?.value) || 0;
     return data.filter(u => {
       if (q) {
         const nameMatch = u.name.toLowerCase().includes(q) || (currentLang==='en' && tData(u.name).toLowerCase().includes(q));
@@ -1381,10 +1396,19 @@ function getFiltered() {
       if (tag && !(u.tags||[]).includes(tag)) return false;
       if (terrain && (!u.normal?.terrain || u.normal.terrain[terrain] !== '◯')) return false;
       // MAP weapon filter
-      const mapFilterActive = document.getElementById('filterMapBtn')?.classList.contains('active');
       if (mapFilterActive) {
         const allW = (u.normal_weapons||[]).concat(u.transformed_weapons||[]);
         if (!allW.some(w => w.range === 'MAP')) return false;
+      }
+      // Range filter (max range)
+      if (rangeMin > 0) {
+        const allW = (u.normal_weapons||[]).concat(u.transformed_weapons||[]);
+        const maxRange = Math.max(...allW.map(w => {
+          if (!w.range || w.range === 'MAP') return 0;
+          const parts = w.range.split('-');
+          return parseInt(parts[parts.length - 1]) || 0;
+        }));
+        if (maxRange < rangeMin) return false;
       }
       // Debuff category filter with min rate
       if (activeDebuffKey) {
@@ -2593,7 +2617,6 @@ function renderTeamSupporter() {
 
 function renderTeamStats() {
   const container = document.getElementById('teamStatsSummary');
-  let totalHP = 0, totalATK = 0, totalDEF = 0, totalEN = 0, totalAGI = 0;
   const typeCounts = {};
   let filledCount = 0;
 
@@ -2602,12 +2625,6 @@ function renderTeamStats() {
       const u = allUnits.find(x => x.id === slot.unitId);
       if (u) {
         filledCount++;
-        const s = u.normal?.stats || {};
-        totalHP += parseInt(s.hp) || 0;
-        totalATK += parseInt(s.attack) || 0;
-        totalDEF += parseInt(s.defense) || 0;
-        totalEN += parseInt(s.en) || 0;
-        totalAGI += parseInt(s.agility) || 0;
         const t = u.type || '不明';
         typeCounts[t] = (typeCounts[t] || 0) + 1;
       }
@@ -2620,15 +2637,7 @@ function renderTeamStats() {
   }).join('');
 
   container.innerHTML = `
-    <h3>部隊ステータス合計 (${filledCount}/5機)</h3>
-    <div class="team-stats-grid">
-      <div class="team-stat-box"><div class="ts-label">HP合計</div><div class="ts-val">${totalHP.toLocaleString()}</div></div>
-      <div class="team-stat-box"><div class="ts-label">攻撃力合計</div><div class="ts-val">${totalATK.toLocaleString()}</div></div>
-      <div class="team-stat-box"><div class="ts-label">防御力合計</div><div class="ts-val">${totalDEF.toLocaleString()}</div></div>
-      <div class="team-stat-box"><div class="ts-label">EN合計</div><div class="ts-val">${totalEN.toLocaleString()}</div></div>
-      <div class="team-stat-box"><div class="ts-label">機動力合計</div><div class="ts-val">${totalAGI.toLocaleString()}</div></div>
-    </div>
-    <div style="font-size:.8em;color:var(--card-text2);margin-bottom:6px">タイプバランス</div>
+    <h3>タイプバランス (${filledCount}/5機)</h3>
     <div class="team-type-balance">${typeChips || '<span style="color:var(--card-text2);font-size:.8em">ユニット未選択</span>'}</div>
   `;
 }
@@ -3606,7 +3615,8 @@ function updateClearButton() {
     const tag = document.getElementById('filterTag')?.value || '';
     const terrain = document.getElementById('filterTerrain')?.value || '';
     const mapActive = document.getElementById('filterMapBtn')?.classList.contains('active');
-    hasFilter = activeTypes > 0 || series || tag || terrain || mapActive;
+    const rangeVal = document.getElementById('filterRange')?.value || '';
+    hasFilter = activeTypes > 0 || series || tag || terrain || mapActive || rangeVal;
   }
   if (!hasFilter && currentTab === 'chara') {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].length;
