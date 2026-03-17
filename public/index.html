@@ -385,6 +385,12 @@ a:hover{text-decoration:underline}
 .lb-table th{background:var(--card);color:var(--text2);font-weight:600}
 .lb-table td{color:var(--text)}
 .lb-table .lb-max{background:rgba(255,215,0,.1);color:var(--gold);font-weight:700}
+.lb-table .lb-sp{background:rgba(180,100,255,.12);font-weight:600}
+.lb-table .lb-sp td{color:#c084fc}
+.sp-label{font-size:.85em;line-height:1.2;color:#c084fc;font-weight:700}
+.ssp-label{font-size:.85em;line-height:1.2;color:#f472b6;font-weight:700}
+.lb-table .lb-sp:last-child{background:rgba(244,114,182,.12)}
+.lb-table .lb-sp:last-child td{color:#f472b6}
 .limit-break-details summary:hover{text-decoration:underline}
 .modal .weapon-detail{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:10px;margin-bottom:6px}
 .modal .weapon-name{font-weight:700;font-size:.9em;margin-bottom:4px}
@@ -1625,7 +1631,7 @@ function unitCardHTML(u) {
     </div>
     <div class="card-series">${(u.series||[]).map(s=>tData(s,"series")).join(' / ')}</div>
     ${u.normal?.combat_power ? `<div class="card-combat-power">${t('戦闘力')}: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
-    ${u.rarity==='UR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : u.rarity==='SSR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ SP stats":"※SP化時のステータス"}</div>` : ''}
+    ${u.rarity==='UR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : u.rarity==='SSR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ SSP stats":"※SSP化時のステータス"}</div>` : ''}
     <div class="card-stats">
       <div class="stat"><div class="stat-label">${t("攻撃力")}</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
@@ -1987,7 +1993,7 @@ function renderUnitDetail(u, form) {
       <div class="card-tags">${(u.tags||[]).map(t=>`<span class="tag clickable-tag" onclick="filterByTag('${t.replace(/'/g,"\\'")}');closeModal()">${t}</span>`).join('')}</div>
     </div>
     <div class="detail-section">
-      <h3>ステータス${isTransform ? ' (変形後)' : ''}${!isTransform && u.rarity==='UR' ? ' <span class="rarity-note">※最大強化時のステータス</span>' : !isTransform && u.rarity==='SSR' ? ' <span class="rarity-note">※SP化時のステータス</span>' : ''}</h3>
+      <h3>ステータス${isTransform ? ' (変形後)' : ''}${!isTransform && u.rarity==='UR' ? ' <span class="rarity-note">※最大強化時のステータス</span>' : !isTransform && u.rarity==='SSR' ? ' <span class="rarity-note">※SSP化時のステータス</span>' : ''}</h3>
       ${formData.combat_power ? `<div class="combat-power-display">戦闘力: <span style="color:var(--gold);font-weight:bold">${formData.combat_power.toLocaleString()}</span></div>` : ''}
       <div class="stats-grid">
         <div class="stat-box"><div class="label">HP</div><div class="val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
@@ -2000,11 +2006,12 @@ function renderUnitDetail(u, form) {
       ${u.stats_by_star && u.stats_by_star.length > 1 ? `
       <div style="margin-top:10px">
         <details class="limit-break-details" open>
-          <summary style="cursor:pointer;color:var(--accent);font-size:.85em;user-select:none">★限界突破ステータス一覧</summary>
+          <summary style="cursor:pointer;color:var(--accent);font-size:.85em;user-select:none">${u.rarity==='SSR'?'★限界突破 / SP化 / SSP化 ステータス一覧':'★限界突破ステータス一覧'}</summary>
           <table class="lb-table">
-            <thead><tr><th>★</th><th>HP</th><th>EN</th><th>攻撃</th><th>防御</th><th>機動</th><th>移動</th></tr></thead>
-            <tbody>${u.stats_by_star.map(st => `<tr${st.star === u.stats_by_star.length - 1 ? ' class="lb-max"' : ''}>
-              <td>${st.star === 0 ? '無' : '★'.repeat(st.star)}</td>
+            <thead><tr><th>★</th><th>LV</th><th>HP</th><th>EN</th><th>攻撃</th><th>防御</th><th>機動</th><th>移動</th></tr></thead>
+            <tbody>${u.stats_by_star.map(st => `<tr${st.star >= 4 ? ' class="lb-sp"' : st.star === u.stats_by_star.filter(s=>s.star<=3).length - 1 && st.star <= 3 ? ' class="lb-max"' : ''}>
+              <td>${st.star === 0 ? '無' : st.star === 4 ? '<span class="sp-label">★★★<br>SP化</span>' : st.star === 5 ? '<span class="ssp-label">★★★<br>SSP化</span>' : '★'.repeat(st.star)}</td>
+              <td>${st.lv||'-'}</td>
               <td>${(st.hp||0).toLocaleString()}</td>
               <td>${st.en||'-'}</td>
               <td>${(st.attack||0).toLocaleString()}</td>
