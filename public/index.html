@@ -1983,14 +1983,30 @@ function findCharaByObtain(obtain) {
   const clean = obtain.replace(/【[^】]*】$/,'').trim();
   return allCharas.find(c => c.name === obtain) || allCharas.find(c => c.name === clean);
 }
+function findLinkedChara(unit) {
+  // LINKED: unit and chara share the same name (strip EX/強敵襲来 suffixes)
+  const baseName = unit.name.replace(/\(EX\)$/,'').replace(/【強敵襲来】$/,'').trim();
+  return allCharas.find(c => c.name === baseName || c.name === unit.name);
+}
+function getUnitPairedChara(u) {
+  // 1. obtain field has chara name
+  if (u.obtain) return {chara: findCharaByObtain(u.obtain), type: 'obtain'};
+  // 2. LINKED: same name as chara
+  const linked = findLinkedChara(u);
+  if (linked) return {chara: linked, type: 'linked'};
+  return {chara: null, type: null};
+}
 function getObtainChara(u) {
-  const c = findCharaByObtain(u.obtain);
+  const result = getUnitPairedChara(u);
+  const c = result.chara;
   if (!c) return '';
-  const iconImg = c.image ? `<img src="${c.image}" style="width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);object-fit:cover" onerror="this.style.display='none'">` : '<div style="width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);background:rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;font-size:1.2em">👤</div>';
+  const isLinked = result.type === 'linked';
+  const iconImg = c.image ? `<img src="${c.image}" style="width:36px;height:36px;border-radius:50%;border:2px solid ${isLinked?'#3ab5a8':'var(--accent)'};object-fit:cover" onerror="this.style.display='none'">` : '<div style="width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);background:rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;font-size:1.2em">👤</div>';
+  const linkedBadge = isLinked ? '<span style="font-size:.5em;background:rgba(58,181,168,.15);color:#3ab5a8;padding:1px 5px;border-radius:3px;border:1px solid rgba(58,181,168,.3);margin-left:4px;font-weight:700">LINKED</span>' : '';
   return `<div class="paired-chara-card" onclick="showCharaDetail(${c.id})" title="キャラ詳細を表示">
     ${iconImg}
     <div class="paired-chara-info">
-      <div class="paired-chara-name">${c.name}</div>
+      <div class="paired-chara-name">${c.name}${linkedBadge}</div>
       <div class="paired-chara-meta"><span class="badge ${rarityClass(c.rarity)}" style="font-size:.55em">${c.rarity||'?'}</span> ${typeBadgeHTML(c.chara_type)}</div>
     </div>
     <div class="paired-chara-arrow">›</div>
@@ -2115,7 +2131,7 @@ function renderUnitDetail(u, form) {
         <div class="detail-badges">
           <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
           ${typeBadgeHTML(u.type)}
-          ${findCharaByObtain(u.obtain) ? '' : `<span class="badge badge-type">${(u.obtain||'').replace(/ピックアップガ[シチ]ャ/g,'ガシャ')}</span>`}
+          ${getUnitPairedChara(u).chara ? '' : (u.obtain ? `<span class="badge badge-type">${(u.obtain||'').replace(/ピックアップガ[シチ]ャ/g,'ガシャ')}</span>` : '')}
         </div>
       </div>
     </div>
