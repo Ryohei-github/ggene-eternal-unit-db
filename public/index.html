@@ -359,7 +359,7 @@ a:hover{text-decoration:underline}
 
 
 /* Ranking Page */
-.ranking-container{max-width:1400px;margin:0 auto;padding:0 16px 40px;display:none}
+.ranking-container{max-width:1400px;margin:0 auto;padding:0 16px 40px}
 .ranking-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;justify-content:center}
 .ranking-tab{padding:6px 14px;font-size:.78em;font-weight:600;color:var(--text2);background:var(--bg);border:1px solid var(--border);border-radius:6px;cursor:pointer;transition:all .2s}
 .ranking-tab.active{color:#fff;background:var(--accent);border-color:var(--accent)}
@@ -400,7 +400,7 @@ a:hover{text-decoration:underline}
 
 
 /* Tier List */
-.tierlist-container{max-width:1400px;margin:0 auto;padding:0 16px 40px;display:none}
+.tierlist-container{max-width:1400px;margin:0 auto;padding:0 16px 40px}
 .tierlist-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;flex-wrap:wrap;gap:8px}
 .tierlist-header h3{font-size:1em;color:var(--text);font-weight:700}
 .tierlist-actions{display:flex;gap:6px;flex-wrap:wrap}
@@ -932,7 +932,7 @@ a:hover{text-decoration:underline}
 
 
 <!-- Tier List Container -->
-<div class="tierlist-container" id="tierlistContainer">
+<div class="tierlist-container" id="tierlistContainer" style="display:none">
   <div class="tierlist-header">
     <h3>🏆 マイティアリスト</h3>
     <div class="tierlist-actions">
@@ -955,7 +955,7 @@ a:hover{text-decoration:underline}
 </div>
 
 <!-- Ranking Container -->
-<div class="ranking-container" id="rankingContainer">
+<div class="ranking-container" id="rankingContainer" style="display:none">
   <div class="ranking-mode-toggle">
     <button class="ranking-mode-btn active" data-rmode="unit" onclick="switchRankingMode('unit')">ユニット</button>
     <button class="ranking-mode-btn" data-rmode="chara" onclick="switchRankingMode('chara')">キャラ</button>
