@@ -437,13 +437,13 @@ a:hover{text-decoration:underline}
 .data-table{width:100%;border-collapse:collapse;font-size:.8em}
 .data-table th{position:sticky;top:0;background:var(--card);color:var(--accent);font-weight:600;padding:8px 10px;text-align:left;border-bottom:2px solid var(--accent);white-space:nowrap;font-size:.85em;cursor:pointer;user-select:none}
 .data-table th:hover{color:#fff}
-.data-table td{padding:7px 10px;border-bottom:1px solid var(--border);vertical-align:middle;white-space:nowrap}
-.data-table tr{cursor:pointer;transition:background .15s}
+.data-table td{padding:7px 10px;border-bottom:1px solid var(--card-border);vertical-align:middle;white-space:nowrap;color:var(--card-text)}
+.data-table tr{cursor:pointer;transition:background .15s;background:var(--card)}
 .data-table tr:hover{background:var(--card-hover)}
 .data-table .cell-name{font-weight:600;color:#fff;white-space:normal;max-width:200px}
-.data-table .cell-icon{width:32px;height:32px;border-radius:4px;vertical-align:middle;margin-right:6px;border:1px solid var(--border)}
-.data-table .cell-num{text-align:right;font-variant-numeric:tabular-nums}
-.data-table .cell-center{text-align:center}
+.data-table .cell-icon{width:32px;height:32px;border-radius:4px;vertical-align:middle;margin-right:6px;border:1px solid var(--card-border)}
+.data-table .cell-num{text-align:right;font-variant-numeric:tabular-nums;color:var(--card-text)}
+.data-table .cell-center{text-align:center;color:var(--card-text)}
 
 /* Tablet: 2 columns */
 @media(max-width:1024px) and (min-width:601px){
@@ -629,14 +629,13 @@ a:hover{text-decoration:underline}
     </div>
     <div class="filter-group" id="filterTerrainGroup">
       <label>地形</label>
-      <select id="filterTerrain">
-        <option value="">すべて</option>
-        <option value="宇宙">宇宙◯</option>
-        <option value="空中">空中◯</option>
-        <option value="地上">地上◯</option>
-        <option value="水上">水上◯</option>
-        <option value="水中">水中◯</option>
-      </select>
+      <div class="filter-btn-group" id="filterTerrainButtons">
+        <button class="filter-btn" data-value="宇宙" onclick="this.classList.toggle('active');render()">宇宙◯</button>
+        <button class="filter-btn" data-value="空中" onclick="this.classList.toggle('active');render()">空中◯</button>
+        <button class="filter-btn" data-value="地上" onclick="this.classList.toggle('active');render()">地上◯</button>
+        <button class="filter-btn" data-value="水上" onclick="this.classList.toggle('active');render()">水上◯</button>
+        <button class="filter-btn" data-value="水中" onclick="this.classList.toggle('active');render()">水中◯</button>
+      </div>
     </div>
     <div class="filter-group" id="filterRangeGroup">
       <label>最大射程</label>
@@ -850,22 +849,12 @@ function applyStaticTranslations() {
   document.querySelectorAll('#filtersContainer select').forEach(sel => {
     if (sel.options[0]) sel.options[0].textContent = t('すべて');
   });
-  // Update terrain filter options
-  const terrainSel = document.getElementById('filterTerrain');
-  if (terrainSel) {
-    const terrainOpts = [
-      {v:'宇宙', ja:'宇宙◯', en:'Space ◯'},
-      {v:'空中', ja:'空中◯', en:'Aerial ◯'},
-      {v:'地上', ja:'地上◯', en:'Ground ◯'},
-      {v:'水上', ja:'水上◯', en:'Surface ◯'},
-      {v:'水中', ja:'水中◯', en:'Underwater ◯'}
-    ];
-    for (let i = 1; i < terrainSel.options.length; i++) {
-      const opt = terrainSel.options[i];
-      const match = terrainOpts.find(t => t.v === opt.value);
-      if (match) opt.textContent = currentLang === 'en' ? match.en : match.ja;
-    }
-  }
+  // Update terrain filter buttons
+  const terrainLabels = {宇宙:{ja:'宇宙◯',en:'Space◯'},空中:{ja:'空中◯',en:'Aerial◯'},地上:{ja:'地上◯',en:'Ground◯'},水上:{ja:'水上◯',en:'Surface◯'},水中:{ja:'水中◯',en:'Underwater◯'}};
+  document.querySelectorAll('#filterTerrainButtons .filter-btn').forEach(btn => {
+    const lb = terrainLabels[btn.dataset.value];
+    if (lb) btn.textContent = currentLang === 'en' ? lb.en : lb.ja;
+  });
   // Header
   const h1 = document.querySelector('.header h1');
   if (h1) {
@@ -1089,7 +1078,7 @@ function resetFilters() {
   document.getElementById('filterTypeButtons').innerHTML = '';
   document.getElementById('filterSeries').innerHTML = '<option value="">すべて</option>';
   document.getElementById('filterTag').innerHTML = '<option value="">すべて</option>';
-  document.getElementById('filterTerrain').value = '';
+  document.querySelectorAll('#filterTerrainButtons .filter-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('filterRarityButtons').innerHTML = '';
   const charaTypeEl = document.getElementById('filterCharaType');
   if (charaTypeEl) charaTypeEl.innerHTML = '<option value="">すべて</option>';
@@ -1379,7 +1368,7 @@ function getFiltered() {
     const activeTypes = getActiveTypes();
     const series = document.getElementById('filterSeries').value;
     const tag = document.getElementById('filterTag').value;
-    const terrain = document.getElementById('filterTerrain').value;
+    const activeTerrains = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
     const mapFilterActive = document.getElementById('filterMapBtn')?.classList.contains('active');
     const rangeMin = parseInt(document.getElementById('filterRange')?.value) || 0;
     return data.filter(u => {
@@ -1394,7 +1383,7 @@ function getFiltered() {
       if (activeRarities.length > 0 && !activeRarities.includes(u.rarity)) return false;
       if (series && !(u.series||[]).includes(series)) return false;
       if (tag && !(u.tags||[]).includes(tag)) return false;
-      if (terrain && (!u.normal?.terrain || u.normal.terrain[terrain] !== '◯')) return false;
+      if (activeTerrains.length > 0 && !activeTerrains.every(t => u.normal?.terrain?.[t] === '◯')) return false;
       // MAP weapon filter
       if (mapFilterActive) {
         const allW = (u.normal_weapons||[]).concat(u.transformed_weapons||[]);
@@ -3446,8 +3435,8 @@ function syncURL() {
     if (series) params.set('series', series);
     const tag = document.getElementById('filterTag')?.value || '';
     if (tag) params.set('tag', tag);
-    const terrain = document.getElementById('filterTerrain')?.value || '';
-    if (terrain) params.set('terrain', terrain);
+    const activeTerrainsBtns = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
+    if (activeTerrainsBtns.length) params.set('terrain', activeTerrainsBtns.join(','));
     if (activeDebuffKey) params.set('debuff', activeDebuffKey);
     if (debuffMinRate > 0) params.set('drate', debuffMinRate);
     if (activeSpecialKey) params.set('special', activeSpecialKey);
@@ -3549,7 +3538,7 @@ function restoreFromURL() {
     }
     if (series) document.getElementById('filterSeries').value = series;
     if (tag) document.getElementById('filterTag').value = tag;
-    if (terrain) document.getElementById('filterTerrain').value = terrain;
+    if (terrain) terrain.split(',').forEach(v => { document.querySelectorAll('#filterTerrainButtons .filter-btn').forEach(b => { if (b.dataset.value === v) b.classList.add('active'); }); });
     if (debuff) {
       activeDebuffKey = debuff;
       document.querySelectorAll('#debuffCategoryButtons .filter-btn').forEach(b => {
@@ -3613,10 +3602,10 @@ function updateClearButton() {
     const activeTypes = [...document.querySelectorAll('#filterTypeButtons .filter-btn.active')].length;
     const series = document.getElementById('filterSeries')?.value || '';
     const tag = document.getElementById('filterTag')?.value || '';
-    const terrain = document.getElementById('filterTerrain')?.value || '';
+    const activeTerrainsBtns = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
     const mapActive = document.getElementById('filterMapBtn')?.classList.contains('active');
     const rangeVal = document.getElementById('filterRange')?.value || '';
-    hasFilter = activeTypes > 0 || series || tag || terrain || mapActive || rangeVal;
+    hasFilter = activeTypes > 0 || series || tag || activeTerrainsBtns.length > 0 || mapActive || rangeVal;
   }
   if (!hasFilter && currentTab === 'chara') {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].length;
@@ -3636,7 +3625,6 @@ function updateClearButton() {
 document.getElementById('searchInput').addEventListener('input', render);
 document.getElementById('filterSeries').addEventListener('change', render);
 document.getElementById('filterTag').addEventListener('change', render);
-document.getElementById('filterTerrain').addEventListener('change', render);
 document.getElementById('filterCharaType')?.addEventListener('change', render);
 document.getElementById('filterTarget').addEventListener('change', render);
 document.getElementById('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
