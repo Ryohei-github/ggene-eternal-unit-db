@@ -3165,10 +3165,10 @@ async function shareTeamImage() {
 
       // Terrain
       curY += 2;
-      const t = unit.normal?.terrain || {};
+      const terr = unit.normal?.terrain || {};
       ['宇宙','空中','地上','水上','水中'].forEach((tk, ti) => {
         const tx = x + slotPadX + ti * 33;
-        const tv = t[tk] || '-';
+        const tv = terr[tk] || '-';
         ctx.fillStyle = tv === '◯' ? '#3fb950' : tv === '△' ? '#d29922' : '#484f58';
         ctx.font = '11px sans-serif'; ctx.fillText(tv, tx + 8, curY);
         ctx.fillStyle = '#8b949e'; ctx.font = '10px sans-serif'; ctx.fillText(tk[0], tx + 6, curY + 13);
@@ -3278,16 +3278,16 @@ async function shareTeamImage() {
   ctx.fillStyle = '#8b949e'; ctx.font = 'bold 11px sans-serif';
   ctx.fillText(currentLang==='en'?'Type Balance':t('タイプバランス'), 22, typeBarY + 20);
   let typeX = 120;
-  Object.entries(typeCounts).forEach(([t, count]) => {
-    const iconImg = typeIcons[t];
+  Object.entries(typeCounts).forEach(([typeName, count]) => {
+    const iconImg = typeIcons[typeName];
     if (iconImg) {
       ctx.drawImage(iconImg, typeX, typeBarY + 6, 18, 18);
       typeX += 22;
     }
-    ctx.fillStyle = typeColorMap[t] || '#e6edf3';
+    ctx.fillStyle = typeColorMap[typeName] || '#e6edf3';
     ctx.font = 'bold 12px sans-serif';
-    ctx.fillText(`${t} x${count}`, typeX, typeBarY + 20);
-    typeX += ctx.measureText(`${t} x${count}`).width + 18;
+    ctx.fillText(`${typeName} x${count}`, typeX, typeBarY + 20);
+    typeX += ctx.measureText(`${typeName} x${count}`).width + 18;
   });
   if (Object.keys(typeCounts).length === 0) {
     ctx.fillStyle = '#484f58'; ctx.font = '11px sans-serif';
