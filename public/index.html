@@ -383,6 +383,10 @@ a:hover{text-decoration:underline}
 .modal .stat-box{text-align:center;padding:8px;background:rgba(0,0,0,.2);border-radius:6px;border:1px solid var(--card-border)}
 .modal .stat-box .label{font-size:.65em;color:var(--card-text2)}
 .modal .stat-box .val{font-size:1.1em;font-weight:700}
+.modal .stat-box{position:relative}
+.rank-badge{display:inline-block;font-size:.55em;font-weight:700;color:var(--accent);margin-left:2px;vertical-align:super}
+.rank-badge.top3{color:#ffd700}
+.card-stats .rank-badge{font-size:.45em}
 .lb-table{width:100%;border-collapse:collapse;font-size:.75em;margin-top:6px}
 .lb-table th,.lb-table td{padding:4px 6px;border:1px solid var(--card-border);text-align:center}
 .lb-table th{background:rgba(0,0,0,.15);color:var(--card-text2);font-weight:600}
@@ -1022,6 +1026,23 @@ async function init() {
   document.getElementById('supporterTabCount').textContent = `(${allSupporters.length})`;
 
   buildTagData();
+  // Pre-compute stat rankings (top 10)
+  window._unitRanks = {};
+  const unitStatKeys = ['hp','en','attack','defense','agility','mobility'];
+  unitStatKeys.forEach(key => {
+    const sorted = allUnits.map(u => ({id:u.id, val:parseInt((u.normal?.stats||{})[key])||0})).sort((a,b)=>b.val-a.val);
+    const ranks = {};
+    sorted.forEach((item,i) => { if(i < 10 && item.val > 0) ranks[item.id] = i+1; });
+    window._unitRanks[key] = ranks;
+  });
+  window._charaRanks = {};
+  const charaStatKeys = ['shooting','melee','awakening','defense','reaction'];
+  charaStatKeys.forEach(key => {
+    const sorted = allCharas.map(c => ({id:c.id, val:parseInt((c.stats||{})[key])||0})).sort((a,b)=>b.val-a.val);
+    const ranks = {};
+    sorted.forEach((item,i) => { if(i < 10 && item.val > 0) ranks[item.id] = i+1; });
+    window._charaRanks[key] = ranks;
+  });
   setupTabs();
   setupViewToggle();
   buildFilters();
@@ -1672,14 +1693,14 @@ function unitCardHTML(u) {
     ${u.normal?.combat_power ? `<div class="card-combat-power">${t('戦闘力')}: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
     ${u.rarity==='UR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : u.rarity==='SSR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ SSP stats":"※SSP化時のステータス"}</div>` : ''}
     <div class="card-stats">
-      <div class="stat"><div class="stat-label">${t("攻撃力")}</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
-      <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
-      <div class="stat"><div class="stat-label">${t("防御力")}</div><div class="stat-val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
+      <div class="stat"><div class="stat-label">${t("攻撃力")}</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'attack')}</div></div>
+      <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'hp')}</div></div>
+      <div class="stat"><div class="stat-label">${t("防御力")}</div><div class="stat-val">${(parseInt(s.defense)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'defense')}</div></div>
     </div>
     <div class="card-stats card-stats-sub">
-      <div class="stat"><div class="stat-label">EN</div><div class="stat-val">${(parseInt(s.en)||0).toLocaleString()}</div></div>
-      <div class="stat"><div class="stat-label">${t("機動力")}</div><div class="stat-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
-      <div class="stat"><div class="stat-label">${t("移動力")}</div><div class="stat-val">${parseInt(s.mobility)||0}</div></div>
+      <div class="stat"><div class="stat-label">EN</div><div class="stat-val">${(parseInt(s.en)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'en')}</div></div>
+      <div class="stat"><div class="stat-label">${t("機動力")}</div><div class="stat-val">${(parseInt(s.agility)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'agility')}</div></div>
+      <div class="stat"><div class="stat-label">${t("移動力")}</div><div class="stat-val">${parseInt(s.mobility)||0}${rankBadge(_unitRanks,u.id,'mobility')}</div></div>
       ${u.transformed ? `<div class="stat" style="border:1px solid var(--accent);"><div class="stat-label" style="color:var(--accent)">${t("変形")}</div><div class="stat-val" style="color:var(--accent)">可</div></div>` : '<div class="stat"></div>'}
     </div>
     ${(() => { const mech = u.normal?.mechanism || ((u.normal?.abilities||[]).find(a=>a.name==='シールド防御')||{}).desc || ''; return mech ? `<div class="card-mechanism"><span class="mechanism-label">${t("機構")}:</span> ${tMechanism(mech)}</div>` : ''; })()}
@@ -1704,11 +1725,11 @@ function charaCardHTML(c) {
   let statsHTML = '';
   if (hasStats) {
     statsHTML = `<div class="card-stats" style="grid-template-columns:repeat(5,1fr)">
-      <div class="stat"><div class="stat-label">${t("射撃")}</div><div class="stat-val">${s.shooting||'-'}</div></div>
-      <div class="stat"><div class="stat-label">${t("格闘")}</div><div class="stat-val">${s.melee||'-'}</div></div>
-      <div class="stat"><div class="stat-label">${t("覚醒")}</div><div class="stat-val">${s.awakening||'-'}</div></div>
-      <div class="stat"><div class="stat-label">${t("防御力")}</div><div class="stat-val">${s.defense||'-'}</div></div>
-      <div class="stat"><div class="stat-label">${t("反応")}</div><div class="stat-val">${s.reaction||'-'}</div></div>
+      <div class="stat"><div class="stat-label">${t("射撃")}</div><div class="stat-val">${s.shooting||'-'}${rankBadge(_charaRanks,c.id,'shooting')}</div></div>
+      <div class="stat"><div class="stat-label">${t("格闘")}</div><div class="stat-val">${s.melee||'-'}${rankBadge(_charaRanks,c.id,'melee')}</div></div>
+      <div class="stat"><div class="stat-label">${t("覚醒")}</div><div class="stat-val">${s.awakening||'-'}${rankBadge(_charaRanks,c.id,'awakening')}</div></div>
+      <div class="stat"><div class="stat-label">${t("防御力")}</div><div class="stat-val">${s.defense||'-'}${rankBadge(_charaRanks,c.id,'defense')}</div></div>
+      <div class="stat"><div class="stat-label">${t("反応")}</div><div class="stat-val">${s.reaction||'-'}${rankBadge(_charaRanks,c.id,'reaction')}</div></div>
     </div>`;
   }
 
@@ -1931,6 +1952,12 @@ function showUnitDetail(id) {
   openModal();
 }
 
+function rankBadge(ranks, id, key) {
+  const r = ranks?.[key]?.[id];
+  if (!r) return '';
+  const cls = r <= 3 ? 'rank-badge top3' : 'rank-badge';
+  return `<span class="${cls}">#${r}</span>`;
+}
 function renderUnitDetail(u, form) {
   const isTransform = form === 'transform' && u.transformed;
   const formData = isTransform ? u.transformed : (u.normal || {});
@@ -2035,12 +2062,12 @@ function renderUnitDetail(u, form) {
       <h3>ステータス${isTransform ? ' (変形後)' : ''}${!isTransform && u.rarity==='UR' ? ' <span class="rarity-note">※最大強化時のステータス</span>' : !isTransform && u.rarity==='SSR' ? ' <span class="rarity-note">※SSP化時のステータス</span>' : ''}</h3>
       ${formData.combat_power ? `<div class="combat-power-display">戦闘力: <span style="color:var(--gold);font-weight:bold">${formData.combat_power.toLocaleString()}</span></div>` : ''}
       <div class="stats-grid">
-        <div class="stat-box"><div class="label">HP</div><div class="val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
-        <div class="stat-box"><div class="label">EN</div><div class="val">${s.en||'-'}</div></div>
-        <div class="stat-box"><div class="label">攻撃力</div><div class="val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
-        <div class="stat-box"><div class="label">防御力</div><div class="val">${(parseInt(s.defense)||0).toLocaleString()}</div></div>
-        <div class="stat-box"><div class="label">機動力</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
-        <div class="stat-box"><div class="label">移動力</div><div class="val">${s.mobility||'-'}</div></div>
+        <div class="stat-box"><div class="label">HP</div><div class="val">${(parseInt(s.hp)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'hp')}</div></div>
+        <div class="stat-box"><div class="label">EN</div><div class="val">${s.en||'-'}${rankBadge(_unitRanks,u.id,'en')}</div></div>
+        <div class="stat-box"><div class="label">攻撃力</div><div class="val">${(parseInt(s.attack)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'attack')}</div></div>
+        <div class="stat-box"><div class="label">防御力</div><div class="val">${(parseInt(s.defense)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'defense')}</div></div>
+        <div class="stat-box"><div class="label">機動力</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'agility')}</div></div>
+        <div class="stat-box"><div class="label">移動力</div><div class="val">${s.mobility||'-'}${rankBadge(_unitRanks,u.id,'mobility')}</div></div>
       </div>
       ${u.stats_by_star && u.stats_by_star.length > 1 ? `
       <div style="margin-top:10px">
@@ -2101,11 +2128,11 @@ function showCharaDetail(id) {
       <h3>ステータス</h3>
       <div class="stats-grid">
         <div class="stat-box"><div class="label">戦闘力</div><div class="val" style="color:var(--gold)">${(s.combat_power||0).toLocaleString()}</div></div>
-        <div class="stat-box"><div class="label">射撃値</div><div class="val">${s.shooting||'-'}</div></div>
-        <div class="stat-box"><div class="label">格闘値</div><div class="val">${s.melee||'-'}</div></div>
-        <div class="stat-box"><div class="label">覚醒値</div><div class="val">${s.awakening||'-'}</div></div>
-        <div class="stat-box"><div class="label">守備力</div><div class="val">${s.defense||'-'}</div></div>
-        <div class="stat-box"><div class="label">反応値</div><div class="val">${s.reaction||'-'}</div></div>
+        <div class="stat-box"><div class="label">射撃値</div><div class="val">${s.shooting||'-'}${rankBadge(_charaRanks,c.id,'shooting')}</div></div>
+        <div class="stat-box"><div class="label">格闘値</div><div class="val">${s.melee||'-'}${rankBadge(_charaRanks,c.id,'melee')}</div></div>
+        <div class="stat-box"><div class="label">覚醒値</div><div class="val">${s.awakening||'-'}${rankBadge(_charaRanks,c.id,'awakening')}</div></div>
+        <div class="stat-box"><div class="label">守備力</div><div class="val">${s.defense||'-'}${rankBadge(_charaRanks,c.id,'defense')}</div></div>
+        <div class="stat-box"><div class="label">反応値</div><div class="val">${s.reaction||'-'}${rankBadge(_charaRanks,c.id,'reaction')}</div></div>
         <div class="stat-box"><div class="label">SP</div><div class="val">${s.sp||'-'}</div></div>
       </div>
     </div>`;
