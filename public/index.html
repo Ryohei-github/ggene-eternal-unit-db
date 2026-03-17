@@ -1601,7 +1601,7 @@ function rangeDisplay(w) {
 // === UNIT CARD ===
 function unitCardHTML(u) {
   const s = u.normal?.stats || {};
-  const t = u.normal?.terrain || {};
+  const ter = u.normal?.terrain || {};
   const weapons = (u.normal_weapons||[]).map(w => {
     let label = w.name;
     const isMap = w.range === 'MAP';
@@ -1639,11 +1639,11 @@ function unitCardHTML(u) {
     </div>
     ${(() => { const mech = u.normal?.mechanism || ((u.normal?.abilities||[]).find(a=>a.name==='シールド防御')||{}).desc || ''; return mech ? `<div class="card-mechanism"><span class="mechanism-label">${t("機構")}:</span> ${tMechanism(mech)}</div>` : ''; })()}
     <div class="card-terrain">
-      <span class="terrain-item">${currentLang==="en"?"Sp":"宇"}${terrainIcon(t['宇宙'])}</span>
-      <span class="terrain-item">${currentLang==="en"?"Ai":"空"}${terrainIcon(t['空中'])}</span>
-      <span class="terrain-item">${currentLang==="en"?"Gr":"地"}${terrainIcon(t['地上'])}</span>
-      <span class="terrain-item">${currentLang==="en"?"Su":"水上"}${terrainIcon(t['水上'])}</span>
-      <span class="terrain-item">${currentLang==="en"?"Uw":"水中"}${terrainIcon(t['水中'])}</span>
+      <span class="terrain-item">${currentLang==="en"?"Sp":"宇"}${terrainIcon(ter['宇宙'])}</span>
+      <span class="terrain-item">${currentLang==="en"?"Ai":"空"}${terrainIcon(ter['空中'])}</span>
+      <span class="terrain-item">${currentLang==="en"?"Gr":"地"}${terrainIcon(ter['地上'])}</span>
+      <span class="terrain-item">${currentLang==="en"?"Su":"水上"}${terrainIcon(ter['水上'])}</span>
+      <span class="terrain-item">${currentLang==="en"?"Uw":"水中"}${terrainIcon(ter['水中'])}</span>
     </div>
     <div class="card-weapons">${weapons}</div>
     <div class="card-tags">${topTags}</div>
