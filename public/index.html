@@ -350,23 +350,22 @@ a:hover{text-decoration:underline}
 .compare-picker-item .cpi-name{font-size:.85em;font-weight:600;color:var(--text)}
 .compare-picker-item .cpi-sub{font-size:.65em;color:var(--text2)}
 @media(max-width:600px){
-  .compare-panel{padding:14px 10px}
+  .compare-panel{padding:14px 10px;--cmp-label-w:38px}
   .compare-panel h2{font-size:1em;margin-bottom:10px}
   .compare-units{gap:6px;margin-bottom:12px}
   .compare-unit-col .unit-header{gap:4px;margin-bottom:6px}
-  .compare-unit-col .unit-header img{width:40px;height:40px}
-  .compare-unit-col .unit-name{font-size:.72em}
+  .compare-unit-col .unit-header img{width:36px;height:36px}
+  .compare-unit-col .unit-name{font-size:.65em;line-height:1.2}
   .compare-unit-col .unit-header .badge{font-size:.55em;padding:1px 5px}
   .compare-unit-remove{font-size:.6em;padding:1px 6px}
-  .compare-stat-cell{font-size:.85em;padding:4px 2px}
+  .compare-stat-cell{font-size:.78em;padding:3px 1px}
   .compare-legend{gap:8px;margin-bottom:8px}
   .compare-legend-item{font-size:.65em}
   .compare-section{margin-bottom:14px}
   .compare-section h3{font-size:.78em;margin-bottom:6px}
   .compare-add-slot{padding:12px;font-size:.75em}
   .compare-radar-wrap canvas{max-width:300px}
-  .compare-stat-row[style*="grid-template-columns"]{grid-template-columns:50px repeat(2,1fr)!important}
-  .compare-stat-row[style*="grid-template-columns"] > div:first-child{font-size:.65em!important}
+
 
   .compare-fab{bottom:16px;right:16px;padding:8px 14px;font-size:.78em}
 }
@@ -4171,7 +4170,7 @@ function renderComparePanel() {
       else if (n > 1 && v === minVal && vals.filter(x=>x===minVal).length < n) cls = 'worst';
       return `<div class="compare-stat-cell ${cls}">${v.toLocaleString()}</div>`;
     }).join('');
-    statsHTML += `<div><div class="compare-stat-row ${colClass}" style="grid-template-columns:80px repeat(${n},1fr)"><div style="font-size:.75em;color:var(--accent);font-weight:600;text-align:left">${sk.label}</div>${cells}</div></div>`;
+    statsHTML += `<div><div class="compare-stat-row ${colClass}" style="grid-template-columns:var(--cmp-label-w,80px) repeat(${n},1fr)"><div style="font-size:.75em;color:var(--accent);font-weight:600;text-align:left">${sk.label}</div>${cells}</div></div>`;
   });
 
   // Terrain comparison
@@ -4181,7 +4180,7 @@ function renderComparePanel() {
       const val = (u.normal?.terrain||{})[tk] || '-';
       return `<div class="compare-terrain-cell">${terrainIcon(val)}</div>`;
     }).join('');
-    return `<div class="compare-stat-row ${colClass}" style="grid-template-columns:80px repeat(${n},1fr)"><div style="font-size:.75em;color:var(--accent);font-weight:600;text-align:left">${tk}</div>${cells}</div>`;
+    return `<div class="compare-stat-row ${colClass}" style="grid-template-columns:var(--cmp-label-w,80px) repeat(${n},1fr)"><div style="font-size:.75em;color:var(--accent);font-weight:600;text-align:left">${tk}</div>${cells}</div>`;
   }).join('');
 
   // Weapons comparison
@@ -4256,7 +4255,7 @@ function renderCharaComparePanel() {
       else if (n > 1 && v === minVal && vals.filter(x=>x===minVal).length < n) cls = 'worst';
       return `<div class="compare-stat-cell ${cls}">${v.toLocaleString()}</div>`;
     }).join('');
-    statsHTML += `<div><div class="compare-stat-row ${colClass}" style="grid-template-columns:80px repeat(${n},1fr)"><div style="font-size:.75em;color:var(--accent);font-weight:600;text-align:left">${sk.label}</div>${cells}</div></div>`;
+    statsHTML += `<div><div class="compare-stat-row ${colClass}" style="grid-template-columns:var(--cmp-label-w,80px) repeat(${n},1fr)"><div style="font-size:.75em;color:var(--accent);font-weight:600;text-align:left">${sk.label}</div>${cells}</div></div>`;
   });
 
   // Skills comparison
