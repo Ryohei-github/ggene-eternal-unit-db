@@ -702,7 +702,7 @@ a:hover{text-decoration:underline}
 <div class="team-sim-container" id="teamSimContainer" style="display:none">
   <div class="team-sim-header">
     <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
-      <input type="text" class="team-name-input" id="teamNameInput" value="My Team" placeholder="編成名">
+      <input type="text" class="team-name-input" id="teamNameInput" value="編成タイトル" placeholder="編成名">
       <!-- team combat power removed -->
     </div>
     <div class="team-actions">
@@ -2351,7 +2351,7 @@ function renderTagLookup() {
     }
     resultsDiv.innerHTML = html;
   } else {
-    resultsDiv.innerHTML = '<div style="text-align:center;color:var(--text2);padding:40px 0;font-size:.9em">${currentLang==="en"?"Select a tag to see matching units and characters":"タグを選択すると、該当するユニットとキャラクターが一覧表示されます"}</div>';
+    resultsDiv.innerHTML = `<div style="text-align:center;color:var(--text2);padding:40px 0;font-size:.9em">${currentLang==="en"?"Select a tag to see matching units and characters":"タグを選択すると、該当するユニットとキャラクターが一覧表示されます"}</div>`;
   }
 }
 
@@ -2847,13 +2847,13 @@ function clearTeam() {
   teamSupporterId = null;
   teamLeaderTag = '';
   teamLeaderEffect = '';
-  document.getElementById('teamNameInput').value = 'My Team';
+  document.getElementById('teamNameInput').value = '編成タイトル';
   renderTeamSim();
 }
 
 // === SAVE / LOAD / SHARE ===
 function saveTeam() {
-  const name = document.getElementById('teamNameInput').value || 'My Team';
+  const name = document.getElementById('teamNameInput').value || '編成タイトル';
   const data = {
     name,
     slots: teamSlots.map(s => ({ u: s.unitId, c: s.charaId })),
@@ -2874,7 +2874,7 @@ function loadSavedTeam(idx) {
   try { saved = JSON.parse(localStorage.getItem('ggene_saved_teams') || '[]'); } catch(e) {}
   const data = saved[idx];
   if (!data) return;
-  document.getElementById('teamNameInput').value = data.name || 'My Team';
+  document.getElementById('teamNameInput').value = data.name || '編成タイトル';
   teamSlots = (data.slots || []).map(s => ({ unitId: s.u || null, charaId: s.c || null }));
   while (teamSlots.length < 5) teamSlots.push({ unitId: null, charaId: null });
   teamSupporterId = data.supporter || null;
@@ -3013,7 +3013,7 @@ async function shareTeamImage() {
   ctx.fillStyle = grad; ctx.fillRect(0, 0, W, 4);
 
   // Title
-  const teamName = document.getElementById('teamNameInput').value || 'My Team';
+  const teamName = document.getElementById('teamNameInput').value || '編成タイトル';
   ctx.fillStyle = '#e6edf3'; ctx.font = 'bold 24px sans-serif';
   ctx.fillText(teamName, 24, 42);
   const filledCount = teamSlots.filter(s => s.unitId).length;

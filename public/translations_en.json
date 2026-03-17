@@ -129,7 +129,8 @@
     "データ読み込み失敗": "Data load failed",
     "タグ検索": "Tag Search",
     "チーム": "Team",
-    "編成": "Builder"
+    "編成": "Builder",
+    "編成タイトル": "My Team"
   },
   "series": {
     "機動戦士ガンダム": "Mobile Suit Gundam",
