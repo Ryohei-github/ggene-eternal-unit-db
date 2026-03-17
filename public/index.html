@@ -1772,7 +1772,7 @@ function supporterCardHTML(s) {
   const max = s.leader_3 || s.leader_2 || s.leader_1 || base;
   const effectLabel = s.leader_effect || 'ステータス上昇(EN除く)';
   const recIcon = supportSkillIcon(s.recovery_type);
-  const obtainBadge = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">${currentLang==="en"?"Limited":"限定"}</span>' : '';
+  const obtainBadge = s.obtain === '限定' ? `<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">${currentLang==="en"?"Limited":"限定"}</span>` : '';
   const hasTier2 = !!s.leader2_target;
   const base2 = s.leader2_0 || '';
   const max2 = s.leader2_3 || s.leader2_2 || s.leader2_1 || base2;
@@ -1796,17 +1796,17 @@ function supporterCardHTML(s) {
       <div style="font-size:.65em;color:var(--accent);font-weight:600;margin-bottom:2px">${t("リーダースキル")}</div>
       <div class="ls-row" style="display:flex;align-items:baseline;gap:4px;min-width:0">
         <span class="tag leader-tag-clickable" style="font-size:.62em;background:rgba(232,150,30,.15);border-color:var(--accent);cursor:pointer;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" onclick="event.stopPropagation();showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')" title="${s.target_series||''}">${s.target_series||'-'}</span>
-        <span style="white-space:nowrap;flex-shrink:0;display:flex;align-items:baseline;gap:3px">${base ? `<span style="font-size:.72em;color:var(--text2)">${base}</span>` : ''}${max && max !== base ? `<span style="font-size:.6em;color:var(--text2)">→</span><span style="font-size:${hasTier2 ? '.78' : '.88'}em;font-weight:700;color:${hasTier2 ? 'var(--text)' : '#3fb950'}">${max}</span>` : ''}</span>
+        <span style="white-space:nowrap;flex-shrink:0;display:flex;align-items:baseline;gap:3px">${base ? `<span style="font-size:.72em;color:var(--card-text2)">${base}</span>` : ''}${max && max !== base ? `<span style="font-size:.6em;color:var(--card-text2)">→</span><span style="font-size:${hasTier2 ? '.78' : '.88'}em;font-weight:700;color:${hasTier2 ? 'var(--text)' : '#3fb950'}">${max}</span>` : ''}</span>
       </div>
       ${hasTier2 ? `<div class="ls-row" style="display:flex;align-items:baseline;gap:4px;min-width:0;margin-top:3px;padding-top:3px;border-top:1px dashed rgba(232,150,30,.15)">
         <span class="tag" style="font-size:.58em;background:rgba(63,185,80,.12);border-color:rgba(63,185,80,.4);color:#3fb950;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${s.leader2_target||''}">${(s.leader2_target||'').replace(/ and /g,' & ')}</span>
-        <span style="white-space:nowrap;flex-shrink:0;display:flex;align-items:baseline;gap:3px">${base2 ? `<span style="font-size:.72em;color:var(--text2)">${base2}</span>` : ''}<span style="font-size:.6em;color:var(--text2)">→</span><span style="font-size:.88em;font-weight:700;color:#3fb950">${max2}</span></span>
+        <span style="white-space:nowrap;flex-shrink:0;display:flex;align-items:baseline;gap:3px">${base2 ? `<span style="font-size:.72em;color:var(--card-text2)">${base2}</span>` : ''}<span style="font-size:.6em;color:var(--card-text2)">→</span><span style="font-size:.88em;font-weight:700;color:#3fb950">${max2}</span></span>
       </div>` : ''}
-      <div style="font-size:.6em;color:var(--text2);margin-top:1px">${effectLabel}</div>
+      <div style="font-size:.6em;color:var(--card-text2);margin-top:1px">${effectLabel}</div>
     </div>
-    <div style="display:flex;align-items:center;gap:6px;font-size:.78em;color:var(--text2)">
+    <div style="display:flex;align-items:center;gap:6px;font-size:.78em;color:var(--card-text2)">
       ${recIcon}
-      <strong style="color:var(--text)">${s.recovery_type||'-'} ${currentLang==="en"?"Recovery":"回復"} ${s.recovery_amount||''}</strong>
+      <strong style="color:var(--card-text)">${s.recovery_type||'-'} ${currentLang==="en"?"Recovery":"回復"} ${s.recovery_amount||''}</strong>
       <span style="font-size:.85em">${currentLang==="en"?"Range ":"範囲"}${s.range||'-'}${currentLang==="en"?"":"マス"}</span>
     </div>
   </div>`;
