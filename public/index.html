@@ -384,9 +384,9 @@ a:hover{text-decoration:underline}
 .modal .stat-box .label{font-size:.65em;color:var(--card-text2)}
 .modal .stat-box .val{font-size:1.1em;font-weight:700}
 .modal .stat-box{position:relative}
-.rank-badge{display:inline-block;font-size:.55em;font-weight:700;color:var(--accent);margin-left:2px;vertical-align:super}
+.rank-badge{display:block;font-size:.6em;font-weight:700;color:var(--accent);margin-top:1px;line-height:1}
 .rank-badge.top3{color:#ffd700}
-.card-stats .rank-badge{font-size:.45em}
+.card-stats .rank-badge{font-size:.5em}
 .lb-table{width:100%;border-collapse:collapse;font-size:.75em;margin-top:6px}
 .lb-table th,.lb-table td{padding:4px 6px;border:1px solid var(--card-border);text-align:center}
 .lb-table th{background:rgba(0,0,0,.15);color:var(--card-text2);font-weight:600}
@@ -1956,7 +1956,7 @@ function rankBadge(ranks, id, key) {
   const r = ranks?.[key]?.[id];
   if (!r) return '';
   const cls = r <= 3 ? 'rank-badge top3' : 'rank-badge';
-  return `<span class="${cls}">#${r}</span>`;
+  return `<span class="${cls}">👑${r}位</span>`;
 }
 function renderUnitDetail(u, form) {
   const isTransform = form === 'transform' && u.transformed;
