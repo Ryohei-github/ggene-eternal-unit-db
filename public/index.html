@@ -356,6 +356,47 @@ a:hover{text-decoration:underline}
   .compare-fab{bottom:16px;right:16px;padding:8px 14px;font-size:.78em}
 }
 
+
+/* Ranking Page */
+.ranking-container{max-width:1400px;margin:0 auto;padding:0 16px 40px;display:none}
+.ranking-tabs{display:flex;gap:6px;margin-bottom:16px;flex-wrap:wrap;justify-content:center}
+.ranking-tab{padding:6px 14px;font-size:.78em;font-weight:600;color:var(--text2);background:var(--bg);border:1px solid var(--border);border-radius:6px;cursor:pointer;transition:all .2s}
+.ranking-tab.active{color:#fff;background:var(--accent);border-color:var(--accent)}
+.ranking-tab:hover:not(.active){border-color:var(--accent);color:var(--accent)}
+.ranking-mode-toggle{display:flex;gap:6px;justify-content:center;margin-bottom:16px}
+.ranking-mode-btn{padding:4px 12px;font-size:.72em;font-weight:600;color:var(--text2);background:none;border:1px solid var(--border);border-radius:4px;cursor:pointer;transition:all .2s}
+.ranking-mode-btn.active{color:var(--accent);border-color:var(--accent);background:rgba(232,150,30,.06)}
+.ranking-list{display:flex;flex-direction:column;gap:4px}
+.ranking-item{display:grid;grid-template-columns:40px 48px 1fr 100px;align-items:center;gap:10px;padding:8px 12px;background:var(--card);border-radius:8px;transition:all .15s;cursor:pointer}
+.ranking-item:hover{background:var(--card-hover);transform:translateX(2px)}
+.ranking-item.top1{background:linear-gradient(90deg,rgba(255,215,0,.15),var(--card));border-left:3px solid #ffd700}
+.ranking-item.top2{background:linear-gradient(90deg,rgba(192,192,192,.1),var(--card));border-left:3px solid #c0c0c0}
+.ranking-item.top3{background:linear-gradient(90deg,rgba(205,127,50,.1),var(--card));border-left:3px solid #cd7f32}
+.ranking-pos{font-size:1.1em;font-weight:800;text-align:center}
+.ranking-item.top1 .ranking-pos{color:#ffd700}
+.ranking-item.top2 .ranking-pos{color:#c0c0c0}
+.ranking-item.top3 .ranking-pos{color:#cd7f32}
+.ranking-pos:not(.ranking-item.top1 .ranking-pos):not(.ranking-item.top2 .ranking-pos):not(.ranking-item.top3 .ranking-pos){color:var(--card-text2)}
+.ranking-icon{width:40px;height:40px;border-radius:6px;object-fit:cover;border:1px solid var(--card-border)}
+.ranking-info{min-width:0}
+.ranking-name{font-size:.88em;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ranking-sub{font-size:.68em;color:var(--card-text2);display:flex;gap:6px;align-items:center;margin-top:2px}
+.ranking-val{text-align:right;font-size:1.15em;font-weight:800;color:var(--gold)}
+.ranking-item:not(.top1):not(.top2):not(.top3) .ranking-val{color:var(--card-text)}
+.ranking-bar-wrap{grid-column:1/-1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-top:2px}
+.ranking-bar{height:100%;border-radius:2px;background:var(--accent);transition:width .5s}
+.ranking-item.top1 .ranking-bar{background:#ffd700}
+.ranking-item.top2 .ranking-bar{background:#c0c0c0}
+.ranking-item.top3 .ranking-bar{background:#cd7f32}
+@media(max-width:600px){
+  .ranking-container{padding:0 10px 30px}
+  .ranking-item{grid-template-columns:32px 36px 1fr 70px;gap:6px;padding:6px 8px}
+  .ranking-icon{width:32px;height:32px}
+  .ranking-name{font-size:.8em}
+  .ranking-val{font-size:.95em}
+  .ranking-pos{font-size:.9em}
+}
+
 /* Grid */
 .grid{max-width:1800px;margin:0 auto;padding:0 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
 
@@ -679,6 +720,7 @@ a:hover{text-decoration:underline}
     <button class="tab-btn" data-tab="supporter"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M10 3a4 4 0 00-4 4c0 3 4 7 4 7s4-4 4-7a4 4 0 00-4-4z"/><path d="M6 16h8" stroke="currentColor" stroke-width="1.5" fill="none"/></svg><span class="tab-label">サポ</span><span class="tab-count" id="supporterTabCount"></span></button>
     <button class="tab-btn" data-tab="taglookup"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg><span class="tab-label">タグ検索</span></button>
     <button class="tab-btn" data-tab="team"><svg class="tab-icon" viewBox="0 0 20 20"><rect x="1" y="3" width="5" height="5" rx="1"/><rect x="7.5" y="3" width="5" height="5" rx="1"/><rect x="14" y="3" width="5" height="5" rx="1"/><rect x="4" y="11" width="5" height="5" rx="1"/><rect x="11" y="11" width="5" height="5" rx="1"/></svg><span class="tab-label">チーム<br>編成</span></button>
+    <button class="tab-btn" data-tab="ranking"><svg class="tab-icon" viewBox="0 0 20 20"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="4" width="4" height="14" rx="1"/><rect x="14" y="7" width="4" height="11" rx="1"/></svg><span class="tab-label">ランキング</span></button>
   </nav>
 </header>
 
@@ -847,6 +889,17 @@ a:hover{text-decoration:underline}
 <div class="team-toast" id="teamToast"></div>
 
 
+
+
+<!-- Ranking Container -->
+<div class="ranking-container" id="rankingContainer">
+  <div class="ranking-mode-toggle">
+    <button class="ranking-mode-btn active" data-rmode="unit" onclick="switchRankingMode('unit')">ユニット</button>
+    <button class="ranking-mode-btn" data-rmode="chara" onclick="switchRankingMode('chara')">キャラ</button>
+  </div>
+  <div class="ranking-tabs" id="rankingTabs"></div>
+  <div class="ranking-list" id="rankingList"></div>
+</div>
 
 <!-- Compare FAB -->
 <button class="compare-fab" id="compareFab" onclick="openComparePanel()">
@@ -1169,14 +1222,18 @@ function setupTabs() {
       btn.classList.add('active');
       const isTagLookup = currentTab === 'taglookup';
       const isTeam = currentTab === 'team';
-      const isSpecial = isTagLookup || isTeam;
+      const isRanking = currentTab === 'ranking';
+      const isSpecial = isTagLookup || isTeam || isRanking;
       document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
       document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
       document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
       document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
       document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
+      document.getElementById('rankingContainer').style.display = isRanking ? '' : 'none';
       if (isTagLookup) {
         renderTagLookup();
+      } else if (isRanking) {
+        renderRanking();
       } else if (isTeam) {
         renderTeamSim();
       } else {
@@ -3699,13 +3756,19 @@ function restoreFromURL() {
   // Show/hide sections
   const isTagLookup = tab === 'taglookup';
   const isTeam = tab === 'team';
-  const isSpecial = isTagLookup || isTeam;
+  const isRanking = tab === 'ranking';
+  const isSpecial = isTagLookup || isTeam || isRanking;
   document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
   document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
   document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
   document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
   document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
+  document.getElementById('rankingContainer').style.display = isRanking ? '' : 'none';
 
+  if (isRanking) {
+    renderRanking();
+    return true;
+  }
   if (isTagLookup) {
     if (tagQ) document.getElementById('tagSearchInput').value = tagQ;
     activeTagLookup = lookupTag;
@@ -4137,6 +4200,84 @@ document.addEventListener('contextmenu', function(e) {
 // Close overlays
 document.getElementById('compareOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeComparePanel(); });
 document.getElementById('comparePickerOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeComparePicker(); });
+
+
+// === RANKING PAGE ===
+let _rankingMode = 'unit';
+let _rankingStat = '';
+
+function switchRankingMode(mode) {
+  _rankingMode = mode;
+  _rankingStat = '';
+  document.querySelectorAll('.ranking-mode-btn').forEach(b => b.classList.toggle('active', b.dataset.rmode === mode));
+  renderRanking();
+}
+
+function renderRanking() {
+  const unitStats = [
+    {key:'hp',label:'HP'},{key:'en',label:'EN'},{key:'attack',label:'攻撃力'},
+    {key:'defense',label:'防御力'},{key:'agility',label:'機動力'},{key:'mobility',label:'移動力'}
+  ];
+  const charaStats = [
+    {key:'shooting',label:'射撃'},{key:'melee',label:'格闘'},{key:'awakening',label:'覚醒'},
+    {key:'defense',label:'守備'},{key:'reaction',label:'反応'}
+  ];
+  const stats = _rankingMode === 'unit' ? unitStats : charaStats;
+  if (!_rankingStat || !stats.find(s => s.key === _rankingStat)) _rankingStat = stats[0].key;
+
+  // Render stat tabs
+  document.getElementById('rankingTabs').innerHTML = stats.map(s =>
+    `<button class="ranking-tab${s.key===_rankingStat?' active':''}" onclick="_rankingStat='${s.key}';renderRanking()">${s.label}</button>`
+  ).join('');
+
+  // Get data and sort
+  const TOP_N = 20;
+  let items;
+  if (_rankingMode === 'unit') {
+    items = allUnits.map(u => ({
+      id: u.id,
+      name: u.name,
+      image: u.image,
+      rarity: u.rarity,
+      type: u.type,
+      series: (u.series||[]).join(' / '),
+      val: parseInt((u.normal?.stats||{})[_rankingStat])||0,
+      onclick: `showUnitDetail(${u.id})`
+    }));
+  } else {
+    items = allCharas.map(c => ({
+      id: c.id,
+      name: c.name,
+      image: c.image,
+      rarity: c.rarity,
+      type: c.type,
+      series: (c.series||[]).join(' / '),
+      val: parseInt((c.stats||{})[_rankingStat])||0,
+      onclick: `showCharaDetail(${c.id})`
+    }));
+  }
+
+  items.sort((a,b) => b.val - a.val);
+  const top = items.slice(0, TOP_N);
+  const maxVal = top[0]?.val || 1;
+
+  document.getElementById('rankingList').innerHTML = top.map((item, i) => {
+    const pos = i + 1;
+    const topClass = pos === 1 ? 'top1' : pos === 2 ? 'top2' : pos === 3 ? 'top3' : '';
+    const medal = pos === 1 ? '🥇' : pos === 2 ? '🥈' : pos === 3 ? '🥉' : pos;
+    const pct = Math.round((item.val / maxVal) * 100);
+    return `<div class="ranking-item ${topClass}" onclick="${item.onclick}">
+      <div class="ranking-pos">${medal}</div>
+      ${item.image ? `<img class="ranking-icon" src="${item.image}" alt="" onerror="this.style.display='none'" loading="lazy">` : '<div class="ranking-icon" style="background:var(--card-border)"></div>'}
+      <div class="ranking-info">
+        <div class="ranking-name">${item.name}</div>
+        <div class="ranking-sub"><span class="badge ${rarityClass(item.rarity)}" style="font-size:.6em;padding:1px 5px">${item.rarity||'?'}</span>${item.type||''} ${item.series ? '/ '+item.series : ''}</div>
+      </div>
+      <div class="ranking-val">${item.val.toLocaleString()}</div>
+      <div class="ranking-bar-wrap"><div class="ranking-bar" style="width:${pct}%"></div></div>
+    </div>`;
+  }).join('');
+}
 
 </script>
 </div>
