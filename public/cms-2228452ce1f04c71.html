@@ -36,6 +36,7 @@ a{color:var(--accent);text-decoration:none}
     <h1>GジェネDB 管理画面</h1>
     <div class="topbar-right">
       <span id="dataStatus" style="color:var(--text2);font-size:.8em"></span>
+      <button class="btn-deploy" id="deployBtn" onclick="deployAll()" style="display:none">保存して反映</button>
       <a href="/" target="_blank">公開サイトを見る</a>
       <button class="btn-logout" onclick="doLogout()">ログアウト</button>
     </div>
@@ -102,6 +103,10 @@ a{color:var(--accent);text-decoration:none}
 .topbar-right a{color:var(--text2);font-size:.85em}.topbar-right a:hover{color:var(--accent)}
 .btn-logout{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:var(--radius);cursor:pointer;font-size:.85em}
 .btn-logout:hover{border-color:var(--danger);color:var(--danger)}
+.btn-deploy{background:var(--success);color:#000;border:none;padding:8px 18px;border-radius:var(--radius);cursor:pointer;font-size:.85em;font-weight:700;animation:pulse 2s infinite}
+.btn-deploy:hover{background:#27c06a}
+.btn-deploy:disabled{opacity:.5;cursor:wait;animation:none}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(46,213,115,.4)}50%{box-shadow:0 0 0 8px rgba(46,213,115,0)}}
 .sidebar{position:fixed;left:0;top:49px;bottom:0;width:200px;background:var(--bg2);border-right:1px solid var(--border);padding:16px 0}
 .sidebar a{display:block;padding:10px 24px;color:var(--text2);font-size:.9em;transition:.15s}
 .sidebar a:hover,.sidebar a.active{color:var(--accent);background:rgba(0,212,255,.06)}
@@ -219,6 +224,7 @@ async function loadAllData() {
     dirty = { units: false, characters: false, supporters: false };
     document.getElementById('dataStatus').textContent =
       `U:${u.length} C:${c.length} S:${s.length}`;
+    updateDeployBtn();
   } catch (e) {
     document.getElementById('dataStatus').textContent = 'データ読み込みエラー';
     toast('データの読み込みに失敗: ' + e.message, 'error');
@@ -388,6 +394,7 @@ function saveUnit() {
   dirty.units = true;
   closeModal();
   toast('ユニットを更新しました（メモリ上）');
+  updateDeployBtn();
   loadUnits();
 }
 
@@ -502,6 +509,7 @@ function saveChar() {
   dirty.characters = true;
   closeModal();
   toast('キャラクターを更新しました（メモリ上）');
+  updateDeployBtn();
   loadCharacters();
 }
 
@@ -601,6 +609,7 @@ function saveSupporter() {
   dirty.supporters = true;
   closeModal();
   toast('サポーターを更新しました（メモリ上）');
+  updateDeployBtn();
   loadSupporters();
 }
 
@@ -623,6 +632,7 @@ function saveJsonEdit() {
     errEl.style.display = 'none';
     closeJsonModal();
     toast('JSONを反映しました（メモリ上）');
+    updateDeployBtn();
     loadSection(currentSection);
   } catch (e) {
     errEl.textContent = 'JSONパースエラー: ' + e.message;
@@ -698,6 +708,60 @@ document.getElementById('modal').addEventListener('click', e => {
 document.getElementById('jsonModal').addEventListener('click', e => {
   if (e.target === document.getElementById('jsonModal')) closeJsonModal();
 });
+
+// =============== DEPLOY (auto-save to GitHub) ===============
+function updateDeployBtn() {
+  const btn = document.getElementById('deployBtn');
+  const hasDirty = dirty.units || dirty.characters || dirty.supporters;
+  btn.style.display = hasDirty ? 'inline-block' : 'none';
+  const sections = Object.entries(dirty).filter(([k,v])=>v).map(([k])=>k);
+  btn.title = hasDirty ? '変更を反映: ' + sections.join(', ') : '';
+}
+
+async function deploySection(section) {
+  const pass = localStorage.getItem('admin_pass');
+  const authToken = btoa(pass + ':' + Date.now());
+  const res = await fetch('/api/save', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + authToken,
+    },
+    body: JSON.stringify({ section, data: DB[section] }),
+  });
+  const result = await res.json();
+  if (!res.ok) throw new Error(result.error || 'Save failed');
+  return result;
+}
+
+async function deployAll() {
+  const btn = document.getElementById('deployBtn');
+  const sections = Object.entries(dirty).filter(([k,v])=>v).map(([k])=>k);
+  if (sections.length === 0) { toast('変更がありません'); return; }
+
+  if (!confirm(`以下のデータを本番に反映します:\n${sections.join(', ')}\n\n続行しますか？`)) return;
+
+  btn.disabled = true;
+  btn.textContent = '反映中...';
+  const results = [];
+
+  try {
+    for (const section of sections) {
+      btn.textContent = `反映中... (${section})`;
+      const r = await deploySection(section);
+      results.push(`${section}: commit ${r.commit}`);
+      dirty[section] = false;
+    }
+    toast(`反映完了！ ${results.join(' / ')}`, 'success');
+    updateDeployBtn();
+    loadSection(currentSection);
+  } catch (e) {
+    toast('反映エラー: ' + e.message, 'error');
+  } finally {
+    btn.disabled = false;
+    btn.textContent = '保存して反映';
+  }
+}
 
 // ---- Init ----
 if (token) {
