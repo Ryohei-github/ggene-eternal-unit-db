@@ -244,7 +244,7 @@ a:hover{text-decoration:underline}
 .team-supporter-pick{min-width:140px}
 .team-supporter-info{flex:1;min-width:200px}
 .team-supporter-info .leader-skill-label{font-size:.75em;color:var(--accent);font-weight:600;margin-bottom:4px}
-.team-supporter-info .leader-skill-text{font-size:.82em;color:var(--text);line-height:1.5;background:var(--bg);padding:8px 12px;border-radius:6px;border:1px solid var(--border)}
+.team-supporter-info .leader-skill-text{font-size:.82em;color:var(--card-text);line-height:1.5;background:rgba(0,0,0,.2);padding:8px 12px;border-radius:6px;border:1px solid var(--card-border)}
 .team-supporter-info .leader-tag{display:inline-block;padding:3px 10px;background:rgba(232,150,30,.1);border:1px solid var(--accent);border-radius:12px;font-size:.78em;color:var(--accent);font-weight:600;margin-top:6px}
 .team-leader-match{font-size:.8em;color:var(--gold);margin-top:8px;font-weight:600}
 .team-stats-summary{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px}
@@ -359,13 +359,13 @@ a:hover{text-decoration:underline}
 /* Character card specifics */
 .card-skills{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px}
 .skill-tag{padding:2px 6px;background:rgba(255,215,0,.1);border:1px solid rgba(255,215,0,.2);border-radius:3px;font-size:.65em;color:var(--gold)}
-.card-abilities-count{font-size:.7em;color:var(--text2)}
+.card-abilities-count{font-size:.7em;color:var(--card-text2)}
 
 /* Supporter card specifics */
-.supporter-info{font-size:.75em;color:var(--text2);margin-bottom:6px;line-height:1.5}
-.supporter-info strong{color:var(--text);font-weight:600}
-.supporter-stat{display:inline-block;padding:2px 8px;background:var(--bg);border-radius:4px;font-size:.75em;margin-right:6px;margin-bottom:4px}
-.supporter-stat .sv{font-weight:700;color:var(--text)}
+.supporter-info{font-size:.75em;color:var(--card-text2);margin-bottom:6px;line-height:1.5}
+.supporter-info strong{color:var(--card-text);font-weight:600}
+.supporter-stat{display:inline-block;padding:2px 8px;background:rgba(0,0,0,.2);border:1px solid var(--card-border);border-radius:4px;font-size:.75em;margin-right:6px;margin-bottom:4px}
+.supporter-stat .sv{font-weight:700;color:var(--card-text)}
 
 /* Detail Modal */
 .modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:200;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto}
@@ -590,8 +590,8 @@ a:hover{text-decoration:underline}
     <button class="tab-btn active" data-tab="unit"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M10 2l2 4h4l-3 3 1 5-4-3-4 3 1-5-3-3h4z"/></svg><span class="tab-label">ユニット</span><span class="tab-count" id="unitTabCount"></span></button>
     <button class="tab-btn" data-tab="chara"><svg class="tab-icon" viewBox="0 0 20 20"><circle cx="10" cy="7" r="4"/><path d="M3 18c0-4 3-7 7-7s7 3 7 7"/></svg><span class="tab-label">キャラ</span><span class="tab-count" id="charaTabCount"></span></button>
     <button class="tab-btn" data-tab="supporter"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M10 3a4 4 0 00-4 4c0 3 4 7 4 7s4-4 4-7a4 4 0 00-4-4z"/><path d="M6 16h8" stroke="currentColor" stroke-width="1.5" fill="none"/></svg><span class="tab-label">サポ</span><span class="tab-count" id="supporterTabCount"></span></button>
-    <button class="tab-btn" data-tab="taglookup"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg><span class="tab-label">タグ</span></button>
-    <button class="tab-btn" data-tab="team"><svg class="tab-icon" viewBox="0 0 20 20"><rect x="2" y="4" width="5" height="5" rx="1"/><rect x="8" y="4" width="5" height="5" rx="1"/><rect x="14" y="4" width="4" height="5" rx="1"/><rect x="2" y="11" width="5" height="5" rx="1"/><rect x="8" y="11" width="5" height="5" rx="1"/></svg><span class="tab-label">編成シム</span></button>
+    <button class="tab-btn" data-tab="taglookup"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg><span class="tab-label">タグ検索</span></button>
+    <button class="tab-btn" data-tab="team"><svg class="tab-icon" viewBox="0 0 20 20"><rect x="2" y="4" width="5" height="5" rx="1"/><rect x="8" y="4" width="5" height="5" rx="1"/><rect x="14" y="4" width="4" height="5" rx="1"/><rect x="2" y="11" width="5" height="5" rx="1"/><rect x="8" y="11" width="5" height="5" rx="1"/></svg><span class="tab-label">チーム<br>編成</span></button>
   </nav>
 </header>
 
