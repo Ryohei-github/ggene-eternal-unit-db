@@ -91,19 +91,8 @@ gtag('config', 'G-PHTSGSZ19J');
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#f0ede8;--card:#111318;--card-hover:#1a1d25;--border:#d4d0c8;--accent:#e8961e;--accent2:#d63031;--text:#1a1c2a;--text2:#5c6070;--gold:#d4a200;--ur:#e63950;--nu-green:#3ab5a8;--card-text:#e0ddd6;--card-text2:#8a8d98;--card-border:#2a2d38}
-body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;position:relative}
-body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.15;background:
-linear-gradient(-35deg,
-transparent 30%,
-#e63950 30%,
-#e63950 40%,
-transparent 40%,
-transparent 48%,
-#e63950 48%,
-#e63950 60%,
-transparent 60%
-)}
-body>*{position:relative;z-index:1}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
+
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
 
@@ -307,8 +296,10 @@ a:hover{text-decoration:underline}
 .grid{max-width:1800px;margin:0 auto;padding:0 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
 
 /* Card */
-.card{background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:10px;cursor:pointer;transition:all .2s;color:var(--card-text)}
-.card:hover{background:var(--card-hover);border-color:var(--accent);transform:translateY(-2px);box-shadow:0 4px 20px rgba(232,150,30,.15)}
+.card{background:var(--card);border:none;border-radius:0;padding:10px;cursor:pointer;transition:all .2s;color:var(--card-text);clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);position:relative}
+.card:hover{background:var(--card-hover);transform:translateY(-2px)}
+.card::before{content:'';position:absolute;inset:0;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px,1px 11px,1px calc(100% - 1px),calc(100% - 11px) calc(100% - 1px),calc(100% - 1px) calc(100% - 11px),calc(100% - 1px) 1px,11px 1px,1px 11px);background:var(--card-border);pointer-events:none;transition:background .2s}
+.card:hover::before{background:var(--accent)}
 .card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:4px;gap:6px}
 .card-icon{width:40px;height:40px;border-radius:5px;border:1px solid var(--border);object-fit:cover;flex-shrink:0;background:var(--bg)}
 .card-name{font-size:.95em;font-weight:700;color:#fff;flex:1;min-width:0}
@@ -501,7 +492,8 @@ a:hover{text-decoration:underline}
 
   /* Grid & Cards: compact for ~4 visible */
   .grid{grid-template-columns:1fr;gap:6px;padding:0 8px 30px}
-  .card{padding:8px}
+  .card{padding:8px;clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px)}
+  .card::before{clip-path:polygon(7px 0,100% 0,100% calc(100% - 7px),calc(100% - 7px) 100%,0 100%,0 7px,1px 8px,1px calc(100% - 1px),calc(100% - 8px) calc(100% - 1px),calc(100% - 1px) calc(100% - 8px),calc(100% - 1px) 1px,8px 1px,1px 8px)}
   .card-header{margin-bottom:4px}
   .card-icon{width:34px;height:34px}
   .card-name{font-size:.82em}
