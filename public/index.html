@@ -340,8 +340,14 @@ a:hover{text-decoration:underline}
 .card-tags{display:flex;flex-wrap:wrap;gap:3px}
 .tag{padding:1px 5px;background:rgba(255,255,255,.08);border-radius:3px;font-size:.6em;color:var(--card-text2)}
 .leader-tag-clickable:hover{filter:brightness(1.3);box-shadow:0 0 6px rgba(232,150,30,.4)}
-.chara-link-tag{background:rgba(232,150,30,.12);border:1px solid rgba(232,150,30,.25);color:var(--accent);cursor:pointer;transition:all .2s}
-.chara-link-tag:hover{background:rgba(232,150,30,.25);box-shadow:0 0 6px rgba(232,150,30,.3)}
+.paired-chara-section{margin-top:4px}
+.paired-chara-section h4{font-size:.75em;color:var(--accent);margin:0 0 6px;font-weight:600}
+.paired-chara-card{display:flex;align-items:center;gap:10px;padding:8px 12px;background:rgba(232,150,30,.08);border:1px solid rgba(232,150,30,.2);border-radius:8px;cursor:pointer;transition:all .2s;margin-bottom:4px}
+.paired-chara-card:hover{background:rgba(232,150,30,.18);border-color:var(--accent);transform:translateX(2px)}
+.paired-chara-info{flex:1;min-width:0}
+.paired-chara-name{font-size:.85em;font-weight:700;color:var(--card-text)}
+.paired-chara-meta{display:flex;gap:4px;align-items:center;margin-top:2px}
+.paired-chara-arrow{font-size:1.4em;color:var(--accent);font-weight:300}
 .target-units-popup-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.6);z-index:400;overflow:auto;padding:40px 16px}
 .target-units-popup{background:var(--card);border:1px solid var(--accent);border-radius:12px;max-width:560px;margin:0 auto;padding:16px;max-height:80vh;display:flex;flex-direction:column}
 .target-units-popup h3{margin:0 0 10px;font-size:.95em;color:var(--accent);display:flex;align-items:center;justify-content:space-between}
@@ -1961,10 +1967,27 @@ function showUnitDetail(id) {
 function findCharaByName(name) {
   return allCharas.find(c => c.name === name);
 }
-function charaTagHTML(tag) {
-  const c = findCharaByName(tag);
-  if (c) return `<span class="tag clickable-tag chara-link-tag" onclick="event.stopPropagation();showCharaDetail(${c.id})" title="キャラ詳細を表示">👤 ${tag}</span>`;
-  return `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${tag.replace(/'/g,"\\'")}');closeModal()">${tag}</span>`;
+function getPairedCharas(tags) {
+  return (tags||[]).map(t => ({tag:t, chara:findCharaByName(t)})).filter(x => x.chara);
+}
+function getNonCharaTags(tags) {
+  return (tags||[]).filter(t => !findCharaByName(t));
+}
+function pairedCharaHTML(u) {
+  const paired = getPairedCharas(u.tags);
+  if (!paired.length) return '';
+  return paired.map(p => {
+    const c = p.chara;
+    const iconImg = c.image ? `<img src="${c.image}" style="width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);object-fit:cover" onerror="this.style.display='none'">` : '<div style="width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);background:rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;font-size:1.2em">👤</div>';
+    return `<div class="paired-chara-card" onclick="showCharaDetail(${c.id})" title="キャラ詳細を表示">
+      ${iconImg}
+      <div class="paired-chara-info">
+        <div class="paired-chara-name">${c.name}</div>
+        <div class="paired-chara-meta"><span class="badge ${rarityClass(c.rarity)}" style="font-size:.55em">${c.rarity||'?'}</span> ${typeBadgeHTML(c.chara_type)}</div>
+      </div>
+      <div class="paired-chara-arrow">›</div>
+    </div>`;
+  }).join('');
 }
 function rankBadge(ranks, id, key) {
   const r = ranks?.[key]?.[id];
@@ -2070,7 +2093,8 @@ function renderUnitDetail(u, form) {
     ${transformToggle}
     <div class="detail-section">
       <div style="font-size:.8em;color:var(--card-text2);margin-bottom:4px">${(u.series||[]).join(' / ')}</div>
-      <div class="card-tags">${(u.tags||[]).map(t=>charaTagHTML(t)).join('')}</div>
+      <div class="card-tags">${getNonCharaTags(u.tags).map(t=>`<span class="tag clickable-tag" onclick="filterByTag('${t.replace(/'/g,"\\'")}');closeModal()">${t}</span>`).join('')}</div>
+      ${getPairedCharas(u.tags).length ? `<div class="paired-chara-section"><h4>👤 獲得キャラクター</h4>${pairedCharaHTML(u)}</div>` : ''}
     </div>
     <div class="detail-section">
       <h3>ステータス${isTransform ? ' (変形後)' : ''}${!isTransform && u.rarity==='UR' ? ' <span class="rarity-note">※最大強化時のステータス</span>' : !isTransform && u.rarity==='SSR' ? ' <span class="rarity-note">※SSP化時のステータス</span>' : ''}</h3>
