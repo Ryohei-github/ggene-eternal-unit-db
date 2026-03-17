@@ -15,101 +15,6 @@
 }
 body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh}
 a{color:var(--accent);text-decoration:none}
-
-/* Login */
-.login-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh}
-.login-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:40px;width:360px;text-align:center}
-.login-box h1{font-size:1.3em;margin-bottom:8px;color:var(--accent)}
-.login-box p{color:var(--text2);font-size:.85em;margin-bottom:24px}
-.login-box input{width:100%;padding:12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font-size:1em;margin-bottom:16px}
-.login-box input:focus{outline:none;border-color:var(--accent)}
-.login-box button{width:100%;padding:12px;border:none;border-radius:var(--radius);background:var(--accent);color:#000;font-weight:700;font-size:1em;cursor:pointer}
-.login-box button:hover{background:var(--accent2)}
-.login-error{color:var(--danger);font-size:.85em;margin-bottom:12px;display:none}
-
-/* Layout */
-.app{display:none;min-height:100vh}
-.topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
-.topbar h1{font-size:1.1em;color:var(--accent)}
-.topbar-right{display:flex;align-items:center;gap:12px}
-.topbar-right a{color:var(--text2);font-size:.85em}
-.topbar-right a:hover{color:var(--accent)}
-.btn-logout{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:var(--radius);cursor:pointer;font-size:.85em}
-.btn-logout:hover{border-color:var(--danger);color:var(--danger)}
-
-.sidebar{position:fixed;left:0;top:49px;bottom:0;width:200px;background:var(--bg2);border-right:1px solid var(--border);padding:16px 0}
-.sidebar a{display:block;padding:10px 24px;color:var(--text2);font-size:.9em;transition:.15s}
-.sidebar a:hover,.sidebar a.active{color:var(--accent);background:rgba(0,212,255,.06)}
-.sidebar a.active{border-left:3px solid var(--accent)}
-
-.main{margin-left:200px;padding:24px}
-
-/* Table */
-.panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px}
-.panel-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
-.panel-header h2{font-size:1em}
-.toolbar{display:flex;gap:8px;align-items:center}
-.toolbar input{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font-size:.85em;width:220px}
-.toolbar input:focus{outline:none;border-color:var(--accent)}
-.btn{padding:8px 16px;border:none;border-radius:var(--radius);cursor:pointer;font-size:.85em;font-weight:600;transition:.15s}
-.btn-primary{background:var(--accent);color:#000}
-.btn-primary:hover{background:var(--accent2)}
-.btn-sm{padding:5px 10px;font-size:.8em}
-.btn-danger{background:var(--danger);color:#fff}
-.btn-danger:hover{background:#e8414f}
-.btn-outline{background:none;border:1px solid var(--border);color:var(--text2)}
-.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
-
-table{width:100%;border-collapse:collapse}
-thead{background:var(--bg3)}
-th{padding:10px 16px;text-align:left;font-size:.8em;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-td{padding:10px 16px;border-top:1px solid var(--border);font-size:.85em;vertical-align:middle}
-tr:hover{background:rgba(0,212,255,.03)}
-.unit-img{width:40px;height:40px;border-radius:4px;object-fit:cover;background:var(--bg)}
-.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.75em;font-weight:600}
-.badge-ur{background:rgba(255,215,0,.15);color:#ffd700}
-.badge-ssr{background:rgba(255,71,87,.15);color:#ff4757}
-.badge-sr{background:rgba(155,89,182,.15);color:#b57edc}
-.badge-r{background:rgba(46,213,115,.15);color:#2ed573}
-
-.pagination{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px}
-.pagination button{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 14px;border-radius:var(--radius);cursor:pointer;font-size:.85em}
-.pagination button:hover{border-color:var(--accent)}
-.pagination button:disabled{opacity:.4;cursor:default}
-.pagination span{color:var(--text2);font-size:.85em}
-
-/* Modal */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:flex-start;justify-content:center;padding:60px 20px;overflow-y:auto}
-.modal-overlay.show{display:flex}
-.modal{background:var(--bg2);border:1px solid var(--border);border-radius:12px;width:100%;max-width:700px;max-height:85vh;overflow-y:auto}
-.modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
-.modal-header h3{font-size:1em}
-.modal-close{background:none;border:none;color:var(--text2);font-size:1.4em;cursor:pointer;line-height:1}
-.modal-close:hover{color:var(--danger)}
-.modal-body{padding:20px}
-.modal-footer{display:flex;justify-content:flex-end;gap:8px;padding:16px 20px;border-top:1px solid var(--border)}
-
-.form-group{margin-bottom:16px}
-.form-group label{display:block;font-size:.8em;color:var(--text2);margin-bottom:4px;font-weight:600}
-.form-group input,.form-group textarea,.form-group select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font-size:.9em;font-family:inherit}
-.form-group textarea{min-height:80px;resize:vertical}
-.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--accent)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.form-hint{font-size:.75em;color:var(--text2);margin-top:2px}
-
-.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:var(--radius);font-size:.9em;font-weight:600;z-index:300;transition:.3s;opacity:0;transform:translateY(10px)}
-.toast.show{opacity:1;transform:translateY(0)}
-.toast-success{background:var(--success);color:#000}
-.toast-error{background:var(--danger);color:#fff}
-
-.loading{text-align:center;padding:40px;color:var(--text2)}
-.empty{text-align:center;padding:40px;color:var(--text2)}
-
-@media(max-width:768px){
-  .sidebar{display:none}
-  .main{margin-left:0}
-  .form-row{grid-template-columns:1fr}
-}
 </style>
 </head>
 <body>
@@ -130,6 +35,7 @@ tr:hover{background:rgba(0,212,255,.03)}
   <div class="topbar">
     <h1>GジェネDB 管理画面</h1>
     <div class="topbar-right">
+      <span id="dataStatus" style="color:var(--text2);font-size:.8em"></span>
       <a href="/" target="_blank">公開サイトを見る</a>
       <button class="btn-logout" onclick="doLogout()">ログアウト</button>
     </div>
@@ -138,6 +44,8 @@ tr:hover{background:rgba(0,212,255,.03)}
     <a href="#" class="active" data-section="units">ユニット</a>
     <a href="#" data-section="characters">キャラクター</a>
     <a href="#" data-section="supporters">サポーター</a>
+    <div style="border-top:1px solid var(--border);margin:16px 0"></div>
+    <a href="#" data-section="export" style="color:var(--warn)">エクスポート</a>
   </div>
   <div class="main" id="mainContent"></div>
 </div>
@@ -157,67 +65,164 @@ tr:hover{background:rgba(0,212,255,.03)}
   </div>
 </div>
 
+<!-- JSON Editor Modal -->
+<div class="modal-overlay" id="jsonModal">
+  <div class="modal" style="max-width:900px">
+    <div class="modal-header">
+      <h3 id="jsonModalTitle">JSON編集</h3>
+      <button class="modal-close" onclick="closeJsonModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <textarea id="jsonEditor" style="width:100%;min-height:500px;font-family:monospace;font-size:.85em;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:var(--radius);padding:12px;resize:vertical"></textarea>
+      <div id="jsonError" style="color:var(--danger);font-size:.85em;margin-top:8px;display:none"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-outline" onclick="closeJsonModal()">キャンセル</button>
+      <button class="btn btn-primary" onclick="saveJsonEdit()">反映</button>
+    </div>
+  </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
+<style>
+.login-wrap{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.login-box{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:40px;width:360px;text-align:center}
+.login-box h1{font-size:1.3em;margin-bottom:8px;color:var(--accent)}
+.login-box p{color:var(--text2);font-size:.85em;margin-bottom:24px}
+.login-box input{width:100%;padding:12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font-size:1em;margin-bottom:16px}
+.login-box input:focus{outline:none;border-color:var(--accent)}
+.login-box button{width:100%;padding:12px;border:none;border-radius:var(--radius);background:var(--accent);color:#000;font-weight:700;font-size:1em;cursor:pointer}
+.login-box button:hover{background:var(--accent2)}
+.login-error{color:var(--danger);font-size:.85em;margin-bottom:12px;display:none}
+.app{display:none;min-height:100vh}
+.topbar{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.topbar h1{font-size:1.1em;color:var(--accent)}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.topbar-right a{color:var(--text2);font-size:.85em}.topbar-right a:hover{color:var(--accent)}
+.btn-logout{background:none;border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:var(--radius);cursor:pointer;font-size:.85em}
+.btn-logout:hover{border-color:var(--danger);color:var(--danger)}
+.sidebar{position:fixed;left:0;top:49px;bottom:0;width:200px;background:var(--bg2);border-right:1px solid var(--border);padding:16px 0}
+.sidebar a{display:block;padding:10px 24px;color:var(--text2);font-size:.9em;transition:.15s}
+.sidebar a:hover,.sidebar a.active{color:var(--accent);background:rgba(0,212,255,.06)}
+.sidebar a.active{border-left:3px solid var(--accent)}
+.main{margin-left:200px;padding:24px}
+.panel{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:24px}
+.panel-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);flex-wrap:wrap;gap:8px}
+.panel-header h2{font-size:1em}
+.toolbar{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.toolbar input,.toolbar select{padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font-size:.85em}
+</style>
+<style>
+.toolbar input:focus,.toolbar select:focus{outline:none;border-color:var(--accent)}
+.btn{padding:8px 16px;border:none;border-radius:var(--radius);cursor:pointer;font-size:.85em;font-weight:600;transition:.15s}
+.btn-primary{background:var(--accent);color:#000}.btn-primary:hover{background:var(--accent2)}
+.btn-sm{padding:5px 10px;font-size:.8em}
+.btn-danger{background:var(--danger);color:#fff}.btn-danger:hover{background:#e8414f}
+.btn-outline{background:none;border:1px solid var(--border);color:var(--text2)}.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-warn{background:var(--warn);color:#000}.btn-warn:hover{background:#e89500}
+table{width:100%;border-collapse:collapse}
+thead{background:var(--bg3)}
+th{padding:10px 16px;text-align:left;font-size:.8em;color:var(--text2);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+td{padding:10px 16px;border-top:1px solid var(--border);font-size:.85em;vertical-align:middle}
+tr:hover{background:rgba(0,212,255,.03)}
+.unit-img{width:40px;height:40px;border-radius:4px;object-fit:cover;background:var(--bg)}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.75em;font-weight:600}
+.badge-ur{background:rgba(255,215,0,.15);color:#ffd700}
+.badge-ult{background:rgba(255,100,50,.15);color:#ff6432}
+.badge-ssr{background:rgba(255,71,87,.15);color:#ff4757}
+.badge-sr{background:rgba(155,89,182,.15);color:#b57edc}
+.badge-r{background:rgba(46,213,115,.15);color:#2ed573}
+.pagination{display:flex;align-items:center;justify-content:center;gap:12px;padding:16px}
+.pagination button{background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 14px;border-radius:var(--radius);cursor:pointer;font-size:.85em}
+.pagination button:hover{border-color:var(--accent)}.pagination button:disabled{opacity:.4;cursor:default}
+.pagination span{color:var(--text2);font-size:.85em}
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:200;align-items:flex-start;justify-content:center;padding:60px 20px;overflow-y:auto}
+.modal-overlay.show{display:flex}
+.modal{background:var(--bg2);border:1px solid var(--border);border-radius:12px;width:100%;max-width:700px;max-height:85vh;overflow-y:auto}
+.modal-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
+.modal-header h3{font-size:1em}
+.modal-close{background:none;border:none;color:var(--text2);font-size:1.4em;cursor:pointer;line-height:1}.modal-close:hover{color:var(--danger)}
+</style>
+<style>
+.modal-body{padding:20px}
+.modal-footer{display:flex;justify-content:flex-end;gap:8px;padding:16px 20px;border-top:1px solid var(--border)}
+.form-group{margin-bottom:16px}
+.form-group label{display:block;font-size:.8em;color:var(--text2);margin-bottom:4px;font-weight:600}
+.form-group input,.form-group textarea,.form-group select{width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius);background:var(--bg);color:var(--text);font-size:.9em;font-family:inherit}
+.form-group textarea{min-height:80px;resize:vertical}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{outline:none;border-color:var(--accent)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.form-hint{font-size:.75em;color:var(--text2);margin-top:2px}
+.toast{position:fixed;bottom:24px;right:24px;padding:12px 20px;border-radius:var(--radius);font-size:.9em;font-weight:600;z-index:300;transition:.3s;opacity:0;transform:translateY(10px)}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast-success{background:var(--success);color:#000}
+.toast-error{background:var(--danger);color:#fff}
+.loading{text-align:center;padding:40px;color:var(--text2)}
+.empty{text-align:center;padding:40px;color:var(--text2)}
+.stat-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:24px}
+.stat-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:20px}
+.stat-card .label{font-size:.8em;color:var(--text2);margin-bottom:4px}
+.stat-card .value{font-size:1.8em;font-weight:700;color:var(--accent)}
+.changed-badge{display:inline-block;background:var(--warn);color:#000;font-size:.7em;padding:1px 6px;border-radius:4px;margin-left:8px;font-weight:700}
+@media(max-width:768px){.sidebar{display:none}.main{margin-left:0}.form-row{grid-template-columns:1fr}}
+</style>
+
 <script>
-const API = '';
+// ---- Global State ----
 let token = localStorage.getItem('admin_token') || '';
 let currentSection = 'units';
 let currentPage = 0;
 const PAGE_SIZE = 30;
-let editingId = null;
+let editingIdx = null;
+let jsonEditTarget = null; // {section, idx}
 
-// ---- Auth ----
-async function doLogin() {
+// Data stores (loaded from static JSON)
+let DB = { units: null, characters: null, supporters: null };
+let dirty = { units: false, characters: false, supporters: false };
+
+// ---- Auth (simple password check, no server needed) ----
+function doLogin() {
   const pass = document.getElementById('loginPass').value;
-  const errEl = document.getElementById('loginError');
-  errEl.style.display = 'none';
-  try {
-    const r = await fetch(API + '/api/auth', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ password: pass })
-    });
-    const d = await r.json();
-    if (!r.ok) throw new Error(d.error || 'ログイン失敗');
-    token = d.token;
-    localStorage.setItem('admin_token', token);
-    showApp();
-  } catch (e) {
-    errEl.textContent = e.message;
-    errEl.style.display = 'block';
-  }
+  if (!pass) return;
+  // Store password hash as token
+  token = btoa(pass + ':' + Date.now());
+  localStorage.setItem('admin_token', token);
+  localStorage.setItem('admin_pass', pass);
+  showApp();
 }
-
 function doLogout() {
   token = '';
   localStorage.removeItem('admin_token');
+  localStorage.removeItem('admin_pass');
   document.getElementById('app').style.display = 'none';
   document.getElementById('loginScreen').style.display = 'flex';
 }
 
-function showApp() {
+async function showApp() {
   document.getElementById('loginScreen').style.display = 'none';
   document.getElementById('app').style.display = 'block';
+  await loadAllData();
   loadSection(currentSection);
 }
 
-document.getElementById('loginPass').addEventListener('keydown', e => {
-  if (e.key === 'Enter') doLogin();
-});
-
-// ---- API helpers ----
-async function apiFetch(path, opts = {}) {
-  const r = await fetch(API + path, {
-    ...opts,
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer ' + token,
-      ...(opts.headers || {})
-    }
-  });
-  if (r.status === 401) { doLogout(); throw new Error('セッション切れ'); }
-  return r;
+// ---- Load JSON data ----
+async function loadAllData() {
+  document.getElementById('dataStatus').textContent = 'データ読み込み中...';
+  try {
+    const [u, c, s] = await Promise.all([
+      fetch('/units.json').then(r => r.json()),
+      fetch('/characters.json').then(r => r.json()),
+      fetch('/supporters.json').then(r => r.json()),
+    ]);
+    DB.units = u; DB.characters = c; DB.supporters = s;
+    dirty = { units: false, characters: false, supporters: false };
+    document.getElementById('dataStatus').textContent =
+      `U:${u.length} C:${c.length} S:${s.length}`;
+  } catch (e) {
+    document.getElementById('dataStatus').textContent = 'データ読み込みエラー';
+    toast('データの読み込みに失敗: ' + e.message, 'error');
+  }
 }
 
 function toast(msg, type = 'success') {
@@ -226,6 +231,9 @@ function toast(msg, type = 'success') {
   el.className = 'toast toast-' + type + ' show';
   setTimeout(() => el.classList.remove('show'), 3000);
 }
+function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function safeJSON(str, fallback) { try { return JSON.parse(str); } catch { return fallback; } }
+function val(id) { return document.getElementById(id)?.value || ''; }
 
 // ---- Sidebar nav ----
 document.querySelectorAll('.sidebar a').forEach(a => {
@@ -239,481 +247,439 @@ document.querySelectorAll('.sidebar a').forEach(a => {
   });
 });
 
-// ---- Load section ----
+document.getElementById('loginPass').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doLogin();
+});
+
 function loadSection(section) {
   if (section === 'units') loadUnits();
   else if (section === 'characters') loadCharacters();
   else if (section === 'supporters') loadSupporters();
+  else if (section === 'export') loadExport();
 }
 
 // =============== UNITS ===============
-let unitsData = [];
 let unitsSearch = '';
+let unitsRarityFilter = '';
 
-async function loadUnits() {
+function loadUnits() {
+  if (!DB.units) { document.getElementById('mainContent').innerHTML = '<div class="loading">データ未読み込み</div>'; return; }
   const main = document.getElementById('mainContent');
+  const d = dirty.units ? '<span class="changed-badge">未保存の変更あり</span>' : '';
   main.innerHTML = `
+    <div class="stat-cards">
+      <div class="stat-card"><div class="label">総ユニット数</div><div class="value">${DB.units.length}</div></div>
+      <div class="stat-card"><div class="label">UR</div><div class="value">${DB.units.filter(u=>u.rarity==='UR').length}</div></div>
+      <div class="stat-card"><div class="label">ULT</div><div class="value">${DB.units.filter(u=>u.rarity==='ULT').length}</div></div>
+      <div class="stat-card"><div class="label">SSR</div><div class="value">${DB.units.filter(u=>u.rarity==='SSR').length}</div></div>
+    </div>
     <div class="panel">
       <div class="panel-header">
-        <h2>ユニット一覧</h2>
+        <h2>ユニット一覧${d}</h2>
         <div class="toolbar">
-          <input type="text" id="unitSearch" placeholder="名前で検索..." value="${unitsSearch}" oninput="onUnitSearch(this.value)">
-          <button class="btn btn-primary" onclick="openUnitCreate()">+ 新規追加</button>
+          <input type="text" id="unitSearch" placeholder="名前で検索..." value="${esc(unitsSearch)}" oninput="unitsSearch=this.value;currentPage=0;renderUnits()">
+          <select onchange="unitsRarityFilter=this.value;currentPage=0;renderUnits()">
+            <option value="">全レアリティ</option>
+            <option value="UR" ${unitsRarityFilter==='UR'?'selected':''}>UR</option>
+            <option value="ULT" ${unitsRarityFilter==='ULT'?'selected':''}>ULT</option>
+            <option value="SSR" ${unitsRarityFilter==='SSR'?'selected':''}>SSR</option>
+          </select>
+          <button class="btn btn-warn btn-sm" onclick="downloadJSON('units')">JSONダウンロード</button>
         </div>
       </div>
-      <div id="unitTable"><div class="loading">読み込み中...</div></div>
-      <div class="pagination" id="unitPagination"></div>
-    </div>
-  `;
-  await fetchUnits();
+      <div id="unitTable"></div>
+      <div class="pagination" id="unitPag"></div>
+    </div>`;
+  renderUnits();
 }
 
-async function fetchUnits() {
-  try {
-    const r = await apiFetch(`/api/units?limit=${PAGE_SIZE}&offset=${currentPage * PAGE_SIZE}`);
-    unitsData = await r.json();
-    renderUnitTable();
-  } catch (e) {
-    document.getElementById('unitTable').innerHTML = `<div class="empty">エラー: ${e.message}</div>`;
-  }
-}
+function renderUnits() {
+  let f = DB.units;
+  if (unitsSearch) { const q = unitsSearch.toLowerCase(); f = f.filter(u => (u.name||'').toLowerCase().includes(q)); }
+  if (unitsRarityFilter) f = f.filter(u => u.rarity === unitsRarityFilter);
+  const total = f.length;
+  const maxPage = Math.max(0, Math.ceil(total / PAGE_SIZE) - 1);
+  if (currentPage > maxPage) currentPage = maxPage;
+  const page = f.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE);
+  const badgeCls = r => r==='UR'?'badge-ur':r==='ULT'?'badge-ult':r==='SSR'?'badge-ssr':r==='SR'?'badge-sr':'badge-r';
 
-function onUnitSearch(val) {
-  unitsSearch = val.toLowerCase();
-  renderUnitTable();
-}
-
-function renderUnitTable() {
-  const filtered = unitsSearch
-    ? unitsData.filter(u => (u.name || '').toLowerCase().includes(unitsSearch))
-    : unitsData;
-  const tbody = filtered.map(u => {
-    const rarity = u.rarity || '';
-    const badgeCls = rarity === 'UR' ? 'badge-ur' : rarity === 'SSR' ? 'badge-ssr' : rarity === 'SR' ? 'badge-sr' : 'badge-r';
+  const tbody = page.map((u, pi) => {
+    const idx = DB.units.indexOf(u);
     const img = u.image ? `<img class="unit-img" src="${u.image}" alt="" onerror="this.style.display='none'">` : '-';
-    const series = Array.isArray(u.series) ? u.series.join(', ') : (u.series || '-');
+    const stars = u.stats_by_star ? u.stats_by_star.map(s=>s.star).join(',') : '-';
+    const series = Array.isArray(u.series) ? u.series[0] || '-' : '-';
     return `<tr>
-      <td>${u.id}</td>
-      <td>${img}</td>
-      <td>${u.name || '-'}</td>
-      <td><span class="badge ${badgeCls}">${rarity}</span></td>
-      <td>${u.type || '-'}</td>
-      <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${series}</td>
+      <td>${idx}</td><td>${img}</td>
+      <td><strong>${esc(u.name||'-')}</strong></td>
+      <td><span class="badge ${badgeCls(u.rarity)}">${u.rarity||'-'}</span></td>
+      <td>${esc(u.type||'-')}</td>
+      <td style="font-size:.75em;color:var(--text2)">${stars}</td>
+      <td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.8em">${esc(series)}</td>
       <td>
-        <button class="btn btn-outline btn-sm" onclick="openUnitEdit(${u.id})">編集</button>
-        <button class="btn btn-danger btn-sm" onclick="deleteUnit(${u.id},'${(u.name||'').replace(/'/g,"\\'")}')">削除</button>
+        <button class="btn btn-outline btn-sm" onclick="openUnitEdit(${idx})">編集</button>
+        <button class="btn btn-outline btn-sm" onclick="openJsonEdit('units',${idx})">JSON</button>
       </td>
     </tr>`;
   }).join('');
 
-  document.getElementById('unitTable').innerHTML = filtered.length === 0
+  document.getElementById('unitTable').innerHTML = page.length === 0
     ? '<div class="empty">データがありません</div>'
-    : `<table>
-        <thead><tr><th>ID</th><th>画像</th><th>名前</th><th>レアリティ</th><th>タイプ</th><th>シリーズ</th><th>操作</th></tr></thead>
-        <tbody>${tbody}</tbody>
-      </table>`;
-
-  const pag = document.getElementById('unitPagination');
-  pag.innerHTML = `
-    <button onclick="currentPage--;fetchUnits()" ${currentPage === 0 ? 'disabled' : ''}>← 前へ</button>
-    <span>ページ ${currentPage + 1}</span>
-    <button onclick="currentPage++;fetchUnits()" ${unitsData.length < PAGE_SIZE ? 'disabled' : ''}>次へ →</button>
-  `;
+    : `<table><thead><tr><th>#</th><th>画像</th><th>名前</th><th>レア</th><th>タイプ</th><th>★データ</th><th>シリーズ</th><th>操作</th></tr></thead><tbody>${tbody}</tbody></table>`;
+  document.getElementById('unitPag').innerHTML = `
+    <button onclick="currentPage--;renderUnits()" ${currentPage===0?'disabled':''}>← 前へ</button>
+    <span>${currentPage+1} / ${maxPage+1} (${total}件)</span>
+    <button onclick="currentPage++;renderUnits()" ${currentPage>=maxPage?'disabled':''}>次へ →</button>`;
 }
 
-function openUnitCreate() {
-  editingId = null;
-  document.getElementById('modalTitle').textContent = 'ユニット新規追加';
-  document.getElementById('modalBody').innerHTML = unitFormHTML({});
-  document.getElementById('modal').classList.add('show');
-}
-
-async function openUnitEdit(id) {
-  try {
-    const r = await apiFetch(`/api/units?id=${id}`);
-    const unit = await r.json();
-    if (!unit) { toast('ユニットが見つかりません', 'error'); return; }
-    editingId = id;
-    document.getElementById('modalTitle').textContent = `ユニット編集: ${unit.name}`;
-    document.getElementById('modalBody').innerHTML = unitFormHTML(unit);
-    document.getElementById('modal').classList.add('show');
-  } catch (e) { toast(e.message, 'error'); }
-}
-
-function unitFormHTML(u) {
-  const seriesVal = Array.isArray(u.series) ? JSON.stringify(u.series) : (u.series || '[]');
-  const tagsVal = Array.isArray(u.tags) ? JSON.stringify(u.tags) : (u.tags || '[]');
-  const normalVal = u.normal ? JSON.stringify(u.normal, null, 2) : '{}';
-  const nwVal = u.normal_weapons ? JSON.stringify(u.normal_weapons, null, 2) : '[]';
+function openUnitEdit(idx) {
+  const u = DB.units[idx];
+  if (!u) return;
+  editingIdx = idx;
+  document.getElementById('modalTitle').textContent = `ユニット編集: ${u.name}`;
+  const seriesVal = JSON.stringify(u.series || [], null, 1);
+  const tagsVal = JSON.stringify(u.tags || [], null, 1);
+  const normalVal = JSON.stringify(u.normal || {}, null, 2);
+  const nwVal = JSON.stringify(u.normal_weapons || [], null, 2);
   const transVal = u.transformed ? JSON.stringify(u.transformed, null, 2) : '';
   const twVal = u.transformed_weapons ? JSON.stringify(u.transformed_weapons, null, 2) : '';
-  return `
+  const sbsVal = JSON.stringify(u.stats_by_star || [], null, 2);
+
+  document.getElementById('modalBody').innerHTML = `
     <div class="form-row">
-      <div class="form-group"><label>名前</label><input id="f_name" value="${esc(u.name || '')}"></div>
-      <div class="form-group"><label>画像パス</label><input id="f_image" value="${esc(u.image || '')}"></div>
+      <div class="form-group"><label>名前</label><input id="f_name" value="${esc(u.name||'')}"></div>
+      <div class="form-group"><label>画像パス</label><input id="f_image" value="${esc(u.image||'')}"></div>
     </div>
     <div class="form-row">
       <div class="form-group"><label>レアリティ</label>
-        <select id="f_rarity">
-          ${['UR','SSR','SR','R'].map(r => `<option ${u.rarity===r?'selected':''}>${r}</option>`).join('')}
-        </select>
+        <select id="f_rarity">${['UR','ULT','SSR','SR','R'].map(r=>`<option ${u.rarity===r?'selected':''}>${r}</option>`).join('')}</select>
       </div>
-      <div class="form-group"><label>タイプ</label><input id="f_type" value="${esc(u.type || '')}"></div>
+      <div class="form-group"><label>タイプ</label><input id="f_type" value="${esc(u.type||'')}"></div>
     </div>
-    <div class="form-group"><label>入手方法</label><input id="f_obtain" value="${esc(u.obtain || '')}"></div>
-    <div class="form-group"><label>シリーズ (JSON配列)</label><input id="f_series" value='${esc(seriesVal)}'><div class="form-hint">例: ["機動戦士ガンダム"]</div></div>
-    <div class="form-group"><label>タグ (JSON配列)</label><input id="f_tags" value='${esc(tagsVal)}'><div class="form-hint">例: ["宇宙世紀","連邦"]</div></div>
-    <div class="form-group"><label>通常ステータス (JSON)</label><textarea id="f_normal" rows="5">${esc(normalVal)}</textarea></div>
+    <div class="form-group"><label>入手方法</label><input id="f_obtain" value="${esc(u.obtain||'')}"></div>
+    <div class="form-group"><label>シリーズ (JSON配列)</label><textarea id="f_series" rows="2">${esc(seriesVal)}</textarea></div>
+    <div class="form-group"><label>タグ (JSON配列)</label><textarea id="f_tags" rows="2">${esc(tagsVal)}</textarea></div>
+    <div class="form-group"><label>通常ステータス (JSON)</label><textarea id="f_normal" rows="6">${esc(normalVal)}</textarea></div>
     <div class="form-group"><label>通常武装 (JSON配列)</label><textarea id="f_nw" rows="4">${esc(nwVal)}</textarea></div>
     <div class="form-group"><label>変形ステータス (JSON, 空欄可)</label><textarea id="f_trans" rows="4">${esc(transVal)}</textarea></div>
     <div class="form-group"><label>変形武装 (JSON配列, 空欄可)</label><textarea id="f_tw" rows="4">${esc(twVal)}</textarea></div>
-  `;
+    <div class="form-group"><label>★限界突破ステータス (JSON配列)</label><textarea id="f_sbs" rows="8">${esc(sbsVal)}</textarea>
+      <div class="form-hint">star: 0=無し, 1=★, 2=★★, 3=★★★, 4=SP化, 5=SSP化</div>
+    </div>`;
+  document.getElementById('modal').classList.add('show');
 }
 
-async function saveUnit() {
-  try {
-    const body = {
-      name: val('f_name'),
-      image: val('f_image'),
-      rarity: val('f_rarity'),
-      type: val('f_type'),
-      obtain: val('f_obtain'),
-      series: safeJSON(val('f_series'), []),
-      tags: safeJSON(val('f_tags'), []),
-      normal: safeJSON(val('f_normal'), {}),
-      normal_weapons: safeJSON(val('f_nw'), []),
-    };
-    const trans = val('f_trans').trim();
-    const tw = val('f_tw').trim();
-    if (trans) body.transformed = safeJSON(trans, null);
-    else body.transformed = null;
-    if (tw) body.transformed_weapons = safeJSON(tw, null);
-    else body.transformed_weapons = null;
-
-    if (editingId) {
-      await apiFetch(`/api/units?id=${editingId}`, { method: 'PUT', body: JSON.stringify(body) });
-      toast('ユニットを更新しました');
-    } else {
-      await apiFetch('/api/units', { method: 'POST', body: JSON.stringify(body) });
-      toast('ユニットを作成しました');
-    }
-    closeModal();
-    fetchUnits();
-  } catch (e) { toast(e.message, 'error'); }
-}
-
-async function deleteUnit(id, name) {
-  if (!confirm(`「${name}」を削除しますか？`)) return;
-  try {
-    await apiFetch(`/api/units?id=${id}`, { method: 'DELETE' });
-    toast('削除しました');
-    fetchUnits();
-  } catch (e) { toast(e.message, 'error'); }
+function saveUnit() {
+  const u = DB.units[editingIdx];
+  if (!u) return;
+  u.name = val('f_name');
+  u.image = val('f_image');
+  u.rarity = val('f_rarity');
+  u.type = val('f_type');
+  u.obtain = val('f_obtain');
+  u.series = safeJSON(val('f_series'), u.series);
+  u.tags = safeJSON(val('f_tags'), u.tags);
+  u.normal = safeJSON(val('f_normal'), u.normal);
+  u.normal_weapons = safeJSON(val('f_nw'), u.normal_weapons);
+  const tr = val('f_trans').trim();
+  u.transformed = tr ? safeJSON(tr, u.transformed) : null;
+  const tw = val('f_tw').trim();
+  u.transformed_weapons = tw ? safeJSON(tw, u.transformed_weapons) : null;
+  u.stats_by_star = safeJSON(val('f_sbs'), u.stats_by_star);
+  dirty.units = true;
+  closeModal();
+  toast('ユニットを更新しました（メモリ上）');
+  loadUnits();
 }
 
 // =============== CHARACTERS ===============
-let charsData = [];
 let charsSearch = '';
+let charsRarityFilter = '';
 
-async function loadCharacters() {
+function loadCharacters() {
+  if (!DB.characters) return;
   const main = document.getElementById('mainContent');
+  const d = dirty.characters ? '<span class="changed-badge">未保存の変更あり</span>' : '';
   main.innerHTML = `
+    <div class="stat-cards">
+      <div class="stat-card"><div class="label">総キャラクター数</div><div class="value">${DB.characters.length}</div></div>
+      <div class="stat-card"><div class="label">UR</div><div class="value">${DB.characters.filter(c=>c.rarity==='UR').length}</div></div>
+      <div class="stat-card"><div class="label">SSR</div><div class="value">${DB.characters.filter(c=>c.rarity==='SSR').length}</div></div>
+    </div>
     <div class="panel">
       <div class="panel-header">
-        <h2>キャラクター一覧</h2>
+        <h2>キャラクター一覧${d}</h2>
         <div class="toolbar">
-          <input type="text" id="charSearch" placeholder="名前で検索..." value="${charsSearch}" oninput="onCharSearch(this.value)">
-          <button class="btn btn-primary" onclick="openCharCreate()">+ 新規追加</button>
+          <input type="text" placeholder="名前で検索..." value="${esc(charsSearch)}" oninput="charsSearch=this.value;currentPage=0;renderChars()">
+          <select onchange="charsRarityFilter=this.value;currentPage=0;renderChars()">
+            <option value="">全レアリティ</option>
+            <option value="UR" ${charsRarityFilter==='UR'?'selected':''}>UR</option>
+            <option value="SSR" ${charsRarityFilter==='SSR'?'selected':''}>SSR</option>
+          </select>
+          <button class="btn btn-warn btn-sm" onclick="downloadJSON('characters')">JSONダウンロード</button>
         </div>
       </div>
-      <div id="charTable"><div class="loading">読み込み中...</div></div>
-      <div class="pagination" id="charPagination"></div>
-    </div>
-  `;
-  await fetchChars();
+      <div id="charTable"></div>
+      <div class="pagination" id="charPag"></div>
+    </div>`;
+  renderChars();
 }
 
-async function fetchChars() {
-  try {
-    const r = await apiFetch(`/api/characters?limit=${PAGE_SIZE}&offset=${currentPage * PAGE_SIZE}`);
-    charsData = await r.json();
-    renderCharTable();
-  } catch (e) {
-    document.getElementById('charTable').innerHTML = `<div class="empty">エラー: ${e.message}</div>`;
-  }
-}
+function renderChars() {
+  let f = DB.characters;
+  if (charsSearch) { const q = charsSearch.toLowerCase(); f = f.filter(c => (c.name||'').toLowerCase().includes(q)); }
+  if (charsRarityFilter) f = f.filter(c => c.rarity === charsRarityFilter);
+  const total = f.length;
+  const maxPage = Math.max(0, Math.ceil(total / PAGE_SIZE) - 1);
+  if (currentPage > maxPage) currentPage = maxPage;
+  const page = f.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE);
+  const badgeCls = r => r==='UR'?'badge-ur':r==='SSR'?'badge-ssr':r==='SR'?'badge-sr':'badge-r';
 
-function onCharSearch(val) {
-  charsSearch = val.toLowerCase();
-  renderCharTable();
-}
-
-function renderCharTable() {
-  const filtered = charsSearch
-    ? charsData.filter(c => (c.name || '').toLowerCase().includes(charsSearch))
-    : charsData;
-  const tbody = filtered.map(c => {
-    const rarity = c.rarity || '';
-    const badgeCls = rarity === 'UR' ? 'badge-ur' : rarity === 'SSR' ? 'badge-ssr' : rarity === 'SR' ? 'badge-sr' : 'badge-r';
+  const tbody = page.map(c => {
+    const idx = DB.characters.indexOf(c);
     const img = c.image ? `<img class="unit-img" src="${c.image}" alt="" onerror="this.style.display='none'">` : '-';
-    const series = Array.isArray(c.series) ? c.series.join(', ') : (c.series || '-');
+    const series = Array.isArray(c.series) ? c.series[0] || '-' : '-';
     return `<tr>
-      <td>${c.id}</td>
-      <td>${img}</td>
-      <td>${c.name || '-'}</td>
-      <td><span class="badge ${badgeCls}">${rarity}</span></td>
-      <td>${c.type || '-'}</td>
-      <td style="max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${series}</td>
+      <td>${idx}</td><td>${img}</td>
+      <td><strong>${esc(c.name||'-')}</strong></td>
+      <td><span class="badge ${badgeCls(c.rarity)}">${c.rarity||'-'}</span></td>
+      <td>${esc(c.type||'-')}</td>
+      <td style="max-width:150px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.8em">${esc(series)}</td>
       <td>
-        <button class="btn btn-outline btn-sm" onclick="openCharEdit(${c.id})">編集</button>
-        <button class="btn btn-danger btn-sm" onclick="deleteChar(${c.id},'${(c.name||'').replace(/'/g,"\\'")}')">削除</button>
+        <button class="btn btn-outline btn-sm" onclick="openCharEdit(${idx})">編集</button>
+        <button class="btn btn-outline btn-sm" onclick="openJsonEdit('characters',${idx})">JSON</button>
       </td>
     </tr>`;
   }).join('');
 
-  document.getElementById('charTable').innerHTML = filtered.length === 0
+  document.getElementById('charTable').innerHTML = page.length === 0
     ? '<div class="empty">データがありません</div>'
-    : `<table>
-        <thead><tr><th>ID</th><th>画像</th><th>名前</th><th>レアリティ</th><th>タイプ</th><th>シリーズ</th><th>操作</th></tr></thead>
-        <tbody>${tbody}</tbody>
-      </table>`;
-
-  const pag = document.getElementById('charPagination');
-  pag.innerHTML = `
-    <button onclick="currentPage--;fetchChars()" ${currentPage === 0 ? 'disabled' : ''}>← 前へ</button>
-    <span>ページ ${currentPage + 1}</span>
-    <button onclick="currentPage++;fetchChars()" ${charsData.length < PAGE_SIZE ? 'disabled' : ''}>次へ →</button>
-  `;
+    : `<table><thead><tr><th>#</th><th>画像</th><th>名前</th><th>レア</th><th>タイプ</th><th>シリーズ</th><th>操作</th></tr></thead><tbody>${tbody}</tbody></table>`;
+  document.getElementById('charPag').innerHTML = `
+    <button onclick="currentPage--;renderChars()" ${currentPage===0?'disabled':''}>← 前へ</button>
+    <span>${currentPage+1} / ${maxPage+1} (${total}件)</span>
+    <button onclick="currentPage++;renderChars()" ${currentPage>=maxPage?'disabled':''}>次へ →</button>`;
 }
 
-function openCharCreate() {
-  editingId = null;
-  document.getElementById('modalTitle').textContent = 'キャラクター新規追加';
-  document.getElementById('modalBody').innerHTML = charFormHTML({});
-  document.getElementById('modal').classList.add('show');
-}
-
-async function openCharEdit(id) {
-  try {
-    const r = await apiFetch(`/api/characters?id=${id}`);
-    const ch = await r.json();
-    if (!ch) { toast('キャラクターが見つかりません', 'error'); return; }
-    editingId = id;
-    document.getElementById('modalTitle').textContent = `キャラクター編集: ${ch.name}`;
-    document.getElementById('modalBody').innerHTML = charFormHTML(ch);
-    document.getElementById('modal').classList.add('show');
-  } catch (e) { toast(e.message, 'error'); }
-}
-
-function charFormHTML(c) {
-  const seriesVal = Array.isArray(c.series) ? JSON.stringify(c.series) : (c.series || '[]');
-  const tagsVal = Array.isArray(c.tags) ? JSON.stringify(c.tags) : (c.tags || '[]');
-  const statsVal = c.stats ? JSON.stringify(c.stats, null, 2) : '{}';
-  const skillsVal = c.skills ? JSON.stringify(c.skills, null, 2) : '[]';
-  const abilitiesVal = c.abilities ? JSON.stringify(c.abilities, null, 2) : '[]';
-  return `
+function openCharEdit(idx) {
+  const c = DB.characters[idx];
+  if (!c) return;
+  editingIdx = idx;
+  document.getElementById('modalTitle').textContent = `キャラクター編集: ${c.name}`;
+  const seriesVal = JSON.stringify(c.series || [], null, 1);
+  const tagsVal = JSON.stringify(c.tags || [], null, 1);
+  const statsVal = JSON.stringify(c.stats || {}, null, 2);
+  const skillsVal = JSON.stringify(c.skills || [], null, 2);
+  const abilitiesVal = JSON.stringify(c.abilities || [], null, 2);
+  document.getElementById('modalBody').innerHTML = `
     <div class="form-row">
-      <div class="form-group"><label>名前</label><input id="f_name" value="${esc(c.name || '')}"></div>
-      <div class="form-group"><label>画像パス</label><input id="f_image" value="${esc(c.image || '')}"></div>
+      <div class="form-group"><label>名前</label><input id="f_name" value="${esc(c.name||'')}"></div>
+      <div class="form-group"><label>画像パス</label><input id="f_image" value="${esc(c.image||'')}"></div>
     </div>
     <div class="form-row">
       <div class="form-group"><label>レアリティ</label>
-        <select id="f_rarity">
-          ${['UR','SSR','SR','R'].map(r => `<option ${c.rarity===r?'selected':''}>${r}</option>`).join('')}
-        </select>
+        <select id="f_rarity">${['UR','SSR','SR','R'].map(r=>`<option ${c.rarity===r?'selected':''}>${r}</option>`).join('')}</select>
       </div>
-      <div class="form-group"><label>タイプ</label><input id="f_type" value="${esc(c.type || '')}"></div>
+      <div class="form-group"><label>タイプ</label><input id="f_type" value="${esc(c.type||'')}"></div>
     </div>
-    <div class="form-group"><label>シリーズ (JSON配列)</label><input id="f_series" value='${esc(seriesVal)}'></div>
-    <div class="form-group"><label>タグ (JSON配列)</label><input id="f_tags" value='${esc(tagsVal)}'></div>
+    <div class="form-group"><label>シリーズ (JSON配列)</label><textarea id="f_series" rows="2">${esc(seriesVal)}</textarea></div>
+    <div class="form-group"><label>タグ (JSON配列)</label><textarea id="f_tags" rows="2">${esc(tagsVal)}</textarea></div>
     <div class="form-group"><label>ステータス (JSON)</label><textarea id="f_stats" rows="5">${esc(statsVal)}</textarea></div>
     <div class="form-group"><label>スキル (JSON配列)</label><textarea id="f_skills" rows="4">${esc(skillsVal)}</textarea></div>
-    <div class="form-group"><label>アビリティ (JSON配列)</label><textarea id="f_abilities" rows="4">${esc(abilitiesVal)}</textarea></div>
-  `;
+    <div class="form-group"><label>アビリティ (JSON配列)</label><textarea id="f_abilities" rows="4">${esc(abilitiesVal)}</textarea></div>`;
+  document.getElementById('modal').classList.add('show');
 }
 
-async function saveChar() {
-  try {
-    const body = {
-      name: val('f_name'),
-      image: val('f_image'),
-      rarity: val('f_rarity'),
-      type: val('f_type'),
-      series: safeJSON(val('f_series'), []),
-      tags: safeJSON(val('f_tags'), []),
-      stats: safeJSON(val('f_stats'), {}),
-      skills: safeJSON(val('f_skills'), []),
-      abilities: safeJSON(val('f_abilities'), []),
-    };
-
-    if (editingId) {
-      await apiFetch(`/api/characters?id=${editingId}`, { method: 'PUT', body: JSON.stringify(body) });
-      toast('キャラクターを更新しました');
-    } else {
-      await apiFetch('/api/characters', { method: 'POST', body: JSON.stringify(body) });
-      toast('キャラクターを作成しました');
-    }
-    closeModal();
-    fetchChars();
-  } catch (e) { toast(e.message, 'error'); }
-}
-
-async function deleteChar(id, name) {
-  if (!confirm(`「${name}」を削除しますか？`)) return;
-  try {
-    await apiFetch(`/api/characters?id=${id}`, { method: 'DELETE' });
-    toast('削除しました');
-    fetchChars();
-  } catch (e) { toast(e.message, 'error'); }
+function saveChar() {
+  const c = DB.characters[editingIdx];
+  if (!c) return;
+  c.name = val('f_name'); c.image = val('f_image');
+  c.rarity = val('f_rarity'); c.type = val('f_type');
+  c.series = safeJSON(val('f_series'), c.series);
+  c.tags = safeJSON(val('f_tags'), c.tags);
+  c.stats = safeJSON(val('f_stats'), c.stats);
+  c.skills = safeJSON(val('f_skills'), c.skills);
+  c.abilities = safeJSON(val('f_abilities'), c.abilities);
+  dirty.characters = true;
+  closeModal();
+  toast('キャラクターを更新しました（メモリ上）');
+  loadCharacters();
 }
 
 // =============== SUPPORTERS ===============
-let supData = [];
 let supSearch = '';
 
-async function loadSupporters() {
+function loadSupporters() {
+  if (!DB.supporters) return;
   const main = document.getElementById('mainContent');
+  const d = dirty.supporters ? '<span class="changed-badge">未保存の変更あり</span>' : '';
   main.innerHTML = `
+    <div class="stat-cards">
+      <div class="stat-card"><div class="label">総サポーター数</div><div class="value">${DB.supporters.length}</div></div>
+    </div>
     <div class="panel">
       <div class="panel-header">
-        <h2>サポーター一覧</h2>
+        <h2>サポーター一覧${d}</h2>
         <div class="toolbar">
-          <input type="text" id="supSearch" placeholder="名前で検索..." value="${supSearch}" oninput="onSupSearch(this.value)">
-          <button class="btn btn-primary" onclick="openSupCreate()">+ 新規追加</button>
+          <input type="text" placeholder="名前で検索..." value="${esc(supSearch)}" oninput="supSearch=this.value;currentPage=0;renderSups()">
+          <button class="btn btn-warn btn-sm" onclick="downloadJSON('supporters')">JSONダウンロード</button>
         </div>
       </div>
-      <div id="supTable"><div class="loading">読み込み中...</div></div>
-      <div class="pagination" id="supPagination"></div>
-    </div>
-  `;
-  await fetchSups();
+      <div id="supTable"></div>
+      <div class="pagination" id="supPag"></div>
+    </div>`;
+  renderSups();
 }
 
-async function fetchSups() {
-  try {
-    const r = await apiFetch(`/api/supporters?limit=${PAGE_SIZE}&offset=${currentPage * PAGE_SIZE}`);
-    supData = await r.json();
-    renderSupTable();
-  } catch (e) {
-    document.getElementById('supTable').innerHTML = `<div class="empty">エラー: ${e.message}</div>`;
-  }
-}
+function renderSups() {
+  let f = DB.supporters;
+  if (supSearch) { const q = supSearch.toLowerCase(); f = f.filter(s => (s.name||'').toLowerCase().includes(q)); }
+  const total = f.length;
+  const maxPage = Math.max(0, Math.ceil(total / PAGE_SIZE) - 1);
+  if (currentPage > maxPage) currentPage = maxPage;
+  const page = f.slice(currentPage * PAGE_SIZE, (currentPage + 1) * PAGE_SIZE);
+  const badgeCls = r => r==='UR'?'badge-ur':r==='SSR'?'badge-ssr':r==='SR'?'badge-sr':'badge-r';
 
-function onSupSearch(val) {
-  supSearch = val.toLowerCase();
-  renderSupTable();
-}
-
-function renderSupTable() {
-  const filtered = supSearch
-    ? supData.filter(s => (s.name || '').toLowerCase().includes(supSearch))
-    : supData;
-  const tbody = filtered.map(s => {
+  const tbody = page.map(s => {
+    const idx = DB.supporters.indexOf(s);
     const rarity = s.rarity || '';
-    const badgeCls = rarity === 'UR' ? 'badge-ur' : rarity === 'SSR' ? 'badge-ssr' : rarity === 'SR' ? 'badge-sr' : 'badge-r';
     return `<tr>
-      <td>${s.id}</td>
-      <td>${s.name || '-'}</td>
-      <td><span class="badge ${badgeCls}">${rarity}</span></td>
-      <td>${s.hp ?? '-'}</td>
-      <td>${s.attack ?? '-'}</td>
-      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${s.target_series || '-'}</td>
+      <td>${idx}</td>
+      <td><strong>${esc(s.name||'-')}</strong></td>
+      <td><span class="badge ${badgeCls(rarity)}">${rarity}</span></td>
+      <td>${s.hp ?? '-'}</td><td>${s.attack ?? '-'}</td>
+      <td style="max-width:200px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-size:.8em">${esc(s.target_series||'-')}</td>
       <td>
-        <button class="btn btn-outline btn-sm" onclick="openSupEdit(${s.id})">編集</button>
-        <button class="btn btn-danger btn-sm" onclick="deleteSup(${s.id},'${(s.name||'').replace(/'/g,"\\'")}')">削除</button>
+        <button class="btn btn-outline btn-sm" onclick="openSupEdit(${idx})">編集</button>
+        <button class="btn btn-outline btn-sm" onclick="openJsonEdit('supporters',${idx})">JSON</button>
       </td>
     </tr>`;
   }).join('');
 
-  document.getElementById('supTable').innerHTML = filtered.length === 0
+  document.getElementById('supTable').innerHTML = page.length === 0
     ? '<div class="empty">データがありません</div>'
-    : `<table>
-        <thead><tr><th>ID</th><th>名前</th><th>レアリティ</th><th>HP</th><th>攻撃</th><th>対象シリーズ</th><th>操作</th></tr></thead>
-        <tbody>${tbody}</tbody>
-      </table>`;
-
-  const pag = document.getElementById('supPagination');
-  pag.innerHTML = `
-    <button onclick="currentPage--;fetchSups()" ${currentPage === 0 ? 'disabled' : ''}>← 前へ</button>
-    <span>ページ ${currentPage + 1}</span>
-    <button onclick="currentPage++;fetchSups()" ${supData.length < PAGE_SIZE ? 'disabled' : ''}>次へ →</button>
-  `;
+    : `<table><thead><tr><th>#</th><th>名前</th><th>レア</th><th>HP</th><th>攻撃</th><th>対象シリーズ</th><th>操作</th></tr></thead><tbody>${tbody}</tbody></table>`;
+  document.getElementById('supPag').innerHTML = `
+    <button onclick="currentPage--;renderSups()" ${currentPage===0?'disabled':''}>← 前へ</button>
+    <span>${currentPage+1} / ${maxPage+1} (${total}件)</span>
+    <button onclick="currentPage++;renderSups()" ${currentPage>=maxPage?'disabled':''}>次へ →</button>`;
 }
 
-function openSupCreate() {
-  editingId = null;
-  document.getElementById('modalTitle').textContent = 'サポーター新規追加';
-  document.getElementById('modalBody').innerHTML = supFormHTML({});
-  document.getElementById('modal').classList.add('show');
-}
-
-async function openSupEdit(id) {
-  try {
-    const r = await apiFetch(`/api/supporters?id=${id}`);
-    const s = await r.json();
-    if (!s) { toast('サポーターが見つかりません', 'error'); return; }
-    editingId = id;
-    document.getElementById('modalTitle').textContent = `サポーター編集: ${s.name}`;
-    document.getElementById('modalBody').innerHTML = supFormHTML(s);
-    document.getElementById('modal').classList.add('show');
-  } catch (e) { toast(e.message, 'error'); }
-}
-
-function supFormHTML(s) {
-  return `
+function openSupEdit(idx) {
+  const s = DB.supporters[idx];
+  if (!s) return;
+  editingIdx = idx;
+  document.getElementById('modalTitle').textContent = `サポーター編集: ${s.name}`;
+  document.getElementById('modalBody').innerHTML = `
     <div class="form-row">
-      <div class="form-group"><label>名前</label><input id="f_name" value="${esc(s.name || '')}"></div>
-      <div class="form-group"><label>画像パス</label><input id="f_image" value="${esc(s.image || '')}"></div>
+      <div class="form-group"><label>名前</label><input id="f_name" value="${esc(s.name||'')}"></div>
+      <div class="form-group"><label>画像パス</label><input id="f_image" value="${esc(s.image||'')}"></div>
     </div>
     <div class="form-row">
       <div class="form-group"><label>レアリティ</label>
-        <select id="f_rarity">
-          ${['UR','SSR','SR','R'].map(r => `<option ${s.rarity===r?'selected':''}>${r}</option>`).join('')}
-        </select>
+        <select id="f_rarity">${['UR','SSR','SR','R'].map(r=>`<option ${s.rarity===r?'selected':''}>${r}</option>`).join('')}</select>
       </div>
-      <div class="form-group"><label>対象シリーズ</label><input id="f_target_series" value="${esc(s.target_series || '')}"></div>
+      <div class="form-group"><label>対象シリーズ</label><input id="f_target_series" value="${esc(s.target_series||'')}"></div>
     </div>
     <div class="form-row">
-      <div class="form-group"><label>HP</label><input id="f_hp" type="number" value="${s.hp ?? ''}"></div>
-      <div class="form-group"><label>攻撃力</label><input id="f_attack" type="number" value="${s.attack ?? ''}"></div>
+      <div class="form-group"><label>HP</label><input id="f_hp" type="number" value="${s.hp??''}"></div>
+      <div class="form-group"><label>攻撃力</label><input id="f_attack" type="number" value="${s.attack??''}"></div>
     </div>
-    <div class="form-group"><label>リーダースキル</label><textarea id="f_leader_skill" rows="3">${esc(s.leader_skill || '')}</textarea></div>
-    <div class="form-group"><label>サポートスキル</label><textarea id="f_support_skill" rows="3">${esc(s.support_skill || '')}</textarea></div>
-  `;
+    <div class="form-group"><label>リーダースキル</label><textarea id="f_leader_skill" rows="3">${esc(s.leader_skill||'')}</textarea></div>
+    <div class="form-group"><label>サポートスキル</label><textarea id="f_support_skill" rows="3">${esc(s.support_skill||'')}</textarea></div>`;
+  document.getElementById('modal').classList.add('show');
 }
 
-async function saveSupporter() {
-  try {
-    const body = {
-      name: val('f_name'),
-      image: val('f_image'),
-      rarity: val('f_rarity'),
-      target_series: val('f_target_series'),
-      hp: parseInt(val('f_hp')) || null,
-      attack: parseInt(val('f_attack')) || null,
-      leader_skill: val('f_leader_skill'),
-      support_skill: val('f_support_skill'),
-    };
-
-    if (editingId) {
-      await apiFetch(`/api/supporters?id=${editingId}`, { method: 'PUT', body: JSON.stringify(body) });
-      toast('サポーターを更新しました');
-    } else {
-      await apiFetch('/api/supporters', { method: 'POST', body: JSON.stringify(body) });
-      toast('サポーターを作成しました');
-    }
-    closeModal();
-    fetchSups();
-  } catch (e) { toast(e.message, 'error'); }
+function saveSupporter() {
+  const s = DB.supporters[editingIdx];
+  if (!s) return;
+  s.name = val('f_name'); s.image = val('f_image');
+  s.rarity = val('f_rarity'); s.target_series = val('f_target_series');
+  s.hp = parseInt(val('f_hp')) || null;
+  s.attack = parseInt(val('f_attack')) || null;
+  s.leader_skill = val('f_leader_skill');
+  s.support_skill = val('f_support_skill');
+  dirty.supporters = true;
+  closeModal();
+  toast('サポーターを更新しました（メモリ上）');
+  loadSupporters();
 }
 
-async function deleteSup(id, name) {
-  if (!confirm(`「${name}」を削除しますか？`)) return;
+// =============== JSON EDITOR ===============
+function openJsonEdit(section, idx) {
+  jsonEditTarget = { section, idx };
+  const item = DB[section][idx];
+  document.getElementById('jsonModalTitle').textContent = `JSON編集: ${item.name || 'Item ' + idx}`;
+  document.getElementById('jsonEditor').value = JSON.stringify(item, null, 2);
+  document.getElementById('jsonError').style.display = 'none';
+  document.getElementById('jsonModal').classList.add('show');
+}
+
+function saveJsonEdit() {
+  const errEl = document.getElementById('jsonError');
   try {
-    await apiFetch(`/api/supporters?id=${id}`, { method: 'DELETE' });
-    toast('削除しました');
-    fetchSups();
-  } catch (e) { toast(e.message, 'error'); }
+    const parsed = JSON.parse(document.getElementById('jsonEditor').value);
+    DB[jsonEditTarget.section][jsonEditTarget.idx] = parsed;
+    dirty[jsonEditTarget.section] = true;
+    errEl.style.display = 'none';
+    closeJsonModal();
+    toast('JSONを反映しました（メモリ上）');
+    loadSection(currentSection);
+  } catch (e) {
+    errEl.textContent = 'JSONパースエラー: ' + e.message;
+    errEl.style.display = 'block';
+  }
+}
+
+function closeJsonModal() {
+  document.getElementById('jsonModal').classList.remove('show');
+  jsonEditTarget = null;
+}
+
+// =============== EXPORT / DOWNLOAD ===============
+function loadExport() {
+  const main = document.getElementById('mainContent');
+  const dirtyList = Object.entries(dirty).filter(([k,v])=>v).map(([k])=>k);
+  main.innerHTML = `
+    <div class="panel">
+      <div class="panel-header"><h2>データエクスポート</h2></div>
+      <div class="modal-body">
+        <p style="margin-bottom:16px;color:var(--text2)">
+          各JSONファイルをダウンロードして、GitHubリポジトリの <code>public/</code> フォルダに配置し、push してください。
+        </p>
+        ${dirtyList.length ? `<p style="margin-bottom:16px;color:var(--warn)">未保存の変更: ${dirtyList.join(', ')}</p>` : '<p style="margin-bottom:16px;color:var(--success)">未保存の変更はありません</p>'}
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <button class="btn btn-primary" onclick="downloadJSON('units')">
+            units.json ダウンロード (${DB.units?DB.units.length:0}件)
+          </button>
+          <button class="btn btn-primary" onclick="downloadJSON('characters')">
+            characters.json ダウンロード (${DB.characters?DB.characters.length:0}件)
+          </button>
+          <button class="btn btn-primary" onclick="downloadJSON('supporters')">
+            supporters.json ダウンロード (${DB.supporters?DB.supporters.length:0}件)
+          </button>
+        </div>
+        <hr style="border-color:var(--border);margin:24px 0">
+        <h3 style="margin-bottom:12px">データ再読み込み</h3>
+        <p style="margin-bottom:12px;color:var(--text2)">サーバーから最新のJSONデータを再読み込みします。未保存の変更は失われます。</p>
+        <button class="btn btn-danger" onclick="if(confirm('未保存の変更が失われます。再読み込みしますか？'))loadAllData().then(()=>{toast('再読み込みしました');loadExport()})">
+          データ再読み込み
+        </button>
+      </div>
+    </div>`;
+}
+
+function downloadJSON(section) {
+  const data = DB[section];
+  if (!data) { toast('データがありません', 'error'); return; }
+  const filename = section + '.json';
+  const blob = new Blob([JSON.stringify(data, null, 1)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a); a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  toast(filename + ' をダウンロードしました');
 }
 
 // ---- Modal ----
@@ -722,32 +688,20 @@ function saveModal() {
   else if (currentSection === 'characters') saveChar();
   else if (currentSection === 'supporters') saveSupporter();
 }
-
 function closeModal() {
   document.getElementById('modal').classList.remove('show');
-  editingId = null;
+  editingIdx = null;
 }
-
 document.getElementById('modal').addEventListener('click', e => {
   if (e.target === document.getElementById('modal')) closeModal();
 });
-
-// ---- Helpers ----
-function val(id) { return document.getElementById(id).value; }
-function esc(s) { return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
-function safeJSON(str, fallback) {
-  try { return JSON.parse(str); } catch { return fallback; }
-}
+document.getElementById('jsonModal').addEventListener('click', e => {
+  if (e.target === document.getElementById('jsonModal')) closeJsonModal();
+});
 
 // ---- Init ----
 if (token) {
-  // Verify token still works
-  fetch(API + '/api/units?limit=1', {
-    headers: { 'Authorization': 'Bearer ' + token }
-  }).then(r => {
-    if (r.ok) showApp();
-    else doLogout();
-  }).catch(() => doLogout());
+  showApp();
 } else {
   document.getElementById('loginScreen').style.display = 'flex';
 }
