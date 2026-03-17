@@ -1625,7 +1625,7 @@ function unitCardHTML(u) {
     </div>
     <div class="card-series">${(u.series||[]).map(s=>tData(s,"series")).join(' / ')}</div>
     ${u.normal?.combat_power ? `<div class="card-combat-power">${t('戦闘力')}: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
-    ${u.rarity==='UR' ? '<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>' : u.rarity==='SSR' ? '<div class="card-rarity-note">${currentLang==="en"?"※ SP stats":"※SP化時のステータス"}</div>' : ''}
+    ${u.rarity==='UR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : u.rarity==='SSR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ SP stats":"※SP化時のステータス"}</div>` : ''}
     <div class="card-stats">
       <div class="stat"><div class="stat-label">${t("攻撃力")}</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}</div></div>
@@ -1635,7 +1635,7 @@ function unitCardHTML(u) {
       <div class="stat"><div class="stat-label">EN</div><div class="stat-val">${(parseInt(s.en)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">${t("機動力")}</div><div class="stat-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
       <div class="stat"><div class="stat-label">${t("移動力")}</div><div class="stat-val">${parseInt(s.mobility)||0}</div></div>
-      ${u.transformed ? '<div class="stat" style="border:1px solid var(--accent);"><div class="stat-label" style="color:var(--accent)">${t("変形")}</div><div class="stat-val" style="color:var(--accent)">可</div></div>' : '<div class="stat"></div>'}
+      ${u.transformed ? `<div class="stat" style="border:1px solid var(--accent);"><div class="stat-label" style="color:var(--accent)">${t("変形")}</div><div class="stat-val" style="color:var(--accent)">可</div></div>` : '<div class="stat"></div>'}
     </div>
     ${(() => { const mech = u.normal?.mechanism || ((u.normal?.abilities||[]).find(a=>a.name==='シールド防御')||{}).desc || ''; return mech ? `<div class="card-mechanism"><span class="mechanism-label">${t("機構")}:</span> ${tMechanism(mech)}</div>` : ''; })()}
     <div class="card-terrain">
