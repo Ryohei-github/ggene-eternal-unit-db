@@ -2259,6 +2259,26 @@
         "agility": 7186
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 82080,
+        "en": 339,
+        "mobility": 5,
+        "attack": 11947,
+        "defense": 7791,
+        "agility": 8623
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 88920,
+        "en": 367,
+        "mobility": 5,
+        "attack": 12943,
+        "defense": 8440,
+        "agility": 9341
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 95760,
@@ -2404,6 +2424,26 @@
         "agility": 6096
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 99360,
+        "en": 360,
+        "mobility": 5,
+        "attack": 7388,
+        "defense": 11403,
+        "agility": 7315
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 107640,
+        "en": 390,
+        "mobility": 5,
+        "attack": 8004,
+        "defense": 12354,
+        "agility": 7924
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 115290,
@@ -2538,6 +2578,26 @@
         "attack": 11268,
         "defense": 6120,
         "agility": 7172
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 86054,
+        "en": 360,
+        "mobility": 5,
+        "attack": 13521,
+        "defense": 7344,
+        "agility": 8606
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 93225,
+        "en": 390,
+        "mobility": 5,
+        "attack": 14648,
+        "defense": 7956,
+        "agility": 9323
       },
       {
         "star": 3,
@@ -2685,6 +2745,26 @@
         "agility": 7606
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 81752,
+        "en": 434,
+        "mobility": 5,
+        "attack": 9072,
+        "defense": 8192,
+        "agility": 9126
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 88565,
+        "en": 470,
+        "mobility": 5,
+        "attack": 9828,
+        "defense": 8875,
+        "agility": 9887
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 95377,
@@ -2818,6 +2898,26 @@
         "agility": 7620
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 77760,
+        "en": 360,
+        "mobility": 5,
+        "attack": 14349,
+        "defense": 8175,
+        "agility": 9144
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 84240,
+        "en": 390,
+        "mobility": 5,
+        "attack": 15545,
+        "defense": 8856,
+        "agility": 9906
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 90720,
@@ -2948,6 +3048,26 @@
         "attack": 6840,
         "defense": 7560,
         "agility": 7157
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 86918,
+        "en": 434,
+        "mobility": 4,
+        "attack": 8208,
+        "defense": 9072,
+        "agility": 8588
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 94161,
+        "en": 470,
+        "mobility": 4,
+        "attack": 8892,
+        "defense": 9828,
+        "agility": 9304
       },
       {
         "star": 3,
@@ -3097,6 +3217,26 @@
         "agility": 7587
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 86728,
+        "en": 437,
+        "mobility": 5,
+        "attack": 8140,
+        "defense": 8564,
+        "agility": 9104
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 93956,
+        "en": 473,
+        "mobility": 5,
+        "attack": 8819,
+        "defense": 9278,
+        "agility": 9862
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 101183,
@@ -3240,6 +3380,26 @@
         "agility": 6096
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 99360,
+        "en": 324,
+        "mobility": 5,
+        "attack": 9065,
+        "defense": 11426,
+        "agility": 7315
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 107640,
+        "en": 351,
+        "mobility": 5,
+        "attack": 9820,
+        "defense": 12378,
+        "agility": 7924
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 115920,
@@ -3358,6 +3518,26 @@
         "attack": 9602,
         "defense": 6858,
         "agility": 7222
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 77884,
+        "en": 357,
+        "mobility": 5,
+        "attack": 11523,
+        "defense": 8229,
+        "agility": 8666
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 84375,
+        "en": 387,
+        "mobility": 5,
+        "attack": 12483,
+        "defense": 8915,
+        "agility": 9388
       },
       {
         "star": 3,
@@ -3506,6 +3686,26 @@
         "agility": 8304
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 81669,
+        "en": 380,
+        "mobility": 5,
+        "attack": 9027,
+        "defense": 8236,
+        "agility": 9964
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 88475,
+        "en": 412,
+        "mobility": 5,
+        "attack": 9779,
+        "defense": 8923,
+        "agility": 10795
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 95281,
@@ -3641,6 +3841,26 @@
         "agility": 8339
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 81464,
+        "en": 376,
+        "mobility": 4,
+        "attack": 9983,
+        "defense": 8275,
+        "agility": 10007
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 88252,
+        "en": 407,
+        "mobility": 4,
+        "attack": 10815,
+        "defense": 8964,
+        "agility": 10840
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 95041,
@@ -3772,6 +3992,26 @@
         "attack": 6848,
         "defense": 9558,
         "agility": 6068
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 104463,
+        "en": 325,
+        "mobility": 4,
+        "attack": 8217,
+        "defense": 11469,
+        "agility": 7281
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 113168,
+        "en": 352,
+        "mobility": 4,
+        "attack": 8902,
+        "defense": 12425,
+        "agility": 7888
       },
       {
         "star": 3,
@@ -3917,6 +4157,26 @@
         "attack": 9980,
         "defense": 6471,
         "agility": 7230
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 81432,
+        "en": 340,
+        "mobility": 5,
+        "attack": 11976,
+        "defense": 7765,
+        "agility": 8676
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 88218,
+        "en": 369,
+        "mobility": 5,
+        "attack": 12974,
+        "defense": 8412,
+        "agility": 9399
       },
       {
         "star": 3,
@@ -4065,6 +4325,26 @@
         "agility": 6166
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 123442,
+        "en": 358,
+        "mobility": 5,
+        "attack": 7357,
+        "defense": 9127,
+        "agility": 7399
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 133728,
+        "en": 388,
+        "mobility": 5,
+        "attack": 7970,
+        "defense": 9887,
+        "agility": 8015
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 144015,
@@ -4195,6 +4475,26 @@
         "agility": 7197
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 86547,
+        "en": 324,
+        "mobility": 5,
+        "attack": 11500,
+        "defense": 8166,
+        "agility": 8636
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 93759,
+        "en": 351,
+        "mobility": 5,
+        "attack": 12458,
+        "defense": 8846,
+        "agility": 9355
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 100972,
@@ -4323,6 +4623,26 @@
         "attack": 6862,
         "defense": 7195,
         "agility": 7157
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 86496,
+        "en": 438,
+        "mobility": 5,
+        "attack": 8234,
+        "defense": 8634,
+        "agility": 8588
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 93704,
+        "en": 474,
+        "mobility": 5,
+        "attack": 8920,
+        "defense": 9353,
+        "agility": 9304
       },
       {
         "star": 3,
@@ -4456,6 +4776,26 @@
         "agility": 7195
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 86590,
+        "en": 358,
+        "mobility": 5,
+        "attack": 11409,
+        "defense": 7348,
+        "agility": 8634
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 93806,
+        "en": 388,
+        "mobility": 5,
+        "attack": 12360,
+        "defense": 7961,
+        "agility": 9353
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 101022,
@@ -4585,6 +4925,26 @@
         "attack": 6888,
         "defense": 7526,
         "agility": 6147
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 123628,
+        "en": 326,
+        "mobility": 5,
+        "attack": 8265,
+        "defense": 9031,
+        "agility": 7376
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 133930,
+        "en": 352,
+        "mobility": 5,
+        "attack": 8954,
+        "defense": 9783,
+        "agility": 7990
       },
       {
         "star": 3,
@@ -4731,6 +5091,26 @@
         "agility": 7244
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 90430,
+        "en": 325,
+        "mobility": 5,
+        "attack": 11405,
+        "defense": 8172,
+        "agility": 8692
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 97965,
+        "en": 351,
+        "mobility": 5,
+        "attack": 12355,
+        "defense": 8853,
+        "agility": 9416
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 105501,
@@ -4864,6 +5244,26 @@
         "agility": 7855
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 77690,
+        "en": 399,
+        "mobility": 5,
+        "attack": 9915,
+        "defense": 7845,
+        "agility": 9426
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 84164,
+        "en": 432,
+        "mobility": 5,
+        "attack": 10741,
+        "defense": 8499,
+        "agility": 10211
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 90638,
@@ -4995,6 +5395,26 @@
         "attack": 9910,
         "defense": 6536,
         "agility": 7262
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 81669,
+        "en": 342,
+        "mobility": 5,
+        "attack": 11892,
+        "defense": 7843,
+        "agility": 8714
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 88475,
+        "en": 370,
+        "mobility": 5,
+        "attack": 12883,
+        "defense": 8496,
+        "agility": 9440
       },
       {
         "star": 3,
@@ -5142,6 +5562,26 @@
         "agility": 7944
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 86496,
+        "en": 438,
+        "mobility": 5,
+        "attack": 9081,
+        "defense": 8575,
+        "agility": 9532
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 93704,
+        "en": 474,
+        "mobility": 5,
+        "attack": 9838,
+        "defense": 9289,
+        "agility": 10326
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 100912,
@@ -5285,6 +5725,26 @@
         "attack": 6118,
         "defense": 9553,
         "agility": 6083
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 99986,
+        "en": 361,
+        "mobility": 5,
+        "attack": 7341,
+        "defense": 11463,
+        "agility": 7299
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 108318,
+        "en": 391,
+        "mobility": 5,
+        "attack": 7953,
+        "defense": 12418,
+        "agility": 7907
       },
       {
         "star": 3,
@@ -5432,6 +5892,26 @@
         "agility": 7241
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 86011,
+        "en": 325,
+        "mobility": 5,
+        "attack": 11355,
+        "defense": 8282,
+        "agility": 8689
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 93178,
+        "en": 352,
+        "mobility": 5,
+        "attack": 12301,
+        "defense": 8972,
+        "agility": 9413
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 100346,
@@ -5575,6 +6055,26 @@
         "attack": 6528,
         "defense": 8229,
         "agility": 6140
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 118431,
+        "en": 342,
+        "mobility": 5,
+        "attack": 7833,
+        "defense": 9875,
+        "agility": 7368
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 128301,
+        "en": 370,
+        "mobility": 5,
+        "attack": 8486,
+        "defense": 10697,
+        "agility": 7982
       },
       {
         "star": 3,
@@ -5761,6 +6261,26 @@
         "agility": 7229
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 77862,
+        "en": 361,
+        "mobility": 5,
+        "attack": 11465,
+        "defense": 8138,
+        "agility": 8674
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 84350,
+        "en": 391,
+        "mobility": 5,
+        "attack": 12421,
+        "defense": 8816,
+        "agility": 9397
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 90839,
@@ -5903,6 +6423,26 @@
         "attack": 6139,
         "defense": 8279,
         "agility": 6146
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 124174,
+        "en": 361,
+        "mobility": 5,
+        "attack": 7366,
+        "defense": 9935,
+        "agility": 7375
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 134522,
+        "en": 391,
+        "mobility": 5,
+        "attack": 7980,
+        "defense": 10763,
+        "agility": 7989
       },
       {
         "star": 3,
@@ -6050,6 +6590,26 @@
         "agility": 7263
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 86916,
+        "en": 342,
+        "mobility": 5,
+        "attack": 11817,
+        "defense": 7723,
+        "agility": 8715
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 94159,
+        "en": 370,
+        "mobility": 5,
+        "attack": 12802,
+        "defense": 8366,
+        "agility": 9441
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 101402,
@@ -6195,6 +6755,26 @@
         "agility": 8316
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 81768,
+        "en": 378,
+        "mobility": 5,
+        "attack": 9154,
+        "defense": 8158,
+        "agility": 9978
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 88582,
+        "en": 410,
+        "mobility": 5,
+        "attack": 9917,
+        "defense": 8838,
+        "agility": 10810
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 95397,
@@ -6327,6 +6907,26 @@
         "attack": 9604,
         "defense": 6838,
         "agility": 7258
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 86150,
+        "en": 322,
+        "mobility": 5,
+        "attack": 11525,
+        "defense": 8205,
+        "agility": 8709
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 93329,
+        "en": 349,
+        "mobility": 5,
+        "attack": 12485,
+        "defense": 8889,
+        "agility": 9435
       },
       {
         "star": 3,
@@ -6477,6 +7077,26 @@
         "agility": 6712
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 114310,
+        "en": 363,
+        "mobility": 5,
+        "attack": 7336,
+        "defense": 9961,
+        "agility": 8054
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 123836,
+        "en": 393,
+        "mobility": 5,
+        "attack": 7948,
+        "defense": 10791,
+        "agility": 8725
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 133362,
@@ -6609,6 +7229,26 @@
         "agility": 8230
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 86529,
+        "en": 379,
+        "mobility": 5,
+        "attack": 9135,
+        "defense": 7722,
+        "agility": 9875
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 93740,
+        "en": 411,
+        "mobility": 5,
+        "attack": 9896,
+        "defense": 8366,
+        "agility": 10698
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 100951,
@@ -6731,6 +7371,26 @@
         "attack": 9541,
         "defense": 6845,
         "agility": 7247
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 77091,
+        "en": 361,
+        "mobility": 5,
+        "attack": 11448,
+        "defense": 8214,
+        "agility": 8695
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 83515,
+        "en": 392,
+        "mobility": 5,
+        "attack": 12403,
+        "defense": 8898,
+        "agility": 9421
       },
       {
         "star": 3,
@@ -6877,6 +7537,26 @@
         "agility": 7216
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 86011,
+        "en": 361,
+        "mobility": 5,
+        "attack": 12443,
+        "defense": 7384,
+        "agility": 8659
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 93178,
+        "en": 391,
+        "mobility": 5,
+        "attack": 13480,
+        "defense": 8000,
+        "agility": 9380
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 100346,
@@ -7007,6 +7687,26 @@
         "attack": 9570,
         "defense": 6891,
         "agility": 7202
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 77605,
+        "en": 360,
+        "mobility": 5,
+        "attack": 11483,
+        "defense": 8269,
+        "agility": 8642
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 84072,
+        "en": 390,
+        "mobility": 5,
+        "attack": 12440,
+        "defense": 8958,
+        "agility": 9362
       },
       {
         "star": 3,
@@ -7155,6 +7855,26 @@
         "agility": 7137
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 95667,
+        "en": 438,
+        "mobility": 4,
+        "attack": 8161,
+        "defense": 10404,
+        "agility": 8564
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 103639,
+        "en": 474,
+        "mobility": 4,
+        "attack": 8841,
+        "defense": 11271,
+        "agility": 9278
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 111612,
@@ -7288,6 +8008,26 @@
       "mechanism": "シールド"
     },
     "stats_by_star": [
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 99768,
+        "en": 321,
+        "mobility": 5,
+        "attack": 8205,
+        "defense": 11516,
+        "agility": 7370
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 108082,
+        "en": 348,
+        "mobility": 5,
+        "attack": 8889,
+        "defense": 12475,
+        "agility": 7984
+      },
       {
         "star": 3,
         "lv": 100,
@@ -7432,6 +8172,26 @@
         "attack": 9580,
         "defense": 6845,
         "agility": 7142
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 95704,
+        "en": 325,
+        "mobility": 5,
+        "attack": 11496,
+        "defense": 8214,
+        "agility": 8570
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 103680,
+        "en": 352,
+        "mobility": 5,
+        "attack": 12454,
+        "defense": 8898,
+        "agility": 9284
       },
       {
         "star": 3,
@@ -7716,6 +8476,26 @@
         "agility": 7216
       },
       {
+        "star": 1,
+        "lv": 100,
+        "hp": 87022,
+        "en": 357,
+        "mobility": 5,
+        "attack": 12498,
+        "defense": 7321,
+        "agility": 8658
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 94274,
+        "en": 387,
+        "mobility": 5,
+        "attack": 13540,
+        "defense": 7931,
+        "agility": 9380
+      },
+      {
         "star": 3,
         "lv": 100,
         "hp": 101526,
@@ -7860,6 +8640,26 @@
         "attack": 6537,
         "defense": 8292,
         "agility": 6084
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 118360,
+        "en": 339,
+        "mobility": 5,
+        "attack": 7844,
+        "defense": 9950,
+        "agility": 7300
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 128223,
+        "en": 367,
+        "mobility": 5,
+        "attack": 8498,
+        "defense": 10780,
+        "agility": 7909
       },
       {
         "star": 3,
