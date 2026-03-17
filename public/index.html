@@ -215,11 +215,11 @@ a:hover{text-decoration:underline}
 .team-slot-card:hover{border-color:rgba(232,150,30,.3)}
 .team-slot-card .slot-header{display:flex;align-items:center;gap:4px;margin-bottom:4px}
 .team-slot-card .slot-number{width:22px;height:22px;background:var(--bg);border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.7em;font-weight:700;color:var(--accent);flex-shrink:0}
-.team-slot-card .slot-position{font-size:.6em;color:var(--card-text2);padding:1px 5px;background:var(--bg);border-radius:3px}
+.team-slot-card .slot-position{font-size:.6em;color:var(--card-text2);padding:1px 5px;background:rgba(255,255,255,.08);border-radius:3px}
 .team-slot-pair{display:flex;flex-direction:column;gap:6px}
-.team-slot-unit-area,.team-slot-chara-area{background:var(--bg);border:1px solid var(--border);border-radius:6px;padding:6px;min-height:40px}
+.team-slot-unit-area,.team-slot-chara-area{background:rgba(0,0,0,.25);border:1px solid var(--card-border);border-radius:6px;padding:6px;min-height:40px}
 .team-slot-unit-area .area-label,.team-slot-chara-area .area-label{font-size:.58em;color:var(--accent);font-weight:600;margin-bottom:3px;letter-spacing:.5px}
-.slot-empty{display:flex;align-items:center;justify-content:center;min-height:36px;border:1px dashed var(--border);border-radius:4px;cursor:pointer;color:var(--text2);font-size:.68em;transition:all .15s}
+.slot-empty{display:flex;align-items:center;justify-content:center;min-height:36px;border:1px dashed var(--card-border);border-radius:4px;cursor:pointer;color:var(--card-text2);font-size:.68em;transition:all .15s}
 .slot-empty:hover{border-color:var(--accent);color:var(--accent);background:rgba(232,150,30,.05)}
 .slot-filled{position:relative}
 .slot-filled .slot-top-row{display:flex;align-items:center;gap:6px;margin-bottom:4px}
@@ -229,12 +229,12 @@ a:hover{text-decoration:underline}
 .slot-filled .slot-badges{display:flex;gap:2px;margin-top:1px;flex-wrap:wrap}
 .slot-filled .slot-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:4px}
 .slot-filled .slot-stats.wide{grid-template-columns:repeat(3,1fr)}
-.slot-filled .slot-stat{text-align:center;padding:2px;background:rgba(255,255,255,.03);border-radius:2px;font-size:.6em}
-.slot-filled .slot-stat .ss-label{color:var(--text2);font-size:.8em}
-.slot-filled .slot-stat .ss-val{font-weight:700;color:var(--text)}
+.slot-filled .slot-stat{text-align:center;padding:2px;background:rgba(255,255,255,.06);border-radius:2px;font-size:.6em}
+.slot-filled .slot-stat .ss-label{color:var(--card-text2);font-size:.8em}
+.slot-filled .slot-stat .ss-val{font-weight:700;color:var(--card-text)}
 .slot-filled .slot-weapons{display:flex;flex-wrap:wrap;gap:2px;margin-top:4px}
 .slot-filled .slot-skills{display:flex;flex-wrap:wrap;gap:2px;margin-top:4px}
-.slot-filled .slot-abilities{margin-top:4px;font-size:.6em;color:var(--text2);line-height:1.4}
+.slot-filled .slot-abilities{margin-top:4px;font-size:.6em;color:var(--card-text2);line-height:1.4}
 .slot-filled .slot-abilities .abil-name{color:var(--accent);font-weight:600}
 
 
@@ -250,9 +250,9 @@ a:hover{text-decoration:underline}
 .team-stats-summary{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:16px;margin-bottom:16px}
 .team-stats-summary h3{font-size:.9em;color:var(--accent);margin-bottom:10px;border-bottom:1px solid var(--border);padding-bottom:6px}
 .team-stats-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin-bottom:12px}
-.team-stat-box{text-align:center;padding:8px;background:var(--bg);border-radius:6px;border:1px solid var(--border)}
-.team-stat-box .ts-label{font-size:.6em;color:var(--text2)}
-.team-stat-box .ts-val{font-size:1em;font-weight:700}
+.team-stat-box{text-align:center;padding:8px;background:rgba(0,0,0,.2);border-radius:6px;border:1px solid var(--card-border)}
+.team-stat-box .ts-label{font-size:.6em;color:var(--card-text2)}
+.team-stat-box .ts-val{font-size:1em;font-weight:700;color:var(--card-text)}
 .team-type-balance{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px}
 .team-type-chip{display:inline-flex;align-items:center;gap:4px;padding:4px 10px;border-radius:6px;font-size:.8em;font-weight:600;background:var(--bg);border:1px solid var(--border)}
 .team-type-chip img{width:16px;height:16px}
@@ -2460,7 +2460,7 @@ function renderSlotUnit(u, slotIdx) {
       ${iconHTML}
       <div class="slot-info">
         <div class="slot-name">${u.name}</div>
-        <div style="font-size:.65em;color:var(--text2)">${(u.series||[]).join(' / ')}</div>
+        <div style="font-size:.65em;color:var(--card-text2)">${(u.series||[]).join(' / ')}</div>
         ${buffBadge}
       </div>
     </div>
@@ -2472,7 +2472,7 @@ function renderSlotUnit(u, slotIdx) {
       <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"AGI":"機動"}</div><div class="ss-val">${(parseInt(s.agility)||0).toLocaleString()}</div></div>
       <div class="slot-stat"><div class="ss-label">${currentLang==="en"?"MOV":"移動"}</div><div class="ss-val">${parseInt(s.mobility)||0}</div></div>
     </div>
-    <div style="font-size:.68em;color:var(--text2);margin-top:4px">${currentLang==="en"?"Terrain":"地形"}: ${terrStr}</div>
+    <div style="font-size:.68em;color:var(--card-text2);margin-top:4px">${currentLang==="en"?"Terrain":"地形"}: ${terrStr}</div>
     ${weapons ? `<div class="slot-weapons">${weapons}</div>` : ''}
   </div>`;
 }
