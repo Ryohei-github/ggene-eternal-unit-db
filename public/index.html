@@ -1965,7 +1965,27 @@ function showUnitDetail(id) {
 }
 
 function findCharaByName(name) {
-  return allCharas.find(c => c.name === name);
+  if (!name) return null;
+  const clean = name.replace(/【[^】]*】$/,'').trim();
+  return allCharas.find(c => c.name === name) || allCharas.find(c => c.name === clean);
+}
+function findCharaByObtain(obtain) {
+  if (!obtain || !obtain.includes('【')) return null;
+  const clean = obtain.replace(/【[^】]*】$/,'').trim();
+  return allCharas.find(c => c.name === clean) || allCharas.find(c => c.name === obtain);
+}
+function getObtainChara(u) {
+  const c = findCharaByObtain(u.obtain);
+  if (!c) return '';
+  const iconImg = c.image ? `<img src="${c.image}" style="width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);object-fit:cover" onerror="this.style.display='none'">` : '<div style="width:36px;height:36px;border-radius:50%;border:2px solid var(--accent);background:rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;font-size:1.2em">👤</div>';
+  return `<div class="paired-chara-card" onclick="showCharaDetail(${c.id})" title="キャラ詳細を表示">
+    ${iconImg}
+    <div class="paired-chara-info">
+      <div class="paired-chara-name">${c.name}</div>
+      <div class="paired-chara-meta"><span class="badge ${rarityClass(c.rarity)}" style="font-size:.55em">${c.rarity||'?'}</span> ${typeBadgeHTML(c.chara_type)}</div>
+    </div>
+    <div class="paired-chara-arrow">›</div>
+  </div>`;
 }
 function getPairedCharas(tags) {
   return (tags||[]).map(t => ({tag:t, chara:findCharaByName(t)})).filter(x => x.chara);
@@ -2086,7 +2106,7 @@ function renderUnitDetail(u, form) {
         <div class="detail-badges">
           <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
           ${typeBadgeHTML(u.type)}
-          <span class="badge badge-type">${(u.obtain||'').replace(/ピックアップガ[シチ]ャ/g,'ガシャ')}</span>
+          ${findCharaByObtain(u.obtain) ? '' : `<span class="badge badge-type">${(u.obtain||'').replace(/ピックアップガ[シチ]ャ/g,'ガシャ')}</span>`}
         </div>
       </div>
     </div>
@@ -2094,7 +2114,7 @@ function renderUnitDetail(u, form) {
     <div class="detail-section">
       <div style="font-size:.8em;color:var(--card-text2);margin-bottom:4px">${(u.series||[]).join(' / ')}</div>
       <div class="card-tags">${getNonCharaTags(u.tags).map(t=>`<span class="tag clickable-tag" onclick="filterByTag('${t.replace(/'/g,"\\'")}');closeModal()">${t}</span>`).join('')}</div>
-      ${getPairedCharas(u.tags).length ? `<div class="paired-chara-section"><h4>👤 獲得キャラクター</h4>${pairedCharaHTML(u)}</div>` : ''}
+      ${getObtainChara(u) ? `<div class="paired-chara-section"><h4>👤 獲得キャラクター</h4>${getObtainChara(u)}</div>` : (getPairedCharas(u.tags).length ? `<div class="paired-chara-section"><h4>👤 獲得キャラクター</h4>${pairedCharaHTML(u)}</div>` : '')}
     </div>
     <div class="detail-section">
       <h3>ステータス${isTransform ? ' (変形後)' : ''}${!isTransform && u.rarity==='UR' ? ' <span class="rarity-note">※最大強化時のステータス</span>' : !isTransform && u.rarity==='SSR' ? ' <span class="rarity-note">※SSP化時のステータス</span>' : ''}</h3>
