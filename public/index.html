@@ -1986,7 +1986,7 @@ function charaCardHTML(c) {
 
   const iconHTML = c.image ? `<img class="card-icon" src="${c.image}" alt="${c.name}" onerror="this.style.display='none'" loading="lazy" width="40" height="40">` : '';
 
-  return `<div class="card" onclick="showCharaDetail(${c.id})">
+  return `<div class="card" data-chara-id="${c.id}" onclick="showCharaDetail(${c.id})">
     <div class="card-header">
       ${iconHTML}
       <div class="card-name">${c.name}</div>
@@ -2001,6 +2001,9 @@ function charaCardHTML(c) {
     ${skillTags ? `<div class="card-skills">${skillTags}</div>` : ''}
     ${abilCount ? `<div class="card-abilities-count">${t("アビリティ")}: ${abilCount}${currentLang==="en"?"":"個"}</div>` : ''}
     <div class="card-tags">${(c.tags||[]).slice(0,4).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('')}</div>
+    <div class="compare-btn" onclick="event.stopPropagation();toggleCompare(${c.id},null,'chara')">
+      ${_compareList.includes(c.id) && _compareMode==='chara' ?'✓ 比較中':'⚔ 比較する'}
+    </div>
   </div>`;
 }
 
@@ -3989,11 +3992,20 @@ document.getElementById('tagSearchInput')?.addEventListener('input', () => { ren
 
 // === COMPARE FEATURE ===
 window._compareList = [];
+window._compareMode = 'unit'; // 'unit' or 'chara'
 const COMPARE_MAX = 3;
 const COMPARE_COLORS = ['#e8961e','#3ab5a8','#e63950'];
 
-function toggleCompare(id, evt) {
+function toggleCompare(id, evt, mode) {
   if (evt) { evt.stopPropagation(); evt.preventDefault(); }
+  const newMode = mode || (currentTab === 'chara' ? 'chara' : 'unit');
+  // If switching mode, clear list
+  if (_compareList.length > 0 && _compareMode !== newMode) {
+    _compareList = [];
+    window._compareList = _compareList;
+  }
+  _compareMode = newMode;
+  window._compareMode = _compareMode;
   const idx = _compareList.indexOf(id);
   if (idx >= 0) {
     _compareList.splice(idx, 1);
@@ -4011,10 +4023,11 @@ function updateCompareUI() {
   if (_compareList.length > 0) {
     fab.style.display = 'flex';
     cnt.textContent = _compareList.length;
+    const modeLabel = _compareMode === 'chara' ? 'キャラ' : 'ユニット';
     if (_compareList.length === 1) {
       txt.textContent = '⚔ もう1体選択';
     } else {
-      txt.textContent = '⚔ 比較する';
+      txt.textContent = '⚔ ' + modeLabel + '比較';
     }
   } else {
     fab.style.display = 'none';
@@ -4022,7 +4035,14 @@ function updateCompareUI() {
   // Update card selections & icons
   document.querySelectorAll('.card[data-unit-id]').forEach(card => {
     const uid = parseInt(card.getAttribute('data-unit-id'));
-    const isSelected = _compareList.includes(uid);
+    const isSelected = _compareMode === 'unit' && _compareList.includes(uid);
+    card.classList.toggle('compare-selected', isSelected);
+    const btn = card.querySelector('.compare-btn');
+    if (btn) btn.innerHTML = isSelected ? '✓ 比較中' : '⚔ 比較する';
+  });
+  document.querySelectorAll('.card[data-chara-id]').forEach(card => {
+    const cid = parseInt(card.getAttribute('data-chara-id'));
+    const isSelected = _compareMode === 'chara' && _compareList.includes(cid);
     card.classList.toggle('compare-selected', isSelected);
     const btn = card.querySelector('.compare-btn');
     if (btn) btn.innerHTML = isSelected ? '✓ 比較中' : '⚔ 比較する';
@@ -4032,6 +4052,8 @@ function updateCompareUI() {
 function clearCompare() {
   _compareList = [];
   window._compareList = _compareList;
+  _compareMode = 'unit';
+  window._compareMode = _compareMode;
   updateCompareUI();
   document.getElementById('compareOverlay').classList.remove('open');
 }
@@ -4063,17 +4085,18 @@ function closeComparePicker() {
 
 function renderComparePicker() {
   const q = (document.getElementById('comparePickerSearch').value||'').toLowerCase();
-  const list = allUnits.filter(u => {
-    if (_compareList.includes(u.id)) return false;
-    if (q && !u.name.toLowerCase().includes(q)) return false;
+  const source = _compareMode === 'chara' ? allCharas : allUnits;
+  const list = source.filter(x => {
+    if (_compareList.includes(x.id)) return false;
+    if (q && !x.name.toLowerCase().includes(q)) return false;
     return true;
   }).slice(0, 50);
-  document.getElementById('comparePickerList').innerHTML = list.map(u => `
-    <div class="compare-picker-item" onclick="addFromPicker(${u.id})">
-      ${u.image ? `<img src="${u.image}" alt="" onerror="this.style.display='none'" loading="lazy">` : '<div style="width:36px;height:36px;background:var(--border);border-radius:6px"></div>'}
+  document.getElementById('comparePickerList').innerHTML = list.map(x => `
+    <div class="compare-picker-item" onclick="addFromPicker(${x.id})">
+      ${x.image ? `<img src="${x.image}" alt="" onerror="this.style.display='none'" loading="lazy">` : '<div style="width:36px;height:36px;background:var(--border);border-radius:6px"></div>'}
       <div>
-        <div class="cpi-name">${u.name}</div>
-        <div class="cpi-sub">${u.rarity||''} / ${u.type||''} / ${(u.series||[]).join(', ')}</div>
+        <div class="cpi-name">${x.name}</div>
+        <div class="cpi-sub">${x.rarity||''} / ${x.type || x.chara_type || ''} / ${Array.isArray(x.series) ? x.series.join(', ') : (x.series||'')}</div>
       </div>
     </div>
   `).join('') || '<div style="padding:20px;text-align:center;color:var(--text2)">該当なし</div>';
@@ -4100,6 +4123,7 @@ function removeFromCompare(id) {
 }
 
 function renderComparePanel() {
+  if (_compareMode === 'chara') return renderCharaComparePanel();
   const units = _compareList.map(id => allUnits.find(u => u.id === id)).filter(Boolean);
   const n = units.length;
   const colClass = 'cols-' + n;
@@ -4183,6 +4207,154 @@ function renderComparePanel() {
 
   // Draw radar chart
   setTimeout(() => drawCompareRadar(units), 50);
+}
+
+
+function renderCharaComparePanel() {
+  const charas = _compareList.map(id => allCharas.find(c => c.id === id)).filter(Boolean);
+  const n = charas.length;
+  const colClass = 'cols-' + n;
+
+  const headers = charas.map((c, i) => `
+    <div class="compare-unit-col">
+      <div class="unit-header">
+        ${c.image ? `<img src="${c.image}" alt="" onerror="this.style.display='none'">` : ''}
+        <div class="unit-name" data-index="${i+1}">${c.name}</div>
+        <div><span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span> ${typeBadgeHTML(c.chara_type)}</div>
+        <button class="compare-unit-remove" onclick="removeFromCompare(${c.id})">✕ 外す</button>
+      </div>
+    </div>
+  `).join('');
+
+  const statKeys = [
+    {key:'shooting', label:'射撃'}, {key:'melee', label:'格闘'}, {key:'awakening', label:'覚醒'},
+    {key:'defense', label:'守備'}, {key:'reaction', label:'反応'}
+  ];
+
+  let statsHTML = '';
+  statKeys.forEach(sk => {
+    const vals = charas.map(c => parseInt((c.stats||{})[sk.key])||0);
+    const maxVal = Math.max(...vals);
+    const minVal = Math.min(...vals);
+    const cells = vals.map(v => {
+      let cls = '';
+      if (n > 1 && v === maxVal && vals.filter(x=>x===maxVal).length < n) cls = 'best';
+      else if (n > 1 && v === minVal && vals.filter(x=>x===minVal).length < n) cls = 'worst';
+      return `<div class="compare-stat-cell ${cls}">${v.toLocaleString()}</div>`;
+    }).join('');
+    statsHTML += `<div><div class="compare-stat-row ${colClass}" style="grid-template-columns:80px repeat(${n},1fr)"><div style="font-size:.75em;color:var(--accent);font-weight:600;text-align:left">${sk.label}</div>${cells}</div></div>`;
+  });
+
+  // Skills comparison
+  let skillsHTML = charas.map((c, i) => {
+    const sks = (c.skills||[]).map(sk => `<div style="font-size:.8em;padding:3px 0;border-bottom:1px solid var(--card-border)"><strong style="color:${COMPARE_COLORS[i]}">${sk.name}</strong> <span style="color:var(--card-text2)">SP:${sk.sp_cost||'?'}</span>${sk.effect ? `<div style="font-size:.85em;color:var(--card-text2);margin-top:2px">${sk.effect}</div>` : ''}</div>`).join('');
+    return `<div class="compare-unit-col"><div style="font-size:.8em;font-weight:700;color:${COMPARE_COLORS[i]};margin-bottom:4px">${c.name}</div>${sks || '<div style="color:var(--card-text2);font-size:.8em">スキルなし</div>'}</div>`;
+  }).join('');
+
+  // Abilities comparison
+  let abilitiesHTML = charas.map((c, i) => {
+    const abs = (c.abilities||[]).map(a => `<div style="font-size:.8em;padding:3px 0;border-bottom:1px solid var(--card-border)"><strong style="color:${COMPARE_COLORS[i]}">${a.name}</strong>${a.desc ? `<span style="color:var(--card-text2)"> ${a.desc}</span>` : ''}</div>`).join('');
+    return `<div class="compare-unit-col"><div style="font-size:.8em;font-weight:700;color:${COMPARE_COLORS[i]};margin-bottom:4px">${c.name}</div>${abs || '<div style="color:var(--card-text2);font-size:.8em">アビリティなし</div>'}</div>`;
+  }).join('');
+
+  const addSlot = n < COMPARE_MAX ? `<div class="compare-add-slot" onclick="openComparePicker()">＋ キャラを追加（最大${COMPARE_MAX}体）</div>` : '';
+
+  document.getElementById('comparePanel').innerHTML = `
+    <button class="compare-panel-close" onclick="closeComparePanel()">✕</button>
+    <h2>⚔ キャラ比較</h2>
+    <div class="compare-legend">${charas.map((c,i) => `<div class="compare-legend-item"><div class="dot" style="background:${COMPARE_COLORS[i]}"></div>${c.name}</div>`).join('')}</div>
+    <div class="compare-units ${colClass}">${headers}</div>
+    ${addSlot}
+    <div class="compare-section">
+      <h3>ステータス比較</h3>
+      ${statsHTML}
+    </div>
+    <div class="compare-section">
+      <h3>レーダーチャート</h3>
+      <div class="compare-radar-wrap"><canvas id="compareRadar" width="420" height="420"></canvas></div>
+    </div>
+    <div class="compare-section">
+      <h3>スキル比較</h3>
+      <div class="compare-units ${colClass}">${skillsHTML}</div>
+    </div>
+    <div class="compare-section">
+      <h3>アビリティ比較</h3>
+      <div class="compare-units ${colClass}">${abilitiesHTML}</div>
+    </div>
+    <div style="text-align:center;margin-top:16px">
+      <button onclick="clearCompare()" style="background:none;border:1px solid var(--card-text2);color:var(--card-text2);padding:8px 24px;border-radius:6px;cursor:pointer;font-size:.85em">比較をリセット</button>
+    </div>
+  `;
+
+  // Draw radar chart for charas
+  setTimeout(() => drawCharaCompareRadar(charas), 50);
+}
+
+function drawCharaCompareRadar(charas) {
+  const canvas = document.getElementById('compareRadar');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W = canvas.width, H = canvas.height;
+  const cx = W/2, cy = H/2, R = Math.min(W,H)/2 - 50;
+  ctx.clearRect(0, 0, W, H);
+
+  const labels = ['射撃','格闘','覚醒','守備','反応'];
+  const keys = ['shooting','melee','awakening','defense','reaction'];
+  const n = labels.length;
+  const angleStep = (Math.PI * 2) / n;
+  const startAngle = -Math.PI / 2;
+
+  const maxVals = keys.map(k => Math.max(...allCharas.map(c => parseInt((c.stats||{})[k])||0), 1));
+
+  [0.2, 0.4, 0.6, 0.8, 1.0].forEach(scale => {
+    ctx.beginPath();
+    for (let i = 0; i <= n; i++) {
+      const angle = startAngle + angleStep * (i % n);
+      const x = cx + Math.cos(angle) * R * scale;
+      const y = cy + Math.sin(angle) * R * scale;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.strokeStyle = 'rgba(255,255,255,.1)';
+    ctx.lineWidth = 1;
+    ctx.stroke();
+  });
+
+  for (let i = 0; i < n; i++) {
+    const angle = startAngle + angleStep * i;
+    const x = cx + Math.cos(angle) * R;
+    const y = cy + Math.sin(angle) * R;
+    ctx.beginPath(); ctx.moveTo(cx, cy); ctx.lineTo(x, y);
+    ctx.strokeStyle = 'rgba(255,255,255,.15)'; ctx.stroke();
+    const lx = cx + Math.cos(angle) * (R + 28);
+    const ly = cy + Math.sin(angle) * (R + 28);
+    ctx.fillStyle = '#8a8d98'; ctx.font = '12px sans-serif';
+    ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+    ctx.fillText(labels[i], lx, ly);
+  }
+
+  charas.forEach((c, ci) => {
+    const stats = c.stats || {};
+    ctx.beginPath();
+    keys.forEach((k, i) => {
+      const val = (parseInt(stats[k])||0) / maxVals[i];
+      const angle = startAngle + angleStep * i;
+      const x = cx + Math.cos(angle) * R * val;
+      const y = cy + Math.sin(angle) * R * val;
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    });
+    ctx.closePath();
+    const color = COMPARE_COLORS[ci];
+    ctx.fillStyle = color + '33'; ctx.fill();
+    ctx.strokeStyle = color; ctx.lineWidth = 2.5; ctx.stroke();
+    keys.forEach((k, i) => {
+      const val = (parseInt(stats[k])||0) / maxVals[i];
+      const angle = startAngle + angleStep * i;
+      const x = cx + Math.cos(angle) * R * val;
+      const y = cy + Math.sin(angle) * R * val;
+      ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI*2);
+      ctx.fillStyle = color; ctx.fill();
+    });
+  });
 }
 
 function drawCompareRadar(units) {
