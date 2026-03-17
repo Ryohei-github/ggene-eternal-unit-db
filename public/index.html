@@ -1955,7 +1955,7 @@ function unitCardHTML(u) {
     <div class="card-weapons">${weapons}</div>
     <div class="card-tags">${topTags}</div>
     <div class="compare-btn" onclick="event.stopPropagation();toggleCompare(${u.id})">
-      ${_compareList.includes(u.id)?'✓ 比較中':'⚔ 比較する'}
+      ${_compareList.includes(u.id)?'✓ 比較中':'⚔ ユニット比較'}
     </div>
   </div>`;
 }
@@ -2002,7 +2002,7 @@ function charaCardHTML(c) {
     ${abilCount ? `<div class="card-abilities-count">${t("アビリティ")}: ${abilCount}${currentLang==="en"?"":"個"}</div>` : ''}
     <div class="card-tags">${(c.tags||[]).slice(0,4).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('')}</div>
     <div class="compare-btn" onclick="event.stopPropagation();toggleCompare(${c.id},null,'chara')">
-      ${_compareList.includes(c.id) && _compareMode==='chara' ?'✓ 比較中':'⚔ 比較する'}
+      ${_compareList.includes(c.id) && _compareMode==='chara' ?'✓ 比較中':'⚔ キャラ比較'}
     </div>
   </div>`;
 }
@@ -4038,14 +4038,14 @@ function updateCompareUI() {
     const isSelected = _compareMode === 'unit' && _compareList.includes(uid);
     card.classList.toggle('compare-selected', isSelected);
     const btn = card.querySelector('.compare-btn');
-    if (btn) btn.innerHTML = isSelected ? '✓ 比較中' : '⚔ 比較する';
+    if (btn) btn.innerHTML = isSelected ? '✓ 比較中' : '⚔ ユニット比較';
   });
   document.querySelectorAll('.card[data-chara-id]').forEach(card => {
     const cid = parseInt(card.getAttribute('data-chara-id'));
     const isSelected = _compareMode === 'chara' && _compareList.includes(cid);
     card.classList.toggle('compare-selected', isSelected);
     const btn = card.querySelector('.compare-btn');
-    if (btn) btn.innerHTML = isSelected ? '✓ 比較中' : '⚔ 比較する';
+    if (btn) btn.innerHTML = isSelected ? '✓ 比較中' : '⚔ キャラ比較';
   });
 }
 
