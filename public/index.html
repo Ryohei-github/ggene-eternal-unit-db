@@ -1970,9 +1970,9 @@ function findCharaByName(name) {
   return allCharas.find(c => c.name === name) || allCharas.find(c => c.name === clean);
 }
 function findCharaByObtain(obtain) {
-  if (!obtain || !obtain.includes('【')) return null;
+  if (!obtain) return null;
   const clean = obtain.replace(/【[^】]*】$/,'').trim();
-  return allCharas.find(c => c.name === clean) || allCharas.find(c => c.name === obtain);
+  return allCharas.find(c => c.name === obtain) || allCharas.find(c => c.name === clean);
 }
 function getObtainChara(u) {
   const c = findCharaByObtain(u.obtain);
