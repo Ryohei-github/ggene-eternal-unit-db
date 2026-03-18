@@ -2535,7 +2535,7 @@ function showSupporterDetail(id) {
   const hasTier2 = !!s.leader2_target;
   const base2 = s.leader2_0 || '';
   const max2 = s.leader2_3 || s.leader2_2 || s.leader2_1 || base2;
-  const obtainLabel = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.7em;padding:2px 8px;border-radius:4px;margin-left:6px">限定</span>' : (s.obtain ? `<span style="background:rgba(255,255,255,.1);color:var(--card-text);font-size:.7em;padding:2px 8px;border-radius:4px;margin-left:6px;border:1px solid var(--card-border)">${s.obtain}</span>` : '');
+  const obtainLabel = s.obtain === '限定' ? '<span class="badge" style="background:#ff6b6b;color:#fff">限定</span>' : (s.obtain ? `<span class="badge badge-type">${s.obtain}</span>` : '');
   const recIcon = supportSkillIcon(s.recovery_type, 24);
   // Leader skill convex table
   let convexHTML = '';
@@ -2562,8 +2562,9 @@ function showSupporterDetail(id) {
     <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px">
       ${s.image ? `<img src="${s.image}" alt="${s.name}" style="width:64px;height:64px;border-radius:8px;object-fit:cover;border:2px solid var(--border);flex-shrink:0" onerror="this.style.display='none'">` : ''}
       <div>
-        <h2 style="margin:0">${s.name}${obtainLabel}</h2>
+        <h2 style="margin:0">${s.name}</h2>
         <div class="detail-badges" style="margin-top:4px">
+          ${obtainLabel}
           <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
           ${s.target_series ? `<span class="badge badge-type leader-tag-clickable" style="cursor:pointer" onclick="showTargetUnits('${s.target_series.replace(/'/g,"\\'")}')">${s.target_series}</span>` : ''}
         </div>
