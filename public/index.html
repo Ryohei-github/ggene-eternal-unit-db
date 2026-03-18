@@ -2382,8 +2382,7 @@ function renderUnitDetail(u, form) {
           <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
           ${typeBadgeHTML(u.type)}
           ${getUnitPairedChara(u).chara ? '' : (u.obtain ? `<span class="badge badge-type">${(u.obtain||'').replace(/ピックアップガ[シチ]ャ/g,'ガシャ')}</span>` : '')}
-          <button onclick="toggleCompare(${u.id});closeModal()" style="background:none;border:1px solid var(--accent);color:var(--accent);padding:2px 10px;border-radius:4px;font-size:.7em;cursor:pointer;font-weight:600;transition:all .2s" onmouseover="this.style.background='var(--accent)';this.style.color='#000'" onmouseout="this.style.background='none';this.style.color='var(--accent)'">${'${_compareList.includes(u.id) ? "⚔ 比較中" : "⚔ 比較に追加"}'}
-          </button>
+          <button onclick="toggleCompare(${u.id});closeModal()" style="background:none;border:1px solid var(--accent);color:var(--accent);padding:2px 10px;border-radius:4px;font-size:.7em;cursor:pointer;font-weight:600;transition:all .2s" onmouseover="this.style.background='var(--accent)';this.style.color='#000'" onmouseout="this.style.background='none';this.style.color='var(--accent)'">${_compareList.includes(u.id) ? '⚔ 比較中' : '⚔ 比較に追加'}</button>
         </div>
       </div>
     </div>
@@ -2536,7 +2535,7 @@ function showSupporterDetail(id) {
   const hasTier2 = !!s.leader2_target;
   const base2 = s.leader2_0 || '';
   const max2 = s.leader2_3 || s.leader2_2 || s.leader2_1 || base2;
-  const obtainLabel = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.7em;padding:2px 8px;border-radius:4px;margin-left:6px">限定</span>' : (s.obtain ? `<span style="font-size:.7em;color:var(--text2);margin-left:6px">${s.obtain}</span>` : '');
+  const obtainLabel = s.obtain === '限定' ? '<span style="background:#ff6b6b;color:#fff;font-size:.7em;padding:2px 8px;border-radius:4px;margin-left:6px">限定</span>' : (s.obtain ? `<span style="background:rgba(255,255,255,.1);color:var(--card-text);font-size:.7em;padding:2px 8px;border-radius:4px;margin-left:6px;border:1px solid var(--card-border)">${s.obtain}</span>` : '');
   const recIcon = supportSkillIcon(s.recovery_type, 24);
   // Leader skill convex table
   let convexHTML = '';
