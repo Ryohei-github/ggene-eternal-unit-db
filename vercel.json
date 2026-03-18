@@ -10,7 +10,18 @@
           "value": "ggene-eternal-unit-db.vercel.app"
         }
       ],
-      "destination": "https://mh-dev-gget-db.vercel.app/$1",
+      "destination": "https://gget-db.com/$1",
+      "permanent": true
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "mh-dev-gget-db.vercel.app"
+        }
+      ],
+      "destination": "https://gget-db.com/$1",
       "permanent": true
     }
   ]
