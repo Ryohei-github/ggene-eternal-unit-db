@@ -4553,8 +4553,8 @@ function renderRanking() {
       name: c.name,
       image: c.image,
       rarity: c.rarity,
-      type: c.type,
-      series: (c.series||[]).join(' / '),
+      type: c.chara_type || c.type || '',
+      series: typeof c.series === 'string' ? c.series : (c.series||[]).join(' / '),
       val: parseInt((c.stats||{})[_rankingStat])||0,
       onclick: `showCharaDetail(${c.id})`
     }));
