@@ -886,11 +886,13 @@ a:hover{text-decoration:underline}
     <button class="clear-filters-btn" id="clearFiltersBtn" onclick="clearAllFilters()" style="display:none">✕ フィルタークリア</button>
   </div>
   <div class="stats-bar">
-    <span id="resultCount">読込中...</span>
-    <span class="sp-switch" id="spToggle">
-      <button class="sp-sw-btn" id="spBtn" onclick="toggleStatMode('sp')">SP</button>
-      <button class="sp-sw-btn" id="sspBtn" onclick="toggleStatMode('ssp')">SSP</button>
-    </span>
+    <div style="display:flex;align-items:center;gap:8px">
+      <span id="resultCount">読込中...</span>
+      <span class="sp-switch" id="spToggle">
+        <button class="sp-sw-btn" id="spBtn" onclick="toggleStatMode('sp')">SP</button>
+        <button class="sp-sw-btn" id="sspBtn" onclick="toggleStatMode('ssp')">SSP</button>
+      </span>
+    </div>
     <div style="display:flex;align-items:center">
       <div class="sort-btns" id="sortBtns">
         <button class="sort-btn active" data-sort="cp">戦闘力順</button>
@@ -1953,7 +1955,8 @@ function toggleStatMode(mode) {
 }
 
 function getUnitDisplayStats(u) {
-  // Returns stats object based on current _statMode
+  // UR/ULT have no SP/SSP concept - always return normal stats
+  if (u.rarity === 'UR' || u.rarity === 'ULT') return u.normal?.stats || {};
   const sbs = u.stats_by_star || [];
   if (_statMode === 'ssp') {
     const ssp = sbs.find(s => s.star === 5);
@@ -1963,7 +1966,6 @@ function getUnitDisplayStats(u) {
     const sp = sbs.find(s => s.star === 4);
     if (sp && sp.hp > 0) return {hp:String(sp.hp),en:String(sp.en),attack:String(sp.attack),defense:String(sp.defense),agility:String(sp.agility),mobility:String(sp.mobility)};
   }
-  // Default: normal max (★★★ = star 3, or fallback to normal.stats)
   const star3 = sbs.find(s => s.star === 3);
   if (star3 && star3.hp > 0) return {hp:String(star3.hp),en:String(star3.en),attack:String(star3.attack),defense:String(star3.defense),agility:String(star3.agility),mobility:String(star3.mobility)};
   return u.normal?.stats || {};
@@ -1996,7 +1998,7 @@ function unitCardHTML(u) {
     </div>
     <div class="card-series">${(u.series||[]).map(s=>tData(s,"series")).join(' / ')}</div>
     ${u.normal?.combat_power ? `<div class="card-combat-power">${t('戦闘力')}: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
-    ${_statMode==='ssp' ? '<div class="card-rarity-note" style="color:#f472b6">※SSP化時のステータス</div>' : _statMode==='sp' ? '<div class="card-rarity-note" style="color:#c084fc">※SP化時のステータス</div>' : (u.rarity==='UR' || u.rarity==='SSR') ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : ''}
+    ${(u.rarity==='UR' || u.rarity==='ULT') ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : _statMode==='ssp' ? '<div class="card-rarity-note" style="color:#f472b6">※SSP化時のステータス</div>' : _statMode==='sp' ? '<div class="card-rarity-note" style="color:#c084fc">※SP化時のステータス</div>' : u.rarity==='SSR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : ''}
     <div class="card-stats">
       <div class="stat"><div class="stat-label">${t("攻撃力")}</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'attack')}</div></div>
       <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'hp')}</div></div>
