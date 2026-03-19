@@ -1871,16 +1871,16 @@ const TYPE_ICON_MAP = {
 };
 // === Debuff Filter Config ===
 const DEBUFF_CATEGORIES = [
-  { key:'atkDown', label:'攻撃力↓', pattern:/攻撃力(\d+)(?:~(\d+))?%減少/, rates:[15,20,25,30,35] },
-  { key:'defDown', label:'防御力↓', pattern:/防御力(\d+)(?:~(\d+))?%減少/, rates:[20,25,30,35] },
-  { key:'mobDown', label:'機動力↓', pattern:/機動力(\d+)(?:~(\d+))?%減少/, rates:[20,25,30] },
-  { key:'hitDown', label:'命中率↓', pattern:/命中率(\d+)(?:~(\d+))?%減少/, rates:[5,10,12,15,17] },
-  { key:'beamDmgUp', label:'ビーム被ダメ↑', pattern:/ビーム武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?%上昇/, rates:[20,25,30,35] },
-  { key:'physDmgUp', label:'物理被ダメ↑', pattern:/物理武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?%上昇/, rates:[10,20,25,30,35] },
-  { key:'specDmgUp', label:'特殊被ダメ↑', pattern:/特殊武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?%上昇/, rates:[20,25,30,35] },
-  { key:'beamPwDown', label:'ビームPW↓', pattern:/ビーム武装POWER(\d+)(?:~(\d+))?%減少/, rates:[20,25,30,35] },
-  { key:'physPwDown', label:'物理PW↓', pattern:/物理武装POWER(\d+)(?:~(\d+))?%減少/, rates:[20,25,30,35] },
-  { key:'specPwDown', label:'特殊PW↓', pattern:/特殊武装POWER(\d+)(?:~(\d+))?%減少/, rates:[20,25,30,35] },
+  { key:'atkDown', label:'攻撃力↓', pattern:/攻撃力(\d+)(?:~(\d+))?[%％]減少/, rates:[15,20,25,30,35] },
+  { key:'defDown', label:'防御力↓', pattern:/防御力(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'mobDown', label:'機動力↓', pattern:/機動力(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30] },
+  { key:'hitDown', label:'命中率↓', pattern:/命中率(\d+)(?:~(\d+))?[%％]減少/, rates:[5,10,12,15,17] },
+  { key:'beamDmgUp', label:'ビーム被ダメ↑', pattern:/ビーム武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[20,25,30,35] },
+  { key:'physDmgUp', label:'物理被ダメ↑', pattern:/物理武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[10,20,25,30,35] },
+  { key:'specDmgUp', label:'特殊被ダメ↑', pattern:/特殊武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[20,25,30,35] },
+  { key:'beamPwDown', label:'ビームPW↓', pattern:/ビーム武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'physPwDown', label:'物理PW↓', pattern:/物理武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'specPwDown', label:'特殊PW↓', pattern:/特殊武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
 ];
 const SPECIAL_EFFECTS = [
   { key:'absHit', label:'絶対命中', pattern:/絶対命中/ },
@@ -1897,7 +1897,7 @@ function getMaxDebuffRate(effectText, pattern) {
   const m = effectText.match(pattern);
   if (!m) return 0;
   const base = parseInt(m[2] || m[1]) || 0;
-  const bonusMatch = effectText.match(/さらに[^\d]*(\d+)%/);
+  const bonusMatch = effectText.match(/さらに[^\d]*(\d+)[%％]/);
   return base + (bonusMatch ? parseInt(bonusMatch[1]) : 0);
 }
 
