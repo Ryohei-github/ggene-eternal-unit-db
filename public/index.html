@@ -457,7 +457,7 @@ a:hover{text-decoration:underline}
 
 
 /* SP/SSP Toggle */
-.sp-toggle{display:flex;gap:4px;align-items:center}
+.sp-toggle{display:inline-flex;gap:4px;align-items:center;margin-left:4px}
 .sp-toggle-btn{padding:3px 10px;font-size:.68em;font-weight:700;border-radius:4px;cursor:pointer;transition:all .2s;border:1.5px solid var(--border);background:none;color:var(--text2)}
 .sp-toggle-btn:hover{border-color:var(--accent);color:var(--accent)}
 .sp-toggle-btn.active-sp{background:rgba(192,132,252,.15);border-color:#c084fc;color:#c084fc}
@@ -896,11 +896,10 @@ a:hover{text-decoration:underline}
         <button class="sort-btn" data-sort="en">EN順</button>
         <button class="sort-btn" data-sort="agi">機動力順</button>
         <button class="sort-btn" data-sort="name">名前順</button>
-      </div>
-      <div class="sp-toggle" id="spToggle">
-        <span class="sp-toggle-label">強化:</span>
-        <button class="sp-toggle-btn" id="spBtn" onclick="toggleStatMode('sp')" title="SP化ステータスで表示">SP</button>
-        <button class="sp-toggle-btn" id="sspBtn" onclick="toggleStatMode('ssp')" title="SSP化ステータスで表示">SSP</button>
+        <span class="sp-toggle" id="spToggle">
+          <button class="sp-toggle-btn" id="spBtn" onclick="toggleStatMode('sp')" title="SP化ステータスで表示">SP</button>
+          <button class="sp-toggle-btn" id="sspBtn" onclick="toggleStatMode('ssp')" title="SSP化ステータスで表示">SSP</button>
+        </span>
       </div>
       <div class="view-toggle" id="viewToggle">
         <button class="view-btn active" data-view="card" title="カード表示"><svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button>
@@ -1998,7 +1997,7 @@ function unitCardHTML(u) {
     </div>
     <div class="card-series">${(u.series||[]).map(s=>tData(s,"series")).join(' / ')}</div>
     ${u.normal?.combat_power ? `<div class="card-combat-power">${t('戦闘力')}: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
-    ${_statMode==='ssp' ? '<div class="card-rarity-note" style="color:#f472b6">※SSP化時</div>' : _statMode==='sp' ? '<div class="card-rarity-note" style="color:#c084fc">※SP化時</div>' : u.rarity==='UR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : u.rarity==='SSR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ SSP stats":"※SSP化時のステータス"}</div>` : ''}
+    ${_statMode==='ssp' ? '<div class="card-rarity-note" style="color:#f472b6">※SSP化時のステータス</div>' : _statMode==='sp' ? '<div class="card-rarity-note" style="color:#c084fc">※SP化時のステータス</div>' : (u.rarity==='UR' || u.rarity==='SSR') ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : ''}
     <div class="card-stats">
       <div class="stat"><div class="stat-label">${t("攻撃力")}</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'attack')}</div></div>
       <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'hp')}</div></div>
