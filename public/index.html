@@ -457,12 +457,12 @@ a:hover{text-decoration:underline}
 
 
 /* SP/SSP Toggle */
-.sp-toggle{display:inline-flex;gap:4px;align-items:center;margin-left:4px}
-.sp-toggle-btn{padding:3px 10px;font-size:.68em;font-weight:700;border-radius:4px;cursor:pointer;transition:all .2s;border:1.5px solid var(--border);background:none;color:var(--text2)}
-.sp-toggle-btn:hover{border-color:var(--accent);color:var(--accent)}
-.sp-toggle-btn.active-sp{background:rgba(192,132,252,.15);border-color:#c084fc;color:#c084fc}
-.sp-toggle-btn.active-ssp{background:rgba(244,114,182,.15);border-color:#f472b6;color:#f472b6}
-.sp-toggle-label{font-size:.6em;color:var(--text2);white-space:nowrap}
+.sp-switch{display:inline-flex;margin-left:8px;border-radius:20px;overflow:hidden;border:1.5px solid var(--border);background:var(--bg)}
+.sp-sw-btn{padding:3px 12px;font-size:.7em;font-weight:700;cursor:pointer;transition:all .25s;border:none;background:transparent;color:var(--text2);position:relative}
+.sp-sw-btn:first-child{border-right:1px solid var(--border)}
+.sp-sw-btn:hover{color:var(--text)}
+.sp-sw-btn.active-sp{background:#c084fc;color:#fff;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
+.sp-sw-btn.active-ssp{background:#f472b6;color:#fff;box-shadow:inset 0 1px 3px rgba(0,0,0,.2)}
 
 /* Grid */
 .grid{max-width:1800px;margin:0 auto;padding:0 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
@@ -887,6 +887,10 @@ a:hover{text-decoration:underline}
   </div>
   <div class="stats-bar">
     <span id="resultCount">読込中...</span>
+    <span class="sp-switch" id="spToggle">
+      <button class="sp-sw-btn" id="spBtn" onclick="toggleStatMode('sp')">SP</button>
+      <button class="sp-sw-btn" id="sspBtn" onclick="toggleStatMode('ssp')">SSP</button>
+    </span>
     <div style="display:flex;align-items:center">
       <div class="sort-btns" id="sortBtns">
         <button class="sort-btn active" data-sort="cp">戦闘力順</button>
@@ -896,10 +900,6 @@ a:hover{text-decoration:underline}
         <button class="sort-btn" data-sort="en">EN順</button>
         <button class="sort-btn" data-sort="agi">機動力順</button>
         <button class="sort-btn" data-sort="name">名前順</button>
-        <span class="sp-toggle" id="spToggle">
-          <button class="sp-toggle-btn" id="spBtn" onclick="toggleStatMode('sp')" title="SP化ステータスで表示">SP</button>
-          <button class="sp-toggle-btn" id="sspBtn" onclick="toggleStatMode('ssp')" title="SSP化ステータスで表示">SSP</button>
-        </span>
       </div>
       <div class="view-toggle" id="viewToggle">
         <button class="view-btn active" data-view="card" title="カード表示"><svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button>
