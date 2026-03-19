@@ -455,6 +455,15 @@ a:hover{text-decoration:underline}
   .tier-label{width:36px;min-width:36px;font-size:1em}
 }
 
+
+/* SP/SSP Toggle */
+.sp-toggle{display:flex;gap:4px;align-items:center}
+.sp-toggle-btn{padding:3px 10px;font-size:.68em;font-weight:700;border-radius:4px;cursor:pointer;transition:all .2s;border:1.5px solid var(--border);background:none;color:var(--text2)}
+.sp-toggle-btn:hover{border-color:var(--accent);color:var(--accent)}
+.sp-toggle-btn.active-sp{background:rgba(192,132,252,.15);border-color:#c084fc;color:#c084fc}
+.sp-toggle-btn.active-ssp{background:rgba(244,114,182,.15);border-color:#f472b6;color:#f472b6}
+.sp-toggle-label{font-size:.6em;color:var(--text2);white-space:nowrap}
+
 /* Grid */
 .grid{max-width:1800px;margin:0 auto;padding:0 16px 40px;display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
 
@@ -888,6 +897,11 @@ a:hover{text-decoration:underline}
         <button class="sort-btn" data-sort="agi">機動力順</button>
         <button class="sort-btn" data-sort="name">名前順</button>
       </div>
+      <div class="sp-toggle" id="spToggle">
+        <span class="sp-toggle-label">強化:</span>
+        <button class="sp-toggle-btn" id="spBtn" onclick="toggleStatMode('sp')" title="SP化ステータスで表示">SP</button>
+        <button class="sp-toggle-btn" id="sspBtn" onclick="toggleStatMode('ssp')" title="SSP化ステータスで表示">SSP</button>
+      </div>
       <div class="view-toggle" id="viewToggle">
         <button class="view-btn active" data-view="card" title="カード表示"><svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button>
         <button class="view-btn" data-view="table" title="テーブル表示"><svg viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="3" rx=".5"/><rect x="1" y="6" width="14" height="3" rx=".5"/><rect x="1" y="11" width="14" height="3" rx=".5"/></svg></button>
@@ -1199,6 +1213,7 @@ function initLangToggle() {
 
 let currentTab = 'unit';
 let currentSort = 'atk';
+let _statMode = 'normal'; // 'normal', 'sp', 'ssp'
 let currentDir = -1;
 let currentView = 'card';
 let activeTagLookup = '';  // currently selected tag in tag lookup
@@ -1321,6 +1336,7 @@ function setupTabs() {
       const isTierlist = currentTab === 'tierlist';
       const isSpecial = isTagLookup || isTeam || isRanking || isTierlist;
       document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
+      document.getElementById('spToggle').style.display = (currentTab === 'unit' && !isSpecial) ? 'flex' : 'none';
       document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
       document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
       document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
@@ -1929,8 +1945,34 @@ function rangeDisplay(w) {
 }
 
 // === UNIT CARD ===
+
+function toggleStatMode(mode) {
+  if (_statMode === mode) { _statMode = 'normal'; }
+  else { _statMode = mode; }
+  document.getElementById('spBtn').classList.toggle('active-sp', _statMode === 'sp');
+  document.getElementById('sspBtn').classList.toggle('active-ssp', _statMode === 'ssp');
+  render();
+}
+
+function getUnitDisplayStats(u) {
+  // Returns stats object based on current _statMode
+  const sbs = u.stats_by_star || [];
+  if (_statMode === 'ssp') {
+    const ssp = sbs.find(s => s.star === 5);
+    if (ssp && ssp.hp > 0) return {hp:String(ssp.hp),en:String(ssp.en),attack:String(ssp.attack),defense:String(ssp.defense),agility:String(ssp.agility),mobility:String(ssp.mobility)};
+  }
+  if (_statMode === 'sp') {
+    const sp = sbs.find(s => s.star === 4);
+    if (sp && sp.hp > 0) return {hp:String(sp.hp),en:String(sp.en),attack:String(sp.attack),defense:String(sp.defense),agility:String(sp.agility),mobility:String(sp.mobility)};
+  }
+  // Default: normal max (★★★ = star 3, or fallback to normal.stats)
+  const star3 = sbs.find(s => s.star === 3);
+  if (star3 && star3.hp > 0) return {hp:String(star3.hp),en:String(star3.en),attack:String(star3.attack),defense:String(star3.defense),agility:String(star3.agility),mobility:String(star3.mobility)};
+  return u.normal?.stats || {};
+}
+
 function unitCardHTML(u) {
-  const s = u.normal?.stats || {};
+  const s = getUnitDisplayStats(u);
   const ter = u.normal?.terrain || {};
   const weapons = (u.normal_weapons||[]).map(w => {
     let label = w.name;
@@ -1956,7 +1998,7 @@ function unitCardHTML(u) {
     </div>
     <div class="card-series">${(u.series||[]).map(s=>tData(s,"series")).join(' / ')}</div>
     ${u.normal?.combat_power ? `<div class="card-combat-power">${t('戦闘力')}: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
-    ${u.rarity==='UR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : u.rarity==='SSR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ SSP stats":"※SSP化時のステータス"}</div>` : ''}
+    ${_statMode==='ssp' ? '<div class="card-rarity-note" style="color:#f472b6">※SSP化時</div>' : _statMode==='sp' ? '<div class="card-rarity-note" style="color:#c084fc">※SP化時</div>' : u.rarity==='UR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : u.rarity==='SSR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ SSP stats":"※SSP化時のステータス"}</div>` : ''}
     <div class="card-stats">
       <div class="stat"><div class="stat-label">${t("攻撃力")}</div><div class="stat-val">${(parseInt(s.attack)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'attack')}</div></div>
       <div class="stat"><div class="stat-label">HP</div><div class="stat-val">${(parseInt(s.hp)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'hp')}</div></div>
