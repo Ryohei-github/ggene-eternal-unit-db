@@ -1335,7 +1335,6 @@ function setupTabs() {
       const isTierlist = currentTab === 'tierlist';
       const isSpecial = isTagLookup || isTeam || isRanking || isTierlist;
       document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
-      document.getElementById('spToggle').style.display = (currentTab === 'unit' && !isSpecial) ? 'flex' : 'none';
       document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
       document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
       document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
