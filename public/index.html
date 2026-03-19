@@ -2296,6 +2296,7 @@ function renderUnitDetail(u, form) {
   const s = formData.stats || {};
   const t = formData.terrain || {};
   const weapons = isTransform ? (u.transformed_weapons || []) : (u.normal_weapons || []);
+  const starData = isTransform ? (u.transformed?.stats_by_star || []) : (u.stats_by_star || []);
 
   let transformToggle = '';
   if (u.transformed) {
@@ -2403,13 +2404,13 @@ function renderUnitDetail(u, form) {
         <div class="stat-box"><div class="label">機動力</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'agility')}</div></div>
         <div class="stat-box"><div class="label">移動力</div><div class="val">${s.mobility||'-'}${rankBadge(_unitRanks,u.id,'mobility')}</div></div>
       </div>
-      ${u.stats_by_star && u.stats_by_star.length > 1 ? `
+      ${starData && starData.length > 1 ? `
       <div style="margin-top:10px">
         <details class="limit-break-details" open>
           <summary style="cursor:pointer;color:var(--accent);font-size:.85em;user-select:none">${u.rarity==='SSR'?'★限界突破 / SP化 / SSP化 ステータス一覧':'★限界突破ステータス一覧'}</summary>
           <table class="lb-table">
             <thead><tr><th>★</th><th>LV</th><th>HP</th><th>EN</th><th>攻撃</th><th>防御</th><th>機動</th><th>移動</th></tr></thead>
-            <tbody>${u.stats_by_star.map(st => `<tr${st.star >= 4 ? ' class="lb-sp"' : st.star === u.stats_by_star.filter(s=>s.star<=3).length - 1 && st.star <= 3 ? ' class="lb-max"' : ''}>
+            <tbody>${starData.map(st => `<tr${st.star >= 4 ? ' class="lb-sp"' : st.star === starData.filter(s=>s.star<=3).length - 1 && st.star <= 3 ? ' class="lb-max"' : ''}>
               <td>${st.star === 0 ? '無' : st.star === 4 ? '<span class="sp-label">★★★<br>SP化</span>' : st.star === 5 ? '<span class="ssp-label">★★★<br>SSP化</span>' : '★'.repeat(st.star)}</td>
               <td>${st.lv||'-'}</td>
               <td>${(st.hp||0).toLocaleString()}</td>
