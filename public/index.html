@@ -1430,6 +1430,7 @@ function updateUI() {
   document.getElementById('filterTargetGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupTagGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupSkillGroup').style.display = isSupporter ? '' : 'none';
+  document.getElementById('spToggle').style.display = isUnit ? '' : 'none';
 
   const sortContainer = document.getElementById('sortBtns');
   if (isUnit) {
@@ -1780,6 +1781,9 @@ function sortItems(items) {
   const isSupporter = currentTab === 'supporter';
   return [...items].sort((a, b) => {
     let va, vb;
+    // For unit tab, use stats based on current SP/SSP mode
+    const sa = !isChara && !isSupporter ? getUnitDisplayStats(a) : null;
+    const sb = !isChara && !isSupporter ? getUnitDisplayStats(b) : null;
     switch(currentSort) {
       case 'cp':
         if (isChara) { va = parseInt(a.stats?.combat_power)||0; vb = parseInt(b.stats?.combat_power)||0; }
@@ -1788,19 +1792,19 @@ function sortItems(items) {
       case 'atk':
         if (isSupporter) { va = parseInt(a.attack)||0; vb = parseInt(b.attack)||0; }
         else if (isChara) { va = parseInt(a.stats?.shooting)||0; vb = parseInt(b.stats?.shooting)||0; }
-        else { va = parseInt(a.normal?.stats?.attack)||0; vb = parseInt(b.normal?.stats?.attack)||0; }
+        else { va = parseInt(sa?.attack)||0; vb = parseInt(sb?.attack)||0; }
         break;
       case 'hp':
         if (isSupporter) { va = parseInt(a.hp)||0; vb = parseInt(b.hp)||0; }
         else if (isChara) { va = parseInt(a.stats?.defense)||0; vb = parseInt(b.stats?.defense)||0; }
-        else { va = parseInt(a.normal?.stats?.hp)||0; vb = parseInt(b.normal?.stats?.hp)||0; }
+        else { va = parseInt(sa?.hp)||0; vb = parseInt(sb?.hp)||0; }
         break;
       case 'def':
-        va = parseInt(a.normal?.stats?.defense)||0; vb = parseInt(b.normal?.stats?.defense)||0; break;
+        va = parseInt(sa?.defense)||0; vb = parseInt(sb?.defense)||0; break;
       case 'en':
-        va = parseInt(a.normal?.stats?.en)||0; vb = parseInt(b.normal?.stats?.en)||0; break;
+        va = parseInt(sa?.en)||0; vb = parseInt(sb?.en)||0; break;
       case 'agi':
-        va = parseInt(a.normal?.stats?.agility)||0; vb = parseInt(b.normal?.stats?.agility)||0; break;
+        va = parseInt(sa?.agility)||0; vb = parseInt(sb?.agility)||0; break;
       case 'shoot':
         va = parseInt(a.stats?.shooting)||0; vb = parseInt(b.stats?.shooting)||0; break;
       case 'react':
