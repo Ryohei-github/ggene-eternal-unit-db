@@ -2538,11 +2538,16 @@ function renderUnitDetail(u, form) {
       ${starData && starData.length > 1 ? `
       <div style="margin-top:10px">
         <details class="limit-break-details" open>
-          <summary style="cursor:pointer;color:var(--accent);font-size:.85em;user-select:none">${u.rarity==='SSR'?'★限界突破 / SP化 / SSP化 ステータス一覧':'★限界突破ステータス一覧'}</summary>
+          <summary style="cursor:pointer;color:var(--accent);font-size:.85em;user-select:none">${u.rarity==='ULT'?'段階強化ステータス一覧':u.rarity==='SSR'?'★限界突破 / SP化 / SSP化 ステータス一覧':'★限界突破ステータス一覧'}</summary>
           <table class="lb-table">
-            <thead><tr><th>★</th><th>LV</th><th>HP</th><th>EN</th><th>攻撃</th><th>防御</th><th>機動</th><th>移動</th></tr></thead>
-            <tbody>${starData.map(st => `<tr${st.star >= 4 ? ' class="lb-sp"' : st.star === starData.filter(s=>s.star<=3).length - 1 && st.star <= 3 ? ' class="lb-max"' : ''}>
-              <td>${st.star === 0 ? '無' : st.star === 4 ? '<span class="sp-label">★★★<br>SP化</span>' : st.star === 5 ? '<span class="ssp-label">★★★<br>SSP化</span>' : '★'.repeat(st.star)}</td>
+            <thead><tr><th>${u.rarity==='ULT'?'段階':'★'}</th><th>LV</th><th>HP</th><th>EN</th><th>攻撃</th><th>防御</th><th>機動</th><th>移動</th></tr></thead>
+            <tbody>${starData.map(st => {
+              const isULT = u.rarity==='ULT';
+              const ultLabels = {0:'1段階 <span class="badge rarity-ssr" style="font-size:.65em;padding:0 3px">SSR</span>',1:'2段階 <span class="badge rarity-ur" style="font-size:.65em;padding:0 3px">UR</span>',2:'3段階 <span class="badge rarity-ur" style="font-size:.65em;padding:0 3px">UR</span>'};
+              const starLabel = isULT ? (ultLabels[st.star]||st.star) : (st.star === 0 ? '無' : st.star === 4 ? '<span class="sp-label">★★★<br>SP化</span>' : st.star === 5 ? '<span class="ssp-label">★★★<br>SSP化</span>' : '★'.repeat(st.star));
+              const rowClass = isULT ? (st.star===2?' class="lb-max"':'') : (st.star >= 4 ? ' class="lb-sp"' : st.star === starData.filter(s=>s.star<=3).length - 1 && st.star <= 3 ? ' class="lb-max"' : '');
+              return `<tr${rowClass}>
+              <td>${starLabel}</td>
               <td>${st.lv||'-'}</td>
               <td>${(st.hp||0).toLocaleString()}</td>
               <td>${st.en||'-'}</td>
@@ -2550,7 +2555,7 @@ function renderUnitDetail(u, form) {
               <td>${(st.defense||0).toLocaleString()}</td>
               <td>${(st.agility||0).toLocaleString()}</td>
               <td>${st.mobility||'-'}</td>
-            </tr>`).join('')}</tbody>
+            </tr>`}).join('')}</tbody>
           </table>
         </details>
       </div>` : ''}
