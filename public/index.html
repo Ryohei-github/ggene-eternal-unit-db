@@ -763,6 +763,80 @@ a:hover{text-decoration:underline}
 .ls-buff-indicator{display:inline-flex;align-items:center;gap:3px;background:rgba(34,197,94,.15);border:1px solid rgba(34,197,94,.4);border-radius:4px;padding:2px 8px 2px 4px;font-size:.7em;font-weight:700;color:#22c55e;white-space:nowrap;margin-top:3px;animation:lsBuff .4s ease}
 .ls-matched{box-shadow:inset 0 0 0 1px rgba(34,197,94,.25)}
 @keyframes lsBuff{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}
+/* === Damage Calculator === */
+.dmg-calc-container{max-width:900px;margin:0 auto;padding:16px}
+.dmg-calc-container h2{text-align:center;color:var(--accent);font-size:1.1em;margin-bottom:16px}
+.dmg-calc-panels{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
+.dmg-panel{background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:14px}
+.dmg-panel-title{font-size:.9em;font-weight:700;margin-bottom:12px;padding-bottom:6px;border-bottom:2px solid}
+.dmg-panel-title.atk-title{color:#ef4444;border-color:#ef4444}
+.dmg-panel-title.def-title{color:#3b82f6;border-color:#3b82f6}
+.dmg-field{margin-bottom:10px}
+.dmg-field-label{font-size:.72em;color:var(--card-text2);margin-bottom:4px;font-weight:600}
+.dmg-search-wrap{position:relative}
+.dmg-search-input{width:100%;padding:6px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.82em;outline:none;box-sizing:border-box}
+.dmg-search-input:focus{border-color:var(--accent)}
+.dmg-search-input::placeholder{color:var(--card-text2)}
+.dmg-dropdown{position:absolute;top:100%;left:0;right:0;max-height:220px;overflow-y:auto;background:var(--card);border:1px solid var(--border);border-radius:0 0 6px 6px;z-index:50;display:none}
+.dmg-dropdown.open{display:block}
+.dmg-dropdown-item{padding:6px 10px;font-size:.78em;cursor:pointer;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--card-border)}
+.dmg-dropdown-item:hover{background:var(--card-hover)}
+.dmg-dropdown-item img{width:28px;height:28px;border-radius:4px;border:1px solid var(--card-border);flex-shrink:0}
+.dmg-dropdown-item .ddi-name{font-weight:600;color:#fff;font-size:.85em}
+.dmg-dropdown-item .ddi-sub{font-size:.7em;color:var(--card-text2)}
+.dmg-selected{display:flex;align-items:center;gap:8px;padding:6px 8px;background:rgba(255,215,0,.06);border:1px solid rgba(255,215,0,.2);border-radius:6px;margin-top:4px;font-size:.78em}
+.dmg-selected img{width:32px;height:32px;border-radius:4px;border:1px solid var(--card-border)}
+.dmg-selected .ds-info{flex:1;min-width:0}
+.dmg-selected .ds-name{font-weight:700;color:#fff;font-size:.9em}
+.dmg-selected .ds-stats{color:var(--card-text2);font-size:.8em;margin-top:2px}
+.dmg-selected .ds-clear{cursor:pointer;color:var(--card-text2);font-size:.85em;padding:2px 6px;border-radius:4px}
+.dmg-selected .ds-clear:hover{color:#ef4444;background:rgba(239,68,68,.1)}
+.dmg-star-btns{display:flex;gap:4px;flex-wrap:wrap;margin-top:4px}
+.dmg-star-btn{padding:3px 8px;font-size:.7em;font-weight:600;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--card-text2);cursor:pointer;transition:all .2s}
+.dmg-star-btn.active{color:#ffd700;border-color:#ffd700;background:rgba(255,215,0,.1)}
+.dmg-star-btn.sp-active{color:#c084fc;border-color:#c084fc;background:rgba(192,132,252,.1)}
+.dmg-star-btn.ssp-active{color:#f472b6;border-color:#f472b6;background:rgba(244,114,182,.1)}
+.dmg-weapon-select{width:100%;padding:6px 10px;background:var(--bg);border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.78em;outline:none;box-sizing:border-box}
+.dmg-weapon-info{font-size:.72em;color:var(--card-text2);margin-top:4px;padding:4px 8px;background:rgba(255,255,255,.03);border-radius:4px}
+.dmg-weapon-info strong{color:var(--accent)}
+.dmg-tension-btns{display:flex;gap:4px;flex-wrap:wrap}
+.dmg-tension-btn{padding:4px 10px;font-size:.72em;font-weight:600;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--card-text2);cursor:pointer;transition:all .2s}
+.dmg-tension-btn.active{color:#fff;border-color:var(--accent);background:rgba(255,215,0,.15)}
+.dmg-defense-btns{display:flex;gap:4px;flex-wrap:wrap}
+.dmg-defense-btn{padding:4px 10px;font-size:.72em;font-weight:600;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--card-text2);cursor:pointer;transition:all .2s}
+.dmg-defense-btn.active{color:#3b82f6;border-color:#3b82f6;background:rgba(59,130,246,.1)}
+.dmg-buffs{margin-top:8px;padding:8px;background:rgba(255,255,255,.02);border:1px solid var(--card-border);border-radius:6px}
+.dmg-buffs-title{font-size:.7em;color:var(--card-text2);font-weight:600;margin-bottom:6px}
+.dmg-buff-item{display:flex;align-items:center;gap:6px;font-size:.72em;padding:2px 0}
+.dmg-buff-item label{flex:1;color:var(--card-text);cursor:pointer}
+.dmg-buff-item input[type=checkbox]{accent-color:var(--accent)}
+.dmg-buff-item .buff-pct{color:var(--accent);font-weight:700;font-size:.9em}
+.dmg-buff-item .buff-pct.red{color:#ef4444}
+.dmg-manual-row{display:flex;gap:8px;margin-top:6px;flex-wrap:wrap}
+.dmg-manual-row label{font-size:.7em;color:var(--card-text2);display:flex;align-items:center;gap:4px}
+.dmg-manual-row input[type=number]{width:60px;padding:3px 6px;background:var(--bg);border:1px solid var(--border);border-radius:4px;color:var(--text);font-size:.8em;text-align:right;outline:none;box-sizing:border-box}
+.dmg-results{background:var(--card);border:2px solid var(--accent);border-radius:8px;padding:16px}
+.dmg-results h3{text-align:center;color:var(--accent);font-size:.95em;margin-bottom:12px}
+.dmg-result-row{display:flex;justify-content:space-between;align-items:center;padding:8px 12px;border-radius:6px;margin-bottom:6px}
+.dmg-result-row.normal{background:rgba(255,215,0,.08)}
+.dmg-result-row.critical{background:rgba(239,68,68,.08)}
+.dmg-result-label{font-size:.82em;font-weight:600;color:var(--card-text)}
+.dmg-result-value{font-size:1.3em;font-weight:700;font-variant-numeric:tabular-nums}
+.dmg-result-row.normal .dmg-result-value{color:#ffd700}
+.dmg-result-row.critical .dmg-result-value{color:#ef4444}
+.dmg-detail-toggle{text-align:center;margin-top:8px}
+.dmg-detail-toggle button{font-size:.75em;color:var(--accent);background:none;border:1px solid var(--accent);border-radius:4px;padding:4px 12px;cursor:pointer}
+.dmg-detail-content{margin-top:10px;font-size:.72em;color:var(--card-text2)}
+.dmg-detail-content table{width:100%;border-collapse:collapse}
+.dmg-detail-content td{padding:3px 6px;border-bottom:1px solid var(--card-border)}
+.dmg-detail-content td:first-child{color:var(--card-text)}
+.dmg-detail-content td:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--text);font-weight:600}
+.dmg-calc-empty{text-align:center;color:var(--card-text2);font-size:.85em;padding:24px}
+@media(max-width:600px){
+  .dmg-calc-panels{grid-template-columns:1fr}
+  .dmg-calc-container{padding:8px}
+  .dmg-panel{padding:10px}
+}
 </style>
 </head>
 <body>
@@ -791,6 +865,7 @@ a:hover{text-decoration:underline}
     <button class="tab-btn" data-tab="team"><svg class="tab-icon" viewBox="0 0 20 20"><rect x="1" y="3" width="5" height="5" rx="1"/><rect x="7.5" y="3" width="5" height="5" rx="1"/><rect x="14" y="3" width="5" height="5" rx="1"/><rect x="4" y="11" width="5" height="5" rx="1"/><rect x="11" y="11" width="5" height="5" rx="1"/></svg><span class="tab-label">チーム<br>編成</span></button>
     <button class="tab-btn" data-tab="ranking"><svg class="tab-icon" viewBox="0 0 20 20"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="4" width="4" height="14" rx="1"/><rect x="14" y="7" width="4" height="11" rx="1"/></svg><span class="tab-label">ステータス<br>ランキング</span></button>
     <button class="tab-btn" data-tab="tierlist"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M3 3h14v3H3zM3 8h11v3H3zM3 13h8v3H3z" fill="currentColor"/></svg><span class="tab-label">ティア</span></button>
+    <button class="tab-btn" data-tab="dmgcalc"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M10 2l1.5 3 3.5.5-2.5 2.5.5 3.5L10 9.5 7 11.5l.5-3.5L5 5.5l3.5-.5z" fill="currentColor"/><path d="M3 14l14-8" stroke="currentColor" stroke-width="2" fill="none"/></svg><span class="tab-label">ダメ計算</span></button>
   </nav>
 </header>
 
@@ -1002,6 +1077,9 @@ a:hover{text-decoration:underline}
   <div class="tierlist-pool-label" id="tierPoolLabel">未配置ユニット（ドラッグして配置）</div>
   <div class="tierlist-pool" id="tierlistPool"></div>
 </div>
+
+<!-- Damage Calculator Container -->
+<div id="dmgCalcContainer" style="display:none"></div>
 
 <!-- Ranking Container -->
 <div class="ranking-container" id="rankingContainer" style="display:none">
@@ -1338,7 +1416,8 @@ function setupTabs() {
       const isTeam = currentTab === 'team';
       const isRanking = currentTab === 'ranking';
       const isTierlist = currentTab === 'tierlist';
-      const isSpecial = isTagLookup || isTeam || isRanking || isTierlist;
+      const isDmgCalc = currentTab === 'dmgcalc';
+      const isSpecial = isTagLookup || isTeam || isRanking || isTierlist || isDmgCalc;
       document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
       document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
       document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
@@ -1346,12 +1425,15 @@ function setupTabs() {
       document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
       document.getElementById('rankingContainer').style.display = isRanking ? '' : 'none';
       document.getElementById('tierlistContainer').style.display = isTierlist ? '' : 'none';
+      document.getElementById('dmgCalcContainer').style.display = isDmgCalc ? '' : 'none';
       if (isTagLookup) {
         renderTagLookup();
       } else if (isRanking) {
         renderRanking();
       } else if (isTierlist) {
         renderTierList();
+      } else if (isDmgCalc) {
+        renderDmgCalc();
       } else if (isTeam) {
         renderTeamSim();
       } else {
@@ -3913,7 +3995,8 @@ function restoreFromURL() {
   const isTeam = tab === 'team';
   const isRanking = tab === 'ranking';
   const isTierlist = tab === 'tierlist';
-  const isSpecial = isTagLookup || isTeam || isRanking || isTierlist;
+  const isDmgCalc = tab === 'dmgcalc';
+  const isSpecial = isTagLookup || isTeam || isRanking || isTierlist || isDmgCalc;
   document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
   document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
   document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
@@ -3921,7 +4004,12 @@ function restoreFromURL() {
   document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
   document.getElementById('rankingContainer').style.display = isRanking ? '' : 'none';
   document.getElementById('tierlistContainer').style.display = isTierlist ? '' : 'none';
+  document.getElementById('dmgCalcContainer').style.display = isDmgCalc ? '' : 'none';
 
+  if (isDmgCalc) {
+    renderDmgCalc();
+    return true;
+  }
   if (isTierlist) {
     renderTierList();
     return true;
@@ -4881,6 +4969,476 @@ function exportTierList() {
 }
 
 
+
+// === DAMAGE CALCULATOR ===
+let dcAtk = { unit:null, unitStar:3, chara:null, supporter:null, supStar:0, weaponIdx:0, tension:'normal', extraDmgUp:0, extraCritUp:0, buffs:{} };
+let dcDef = { unit:null, unitStar:3, chara:null, defenseType:'none', extraDmgDown:0, buffs:{} };
+let dcDropdownOpen = null;
+
+function renderDmgCalc() {
+  const c = document.getElementById('dmgCalcContainer');
+  c.innerHTML = `
+    <div class="dmg-calc-container">
+      <h2>ダメージ計算シミュレーター</h2>
+      <div class="dmg-calc-panels">
+        <div class="dmg-panel" id="dcAtkPanel">
+          <div class="dmg-panel-title atk-title">攻撃側</div>
+          ${dcRenderAtkPanel()}
+        </div>
+        <div class="dmg-panel" id="dcDefPanel">
+          <div class="dmg-panel-title def-title">防御側</div>
+          ${dcRenderDefPanel()}
+        </div>
+      </div>
+      <div class="dmg-results" id="dcResults">
+        ${dcRenderResults()}
+      </div>
+    </div>`;
+  dcBindEvents();
+}
+
+function dcRenderAtkPanel() {
+  const u = dcAtk.unit;
+  const ch = dcAtk.chara;
+  const sup = dcAtk.supporter;
+  let html = '';
+  html += `<div class="dmg-field">
+    <div class="dmg-field-label">ユニット</div>
+    <div class="dmg-search-wrap">
+      <input class="dmg-search-input" id="dcAtkUnitSearch" placeholder="ユニット名で検索..." autocomplete="off" onfocus="dcOpenDropdown('atkUnit')" oninput="dcFilterDropdown('atkUnit')">
+      <div class="dmg-dropdown" id="dcAtkUnitDropdown"></div>
+    </div>`;
+  if (u) {
+    const st = dcGetUnitStats(u, dcAtk.unitStar);
+    html += `<div class="dmg-selected">
+      ${u.image ? `<img src="${u.image}" alt="" onerror="this.style.display='none'">` : ''}
+      <div class="ds-info"><div class="ds-name">${u.name} <span class="badge ${rarityClass(u.rarity)}" style="font-size:.65em;padding:1px 4px">${u.rarity}</span></div>
+      <div class="ds-stats">攻撃力: ${(st.attack||0).toLocaleString()} / 防御力: ${(st.defense||0).toLocaleString()}</div></div>
+      <span class="ds-clear" onclick="dcAtk.unit=null;dcAtk.buffs={};renderDmgCalc()">✕</span>
+    </div>`;
+    const stars = dcGetStarOptions(u);
+    html += `<div class="dmg-star-btns">${stars.map(s => {
+      const cls = s.val===dcAtk.unitStar ? (s.val===5?'ssp-active':s.val===4?'sp-active':'active') : '';
+      return `<button class="dmg-star-btn ${cls}" onclick="dcAtk.unitStar=${s.val};renderDmgCalc()">${s.label}</button>`;
+    }).join('')}</div>`;
+  }
+  html += '</div>';
+  html += `<div class="dmg-field">
+    <div class="dmg-field-label">キャラクター（パイロット）</div>
+    <div class="dmg-search-wrap">
+      <input class="dmg-search-input" id="dcAtkCharaSearch" placeholder="キャラ名で検索..." autocomplete="off" onfocus="dcOpenDropdown('atkChara')" oninput="dcFilterDropdown('atkChara')">
+      <div class="dmg-dropdown" id="dcAtkCharaDropdown"></div>
+    </div>`;
+  if (ch) {
+    html += `<div class="dmg-selected">
+      <div class="ds-info"><div class="ds-name">${ch.name} <span class="badge ${rarityClass(ch.rarity)}" style="font-size:.65em;padding:1px 4px">${ch.rarity}</span></div>
+      <div class="ds-stats">射撃:${ch.stats.shooting} / 格闘:${ch.stats.melee} / 覚醒:${ch.stats.awakening} / 守備:${ch.stats.defense}</div></div>
+      <span class="ds-clear" onclick="dcAtk.chara=null;dcAtk.buffs={};renderDmgCalc()">✕</span>
+    </div>`;
+  }
+  html += '</div>';
+  html += `<div class="dmg-field">
+    <div class="dmg-field-label">サポーター</div>
+    <div class="dmg-search-wrap">
+      <input class="dmg-search-input" id="dcAtkSupSearch" placeholder="サポーター名で検索..." autocomplete="off" onfocus="dcOpenDropdown('atkSup')" oninput="dcFilterDropdown('atkSup')">
+      <div class="dmg-dropdown" id="dcAtkSupDropdown"></div>
+    </div>`;
+  if (sup) {
+    const lsPct = dcGetLeaderPct(sup, dcAtk.supStar);
+    html += `<div class="dmg-selected">
+      ${sup.image ? `<img src="${sup.image}" alt="" onerror="this.style.display='none'">` : ''}
+      <div class="ds-info"><div class="ds-name">${sup.name}</div>
+      <div class="ds-stats">LS: ${lsPct}% / 攻撃+${sup.attack||0}</div></div>
+      <span class="ds-clear" onclick="dcAtk.supporter=null;renderDmgCalc()">✕</span>
+    </div>`;
+    html += `<div class="dmg-star-btns">
+      ${[0,1,2,3].map(s => `<button class="dmg-star-btn ${dcAtk.supStar===s?'active':''}" onclick="dcAtk.supStar=${s};renderDmgCalc()">${s}凸</button>`).join('')}
+    </div>`;
+  }
+  html += '</div>';
+  if (u) {
+    const weapons = u.normal_weapons || [];
+    html += `<div class="dmg-field">
+      <div class="dmg-field-label">武装</div>
+      <select class="dmg-weapon-select" id="dcWeaponSelect" onchange="dcAtk.weaponIdx=parseInt(this.value);dcAtk.buffs={};renderDmgCalc()">
+        ${weapons.map((w,i) => `<option value="${i}" ${i===dcAtk.weaponIdx?'selected':''}>${w.name} (POW:${w.power})</option>`).join('')}
+      </select>`;
+    const w = weapons[dcAtk.weaponIdx];
+    if (w) {
+      const pilotStat = dcGetPilotAtkStat(w, ch);
+      html += `<div class="dmg-weapon-info">
+        POW: <strong>${w.power}</strong> | 属性: ${w.attribute} | 種別: ${w.weapon_type}
+        ${w.effect ? `<br>効果: ${w.effect}` : ''}
+        ${ch ? `<br>使用パイロットステ: <strong>${pilotStat.value}</strong> (${pilotStat.type}が最大)` : ''}
+      </div>`;
+    }
+    html += '</div>';
+  }
+  html += `<div class="dmg-field">
+    <div class="dmg-field-label">テンション</div>
+    <div class="dmg-tension-btns">
+      ${['normal','strong','superstrong','superattack'].map(t => {
+        const labels = {normal:'通常',strong:'強気',superstrong:'超強気',superattack:'超一撃'};
+        return `<button class="dmg-tension-btn ${dcAtk.tension===t?'active':''}" onclick="dcAtk.tension='${t}';renderDmgCalc()">${labels[t]}</button>`;
+      }).join('')}
+    </div>
+  </div>`;
+  const buffs = dcDetectAtkBuffs();
+  if (buffs.length) {
+    html += `<div class="dmg-buffs"><div class="dmg-buffs-title">検出されたバフ効果</div>`;
+    buffs.forEach((b,i) => {
+      const key = 'atkBuff_'+i;
+      const checked = dcAtk.buffs[key] !== false;
+      html += `<div class="dmg-buff-item"><input type="checkbox" id="${key}" ${checked?'checked':''} onchange="dcAtk.buffs['${key}']=this.checked;dcUpdateResults()"><label for="${key}">${b.name}</label><span class="buff-pct">${b.sign}${b.value}%</span></div>`;
+    });
+    html += '</div>';
+  }
+  html += `<div class="dmg-manual-row">
+    <label>追加与ダメ上昇 <input type="number" id="dcExtraDmgUp" value="${dcAtk.extraDmgUp}" min="0" max="300" onchange="dcAtk.extraDmgUp=parseInt(this.value)||0;dcUpdateResults()">%</label>
+    <label>追加クリダメ上昇 <input type="number" id="dcExtraCritUp" value="${dcAtk.extraCritUp}" min="0" max="300" onchange="dcAtk.extraCritUp=parseInt(this.value)||0;dcUpdateResults()">%</label>
+  </div>`;
+  return html;
+}
+
+function dcRenderDefPanel() {
+  const u = dcDef.unit;
+  const ch = dcDef.chara;
+  let html = '';
+  html += `<div class="dmg-field">
+    <div class="dmg-field-label">ユニット</div>
+    <div class="dmg-search-wrap">
+      <input class="dmg-search-input" id="dcDefUnitSearch" placeholder="ユニット名で検索..." autocomplete="off" onfocus="dcOpenDropdown('defUnit')" oninput="dcFilterDropdown('defUnit')">
+      <div class="dmg-dropdown" id="dcDefUnitDropdown"></div>
+    </div>`;
+  if (u) {
+    const st = dcGetUnitStats(u, dcDef.unitStar);
+    html += `<div class="dmg-selected">
+      ${u.image ? `<img src="${u.image}" alt="" onerror="this.style.display='none'">` : ''}
+      <div class="ds-info"><div class="ds-name">${u.name} <span class="badge ${rarityClass(u.rarity)}" style="font-size:.65em;padding:1px 4px">${u.rarity}</span></div>
+      <div class="ds-stats">防御力: ${(st.defense||0).toLocaleString()} / 攻撃力: ${(st.attack||0).toLocaleString()}</div></div>
+      <span class="ds-clear" onclick="dcDef.unit=null;dcDef.buffs={};renderDmgCalc()">✕</span>
+    </div>`;
+    const stars = dcGetStarOptions(u);
+    html += `<div class="dmg-star-btns">${stars.map(s => {
+      const cls = s.val===dcDef.unitStar ? (s.val===5?'ssp-active':s.val===4?'sp-active':'active') : '';
+      return `<button class="dmg-star-btn ${cls}" onclick="dcDef.unitStar=${s.val};renderDmgCalc()">${s.label}</button>`;
+    }).join('')}</div>`;
+  }
+  html += '</div>';
+  html += `<div class="dmg-field">
+    <div class="dmg-field-label">キャラクター（パイロット）</div>
+    <div class="dmg-search-wrap">
+      <input class="dmg-search-input" id="dcDefCharaSearch" placeholder="キャラ名で検索..." autocomplete="off" onfocus="dcOpenDropdown('defChara')" oninput="dcFilterDropdown('defChara')">
+      <div class="dmg-dropdown" id="dcDefCharaDropdown"></div>
+    </div>`;
+  if (ch) {
+    html += `<div class="dmg-selected">
+      <div class="ds-info"><div class="ds-name">${ch.name} <span class="badge ${rarityClass(ch.rarity)}" style="font-size:.65em;padding:1px 4px">${ch.rarity}</span></div>
+      <div class="ds-stats">守備:${ch.stats.defense} / 反応:${ch.stats.reaction}</div></div>
+      <span class="ds-clear" onclick="dcDef.chara=null;dcDef.buffs={};renderDmgCalc()">✕</span>
+    </div>`;
+  }
+  html += '</div>';
+  html += `<div class="dmg-field">
+    <div class="dmg-field-label">防御タイプ</div>
+    <div class="dmg-defense-btns">
+      ${['none','normal','shield'].map(t => {
+        const labels = {none:'無防御',normal:'通常防御 (20%減)',shield:'シールド防御 (40%減)'};
+        return `<button class="dmg-defense-btn ${dcDef.defenseType===t?'active':''}" onclick="dcDef.defenseType='${t}';dcUpdateResults()">${labels[t]}</button>`;
+      }).join('')}
+    </div>
+  </div>`;
+  const buffs = dcDetectDefBuffs();
+  if (buffs.length) {
+    html += `<div class="dmg-buffs"><div class="dmg-buffs-title">検出された軽減効果</div>`;
+    buffs.forEach((b,i) => {
+      const key = 'defBuff_'+i;
+      const checked = dcDef.buffs[key] !== false;
+      html += `<div class="dmg-buff-item"><input type="checkbox" id="${key}" ${checked?'checked':''} onchange="dcDef.buffs['${key}']=this.checked;dcUpdateResults()"><label for="${key}">${b.name}</label><span class="buff-pct red">-${b.value}%</span></div>`;
+    });
+    html += '</div>';
+  }
+  html += `<div class="dmg-manual-row">
+    <label>追加被ダメ軽減 <input type="number" id="dcExtraDmgDown" value="${dcDef.extraDmgDown}" min="0" max="100" onchange="dcDef.extraDmgDown=parseInt(this.value)||0;dcUpdateResults()">%</label>
+  </div>`;
+  return html;
+}
+
+function dcRenderResults() {
+  const r = dcCalculateDamage();
+  if (!r) return '<div class="dmg-calc-empty">攻撃側のユニット・キャラ・武装と<br>防御側のユニット・キャラを選択してください</div>';
+  return `<h3>計算結果</h3>
+    <div class="dmg-result-row normal">
+      <span class="dmg-result-label">通常ダメージ</span>
+      <span class="dmg-result-value">${Math.ceil(r.normalDmg).toLocaleString()}</span>
+    </div>
+    <div class="dmg-result-row critical">
+      <span class="dmg-result-label">クリティカルダメージ</span>
+      <span class="dmg-result-value">${Math.ceil(r.critDmg).toLocaleString()}</span>
+    </div>
+    <div class="dmg-detail-toggle"><button onclick="document.getElementById('dcDetailContent').style.display=document.getElementById('dcDetailContent').style.display==='none'?'':'none'">計算内訳を表示</button></div>
+    <div class="dmg-detail-content" id="dcDetailContent" style="display:none">
+      <table>
+        <tr><td>武装POW</td><td>${r.weaponPow.toLocaleString()}</td></tr>
+        <tr><td>①パイロット比率補正</td><td>${r.pilotRatio.toFixed(4)}</td></tr>
+        <tr><td>②ユニット比率補正</td><td>${r.unitRatio.toFixed(4)}</td></tr>
+        <tr><td>③パイロット関数補正</td><td>${r.pilotSigmoid.toFixed(4)}</td></tr>
+        <tr><td>④ユニット関数補正</td><td>${r.unitSigmoid.toFixed(4)}</td></tr>
+        <tr><td>武装威力補正(①+②+③+④)</td><td>${r.weaponCorr.toFixed(4)}</td></tr>
+        <tr><td>⑤基礎ダメージ</td><td>${Math.ceil(r.baseDmg).toLocaleString()}</td></tr>
+        <tr><td>⑥攻撃補正</td><td>${r.atkCorr.toFixed(3)}</td></tr>
+        <tr><td>⑦防御補正</td><td>${r.defCorr.toFixed(3)}</td></tr>
+        <tr><td>ダメージ補正係数(1+⑥+⑦)</td><td>${r.dmgCoeff.toFixed(3)}</td></tr>
+        <tr><td>⑧戦闘基本ダメージ</td><td>${Math.ceil(r.battleBaseDmg).toLocaleString()}</td></tr>
+        <tr><td>⑨与ダメージ補正(通常)</td><td>${(r.dmgModNormal*100).toFixed(1)}%</td></tr>
+        <tr><td>⑨与ダメージ補正(クリ)</td><td>${(r.dmgModCrit*100).toFixed(1)}%</td></tr>
+        <tr><td>防御係数</td><td>${r.defFactor.toFixed(2)}</td></tr>
+        <tr><td>クリティカル倍率</td><td>${r.critMult.toFixed(2)}</td></tr>
+        <tr><td colspan="2" style="padding-top:8px;border-top:2px solid var(--accent)"></td></tr>
+        <tr><td>攻撃側ユニット攻撃力</td><td>${r.atkUnAtk.toLocaleString()}</td></tr>
+        <tr><td>攻撃側パイロット攻撃値</td><td>${r.atkPlAtk}</td></tr>
+        <tr><td>防御側ユニット防御力</td><td>${r.defUnDef.toLocaleString()}</td></tr>
+        <tr><td>防御側パイロット守備値</td><td>${r.defPlDef}</td></tr>
+      </table>
+    </div>`;
+}
+
+function dcUpdateResults() {
+  const el = document.getElementById('dcResults');
+  if (el) el.innerHTML = dcRenderResults();
+}
+
+function dcGetUnitStats(u, star) {
+  if (!u) return {};
+  const sbs = u.stats_by_star || [];
+  const s = sbs.find(x => x.star === star);
+  if (s) return s;
+  return u.normal?.stats || {};
+}
+
+function dcGetStarOptions(u) {
+  if (!u) return [];
+  const sbs = u.stats_by_star || [];
+  const hasSP = sbs.some(s => s.star === 4);
+  const hasSSP = sbs.some(s => s.star === 5);
+  const opts = [];
+  if (u.rarity === 'UR' || u.rarity === 'ULT') {
+    [0,1,2,3].forEach(s => { if(sbs.find(x=>x.star===s)) opts.push({val:s,label:s===0?'無凸':s+'凸'}); });
+  } else {
+    [0,1,2,3].forEach(s => { if(sbs.find(x=>x.star===s)) opts.push({val:s,label:s===0?'無':s===3?'★★★':'★'.repeat(s)}); });
+    if (hasSP) opts.push({val:4,label:'SP化'});
+    if (hasSSP) opts.push({val:5,label:'SSP化'});
+  }
+  return opts;
+}
+
+function dcGetLeaderPct(sup, star) {
+  if (!sup) return 0;
+  const key = 'leader_' + star;
+  const val = sup[key] || sup.leader_0 || '+0%';
+  const m = val.match(/([+-]?\d+)/);
+  return m ? parseInt(m[1]) : 0;
+}
+
+function dcGetPilotAtkStat(weapon, chara) {
+  if (!chara || !weapon) return { value: 0, type: '-' };
+  const wtype = weapon.weapon_type || '';
+  const candidates = [];
+  if (wtype.includes('射撃')) candidates.push({ type: '射撃', value: chara.stats.shooting || 0 });
+  if (wtype.includes('格闘')) candidates.push({ type: '格闘', value: chara.stats.melee || 0 });
+  if (wtype.includes('覚醒')) candidates.push({ type: '覚醒', value: chara.stats.awakening || 0 });
+  if (!candidates.length) return { type: '射撃', value: chara.stats.shooting || 0 };
+  candidates.sort((a,b) => b.value - a.value);
+  return candidates[0];
+}
+
+function dcDetectAtkBuffs() {
+  const buffs = [];
+  const u = dcAtk.unit;
+  const ch = dcAtk.chara;
+  const w = u ? (u.normal_weapons||[])[dcAtk.weaponIdx] : null;
+  if (u && u.normal?.abilities) {
+    u.normal.abilities.forEach(a => {
+      const desc = a.desc || a.effect || '';
+      let m = desc.match(/攻撃力が(\d+)%上昇/);
+      if (m) { buffs.push({ name: a.name+' (攻撃力+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'unitAtkUp' }); return; }
+      m = desc.match(/与ダメージが(\d+)%上昇/);
+      if (m) { buffs.push({ name: a.name+' (与ダメ+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'dmgUp' }); return; }
+    });
+  }
+  if (ch && ch.abilities) {
+    ch.abilities.forEach(a => {
+      const eff = a.effect || '';
+      let m = eff.match(/与ダメージが(\d+)%上昇/);
+      if (m) buffs.push({ name: a.name+' (与ダメ+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'dmgUp' });
+      m = eff.match(/(射撃値|格闘値|覚醒値).*?(\d+)%上昇/);
+      if (m) buffs.push({ name: a.name+' ('+m[1]+'+'+m[2]+'%)', value: parseInt(m[2]), sign: '+', cat: 'pilotStatUp' });
+      m = eff.match(/攻撃力が(\d+)%上昇/);
+      if (m) buffs.push({ name: a.name+' (攻撃力+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'unitAtkUp' });
+    });
+  }
+  if (ch && ch.skills) {
+    ch.skills.forEach(sk => {
+      const eff = sk.effect || '';
+      let m = eff.match(/与.*?ダメージが(\d+)%上昇/);
+      if (m) { buffs.push({ name: sk.name+' (与ダメ+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'dmgUp' }); return; }
+      m = eff.match(/攻撃力が(\d+)%上昇/);
+      if (m) { buffs.push({ name: sk.name+' (攻撃力+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'unitAtkUp' }); return; }
+    });
+  }
+  if (w && w.effect) {
+    let m = w.effect.match(/クリティカルダメージが(\d+)%上昇/);
+    if (m) buffs.push({ name: '武装効果 (クリダメ+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'critDmgUp' });
+    m = w.effect.match(/被ダメージ(\d+)%上昇/);
+    if (m) buffs.push({ name: '武装デバフ (被ダメ+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'dmgUp' });
+  }
+  return buffs;
+}
+
+function dcDetectDefBuffs() {
+  const buffs = [];
+  const u = dcDef.unit;
+  const ch = dcDef.chara;
+  const atkWeapon = dcAtk.unit ? (dcAtk.unit.normal_weapons||[])[dcAtk.weaponIdx] : null;
+  const wAttr = atkWeapon ? (atkWeapon.attribute||'') : '';
+  if (u && u.normal?.abilities) {
+    u.normal.abilities.forEach(a => {
+      const desc = a.desc || a.effect || '';
+      let m = desc.match(/被ダメージが(\d+)%軽減/);
+      if (m) { buffs.push({ name: a.name+' (全被ダメ-'+m[1]+'%)', value: parseInt(m[1]), cat: 'dmgDown' }); return; }
+      m = desc.match(/(物理|ビーム)武装の被ダメージが(\d+)%軽減/);
+      if (m) {
+        const attrMatch = (m[1]==='物理' && wAttr.includes('物理')) || (m[1]==='ビーム' && wAttr.includes('ビーム'));
+        if (attrMatch) buffs.push({ name: a.name+' ('+m[1]+'被ダメ-'+m[2]+'%)', value: parseInt(m[2]), cat: 'dmgDown' });
+        return;
+      }
+      m = desc.match(/防御力が(\d+)%上昇/);
+      if (m) { buffs.push({ name: a.name+' (防御力+'+m[1]+'%)', value: parseInt(m[1]), cat: 'unitDefUp' }); return; }
+    });
+  }
+  if (ch && ch.abilities) {
+    ch.abilities.forEach(a => {
+      const eff = a.effect || '';
+      let m = eff.match(/被ダメージが(\d+)%軽減/);
+      if (m) buffs.push({ name: a.name+' (被ダメ-'+m[1]+'%)', value: parseInt(m[1]), cat: 'dmgDown' });
+      m = eff.match(/守備値.*?(\d+)%上昇/);
+      if (m) buffs.push({ name: a.name+' (守備値+'+m[1]+'%)', value: parseInt(m[1]), cat: 'pilotDefUp' });
+      m = eff.match(/防御力が(\d+)%上昇/);
+      if (m) buffs.push({ name: a.name+' (防御力+'+m[1]+'%)', value: parseInt(m[1]), cat: 'unitDefUp' });
+    });
+  }
+  if (ch && ch.skills) {
+    ch.skills.forEach(sk => {
+      const eff = sk.effect || '';
+      let m = eff.match(/ダメージが(\d+)%軽減/);
+      if (m) buffs.push({ name: sk.name+' (被ダメ-'+m[1]+'%)', value: parseInt(m[1]), cat: 'dmgDown' });
+      m = eff.match(/防御力が(\d+)%上昇/);
+      if (m) buffs.push({ name: sk.name+' (防御力+'+m[1]+'%)', value: parseInt(m[1]), cat: 'unitDefUp' });
+    });
+  }
+  return buffs;
+}
+
+function dcCalculateDamage() {
+  if (!dcAtk.unit || !dcAtk.chara || !dcDef.unit || !dcDef.chara) return null;
+  const weapon = (dcAtk.unit.normal_weapons||[])[dcAtk.weaponIdx];
+  if (!weapon) return null;
+  const weaponPow = parseInt((weapon.power||'0').replace(/,/g,'')) || 0;
+  const atkUnitBase = dcGetUnitStats(dcAtk.unit, dcAtk.unitStar);
+  const defUnitBase = dcGetUnitStats(dcDef.unit, dcDef.unitStar);
+  const atkBuffs = dcDetectAtkBuffs();
+  const defBuffs = dcDetectDefBuffs();
+  let unitAtkUpPct=0, pilotAtkUpPct=0, dmgUpPct=0, critDmgUpPct=0;
+  atkBuffs.forEach((b,i) => {
+    if (dcAtk.buffs['atkBuff_'+i] === false) return;
+    if (b.cat==='unitAtkUp') unitAtkUpPct+=b.value;
+    else if (b.cat==='pilotStatUp') pilotAtkUpPct+=b.value;
+    else if (b.cat==='dmgUp') dmgUpPct+=b.value;
+    else if (b.cat==='critDmgUp') critDmgUpPct+=b.value;
+  });
+  let unitDefUpPct=0, pilotDefUpPct=0, dmgDownPct=0;
+  defBuffs.forEach((b,i) => {
+    if (dcDef.buffs['defBuff_'+i] === false) return;
+    if (b.cat==='unitDefUp') unitDefUpPct+=b.value;
+    else if (b.cat==='pilotDefUp') pilotDefUpPct+=b.value;
+    else if (b.cat==='dmgDown') dmgDownPct+=b.value;
+  });
+  let supAtkPct=0, supFlatAtk=0;
+  if (dcAtk.supporter) { supAtkPct=dcGetLeaderPct(dcAtk.supporter,dcAtk.supStar); supFlatAtk=parseInt(dcAtk.supporter.attack)||0; }
+  const UnAtk = Math.ceil((atkUnitBase.attack||0)*(1+(unitAtkUpPct+supAtkPct)/100))+supFlatAtk;
+  const UnDef = Math.ceil((defUnitBase.defense||0)*(1+unitDefUpPct/100));
+  const pilotStatInfo = dcGetPilotAtkStat(weapon, dcAtk.chara);
+  const PlAtk = Math.ceil(pilotStatInfo.value*(1+pilotAtkUpPct/100));
+  const PlDef = Math.ceil((dcDef.chara.stats.defense||0)*(1+pilotDefUpPct/100));
+  const pilotRatio = Math.max(0,(PlAtk-PlDef)/5000);
+  const unitRatio = Math.max(0,(UnAtk/10-UnDef/10)/5000);
+  const pilotSigmoid = 1/(Math.exp((250*(PlDef-PlAtk))/100000)+1);
+  const unitSigmoid = 1/(Math.exp((25*(UnDef-UnAtk))/100000)+1);
+  const weaponCorr = pilotRatio+unitRatio+pilotSigmoid+unitSigmoid;
+  const baseDmg = weaponPow*weaponCorr;
+  const atkTotal = (UnAtk+PlAtk*2)/10;
+  const atkCorr = 100/(Math.exp(((5000-atkTotal)*30)/100000)+1);
+  const defTotal = (UnDef+PlDef*2)/10;
+  const defCorr = -40/(Math.exp(((5000-defTotal)*3)/100000)+1);
+  const dmgCoeff = 1+atkCorr+defCorr;
+  const battleBaseDmg = Math.ceil(baseDmg*dmgCoeff);
+  const tensionDmg={normal:0,strong:10,superstrong:20,superattack:30};
+  const tensionCrit={normal:1.1,strong:1.2,superstrong:1.2,superattack:1.3};
+  const totalDmgUp = dmgUpPct+(tensionDmg[dcAtk.tension]||0)+dcAtk.extraDmgUp;
+  const totalDmgDown = dmgDownPct+dcDef.extraDmgDown;
+  const dmgModNormal = 1+totalDmgUp/100-totalDmgDown/100;
+  const dmgModCrit = dmgModNormal+(critDmgUpPct+dcAtk.extraCritUp)/100;
+  let defFactor = 1.0;
+  if (dcDef.defenseType==='normal') defFactor=0.8;
+  else if (dcDef.defenseType==='shield') defFactor=0.6;
+  const critMult = tensionCrit[dcAtk.tension]||1.1;
+  const normalDmg = battleBaseDmg*dmgModNormal*defFactor;
+  const critDmg = battleBaseDmg*dmgModCrit*defFactor*critMult;
+  return { weaponPow,pilotRatio,unitRatio,pilotSigmoid,unitSigmoid,weaponCorr,baseDmg,atkCorr,defCorr,dmgCoeff,battleBaseDmg,dmgModNormal,dmgModCrit,defFactor,critMult,normalDmg,critDmg,atkUnAtk:UnAtk,atkPlAtk:PlAtk,defUnDef:UnDef,defPlDef:PlDef };
+}
+
+function dcOpenDropdown(type) {
+  dcDropdownOpen = type;
+  dcFilterDropdown(type);
+  const ddId = {atkUnit:'dcAtkUnitDropdown',atkChara:'dcAtkCharaDropdown',atkSup:'dcAtkSupDropdown',defUnit:'dcDefUnitDropdown',defChara:'dcDefCharaDropdown'}[type];
+  const dd = document.getElementById(ddId);
+  if (dd) dd.classList.add('open');
+}
+function dcCloseAllDropdowns() { document.querySelectorAll('.dmg-dropdown').forEach(d=>d.classList.remove('open')); dcDropdownOpen=null; }
+function dcFilterDropdown(type) {
+  const inputId = {atkUnit:'dcAtkUnitSearch',atkChara:'dcAtkCharaSearch',atkSup:'dcAtkSupSearch',defUnit:'dcDefUnitSearch',defChara:'dcDefCharaSearch'}[type];
+  const ddId = {atkUnit:'dcAtkUnitDropdown',atkChara:'dcAtkCharaDropdown',atkSup:'dcAtkSupDropdown',defUnit:'dcDefUnitDropdown',defChara:'dcDefCharaDropdown'}[type];
+  const input=document.getElementById(inputId), dd=document.getElementById(ddId);
+  if(!input||!dd) return;
+  const q=(input.value||'').toLowerCase();
+  if (type==='atkUnit'||type==='defUnit') {
+    const items=allUnits.filter(u=>!q||u.name.toLowerCase().includes(q)).slice(0,60);
+    dd.innerHTML=items.map(u=>{const s=u.normal?.stats||{};return `<div class="dmg-dropdown-item" onclick="dcSelectUnit('${type}',${u.id})">${u.image?`<img src="${u.image}" alt="" onerror="this.style.display='none'">`:''}
+<div><div class="ddi-name">${u.name}</div><div class="ddi-sub"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.6em;padding:0 3px">${u.rarity}</span> ATK:${(parseInt(s.attack)||0).toLocaleString()} DEF:${(parseInt(s.defense)||0).toLocaleString()}</div></div></div>`;}).join('')||'<div style="padding:10px;color:var(--card-text2);font-size:.8em;text-align:center">該当なし</div>';
+  } else if (type==='atkChara'||type==='defChara') {
+    const items=allCharas.filter(c=>!q||c.name.toLowerCase().includes(q)).slice(0,60);
+    dd.innerHTML=items.map(c=>{const safeName=c.name.replace(/'/g,"\\'");return `<div class="dmg-dropdown-item" onclick="dcSelectChara('${type}','${safeName}')">
+<div><div class="ddi-name">${c.name}</div><div class="ddi-sub"><span class="badge ${rarityClass(c.rarity)}" style="font-size:.6em;padding:0 3px">${c.rarity}</span> 射:${c.stats.shooting} 格:${c.stats.melee} 覚:${c.stats.awakening} 守:${c.stats.defense}</div></div></div>`;}).join('')||'<div style="padding:10px;color:var(--card-text2);font-size:.8em;text-align:center">該当なし</div>';
+  } else if (type==='atkSup') {
+    const items=allSupporters.filter(s=>!q||s.name.toLowerCase().includes(q)).slice(0,40);
+    dd.innerHTML=items.map(s=>`<div class="dmg-dropdown-item" onclick="dcSelectSup(${s.id})">${s.image?`<img src="${s.image}" alt="" onerror="this.style.display='none'">`:''}
+<div><div class="ddi-name">${s.name}</div><div class="ddi-sub">${s.leader_skill||''}</div></div></div>`).join('')||'<div style="padding:10px;color:var(--card-text2);font-size:.8em;text-align:center">該当なし</div>';
+  }
+}
+function dcSelectUnit(type,id) {
+  const u=allUnits.find(x=>x.id===id);
+  if(type==='atkUnit'){dcAtk.unit=u;dcAtk.weaponIdx=0;dcAtk.buffs={};}else{dcDef.unit=u;dcDef.buffs={};}
+  dcCloseAllDropdowns();renderDmgCalc();
+}
+function dcSelectChara(type,name) {
+  const c=allCharas.find(x=>x.name===name);
+  if(type==='atkChara'){dcAtk.chara=c;dcAtk.buffs={};}else{dcDef.chara=c;dcDef.buffs={};}
+  dcCloseAllDropdowns();renderDmgCalc();
+}
+function dcSelectSup(id) { dcAtk.supporter=allSupporters.find(s=>s.id===id);dcCloseAllDropdowns();renderDmgCalc(); }
+function dcBindEvents() {
+  document.addEventListener('click', function(e) { if(!e.target.closest('.dmg-search-wrap')) dcCloseAllDropdowns(); });
+}
 
 bindSortButtons();
 init();
