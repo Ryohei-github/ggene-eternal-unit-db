@@ -2119,10 +2119,9 @@ function unitCardHTML(u) {
         <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
         ${u.limited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px">'+(currentLang==="en"?"Limited":"限定")+'</span>' : ''}
         ${typeBadgeHTML(u.type)}
-        ${u.acquire==='ガシャ'?'<span style="background:#63b3ed;color:#fff;font-size:.55em;padding:1px 4px;border-radius:3px">ガシャ</span>':u.acquire==='開発'?'<span style="background:#48bb78;color:#fff;font-size:.55em;padding:1px 4px;border-radius:3px">開発</span>':u.acquire==='イベント'?'<span style="background:#ed8936;color:#fff;font-size:.55em;padding:1px 4px;border-radius:3px">イベント</span>':''}
       </div>
     </div>
-    <div class="card-series">${(u.series||[]).map(s=>'<span class="clickable-series" onclick="event.stopPropagation();filterBySeries(\''+ s.replace(/'/g,"\\'") +'\')">' + tData(s,"series") + '</span>').join(' / ')}</div>
+    <div class="card-series">${(u.series||[]).map(s=>'<span class="clickable-series" onclick="event.stopPropagation();filterBySeries(\''+ s.replace(/'/g,"\\'") +'\')">' + tData(s,"series") + '</span>').join(' / ')}${u.acquire?` <span style="background:${u.acquire==='ガシャ'?'rgba(99,179,237,.25);color:#63b3ed':u.acquire==='開発'?'rgba(72,187,120,.25);color:#48bb78':'rgba(237,137,54,.25);color:#ed8936'};font-size:.85em;padding:0 4px;border-radius:2px">${u.acquire}</span>`:''}</div>
     ${u.normal?.combat_power ? `<div class="card-combat-power">${t('戦闘力')}: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
     ${(u.rarity==='UR' || u.rarity==='ULT') ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : _statMode==='ssp' ? '<div class="card-rarity-note" style="color:#f472b6">※SSP化時のステータス</div>' : _statMode==='sp' ? '<div class="card-rarity-note" style="color:#c084fc">※SP化時のステータス</div>' : u.rarity==='SSR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : ''}
     <div class="card-stats">
