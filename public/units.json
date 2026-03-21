@@ -5534,7 +5534,7 @@
   {
     "id": 36,
     "name": "ユニコーンガンダム(デストロイモード／覚醒)(EX)",
-    "image": "/unit-images/gw-unit-345.png",
+    "image": "/unit-images/mh-games-unit-345.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "バナージ・リンクス(支援)",
@@ -8944,7 +8944,7 @@
   {
     "id": 56,
     "name": "ガンダムAGE-1 ノーマル(EX)",
-    "image": "/unit-images/gw-unit-475.png",
+    "image": "/unit-images/mh-games-unit-475.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "フリット・アスノ【UR】",
@@ -9081,7 +9081,7 @@
   {
     "id": 57,
     "name": "ガンダムAGE-2 ノーマル(EX)",
-    "image": "/unit-images/gw-unit-474.png",
+    "image": "/unit-images/mh-games-unit-474.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "アセム・アスノ【UR】",
@@ -9220,7 +9220,7 @@
   {
     "id": 58,
     "name": "キャスバル専用ガンダム",
-    "image": "/unit-images/gw-unit-251.png",
+    "image": "/unit-images/mh-games-unit-251.png",
     "rarity": "ULT",
     "type": "攻撃",
     "obtain": "",
@@ -9349,7 +9349,7 @@
   {
     "id": 59,
     "name": "Zガンダム3号機P2型",
-    "image": "/unit-images/gw-unit-263.png",
+    "image": "/unit-images/mh-games-unit-263.png",
     "rarity": "ULT",
     "type": "支援",
     "obtain": "",
@@ -9487,7 +9487,7 @@
   {
     "id": 60,
     "name": "サイコ・ガンダムMk-Ⅲ",
-    "image": "/unit-images/gw-unit-262.png",
+    "image": "/unit-images/mh-games-unit-262.png",
     "rarity": "ULT",
     "type": "耐久",
     "obtain": "",
@@ -9620,7 +9620,7 @@
   {
     "id": 61,
     "name": "ガンダムアクエリアス",
-    "image": "/unit-images/gw-unit-272.png",
+    "image": "/unit-images/mh-games-unit-272.png",
     "rarity": "ULT",
     "type": "支援",
     "obtain": "",
@@ -9748,7 +9748,7 @@
   {
     "id": 62,
     "name": "スーパーハイペリオンガンダム",
-    "image": "/unit-images/gw-unit-282.png",
+    "image": "/unit-images/mh-games-unit-282.png",
     "rarity": "ULT",
     "type": "耐久",
     "obtain": "",
@@ -9879,7 +9879,7 @@
   {
     "id": 63,
     "name": "β・アジール",
-    "image": "/unit-images/gw-unit-385.png",
+    "image": "/unit-images/mh-games-unit-385.png",
     "rarity": "ULT",
     "type": "支援",
     "obtain": "",
@@ -10010,7 +10010,7 @@
   {
     "id": 64,
     "name": "ウルベ用ガンダム",
-    "image": "/unit-images/gw-unit-360.png",
+    "image": "/unit-images/mh-games-unit-360.png",
     "rarity": "ULT",
     "type": "支援",
     "obtain": "",
@@ -10139,7 +10139,7 @@
   {
     "id": 65,
     "name": "ガンダムデルタカイ",
-    "image": "/unit-images/gw-unit-369.png",
+    "image": "/unit-images/mh-games-unit-369.png",
     "rarity": "ULT",
     "type": "攻撃",
     "obtain": "",
@@ -10285,7 +10285,7 @@
   {
     "id": 66,
     "name": "ガンダム・バルバトスルプスレクス【阿頼耶識リミッター解除／半壊】",
-    "image": "/unit-images/gw-unit-404.png",
+    "image": "/unit-images/mh-games-unit-404.png",
     "rarity": "ULT",
     "type": "支援",
     "obtain": "",
@@ -10389,7 +10389,7 @@
   {
     "id": 67,
     "name": "ガンダムアストレイ ゴールドフレームアマテラス",
-    "image": "/unit-images/gw-unit-447.png",
+    "image": "/unit-images/mh-games-unit-447.png",
     "rarity": "ULT",
     "type": "耐久",
     "obtain": "",
@@ -10663,7 +10663,7 @@
   {
     "id": 69,
     "name": "ガンダムベルフェゴール",
-    "image": "/unit-images/gw-unit-467.png",
+    "image": "/unit-images/mh-games-unit-467.png",
     "rarity": "ULT",
     "type": "攻撃",
     "obtain": "",
@@ -10807,7 +10807,7 @@
   {
     "id": 70,
     "name": "G-3ガンダム",
-    "image": "/unit-images/gw-unit-247.png",
+    "image": "/unit-images/mh-games-unit-247.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -10975,7 +10975,7 @@
   {
     "id": 71,
     "name": "ビグ・ザム",
-    "image": "/unit-images/gw-unit-249.png",
+    "image": "/unit-images/mh-games-unit-249.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -11141,7 +11141,7 @@
   {
     "id": 72,
     "name": "ジオング",
-    "image": "/unit-images/gw-unit-250.png",
+    "image": "/unit-images/mh-games-unit-250.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -11282,7 +11282,7 @@
   {
     "id": 73,
     "name": "ギャン・エーオース",
-    "image": "/unit-images/gw-unit-248.png",
+    "image": "/unit-images/mh-games-unit-248.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -11423,7 +11423,7 @@
   {
     "id": 74,
     "name": "百式",
-    "image": "/unit-images/gw-unit-410.png",
+    "image": "/unit-images/mh-games-unit-410.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -11605,7 +11605,7 @@
   {
     "id": 75,
     "name": "Zガンダム",
-    "image": "/unit-images/gw-unit-252.png",
+    "image": "/unit-images/mh-games-unit-252.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -12097,7 +12097,7 @@
   {
     "id": 77,
     "name": "サイコ・ガンダム",
-    "image": "/unit-images/gw-unit-254.png",
+    "image": "/unit-images/mh-games-unit-254.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -12418,7 +12418,7 @@
   {
     "id": 78,
     "name": "ジ・O",
-    "image": "/unit-images/gw-unit-255.png",
+    "image": "/unit-images/mh-games-unit-255.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -12560,7 +12560,7 @@
   {
     "id": 79,
     "name": "ジャスティスガンダム(ミーティア)",
-    "image": "/unit-images/gw-unit-280.png",
+    "image": "/unit-images/mh-games-unit-280.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -12745,7 +12745,7 @@
   {
     "id": 80,
     "name": "パーフェクトストライクガンダム",
-    "image": "/unit-images/gw-unit-276.png",
+    "image": "/unit-images/mh-games-unit-276.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -12913,7 +12913,7 @@
   {
     "id": 81,
     "name": "フリーダムガンダム(ミーティア)",
-    "image": "/unit-images/gw-unit-277.png",
+    "image": "/unit-images/mh-games-unit-277.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -13070,7 +13070,7 @@
   {
     "id": 82,
     "name": "プロヴィデンスガンダム",
-    "image": "/unit-images/gw-unit-281.png",
+    "image": "/unit-images/mh-games-unit-281.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -13216,7 +13216,7 @@
   {
     "id": 83,
     "name": "ガンダムエピオン",
-    "image": "/unit-images/gw-unit-267.png",
+    "image": "/unit-images/mh-games-unit-267.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -13532,7 +13532,7 @@
   {
     "id": 84,
     "name": "アルトロンガンダム",
-    "image": "/unit-images/gw-unit-269.png",
+    "image": "/unit-images/mh-games-unit-269.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -13698,7 +13698,7 @@
   {
     "id": 85,
     "name": "ガンダムデスサイズヘル",
-    "image": "/unit-images/gw-unit-271.png",
+    "image": "/unit-images/mh-games-unit-271.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -13865,7 +13865,7 @@
   {
     "id": 86,
     "name": "ウイングガンダムゼロ",
-    "image": "/unit-images/gw-unit-270.png",
+    "image": "/unit-images/mh-games-unit-270.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -14167,7 +14167,7 @@
   {
     "id": 87,
     "name": "トールギスⅡ",
-    "image": "/unit-images/gw-unit-268.png",
+    "image": "/unit-images/mh-games-unit-268.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -14309,7 +14309,7 @@
   {
     "id": 88,
     "name": "フルアーマーZZガンダム",
-    "image": "/unit-images/gw-unit-256.png",
+    "image": "/unit-images/mh-games-unit-256.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -14661,7 +14661,7 @@
   {
     "id": 90,
     "name": "キュベレイ(ZZ版)",
-    "image": "/unit-images/gw-unit-258.png",
+    "image": "/unit-images/mh-games-unit-258.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -14802,7 +14802,7 @@
   {
     "id": 91,
     "name": "クィン・マンサ",
-    "image": "/unit-images/gw-unit-259.png",
+    "image": "/unit-images/mh-games-unit-259.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -14953,7 +14953,7 @@
   {
     "id": 92,
     "name": "ザクⅢ改",
-    "image": "/unit-images/gw-unit-260.png",
+    "image": "/unit-images/mh-games-unit-260.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -15106,7 +15106,7 @@
   {
     "id": 93,
     "name": "パトゥーリア",
-    "image": "/unit-images/gw-unit-274.png",
+    "image": "/unit-images/mh-games-unit-274.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -15241,7 +15241,7 @@
   {
     "id": 94,
     "name": "ベルティゴ",
-    "image": "/unit-images/gw-unit-275.png",
+    "image": "/unit-images/mh-games-unit-275.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -15397,7 +15397,7 @@
   {
     "id": 95,
     "name": "ガンダムXディバイダー",
-    "image": "/unit-images/gw-unit-273.png",
+    "image": "/unit-images/mh-games-unit-273.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -15539,7 +15539,7 @@
   {
     "id": 96,
     "name": "ガンダム・エアリアル改修型",
-    "image": "/unit-images/gw-unit-289.png",
+    "image": "/unit-images/mh-games-unit-289.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -15691,7 +15691,7 @@
   {
     "id": 97,
     "name": "ガンダム・ルブリス・ソーン",
-    "image": "/unit-images/gw-unit-291.png",
+    "image": "/unit-images/mh-games-unit-291.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -15830,7 +15830,7 @@
   {
     "id": 98,
     "name": "ガンダム・ルブリス・ウル",
-    "image": "/unit-images/gw-unit-290.png",
+    "image": "/unit-images/mh-games-unit-290.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -15969,7 +15969,7 @@
   {
     "id": 99,
     "name": "ガンダム・バルバトス(第6形態)",
-    "image": "/unit-images/gw-unit-287.png",
+    "image": "/unit-images/mh-games-unit-287.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -16155,7 +16155,7 @@
   {
     "id": 100,
     "name": "ガンダム・グシオンリベイク",
-    "image": "/unit-images/gw-unit-286.png",
+    "image": "/unit-images/mh-games-unit-286.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -16310,7 +16310,7 @@
   {
     "id": 101,
     "name": "グレイズ・アイン",
-    "image": "/unit-images/gw-unit-288.png",
+    "image": "/unit-images/mh-games-unit-288.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -16451,7 +16451,7 @@
   {
     "id": 102,
     "name": "マスターガンダム",
-    "image": "/unit-images/gw-unit-265.png",
+    "image": "/unit-images/mh-games-unit-265.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -16604,7 +16604,7 @@
   {
     "id": 103,
     "name": "ガンダムシュピーゲル",
-    "image": "/unit-images/gw-unit-264.png",
+    "image": "/unit-images/mh-games-unit-264.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -16745,7 +16745,7 @@
   {
     "id": 104,
     "name": "デビルガンダム(第1形態)",
-    "image": "/unit-images/gw-unit-266.png",
+    "image": "/unit-images/mh-games-unit-266.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -16876,7 +16876,7 @@
   {
     "id": 105,
     "name": "アルヴァトーレ",
-    "image": "/unit-images/gw-unit-285.png",
+    "image": "/unit-images/mh-games-unit-285.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -17031,7 +17031,7 @@
   {
     "id": 106,
     "name": "GNアーマー TYPE-D",
-    "image": "/unit-images/gw-unit-284.png",
+    "image": "/unit-images/mh-games-unit-284.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -17187,7 +17187,7 @@
   {
     "id": 107,
     "name": "GNアーマー TYPE-E",
-    "image": "/unit-images/gw-unit-283.png",
+    "image": "/unit-images/mh-games-unit-283.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -17344,7 +17344,7 @@
   {
     "id": 108,
     "name": "ドラグーンストライク",
-    "image": "/unit-images/gw-unit-278.png",
+    "image": "/unit-images/mh-games-unit-278.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -17514,7 +17514,7 @@
   {
     "id": 109,
     "name": "ムラサメ 飛行能力試験型",
-    "image": "/unit-images/gw-unit-279.png",
+    "image": "/unit-images/mh-games-unit-279.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -21124,7 +21124,7 @@
   {
     "id": 128,
     "name": "フルアーマー・ユニコーンガンダム(デストロイモード)",
-    "image": "/unit-images/gw-unit-362.png",
+    "image": "/unit-images/mh-games-unit-362.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -22578,7 +22578,7 @@
   {
     "id": 136,
     "name": "レギンレイズ・ジュリア(地上戦仕様)",
-    "image": "/unit-images/gw-unit-396.png",
+    "image": "/unit-images/mh-games-unit-396.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -26670,7 +26670,7 @@
   {
     "id": 158,
     "name": "ガンダムAGE-2 ノーマル",
-    "image": "/unit-images/gw-unit-484.png",
+    "image": "/unit-images/mh-games-unit-484.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -27663,7 +27663,7 @@
   {
     "id": 164,
     "name": "ガンダムアストレイ ゴールドフレーム天",
-    "image": "/unit-images/gw-unit-22.png",
+    "image": "/unit-images/mh-games-unit-22.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -27846,7 +27846,7 @@
   {
     "id": 165,
     "name": "ガンダムアストレイ ブルーフレーム セカンドL",
-    "image": "/unit-images/gw-unit-23.png",
+    "image": "/unit-images/mh-games-unit-23.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -28655,7 +28655,7 @@
   {
     "id": 170,
     "name": "騎士ガンダム",
-    "image": "/unit-images/gw-chara-258.png",
+    "image": "/unit-images/mh-games-chara-258.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -28839,7 +28839,7 @@
   {
     "id": 171,
     "name": "魔王サタンガンダム",
-    "image": "/unit-images/gw-chara-265.png",
+    "image": "/unit-images/mh-games-chara-265.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -29010,7 +29010,7 @@
   {
     "id": 172,
     "name": "騎士ジオング",
-    "image": "/unit-images/gw-chara-264.png",
+    "image": "/unit-images/mh-games-chara-264.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -31124,7 +31124,7 @@
   {
     "id": 183,
     "name": "ビグ・ラング(攻撃)",
-    "image": "/unit-images/gw-unit-39.png",
+    "image": "/unit-images/mh-games-unit-39.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -31311,7 +31311,7 @@
   {
     "id": 184,
     "name": "ヒルドルブ(支援)",
-    "image": "/unit-images/gw-unit-38.png",
+    "image": "/unit-images/mh-games-unit-38.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -31984,7 +31984,7 @@
   {
     "id": 188,
     "name": "赤いガンダム【強敵襲来】",
-    "image": "/unit-images/gw-unit-31.png",
+    "image": "/unit-images/mh-games-unit-31.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -32154,7 +32154,7 @@
   {
     "id": 189,
     "name": "オーヴェロン(アーマー形態)【強敵襲来】",
-    "image": "/unit-images/gw-unit-294.png",
+    "image": "/unit-images/mh-games-unit-294.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -32326,7 +32326,7 @@
   {
     "id": 190,
     "name": "サイコロガンダム【強敵襲来】",
-    "image": "/unit-images/gw-unit-295.png",
+    "image": "/unit-images/mh-games-unit-295.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -32489,7 +32489,7 @@
   {
     "id": 191,
     "name": "デスティニーインパルス【強敵襲来】",
-    "image": "/unit-images/gw-unit-316.png",
+    "image": "/unit-images/mh-games-unit-316.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -32662,7 +32662,7 @@
   {
     "id": 192,
     "name": "フルアーマー百式改【強敵襲来】",
-    "image": "/unit-images/gw-unit-315.png",
+    "image": "/unit-images/mh-games-unit-315.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -32835,7 +32835,7 @@
   {
     "id": 193,
     "name": "武者頑駄無【強敵襲来】",
-    "image": "/unit-images/gw-chara-259.png",
+    "image": "/unit-images/mh-games-chara-259.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -33020,7 +33020,7 @@
   {
     "id": 194,
     "name": "コマンドガンダム【強敵襲来】",
-    "image": "/unit-images/gw-chara-260.png",
+    "image": "/unit-images/mh-games-chara-260.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -33191,7 +33191,7 @@
   {
     "id": 195,
     "name": "タイタニア【強敵襲来】",
-    "image": "/unit-images/gw-unit-335.png",
+    "image": "/unit-images/mh-games-unit-335.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -33380,7 +33380,7 @@
   {
     "id": 196,
     "name": "シャイニングガンダム(スーパーモード)【強敵襲来】",
-    "image": "/unit-images/gw-unit-348.png",
+    "image": "/unit-images/mh-games-unit-348.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -33568,7 +33568,7 @@
   {
     "id": 197,
     "name": "バイアラン・カスタム2号機【強敵襲来】",
-    "image": "/unit-images/gw-unit-349.png",
+    "image": "/unit-images/mh-games-unit-349.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -33741,7 +33741,7 @@
   {
     "id": 198,
     "name": "ガンダム・端白星【強敵襲来】",
-    "image": "/unit-images/gw-unit-391.png",
+    "image": "/unit-images/mh-games-unit-391.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -33915,7 +33915,7 @@
   {
     "id": 199,
     "name": "フルアーマーガンダムMk-Ⅲ【強敵襲来】",
-    "image": "/unit-images/gw-unit-409.png",
+    "image": "/unit-images/mh-games-unit-409.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -34090,7 +34090,7 @@
   {
     "id": 200,
     "name": "ザクウォーリア(ライブ仕様)【強敵襲来】",
-    "image": "/unit-images/gw-unit-434.png",
+    "image": "/unit-images/mh-games-unit-434.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -34235,7 +34235,7 @@
   {
     "id": 201,
     "name": "GファルコンGX【強敵襲来】",
-    "image": "/unit-images/gw-unit-460.png",
+    "image": "/unit-images/mh-games-unit-460.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -34387,7 +34387,7 @@
   {
     "id": 202,
     "name": "Gサイフォス【強敵襲来】",
-    "image": "/unit-images/gw-unit-479.png",
+    "image": "/unit-images/mh-games-unit-479.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -34996,7 +34996,7 @@
   {
     "id": 206,
     "name": "キュベレイMk-II(エルピー・プル専用機)",
-    "image": "/unit-images/gw-unit-334.png",
+    "image": "/unit-images/mh-games-unit-334.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -36017,7 +36017,7 @@
   {
     "id": 211,
     "name": "百式(支援)",
-    "image": "/unit-images/gw-unit-253.png",
+    "image": "/unit-images/mh-games-unit-253.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -37179,7 +37179,7 @@
   {
     "id": 217,
     "name": "ザクⅡ(ドズル・ザビ専用機)",
-    "image": "/unit-images/gw-unit-35.png",
+    "image": "/unit-images/mh-games-unit-35.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "ドズル・ザビ",
@@ -37747,7 +37747,7 @@
   {
     "id": 221,
     "name": "ガンダム・ピクシー",
-    "image": "/unit-images/gw-unit-44.png",
+    "image": "/unit-images/mh-games-unit-44.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "ボルク・クライ",
@@ -38048,7 +38048,7 @@
   {
     "id": 223,
     "name": "イフリート・ナハト",
-    "image": "/unit-images/gw-unit-48.png",
+    "image": "/unit-images/mh-games-unit-48.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -39277,7 +39277,7 @@
   {
     "id": 229,
     "name": "グフ・ヴィジャンタ",
-    "image": "/unit-images/gw-unit-61.png",
+    "image": "/unit-images/mh-games-unit-61.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -40712,7 +40712,7 @@
   {
     "id": 238,
     "name": "ガンダムAGE-1 レイザー",
-    "image": "/unit-images/gw-unit-83.png",
+    "image": "/unit-images/mh-games-unit-83.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -40861,7 +40861,7 @@
   {
     "id": 239,
     "name": "Gセルフ",
-    "image": "/unit-images/gw-unit-84.png",
+    "image": "/unit-images/mh-games-unit-84.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -41871,7 +41871,7 @@
   {
     "id": 246,
     "name": "高機動型ゲルググ(ジョニー・ライデン専用機)",
-    "image": "/unit-images/gw-unit-36.png",
+    "image": "/unit-images/mh-games-unit-36.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "ジョニー・ライデン",
@@ -42154,7 +42154,7 @@
   {
     "id": 248,
     "name": "ジム・スナイパーⅡ",
-    "image": "/unit-images/gw-unit-41.png",
+    "image": "/unit-images/mh-games-unit-41.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -43070,7 +43070,7 @@
   {
     "id": 253,
     "name": "ゼク・アイン",
-    "image": "/unit-images/gw-unit-58.png",
+    "image": "/unit-images/mh-games-unit-58.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -44205,7 +44205,7 @@
   {
     "id": 259,
     "name": "ガンダムAGE-1 ノーマル",
-    "image": "/unit-images/gw-unit-81.png",
+    "image": "/unit-images/mh-games-unit-81.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -44631,7 +44631,7 @@
   {
     "id": 262,
     "name": "ガンダムEz8 ハイモビリティカスタム",
-    "image": "/unit-images/gw-unit-96.png",
+    "image": "/unit-images/mh-games-unit-96.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -45060,7 +45060,7 @@
   {
     "id": 265,
     "name": "ザクⅡ改",
-    "image": "/unit-images/gw-unit-42.png",
+    "image": "/unit-images/mh-games-unit-42.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -45507,7 +45507,7 @@
   {
     "id": 268,
     "name": "ガンダムMk-Ⅲ",
-    "image": "/unit-images/gw-unit-55.png",
+    "image": "/unit-images/mh-games-unit-55.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -45651,7 +45651,7 @@
   {
     "id": 269,
     "name": "ドーベン・ウルフ(指揮官機)",
-    "image": "/unit-images/gw-unit-59.png",
+    "image": "/unit-images/mh-games-unit-59.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "ラカン・ダカラン",
@@ -47530,7 +47530,7 @@
   {
     "id": 281,
     "name": "ガンダムEz8 ヘビーアームドカスタム",
-    "image": "/unit-images/gw-unit-97.png",
+    "image": "/unit-images/mh-games-unit-97.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -48157,7 +48157,7 @@
   {
     "id": 284,
     "name": "ガンダムアストレイ レッドフレームフライトユニット",
-    "image": "/unit-images/gw-unit-17.png",
+    "image": "/unit-images/mh-games-unit-17.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -48303,7 +48303,7 @@
   {
     "id": 285,
     "name": "ガンダムMk-Ⅱ試作0号機",
-    "image": "/unit-images/gw-unit-298.png",
+    "image": "/unit-images/mh-games-unit-298.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "ゼロ・ムラサメ【SSR】",
@@ -54882,7 +54882,7 @@
   {
     "id": 323,
     "name": "ガンダムAGE-1 フラット",
-    "image": "/unit-images/gw-unit-478.png",
+    "image": "/unit-images/mh-games-unit-478.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "フリット・アスノ【SSR】",
@@ -55019,7 +55019,7 @@
   {
     "id": 324,
     "name": "アデル スタークス",
-    "image": "/unit-images/gw-unit-477.png",
+    "image": "/unit-images/mh-games-unit-477.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "アリーサ・ガンヘイル",
@@ -55145,7 +55145,7 @@
   {
     "id": 325,
     "name": "シャア・アズナブル",
-    "image": "/unit-images/gw-chara-267.png",
+    "image": "/unit-images/mh-games-chara-267.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55224,7 +55224,7 @@
   {
     "id": 326,
     "name": "シャア・アズナブル(THE ORIGIN版)",
-    "image": "/unit-images/gw-chara-226.png",
+    "image": "/unit-images/mh-games-chara-226.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55298,7 +55298,7 @@
   {
     "id": 327,
     "name": "シロー・アマダ",
-    "image": "/unit-images/gw-chara-5.png",
+    "image": "/unit-images/mh-games-chara-5.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55370,7 +55370,7 @@
   {
     "id": 328,
     "name": "ミハイル・カミンスキー",
-    "image": "/unit-images/gw-chara-300.png",
+    "image": "/unit-images/mh-games-chara-300.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55440,7 +55440,7 @@
   {
     "id": 329,
     "name": "ユウ・カジマ",
-    "image": "/unit-images/gw-chara-289.png",
+    "image": "/unit-images/mh-games-chara-289.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55517,7 +55517,7 @@
   {
     "id": 330,
     "name": "アナベル・ガトー(攻撃)",
-    "image": "/unit-images/gw-chara-282.png",
+    "image": "/unit-images/mh-games-chara-282.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55597,7 +55597,7 @@
   {
     "id": 331,
     "name": "イットウ・ツルギ",
-    "image": "/unit-images/gw-chara-6.png",
+    "image": "/unit-images/mh-games-chara-6.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55670,7 +55670,7 @@
   {
     "id": 332,
     "name": "カミーユ・ビダン",
-    "image": "/unit-images/gw-chara-218.png",
+    "image": "/unit-images/mh-games-chara-218.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55744,7 +55744,7 @@
   {
     "id": 333,
     "name": "ハマーン・カーン",
-    "image": "/unit-images/gw-chara-262.png",
+    "image": "/unit-images/mh-games-chara-262.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55822,7 +55822,7 @@
   {
     "id": 334,
     "name": "アムロ・レイ(CCA)(攻撃)",
-    "image": "/unit-images/gw-chara-243.png",
+    "image": "/unit-images/mh-games-chara-243.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55905,7 +55905,7 @@
   {
     "id": 335,
     "name": "シャア・アズナブル(CCA)",
-    "image": "/unit-images/gw-chara-4.png",
+    "image": "/unit-images/mh-games-chara-4.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -55983,7 +55983,7 @@
   {
     "id": 336,
     "name": "バナージ・リンクス(攻撃)",
-    "image": "/unit-images/gw-chara-9.png",
+    "image": "/unit-images/mh-games-chara-9.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56054,7 +56054,7 @@
   {
     "id": 337,
     "name": "ハサウェイ・ノア",
-    "image": "/unit-images/gw-chara-296.png",
+    "image": "/unit-images/mh-games-chara-296.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56130,7 +56130,7 @@
   {
     "id": 338,
     "name": "キンケドゥ・ナウ",
-    "image": "/unit-images/gw-chara-11.png",
+    "image": "/unit-images/mh-games-chara-11.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56202,7 +56202,7 @@
   {
     "id": 339,
     "name": "ドモン・カッシュ",
-    "image": "/unit-images/gw-chara-273.png",
+    "image": "/unit-images/mh-games-chara-273.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56274,7 +56274,7 @@
   {
     "id": 340,
     "name": "東方不敗マスター・アジア",
-    "image": "/unit-images/gw-chara-253.png",
+    "image": "/unit-images/mh-games-chara-253.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56348,7 +56348,7 @@
   {
     "id": 341,
     "name": "ガロード・ラン",
-    "image": "/unit-images/gw-chara-337.png",
+    "image": "/unit-images/mh-games-chara-337.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56421,7 +56421,7 @@
   {
     "id": 342,
     "name": "キラ・ヤマト(DESTINY)",
-    "image": "/unit-images/gw-chara-15.png",
+    "image": "/unit-images/mh-games-chara-15.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56499,7 +56499,7 @@
   {
     "id": 343,
     "name": "シン・アスカ(攻撃)",
-    "image": "/unit-images/gw-chara-305.png",
+    "image": "/unit-images/mh-games-chara-305.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56586,7 +56586,7 @@
   {
     "id": 344,
     "name": "ロウ・ギュール",
-    "image": "/unit-images/gw-chara-344.png",
+    "image": "/unit-images/mh-games-chara-344.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56667,7 +56667,7 @@
   {
     "id": 345,
     "name": "刹那・F・セイエイ",
-    "image": "/unit-images/gw-chara-2.png",
+    "image": "/unit-images/mh-games-chara-2.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56740,7 +56740,7 @@
   {
     "id": 346,
     "name": "フリット・アスノ",
-    "image": "/unit-images/gw-chara-352.png",
+    "image": "/unit-images/mh-games-chara-352.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56821,7 +56821,7 @@
   {
     "id": 347,
     "name": "三日月・オーガス(攻撃)",
-    "image": "/unit-images/gw-chara-283.png",
+    "image": "/unit-images/mh-games-chara-283.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56895,7 +56895,7 @@
   {
     "id": 348,
     "name": "スレッタ・マーキュリー(攻撃)",
-    "image": "/unit-images/gw-chara-304.png",
+    "image": "/unit-images/mh-games-chara-304.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -56974,7 +56974,7 @@
   {
     "id": 349,
     "name": "ミオリネ・レンブラン",
-    "image": "/unit-images/gw-chara-287.png",
+    "image": "/unit-images/mh-games-chara-287.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -57041,7 +57041,7 @@
   {
     "id": 350,
     "name": "劉備ユニコーンガンダム",
-    "image": "/unit-images/gw-chara-256.png",
+    "image": "/unit-images/mh-games-chara-256.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -57117,7 +57117,7 @@
   {
     "id": 351,
     "name": "サイコ・ハロ",
-    "image": "/unit-images/gw-chara-359.png",
+    "image": "/unit-images/mh-games-chara-359.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -57183,7 +57183,7 @@
   {
     "id": 352,
     "name": "オリヴァー・マイ",
-    "image": "/unit-images/gw-chara-332.png",
+    "image": "/unit-images/mh-games-chara-332.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -57270,7 +57270,7 @@
   {
     "id": 353,
     "name": "ダリル・ローレンツ",
-    "image": "/unit-images/gw-chara-248.png",
+    "image": "/unit-images/mh-games-chara-248.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -57358,7 +57358,7 @@
   {
     "id": 354,
     "name": "アナベル・ガトー(支援)",
-    "image": "/unit-images/gw-chara-225.png",
+    "image": "/unit-images/mh-games-chara-225.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -57448,7 +57448,7 @@
   {
     "id": 355,
     "name": "アスナ・エルマリート",
-    "image": "/unit-images/gw-chara-7.png",
+    "image": "/unit-images/mh-games-chara-7.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -57532,7 +57532,7 @@
   {
     "id": 356,
     "name": "パプテマス・シロッコ",
-    "image": "/unit-images/gw-chara-219.png",
+    "image": "/unit-images/mh-games-chara-219.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -57616,7 +57616,7 @@
   {
     "id": 357,
     "name": "アムロ・レイ(CCA)(支援)",
-    "image": "/unit-images/gw-chara-8.png",
+    "image": "/unit-images/mh-games-chara-8.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -57699,7 +57699,7 @@
   {
     "id": 358,
     "name": "バナージ・リンクス(支援)",
-    "image": "/unit-images/gw-chara-272.png",
+    "image": "/unit-images/mh-games-chara-272.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -57784,7 +57784,7 @@
   {
     "id": 359,
     "name": "フル・フロンタル",
-    "image": "/unit-images/gw-chara-290.png",
+    "image": "/unit-images/mh-games-chara-290.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -57872,7 +57872,7 @@
   {
     "id": 360,
     "name": "シャギア・フロスト",
-    "image": "/unit-images/gw-chara-338.png",
+    "image": "/unit-images/mh-games-chara-338.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -57953,7 +57953,7 @@
   {
     "id": 361,
     "name": "キラ・ヤマト",
-    "image": "/unit-images/gw-chara-12.png",
+    "image": "/unit-images/mh-games-chara-12.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -58035,7 +58035,7 @@
   {
     "id": 362,
     "name": "ラウ・ル・クルーゼ",
-    "image": "/unit-images/gw-chara-299.png",
+    "image": "/unit-images/mh-games-chara-299.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -58119,7 +58119,7 @@
   {
     "id": 363,
     "name": "ラクス・クライン",
-    "image": "/unit-images/gw-chara-254.png",
+    "image": "/unit-images/mh-games-chara-254.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -58195,7 +58195,7 @@
   {
     "id": 364,
     "name": "シン・アスカ",
-    "image": "/unit-images/gw-chara-244.png",
+    "image": "/unit-images/mh-games-chara-244.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -58278,7 +58278,7 @@
   {
     "id": 365,
     "name": "アセム・アスノ",
-    "image": "/unit-images/gw-chara-351.png",
+    "image": "/unit-images/mh-games-chara-351.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -58364,7 +58364,7 @@
   {
     "id": 366,
     "name": "アルジ・ミラージ",
-    "image": "/unit-images/gw-chara-266.png",
+    "image": "/unit-images/mh-games-chara-266.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -58443,7 +58443,7 @@
   {
     "id": 367,
     "name": "スレッタ・マーキュリー(支援)",
-    "image": "/unit-images/gw-chara-14.png",
+    "image": "/unit-images/mh-games-chara-14.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -58522,7 +58522,7 @@
   {
     "id": 368,
     "name": "レイジ",
-    "image": "/unit-images/gw-chara-239.png",
+    "image": "/unit-images/mh-games-chara-239.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -58602,7 +58602,7 @@
   {
     "id": 369,
     "name": "モンスターブラックドラゴン",
-    "image": "/unit-images/gw-chara-255.png",
+    "image": "/unit-images/mh-games-chara-255.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -58683,7 +58683,7 @@
   {
     "id": 370,
     "name": "マーク・ギルダー",
-    "image": "/unit-images/gw-chara-1.png",
+    "image": "/unit-images/mh-games-chara-1.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
@@ -58760,7 +58760,7 @@
   {
     "id": 371,
     "name": "アムロ・レイ(1st)",
-    "image": "/unit-images/gw-chara-3.png",
+    "image": "/unit-images/mh-games-chara-3.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -58842,7 +58842,7 @@
   {
     "id": 372,
     "name": "ノリス・パッカード",
-    "image": "/unit-images/gw-chara-358.png",
+    "image": "/unit-images/mh-games-chara-358.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -58925,7 +58925,7 @@
   {
     "id": 373,
     "name": "イオ・フレミング",
-    "image": "/unit-images/gw-chara-249.png",
+    "image": "/unit-images/mh-games-chara-249.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59007,7 +59007,7 @@
   {
     "id": 374,
     "name": "コウ・ウラキ",
-    "image": "/unit-images/gw-chara-281.png",
+    "image": "/unit-images/mh-games-chara-281.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59095,7 +59095,7 @@
   {
     "id": 375,
     "name": "ジュドー・アーシタ",
-    "image": "/unit-images/gw-chara-261.png",
+    "image": "/unit-images/mh-games-chara-261.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59183,7 +59183,7 @@
   {
     "id": 376,
     "name": "リディ・マーセナス",
-    "image": "/unit-images/gw-chara-252.png",
+    "image": "/unit-images/mh-games-chara-252.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59268,7 +59268,7 @@
   {
     "id": 377,
     "name": "ヨナ・バシュタ",
-    "image": "/unit-images/gw-chara-10.png",
+    "image": "/unit-images/mh-games-chara-10.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59351,7 +59351,7 @@
   {
     "id": 378,
     "name": "レーン・エイム",
-    "image": "/unit-images/gw-chara-297.png",
+    "image": "/unit-images/mh-games-chara-297.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59433,7 +59433,7 @@
   {
     "id": 379,
     "name": "シーブック・アノー",
-    "image": "/unit-images/gw-chara-274.png",
+    "image": "/unit-images/mh-games-chara-274.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59513,7 +59513,7 @@
   {
     "id": 380,
     "name": "デュオ・マックスウェル(EW版)",
-    "image": "/unit-images/gw-chara-238.png",
+    "image": "/unit-images/mh-games-chara-238.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59591,7 +59591,7 @@
   {
     "id": 381,
     "name": "ティファ・アディール",
-    "image": "/unit-images/gw-chara-342.png",
+    "image": "/unit-images/mh-games-chara-342.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59663,7 +59663,7 @@
   {
     "id": 382,
     "name": "アスラン・ザラ",
-    "image": "/unit-images/gw-chara-16.png",
+    "image": "/unit-images/mh-games-chara-16.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59747,7 +59747,7 @@
   {
     "id": 383,
     "name": "ロンド・ミナ・サハク",
-    "image": "/unit-images/gw-chara-345.png",
+    "image": "/unit-images/mh-games-chara-345.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59835,7 +59835,7 @@
   {
     "id": 384,
     "name": "三日月・オーガス(耐久)",
-    "image": "/unit-images/gw-chara-13.png",
+    "image": "/unit-images/mh-games-chara-13.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59914,7 +59914,7 @@
   {
     "id": 385,
     "name": "ガエリオ・ボードウィン",
-    "image": "/unit-images/gw-chara-333.png",
+    "image": "/unit-images/mh-games-chara-333.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -59996,7 +59996,7 @@
   {
     "id": 386,
     "name": "スレッタ・マーキュリー(耐久)",
-    "image": "/unit-images/gw-chara-284.png",
+    "image": "/unit-images/mh-games-chara-284.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -60070,7 +60070,7 @@
   {
     "id": 387,
     "name": "ドズル・ザビ",
-    "image": "/unit-images/gw-chara-27.png",
+    "image": "/unit-images/mh-games-chara-27.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60137,7 +60137,7 @@
   {
     "id": 388,
     "name": "デメジエール・ソンネン",
-    "image": "/unit-images/gw-chara-30.png",
+    "image": "/unit-images/mh-games-chara-30.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60203,7 +60203,7 @@
   {
     "id": 389,
     "name": "オリヴァー・マイ",
-    "image": "/unit-images/gw-chara-335.png",
+    "image": "/unit-images/mh-games-chara-335.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60269,7 +60269,7 @@
   {
     "id": 390,
     "name": "アイナ・サハリン",
-    "image": "/unit-images/gw-chara-361.png",
+    "image": "/unit-images/mh-games-chara-361.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60335,7 +60335,7 @@
   {
     "id": 391,
     "name": "バーナード・ワイズマン",
-    "image": "/unit-images/gw-chara-302.png",
+    "image": "/unit-images/mh-games-chara-302.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60466,7 +60466,7 @@
   {
     "id": 393,
     "name": "ニムバス・シュターゼン",
-    "image": "/unit-images/gw-chara-292.png",
+    "image": "/unit-images/mh-games-chara-292.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60533,7 +60533,7 @@
   {
     "id": 394,
     "name": "ダリル・ローレンツ",
-    "image": "/unit-images/gw-chara-250.png",
+    "image": "/unit-images/mh-games-chara-250.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60600,7 +60600,7 @@
   {
     "id": 395,
     "name": "アマテ・ユズリハ(マチュ)",
-    "image": "/unit-images/gw-chara-25.png",
+    "image": "/unit-images/mh-games-chara-25.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60666,7 +60666,7 @@
   {
     "id": 396,
     "name": "シイコ・スガイ",
-    "image": "/unit-images/gw-chara-220.png",
+    "image": "/unit-images/mh-games-chara-220.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60731,7 +60731,7 @@
   {
     "id": 397,
     "name": "ニャアン",
-    "image": "/unit-images/gw-chara-224.png",
+    "image": "/unit-images/mh-games-chara-224.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60796,7 +60796,7 @@
   {
     "id": 398,
     "name": "シャリア・ブル(GQ)(0079)",
-    "image": "/unit-images/gw-chara-242.png",
+    "image": "/unit-images/mh-games-chara-242.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60863,7 +60863,7 @@
   {
     "id": 399,
     "name": "コウ・ウラキ",
-    "image": "/unit-images/gw-chara-234.png",
+    "image": "/unit-images/mh-games-chara-234.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60930,7 +60930,7 @@
   {
     "id": 400,
     "name": "レズン・シュナイダー",
-    "image": "/unit-images/gw-chara-245.png",
+    "image": "/unit-images/mh-games-chara-245.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -60995,7 +60995,7 @@
   {
     "id": 401,
     "name": "アンジェロ・ザウパー",
-    "image": "/unit-images/gw-chara-275.png",
+    "image": "/unit-images/mh-games-chara-275.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61059,7 +61059,7 @@
   {
     "id": 402,
     "name": "エメラルダ・ズービン",
-    "image": "/unit-images/gw-chara-360.png",
+    "image": "/unit-images/mh-games-chara-360.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61122,7 +61122,7 @@
   {
     "id": 403,
     "name": "ケネス・スレッグ",
-    "image": "/unit-images/gw-chara-349.png",
+    "image": "/unit-images/mh-games-chara-349.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61187,7 +61187,7 @@
   {
     "id": 404,
     "name": "デフ・スタリオン",
-    "image": "/unit-images/gw-chara-36.png",
+    "image": "/unit-images/mh-games-chara-36.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61252,7 +61252,7 @@
   {
     "id": 405,
     "name": "サイ・サイシー",
-    "image": "/unit-images/gw-chara-278.png",
+    "image": "/unit-images/mh-games-chara-278.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61314,7 +61314,7 @@
   {
     "id": 406,
     "name": "ヒイロ・ユイ",
-    "image": "/unit-images/gw-chara-294.png",
+    "image": "/unit-images/mh-games-chara-294.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61378,7 +61378,7 @@
   {
     "id": 407,
     "name": "ソリス・アルモニア",
-    "image": "/unit-images/gw-chara-240.png",
+    "image": "/unit-images/mh-games-chara-240.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61440,7 +61440,7 @@
   {
     "id": 408,
     "name": "ロアビィ・ロイ",
-    "image": "/unit-images/gw-chara-340.png",
+    "image": "/unit-images/mh-games-chara-340.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61501,7 +61501,7 @@
   {
     "id": 409,
     "name": "エニル・エル",
-    "image": "/unit-images/gw-chara-38.png",
+    "image": "/unit-images/mh-games-chara-38.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61563,7 +61563,7 @@
   {
     "id": 410,
     "name": "ポゥ・エイジ",
-    "image": "/unit-images/gw-chara-39.png",
+    "image": "/unit-images/mh-games-chara-39.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61624,7 +61624,7 @@
   {
     "id": 411,
     "name": "イザーク・ジュール",
-    "image": "/unit-images/gw-chara-310.png",
+    "image": "/unit-images/mh-games-chara-310.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61690,7 +61690,7 @@
   {
     "id": 412,
     "name": "エドワード・ハレルソン",
-    "image": "/unit-images/gw-chara-40.png",
+    "image": "/unit-images/mh-games-chara-40.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61756,7 +61756,7 @@
   {
     "id": 413,
     "name": "ロンド・ギナ・サハク",
-    "image": "/unit-images/gw-chara-19.png",
+    "image": "/unit-images/mh-games-chara-19.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61821,7 +61821,7 @@
   {
     "id": 414,
     "name": "カナード・パルス",
-    "image": "/unit-images/gw-chara-347.png",
+    "image": "/unit-images/mh-games-chara-347.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -61953,7 +61953,7 @@
   {
     "id": 416,
     "name": "シャル・アクスティカ",
-    "image": "/unit-images/gw-chara-42.png",
+    "image": "/unit-images/mh-games-chara-42.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -62016,7 +62016,7 @@
   {
     "id": 417,
     "name": "アリーサ・ガンヘイル",
-    "image": "/unit-images/gw-chara-354.png",
+    "image": "/unit-images/mh-games-chara-354.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -62078,7 +62078,7 @@
   {
     "id": 418,
     "name": "アミダ・アルカ",
-    "image": "/unit-images/gw-chara-45.png",
+    "image": "/unit-images/mh-games-chara-45.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -62140,7 +62140,7 @@
   {
     "id": 419,
     "name": "アルジ・ミラージ",
-    "image": "/unit-images/gw-chara-270.png",
+    "image": "/unit-images/mh-games-chara-270.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -62203,7 +62203,7 @@
   {
     "id": 420,
     "name": "ザディエル・ザルムフォート",
-    "image": "/unit-images/gw-chara-268.png",
+    "image": "/unit-images/mh-games-chara-268.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -62267,7 +62267,7 @@
   {
     "id": 421,
     "name": "ウィスタリオ・アファム【強敵襲来】",
-    "image": "/unit-images/gw-chara-288.png",
+    "image": "/unit-images/mh-games-chara-288.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -62391,7 +62391,7 @@
   {
     "id": 423,
     "name": "イレイ・ハル",
-    "image": "/unit-images/gw-chara-47.png",
+    "image": "/unit-images/mh-games-chara-47.png",
     "rarity": "SSR",
     "type": "攻撃",
     "obtain": "",
@@ -62453,7 +62453,7 @@
   {
     "id": 426,
     "name": "ジョニー・ライデン",
-    "image": "/unit-images/gw-chara-28.png",
+    "image": "/unit-images/mh-games-chara-28.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -62523,7 +62523,7 @@
   {
     "id": 427,
     "name": "ジャン・リュック・デュバル",
-    "image": "/unit-images/gw-chara-29.png",
+    "image": "/unit-images/mh-games-chara-29.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -62594,7 +62594,7 @@
   {
     "id": 428,
     "name": "モニク・キャディラック",
-    "image": "/unit-images/gw-chara-334.png",
+    "image": "/unit-images/mh-games-chara-334.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -62663,7 +62663,7 @@
   {
     "id": 429,
     "name": "シロー・アマダ",
-    "image": "/unit-images/gw-chara-364.png",
+    "image": "/unit-images/mh-games-chara-364.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -62735,7 +62735,7 @@
   {
     "id": 430,
     "name": "ヘンリー・ブーン",
-    "image": "/unit-images/gw-chara-32.png",
+    "image": "/unit-images/mh-games-chara-32.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -62807,7 +62807,7 @@
   {
     "id": 431,
     "name": "イオ・フレミング",
-    "image": "/unit-images/gw-chara-251.png",
+    "image": "/unit-images/mh-games-chara-251.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -62878,7 +62878,7 @@
   {
     "id": 432,
     "name": "シュウジ・イトウ【強敵襲来】",
-    "image": "/unit-images/gw-chara-26.png",
+    "image": "/unit-images/mh-games-chara-26.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63017,7 +63017,7 @@
   {
     "id": 434,
     "name": "エグザベ・オリベ",
-    "image": "/unit-images/gw-chara-241.png",
+    "image": "/unit-images/mh-games-chara-241.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63088,7 +63088,7 @@
   {
     "id": 435,
     "name": "クワトロ・バジーナ",
-    "image": "/unit-images/gw-chara-298.png",
+    "image": "/unit-images/mh-games-chara-298.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63161,7 +63161,7 @@
   {
     "id": 436,
     "name": "エルピー・プル",
-    "image": "/unit-images/gw-chara-263.png",
+    "image": "/unit-images/mh-games-chara-263.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63233,7 +63233,7 @@
   {
     "id": 437,
     "name": "ハサウェイ・ノア",
-    "image": "/unit-images/gw-chara-350.png",
+    "image": "/unit-images/mh-games-chara-350.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63303,7 +63303,7 @@
   {
     "id": 438,
     "name": "レーン・エイム",
-    "image": "/unit-images/gw-chara-343.png",
+    "image": "/unit-images/mh-games-chara-343.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63374,7 +63374,7 @@
   {
     "id": 439,
     "name": "アルゴ・ガルスキー",
-    "image": "/unit-images/gw-chara-280.png",
+    "image": "/unit-images/mh-games-chara-280.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63441,7 +63441,7 @@
   {
     "id": 440,
     "name": "カトル・ラバーバ・ウィナー",
-    "image": "/unit-images/gw-chara-237.png",
+    "image": "/unit-images/mh-games-chara-237.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63509,7 +63509,7 @@
   {
     "id": 441,
     "name": "ウィッツ・スー",
-    "image": "/unit-images/gw-chara-339.png",
+    "image": "/unit-images/mh-games-chara-339.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63576,7 +63576,7 @@
   {
     "id": 442,
     "name": "カガリ・ユラ・アスハ",
-    "image": "/unit-images/gw-chara-17.png",
+    "image": "/unit-images/mh-games-chara-17.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63647,7 +63647,7 @@
   {
     "id": 443,
     "name": "叢雲劾",
-    "image": "/unit-images/gw-chara-20.png",
+    "image": "/unit-images/mh-games-chara-20.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63720,7 +63720,7 @@
   {
     "id": 444,
     "name": "プレア・レヴェリー",
-    "image": "/unit-images/gw-chara-346.png",
+    "image": "/unit-images/mh-games-chara-346.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63790,7 +63790,7 @@
   {
     "id": 445,
     "name": "ルナマリア・ホーク",
-    "image": "/unit-images/gw-chara-246.png",
+    "image": "/unit-images/mh-games-chara-246.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -63931,7 +63931,7 @@
   {
     "id": 447,
     "name": "ミーア・キャンベル【強敵襲来】",
-    "image": "/unit-images/gw-chara-306.png",
+    "image": "/unit-images/mh-games-chara-306.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -64001,7 +64001,7 @@
   {
     "id": 448,
     "name": "グラーベ・ヴィオレント",
-    "image": "/unit-images/gw-chara-41.png",
+    "image": "/unit-images/mh-games-chara-41.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -64070,7 +64070,7 @@
   {
     "id": 449,
     "name": "エイミー・ジンバリスト",
-    "image": "/unit-images/gw-chara-44.png",
+    "image": "/unit-images/mh-games-chara-44.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -64138,7 +64138,7 @@
   {
     "id": 450,
     "name": "フリット・アスノ",
-    "image": "/unit-images/gw-chara-355.png",
+    "image": "/unit-images/mh-games-chara-355.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -64209,7 +64209,7 @@
   {
     "id": 451,
     "name": "イオク・クジャン",
-    "image": "/unit-images/gw-chara-286.png",
+    "image": "/unit-images/mh-games-chara-286.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -64277,7 +64277,7 @@
   {
     "id": 452,
     "name": "デイラ・ナディラ",
-    "image": "/unit-images/gw-chara-269.png",
+    "image": "/unit-images/mh-games-chara-269.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -64346,7 +64346,7 @@
   {
     "id": 453,
     "name": "グエル・ジェターク",
-    "image": "/unit-images/gw-chara-309.png",
+    "image": "/unit-images/mh-games-chara-309.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -64413,7 +64413,7 @@
   {
     "id": 454,
     "name": "ノヤマ・リナ",
-    "image": "/unit-images/gw-chara-48.png",
+    "image": "/unit-images/mh-games-chara-48.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -64481,7 +64481,7 @@
   {
     "id": 456,
     "name": "ゼロ・ムラサメ",
-    "image": "/unit-images/gw-chara-227.png",
+    "image": "/unit-images/mh-games-chara-227.png",
     "rarity": "SSR",
     "type": "支援",
     "obtain": "",
@@ -64551,7 +64551,7 @@
   {
     "id": 457,
     "name": "シン・マツナガ",
-    "image": "/unit-images/gw-chara-34.png",
+    "image": "/unit-images/mh-games-chara-34.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -64622,7 +64622,7 @@
   {
     "id": 458,
     "name": "ヘルベルト・フォン・カスペン",
-    "image": "/unit-images/gw-chara-336.png",
+    "image": "/unit-images/mh-games-chara-336.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -64693,7 +64693,7 @@
   {
     "id": 459,
     "name": "クリスチーナ・マッケンジー",
-    "image": "/unit-images/gw-chara-303.png",
+    "image": "/unit-images/mh-games-chara-303.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -64763,7 +64763,7 @@
   {
     "id": 460,
     "name": "ユウ・カジマ",
-    "image": "/unit-images/gw-chara-291.png",
+    "image": "/unit-images/mh-games-chara-291.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -64976,7 +64976,7 @@
   {
     "id": 463,
     "name": "ドゥー・ムラサメ",
-    "image": "/unit-images/gw-chara-236.png",
+    "image": "/unit-images/mh-games-chara-236.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65047,7 +65047,7 @@
   {
     "id": 464,
     "name": "アナベル・ガトー",
-    "image": "/unit-images/gw-chara-293.png",
+    "image": "/unit-images/mh-games-chara-293.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65120,7 +65120,7 @@
   {
     "id": 465,
     "name": "ケリィ・レズナー",
-    "image": "/unit-images/gw-chara-235.png",
+    "image": "/unit-images/mh-games-chara-235.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65191,7 +65191,7 @@
   {
     "id": 466,
     "name": "ラカン・ダカラン",
-    "image": "/unit-images/gw-chara-33.png",
+    "image": "/unit-images/mh-games-chara-33.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65261,7 +65261,7 @@
   {
     "id": 467,
     "name": "レッド・ウェイライン",
-    "image": "/unit-images/gw-chara-35.png",
+    "image": "/unit-images/mh-games-chara-35.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65330,7 +65330,7 @@
   {
     "id": 468,
     "name": "ダグザ・マックール",
-    "image": "/unit-images/gw-chara-276.png",
+    "image": "/unit-images/mh-games-chara-276.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65399,7 +65399,7 @@
   {
     "id": 469,
     "name": "ギギ・アンダルシア",
-    "image": "/unit-images/gw-chara-348.png",
+    "image": "/unit-images/mh-games-chara-348.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65466,7 +65466,7 @@
   {
     "id": 470,
     "name": "ジュリア・スガ",
-    "image": "/unit-images/gw-chara-357.png",
+    "image": "/unit-images/mh-games-chara-357.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65533,7 +65533,7 @@
   {
     "id": 471,
     "name": "チボデー・クロケット",
-    "image": "/unit-images/gw-chara-277.png",
+    "image": "/unit-images/mh-games-chara-277.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65600,7 +65600,7 @@
   {
     "id": 472,
     "name": "ジョルジュ・ド・サンド",
-    "image": "/unit-images/gw-chara-279.png",
+    "image": "/unit-images/mh-games-chara-279.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65667,7 +65667,7 @@
   {
     "id": 473,
     "name": "オデル・バーネット",
-    "image": "/unit-images/gw-chara-37.png",
+    "image": "/unit-images/mh-games-chara-37.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65734,7 +65734,7 @@
   {
     "id": 474,
     "name": "ランスロー・ダーウェル",
-    "image": "/unit-images/gw-chara-341.png",
+    "image": "/unit-images/mh-games-chara-341.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65803,7 +65803,7 @@
   {
     "id": 475,
     "name": "ロウ・ギュール",
-    "image": "/unit-images/gw-chara-18.png",
+    "image": "/unit-images/mh-games-chara-18.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -65873,7 +65873,7 @@
   {
     "id": 476,
     "name": "レイ・ザ・バレル",
-    "image": "/unit-images/gw-chara-247.png",
+    "image": "/unit-images/mh-games-chara-247.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -66015,7 +66015,7 @@
   {
     "id": 478,
     "name": "ビサイド・ペイン",
-    "image": "/unit-images/gw-chara-43.png",
+    "image": "/unit-images/mh-games-chara-43.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -66083,7 +66083,7 @@
   {
     "id": 479,
     "name": "ユリン・ルシェル",
-    "image": "/unit-images/gw-chara-353.png",
+    "image": "/unit-images/mh-games-chara-353.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -66150,7 +66150,7 @@
   {
     "id": 480,
     "name": "カルタ・イシュー",
-    "image": "/unit-images/gw-chara-46.png",
+    "image": "/unit-images/mh-games-chara-46.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -66217,7 +66217,7 @@
   {
     "id": 481,
     "name": "ジュリエッタ・ジュリス",
-    "image": "/unit-images/gw-chara-285.png",
+    "image": "/unit-images/mh-games-chara-285.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -66285,7 +66285,7 @@
   {
     "id": 482,
     "name": "サンポ・ハクリ",
-    "image": "/unit-images/gw-chara-271.png",
+    "image": "/unit-images/mh-games-chara-271.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -66352,7 +66352,7 @@
   {
     "id": 483,
     "name": "ノレア・デュノク",
-    "image": "/unit-images/gw-chara-308.png",
+    "image": "/unit-images/mh-games-chara-308.png",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -66418,7 +66418,7 @@
   {
     "id": 487,
     "name": "セイラ・マス",
-    "image": "/unit-images/gw-chara-51.png",
+    "image": "/unit-images/mh-games-chara-51.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -66477,7 +66477,7 @@
   {
     "id": 488,
     "name": "ランバ・ラル",
-    "image": "/unit-images/gw-chara-57.png",
+    "image": "/unit-images/mh-games-chara-57.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -66537,7 +66537,7 @@
   {
     "id": 489,
     "name": "ガイア",
-    "image": "/unit-images/gw-chara-59.png",
+    "image": "/unit-images/mh-games-chara-59.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -66597,7 +66597,7 @@
   {
     "id": 490,
     "name": "オルテガ",
-    "image": "/unit-images/gw-chara-61.png",
+    "image": "/unit-images/mh-games-chara-61.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -66656,7 +66656,7 @@
   {
     "id": 491,
     "name": "ガルマ・ザビ",
-    "image": "/unit-images/gw-chara-62.png",
+    "image": "/unit-images/mh-games-chara-62.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67076,7 +67076,7 @@
   {
     "id": 498,
     "name": "サウス・バニング",
-    "image": "/unit-images/gw-chara-232.png",
+    "image": "/unit-images/mh-games-chara-232.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67136,7 +67136,7 @@
   {
     "id": 499,
     "name": "ベルナルド・モンシア",
-    "image": "/unit-images/gw-chara-230.png",
+    "image": "/unit-images/mh-games-chara-230.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67195,7 +67195,7 @@
   {
     "id": 500,
     "name": "シーマ・ガラハウ",
-    "image": "/unit-images/gw-chara-317.png",
+    "image": "/unit-images/mh-games-chara-317.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67256,7 +67256,7 @@
   {
     "id": 501,
     "name": "クワトロ・バジーナ",
-    "image": "/unit-images/gw-chara-65.png",
+    "image": "/unit-images/mh-games-chara-65.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67319,7 +67319,7 @@
   {
     "id": 502,
     "name": "ジェリド・メサ",
-    "image": "/unit-images/gw-chara-70.png",
+    "image": "/unit-images/mh-games-chara-70.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67444,7 +67444,7 @@
   {
     "id": 504,
     "name": "ダンケル・クーパー",
-    "image": "/unit-images/gw-chara-77.png",
+    "image": "/unit-images/mh-games-chara-77.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67504,7 +67504,7 @@
   {
     "id": 505,
     "name": "ブラン・ブルターク",
-    "image": "/unit-images/gw-chara-79.png",
+    "image": "/unit-images/mh-games-chara-79.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67566,7 +67566,7 @@
   {
     "id": 506,
     "name": "ジュドー・アーシタ",
-    "image": "/unit-images/gw-chara-82.png",
+    "image": "/unit-images/mh-games-chara-82.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67629,7 +67629,7 @@
   {
     "id": 507,
     "name": "イリア・パゾム",
-    "image": "/unit-images/gw-chara-86.png",
+    "image": "/unit-images/mh-games-chara-86.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67688,7 +67688,7 @@
   {
     "id": 508,
     "name": "キャラ・スーン",
-    "image": "/unit-images/gw-chara-87.png",
+    "image": "/unit-images/mh-games-chara-87.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67747,7 +67747,7 @@
   {
     "id": 509,
     "name": "グレミー・トト",
-    "image": "/unit-images/gw-chara-88.png",
+    "image": "/unit-images/mh-games-chara-88.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67810,7 +67810,7 @@
   {
     "id": 510,
     "name": "エルピー・プル",
-    "image": "/unit-images/gw-chara-89.png",
+    "image": "/unit-images/mh-games-chara-89.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -67870,7 +67870,7 @@
   {
     "id": 511,
     "name": "アムロ・レイ(CCA)",
-    "image": "/unit-images/gw-chara-316.png",
+    "image": "/unit-images/mh-games-chara-316.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68108,7 +68108,7 @@
   {
     "id": 515,
     "name": "フル・フロンタル",
-    "image": "/unit-images/gw-chara-319.png",
+    "image": "/unit-images/mh-games-chara-319.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68230,7 +68230,7 @@
   {
     "id": 517,
     "name": "ロニ・ガーベイ",
-    "image": "/unit-images/gw-chara-320.png",
+    "image": "/unit-images/mh-games-chara-320.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68468,7 +68468,7 @@
   {
     "id": 521,
     "name": "ドモン・カッシュ(攻撃)",
-    "image": "/unit-images/gw-chara-92.png",
+    "image": "/unit-images/mh-games-chara-92.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68526,7 +68526,7 @@
   {
     "id": 522,
     "name": "チボデー・クロケット",
-    "image": "/unit-images/gw-chara-94.png",
+    "image": "/unit-images/mh-games-chara-94.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68583,7 +68583,7 @@
   {
     "id": 523,
     "name": "東方不敗マスター・アジア(攻撃)",
-    "image": "/unit-images/gw-chara-101.png",
+    "image": "/unit-images/mh-games-chara-101.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68643,7 +68643,7 @@
   {
     "id": 524,
     "name": "ミケロ・チャリオット",
-    "image": "/unit-images/gw-chara-182.png",
+    "image": "/unit-images/mh-games-chara-182.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68701,7 +68701,7 @@
   {
     "id": 525,
     "name": "アレンビー・ビアズリー",
-    "image": "/unit-images/gw-chara-318.png",
+    "image": "/unit-images/mh-games-chara-318.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68757,7 +68757,7 @@
   {
     "id": 526,
     "name": "デュオ・マックスウェル",
-    "image": "/unit-images/gw-chara-103.png",
+    "image": "/unit-images/mh-games-chara-103.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68813,7 +68813,7 @@
   {
     "id": 527,
     "name": "張 五飛",
-    "image": "/unit-images/gw-chara-106.png",
+    "image": "/unit-images/mh-games-chara-106.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68869,7 +68869,7 @@
   {
     "id": 528,
     "name": "ミリアルド・ピースクラフト",
-    "image": "/unit-images/gw-chara-108.png",
+    "image": "/unit-images/mh-games-chara-108.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68929,7 +68929,7 @@
   {
     "id": 529,
     "name": "ルクレツィア・ノイン",
-    "image": "/unit-images/gw-chara-109.png",
+    "image": "/unit-images/mh-games-chara-109.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -68987,7 +68987,7 @@
   {
     "id": 530,
     "name": "ガロード・ラン",
-    "image": "/unit-images/gw-chara-111.png",
+    "image": "/unit-images/mh-games-chara-111.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69044,7 +69044,7 @@
   {
     "id": 531,
     "name": "シャギア・フロスト",
-    "image": "/unit-images/gw-chara-116.png",
+    "image": "/unit-images/mh-games-chara-116.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69162,7 +69162,7 @@
   {
     "id": 533,
     "name": "キラ・ヤマト(攻撃)",
-    "image": "/unit-images/gw-chara-119.png",
+    "image": "/unit-images/mh-games-chara-119.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69224,7 +69224,7 @@
   {
     "id": 534,
     "name": "ムウ・ラ・フラガ",
-    "image": "/unit-images/gw-chara-120.png",
+    "image": "/unit-images/mh-games-chara-120.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69285,7 +69285,7 @@
   {
     "id": 535,
     "name": "クロト・ブエル",
-    "image": "/unit-images/gw-chara-122.png",
+    "image": "/unit-images/mh-games-chara-122.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69346,7 +69346,7 @@
   {
     "id": 536,
     "name": "アスラン・ザラ",
-    "image": "/unit-images/gw-chara-124.png",
+    "image": "/unit-images/mh-games-chara-124.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69410,7 +69410,7 @@
   {
     "id": 537,
     "name": "ニコル・アマルフィ",
-    "image": "/unit-images/gw-chara-128.png",
+    "image": "/unit-images/mh-games-chara-128.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69471,7 +69471,7 @@
   {
     "id": 538,
     "name": "アンドリュー・バルトフェルド",
-    "image": "/unit-images/gw-chara-312.png",
+    "image": "/unit-images/mh-games-chara-312.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69534,7 +69534,7 @@
   {
     "id": 539,
     "name": "ジュリ・ウー・ニェン",
-    "image": "/unit-images/gw-chara-132.png",
+    "image": "/unit-images/mh-games-chara-132.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69594,7 +69594,7 @@
   {
     "id": 540,
     "name": "シホ・ハーネンフース",
-    "image": "/unit-images/gw-chara-134.png",
+    "image": "/unit-images/mh-games-chara-134.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69715,7 +69715,7 @@
   {
     "id": 542,
     "name": "蘊・奥",
-    "image": "/unit-images/gw-chara-24.png",
+    "image": "/unit-images/mh-games-chara-24.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69774,7 +69774,7 @@
   {
     "id": 543,
     "name": "メイア・シヴァ",
-    "image": "/unit-images/gw-chara-135.png",
+    "image": "/unit-images/mh-games-chara-135.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69837,7 +69837,7 @@
   {
     "id": 544,
     "name": "アラン・ローランド",
-    "image": "/unit-images/gw-chara-136.png",
+    "image": "/unit-images/mh-games-chara-136.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -69898,7 +69898,7 @@
   {
     "id": 545,
     "name": "キラ・ヤマト(DESTINY)",
-    "image": "/unit-images/gw-chara-363.png",
+    "image": "/unit-images/mh-games-chara-363.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -70022,7 +70022,7 @@
   {
     "id": 547,
     "name": "レイ・ザ・バレル",
-    "image": "/unit-images/gw-chara-313.png",
+    "image": "/unit-images/mh-games-chara-313.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -70208,7 +70208,7 @@
   {
     "id": 550,
     "name": "ハレルヤ・ハプティズム",
-    "image": "/unit-images/gw-chara-140.png",
+    "image": "/unit-images/mh-games-chara-140.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -70266,7 +70266,7 @@
   {
     "id": 551,
     "name": "ミハエル・トリニティ",
-    "image": "/unit-images/gw-chara-143.png",
+    "image": "/unit-images/mh-games-chara-143.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -70322,7 +70322,7 @@
   {
     "id": 552,
     "name": "アレハンドロ・コーナー",
-    "image": "/unit-images/gw-chara-145.png",
+    "image": "/unit-images/mh-games-chara-145.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -70378,7 +70378,7 @@
   {
     "id": 553,
     "name": "セルゲイ・スミルノフ",
-    "image": "/unit-images/gw-chara-148.png",
+    "image": "/unit-images/mh-games-chara-148.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -70437,7 +70437,7 @@
   {
     "id": 554,
     "name": "アリー・アル・サーシェス",
-    "image": "/unit-images/gw-chara-150.png",
+    "image": "/unit-images/mh-games-chara-150.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -70555,7 +70555,7 @@
   {
     "id": 556,
     "name": "デシル・ガレット",
-    "image": "/unit-images/gw-chara-365.png",
+    "image": "/unit-images/mh-games-chara-365.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -70726,7 +70726,7 @@
   {
     "id": 559,
     "name": "アセム・アスノ",
-    "image": "/unit-images/gw-chara-169.png",
+    "image": "/unit-images/mh-games-chara-169.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -70844,7 +70844,7 @@
   {
     "id": 561,
     "name": "ゼハート・ガレット",
-    "image": "/unit-images/gw-chara-356.png",
+    "image": "/unit-images/mh-games-chara-356.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -70961,7 +70961,7 @@
   {
     "id": 563,
     "name": "三日月・オーガス",
-    "image": "/unit-images/gw-chara-151.png",
+    "image": "/unit-images/mh-games-chara-151.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -71019,7 +71019,7 @@
   {
     "id": 564,
     "name": "ユージン・セブンスターク",
-    "image": "/unit-images/gw-chara-153.png",
+    "image": "/unit-images/mh-games-chara-153.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -71075,7 +71075,7 @@
   {
     "id": 565,
     "name": "ノルバ・シノ",
-    "image": "/unit-images/gw-chara-154.png",
+    "image": "/unit-images/mh-games-chara-154.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -71131,7 +71131,7 @@
   {
     "id": 566,
     "name": "デルマ",
-    "image": "/unit-images/gw-chara-156.png",
+    "image": "/unit-images/mh-games-chara-156.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -71187,7 +71187,7 @@
   {
     "id": 567,
     "name": "マクギリス・ファリド",
-    "image": "/unit-images/gw-chara-160.png",
+    "image": "/unit-images/mh-games-chara-160.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -71248,7 +71248,7 @@
   {
     "id": 568,
     "name": "アイン・ダルトン",
-    "image": "/unit-images/gw-chara-162.png",
+    "image": "/unit-images/mh-games-chara-162.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -71306,7 +71306,7 @@
   {
     "id": 569,
     "name": "モンターク",
-    "image": "/unit-images/gw-chara-165.png",
+    "image": "/unit-images/mh-games-chara-165.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -71421,7 +71421,7 @@
   {
     "id": 571,
     "name": "ヴィダール",
-    "image": "/unit-images/gw-chara-314.png",
+    "image": "/unit-images/mh-games-chara-314.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -71657,7 +71657,7 @@
   {
     "id": 575,
     "name": "スレッタ・マーキュリー(攻撃)",
-    "image": "/unit-images/gw-chara-166.png",
+    "image": "/unit-images/mh-games-chara-166.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -71715,7 +71715,7 @@
   {
     "id": 576,
     "name": "エラン・ケレス",
-    "image": "/unit-images/gw-chara-315.png",
+    "image": "/unit-images/mh-games-chara-315.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -71944,7 +71944,7 @@
   {
     "id": 580,
     "name": "フェルシー・ロロ",
-    "image": "/unit-images/gw-chara-327.png",
+    "image": "/unit-images/mh-games-chara-327.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -72000,7 +72000,7 @@
   {
     "id": 581,
     "name": "エラン・ケレス(強化人士5号)",
-    "image": "/unit-images/gw-chara-362.png",
+    "image": "/unit-images/mh-games-chara-362.png",
     "rarity": "SR",
     "type": "攻撃",
     "obtain": "",
@@ -72171,7 +72171,7 @@
   {
     "id": 584,
     "name": "アムロ・レイ(1st)",
-    "image": "/unit-images/gw-chara-50.png",
+    "image": "/unit-images/mh-games-chara-50.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -72237,7 +72237,7 @@
   {
     "id": 585,
     "name": "シャア・アズナブル",
-    "image": "/unit-images/gw-chara-53.png",
+    "image": "/unit-images/mh-games-chara-53.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -72305,7 +72305,7 @@
   {
     "id": 586,
     "name": "マッシュ",
-    "image": "/unit-images/gw-chara-60.png",
+    "image": "/unit-images/mh-games-chara-60.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -72826,7 +72826,7 @@
   {
     "id": 594,
     "name": "ボカタ",
-    "image": "/unit-images/gw-chara-221.png",
+    "image": "/unit-images/mh-games-chara-221.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -72889,7 +72889,7 @@
   {
     "id": 595,
     "name": "チャック・キース",
-    "image": "/unit-images/gw-chara-233.png",
+    "image": "/unit-images/mh-games-chara-233.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -72954,7 +72954,7 @@
   {
     "id": 596,
     "name": "チャップ・アデル",
-    "image": "/unit-images/gw-chara-229.png",
+    "image": "/unit-images/mh-games-chara-229.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73083,7 +73083,7 @@
   {
     "id": 598,
     "name": "カミーユ・ビダン(支援)",
-    "image": "/unit-images/gw-chara-63.png",
+    "image": "/unit-images/mh-games-chara-63.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73151,7 +73151,7 @@
   {
     "id": 599,
     "name": "ファ・ユイリィ",
-    "image": "/unit-images/gw-chara-66.png",
+    "image": "/unit-images/mh-games-chara-66.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73218,7 +73218,7 @@
   {
     "id": 600,
     "name": "カツ・コバヤシ",
-    "image": "/unit-images/gw-chara-68.png",
+    "image": "/unit-images/mh-games-chara-68.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73283,7 +73283,7 @@
   {
     "id": 601,
     "name": "アムロ・レイ(Z)",
-    "image": "/unit-images/gw-chara-69.png",
+    "image": "/unit-images/mh-games-chara-69.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73350,7 +73350,7 @@
   {
     "id": 602,
     "name": "サラ・ザビアロフ",
-    "image": "/unit-images/gw-chara-73.png",
+    "image": "/unit-images/mh-games-chara-73.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73416,7 +73416,7 @@
   {
     "id": 603,
     "name": "ラムサス・ハサ",
-    "image": "/unit-images/gw-chara-76.png",
+    "image": "/unit-images/mh-games-chara-76.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73481,7 +73481,7 @@
   {
     "id": 604,
     "name": "ハマーン・カーン(Z)",
-    "image": "/unit-images/gw-chara-81.png",
+    "image": "/unit-images/mh-games-chara-81.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73549,7 +73549,7 @@
   {
     "id": 605,
     "name": "ルー・ルカ",
-    "image": "/unit-images/gw-chara-83.png",
+    "image": "/unit-images/mh-games-chara-83.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73616,7 +73616,7 @@
   {
     "id": 606,
     "name": "ハマーン・カーン(ZZ)",
-    "image": "/unit-images/gw-chara-84.png",
+    "image": "/unit-images/mh-games-chara-84.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73683,7 +73683,7 @@
   {
     "id": 607,
     "name": "シャア・アズナブル(CCA)",
-    "image": "/unit-images/gw-chara-324.png",
+    "image": "/unit-images/mh-games-chara-324.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73814,7 +73814,7 @@
   {
     "id": 609,
     "name": "リディ・マーセナス",
-    "image": "/unit-images/gw-chara-321.png",
+    "image": "/unit-images/mh-games-chara-321.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73879,7 +73879,7 @@
   {
     "id": 610,
     "name": "ワッツ・ステップニー",
-    "image": "/unit-images/gw-chara-295.png",
+    "image": "/unit-images/mh-games-chara-295.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -73942,7 +73942,7 @@
   {
     "id": 611,
     "name": "マリーダ・クルス",
-    "image": "/unit-images/gw-chara-322.png",
+    "image": "/unit-images/mh-games-chara-322.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74196,7 +74196,7 @@
   {
     "id": 615,
     "name": "ジョルジュ・ド・サンド",
-    "image": "/unit-images/gw-chara-96.png",
+    "image": "/unit-images/mh-games-chara-96.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74258,7 +74258,7 @@
   {
     "id": 616,
     "name": "シュバルツ・ブルーダー",
-    "image": "/unit-images/gw-chara-98.png",
+    "image": "/unit-images/mh-games-chara-98.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74320,7 +74320,7 @@
   {
     "id": 617,
     "name": "レイン・ミカムラ",
-    "image": "/unit-images/gw-chara-99.png",
+    "image": "/unit-images/mh-games-chara-99.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74444,7 +74444,7 @@
   {
     "id": 619,
     "name": "ヒイロ・ユイ",
-    "image": "/unit-images/gw-chara-102.png",
+    "image": "/unit-images/mh-games-chara-102.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74508,7 +74508,7 @@
   {
     "id": 620,
     "name": "カトル・ラバーバ・ウィナー",
-    "image": "/unit-images/gw-chara-105.png",
+    "image": "/unit-images/mh-games-chara-105.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74571,7 +74571,7 @@
   {
     "id": 621,
     "name": "ウィッツ・スー",
-    "image": "/unit-images/gw-chara-112.png",
+    "image": "/unit-images/mh-games-chara-112.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74633,7 +74633,7 @@
   {
     "id": 622,
     "name": "ロアビィ・ロイ",
-    "image": "/unit-images/gw-chara-113.png",
+    "image": "/unit-images/mh-games-chara-113.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74694,7 +74694,7 @@
   {
     "id": 623,
     "name": "カリス・ノーティラス",
-    "image": "/unit-images/gw-chara-115.png",
+    "image": "/unit-images/mh-games-chara-115.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74817,7 +74817,7 @@
   {
     "id": 625,
     "name": "キラ・ヤマト(支援)",
-    "image": "/unit-images/gw-chara-118.png",
+    "image": "/unit-images/mh-games-chara-118.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74886,7 +74886,7 @@
   {
     "id": 626,
     "name": "オルガ・サブナック",
-    "image": "/unit-images/gw-chara-121.png",
+    "image": "/unit-images/mh-games-chara-121.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -74951,7 +74951,7 @@
   {
     "id": 627,
     "name": "ディアッカ・エルスマン",
-    "image": "/unit-images/gw-chara-311.png",
+    "image": "/unit-images/mh-games-chara-311.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -75017,7 +75017,7 @@
   {
     "id": 628,
     "name": "ミゲル・アイマン",
-    "image": "/unit-images/gw-chara-129.png",
+    "image": "/unit-images/mh-games-chara-129.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -75083,7 +75083,7 @@
   {
     "id": 629,
     "name": "マユラ・ラバッツ",
-    "image": "/unit-images/gw-chara-133.png",
+    "image": "/unit-images/mh-games-chara-133.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -75214,7 +75214,7 @@
   {
     "id": 631,
     "name": "イライジャ・キール",
-    "image": "/unit-images/gw-chara-22.png",
+    "image": "/unit-images/mh-games-chara-22.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -75278,7 +75278,7 @@
   {
     "id": 632,
     "name": "マリーン",
-    "image": "/unit-images/gw-chara-21.png",
+    "image": "/unit-images/mh-games-chara-21.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -75605,7 +75605,7 @@
   {
     "id": 637,
     "name": "ロックオン・ストラトス",
-    "image": "/unit-images/gw-chara-138.png",
+    "image": "/unit-images/mh-games-chara-138.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -75666,7 +75666,7 @@
   {
     "id": 638,
     "name": "アレルヤ・ハプティズム",
-    "image": "/unit-images/gw-chara-139.png",
+    "image": "/unit-images/mh-games-chara-139.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -75729,7 +75729,7 @@
   {
     "id": 639,
     "name": "ネーナ・トリニティ",
-    "image": "/unit-images/gw-chara-144.png",
+    "image": "/unit-images/mh-games-chara-144.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -75790,7 +75790,7 @@
   {
     "id": 640,
     "name": "グラハム・エーカー",
-    "image": "/unit-images/gw-chara-146.png",
+    "image": "/unit-images/mh-games-chara-146.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -75915,7 +75915,7 @@
   {
     "id": 642,
     "name": "ソーマ・ピーリス",
-    "image": "/unit-images/gw-chara-149.png",
+    "image": "/unit-images/mh-games-chara-149.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -76352,7 +76352,7 @@
   {
     "id": 649,
     "name": "ビスケット・グリフォン",
-    "image": "/unit-images/gw-chara-152.png",
+    "image": "/unit-images/mh-games-chara-152.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -76413,7 +76413,7 @@
   {
     "id": 650,
     "name": "昭弘・アルトランド",
-    "image": "/unit-images/gw-chara-155.png",
+    "image": "/unit-images/mh-games-chara-155.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -76475,7 +76475,7 @@
   {
     "id": 651,
     "name": "ラフタ・フランクランド",
-    "image": "/unit-images/gw-chara-158.png",
+    "image": "/unit-images/mh-games-chara-158.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -76535,7 +76535,7 @@
   {
     "id": 652,
     "name": "アジー・グルミン",
-    "image": "/unit-images/gw-chara-159.png",
+    "image": "/unit-images/mh-games-chara-159.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -76717,7 +76717,7 @@
   {
     "id": 655,
     "name": "ジュリエッタ・ジュリス",
-    "image": "/unit-images/gw-chara-325.png",
+    "image": "/unit-images/mh-games-chara-325.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -76780,7 +76780,7 @@
   {
     "id": 656,
     "name": "ガエリオ・ボードウィン(支援)",
-    "image": "/unit-images/gw-chara-326.png",
+    "image": "/unit-images/mh-games-chara-326.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -76971,7 +76971,7 @@
   {
     "id": 659,
     "name": "スレッタ・マーキュリー(支援)",
-    "image": "/unit-images/gw-chara-167.png",
+    "image": "/unit-images/mh-games-chara-167.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -77034,7 +77034,7 @@
   {
     "id": 660,
     "name": "シャディク・ゼネリ",
-    "image": "/unit-images/gw-chara-170.png",
+    "image": "/unit-images/mh-games-chara-170.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -77095,7 +77095,7 @@
   {
     "id": 661,
     "name": "ノレア・デュノク",
-    "image": "/unit-images/gw-chara-172.png",
+    "image": "/unit-images/mh-games-chara-172.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -77217,7 +77217,7 @@
   {
     "id": 663,
     "name": "ケナンジ・アベリー",
-    "image": "/unit-images/gw-chara-188.png",
+    "image": "/unit-images/mh-games-chara-188.png",
     "rarity": "SR",
     "type": "支援",
     "obtain": "",
@@ -77527,7 +77527,7 @@
   {
     "id": 668,
     "name": "スレッガー・ロウ",
-    "image": "/unit-images/gw-chara-52.png",
+    "image": "/unit-images/mh-games-chara-52.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -77590,7 +77590,7 @@
   {
     "id": 669,
     "name": "ララァ・スン",
-    "image": "/unit-images/gw-chara-54.png",
+    "image": "/unit-images/mh-games-chara-54.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -77654,7 +77654,7 @@
   {
     "id": 670,
     "name": "デニム",
-    "image": "/unit-images/gw-chara-55.png",
+    "image": "/unit-images/mh-games-chara-55.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -77718,7 +77718,7 @@
   {
     "id": 671,
     "name": "アカハナ",
-    "image": "/unit-images/gw-chara-56.png",
+    "image": "/unit-images/mh-games-chara-56.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -77782,7 +77782,7 @@
   {
     "id": 672,
     "name": "マ・クベ",
-    "image": "/unit-images/gw-chara-58.png",
+    "image": "/unit-images/mh-games-chara-58.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78106,7 +78106,7 @@
   {
     "id": 677,
     "name": "アルファ・A・ベイト",
-    "image": "/unit-images/gw-chara-231.png",
+    "image": "/unit-images/mh-games-chara-231.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78170,7 +78170,7 @@
   {
     "id": 678,
     "name": "アナベル・ガトー",
-    "image": "/unit-images/gw-chara-228.png",
+    "image": "/unit-images/mh-games-chara-228.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78239,7 +78239,7 @@
   {
     "id": 679,
     "name": "カミーユ・ビダン(耐久)",
-    "image": "/unit-images/gw-chara-64.png",
+    "image": "/unit-images/mh-games-chara-64.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78307,7 +78307,7 @@
   {
     "id": 680,
     "name": "エマ・シーン",
-    "image": "/unit-images/gw-chara-67.png",
+    "image": "/unit-images/mh-games-chara-67.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78372,7 +78372,7 @@
   {
     "id": 681,
     "name": "マウアー・ファラオ",
-    "image": "/unit-images/gw-chara-71.png",
+    "image": "/unit-images/mh-games-chara-71.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78437,7 +78437,7 @@
   {
     "id": 682,
     "name": "パプテマス・シロッコ",
-    "image": "/unit-images/gw-chara-72.png",
+    "image": "/unit-images/mh-games-chara-72.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78505,7 +78505,7 @@
   {
     "id": 683,
     "name": "レコア・ロンド",
-    "image": "/unit-images/gw-chara-74.png",
+    "image": "/unit-images/mh-games-chara-74.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78569,7 +78569,7 @@
   {
     "id": 684,
     "name": "ロザミア・バダム",
-    "image": "/unit-images/gw-chara-78.png",
+    "image": "/unit-images/mh-games-chara-78.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78637,7 +78637,7 @@
   {
     "id": 685,
     "name": "フォウ・ムラサメ",
-    "image": "/unit-images/gw-chara-80.png",
+    "image": "/unit-images/mh-games-chara-80.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78704,7 +78704,7 @@
   {
     "id": 686,
     "name": "マシュマー・セロ",
-    "image": "/unit-images/gw-chara-85.png",
+    "image": "/unit-images/mh-games-chara-85.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78769,7 +78769,7 @@
   {
     "id": 687,
     "name": "プルツー",
-    "image": "/unit-images/gw-chara-90.png",
+    "image": "/unit-images/mh-games-chara-90.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -78900,7 +78900,7 @@
   {
     "id": 689,
     "name": "クェス・パラヤ",
-    "image": "/unit-images/gw-chara-331.png",
+    "image": "/unit-images/mh-games-chara-331.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79031,7 +79031,7 @@
   {
     "id": 691,
     "name": "バナージ・リンクス",
-    "image": "/unit-images/gw-chara-329.png",
+    "image": "/unit-images/mh-games-chara-329.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79350,7 +79350,7 @@
   {
     "id": 696,
     "name": "ドモン・カッシュ(耐久)",
-    "image": "/unit-images/gw-chara-93.png",
+    "image": "/unit-images/mh-games-chara-93.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79412,7 +79412,7 @@
   {
     "id": 697,
     "name": "アルゴ・ガルスキー",
-    "image": "/unit-images/gw-chara-97.png",
+    "image": "/unit-images/mh-games-chara-97.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79474,7 +79474,7 @@
   {
     "id": 698,
     "name": "東方不敗マスター・アジア(耐久)",
-    "image": "/unit-images/gw-chara-100.png",
+    "image": "/unit-images/mh-games-chara-100.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79539,7 +79539,7 @@
   {
     "id": 699,
     "name": "ジェントル・チャップマン",
-    "image": "/unit-images/gw-chara-183.png",
+    "image": "/unit-images/mh-games-chara-183.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79664,7 +79664,7 @@
   {
     "id": 701,
     "name": "トロワ・バートン",
-    "image": "/unit-images/gw-chara-104.png",
+    "image": "/unit-images/mh-games-chara-104.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79726,7 +79726,7 @@
   {
     "id": 702,
     "name": "ゼクス・マーキス",
-    "image": "/unit-images/gw-chara-107.png",
+    "image": "/unit-images/mh-games-chara-107.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79790,7 +79790,7 @@
   {
     "id": 703,
     "name": "トレーズ・クシュリナーダ",
-    "image": "/unit-images/gw-chara-110.png",
+    "image": "/unit-images/mh-games-chara-110.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79852,7 +79852,7 @@
   {
     "id": 704,
     "name": "ジャミル・ニート",
-    "image": "/unit-images/gw-chara-114.png",
+    "image": "/unit-images/mh-games-chara-114.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79916,7 +79916,7 @@
   {
     "id": 705,
     "name": "オルバ・フロスト",
-    "image": "/unit-images/gw-chara-117.png",
+    "image": "/unit-images/mh-games-chara-117.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -79980,7 +79980,7 @@
   {
     "id": 706,
     "name": "シャニ・アンドラス",
-    "image": "/unit-images/gw-chara-123.png",
+    "image": "/unit-images/mh-games-chara-123.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -80045,7 +80045,7 @@
   {
     "id": 707,
     "name": "ラウ・ル・クルーゼ",
-    "image": "/unit-images/gw-chara-125.png",
+    "image": "/unit-images/mh-games-chara-125.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -80113,7 +80113,7 @@
   {
     "id": 708,
     "name": "イザーク・ジュール",
-    "image": "/unit-images/gw-chara-126.png",
+    "image": "/unit-images/mh-games-chara-126.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -80178,7 +80178,7 @@
   {
     "id": 709,
     "name": "アサギ・コードウェル",
-    "image": "/unit-images/gw-chara-131.png",
+    "image": "/unit-images/mh-games-chara-131.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -80243,7 +80243,7 @@
   {
     "id": 710,
     "name": "リーアム・ガーフィールド",
-    "image": "/unit-images/gw-chara-23.png",
+    "image": "/unit-images/mh-games-chara-23.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -80372,7 +80372,7 @@
   {
     "id": 712,
     "name": "シン・アスカ",
-    "image": "/unit-images/gw-chara-330.png",
+    "image": "/unit-images/mh-games-chara-330.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -80506,7 +80506,7 @@
   {
     "id": 714,
     "name": "アウル・ニーダ",
-    "image": "/unit-images/gw-chara-328.png",
+    "image": "/unit-images/mh-games-chara-328.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -80768,7 +80768,7 @@
   {
     "id": 718,
     "name": "刹那・F・セイエイ",
-    "image": "/unit-images/gw-chara-137.png",
+    "image": "/unit-images/mh-games-chara-137.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -80830,7 +80830,7 @@
   {
     "id": 719,
     "name": "ティエリア・アーデ",
-    "image": "/unit-images/gw-chara-141.png",
+    "image": "/unit-images/mh-games-chara-141.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -80892,7 +80892,7 @@
   {
     "id": 720,
     "name": "ヨハン・トリニティ",
-    "image": "/unit-images/gw-chara-142.png",
+    "image": "/unit-images/mh-games-chara-142.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -81205,7 +81205,7 @@
   {
     "id": 725,
     "name": "アストン",
-    "image": "/unit-images/gw-chara-157.png",
+    "image": "/unit-images/mh-games-chara-157.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -81266,7 +81266,7 @@
   {
     "id": 726,
     "name": "ガエリオ・ボードウィン",
-    "image": "/unit-images/gw-chara-161.png",
+    "image": "/unit-images/mh-games-chara-161.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -81330,7 +81330,7 @@
   {
     "id": 727,
     "name": "クランク・ゼント",
-    "image": "/unit-images/gw-chara-163.png",
+    "image": "/unit-images/mh-games-chara-163.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -81393,7 +81393,7 @@
   {
     "id": 728,
     "name": "クダル・カデル",
-    "image": "/unit-images/gw-chara-164.png",
+    "image": "/unit-images/mh-games-chara-164.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -81822,7 +81822,7 @@
   {
     "id": 735,
     "name": "グエル・ジェターク",
-    "image": "/unit-images/gw-chara-168.png",
+    "image": "/unit-images/mh-games-chara-168.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -82067,7 +82067,7 @@
   {
     "id": 739,
     "name": "妖精ジムスナイパーカスタム",
-    "image": "/unit-images/gw-unit-102.png",
+    "image": "/unit-images/mh-games-unit-102.png",
     "rarity": "SR",
     "type": "耐久",
     "obtain": "",
@@ -82253,7 +82253,7 @@
   {
     "id": 742,
     "name": "リュウ・ホセイ",
-    "image": "/unit-images/gw-chara-175.png",
+    "image": "/unit-images/mh-games-chara-175.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82296,7 +82296,7 @@
   {
     "id": 743,
     "name": "アポリー・ベイ",
-    "image": "/unit-images/gw-chara-176.png",
+    "image": "/unit-images/mh-games-chara-176.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82342,7 +82342,7 @@
   {
     "id": 744,
     "name": "ビーチャ・オーレグ",
-    "image": "/unit-images/gw-chara-178.png",
+    "image": "/unit-images/mh-games-chara-178.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82395,7 +82395,7 @@
   {
     "id": 745,
     "name": "モンド・アガケ",
-    "image": "/unit-images/gw-chara-181.png",
+    "image": "/unit-images/mh-games-chara-181.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82587,7 +82587,7 @@
   {
     "id": 749,
     "name": "ラッセ・アイオン",
-    "image": "/unit-images/gw-chara-187.png",
+    "image": "/unit-images/mh-games-chara-187.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82627,7 +82627,7 @@
   {
     "id": 750,
     "name": "チュアチュリー・パンランチ",
-    "image": "/unit-images/gw-chara-189.png",
+    "image": "/unit-images/mh-games-chara-189.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82668,7 +82668,7 @@
   {
     "id": 751,
     "name": "ラナロウ・シェイド",
-    "image": "/unit-images/gw-chara-190.png",
+    "image": "/unit-images/mh-games-chara-190.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82708,7 +82708,7 @@
   {
     "id": 752,
     "name": "ジュナス・リアム",
-    "image": "/unit-images/gw-chara-193.png",
+    "image": "/unit-images/mh-games-chara-193.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82749,7 +82749,7 @@
   {
     "id": 753,
     "name": "エルンスト・イェーガー",
-    "image": "/unit-images/gw-chara-194.png",
+    "image": "/unit-images/mh-games-chara-194.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82789,7 +82789,7 @@
   {
     "id": 754,
     "name": "ニキ・テイラー",
-    "image": "/unit-images/gw-chara-198.png",
+    "image": "/unit-images/mh-games-chara-198.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82829,7 +82829,7 @@
   {
     "id": 755,
     "name": "エルフリーデ・シュルツ",
-    "image": "/unit-images/gw-chara-201.png",
+    "image": "/unit-images/mh-games-chara-201.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82869,7 +82869,7 @@
   {
     "id": 756,
     "name": "イワン・イワノフ",
-    "image": "/unit-images/gw-chara-202.png",
+    "image": "/unit-images/mh-games-chara-202.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82910,7 +82910,7 @@
   {
     "id": 757,
     "name": "ネリィ・オルソン",
-    "image": "/unit-images/gw-chara-205.png",
+    "image": "/unit-images/mh-games-chara-205.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82950,7 +82950,7 @@
   {
     "id": 758,
     "name": "ブラッド",
-    "image": "/unit-images/gw-chara-206.png",
+    "image": "/unit-images/mh-games-chara-206.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -82990,7 +82990,7 @@
   {
     "id": 759,
     "name": "シス・ミットヴィル",
-    "image": "/unit-images/gw-chara-209.png",
+    "image": "/unit-images/mh-games-chara-209.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -83071,7 +83071,7 @@
   {
     "id": 761,
     "name": "デネボラ・シャヒム",
-    "image": "/unit-images/gw-chara-214.png",
+    "image": "/unit-images/mh-games-chara-214.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -83111,7 +83111,7 @@
   {
     "id": 762,
     "name": "ジュウゾー・オハラ",
-    "image": "/unit-images/gw-chara-215.png",
+    "image": "/unit-images/mh-games-chara-215.png",
     "rarity": "R",
     "type": "攻撃",
     "obtain": "",
@@ -83151,7 +83151,7 @@
   {
     "id": 763,
     "name": "ハヤト・コバヤシ",
-    "image": "/unit-images/gw-chara-174.png",
+    "image": "/unit-images/mh-games-chara-174.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83199,7 +83199,7 @@
   {
     "id": 764,
     "name": "ロベルト",
-    "image": "/unit-images/gw-chara-177.png",
+    "image": "/unit-images/mh-games-chara-177.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83250,7 +83250,7 @@
   {
     "id": 765,
     "name": "エル・ビアンノ",
-    "image": "/unit-images/gw-chara-179.png",
+    "image": "/unit-images/mh-games-chara-179.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83459,7 +83459,7 @@
   {
     "id": 769,
     "name": "トール・ケーニヒ",
-    "image": "/unit-images/gw-chara-186.png",
+    "image": "/unit-images/mh-games-chara-186.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83508,7 +83508,7 @@
   {
     "id": 770,
     "name": "エリス・クロード",
-    "image": "/unit-images/gw-chara-191.png",
+    "image": "/unit-images/mh-games-chara-191.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83554,7 +83554,7 @@
   {
     "id": 771,
     "name": "シェルド・フォーリー",
-    "image": "/unit-images/gw-chara-196.png",
+    "image": "/unit-images/mh-games-chara-196.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83599,7 +83599,7 @@
   {
     "id": 772,
     "name": "ビリー・ブレイズ",
-    "image": "/unit-images/gw-chara-197.png",
+    "image": "/unit-images/mh-games-chara-197.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83644,7 +83644,7 @@
   {
     "id": 773,
     "name": "ラ・ミラ・ルナ",
-    "image": "/unit-images/gw-chara-199.png",
+    "image": "/unit-images/mh-games-chara-199.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83689,7 +83689,7 @@
   {
     "id": 774,
     "name": "エターナ・フレイル",
-    "image": "/unit-images/gw-chara-203.png",
+    "image": "/unit-images/mh-games-chara-203.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83735,7 +83735,7 @@
   {
     "id": 775,
     "name": "エイブラム・M・ラムザット",
-    "image": "/unit-images/gw-chara-204.png",
+    "image": "/unit-images/mh-games-chara-204.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83780,7 +83780,7 @@
   {
     "id": 776,
     "name": "レリーレ・アルナイル",
-    "image": "/unit-images/gw-chara-213.png",
+    "image": "/unit-images/mh-games-chara-213.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83825,7 +83825,7 @@
   {
     "id": 777,
     "name": "レッセル・ミズカ",
-    "image": "/unit-images/gw-chara-216.png",
+    "image": "/unit-images/mh-games-chara-216.png",
     "rarity": "R",
     "type": "支援",
     "obtain": "",
@@ -83870,7 +83870,7 @@
   {
     "id": 778,
     "name": "カイ・シデン",
-    "image": "/unit-images/gw-chara-173.png",
+    "image": "/unit-images/mh-games-chara-173.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -83918,7 +83918,7 @@
   {
     "id": 779,
     "name": "イーノ・アッバーブ",
-    "image": "/unit-images/gw-chara-180.png",
+    "image": "/unit-images/mh-games-chara-180.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84029,7 +84029,7 @@
   {
     "id": 781,
     "name": "ラシード・クラマ",
-    "image": "/unit-images/gw-chara-184.png",
+    "image": "/unit-images/mh-games-chara-184.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84075,7 +84075,7 @@
   {
     "id": 782,
     "name": "ムウ・ラ・フラガ",
-    "image": "/unit-images/gw-chara-185.png",
+    "image": "/unit-images/mh-games-chara-185.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84178,7 +84178,7 @@
   {
     "id": 784,
     "name": "クレア・ヒースロー",
-    "image": "/unit-images/gw-chara-192.png",
+    "image": "/unit-images/mh-games-chara-192.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84224,7 +84224,7 @@
   {
     "id": 785,
     "name": "ケイ・ニムロッド",
-    "image": "/unit-images/gw-chara-195.png",
+    "image": "/unit-images/mh-games-chara-195.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84269,7 +84269,7 @@
   {
     "id": 786,
     "name": "フローレンス・キリシマ",
-    "image": "/unit-images/gw-chara-200.png",
+    "image": "/unit-images/mh-games-chara-200.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84314,7 +84314,7 @@
   {
     "id": 787,
     "name": "ブランド・フリーズ",
-    "image": "/unit-images/gw-chara-207.png",
+    "image": "/unit-images/mh-games-chara-207.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84359,7 +84359,7 @@
   {
     "id": 788,
     "name": "カチュア・リィス",
-    "image": "/unit-images/gw-chara-208.png",
+    "image": "/unit-images/mh-games-chara-208.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84405,7 +84405,7 @@
   {
     "id": 789,
     "name": "ゴート・ローガン",
-    "image": "/unit-images/gw-chara-210.png",
+    "image": "/unit-images/mh-games-chara-210.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84450,7 +84450,7 @@
   {
     "id": 790,
     "name": "アゼリア・ツィー",
-    "image": "/unit-images/gw-chara-212.png",
+    "image": "/unit-images/mh-games-chara-212.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84495,7 +84495,7 @@
   {
     "id": 791,
     "name": "サダニ・アルマーズ",
-    "image": "/unit-images/gw-chara-217.png",
+    "image": "/unit-images/mh-games-chara-217.png",
     "rarity": "R",
     "type": "耐久",
     "obtain": "",
@@ -84540,7 +84540,7 @@
   {
     "id": 792,
     "name": "ブライト・ノア＆ホワイトベース",
-    "image": "/unit-images/gw-sup-1.png",
+    "image": "/unit-images/mh-games-sup-1.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84551,7 +84551,7 @@
   {
     "id": 793,
     "name": "クローディア・ペール＆ビーハイヴ",
-    "image": "/unit-images/gw-sup-43.png",
+    "image": "/unit-images/mh-games-sup-43.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84562,7 +84562,7 @@
   {
     "id": 794,
     "name": "ヘンケン・ベッケナー＆ラーディッシュ",
-    "image": "/unit-images/gw-sup-4.png",
+    "image": "/unit-images/mh-games-sup-4.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84573,7 +84573,7 @@
   {
     "id": 795,
     "name": "グレミー・トト＆サンドラ",
-    "image": "/unit-images/gw-sup-48.png",
+    "image": "/unit-images/mh-games-sup-48.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84584,7 +84584,7 @@
   {
     "id": 796,
     "name": "リリーナ・ドーリアン＆ピースミリオン",
-    "image": "/unit-images/gw-sup-7.png",
+    "image": "/unit-images/mh-games-sup-7.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84595,7 +84595,7 @@
   {
     "id": 797,
     "name": "ジャミル・ニート＆フリーデンⅡ",
-    "image": "/unit-images/gw-sup-65.png",
+    "image": "/unit-images/mh-games-sup-65.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84606,7 +84606,7 @@
   {
     "id": 798,
     "name": "マリュー・ラミアス＆アークエンジェル",
-    "image": "/unit-images/gw-sup-9.png",
+    "image": "/unit-images/mh-games-sup-9.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84617,7 +84617,7 @@
   {
     "id": 799,
     "name": "スメラギ・李・ノリエガ＆プトレマイオス",
-    "image": "/unit-images/gw-sup-11.png",
+    "image": "/unit-images/mh-games-sup-11.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84628,7 +84628,7 @@
   {
     "id": 800,
     "name": "オルガ・イツカ＆イサリビ",
-    "image": "/unit-images/gw-sup-13.png",
+    "image": "/unit-images/mh-games-sup-13.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84639,7 +84639,7 @@
   {
     "id": 801,
     "name": "アトラ・ミクスタ＆ホタルビ",
-    "image": "/unit-images/gw-sup-56.png",
+    "image": "/unit-images/mh-games-sup-56.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84650,7 +84650,7 @@
   {
     "id": 802,
     "name": "ミオリネ・レンブラン＆学園艦",
-    "image": "/unit-images/gw-sup-15.png",
+    "image": "/unit-images/mh-games-sup-15.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84661,7 +84661,7 @@
   {
     "id": 803,
     "name": "風花・アジャー＆ローラシア級",
-    "image": "/unit-images/gw-sup-66.png",
+    "image": "/unit-images/mh-games-sup-66.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84672,7 +84672,7 @@
   {
     "id": 804,
     "name": "キョウジ・カッシュ＆デビルガンダム第2形態",
-    "image": "/unit-images/gw-sup-44.png",
+    "image": "/unit-images/mh-games-sup-44.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84683,7 +84683,7 @@
   {
     "id": 805,
     "name": "ムルタ・アズラエル＆ドミニオン",
-    "image": "/unit-images/gw-sup-61.png",
+    "image": "/unit-images/mh-games-sup-61.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84694,7 +84694,7 @@
   {
     "id": 806,
     "name": "ファ・ユイリィ＆アーガマ",
-    "image": "/unit-images/gw-sup-3.png",
+    "image": "/unit-images/mh-games-sup-3.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84705,7 +84705,7 @@
   {
     "id": 807,
     "name": "クーデリア・藍那・バーンスタイン＆イサリビ",
-    "image": "/unit-images/gw-sup-14.png",
+    "image": "/unit-images/mh-games-sup-14.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84727,7 +84727,7 @@
   {
     "id": 809,
     "name": "フラウ・ボゥ＆ホワイトベース",
-    "image": "/unit-images/gw-sup-2.png",
+    "image": "/unit-images/mh-games-sup-2.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84738,7 +84738,7 @@
   {
     "id": 810,
     "name": "ビーチャ・オーレグ＆ネェル・アーガマ",
-    "image": "/unit-images/gw-sup-5.png",
+    "image": "/unit-images/mh-games-sup-5.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84749,7 +84749,7 @@
   {
     "id": 811,
     "name": "レイン・ミカムラ＆ブッド・キャリアー",
-    "image": "/unit-images/gw-sup-6.png",
+    "image": "/unit-images/mh-games-sup-6.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84760,7 +84760,7 @@
   {
     "id": 812,
     "name": "マリナ・イスマイール＆プトレマイオス2",
-    "image": "/unit-images/gw-sup-12.png",
+    "image": "/unit-images/mh-games-sup-12.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84771,7 +84771,7 @@
   {
     "id": 813,
     "name": "ルクレツィア・ノイン＆スーパーソニックトランスポーター",
-    "image": "/unit-images/gw-sup-39.png",
+    "image": "/unit-images/mh-games-sup-39.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84782,7 +84782,7 @@
   {
     "id": 814,
     "name": "ラスタル・エリオン＆スキップジャック級戦艦",
-    "image": "/unit-images/gw-sup-64.png",
+    "image": "/unit-images/mh-games-sup-64.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84793,7 +84793,7 @@
   {
     "id": 815,
     "name": "ベルトーチカ・イルマ＆アウドムラ",
-    "image": "/unit-images/gw-sup-34.png",
+    "image": "/unit-images/mh-games-sup-34.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84804,7 +84804,7 @@
   {
     "id": 816,
     "name": "アンドリュー・バルトフェルド＆エターナル",
-    "image": "/unit-images/gw-sup-10.png",
+    "image": "/unit-images/mh-games-sup-10.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84815,7 +84815,7 @@
   {
     "id": 817,
     "name": "エイパー・シナプス＆アルビオン",
-    "image": "/unit-images/gw-sup-35.png",
+    "image": "/unit-images/mh-games-sup-35.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84826,7 +84826,7 @@
   {
     "id": 818,
     "name": "ララァ・スン＆ザンジバル",
-    "image": "/unit-images/gw-sup-51.png",
+    "image": "/unit-images/mh-games-sup-51.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84837,7 +84837,7 @@
   {
     "id": 819,
     "name": "騎士アムロ＆天馬ホワイトベース",
-    "image": "/unit-images/gw-sup-46.png",
+    "image": "/unit-images/mh-games-sup-46.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84848,7 +84848,7 @@
   {
     "id": 820,
     "name": "シーマ・ガラハウ＆リリー・マルレーン",
-    "image": "/unit-images/gw-sup-55.png",
+    "image": "/unit-images/mh-games-sup-55.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84859,7 +84859,7 @@
   {
     "id": 821,
     "name": "ミネバ・ラオ・ザビ＆ガランシェール",
-    "image": "/unit-images/gw-sup-57.png",
+    "image": "/unit-images/mh-games-sup-57.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84870,7 +84870,7 @@
   {
     "id": 822,
     "name": "ギギ・アンダルシア＆ハウンゼン356便",
-    "image": "/unit-images/gw-sup-59.png",
+    "image": "/unit-images/mh-games-sup-59.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84881,7 +84881,7 @@
   {
     "id": 823,
     "name": "グルーデック・エイノア＆ディーヴァ",
-    "image": "/unit-images/gw-sup-68.png",
+    "image": "/unit-images/mh-games-sup-68.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84892,7 +84892,7 @@
   {
     "id": 824,
     "name": "エレドア・マシス＆ホバートラック",
-    "image": "/unit-images/gw-sup-70.png",
+    "image": "/unit-images/mh-games-sup-70.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84903,7 +84903,7 @@
   {
     "id": 825,
     "name": "ラクス・クライン＆エターナル",
-    "image": "/unit-images/gw-sup-28.png",
+    "image": "/unit-images/mh-games-sup-28.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84914,7 +84914,7 @@
   {
     "id": 826,
     "name": "タリア・グラディス＆ミネルバ",
-    "image": "/unit-images/gw-sup-63.png",
+    "image": "/unit-images/mh-games-sup-63.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84925,7 +84925,7 @@
   {
     "id": 827,
     "name": "ブライト・ノア＆ラー・カイラム",
-    "image": "/unit-images/gw-sup-40.png",
+    "image": "/unit-images/mh-games-sup-40.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84936,7 +84936,7 @@
   {
     "id": 828,
     "name": "オットー・ミタス＆ネェル・アーガマ(ロンドベル隊仕様)",
-    "image": "/unit-images/gw-sup-53.png",
+    "image": "/unit-images/mh-games-sup-53.png",
     "rarity": "UR",
     "type": "",
     "obtain": "",
@@ -84947,7 +84947,7 @@
   {
     "id": 829,
     "name": "ドレン＆ムサイ",
-    "image": "/unit-images/gw-sup-16.png",
+    "image": "/unit-images/mh-games-sup-16.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -84958,7 +84958,7 @@
   {
     "id": 830,
     "name": "ベン・ウッダー＆スードリ",
-    "image": "/unit-images/gw-sup-18.png",
+    "image": "/unit-images/mh-games-sup-18.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -84969,7 +84969,7 @@
   {
     "id": 831,
     "name": "ゴットン・ゴー＆エンドラ",
-    "image": "/unit-images/gw-sup-19.png",
+    "image": "/unit-images/mh-games-sup-19.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -84980,7 +84980,7 @@
   {
     "id": 832,
     "name": "エマリー・オンス＆ラビアンローズ",
-    "image": "/unit-images/gw-sup-49.png",
+    "image": "/unit-images/mh-games-sup-49.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -84991,7 +84991,7 @@
   {
     "id": 833,
     "name": "チェーン・アギ＆ラー・カイラム",
-    "image": "/unit-images/gw-sup-42.png",
+    "image": "/unit-images/mh-games-sup-42.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85002,7 +85002,7 @@
   {
     "id": 834,
     "name": "スベロア・ジンネマン＆ガランシェール",
-    "image": "/unit-images/gw-sup-45.png",
+    "image": "/unit-images/mh-games-sup-45.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85013,7 +85013,7 @@
   {
     "id": 835,
     "name": "ヒル・ドーソン＆レウルーラ(袖付き)",
-    "image": "/unit-images/gw-sup-54.png",
+    "image": "/unit-images/mh-games-sup-54.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85024,7 +85024,7 @@
   {
     "id": 836,
     "name": "ナスターシャ・ザビコフ＆ゴルビーⅡ",
-    "image": "/unit-images/gw-sup-20.png",
+    "image": "/unit-images/mh-games-sup-20.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85035,7 +85035,7 @@
   {
     "id": 837,
     "name": "レディ・アン＆宇宙要塞バルジ",
-    "image": "/unit-images/gw-sup-21.png",
+    "image": "/unit-images/mh-games-sup-21.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85046,7 +85046,7 @@
   {
     "id": 838,
     "name": "サラ・タイレル＆フリーデン",
-    "image": "/unit-images/gw-sup-22.png",
+    "image": "/unit-images/mh-games-sup-22.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85057,7 +85057,7 @@
   {
     "id": 839,
     "name": "ナタル・バジルール＆ドミニオン",
-    "image": "/unit-images/gw-sup-24.png",
+    "image": "/unit-images/mh-games-sup-24.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85068,7 +85068,7 @@
   {
     "id": 840,
     "name": "キャプテンGG＆リ・ホーム",
-    "image": "/unit-images/gw-sup-29.png",
+    "image": "/unit-images/mh-games-sup-29.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85079,7 +85079,7 @@
   {
     "id": 841,
     "name": "プロフェッサー＆リ・ホーム",
-    "image": "/unit-images/gw-sup-67.png",
+    "image": "/unit-images/mh-games-sup-67.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85090,7 +85090,7 @@
   {
     "id": 842,
     "name": "メイリン・ホーク＆ミネルバ",
-    "image": "/unit-images/gw-sup-41.png",
+    "image": "/unit-images/mh-games-sup-41.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85101,7 +85101,7 @@
   {
     "id": 843,
     "name": "カティ・マネキン＆ヴァージニア",
-    "image": "/unit-images/gw-sup-25.png",
+    "image": "/unit-images/mh-games-sup-25.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85112,7 +85112,7 @@
   {
     "id": 844,
     "name": "デシル・ガレット＆ファ・ボーゼ",
-    "image": "/unit-images/gw-sup-69.png",
+    "image": "/unit-images/mh-games-sup-69.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85123,7 +85123,7 @@
   {
     "id": 845,
     "name": "名瀬・タービン＆ハンマーヘッド",
-    "image": "/unit-images/gw-sup-26.png",
+    "image": "/unit-images/mh-games-sup-26.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85134,7 +85134,7 @@
   {
     "id": 846,
     "name": "リアリナ・モルガトン＆ビスコー級クルーザー",
-    "image": "/unit-images/gw-sup-52.png",
+    "image": "/unit-images/mh-games-sup-52.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85145,7 +85145,7 @@
   {
     "id": 847,
     "name": "ケナンジ・アベリー＆ユリシーズ",
-    "image": "/unit-images/gw-sup-27.png",
+    "image": "/unit-images/mh-games-sup-27.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85156,7 +85156,7 @@
   {
     "id": 848,
     "name": "キシリア・ザビ＆グワジン",
-    "image": "/unit-images/gw-sup-17.png",
+    "image": "/unit-images/mh-games-sup-17.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85167,7 +85167,7 @@
   {
     "id": 849,
     "name": "フレドリック・アデス＆ヴェサリウス",
-    "image": "/unit-images/gw-sup-23.png",
+    "image": "/unit-images/mh-games-sup-23.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85178,7 +85178,7 @@
   {
     "id": 850,
     "name": "ハヤト・コバヤシ＆アウドムラ",
-    "image": "/unit-images/gw-sup-50.png",
+    "image": "/unit-images/mh-games-sup-50.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85189,7 +85189,7 @@
   {
     "id": 851,
     "name": "ドクターJ＆ピースミリオン",
-    "image": "/unit-images/gw-sup-38.png",
+    "image": "/unit-images/mh-games-sup-38.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85200,7 +85200,7 @@
   {
     "id": 852,
     "name": "フレイ・アルスター＆アークエンジェル",
-    "image": "/unit-images/gw-sup-62.png",
+    "image": "/unit-images/mh-games-sup-62.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85211,7 +85211,7 @@
   {
     "id": 853,
     "name": "ギレン・ザビ＆ア・バオア・クー",
-    "image": "/unit-images/gw-sup-36.png",
+    "image": "/unit-images/mh-games-sup-36.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85222,7 +85222,7 @@
   {
     "id": 854,
     "name": "モーリン・キタムラ＆ミデア",
-    "image": "/unit-images/gw-sup-58.png",
+    "image": "/unit-images/mh-games-sup-58.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -85233,7 +85233,7 @@
   {
     "id": 855,
     "name": "機動戦士ガンダム 閃光のハサウェイ キルケーの魔女",
-    "image": "/unit-images/gw-sup-60.png",
+    "image": "/unit-images/mh-games-sup-60.png",
     "rarity": "SSR",
     "type": "",
     "obtain": "",
@@ -163067,7 +163067,7 @@
     ],
     "acquire": "ガシャ",
     "limited": false,
-    "image": "/unit-images/gw-unit-491.png"
+    "image": "/unit-images/mh-games-unit-491.png"
   },
   {
     "id": 1454,
@@ -163200,6 +163200,6 @@
     ],
     "acquire": "ガシャ",
     "limited": false,
-    "image": "/unit-images/gw-unit-490.png"
+    "image": "/unit-images/mh-games-unit-490.png"
   }
 ]
