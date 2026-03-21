@@ -937,6 +937,14 @@ a:hover{text-decoration:underline}
         <button class="filter-btn" id="filterMapBtn" onclick="this.classList.toggle('active');render()"><img src="/assets/map_weapon/UI_Battle_MapUI_MapWeapon_Icon_Red.png" style="width:14px;height:14px;vertical-align:middle"> MAP所持</button>
       </div>
     </div>
+    <div class="filter-group" id="filterAcquireGroup">
+      <label>入手方法</label>
+      <div class="filter-btn-group" id="filterAcquireButtons">
+        <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');render()" style="background:rgba(99,179,237,.15);border-color:rgba(99,179,237,.4)">🎰 ガシャ</button>
+        <button class="filter-btn" data-value="開発" onclick="this.classList.toggle('active');render()" style="background:rgba(72,187,120,.15);border-color:rgba(72,187,120,.4)">🔧 開発</button>
+        <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');render()" style="background:rgba(237,137,54,.15);border-color:rgba(237,137,54,.4)">🎁 イベント</button>
+      </div>
+    </div>
     <div class="filter-group" id="filterCharaGroup">
       <label>獲得キャラ</label>
       <div class="filter-btn-group">
@@ -1496,6 +1504,7 @@ function resetFilters() {
   document.querySelectorAll('#debuffCategoryButtons .filter-btn, #specialEffectButtons .filter-btn').forEach(b => b.classList.remove('active'));
   const mapBtn = document.getElementById('filterMapBtn'); if (mapBtn) mapBtn.classList.remove('active');
   const charaBtn = document.getElementById('filterCharaBtn'); if (charaBtn) charaBtn.classList.remove('active');
+  document.querySelectorAll('#filterAcquireButtons .filter-btn').forEach(b => b.classList.remove('active'));
   const rangeEl = document.getElementById('filterRange'); if (rangeEl) rangeEl.value = '';
 }
 
@@ -1523,6 +1532,7 @@ function updateUI() {
   document.getElementById('filterRangeGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterMapGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterCharaGroup').style.display = isUnit ? '' : 'none';
+  document.getElementById('filterAcquireGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterDebuffGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterRarityGroup').style.display = '';
   document.getElementById('filterCharaTypeGroup').style.display = isChara ? '' : 'none';
@@ -1834,6 +1844,9 @@ function getFiltered() {
         }
       }
       if (limitedFilterActive && !u.limited) return false;
+      // Acquire method filter
+      const activeAcquire = [...document.querySelectorAll('#filterAcquireButtons .filter-btn.active')].map(b => b.dataset.value);
+      if (activeAcquire.length > 0 && !activeAcquire.includes(u.acquire)) return false;
       return true;
     });
   } else if (currentTab === 'chara') {
@@ -2106,6 +2119,7 @@ function unitCardHTML(u) {
         <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
         ${u.limited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px">'+(currentLang==="en"?"Limited":"限定")+'</span>' : ''}
         ${typeBadgeHTML(u.type)}
+        ${u.acquire==='ガシャ'?'<span style="background:#63b3ed;color:#fff;font-size:.55em;padding:1px 4px;border-radius:3px">ガシャ</span>':u.acquire==='開発'?'<span style="background:#48bb78;color:#fff;font-size:.55em;padding:1px 4px;border-radius:3px">開発</span>':u.acquire==='イベント'?'<span style="background:#ed8936;color:#fff;font-size:.55em;padding:1px 4px;border-radius:3px">イベント</span>':''}
       </div>
     </div>
     <div class="card-series">${(u.series||[]).map(s=>'<span class="clickable-series" onclick="event.stopPropagation();filterBySeries(\''+ s.replace(/'/g,"\\'") +'\')">' + tData(s,"series") + '</span>').join(' / ')}</div>
@@ -2538,6 +2552,7 @@ function renderUnitDetail(u, form) {
         <div class="detail-badges">
           <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
           ${typeBadgeHTML(u.type)}
+          ${u.acquire ? `<span class="badge" style="background:${u.acquire==='ガシャ'?'#63b3ed':u.acquire==='開発'?'#48bb78':'#ed8936'};color:#fff;font-size:.65em">${u.acquire}</span>` : ''}
           ${getUnitPairedChara(u).chara ? '' : (u.obtain ? `<span class="badge badge-type">${(u.obtain||'').replace(/ピックアップガ[シチ]ャ/g,'ガシャ')}</span>` : '')}
           <button onclick="toggleCompare(${u.id});closeModal()" style="background:none;border:1px solid var(--accent);color:var(--accent);padding:2px 10px;border-radius:4px;font-size:.7em;cursor:pointer;font-weight:600;transition:all .2s" onmouseover="this.style.background='var(--accent)';this.style.color='#000'" onmouseout="this.style.background='none';this.style.color='var(--accent)'">${_compareList.includes(u.id) ? '⚔ 比較中' : '⚔ 比較に追加'}</button>
         </div>
@@ -3987,6 +4002,8 @@ function syncURL() {
     if (activeDebuffKey) params.set('debuff', activeDebuffKey);
     if (debuffMinRate > 0) params.set('drate', debuffMinRate);
     if (activeSpecialKey) params.set('special', activeSpecialKey);
+    const activeAcquire = [...document.querySelectorAll('#filterAcquireButtons .filter-btn.active')].map(b => b.dataset.value);
+    if (activeAcquire.length) params.set('acquire', activeAcquire.join(','));
   } else if (currentTab === 'chara') {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].map(b => b.dataset.value);
     if (activeCharaTypes.length) params.set('ctype', activeCharaTypes.join(','));
@@ -4107,6 +4124,8 @@ function restoreFromURL() {
     if (params.get('map') === '1') document.getElementById('filterMapBtn')?.classList.add('active');
     if (params.get('chara') === '1') document.getElementById('filterCharaBtn')?.classList.add('active');
     if (params.get('limited') === '1') document.getElementById('filterLimitedBtn')?.classList.add('active');
+    const acquireParam = params.get('acquire');
+    if (acquireParam) acquireParam.split(',').forEach(v => { document.querySelectorAll('#filterAcquireButtons .filter-btn').forEach(b => { if (b.dataset.value === v) b.classList.add('active'); }); });
     if (debuff) {
       activeDebuffKey = debuff;
       document.querySelectorAll('#debuffCategoryButtons .filter-btn').forEach(b => {
@@ -4216,7 +4235,8 @@ function updateClearButton() {
     const charaActive = document.getElementById('filterCharaBtn')?.classList.contains('active');
     const limitedActive = document.getElementById('filterLimitedBtn')?.classList.contains('active');
     const rangeVal = document.getElementById('filterRange')?.value || '';
-    hasFilter = activeTypes > 0 || series || tagCount > 0 || activeTerrainsBtns.length > 0 || mapActive || charaActive || limitedActive || rangeVal;
+    const acquireActive = [...document.querySelectorAll('#filterAcquireButtons .filter-btn.active')].length;
+    hasFilter = activeTypes > 0 || series || tagCount > 0 || activeTerrainsBtns.length > 0 || mapActive || charaActive || limitedActive || rangeVal || acquireActive > 0;
   }
   if (!hasFilter && currentTab === 'chara') {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].length;
