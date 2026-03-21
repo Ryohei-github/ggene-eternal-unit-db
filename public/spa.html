@@ -1437,6 +1437,15 @@ async function init() {
     return s && (s.hp > 0 || s.attack > 0 || s.defense > 0 || s.en > 0);
   });
   allUnits.forEach(u => { if(_limitedURNames.has(u.name)) u.limited = true; });
+  // 限定URユニットのobtainからキャラ名を収集 → キャラ側にもlimited伝搬
+  const _limitedCharaNames = new Set();
+  allUnits.filter(u => u.limited).forEach(u => {
+    if (u.obtain) _limitedCharaNames.add(u.obtain.replace(/【UR】/,''));
+  });
+  // モンスターブラックドラゴン等、obtainが空の限定ユニットと同名のキャラも限定
+  allUnits.filter(u => u.limited && !u.obtain).forEach(u => {
+    allData.filter(c => (c.tags||[]).includes('キャラ') && c.name === u.name).forEach(c => _limitedCharaNames.add(c.name));
+  });
   // キャラデータ: タグに「キャラ」を持つエントリ
   allCharas = allData.filter(u => (u.tags || []).includes('キャラ')).map(u => {
     const n = u.normal || {};
@@ -1459,6 +1468,7 @@ async function init() {
       chara_type: u.type,
       obtain_method: u.obtain || '',
       acquire: u.acquire || '',
+      limited: _limitedCharaNames.has(u.name),
       series: (u.series || []).join(' / '),
       seriesArr: u.series || [],
       tags: (u.tags || []).filter(t => t !== 'キャラ'),
@@ -2399,7 +2409,7 @@ function charaCardHTML(c) {
   return `<div class="card ${_crc}" data-chara-id="${c.id}" onclick="showCharaDetail(${c.id})">
     <div class="card-header">
       ${iconHTML}
-      <div class="card-name">${c.name}</div>
+      <div class="card-name">${c.name}${c.limited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px;white-space:nowrap">'+(currentLang==="en"?"Limited":"限定")+'</span>' : ''}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
         ${typeBadgeHTML(c.chara_type)}
@@ -2953,6 +2963,7 @@ function showCharaDetail(id) {
       <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
       ${typeBadgeHTML(c.chara_type)}
       ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
+      ${c.limited ? '<span class="badge" style="background:#ff6b6b;color:#fff;font-size:.75em">限定</span>' : ''}
       ${c.obtain_method ? `<span class="badge badge-type">${c.obtain_method}</span>` : ''}
       ${c.acquire ? `<span class="badge" style="background:${c.acquire==='ガシャ'?'rgba(99,179,237,.25);color:#63b3ed':c.acquire==='スカウト'?'rgba(72,187,120,.25);color:#48bb78':c.acquire==='イベント'?'rgba(237,137,54,.25);color:#ed8936':c.acquire==='記念配布'?'rgba(214,158,255,.25);color:#d69eff':'rgba(160,174,192,.25);color:#a0aec0'};font-size:.75em">${c.acquire}</span>` : ''}
     </div>
