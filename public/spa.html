@@ -1039,6 +1039,10 @@ a:hover{text-decoration:underline}
       <label style="display:flex;align-items:center;gap:6px"><span>スキル</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
       <div class="filter-btn-group" id="filterCharaSkillButtons"></div>
     </div>
+    <div class="filter-group" id="filterCharaAbilityGroup" style="display:none">
+      <label style="display:flex;align-items:center;gap:6px"><span>貴重アビリティ</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
+      <div class="filter-btn-group" id="filterCharaAbilityButtons"></div>
+    </div>
     <div class="filter-group" id="filterTargetGroup" style="display:none">
       <label>対象シリーズ</label>
       <select id="filterTarget"><option value="">すべて</option></select>
@@ -1623,6 +1627,7 @@ function updateUI() {
   document.getElementById('filterRarityGroup').style.display = '';
   document.getElementById('filterCharaTypeGroup').style.display = isChara ? '' : 'none';
   document.getElementById('filterCharaSkillGroup').style.display = isChara ? '' : 'none';
+  document.getElementById('filterCharaAbilityGroup').style.display = isChara ? '' : 'none';
   document.getElementById('filterTargetGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupTagGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupSkillGroup').style.display = isSupporter ? '' : 'none';
@@ -1801,6 +1806,26 @@ function buildFilters() {
     const skBtns = allSkillList.map(s => `<button class="filter-btn" data-value="${s}" style="font-size:.7em">${s}</button>`).join('');
     document.getElementById('filterCharaSkillButtons').innerHTML = skBtns;
     document.querySelectorAll('#filterCharaSkillButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
+    });
+    // アビリティフィルタボタン生成（貴重アビリティ）
+    const abilCategories = [
+      {label:'支援攻撃+1', match: d => /支援攻撃.*\+1|支援攻撃.*＋1/.test(d)},
+      {label:'支援防御+1', match: d => /「支援防御」.*\+1|支援防御\+1|支援防御.*＋1/.test(d) && !/支援攻撃/.test(d)},
+      {label:'反撃時支援防御', match: d => /反撃.*支援防御|支援防御.*参加/.test(d)},
+      {label:'チャンスステップ+1', match: d => /チャンスステップ.*\+1|チャンスステップ.*＋1/.test(d)}
+    ];
+    // Count how many charas match each category
+    const abilBtns = abilCategories.map(cat => {
+      let count = 0;
+      allCharas.forEach(c => {
+        const allAbil = [...(c.abilities||[]), ...(c.sp_abilities||[])];
+        if (allAbil.some(a => cat.match(a.desc||''))) count++;
+      });
+      return `<button class="filter-btn" data-value="${cat.label}" style="font-size:.7em">${cat.label}<span style="opacity:.5;margin-left:2px">(${count})</span></button>`;
+    }).join('');
+    document.getElementById('filterCharaAbilityButtons').innerHTML = abilBtns;
+    document.querySelectorAll('#filterCharaAbilityButtons .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
   } else {
@@ -1984,6 +2009,19 @@ function getFiltered() {
         const allSkills = [...(c.skills||[]), ...(c.sp_skills||[])];
         const charaSkillBases = allSkills.map(sk => sk.name.replace(/[Ll][Vv][０-９\d]+/g,'').replace(/\s+/g,'').replace(/ブ－スト/g,'ブースト').trim());
         if (!activeSkills.every(fs => charaSkillBases.includes(fs))) return false;
+      }
+      // Ability filter (貴重アビリティ)
+      const activeAbils = [...document.querySelectorAll('#filterCharaAbilityButtons .filter-btn.active')].map(b => b.dataset.value);
+      if (activeAbils.length > 0) {
+        const allAbil = [...(c.abilities||[]), ...(c.sp_abilities||[])];
+        const descs = allAbil.map(a => a.desc||'');
+        const abilMatchers = {
+          '支援攻撃+1': d => /支援攻撃.*\+1|支援攻撃.*＋1/.test(d),
+          '支援防御+1': d => /「支援防御」.*\+1|支援防御\+1|支援防御.*＋1/.test(d) && !/支援攻撃/.test(d),
+          '反撃時支援防御': d => /反撃.*支援防御|支援防御.*参加/.test(d),
+          'チャンスステップ+1': d => /チャンスステップ.*\+1|チャンスステップ.*＋1/.test(d)
+        };
+        if (!activeAbils.every(ab => descs.some(d => abilMatchers[ab] && abilMatchers[ab](d)))) return false;
       }
       return true;
     });
@@ -4437,7 +4475,8 @@ function updateClearButton() {
     const series = document.getElementById('filterSeries')?.value || '';
     const charaTagCount = getAllSelectedTags().length;
     const activeCharaSkills = document.querySelectorAll('#filterCharaSkillButtons .filter-btn.active').length;
-    hasFilter = activeCharaTypes > 0 || series || charaTagCount > 0 || activeCharaSkills > 0;
+    const activeCharaAbils = document.querySelectorAll('#filterCharaAbilityButtons .filter-btn.active').length;
+    hasFilter = activeCharaTypes > 0 || series || charaTagCount > 0 || activeCharaSkills > 0 || activeCharaAbils > 0;
   } else if (currentTab === 'supporter') {
     const target = document.getElementById('filterTarget').value;
     const activeSupTags = document.querySelectorAll('#filterSupTagButtons .filter-btn.active').length;
