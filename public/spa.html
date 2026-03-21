@@ -580,6 +580,7 @@ a:hover{text-decoration:underline}
 .rank-badge.top3{color:#ffd700}
 .chara-sp-section h3{color:#ffd54f !important}
 .chara-sp-section h3::before{content:'⬆ '}
+.sp-skill-tag{border:1px solid rgba(192,132,252,.5) !important;background:rgba(192,132,252,.12) !important}
 .card-stats .rank-badge{font-size:.45em}
 .lb-table{width:100%;border-collapse:collapse;font-size:.75em;margin-top:6px}
 .lb-table th,.lb-table td{padding:4px 6px;border:1px solid var(--card-border);text-align:center}
@@ -2278,12 +2279,14 @@ function charaCardHTML(c) {
     </div>`;
   }
 
-  const skillTags = (c.skills||[]).map(sk => {
+  const displaySkills = (_charaStatMode === 'sp' && (c.sp_skills||[]).length > 0) ? c.sp_skills : (c.skills||[]);
+  const skillTags = displaySkills.map(sk => {
     const shortName = sk.name.replace(/\(SP:\d+\)/, '').replace(/Lv\d+/, '').trim();
-    return `<span class="skill-tag">${shortName} SP:${sk.sp_cost||'?'}</span>`;
+    return `<span class="skill-tag${_charaStatMode==='sp' && (c.sp_skills||[]).length > 0 ? ' sp-skill-tag' : ''}">${shortName} SP:${sk.sp_cost||'?'}</span>`;
   }).join('');
 
-  const abilCount = (c.abilities||[]).length;
+  const displayAbilities = (_charaStatMode === 'sp' && (c.sp_abilities||[]).length > 0) ? c.sp_abilities : (c.abilities||[]);
+  const abilCount = displayAbilities.length;
 
   const iconHTML = c.image ? `<img class="card-icon" src="${c.image}" alt="${c.name}" onerror="this.style.display='none'" loading="lazy" width="40" height="40">` : '';
 
