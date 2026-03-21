@@ -418,7 +418,7 @@ a:hover{text-decoration:underline}
 .stat-label{font-size:.55em;color:var(--card-text2);text-transform:uppercase;line-height:1.2}
 .stat-val{font-size:.8em;font-weight:700;line-height:1.2}
 .cp-val{color:var(--gold)}
-.card-terrain{display:grid;grid-template-columns:repeat(5,1fr);gap:2px;font-size:.55em;margin-bottom:4px;text-align:center;padding:0 6px}
+.card-terrain{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:2px;font-size:.55em;margin-bottom:4px;text-align:center}
 .terrain-item{display:flex;align-items:center;justify-content:center;gap:2px;min-width:0}
 .terrain-ok{color:#44cc44}
 .terrain-tri{color:#ffaa00}
