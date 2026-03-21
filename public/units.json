@@ -55219,7 +55219,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 643,
+      "melee": 613,
+      "awakening": 856,
+      "defense": 521,
+      "reaction": 649,
+      "sp": 15
+    }
   },
   {
     "id": 326,
@@ -55293,7 +55301,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 602,
+      "melee": 697,
+      "awakening": 698,
+      "defense": 537,
+      "reaction": 733,
+      "sp": 15
+    }
   },
   {
     "id": 327,
@@ -55365,7 +55381,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 772,
+      "melee": 613,
+      "awakening": 466,
+      "defense": 620,
+      "reaction": 559,
+      "sp": 15
+    }
   },
   {
     "id": 328,
@@ -55435,6 +55459,14 @@
           "condition": ""
         }
       ]
+    },
+    "lv100_stats": {
+      "shooting": 819,
+      "melee": 682,
+      "awakening": 473,
+      "defense": 574,
+      "reaction": 622,
+      "sp": 15
     }
   },
   {
@@ -55512,7 +55544,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 639,
+      "melee": 848,
+      "awakening": 483,
+      "defense": 581,
+      "reaction": 620,
+      "sp": 15
+    }
   },
   {
     "id": 330,
@@ -55592,7 +55632,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 861,
+      "melee": 669,
+      "awakening": 398,
+      "defense": 591,
+      "reaction": 513,
+      "sp": 15
+    }
   },
   {
     "id": 331,
@@ -55665,7 +55713,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 496,
+      "melee": 858,
+      "awakening": 506,
+      "defense": 603,
+      "reaction": 580,
+      "sp": 15
+    }
   },
   {
     "id": 332,
@@ -55739,7 +55795,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 589,
+      "melee": 595,
+      "awakening": 970,
+      "defense": 519,
+      "reaction": 696,
+      "sp": 15
+    }
   },
   {
     "id": 333,
@@ -55817,7 +55881,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 635,
+      "melee": 652,
+      "awakening": 812,
+      "defense": 533,
+      "reaction": 706,
+      "sp": 15
+    }
   },
   {
     "id": 334,
@@ -55900,7 +55972,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 634,
+      "melee": 551,
+      "awakening": 897,
+      "defense": 541,
+      "reaction": 727,
+      "sp": 15
+    }
   },
   {
     "id": 335,
@@ -55978,7 +56058,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 595,
+      "melee": 614,
+      "awakening": 912,
+      "defense": 530,
+      "reaction": 643,
+      "sp": 15
+    }
   },
   {
     "id": 336,
@@ -56049,7 +56137,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 583,
+      "melee": 700,
+      "awakening": 659,
+      "defense": 525,
+      "reaction": 559,
+      "sp": 15
+    }
   },
   {
     "id": 337,
@@ -56125,7 +56221,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 594,
+      "melee": 626,
+      "awakening": 832,
+      "defense": 524,
+      "reaction": 607,
+      "sp": 15
+    }
   },
   {
     "id": 338,
@@ -56197,7 +56301,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 640,
+      "melee": 672,
+      "awakening": 650,
+      "defense": 593,
+      "reaction": 703,
+      "sp": 15
+    }
   },
   {
     "id": 339,
@@ -56269,6 +56381,14 @@
           "condition": ""
         }
       ]
+    },
+    "lv100_stats": {
+      "shooting": 553,
+      "melee": 896,
+      "awakening": 449,
+      "defense": 502,
+      "reaction": 513,
+      "sp": 15
     }
   },
   {
@@ -56343,6 +56463,14 @@
           "condition": ""
         }
       ]
+    },
+    "lv100_stats": {
+      "shooting": 529,
+      "melee": 859,
+      "awakening": 412,
+      "defense": 520,
+      "reaction": 577,
+      "sp": 15
     }
   },
   {
@@ -56416,7 +56544,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 871,
+      "melee": 630,
+      "awakening": 445,
+      "defense": 568,
+      "reaction": 542,
+      "sp": 15
+    }
   },
   {
     "id": 342,
@@ -56494,6 +56630,14 @@
           "condition": ""
         }
       ]
+    },
+    "lv100_stats": {
+      "shooting": 734,
+      "melee": 580,
+      "awakening": 816,
+      "defense": 498,
+      "reaction": 707,
+      "sp": 15
     }
   },
   {
@@ -56581,7 +56725,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 608,
+      "melee": 742,
+      "awakening": 787,
+      "defense": 488,
+      "reaction": 718,
+      "sp": 15
+    }
   },
   {
     "id": 344,
@@ -56662,7 +56814,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 585,
+      "melee": 852,
+      "awakening": 376,
+      "defense": 610,
+      "reaction": 624,
+      "sp": 15
+    }
   },
   {
     "id": 345,
@@ -56735,7 +56895,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 552,
+      "melee": 808,
+      "awakening": 448,
+      "defense": 524,
+      "reaction": 565,
+      "sp": 15
+    }
   },
   {
     "id": 346,
@@ -56816,7 +56984,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 738,
+      "melee": 823,
+      "awakening": 644,
+      "defense": 465,
+      "reaction": 600,
+      "sp": 15
+    }
   },
   {
     "id": 347,
@@ -56890,7 +57066,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 517,
+      "melee": 880,
+      "awakening": 563,
+      "defense": 507,
+      "reaction": 584,
+      "sp": 15
+    }
   },
   {
     "id": 348,
@@ -56969,7 +57153,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 645,
+      "melee": 588,
+      "awakening": 824,
+      "defense": 561,
+      "reaction": 571,
+      "sp": 15
+    }
   },
   {
     "id": 349,
@@ -57036,7 +57228,15 @@
         }
       ]
     },
-    "acquire": "イベント"
+    "acquire": "イベント",
+    "lv100_stats": {
+      "shooting": 643,
+      "melee": 783,
+      "awakening": 429,
+      "defense": 500,
+      "reaction": 522,
+      "sp": 15
+    }
   },
   {
     "id": 350,
@@ -57112,7 +57312,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 645,
+      "melee": 855,
+      "awakening": 561,
+      "defense": 530,
+      "reaction": 588,
+      "sp": 15
+    }
   },
   {
     "id": 351,
@@ -57178,7 +57386,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 686,
+      "melee": 686,
+      "awakening": 860,
+      "defense": 586,
+      "reaction": 315,
+      "sp": 15
+    }
   },
   {
     "id": 352,
@@ -57265,7 +57481,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 763,
+      "melee": 628,
+      "awakening": 499,
+      "defense": 583,
+      "reaction": 536,
+      "sp": 15
+    }
   },
   {
     "id": 353,
@@ -57353,7 +57577,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 721,
+      "melee": 634,
+      "awakening": 499,
+      "defense": 589,
+      "reaction": 589,
+      "sp": 15
+    }
   },
   {
     "id": 354,
@@ -57443,7 +57675,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 855,
+      "melee": 598,
+      "awakening": 460,
+      "defense": 594,
+      "reaction": 543,
+      "sp": 15
+    }
   },
   {
     "id": 355,
@@ -57527,7 +57767,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 711,
+      "melee": 578,
+      "awakening": 717,
+      "defense": 561,
+      "reaction": 705,
+      "sp": 15
+    }
   },
   {
     "id": 356,
@@ -57611,7 +57859,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 589,
+      "melee": 627,
+      "awakening": 828,
+      "defense": 552,
+      "reaction": 685,
+      "sp": 15
+    }
   },
   {
     "id": 357,
@@ -57694,7 +57950,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 629,
+      "melee": 585,
+      "awakening": 841,
+      "defense": 543,
+      "reaction": 688,
+      "sp": 15
+    }
   },
   {
     "id": 358,
@@ -57779,7 +58043,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 545,
+      "melee": 528,
+      "awakening": 855,
+      "defense": 524,
+      "reaction": 582,
+      "sp": 15
+    }
   },
   {
     "id": 359,
@@ -57867,7 +58139,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 695,
+      "melee": 753,
+      "awakening": 528,
+      "defense": 505,
+      "reaction": 569,
+      "sp": 15
+    }
   },
   {
     "id": 360,
@@ -57948,7 +58228,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 795,
+      "melee": 738,
+      "awakening": 584,
+      "defense": 589,
+      "reaction": 577,
+      "sp": 15
+    }
   },
   {
     "id": 361,
@@ -58030,6 +58318,14 @@
           "condition": ""
         }
       ]
+    },
+    "lv100_stats": {
+      "shooting": 729,
+      "melee": 612,
+      "awakening": 663,
+      "defense": 556,
+      "reaction": 706,
+      "sp": 15
     }
   },
   {
@@ -58114,7 +58410,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 780,
+      "melee": 571,
+      "awakening": 813,
+      "defense": 526,
+      "reaction": 576,
+      "sp": 15
+    }
   },
   {
     "id": 363,
@@ -58190,7 +58494,15 @@
         }
       ]
     },
-    "acquire": "イベント"
+    "acquire": "イベント",
+    "lv100_stats": {
+      "shooting": 649,
+      "melee": 579,
+      "awakening": 696,
+      "defense": 534,
+      "reaction": 649,
+      "sp": 15
+    }
   },
   {
     "id": 364,
@@ -58273,7 +58585,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 669,
+      "melee": 617,
+      "awakening": 780,
+      "defense": 503,
+      "reaction": 711,
+      "sp": 15
+    }
   },
   {
     "id": 365,
@@ -58359,7 +58679,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 845,
+      "melee": 801,
+      "awakening": 359,
+      "defense": 511,
+      "reaction": 689,
+      "sp": 15
+    }
   },
   {
     "id": 366,
@@ -58438,7 +58766,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 600,
+      "melee": 738,
+      "awakening": 436,
+      "defense": 555,
+      "reaction": 562,
+      "sp": 15
+    }
   },
   {
     "id": 367,
@@ -58517,7 +58853,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 774,
+      "melee": 558,
+      "awakening": 687,
+      "defense": 559,
+      "reaction": 584,
+      "sp": 15
+    }
   },
   {
     "id": 368,
@@ -58597,7 +58941,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 698,
+      "melee": 604,
+      "awakening": 584,
+      "defense": 561,
+      "reaction": 588,
+      "sp": 15
+    }
   },
   {
     "id": 369,
@@ -58678,7 +59030,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 620,
+      "melee": 564,
+      "awakening": 813,
+      "defense": 576,
+      "reaction": 619,
+      "sp": 15
+    }
   },
   {
     "id": 370,
@@ -58755,7 +59115,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 564,
+      "melee": 568,
+      "awakening": 760,
+      "defense": 624,
+      "reaction": 627,
+      "sp": 15
+    }
   },
   {
     "id": 371,
@@ -58837,7 +59205,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 571,
+      "melee": 532,
+      "awakening": 658,
+      "defense": 703,
+      "reaction": 802,
+      "sp": 15
+    }
   },
   {
     "id": 372,
@@ -58920,7 +59296,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 543,
+      "melee": 679,
+      "awakening": 394,
+      "defense": 781,
+      "reaction": 604,
+      "sp": 15
+    }
   },
   {
     "id": 373,
@@ -59002,7 +59386,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 617,
+      "melee": 573,
+      "awakening": 437,
+      "defense": 798,
+      "reaction": 747,
+      "sp": 15
+    }
   },
   {
     "id": 374,
@@ -59090,7 +59482,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 597,
+      "melee": 531,
+      "awakening": 424,
+      "defense": 820,
+      "reaction": 675,
+      "sp": 15
+    }
   },
   {
     "id": 375,
@@ -59178,7 +59578,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 568,
+      "melee": 531,
+      "awakening": 672,
+      "defense": 736,
+      "reaction": 759,
+      "sp": 15
+    }
   },
   {
     "id": 376,
@@ -59263,7 +59671,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 544,
+      "melee": 544,
+      "awakening": 526,
+      "defense": 725,
+      "reaction": 698,
+      "sp": 15
+    }
   },
   {
     "id": 377,
@@ -59346,7 +59762,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 567,
+      "melee": 527,
+      "awakening": 538,
+      "defense": 736,
+      "reaction": 665,
+      "sp": 15
+    }
   },
   {
     "id": 378,
@@ -59428,7 +59852,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 558,
+      "melee": 522,
+      "awakening": 702,
+      "defense": 749,
+      "reaction": 613,
+      "sp": 15
+    }
   },
   {
     "id": 379,
@@ -59508,7 +59940,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 538,
+      "melee": 538,
+      "awakening": 628,
+      "defense": 771,
+      "reaction": 808,
+      "sp": 15
+    }
   },
   {
     "id": 380,
@@ -59586,7 +60026,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 514,
+      "melee": 684,
+      "awakening": 390,
+      "defense": 681,
+      "reaction": 715,
+      "sp": 15
+    }
   },
   {
     "id": 381,
@@ -59658,7 +60106,15 @@
         }
       ]
     },
-    "acquire": "イベント"
+    "acquire": "イベント",
+    "lv100_stats": {
+      "shooting": 431,
+      "melee": 431,
+      "awakening": 789,
+      "defense": 642,
+      "reaction": 862,
+      "sp": 15
+    }
   },
   {
     "id": 382,
@@ -59742,6 +60198,14 @@
           "condition": ""
         }
       ]
+    },
+    "lv100_stats": {
+      "shooting": 541,
+      "melee": 576,
+      "awakening": 592,
+      "defense": 772,
+      "reaction": 792,
+      "sp": 15
     }
   },
   {
@@ -59830,7 +60294,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 518,
+      "melee": 582,
+      "awakening": 538,
+      "defense": 782,
+      "reaction": 871,
+      "sp": 15
+    }
   },
   {
     "id": 384,
@@ -59909,7 +60381,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 477,
+      "melee": 612,
+      "awakening": 538,
+      "defense": 658,
+      "reaction": 747,
+      "sp": 15
+    }
   },
   {
     "id": 385,
@@ -59991,7 +60471,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 537,
+      "melee": 778,
+      "awakening": 468,
+      "defense": 670,
+      "reaction": 702,
+      "sp": 15
+    }
   },
   {
     "id": 386,
@@ -60065,7 +60553,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 567,
+      "melee": 491,
+      "awakening": 522,
+      "defense": 814,
+      "reaction": 659,
+      "sp": 15
+    }
   },
   {
     "id": 387,
@@ -60132,7 +60628,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "sp_stats": {
+      "shooting": 504,
+      "melee": 802,
+      "awakening": 430,
+      "defense": 549,
+      "reaction": 449,
+      "sp": 15
+    }
   },
   {
     "id": 388,
@@ -60198,6 +60702,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 810,
+      "melee": 504,
+      "awakening": 445,
+      "defense": 485,
+      "reaction": 491,
+      "sp": 15
     }
   },
   {
@@ -60264,6 +60776,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 708,
+      "melee": 560,
+      "awakening": 434,
+      "defense": 509,
+      "reaction": 505,
+      "sp": 15
     }
   },
   {
@@ -60330,6 +60850,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 744,
+      "melee": 513,
+      "awakening": 375,
+      "defense": 532,
+      "reaction": 552,
+      "sp": 15
     }
   },
   {
@@ -60396,6 +60924,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 537,
+      "melee": 775,
+      "awakening": 446,
+      "defense": 499,
+      "reaction": 467,
+      "sp": 15
     }
   },
   {
@@ -60461,6 +60997,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 552,
+      "melee": 770,
+      "awakening": 434,
+      "defense": 489,
+      "reaction": 480,
+      "sp": 15
     }
   },
   {
@@ -60528,6 +61072,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 484,
+      "melee": 741,
+      "awakening": 406,
+      "defense": 567,
+      "reaction": 518,
+      "sp": 15
     }
   },
   {
@@ -60595,6 +61147,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 620,
+      "melee": 524,
+      "awakening": 433,
+      "defense": 510,
+      "reaction": 535,
+      "sp": 15
     }
   },
   {
@@ -60661,6 +61221,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 578,
+      "melee": 741,
+      "awakening": 556,
+      "defense": 456,
+      "reaction": 523,
+      "sp": 15
     }
   },
   {
@@ -60726,6 +61294,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 520,
+      "melee": 801,
+      "awakening": 581,
+      "defense": 448,
+      "reaction": 521,
+      "sp": 15
     }
   },
   {
@@ -60791,6 +61367,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 589,
+      "melee": 706,
+      "awakening": 548,
+      "defense": 495,
+      "reaction": 515,
+      "sp": 15
     }
   },
   {
@@ -60858,6 +61442,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 586,
+      "melee": 559,
+      "awakening": 747,
+      "defense": 472,
+      "reaction": 566,
+      "sp": 15
     }
   },
   {
@@ -60925,6 +61517,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 763,
+      "melee": 530,
+      "awakening": 424,
+      "defense": 517,
+      "reaction": 484,
+      "sp": 15
     }
   },
   {
@@ -60990,6 +61590,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 749,
+      "melee": 543,
+      "awakening": 445,
+      "defense": 417,
+      "reaction": 564,
+      "sp": 15
     }
   },
   {
@@ -61054,6 +61662,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 793,
+      "melee": 672,
+      "awakening": 401,
+      "defense": 407,
+      "reaction": 469,
+      "sp": 15
     }
   },
   {
@@ -61117,6 +61733,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 741,
+      "melee": 669,
+      "awakening": 364,
+      "defense": 436,
+      "reaction": 524,
+      "sp": 15
     }
   },
   {
@@ -61182,6 +61806,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 602,
+      "melee": 724,
+      "awakening": 375,
+      "defense": 583,
+      "reaction": 438,
+      "sp": 15
     }
   },
   {
@@ -61247,6 +61879,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 702,
+      "melee": 529,
+      "awakening": 420,
+      "defense": 532,
+      "reaction": 529,
+      "sp": 15
     }
   },
   {
@@ -61309,6 +61949,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 558,
+      "melee": 661,
+      "awakening": 277,
+      "defense": 532,
+      "reaction": 597,
+      "sp": 15
     }
   },
   {
@@ -61373,6 +62021,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 783,
+      "melee": 562,
+      "awakening": 414,
+      "defense": 478,
+      "reaction": 494,
+      "sp": 15
     }
   },
   {
@@ -61435,6 +62091,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 742,
+      "melee": 527,
+      "awakening": 404,
+      "defense": 584,
+      "reaction": 453,
+      "sp": 15
     }
   },
   {
@@ -61496,6 +62160,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 781,
+      "melee": 531,
+      "awakening": 410,
+      "defense": 484,
+      "reaction": 524,
+      "sp": 15
     }
   },
   {
@@ -61558,6 +62230,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 692,
+      "melee": 481,
+      "awakening": 637,
+      "defense": 448,
+      "reaction": 448,
+      "sp": 15
     }
   },
   {
@@ -61619,6 +62299,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 777,
+      "melee": 550,
+      "awakening": 428,
+      "defense": 492,
+      "reaction": 480,
+      "sp": 15
     }
   },
   {
@@ -61685,6 +62373,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 709,
+      "melee": 686,
+      "awakening": 484,
+      "defense": 450,
+      "reaction": 588,
+      "sp": 15
     }
   },
   {
@@ -61751,6 +62447,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 493,
+      "melee": 821,
+      "awakening": 423,
+      "defense": 489,
+      "reaction": 513,
+      "sp": 15
     }
   },
   {
@@ -61816,6 +62520,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 686,
+      "melee": 728,
+      "awakening": 539,
+      "defense": 430,
+      "reaction": 502,
+      "sp": 15
     }
   },
   {
@@ -61883,6 +62595,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 617,
+      "melee": 663,
+      "awakening": 381,
+      "defense": 595,
+      "reaction": 606,
+      "sp": 15
     }
   },
   {
@@ -61948,6 +62668,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 553,
+      "melee": 764,
+      "awakening": 550,
+      "defense": 434,
+      "reaction": 633,
+      "sp": 15
     }
   },
   {
@@ -62011,6 +62739,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 569,
+      "melee": 747,
+      "awakening": 415,
+      "defense": 477,
+      "reaction": 510,
+      "sp": 15
     }
   },
   {
@@ -62073,6 +62809,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 662,
+      "melee": 737,
+      "awakening": 339,
+      "defense": 496,
+      "reaction": 497,
+      "sp": 15
     }
   },
   {
@@ -62135,6 +62879,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 773,
+      "melee": 561,
+      "awakening": 413,
+      "defense": 467,
+      "reaction": 513,
+      "sp": 15
     }
   },
   {
@@ -62198,6 +62950,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 534,
+      "melee": 715,
+      "awakening": 424,
+      "defense": 479,
+      "reaction": 485,
+      "sp": 15
     }
   },
   {
@@ -62262,6 +63022,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 670,
+      "melee": 569,
+      "awakening": 351,
+      "defense": 535,
+      "reaction": 580,
+      "sp": 15
     }
   },
   {
@@ -62325,6 +63093,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 566,
+      "melee": 784,
+      "awakening": 284,
+      "defense": 552,
+      "reaction": 540,
+      "sp": 15
     }
   },
   {
@@ -62386,6 +63162,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 776,
+      "melee": 622,
+      "awakening": 447,
+      "defense": 500,
+      "reaction": 523,
+      "sp": 15
     }
   },
   {
@@ -62448,6 +63232,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 547,
+      "melee": 711,
+      "awakening": 526,
+      "defense": 485,
+      "reaction": 502,
+      "sp": 15
     }
   },
   {
@@ -62518,6 +63310,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 713,
+      "melee": 536,
+      "awakening": 421,
+      "defense": 502,
+      "reaction": 544,
+      "sp": 15
     }
   },
   {
@@ -62589,6 +63389,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 715,
+      "melee": 542,
+      "awakening": 435,
+      "defense": 506,
+      "reaction": 518,
+      "sp": 15
     }
   },
   {
@@ -62658,6 +63466,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 734,
+      "melee": 580,
+      "awakening": 455,
+      "defense": 481,
+      "reaction": 475,
+      "sp": 15
     }
   },
   {
@@ -62730,6 +63546,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 786,
+      "melee": 682,
+      "awakening": 323,
+      "defense": 492,
+      "reaction": 461,
+      "sp": 15
     }
   },
   {
@@ -62802,6 +63626,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 690,
+      "melee": 561,
+      "awakening": 432,
+      "defense": 527,
+      "reaction": 499,
+      "sp": 15
     }
   },
   {
@@ -62873,6 +63705,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 722,
+      "melee": 547,
+      "awakening": 417,
+      "defense": 520,
+      "reaction": 509,
+      "sp": 15
     }
   },
   {
@@ -62942,6 +63782,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 559,
+      "melee": 559,
+      "awakening": 714,
+      "defense": 499,
+      "reaction": 519,
+      "sp": 15
     }
   },
   {
@@ -63012,6 +63860,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 732,
+      "melee": 555,
+      "awakening": 429,
+      "defense": 500,
+      "reaction": 504,
+      "sp": 15
     }
   },
   {
@@ -63083,6 +63939,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 577,
+      "melee": 577,
+      "awakening": 649,
+      "defense": 524,
+      "reaction": 514,
+      "sp": 15
     }
   },
   {
@@ -63156,6 +64020,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 660,
+      "melee": 551,
+      "awakening": 632,
+      "defense": 496,
+      "reaction": 587,
+      "sp": 15
     }
   },
   {
@@ -63228,7 +64100,15 @@
         }
       ]
     },
-    "acquire": "イベント"
+    "acquire": "イベント",
+    "sp_stats": {
+      "shooting": 586,
+      "melee": 570,
+      "awakening": 662,
+      "defense": 489,
+      "reaction": 616,
+      "sp": 15
+    }
   },
   {
     "id": 437,
@@ -63298,6 +64178,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 588,
+      "melee": 601,
+      "awakening": 681,
+      "defense": 422,
+      "reaction": 641,
+      "sp": 15
     }
   },
   {
@@ -63369,6 +64257,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 711,
+      "melee": 554,
+      "awakening": 616,
+      "defense": 489,
+      "reaction": 555,
+      "sp": 15
     }
   },
   {
@@ -63436,6 +64332,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 544,
+      "melee": 717,
+      "awakening": 275,
+      "defense": 566,
+      "reaction": 529,
+      "sp": 15
     }
   },
   {
@@ -63504,6 +64408,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 703,
+      "melee": 573,
+      "awakening": 409,
+      "defense": 528,
+      "reaction": 499,
+      "sp": 15
     }
   },
   {
@@ -63571,6 +64483,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 750,
+      "melee": 545,
+      "awakening": 427,
+      "defense": 497,
+      "reaction": 504,
+      "sp": 15
     }
   },
   {
@@ -63642,6 +64562,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 702,
+      "melee": 568,
+      "awakening": 417,
+      "defense": 507,
+      "reaction": 518,
+      "sp": 15
     }
   },
   {
@@ -63715,6 +64643,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 701,
+      "melee": 598,
+      "awakening": 523,
+      "defense": 517,
+      "reaction": 577,
+      "sp": 15
     }
   },
   {
@@ -63785,6 +64721,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 581,
+      "melee": 514,
+      "awakening": 802,
+      "defense": 491,
+      "reaction": 555,
+      "sp": 15
     }
   },
   {
@@ -63856,6 +64800,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 577,
+      "melee": 676,
+      "awakening": 554,
+      "defense": 510,
+      "reaction": 603,
+      "sp": 15
     }
   },
   {
@@ -63926,6 +64878,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 728,
+      "melee": 547,
+      "awakening": 577,
+      "defense": 535,
+      "reaction": 535,
+      "sp": 15
     }
   },
   {
@@ -63996,6 +64956,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 567,
+      "melee": 523,
+      "awakening": 655,
+      "defense": 546,
+      "reaction": 627,
+      "sp": 15
     }
   },
   {
@@ -64065,6 +65033,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 614,
+      "melee": 585,
+      "awakening": 509,
+      "defense": 616,
+      "reaction": 595,
+      "sp": 15
     }
   },
   {
@@ -64133,6 +65109,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 726,
+      "melee": 550,
+      "awakening": 421,
+      "defense": 511,
+      "reaction": 511,
+      "sp": 15
     }
   },
   {
@@ -64204,6 +65188,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 633,
+      "melee": 603,
+      "awakening": 526,
+      "defense": 534,
+      "reaction": 614,
+      "sp": 15
     }
   },
   {
@@ -64272,6 +65264,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 707,
+      "melee": 642,
+      "awakening": 397,
+      "defense": 504,
+      "reaction": 476,
+      "sp": 15
     }
   },
   {
@@ -64341,6 +65341,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 518,
+      "melee": 811,
+      "awakening": 358,
+      "defense": 586,
+      "reaction": 455,
+      "sp": 15
     }
   },
   {
@@ -64408,6 +65416,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 632,
+      "melee": 790,
+      "awakening": 407,
+      "defense": 557,
+      "reaction": 485,
+      "sp": 15
     }
   },
   {
@@ -64476,6 +65492,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 621,
+      "melee": 595,
+      "awakening": 486,
+      "defense": 522,
+      "reaction": 538,
+      "sp": 15
     }
   },
   {
@@ -64546,6 +65570,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 586,
+      "melee": 559,
+      "awakening": 615,
+      "defense": 479,
+      "reaction": 523,
+      "sp": 15
     }
   },
   {
@@ -64617,7 +65649,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "sp_stats": {
+      "shooting": 482,
+      "melee": 532,
+      "awakening": 379,
+      "defense": 754,
+      "reaction": 581,
+      "sp": 15
+    }
   },
   {
     "id": 458,
@@ -64688,6 +65728,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 491,
+      "melee": 525,
+      "awakening": 380,
+      "defense": 745,
+      "reaction": 586,
+      "sp": 15
     }
   },
   {
@@ -64758,6 +65806,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 480,
+      "melee": 504,
+      "awakening": 392,
+      "defense": 754,
+      "reaction": 601,
+      "sp": 15
     }
   },
   {
@@ -64829,6 +65885,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 456,
+      "melee": 538,
+      "awakening": 318,
+      "defense": 731,
+      "reaction": 614,
+      "sp": 15
     }
   },
   {
@@ -64902,6 +65966,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 498,
+      "melee": 498,
+      "awakening": 553,
+      "defense": 638,
+      "reaction": 745,
+      "sp": 15
     }
   },
   {
@@ -64971,6 +66043,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 494,
+      "melee": 497,
+      "awakening": 389,
+      "defense": 731,
+      "reaction": 615,
+      "sp": 15
     }
   },
   {
@@ -65042,6 +66122,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 530,
+      "melee": 461,
+      "awakening": 505,
+      "defense": 597,
+      "reaction": 664,
+      "sp": 15
     }
   },
   {
@@ -65115,6 +66203,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 558,
+      "melee": 539,
+      "awakening": 309,
+      "defense": 719,
+      "reaction": 591,
+      "sp": 15
     }
   },
   {
@@ -65186,6 +66282,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 531,
+      "melee": 442,
+      "awakening": 393,
+      "defense": 730,
+      "reaction": 631,
+      "sp": 15
     }
   },
   {
@@ -65256,6 +66360,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 487,
+      "melee": 522,
+      "awakening": 383,
+      "defense": 762,
+      "reaction": 575,
+      "sp": 15
     }
   },
   {
@@ -65325,6 +66437,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 505,
+      "melee": 490,
+      "awakening": 377,
+      "defense": 606,
+      "reaction": 752,
+      "sp": 15
     }
   },
   {
@@ -65394,6 +66514,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 506,
+      "melee": 479,
+      "awakening": 384,
+      "defense": 791,
+      "reaction": 572,
+      "sp": 15
     }
   },
   {
@@ -65461,6 +66589,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 480,
+      "melee": 470,
+      "awakening": 644,
+      "defense": 615,
+      "reaction": 721,
+      "sp": 15
     }
   },
   {
@@ -65528,6 +66664,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 512,
+      "melee": 503,
+      "awakening": 319,
+      "defense": 718,
+      "reaction": 598,
+      "sp": 15
     }
   },
   {
@@ -65595,6 +66739,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 537,
+      "melee": 563,
+      "awakening": 246,
+      "defense": 608,
+      "reaction": 693,
+      "sp": 15
     }
   },
   {
@@ -65662,6 +66814,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 535,
+      "melee": 463,
+      "awakening": 373,
+      "defense": 667,
+      "reaction": 596,
+      "sp": 15
     }
   },
   {
@@ -65729,6 +66889,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 506,
+      "melee": 490,
+      "awakening": 495,
+      "defense": 733,
+      "reaction": 627,
+      "sp": 15
     }
   },
   {
@@ -65798,6 +66966,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 598,
+      "melee": 636,
+      "awakening": 334,
+      "defense": 739,
+      "reaction": 556,
+      "sp": 15
     }
   },
   {
@@ -65868,6 +67044,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 396,
+      "melee": 628,
+      "awakening": 467,
+      "defense": 678,
+      "reaction": 527,
+      "sp": 15
     }
   },
   {
@@ -65940,6 +67124,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 491,
+      "melee": 453,
+      "awakening": 683,
+      "defense": 673,
+      "reaction": 621,
+      "sp": 15
     }
   },
   {
@@ -66010,6 +67202,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 475,
+      "melee": 500,
+      "awakening": 496,
+      "defense": 747,
+      "reaction": 726,
+      "sp": 15
     }
   },
   {
@@ -66078,6 +67278,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 547,
+      "melee": 524,
+      "awakening": 492,
+      "defense": 662,
+      "reaction": 713,
+      "sp": 15
     }
   },
   {
@@ -66145,6 +67353,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 555,
+      "melee": 371,
+      "awakening": 729,
+      "defense": 525,
+      "reaction": 741,
+      "sp": 15
     }
   },
   {
@@ -66212,6 +67428,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 506,
+      "melee": 499,
+      "awakening": 381,
+      "defense": 752,
+      "reaction": 592,
+      "sp": 15
     }
   },
   {
@@ -66280,6 +67504,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 350,
+      "melee": 632,
+      "awakening": 344,
+      "defense": 644,
+      "reaction": 758,
+      "sp": 15
     }
   },
   {
@@ -66347,6 +67579,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 653,
+      "melee": 458,
+      "awakening": 313,
+      "defense": 706,
+      "reaction": 588,
+      "sp": 15
     }
   },
   {
@@ -66413,6 +67653,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 533,
+      "melee": 497,
+      "awakening": 408,
+      "defense": 753,
+      "reaction": 676,
+      "sp": 15
     }
   },
   {
@@ -66472,7 +67720,49 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 731,
+      "melee": 495,
+      "awakening": 627,
+      "defense": 483,
+      "reaction": 593,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "アタックバーストLV3",
+        "sp_cost": 5,
+        "effect": "敵に与えるダメージが15％上昇(1ターン)"
+      },
+      {
+        "name": "チャンスステップ回数増加LV1",
+        "sp_cost": 10,
+        "effect": "「チャンスステップ」+1回"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "自身の与ダメージが15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "ニュータイプ LV3",
+        "desc": "自身の覚醒値と反応値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性:地球連邦軍(宇宙世紀) LV2",
+        "desc": "敵への与ダメージが10％上昇自身の被ダメージが10％軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "自身の射撃値が5％上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 488,
@@ -66532,7 +67822,49 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 507,
+      "melee": 809,
+      "awakening": 418,
+      "defense": 530,
+      "reaction": 470,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "クリティカルブースト LV3",
+        "sp_cost": 5,
+        "effect": "自身のクリティカル率が30%上昇(1ターン)"
+      },
+      {
+        "name": "命中率・回避率上昇 LV2",
+        "sp_cost": 5,
+        "effect": "命中率と回避率が20%上昇(1ターン)"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "与ダメージが15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "格闘値上昇 LV3",
+        "desc": "格闘値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性:ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "守備値上昇 LV1",
+        "desc": "守備値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 489,
@@ -66592,7 +67924,49 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 765,
+      "melee": 555,
+      "awakening": 429,
+      "defense": 474,
+      "reaction": 500,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "レンジブースト LV1",
+        "sp_cost": 5,
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇"
+      },
+      {
+        "name": "射撃ブースト LV3",
+        "sp_cost": 5,
+        "effect": "射撃値が15%上昇(1ターン)"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "与ダメージが15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "射撃値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "反応値上昇 LV1",
+        "desc": "反応値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 490,
@@ -66651,7 +68025,49 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 548,
+      "melee": 761,
+      "awakening": 432,
+      "defense": 500,
+      "reaction": 480,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ENセーブ LV3",
+        "sp_cost": 5,
+        "effect": "自身の武装の消費ENが15%軽減(1ターン)"
+      },
+      {
+        "name": "アタックバースト LV3",
+        "sp_cost": 5,
+        "effect": "敵に与えるダメージが15%上昇(1ターン)"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "与ダメージが15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "格闘値上昇 LV3",
+        "desc": "格闘値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "守備値上昇 LV1",
+        "desc": "守備値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 491,
@@ -66710,7 +68126,49 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "sp_stats": {
+      "shooting": 810,
+      "melee": 486,
+      "awakening": 449,
+      "defense": 521,
+      "reaction": 469,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ハイスピード LV1",
+        "sp_cost": 5,
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇"
+      },
+      {
+        "name": "クリティカルブースト LV3",
+        "sp_cost": 5,
+        "effect": "自身のクリティカル率が30%上昇(1ターン)"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "与ダメージが15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "射撃値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "守備値上昇 LV1",
+        "desc": "守備値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 492,
@@ -66770,7 +68228,49 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 757,
+      "melee": 492,
+      "awakening": 443,
+      "defense": 536,
+      "reaction": 496,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "クリティカルブーストLV3",
+        "sp_cost": 5,
+        "effect": "クリティカル率が1ターン30%上昇"
+      },
+      {
+        "name": "レンジブーストLV1",
+        "sp_cost": 5,
+        "effect": "射程が1上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "与ダメージが15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "射撃値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "射撃値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 493,
@@ -66830,7 +68330,49 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 722,
+      "melee": 522,
+      "awakening": 437,
+      "defense": 498,
+      "reaction": 536,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "アタックバーストLV3",
+        "sp_cost": 5,
+        "effect": "与えるダメージが1ターン15%上昇"
+      },
+      {
+        "name": "ロックオンLV1",
+        "sp_cost": 5,
+        "effect": "命中率が100%上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "与ダメージが15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "射撃値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "射撃値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 494,
@@ -66892,7 +68434,49 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 564,
+      "melee": 724,
+      "awakening": 365,
+      "defense": 546,
+      "reaction": 518,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "格闘ブースト LV3",
+        "sp_cost": 5,
+        "effect": "格闘値が1ターン15%上昇"
+      },
+      {
+        "name": "フォースガードLV3",
+        "sp_cost": 5,
+        "effect": "受けるダメージが1ターン15%軽減"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "与ダメージが15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "格闘値上昇 LV3",
+        "desc": "格闘値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "守備値上昇 LV1",
+        "desc": "守備値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 495,
@@ -66951,7 +68535,49 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 592,
+      "melee": 654,
+      "awakening": 439,
+      "defense": 515,
+      "reaction": 509,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ENセーブLV3",
+        "sp_cost": 5,
+        "effect": "武装の消費ENが15%軽減(1ターン)"
+      },
+      {
+        "name": "ハイスピードLV1",
+        "sp_cost": 5,
+        "effect": "移動力が1上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "与ダメージが15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "格闘値上昇 LV3",
+        "desc": "格闘値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "射撃値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 496,
@@ -67010,7 +68636,49 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 501,
+      "melee": 485,
+      "awakening": 771,
+      "defense": 436,
+      "reaction": 756,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "覚醒ブースト LV3",
+        "sp_cost": 5,
+        "effect": "覚醒値が15%上昇"
+      },
+      {
+        "name": "ハイスピードLV1",
+        "sp_cost": 5,
+        "effect": "移動力が1上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "与ダメージが15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "ニュータイプ LV3",
+        "desc": "覚醒値と反応値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "反応値上昇 LV1",
+        "desc": "反応値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 497,
@@ -67071,6 +68739,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 612,
+      "melee": 583,
+      "awakening": 515,
+      "defense": 531,
+      "reaction": 520,
+      "sp": 15
     }
   },
   {
@@ -67131,6 +68807,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 795,
+      "melee": 553,
+      "awakening": 430,
+      "defense": 477,
+      "reaction": 477,
+      "sp": 15
     }
   },
   {
@@ -67190,6 +68874,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 601,
+      "melee": 655,
+      "awakening": 435,
+      "defense": 504,
+      "reaction": 516,
+      "sp": 15
     }
   },
   {
@@ -67251,6 +68943,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 790,
+      "melee": 611,
+      "awakening": 489,
+      "defense": 434,
+      "reaction": 419,
+      "sp": 15
     }
   },
   {
@@ -67314,6 +69014,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 589,
+      "melee": 673,
+      "awakening": 630,
+      "defense": 469,
+      "reaction": 561,
+      "sp": 15
     }
   },
   {
@@ -67377,6 +69085,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 562,
+      "melee": 739,
+      "awakening": 457,
+      "defense": 485,
+      "reaction": 476,
+      "sp": 15
     }
   },
   {
@@ -67439,6 +69155,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 562,
+      "melee": 775,
+      "awakening": 409,
+      "defense": 485,
+      "reaction": 496,
+      "sp": 15
     }
   },
   {
@@ -67499,6 +69223,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 598,
+      "melee": 650,
+      "awakening": 442,
+      "defense": 509,
+      "reaction": 509,
+      "sp": 15
     }
   },
   {
@@ -67561,6 +69293,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 753,
+      "melee": 541,
+      "awakening": 421,
+      "defense": 531,
+      "reaction": 473,
+      "sp": 15
     }
   },
   {
@@ -67624,6 +69364,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 562,
+      "melee": 643,
+      "awakening": 638,
+      "defense": 498,
+      "reaction": 572,
+      "sp": 15
     }
   },
   {
@@ -67683,6 +69431,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 575,
+      "melee": 724,
+      "awakening": 535,
+      "defense": 498,
+      "reaction": 584,
+      "sp": 15
     }
   },
   {
@@ -67742,6 +69498,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 788,
+      "melee": 544,
+      "awakening": 442,
+      "defense": 471,
+      "reaction": 485,
+      "sp": 15
     }
   },
   {
@@ -67805,6 +69569,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 700,
+      "melee": 556,
+      "awakening": 587,
+      "defense": 500,
+      "reaction": 575,
+      "sp": 15
     }
   },
   {
@@ -67865,6 +69637,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 558,
+      "melee": 543,
+      "awakening": 794,
+      "defense": 463,
+      "reaction": 584,
+      "sp": 15
     }
   },
   {
@@ -67927,6 +69707,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 567,
+      "melee": 561,
+      "awakening": 560,
+      "defense": 543,
+      "reaction": 675,
+      "sp": 15
     }
   },
   {
@@ -67986,6 +69774,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 796,
+      "melee": 505,
+      "awakening": 486,
+      "defense": 472,
+      "reaction": 476,
+      "sp": 15
     }
   },
   {
@@ -68045,6 +69841,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 700,
+      "melee": 557,
+      "awakening": 419,
+      "defense": 436,
+      "reaction": 599,
+      "sp": 15
     }
   },
   {
@@ -68103,6 +69907,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 525,
+      "melee": 815,
+      "awakening": 424,
+      "defense": 511,
+      "reaction": 460,
+      "sp": 15
     }
   },
   {
@@ -68166,6 +69978,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 613,
+      "melee": 584,
+      "awakening": 526,
+      "defense": 505,
+      "reaction": 534,
+      "sp": 15
     }
   },
   {
@@ -68225,6 +70045,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 560,
+      "melee": 676,
+      "awakening": 417,
+      "defense": 543,
+      "reaction": 509,
+      "sp": 15
     }
   },
   {
@@ -68285,6 +70113,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 580,
+      "melee": 456,
+      "awakening": 748,
+      "defense": 549,
+      "reaction": 595,
+      "sp": 15
     }
   },
   {
@@ -68344,6 +70180,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 582,
+      "melee": 750,
+      "awakening": 373,
+      "defense": 565,
+      "reaction": 455,
+      "sp": 15
     }
   },
   {
@@ -68402,6 +70246,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 747,
+      "melee": 613,
+      "awakening": 287,
+      "defense": 551,
+      "reaction": 524,
+      "sp": 15
     }
   },
   {
@@ -68463,6 +70315,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 629,
+      "melee": 566,
+      "awakening": 657,
+      "defense": 500,
+      "reaction": 493,
+      "sp": 15
     }
   },
   {
@@ -68521,7 +70381,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "sp_stats": {
+      "shooting": 478,
+      "melee": 764,
+      "awakening": 407,
+      "defense": 494,
+      "reaction": 499,
+      "sp": 15
+    }
   },
   {
     "id": 522,
@@ -68578,6 +70446,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 711,
+      "melee": 536,
+      "awakening": 415,
+      "defense": 481,
+      "reaction": 492,
+      "sp": 15
     }
   },
   {
@@ -68638,7 +70514,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "sp_stats": {
+      "shooting": 501,
+      "melee": 699,
+      "awakening": 391,
+      "defense": 492,
+      "reaction": 547,
+      "sp": 15
+    }
   },
   {
     "id": 524,
@@ -68696,6 +70580,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 718,
+      "melee": 684,
+      "awakening": 298,
+      "defense": 473,
+      "reaction": 473,
+      "sp": 15
     }
   },
   {
@@ -68752,6 +70644,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 389,
+      "melee": 766,
+      "awakening": 364,
+      "defense": 485,
+      "reaction": 618,
+      "sp": 15
     }
   },
   {
@@ -68808,6 +70708,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 505,
+      "melee": 838,
+      "awakening": 409,
+      "defense": 467,
+      "reaction": 525,
+      "sp": 15
     }
   },
   {
@@ -68864,6 +70772,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 499,
+      "melee": 838,
+      "awakening": 409,
+      "defense": 513,
+      "reaction": 484,
+      "sp": 15
     }
   },
   {
@@ -68924,6 +70840,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 545,
+      "melee": 799,
+      "awakening": 407,
+      "defense": 447,
+      "reaction": 536,
+      "sp": 15
     }
   },
   {
@@ -68982,6 +70906,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 814,
+      "melee": 510,
+      "awakening": 421,
+      "defense": 478,
+      "reaction": 513,
+      "sp": 15
     }
   },
   {
@@ -69039,6 +70971,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 714,
+      "melee": 612,
+      "awakening": 415,
+      "defense": 495,
+      "reaction": 479,
+      "sp": 15
     }
   },
   {
@@ -69098,6 +71038,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 836,
+      "melee": 595,
+      "awakening": 503,
+      "defense": 492,
+      "reaction": 528,
+      "sp": 15
     }
   },
   {
@@ -69157,6 +71105,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 691,
+      "melee": 771,
+      "awakening": 369,
+      "defense": 603,
+      "reaction": 456,
+      "sp": 15
     }
   },
   {
@@ -69219,6 +71175,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 603,
+      "melee": 669,
+      "awakening": 579,
+      "defense": 480,
+      "reaction": 583,
+      "sp": 15
     }
   },
   {
@@ -69280,6 +71244,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 726,
+      "melee": 517,
+      "awakening": 659,
+      "defense": 474,
+      "reaction": 543,
+      "sp": 15
     }
   },
   {
@@ -69341,6 +71313,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 525,
+      "melee": 762,
+      "awakening": 479,
+      "defense": 486,
+      "reaction": 525,
+      "sp": 15
     }
   },
   {
@@ -69405,6 +71385,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 575,
+      "melee": 642,
+      "awakening": 570,
+      "defense": 531,
+      "reaction": 596,
+      "sp": 15
     }
   },
   {
@@ -69466,6 +71454,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 565,
+      "melee": 637,
+      "awakening": 569,
+      "defense": 504,
+      "reaction": 646,
+      "sp": 15
     }
   },
   {
@@ -69529,6 +71525,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 540,
+      "melee": 681,
+      "awakening": 566,
+      "defense": 514,
+      "reaction": 617,
+      "sp": 15
     }
   },
   {
@@ -69589,6 +71593,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 519,
+      "melee": 794,
+      "awakening": 429,
+      "defense": 506,
+      "reaction": 482,
+      "sp": 15
     }
   },
   {
@@ -69650,6 +71662,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 646,
+      "melee": 554,
+      "awakening": 571,
+      "defense": 527,
+      "reaction": 619,
+      "sp": 15
     }
   },
   {
@@ -69710,6 +71730,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 564,
+      "melee": 702,
+      "awakening": 426,
+      "defense": 511,
+      "reaction": 511,
+      "sp": 15
     }
   },
   {
@@ -69769,6 +71797,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 400,
+      "melee": 844,
+      "awakening": 553,
+      "defense": 441,
+      "reaction": 567,
+      "sp": 15
     }
   },
   {
@@ -69832,6 +71868,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 620,
+      "melee": 700,
+      "awakening": 438,
+      "defense": 543,
+      "reaction": 593,
+      "sp": 15
     }
   },
   {
@@ -69893,6 +71937,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 516,
+      "melee": 754,
+      "awakening": 542,
+      "defense": 497,
+      "reaction": 614,
+      "sp": 15
     }
   },
   {
@@ -69956,6 +72008,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 670,
+      "melee": 535,
+      "awakening": 667,
+      "defense": 478,
+      "reaction": 580,
+      "sp": 15
     }
   },
   {
@@ -70017,6 +72077,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 596,
+      "melee": 632,
+      "awakening": 560,
+      "defense": 517,
+      "reaction": 611,
+      "sp": 15
     }
   },
   {
@@ -70079,6 +72147,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 580,
+      "melee": 534,
+      "awakening": 797,
+      "defense": 509,
+      "reaction": 517,
+      "sp": 15
     }
   },
   {
@@ -70141,6 +72217,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 633,
+      "melee": 512,
+      "awakening": 538,
+      "defense": 270,
+      "reaction": 792,
+      "sp": 15
     }
   },
   {
@@ -70203,6 +72287,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 637,
+      "melee": 690,
+      "awakening": 585,
+      "defense": 438,
+      "reaction": 578,
+      "sp": 15
     }
   },
   {
@@ -70261,6 +72353,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 719,
+      "melee": 571,
+      "awakening": 595,
+      "defense": 434,
+      "reaction": 609,
+      "sp": 15
     }
   },
   {
@@ -70317,6 +72417,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 537,
+      "melee": 783,
+      "awakening": 484,
+      "defense": 524,
+      "reaction": 535,
+      "sp": 15
     }
   },
   {
@@ -70373,6 +72481,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 787,
+      "melee": 536,
+      "awakening": 412,
+      "defense": 517,
+      "reaction": 476,
+      "sp": 15
     }
   },
   {
@@ -70432,6 +72548,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 548,
+      "melee": 789,
+      "awakening": 413,
+      "defense": 505,
+      "reaction": 472,
+      "sp": 15
     }
   },
   {
@@ -70493,6 +72617,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 562,
+      "melee": 808,
+      "awakening": 416,
+      "defense": 473,
+      "reaction": 478,
+      "sp": 15
     }
   },
   {
@@ -70550,6 +72682,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 622,
+      "melee": 737,
+      "awakening": 268,
+      "defense": 503,
+      "reaction": 595,
+      "sp": 15
     }
   },
   {
@@ -70608,6 +72748,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 698,
+      "melee": 665,
+      "awakening": 530,
+      "defense": 481,
+      "reaction": 545,
+      "sp": 15
     }
   },
   {
@@ -70665,6 +72813,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 731,
+      "melee": 626,
+      "awakening": 324,
+      "defense": 547,
+      "reaction": 496,
+      "sp": 15
     }
   },
   {
@@ -70721,6 +72877,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 557,
+      "melee": 862,
+      "awakening": 327,
+      "defense": 656,
+      "reaction": 431,
+      "sp": 15
     }
   },
   {
@@ -70781,6 +72945,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 763,
+      "melee": 719,
+      "awakening": 324,
+      "defense": 411,
+      "reaction": 610,
+      "sp": 15
     }
   },
   {
@@ -70839,6 +73011,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 742,
+      "melee": 741,
+      "awakening": 270,
+      "defense": 531,
+      "reaction": 536,
+      "sp": 15
     }
   },
   {
@@ -70898,6 +73078,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 622,
+      "melee": 663,
+      "awakening": 598,
+      "defense": 459,
+      "reaction": 584,
+      "sp": 15
     }
   },
   {
@@ -70956,6 +73144,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 751,
+      "melee": 608,
+      "awakening": 265,
+      "defense": 543,
+      "reaction": 555,
+      "sp": 15
     }
   },
   {
@@ -71014,6 +73210,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 483,
+      "melee": 780,
+      "awakening": 544,
+      "defense": 467,
+      "reaction": 510,
+      "sp": 15
     }
   },
   {
@@ -71070,6 +73274,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 615,
+      "melee": 586,
+      "awakening": 506,
+      "defense": 517,
+      "reaction": 536,
+      "sp": 15
     }
   },
   {
@@ -71126,6 +73338,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 547,
+      "melee": 663,
+      "awakening": 499,
+      "defense": 533,
+      "reaction": 522,
+      "sp": 15
     }
   },
   {
@@ -71182,6 +73402,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 577,
+      "melee": 688,
+      "awakening": 493,
+      "defense": 508,
+      "reaction": 496,
+      "sp": 15
     }
   },
   {
@@ -71243,6 +73471,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 567,
+      "melee": 758,
+      "awakening": 423,
+      "defense": 472,
+      "reaction": 500,
+      "sp": 15
     }
   },
   {
@@ -71301,6 +73537,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 786,
+      "melee": 546,
+      "awakening": 427,
+      "defense": 475,
+      "reaction": 497,
+      "sp": 15
     }
   },
   {
@@ -71358,6 +73602,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 516,
+      "melee": 822,
+      "awakening": 415,
+      "defense": 467,
+      "reaction": 518,
+      "sp": 15
     }
   },
   {
@@ -71416,6 +73668,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 645,
+      "melee": 612,
+      "awakening": 397,
+      "defense": 579,
+      "reaction": 476,
+      "sp": 15
     }
   },
   {
@@ -71478,6 +73738,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 681,
+      "melee": 738,
+      "awakening": 404,
+      "defense": 446,
+      "reaction": 507,
+      "sp": 15
     }
   },
   {
@@ -71535,6 +73803,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 665,
+      "melee": 735,
+      "awakening": 385,
+      "defense": 516,
+      "reaction": 507,
+      "sp": 15
     }
   },
   {
@@ -71593,6 +73869,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 649,
+      "melee": 682,
+      "awakening": 405,
+      "defense": 562,
+      "reaction": 494,
+      "sp": 15
     }
   },
   {
@@ -71652,6 +73936,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 499,
+      "melee": 809,
+      "awakening": 375,
+      "defense": 435,
+      "reaction": 615,
+      "sp": 15
     }
   },
   {
@@ -71710,6 +74002,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 587,
+      "melee": 508,
+      "awakening": 780,
+      "defense": 482,
+      "reaction": 503,
+      "sp": 15
     }
   },
   {
@@ -71769,6 +74069,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 739,
+      "melee": 400,
+      "awakening": 568,
+      "defense": 565,
+      "reaction": 469,
+      "sp": 15
     }
   },
   {
@@ -71825,6 +74133,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 714,
+      "melee": 648,
+      "awakening": 317,
+      "defense": 405,
+      "reaction": 639,
+      "sp": 15
     }
   },
   {
@@ -71881,6 +74197,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 789,
+      "melee": 604,
+      "awakening": 310,
+      "defense": 504,
+      "reaction": 527,
+      "sp": 15
     }
   },
   {
@@ -71939,6 +74263,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 462,
+      "melee": 806,
+      "awakening": 548,
+      "defense": 502,
+      "reaction": 544,
+      "sp": 15
     }
   },
   {
@@ -71995,6 +74327,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 612,
+      "melee": 611,
+      "awakening": 444,
+      "defense": 514,
+      "reaction": 519,
+      "sp": 15
     }
   },
   {
@@ -72054,6 +74394,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 746,
+      "melee": 545,
+      "awakening": 435,
+      "defense": 488,
+      "reaction": 428,
+      "sp": 15
     }
   },
   {
@@ -72110,6 +74458,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 589,
+      "melee": 771,
+      "awakening": 519,
+      "defense": 493,
+      "reaction": 363,
+      "sp": 15
     }
   },
   {
@@ -72166,6 +74522,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 503,
+      "melee": 818,
+      "awakening": 427,
+      "defense": 499,
+      "reaction": 488,
+      "sp": 15
     }
   },
   {
@@ -72232,7 +74596,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 606,
+      "melee": 537,
+      "awakening": 702,
+      "defense": 481,
+      "reaction": 606,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "レンジブーストLV1",
+        "sp_cost": 5,
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇"
+      },
+      {
+        "name": "スウェーLV1",
+        "sp_cost": 10,
+        "effect": "自身の回避率が100%上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃/支援反撃 LV3",
+        "desc": "「支援攻撃/反撃」+1回",
+        "condition": ""
+      },
+      {
+        "name": "消費ENが15％軽減",
+        "desc": "支援型"
+      },
+      {
+        "name": "ニュータイプ LV3",
+        "desc": "覚醒値と反応値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性:地球連邦軍(宇宙世紀) LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "射撃値が5％上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 585,
@@ -72300,7 +74710,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 559,
+      "melee": 559,
+      "awakening": 714,
+      "defense": 499,
+      "reaction": 596,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ハイスピード LV1",
+        "sp_cost": 5,
+        "effect": "効果を発動した次の移動時自身の移動力が1上昇"
+      },
+      {
+        "name": "支援攻撃回数増加 LV1",
+        "sp_cost": 5,
+        "effect": "「支援攻撃/反撃」+1回"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃 / 支援反撃 LV3",
+        "desc": "「支援攻撃/反撃」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援攻撃、支援反撃時自身の武装の消費ENが15％軽減",
+        "desc": "支援型"
+      },
+      {
+        "name": "ニュータイプ LV3",
+        "desc": "覚醒値と反応値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "覚醒値上昇 LV1",
+        "desc": "覚醒値が5％上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 586,
@@ -72364,7 +74820,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 728,
+      "melee": 548,
+      "awakening": 432,
+      "defense": 504,
+      "reaction": 506,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "レンジブースト LV1",
+        "sp_cost": 5,
+        "effect": "効果を発動した次の戦闘時自身の武装の最大射程が1上昇"
+      },
+      {
+        "name": "ロックオン LV1",
+        "sp_cost": 5,
+        "effect": "効果を発動した次の戦闘時自身の命中率が100％上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃 / 支援反撃 LV3",
+        "desc": "「支援攻撃/反撃」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援攻撃、支援反撃時自身の武装の消費ENが15％軽減",
+        "desc": "支援型"
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "自身の射撃値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "自身の射撃値が5％上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 587,
@@ -72430,7 +74932,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 699,
+      "melee": 566,
+      "awakening": 410,
+      "defense": 518,
+      "reaction": 518,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ロックオンLV1",
+        "sp_cost": 5,
+        "effect": "命中率が100%上昇"
+      },
+      {
+        "name": "ハイスピードLV1",
+        "sp_cost": 5,
+        "effect": "移動力が1上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃 / 支援反撃 LV3",
+        "desc": "「支援攻撃/反撃」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援攻撃、支援反撃時自身の武装の消費ENが15％軽減",
+        "desc": "支援型"
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "自身の射撃値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "射撃値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 588,
@@ -72494,7 +75042,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 734,
+      "melee": 523,
+      "awakening": 399,
+      "defense": 655,
+      "reaction": 412,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "命中率・回避率上昇 LV2",
+        "sp_cost": 5,
+        "effect": "命中率・回避率が20%上昇"
+      },
+      {
+        "name": "射撃ブースト LV3",
+        "sp_cost": 5,
+        "effect": "射撃値が1ターン15%上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃 / 支援反撃 LV3",
+        "desc": "「支援攻撃/反撃」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援攻撃/反撃時、自身の武装消費ENが15%軽減",
+        "desc": "支援型"
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "射撃値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：地球連邦軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "守備値上昇 LV1",
+        "desc": "守備値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 589,
@@ -72561,7 +75155,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 690,
+      "melee": 555,
+      "awakening": 412,
+      "defense": 524,
+      "reaction": 532,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "射撃ブースト LV3",
+        "sp_cost": 5,
+        "effect": "射撃値が1ターン15%上昇"
+      },
+      {
+        "name": "ロックオンLV1",
+        "sp_cost": 5,
+        "effect": "命中率が100%上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃 / 支援反撃 LV3",
+        "desc": "「支援攻撃/反撃」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援攻撃/反撃時、自身の武装消費ENが15%軽減",
+        "desc": "支援型"
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "射撃値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "反応値上昇 LV1",
+        "desc": "反応値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 590,
@@ -72627,7 +75267,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 657,
+      "melee": 600,
+      "awakening": 436,
+      "defense": 509,
+      "reaction": 509,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "レンジブーストLV1",
+        "sp_cost": 5,
+        "effect": "射程が1上昇"
+      },
+      {
+        "name": "クリティカルブーストLV3",
+        "sp_cost": 5,
+        "effect": "クリティカル率が30%上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃/支援反撃 LV3",
+        "desc": "「支援攻撃」+1回",
+        "condition": ""
+      },
+      {
+        "name": "消費ENが15％減少",
+        "desc": "支援型"
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "射撃値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "格闘値上昇 LV1",
+        "desc": "格闘値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 591,
@@ -72692,7 +75378,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 708,
+      "melee": 615,
+      "awakening": 426,
+      "defense": 550,
+      "reaction": 553,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "MPアップLV3",
+        "sp_cost": 3,
+        "effect": "MPが5上昇"
+      },
+      {
+        "name": "ハイスピードLV1",
+        "sp_cost": 5,
+        "effect": "移動力が1上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃/支援反撃 LV3",
+        "desc": "「支援攻撃」+1回",
+        "condition": ""
+      },
+      {
+        "name": "消費ENが15％減少",
+        "desc": "支援型"
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "射撃値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "格闘値上昇 LV1",
+        "desc": "格闘値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 592,
@@ -72756,7 +75488,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 511,
+      "melee": 741,
+      "awakening": 458,
+      "defense": 554,
+      "reaction": 457,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ENセーブLV3",
+        "sp_cost": 5,
+        "effect": "武装の消費ENが15%軽減(1ターン)"
+      },
+      {
+        "name": "レンジブーストLV1",
+        "sp_cost": 5,
+        "effect": "射程が1上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃/支援反撃 LV2",
+        "desc": "「支援攻撃/反撃」+1回",
+        "condition": ""
+      },
+      {
+        "name": "消費ENが15％軽減",
+        "desc": "支援型"
+      },
+      {
+        "name": "格闘値上昇 LV3",
+        "desc": "格闘値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性:地球連邦軍(宇宙世紀) LV1",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "格闘値上昇 LV1",
+        "desc": "格闘値が5％上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 593,
@@ -72821,7 +75599,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 710,
+      "melee": 592,
+      "awakening": 399,
+      "defense": 526,
+      "reaction": 489,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ロックオンLV1",
+        "sp_cost": 5,
+        "effect": "命中率が100%上昇"
+      },
+      {
+        "name": "射撃ブースト LV3",
+        "sp_cost": 5,
+        "effect": "射撃値が15%上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃/支援反撃 LV3",
+        "desc": "「支援攻撃/反撃」+1回",
+        "condition": ""
+      },
+      {
+        "name": "消費ENが15％軽減",
+        "desc": "支援型"
+      },
+      {
+        "name": "射撃値上昇 LV3",
+        "desc": "射撃値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性:地球連邦軍(宇宙世紀) LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "射撃値が5％上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 594,
@@ -72884,6 +75708,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 681,
+      "melee": 568,
+      "awakening": 440,
+      "defense": 507,
+      "reaction": 513,
+      "sp": 15
     }
   },
   {
@@ -72949,6 +75781,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 692,
+      "melee": 541,
+      "awakening": 447,
+      "defense": 524,
+      "reaction": 505,
+      "sp": 15
     }
   },
   {
@@ -73013,6 +75853,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 728,
+      "melee": 524,
+      "awakening": 436,
+      "defense": 517,
+      "reaction": 511,
+      "sp": 15
     }
   },
   {
@@ -73078,6 +75926,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 544,
+      "melee": 759,
+      "awakening": 439,
+      "defense": 485,
+      "reaction": 497,
+      "sp": 15
     }
   },
   {
@@ -73146,6 +76002,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 563,
+      "melee": 537,
+      "awakening": 747,
+      "defense": 498,
+      "reaction": 593,
+      "sp": 15
     }
   },
   {
@@ -73213,6 +76077,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 587,
+      "melee": 530,
+      "awakening": 548,
+      "defense": 507,
+      "reaction": 589,
+      "sp": 15
     }
   },
   {
@@ -73278,6 +76150,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 673,
+      "melee": 525,
+      "awakening": 616,
+      "defense": 515,
+      "reaction": 599,
+      "sp": 15
     }
   },
   {
@@ -73345,6 +76225,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 607,
+      "melee": 564,
+      "awakening": 667,
+      "defense": 481,
+      "reaction": 606,
+      "sp": 15
     }
   },
   {
@@ -73411,6 +76299,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 549,
+      "melee": 640,
+      "awakening": 647,
+      "defense": 520,
+      "reaction": 603,
+      "sp": 15
     }
   },
   {
@@ -73476,6 +76372,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 681,
+      "melee": 570,
+      "awakening": 442,
+      "defense": 509,
+      "reaction": 509,
+      "sp": 15
     }
   },
   {
@@ -73544,6 +76448,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 614,
+      "melee": 532,
+      "awakening": 676,
+      "defense": 494,
+      "reaction": 609,
+      "sp": 15
     }
   },
   {
@@ -73611,6 +76523,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 643,
+      "melee": 554,
+      "awakening": 598,
+      "defense": 519,
+      "reaction": 604,
+      "sp": 15
     }
   },
   {
@@ -73678,6 +76598,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 585,
+      "melee": 506,
+      "awakening": 744,
+      "defense": 494,
+      "reaction": 609,
+      "sp": 15
     }
   },
   {
@@ -73745,6 +76673,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 592,
+      "melee": 592,
+      "awakening": 631,
+      "defense": 505,
+      "reaction": 589,
+      "sp": 15
     }
   },
   {
@@ -73809,6 +76745,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 505,
+      "melee": 638,
+      "awakening": 588,
+      "defense": 494,
+      "reaction": 538,
+      "sp": 15
     }
   },
   {
@@ -73874,6 +76818,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 529,
+      "melee": 624,
+      "awakening": 584,
+      "defense": 512,
+      "reaction": 512,
+      "sp": 15
     }
   },
   {
@@ -73937,6 +76889,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 821,
+      "melee": 519,
+      "awakening": 428,
+      "defense": 486,
+      "reaction": 479,
+      "sp": 15
     }
   },
   {
@@ -74001,6 +76961,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 568,
+      "melee": 548,
+      "awakening": 744,
+      "defense": 474,
+      "reaction": 602,
+      "sp": 15
     }
   },
   {
@@ -74066,6 +77034,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 822,
+      "melee": 593,
+      "awakening": 459,
+      "defense": 371,
+      "reaction": 500,
+      "sp": 15
     }
   },
   {
@@ -74129,6 +77105,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 507,
+      "melee": 809,
+      "awakening": 431,
+      "defense": 531,
+      "reaction": 455,
+      "sp": 15
     }
   },
   {
@@ -74191,6 +77175,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 509,
+      "melee": 679,
+      "awakening": 415,
+      "defense": 498,
+      "reaction": 532,
+      "sp": 15
     }
   },
   {
@@ -74253,6 +77245,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 686,
+      "melee": 515,
+      "awakening": 415,
+      "defense": 504,
+      "reaction": 515,
+      "sp": 15
     }
   },
   {
@@ -74315,6 +77315,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 475,
+      "melee": 683,
+      "awakening": 398,
+      "defense": 507,
+      "reaction": 567,
+      "sp": 15
     }
   },
   {
@@ -74376,6 +77384,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 728,
+      "melee": 565,
+      "awakening": 416,
+      "defense": 517,
+      "reaction": 493,
+      "sp": 15
     }
   },
   {
@@ -74439,6 +77455,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 550,
+      "melee": 763,
+      "awakening": 278,
+      "defense": 625,
+      "reaction": 502,
+      "sp": 15
     }
   },
   {
@@ -74503,6 +77527,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 651,
+      "melee": 547,
+      "awakening": 411,
+      "defense": 502,
+      "reaction": 518,
+      "sp": 15
     }
   },
   {
@@ -74566,6 +77598,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 615,
+      "melee": 658,
+      "awakening": 409,
+      "defense": 528,
+      "reaction": 499,
+      "sp": 15
     }
   },
   {
@@ -74628,6 +77668,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 784,
+      "melee": 511,
+      "awakening": 434,
+      "defense": 508,
+      "reaction": 496,
+      "sp": 15
     }
   },
   {
@@ -74689,6 +77737,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 795,
+      "melee": 502,
+      "awakening": 433,
+      "defense": 492,
+      "reaction": 513,
+      "sp": 15
     }
   },
   {
@@ -74752,6 +77808,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 564,
+      "melee": 524,
+      "awakening": 768,
+      "defense": 497,
+      "reaction": 589,
+      "sp": 15
     }
   },
   {
@@ -74812,6 +77876,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 754,
+      "melee": 551,
+      "awakening": 395,
+      "defense": 502,
+      "reaction": 521,
+      "sp": 15
     }
   },
   {
@@ -74881,7 +77953,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "sp_stats": {
+      "shooting": 603,
+      "melee": 557,
+      "awakening": 637,
+      "defense": 506,
+      "reaction": 616,
+      "sp": 15
+    }
   },
   {
     "id": 626,
@@ -74946,6 +78026,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 694,
+      "melee": 527,
+      "awakening": 479,
+      "defense": 524,
+      "reaction": 542,
+      "sp": 15
     }
   },
   {
@@ -75012,6 +78100,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 729,
+      "melee": 498,
+      "awakening": 568,
+      "defense": 549,
+      "reaction": 579,
+      "sp": 15
     }
   },
   {
@@ -75078,6 +78174,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 620,
+      "melee": 564,
+      "awakening": 555,
+      "defense": 524,
+      "reaction": 650,
+      "sp": 15
     }
   },
   {
@@ -75143,6 +78247,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 715,
+      "melee": 542,
+      "awakening": 435,
+      "defense": 509,
+      "reaction": 515,
+      "sp": 15
     }
   },
   {
@@ -75209,6 +78321,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 630,
+      "melee": 582,
+      "awakening": 558,
+      "defense": 505,
+      "reaction": 642,
+      "sp": 15
     }
   },
   {
@@ -75273,6 +78393,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 589,
+      "melee": 733,
+      "awakening": 443,
+      "defense": 545,
+      "reaction": 545,
+      "sp": 15
     }
   },
   {
@@ -75335,6 +78463,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 699,
+      "melee": 554,
+      "awakening": 599,
+      "defense": 434,
+      "reaction": 434,
+      "sp": 15
     }
   },
   {
@@ -75402,6 +78538,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 718,
+      "melee": 415,
+      "awakening": 526,
+      "defense": 422,
+      "reaction": 682,
+      "sp": 15
     }
   },
   {
@@ -75469,6 +78613,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 641,
+      "melee": 590,
+      "awakening": 529,
+      "defense": 544,
+      "reaction": 607,
+      "sp": 15
     }
   },
   {
@@ -75535,6 +78687,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 645,
+      "melee": 715,
+      "awakening": 604,
+      "defense": 441,
+      "reaction": 526,
+      "sp": 15
     }
   },
   {
@@ -75600,6 +78760,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 640,
+      "melee": 606,
+      "awakening": 523,
+      "defense": 530,
+      "reaction": 612,
+      "sp": 15
     }
   },
   {
@@ -75661,6 +78829,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 814,
+      "melee": 493,
+      "awakening": 408,
+      "defense": 532,
+      "reaction": 492,
+      "sp": 15
     }
   },
   {
@@ -75724,6 +78900,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 583,
+      "melee": 632,
+      "awakening": 578,
+      "defense": 494,
+      "reaction": 633,
+      "sp": 15
     }
   },
   {
@@ -75785,6 +78969,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 714,
+      "melee": 541,
+      "awakening": 417,
+      "defense": 504,
+      "reaction": 538,
+      "sp": 15
     }
   },
   {
@@ -75848,6 +79040,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 486,
+      "melee": 805,
+      "awakening": 412,
+      "defense": 491,
+      "reaction": 543,
+      "sp": 15
     }
   },
   {
@@ -75910,6 +79110,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 720,
+      "melee": 546,
+      "awakening": 422,
+      "defense": 506,
+      "reaction": 524,
+      "sp": 15
     }
   },
   {
@@ -75973,6 +79181,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 632,
+      "melee": 584,
+      "awakening": 563,
+      "defense": 505,
+      "reaction": 634,
+      "sp": 15
     }
   },
   {
@@ -76035,6 +79251,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 688,
+      "melee": 571,
+      "awakening": 378,
+      "defense": 540,
+      "reaction": 534,
+      "sp": 15
     }
   },
   {
@@ -76097,6 +79321,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 667,
+      "melee": 744,
+      "awakening": 352,
+      "defense": 534,
+      "reaction": 502,
+      "sp": 15
     }
   },
   {
@@ -76158,6 +79390,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 708,
+      "melee": 574,
+      "awakening": 353,
+      "defense": 493,
+      "reaction": 589,
+      "sp": 15
     }
   },
   {
@@ -76220,6 +79460,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 732,
+      "melee": 655,
+      "awakening": 371,
+      "defense": 466,
+      "reaction": 505,
+      "sp": 15
     }
   },
   {
@@ -76284,6 +79532,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 676,
+      "melee": 668,
+      "awakening": 612,
+      "defense": 452,
+      "reaction": 511,
+      "sp": 15
     }
   },
   {
@@ -76347,6 +79603,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 673,
+      "melee": 550,
+      "awakening": 563,
+      "defense": 558,
+      "reaction": 569,
+      "sp": 15
     }
   },
   {
@@ -76408,6 +79672,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 601,
+      "melee": 573,
+      "awakening": 511,
+      "defense": 549,
+      "reaction": 524,
+      "sp": 15
     }
   },
   {
@@ -76470,6 +79742,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 562,
+      "melee": 646,
+      "awakening": 506,
+      "defense": 540,
+      "reaction": 505,
+      "sp": 15
     }
   },
   {
@@ -76530,6 +79810,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 734,
+      "melee": 557,
+      "awakening": 426,
+      "defense": 493,
+      "reaction": 511,
+      "sp": 15
     }
   },
   {
@@ -76590,6 +79878,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 579,
+      "melee": 687,
+      "awakening": 430,
+      "defense": 509,
+      "reaction": 504,
+      "sp": 15
     }
   },
   {
@@ -76651,6 +79947,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 532,
+      "melee": 743,
+      "awakening": 415,
+      "defense": 546,
+      "reaction": 529,
+      "sp": 15
     }
   },
   {
@@ -76712,6 +80016,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 745,
+      "melee": 677,
+      "awakening": 336,
+      "defense": 488,
+      "reaction": 489,
+      "sp": 15
     }
   },
   {
@@ -76775,6 +80087,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 515,
+      "melee": 817,
+      "awakening": 368,
+      "defense": 428,
+      "reaction": 601,
+      "sp": 15
     }
   },
   {
@@ -76841,6 +80161,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 592,
+      "melee": 683,
+      "awakening": 475,
+      "defense": 493,
+      "reaction": 526,
+      "sp": 15
     }
   },
   {
@@ -76903,6 +80231,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 686,
+      "melee": 769,
+      "awakening": 341,
+      "defense": 519,
+      "reaction": 505,
+      "sp": 15
     }
   },
   {
@@ -76966,6 +80302,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 645,
+      "melee": 655,
+      "awakening": 377,
+      "defense": 496,
+      "reaction": 541,
+      "sp": 15
     }
   },
   {
@@ -77029,6 +80373,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 742,
+      "melee": 508,
+      "awakening": 569,
+      "defense": 509,
+      "reaction": 531,
+      "sp": 15
     }
   },
   {
@@ -77090,6 +80442,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 544,
+      "melee": 745,
+      "awakening": 514,
+      "defense": 326,
+      "reaction": 729,
+      "sp": 15
     }
   },
   {
@@ -77151,6 +80511,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 775,
+      "melee": 548,
+      "awakening": 466,
+      "defense": 532,
+      "reaction": 542,
+      "sp": 15
     }
   },
   {
@@ -77212,6 +80580,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 704,
+      "melee": 641,
+      "awakening": 313,
+      "defense": 430,
+      "reaction": 632,
+      "sp": 15
     }
   },
   {
@@ -77275,6 +80651,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 715,
+      "melee": 585,
+      "awakening": 423,
+      "defense": 524,
+      "reaction": 471,
+      "sp": 15
     }
   },
   {
@@ -77336,6 +80720,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 777,
+      "melee": 482,
+      "awakening": 456,
+      "defense": 528,
+      "reaction": 486,
+      "sp": 15
     }
   },
   {
@@ -77398,6 +80790,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 469,
+      "melee": 802,
+      "awakening": 477,
+      "defense": 510,
+      "reaction": 479,
+      "sp": 15
     }
   },
   {
@@ -77460,6 +80860,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 480,
+      "melee": 747,
+      "awakening": 466,
+      "defense": 527,
+      "reaction": 497,
+      "sp": 15
     }
   },
   {
@@ -77522,6 +80930,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 634,
+      "melee": 637,
+      "awakening": 526,
+      "defense": 524,
+      "reaction": 524,
+      "sp": 15
     }
   },
   {
@@ -77585,7 +81001,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 557,
+      "melee": 436,
+      "awakening": 395,
+      "defense": 772,
+      "reaction": 574,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ハイスピードLV1",
+        "sp_cost": 5,
+        "effect": "効果を発動した次の移動時、自身の移動力が１上昇"
+      },
+      {
+        "name": "レンジブーストLV1",
+        "sp_cost": 5,
+        "effect": "射程が1上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援防御 LV3",
+        "desc": "「支援防御」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援防御時、防御力が15％上昇",
+        "desc": "耐久型"
+      },
+      {
+        "name": "守備値上昇 LV3",
+        "desc": "自身の守備値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：地球連邦軍 LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "射撃値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 669,
@@ -77649,7 +81111,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 503,
+      "melee": 503,
+      "awakening": 561,
+      "defense": 605,
+      "reaction": 755,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "フォースガードLV3",
+        "sp_cost": 5,
+        "effect": "受けるダメージが1ターン15％軽減"
+      },
+      {
+        "name": "支援防御回数増加 LV1",
+        "sp_cost": 10,
+        "effect": "「支援防御」+1回"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援防御 LV3",
+        "desc": "「支援防御」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援防御時、防御力が15％上昇",
+        "desc": "耐久型"
+      },
+      {
+        "name": "ニュータイプ LV3",
+        "desc": "覚醒値と反応値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性:ジオン公国軍 LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "守備値上昇 LV1",
+        "desc": "守備値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 670,
@@ -77713,7 +81221,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 483,
+      "melee": 507,
+      "awakening": 406,
+      "defense": 740,
+      "reaction": 590,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ハイスピードLV1",
+        "sp_cost": 5,
+        "effect": "移動力が1上昇"
+      },
+      {
+        "name": "ロックオンLV1",
+        "sp_cost": 5,
+        "effect": "命中率が100％上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援防御 LV3",
+        "desc": "「支援防御」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援防御時、防御力が15％上昇",
+        "desc": "耐久型"
+      },
+      {
+        "name": "守備値上昇 LV3",
+        "desc": "守備値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性:ジオン公国軍 LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "格闘値上昇 LV1",
+        "desc": "格闘値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 671,
@@ -77777,7 +81331,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 506,
+      "melee": 482,
+      "awakening": 409,
+      "defense": 677,
+      "reaction": 643,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "レンジブーストLV1",
+        "sp_cost": 5,
+        "effect": "最大射程が1上昇"
+      },
+      {
+        "name": "命中率・回避率上昇 LV2",
+        "sp_cost": 5,
+        "effect": "命中率・回避率が20％上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援防御 LV3",
+        "desc": "「支援防御」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援防御時、自身の防御力が15％上昇",
+        "desc": "耐久型"
+      },
+      {
+        "name": "守備値上昇 LV3",
+        "desc": "守備値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "射撃値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 672,
@@ -77843,7 +81443,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 455,
+      "melee": 527,
+      "awakening": 399,
+      "defense": 607,
+      "reaction": 739,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "アタックバーストLV3",
+        "sp_cost": 5,
+        "effect": "敵に与えるダメージが15％上昇(1ターン)"
+      },
+      {
+        "name": "フォースガードLV3",
+        "sp_cost": 5,
+        "effect": "受けるダメージが15％軽減(1ターン)"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援防御 LV3",
+        "desc": "「支援防御」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援防御時、自身の防御力が15％上昇",
+        "desc": "耐久型"
+      },
+      {
+        "name": "反応値上昇 LV3",
+        "desc": "反応値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "守備値上昇 LV1",
+        "desc": "守備値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 673,
@@ -77907,7 +81553,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 485,
+      "melee": 485,
+      "awakening": 399,
+      "defense": 694,
+      "reaction": 659,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ハイスピードLV1",
+        "sp_cost": 5,
+        "effect": "移動力が1上昇"
+      },
+      {
+        "name": "クリティカルブーストLV3",
+        "sp_cost": 5,
+        "effect": "クリティカル率が1ターン30%上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援防御 LV3",
+        "desc": "「支援防御」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援防御時、自身の防御力が15%上昇",
+        "desc": "耐久型"
+      },
+      {
+        "name": "守備値上昇 LV3",
+        "desc": "守備値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "守備値上昇 LV1",
+        "desc": "守備値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 674,
@@ -77973,7 +81665,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 517,
+      "melee": 517,
+      "awakening": 386,
+      "defense": 715,
+      "reaction": 576,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "レンジブーストLV1",
+        "sp_cost": 5,
+        "effect": "射程が1上昇"
+      },
+      {
+        "name": "アタックバースト LV3",
+        "sp_cost": 5,
+        "effect": "与えるダメージが1ターン15%上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援防御 LV3",
+        "desc": "「支援防御」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援防御時、自身の防御力が15%上昇",
+        "desc": "耐久型"
+      },
+      {
+        "name": "守備値上昇 LV3",
+        "desc": "守備値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：地球連邦軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "反応値上昇 LV1",
+        "desc": "反応値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 675,
@@ -78037,7 +81775,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 500,
+      "melee": 631,
+      "awakening": 329,
+      "defense": 756,
+      "reaction": 505,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "レンジブーストLV1",
+        "sp_cost": 5,
+        "effect": "射程が1上昇"
+      },
+      {
+        "name": "フォースガードLV3",
+        "sp_cost": 5,
+        "effect": "受けるダメージが1ターン15%軽減"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援防御 LV3",
+        "desc": "「支援防御」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援防御時、自身の防御力が15%上昇",
+        "desc": "耐久型"
+      },
+      {
+        "name": "守備値上昇 LV3",
+        "desc": "守備値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：地球連邦軍 LV2",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "格闘値上昇 LV1",
+        "desc": "格闘値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 676,
@@ -78101,7 +81885,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 502,
+      "melee": 492,
+      "awakening": 400,
+      "defense": 717,
+      "reaction": 607,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ハイスピードLV1",
+        "sp_cost": 5,
+        "effect": "移動力が1上昇"
+      },
+      {
+        "name": "アタックバーストLV3",
+        "sp_cost": 5,
+        "effect": "与えるダメージが15%上昇(1ターン)"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援防御 LV3",
+        "desc": "「支援防御」+1回",
+        "condition": ""
+      },
+      {
+        "name": "自身が支援防御時、自身の防御力が15%上昇",
+        "desc": "耐久型"
+      },
+      {
+        "name": "守備値上昇 LV3",
+        "desc": "守備値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：ジオン公国軍 LV1",
+        "desc": "与ダメージが10%上昇被ダメージが10%軽減",
+        "condition": "ジオン公国軍"
+      },
+      {
+        "name": "反応値上昇 LV1",
+        "desc": "反応値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 677,
@@ -78165,6 +81995,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 513,
+      "melee": 489,
+      "awakening": 391,
+      "defense": 740,
+      "reaction": 590,
+      "sp": 15
     }
   },
   {
@@ -78234,6 +82072,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 513,
+      "melee": 489,
+      "awakening": 377,
+      "defense": 682,
+      "reaction": 657,
+      "sp": 15
     }
   },
   {
@@ -78302,6 +82148,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 484,
+      "melee": 484,
+      "awakening": 611,
+      "defense": 660,
+      "reaction": 686,
+      "sp": 15
     }
   },
   {
@@ -78367,6 +82221,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 504,
+      "melee": 504,
+      "awakening": 443,
+      "defense": 646,
+      "reaction": 772,
+      "sp": 15
     }
   },
   {
@@ -78432,6 +82294,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 487,
+      "melee": 487,
+      "awakening": 390,
+      "defense": 746,
+      "reaction": 624,
+      "sp": 15
     }
   },
   {
@@ -78500,6 +82370,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 484,
+      "melee": 516,
+      "awakening": 568,
+      "defense": 604,
+      "reaction": 756,
+      "sp": 15
     }
   },
   {
@@ -78564,6 +82442,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 530,
+      "melee": 475,
+      "awakening": 393,
+      "defense": 733,
+      "reaction": 593,
+      "sp": 15
     }
   },
   {
@@ -78632,6 +82518,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 525,
+      "melee": 473,
+      "awakening": 501,
+      "defense": 575,
+      "reaction": 684,
+      "sp": 15
     }
   },
   {
@@ -78699,6 +82593,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 530,
+      "melee": 461,
+      "awakening": 505,
+      "defense": 597,
+      "reaction": 664,
+      "sp": 15
     }
   },
   {
@@ -78764,6 +82666,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 515,
+      "melee": 491,
+      "awakening": 401,
+      "defense": 722,
+      "reaction": 589,
+      "sp": 15
     }
   },
   {
@@ -78831,6 +82741,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 503,
+      "melee": 489,
+      "awakening": 571,
+      "defense": 594,
+      "reaction": 779,
+      "sp": 15
     }
   },
   {
@@ -78895,6 +82813,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 578,
+      "melee": 503,
+      "awakening": 376,
+      "defense": 739,
+      "reaction": 604,
+      "sp": 15
     }
   },
   {
@@ -78961,6 +82887,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 480,
+      "melee": 399,
+      "awakening": 706,
+      "defense": 622,
+      "reaction": 731,
+      "sp": 15
     }
   },
   {
@@ -79026,6 +82960,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 474,
+      "melee": 430,
+      "awakening": 551,
+      "defense": 589,
+      "reaction": 635,
+      "sp": 15
     }
   },
   {
@@ -79092,6 +83034,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 485,
+      "melee": 485,
+      "awakening": 507,
+      "defense": 678,
+      "reaction": 611,
+      "sp": 15
     }
   },
   {
@@ -79156,6 +83106,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 611,
+      "melee": 611,
+      "awakening": 302,
+      "defense": 620,
+      "reaction": 520,
+      "sp": 15
     }
   },
   {
@@ -79217,6 +83175,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 593,
+      "melee": 494,
+      "awakening": 389,
+      "defense": 733,
+      "reaction": 573,
+      "sp": 15
     }
   },
   {
@@ -79282,6 +83248,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 455,
+      "melee": 498,
+      "awakening": 604,
+      "defense": 646,
+      "reaction": 636,
+      "sp": 15
     }
   },
   {
@@ -79345,6 +83319,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 615,
+      "melee": 529,
+      "awakening": 370,
+      "defense": 686,
+      "reaction": 493,
+      "sp": 15
     }
   },
   {
@@ -79407,6 +83389,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 430,
+      "melee": 546,
+      "awakening": 367,
+      "defense": 634,
+      "reaction": 666,
+      "sp": 15
     }
   },
   {
@@ -79469,6 +83459,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 439,
+      "melee": 577,
+      "awakening": 373,
+      "defense": 672,
+      "reaction": 575,
+      "sp": 15
     }
   },
   {
@@ -79534,6 +83532,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 422,
+      "melee": 566,
+      "awakening": 364,
+      "defense": 590,
+      "reaction": 698,
+      "sp": 15
     }
   },
   {
@@ -79597,6 +83603,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 572,
+      "melee": 356,
+      "awakening": 428,
+      "defense": 629,
+      "reaction": 651,
+      "sp": 15
     }
   },
   {
@@ -79659,6 +83673,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 463,
+      "melee": 581,
+      "awakening": 250,
+      "defense": 677,
+      "reaction": 687,
+      "sp": 15
     }
   },
   {
@@ -79721,6 +83743,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 536,
+      "melee": 459,
+      "awakening": 368,
+      "defense": 800,
+      "reaction": 578,
+      "sp": 15
     }
   },
   {
@@ -79785,6 +83815,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 502,
+      "melee": 502,
+      "awakening": 367,
+      "defense": 582,
+      "reaction": 683,
+      "sp": 15
     }
   },
   {
@@ -79847,6 +83885,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 484,
+      "melee": 547,
+      "awakening": 366,
+      "defense": 590,
+      "reaction": 740,
+      "sp": 15
     }
   },
   {
@@ -79911,6 +83957,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 550,
+      "melee": 476,
+      "awakening": 503,
+      "defense": 627,
+      "reaction": 776,
+      "sp": 15
     }
   },
   {
@@ -79975,6 +84029,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 537,
+      "melee": 627,
+      "awakening": 453,
+      "defense": 703,
+      "reaction": 601,
+      "sp": 15
     }
   },
   {
@@ -80040,6 +84102,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 524,
+      "melee": 493,
+      "awakening": 431,
+      "defense": 665,
+      "reaction": 656,
+      "sp": 15
     }
   },
   {
@@ -80108,6 +84178,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 546,
+      "melee": 472,
+      "awakening": 581,
+      "defense": 601,
+      "reaction": 700,
+      "sp": 15
     }
   },
   {
@@ -80173,6 +84251,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 491,
+      "melee": 555,
+      "awakening": 503,
+      "defense": 683,
+      "reaction": 687,
+      "sp": 15
     }
   },
   {
@@ -80238,6 +84324,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 543,
+      "melee": 467,
+      "awakening": 386,
+      "defense": 731,
+      "reaction": 596,
+      "sp": 15
     }
   },
   {
@@ -80302,6 +84396,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 500,
+      "melee": 490,
+      "awakening": 497,
+      "defense": 656,
+      "reaction": 801,
+      "sp": 15
     }
   },
   {
@@ -80367,6 +84469,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 545,
+      "melee": 580,
+      "awakening": 340,
+      "defense": 688,
+      "reaction": 550,
+      "sp": 15
     }
   },
   {
@@ -80434,6 +84544,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 476,
+      "melee": 506,
+      "awakening": 612,
+      "defense": 606,
+      "reaction": 718,
+      "sp": 15
     }
   },
   {
@@ -80501,6 +84619,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 536,
+      "melee": 521,
+      "awakening": 595,
+      "defense": 572,
+      "reaction": 664,
+      "sp": 15
     }
   },
   {
@@ -80568,6 +84694,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 747,
+      "melee": 320,
+      "awakening": 454,
+      "defense": 755,
+      "reaction": 498,
+      "sp": 15
     }
   },
   {
@@ -80634,6 +84768,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 557,
+      "melee": 557,
+      "awakening": 422,
+      "defense": 672,
+      "reaction": 699,
+      "sp": 15
     }
   },
   {
@@ -80699,6 +84841,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 525,
+      "melee": 539,
+      "awakening": 463,
+      "defense": 659,
+      "reaction": 729,
+      "sp": 15
     }
   },
   {
@@ -80763,6 +84913,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 542,
+      "melee": 513,
+      "awakening": 592,
+      "defense": 639,
+      "reaction": 599,
+      "sp": 15
     }
   },
   {
@@ -80825,6 +84983,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 453,
+      "melee": 551,
+      "awakening": 367,
+      "defense": 670,
+      "reaction": 685,
+      "sp": 15
     }
   },
   {
@@ -80887,6 +85053,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 576,
+      "melee": 471,
+      "awakening": 441,
+      "defense": 705,
+      "reaction": 658,
+      "sp": 15
     }
   },
   {
@@ -80949,6 +85123,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 543,
+      "melee": 447,
+      "awakening": 374,
+      "defense": 630,
+      "reaction": 736,
+      "sp": 15
     }
   },
   {
@@ -81014,6 +85196,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 562,
+      "melee": 560,
+      "awakening": 446,
+      "defense": 697,
+      "reaction": 633,
+      "sp": 15
     }
   },
   {
@@ -81076,6 +85266,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 512,
+      "melee": 680,
+      "awakening": 297,
+      "defense": 759,
+      "reaction": 565,
+      "sp": 15
     }
   },
   {
@@ -81138,6 +85336,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 534,
+      "melee": 569,
+      "awakening": 301,
+      "defense": 747,
+      "reaction": 577,
+      "sp": 15
     }
   },
   {
@@ -81200,6 +85406,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 497,
+      "melee": 549,
+      "awakening": 296,
+      "defense": 639,
+      "reaction": 760,
+      "sp": 15
     }
   },
   {
@@ -81261,6 +85475,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 491,
+      "melee": 517,
+      "awakening": 443,
+      "defense": 636,
+      "reaction": 684,
+      "sp": 15
     }
   },
   {
@@ -81325,6 +85547,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 474,
+      "melee": 510,
+      "awakening": 381,
+      "defense": 757,
+      "reaction": 613,
+      "sp": 15
     }
   },
   {
@@ -81388,6 +85618,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 493,
+      "melee": 493,
+      "awakening": 382,
+      "defense": 618,
+      "reaction": 746,
+      "sp": 15
     }
   },
   {
@@ -81450,6 +85688,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 457,
+      "melee": 555,
+      "awakening": 383,
+      "defense": 601,
+      "reaction": 729,
+      "sp": 15
     }
   },
   {
@@ -81511,6 +85757,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 635,
+      "melee": 458,
+      "awakening": 373,
+      "defense": 703,
+      "reaction": 600,
+      "sp": 15
     }
   },
   {
@@ -81572,6 +85826,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 542,
+      "melee": 540,
+      "awakening": 349,
+      "defense": 619,
+      "reaction": 565,
+      "sp": 15
     }
   },
   {
@@ -81633,6 +85895,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 483,
+      "melee": 483,
+      "awakening": 417,
+      "defense": 682,
+      "reaction": 655,
+      "sp": 15
     }
   },
   {
@@ -81695,6 +85965,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 542,
+      "melee": 540,
+      "awakening": 349,
+      "defense": 723,
+      "reaction": 554,
+      "sp": 15
     }
   },
   {
@@ -81756,6 +86034,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 454,
+      "melee": 659,
+      "awakening": 312,
+      "defense": 738,
+      "reaction": 564,
+      "sp": 15
     }
   },
   {
@@ -81817,6 +86103,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 472,
+      "melee": 499,
+      "awakening": 318,
+      "defense": 769,
+      "reaction": 799,
+      "sp": 15
     }
   },
   {
@@ -81879,6 +86173,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 611,
+      "melee": 634,
+      "awakening": 334,
+      "defense": 728,
+      "reaction": 520,
+      "sp": 15
     }
   },
   {
@@ -81940,6 +86242,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 568,
+      "melee": 494,
+      "awakening": 427,
+      "defense": 669,
+      "reaction": 696,
+      "sp": 15
     }
   },
   {
@@ -82001,6 +86311,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 549,
+      "melee": 511,
+      "awakening": 304,
+      "defense": 709,
+      "reaction": 644,
+      "sp": 15
     }
   },
   {
@@ -82062,6 +86380,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 494,
+      "melee": 480,
+      "awakening": 383,
+      "defense": 726,
+      "reaction": 648,
+      "sp": 15
     }
   },
   {
@@ -82124,7 +86450,15 @@
         }
       ]
     },
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "sp_stats": {
+      "shooting": 553,
+      "melee": 434,
+      "awakening": 416,
+      "defense": 598,
+      "reaction": 715,
+      "sp": 15
+    }
   },
   {
     "id": 740,
@@ -82186,6 +86520,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 472,
+      "melee": 495,
+      "awakening": 448,
+      "defense": 723,
+      "reaction": 577,
+      "sp": 15
     }
   },
   {
@@ -82248,6 +86590,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 505,
+      "melee": 425,
+      "awakening": 425,
+      "defense": 762,
+      "reaction": 617,
+      "sp": 15
     }
   },
   {
@@ -82291,7 +86641,49 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 570,
+      "melee": 748,
+      "awakening": 435,
+      "defense": 514,
+      "reaction": 454,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ロ��クオンLV1",
+        "sp_cost": 5,
+        "effect": "効果を発動した次の戦闘時自身の命中率が100％上昇"
+      },
+      {
+        "name": "射撃ブースト LV3",
+        "sp_cost": 5,
+        "effect": "自身の射撃値が15％上昇(1ターン)"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "与ダメージ上昇 LV3",
+        "desc": "自身の与ダメージが15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "格闘値上昇 LV3",
+        "desc": "自身の格闘値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性:地球連邦軍 LV2",
+        "desc": "敵への与ダメージが10％上昇自身の被ダメージが10％軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "自身の射撃値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 743,
@@ -82337,6 +86729,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 752,
+      "melee": 542,
+      "awakening": 434,
+      "defense": 509,
+      "reaction": 485,
+      "sp": 15
     }
   },
   {
@@ -82390,6 +86790,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 609,
+      "melee": 580,
+      "awakening": 604,
+      "defense": 519,
+      "reaction": 603,
+      "sp": 15
     }
   },
   {
@@ -82441,6 +86849,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 536,
+      "melee": 715,
+      "awakening": 604,
+      "defense": 501,
+      "reaction": 565,
+      "sp": 15
     }
   },
   {
@@ -82490,6 +86906,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 635,
+      "melee": 553,
+      "awakening": 588,
+      "defense": 468,
+      "reaction": 510,
+      "sp": 15
     }
   },
   {
@@ -82535,6 +86959,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 752,
+      "melee": 573,
+      "awakening": 447,
+      "defense": 470,
+      "reaction": 471,
+      "sp": 15
     }
   },
   {
@@ -82582,6 +87014,14 @@
           "condition": "モビル・トレース・システム"
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 513,
+      "melee": 673,
+      "awakening": 420,
+      "defense": 444,
+      "reaction": 580,
+      "sp": 15
     }
   },
   {
@@ -82622,6 +87062,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 772,
+      "melee": 526,
+      "awakening": 425,
+      "defense": 523,
+      "reaction": 477,
+      "sp": 15
     }
   },
   {
@@ -82663,6 +87111,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 442,
+      "melee": 875,
+      "awakening": 367,
+      "defense": 489,
+      "reaction": 553,
+      "sp": 15
     }
   },
   {
@@ -82703,6 +87159,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 662,
+      "melee": 604,
+      "awakening": 439,
+      "defense": 514,
+      "reaction": 493,
+      "sp": 15
     }
   },
   {
@@ -82744,6 +87208,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 486,
+      "melee": 730,
+      "awakening": 472,
+      "defense": 491,
+      "reaction": 538,
+      "sp": 15
     }
   },
   {
@@ -82784,6 +87256,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 799,
+      "melee": 555,
+      "awakening": 440,
+      "defense": 471,
+      "reaction": 471,
+      "sp": 15
     }
   },
   {
@@ -82824,6 +87304,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 716,
+      "melee": 479,
+      "awakening": 455,
+      "defense": 513,
+      "reaction": 550,
+      "sp": 15
     }
   },
   {
@@ -82864,6 +87352,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 453,
+      "melee": 794,
+      "awakening": 451,
+      "defense": 544,
+      "reaction": 485,
+      "sp": 15
     }
   },
   {
@@ -82905,6 +87401,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 537,
+      "melee": 537,
+      "awakening": 793,
+      "defense": 485,
+      "reaction": 509,
+      "sp": 15
     }
   },
   {
@@ -82945,6 +87449,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 741,
+      "melee": 488,
+      "awakening": 450,
+      "defense": 543,
+      "reaction": 496,
+      "sp": 15
     }
   },
   {
@@ -82985,6 +87497,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 589,
+      "melee": 687,
+      "awakening": 445,
+      "defense": 490,
+      "reaction": 505,
+      "sp": 15
     }
   },
   {
@@ -83026,6 +87546,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 573,
+      "melee": 546,
+      "awakening": 703,
+      "defense": 494,
+      "reaction": 531,
+      "sp": 15
     }
   },
   {
@@ -83066,6 +87594,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 686,
+      "melee": 588,
+      "awakening": 441,
+      "defense": 500,
+      "reaction": 500,
+      "sp": 15
     }
   },
   {
@@ -83106,6 +87642,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 667,
+      "melee": 580,
+      "awakening": 443,
+      "defense": 535,
+      "reaction": 486,
+      "sp": 15
     }
   },
   {
@@ -83146,6 +87690,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 578,
+      "melee": 664,
+      "awakening": 463,
+      "defense": 529,
+      "reaction": 478,
+      "sp": 15
     }
   },
   {
@@ -83194,7 +87746,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 532,
+      "melee": 736,
+      "awakening": 444,
+      "defense": 514,
+      "reaction": 495,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "ENセーブLV1",
+        "sp_cost": 5,
+        "effect": "自身の武装の消費ENが5％軽減(1ターン)"
+      },
+      {
+        "name": "格闘ブースト LV3",
+        "sp_cost": 5,
+        "effect": "格闘値が15％上昇"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援攻撃/支援反撃 LV3",
+        "desc": "「支��攻撃/支援」+1回",
+        "condition": ""
+      },
+      {
+        "name": "消費ENが15％軽減",
+        "desc": "支援型"
+      },
+      {
+        "name": "格闘値上昇 LV3",
+        "desc": "格闘値が15%上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：地球連邦軍 LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "射撃値上昇 LV1",
+        "desc": "射撃値が5%上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 764,
@@ -83245,6 +87843,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 542,
+      "melee": 688,
+      "awakening": 434,
+      "defense": 536,
+      "reaction": 511,
+      "sp": 15
     }
   },
   {
@@ -83300,6 +87906,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 621,
+      "melee": 561,
+      "awakening": 604,
+      "defense": 522,
+      "reaction": 610,
+      "sp": 15
     }
   },
   {
@@ -83353,6 +87967,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 631,
+      "melee": 546,
+      "awakening": 629,
+      "defense": 519,
+      "reaction": 596,
+      "sp": 15
     }
   },
   {
@@ -83402,6 +88024,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 608,
+      "melee": 525,
+      "awakening": 435,
+      "defense": 712,
+      "reaction": 421,
+      "sp": 15
     }
   },
   {
@@ -83454,6 +88084,14 @@
           "condition": "モビル・トレース・システム"
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 733,
+      "melee": 395,
+      "awakening": 476,
+      "defense": 498,
+      "reaction": 536,
+      "sp": 15
     }
   },
   {
@@ -83503,6 +88141,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 665,
+      "melee": 549,
+      "awakening": 443,
+      "defense": 500,
+      "reaction": 551,
+      "sp": 15
     }
   },
   {
@@ -83549,6 +88195,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 658,
+      "melee": 601,
+      "awakening": 546,
+      "defense": 499,
+      "reaction": 540,
+      "sp": 15
     }
   },
   {
@@ -83594,6 +88248,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 595,
+      "melee": 652,
+      "awakening": 443,
+      "defense": 510,
+      "reaction": 510,
+      "sp": 15
     }
   },
   {
@@ -83639,6 +88301,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 567,
+      "melee": 657,
+      "awakening": 443,
+      "defense": 554,
+      "reaction": 487,
+      "sp": 15
     }
   },
   {
@@ -83684,6 +88354,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 702,
+      "melee": 522,
+      "awakening": 471,
+      "defense": 497,
+      "reaction": 521,
+      "sp": 15
     }
   },
   {
@@ -83730,6 +88408,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 793,
+      "melee": 496,
+      "awakening": 508,
+      "defense": 512,
+      "reaction": 549,
+      "sp": 15
     }
   },
   {
@@ -83775,6 +88461,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 579,
+      "melee": 694,
+      "awakening": 438,
+      "defense": 502,
+      "reaction": 502,
+      "sp": 15
     }
   },
   {
@@ -83820,6 +88514,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 658,
+      "melee": 573,
+      "awakening": 573,
+      "defense": 518,
+      "reaction": 522,
+      "sp": 15
     }
   },
   {
@@ -83865,6 +88567,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 559,
+      "melee": 642,
+      "awakening": 470,
+      "defense": 505,
+      "reaction": 530,
+      "sp": 15
     }
   },
   {
@@ -83913,7 +88623,53 @@
           "condition": ""
         }
       ]
-    }
+    },
+    "sp_stats": {
+      "shooting": 526,
+      "melee": 457,
+      "awakening": 401,
+      "defense": 745,
+      "reaction": 595,
+      "sp": 15
+    },
+    "sp_skills": [
+      {
+        "name": "フォースガードLV3",
+        "sp_cost": 5,
+        "effect": "自身の受けるダメージが15％軽減(1ターン)"
+      },
+      {
+        "name": "命中率・回避率上昇 LV2",
+        "sp_cost": 5,
+        "effect": "命中率及び回避率が20％上昇(1ターン)"
+      }
+    ],
+    "sp_abilities": [
+      {
+        "name": "支援防御 LV3",
+        "desc": "「支援防御」+1回",
+        "condition": ""
+      },
+      {
+        "name": "防御力が15％上昇",
+        "desc": "耐久型"
+      },
+      {
+        "name": "守備値上昇 LV3",
+        "desc": "守備値が15％上昇",
+        "condition": ""
+      },
+      {
+        "name": "相性：地球連邦軍 LV2",
+        "desc": "与ダメージが10％上昇被ダメージが10％軽減",
+        "condition": "地球連邦軍(宇宙世紀)"
+      },
+      {
+        "name": "守備値上昇 LV1",
+        "desc": "守備値が5％上昇",
+        "condition": ""
+      }
+    ]
   },
   {
     "id": 779,
@@ -83970,6 +88726,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 512,
+      "melee": 478,
+      "awakening": 547,
+      "defense": 699,
+      "reaction": 694,
+      "sp": 15
     }
   },
   {
@@ -84024,6 +88788,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 476,
+      "melee": 491,
+      "awakening": 506,
+      "defense": 649,
+      "reaction": 653,
+      "sp": 15
     }
   },
   {
@@ -84070,6 +88842,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 427,
+      "melee": 506,
+      "awakening": 603,
+      "defense": 688,
+      "reaction": 535,
+      "sp": 15
     }
   },
   {
@@ -84126,6 +88906,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 544,
+      "melee": 466,
+      "awakening": 594,
+      "defense": 579,
+      "reaction": 725,
+      "sp": 15
     }
   },
   {
@@ -84173,6 +88961,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 461,
+      "melee": 534,
+      "awakening": 382,
+      "defense": 715,
+      "reaction": 632,
+      "sp": 15
     }
   },
   {
@@ -84219,6 +89015,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 484,
+      "melee": 484,
+      "awakening": 526,
+      "defense": 741,
+      "reaction": 620,
+      "sp": 15
     }
   },
   {
@@ -84264,6 +89068,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 461,
+      "melee": 461,
+      "awakening": 418,
+      "defense": 657,
+      "reaction": 744,
+      "sp": 15
     }
   },
   {
@@ -84309,6 +89121,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 463,
+      "melee": 463,
+      "awakening": 430,
+      "defense": 634,
+      "reaction": 738,
+      "sp": 15
     }
   },
   {
@@ -84354,6 +89174,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 552,
+      "melee": 444,
+      "awakening": 403,
+      "defense": 571,
+      "reaction": 761,
+      "sp": 15
     }
   },
   {
@@ -84400,6 +89228,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 445,
+      "melee": 445,
+      "awakening": 583,
+      "defense": 694,
+      "reaction": 681,
+      "sp": 15
     }
   },
   {
@@ -84445,6 +89281,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 493,
+      "melee": 517,
+      "awakening": 487,
+      "defense": 602,
+      "reaction": 755,
+      "sp": 15
     }
   },
   {
@@ -84490,6 +89334,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 500,
+      "melee": 477,
+      "awakening": 400,
+      "defense": 736,
+      "reaction": 612,
+      "sp": 15
     }
   },
   {
@@ -84535,6 +89387,14 @@
           "condition": ""
         }
       ]
+    },
+    "sp_stats": {
+      "shooting": 467,
+      "melee": 467,
+      "awakening": 423,
+      "defense": 591,
+      "reaction": 796,
+      "sp": 15
     }
   },
   {

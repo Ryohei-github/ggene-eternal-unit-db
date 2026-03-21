@@ -1040,3 +1040,15 @@ a:hover{text-decoration:underline}
   .unit-detail-header { flex-direction: column; align-items: center; text-align: center; }
   .unit-detail-series { justify-content: center; }
 }
+
+/* SP化 Section Styles */
+.chara-sp-section h2 {
+  color: #ffd54f !important;
+}
+.chara-sp-section h2::before {
+  content: '⬆ ';
+}
+.ability-item.sp-enhanced {
+  border-left: 3px solid #ffd54f;
+  padding-left: 10px;
+}
