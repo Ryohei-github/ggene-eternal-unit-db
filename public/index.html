@@ -895,7 +895,7 @@ a:hover{text-decoration:underline}
     <div class="filter-group" id="filterRarityGroup">
       <label>レア</label>
       <div class="filter-btn-group" id="filterRarityButtons"></div>
-      <button class="filter-btn" id="filterLimitedBtn" onclick="this.classList.toggle('active');render()" style="background:rgba(255,107,107,.15);border-color:rgba(255,107,107,.4)">🎫 限定</button>
+      <button class="filter-btn" id="filterLimitedBtn" onclick="this.classList.toggle('active');render()">限定</button>
     </div>
     <div class="filter-group" id="filterSeriesGroup">
       <label>シリーズ</label>
@@ -940,9 +940,9 @@ a:hover{text-decoration:underline}
     <div class="filter-group" id="filterAcquireGroup">
       <label>入手方法</label>
       <div class="filter-btn-group" id="filterAcquireButtons">
-        <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');render()" style="background:rgba(99,179,237,.15);border-color:rgba(99,179,237,.4)">🎰 ガシャ</button>
-        <button class="filter-btn" data-value="開発" onclick="this.classList.toggle('active');render()" style="background:rgba(72,187,120,.15);border-color:rgba(72,187,120,.4)">🔧 開発</button>
-        <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');render()" style="background:rgba(237,137,54,.15);border-color:rgba(237,137,54,.4)">🎁 イベント</button>
+        <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');render()">ガシャ</button>
+        <button class="filter-btn" data-value="開発" onclick="this.classList.toggle('active');render()">開発</button>
+        <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');render()">イベント</button>
       </div>
     </div>
     <div class="filter-group" id="filterCharaGroup">
@@ -2142,7 +2142,6 @@ function unitCardHTML(u) {
       <span class="terrain-item">${currentLang==="en"?"Su":"水上"}${terrainIcon(ter['水上'])}</span>
       <span class="terrain-item">${currentLang==="en"?"Uw":"水中"}${terrainIcon(ter['水中'])}</span>
     </div>
-    <div class="card-weapons">${weapons}</div>
     <div class="card-tags">${topTags}</div>
     <div class="compare-btn" onclick="event.stopPropagation();toggleCompare(${u.id})">
       ${_compareList.includes(u.id)?'✓ 比較中':'⚔ ユニット比較'}
