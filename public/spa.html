@@ -2243,16 +2243,24 @@ function toggleCharaStatMode(mode) {
 
 function getCharaDisplayStats(c) {
   const isUR = (c.rarity||'').toUpperCase() === 'UR';
+  // URキャラはSP化がないため、常にLv100(=最大強化)のステータスを返す
+  if (isUR) {
+    const lv100 = c.lv100_stats || null;
+    if (lv100) return {
+      combat_power: c.stats?.combat_power || 0,
+      shooting: lv100.shooting || 0, melee: lv100.melee || 0,
+      awakening: lv100.awakening || 0, defense: lv100.defense || 0,
+      reaction: lv100.reaction || 0, sp: lv100.sp || 0
+    };
+    return c.stats || {};
+  }
   const spSt = c.sp_stats || c.lv100_stats || null;
   if (_charaStatMode === 'sp' && spSt) {
     return {
       combat_power: c.stats?.combat_power || 0,
-      shooting: spSt.shooting || 0,
-      melee: spSt.melee || 0,
-      awakening: spSt.awakening || 0,
-      defense: spSt.defense || 0,
-      reaction: spSt.reaction || 0,
-      sp: spSt.sp || 0
+      shooting: spSt.shooting || 0, melee: spSt.melee || 0,
+      awakening: spSt.awakening || 0, defense: spSt.defense || 0,
+      reaction: spSt.reaction || 0, sp: spSt.sp || 0
     };
   }
   return c.stats || {};
@@ -2340,7 +2348,7 @@ function charaCardHTML(c) {
 
   let statsHTML = '';
   if (hasStats) {
-    statsHTML = `${_charaStatMode==='sp' && hasSPData ? `<div class="card-rarity-note" style="color:#c084fc">${isUR ? '※Lv100時のステータス' : '※SP化時のステータス'}</div>` : ''}
+    statsHTML = `${isUR ? '<div class="card-rarity-note" style="color:#93c5fd">※最大強化時のステータス</div>' : _charaStatMode==='sp' && hasSPData ? '<div class="card-rarity-note" style="color:#c084fc">※SP化時のステータス</div>' : ''}
     <div class="card-stats" style="grid-template-columns:repeat(5,1fr)">
       <div class="stat"><div class="stat-label">${t("射撃")}</div><div class="stat-val">${s.shooting||'-'}${rankBadge(_charaRanks,c.id,'shooting')}</div></div>
       <div class="stat"><div class="stat-label">${t("格闘")}</div><div class="stat-val">${s.melee||'-'}${rankBadge(_charaRanks,c.id,'melee')}</div></div>
