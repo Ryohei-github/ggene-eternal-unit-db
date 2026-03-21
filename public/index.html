@@ -971,11 +971,6 @@ a:hover{text-decoration:underline}
       <label style="display:flex;align-items:center;gap:6px"><span>サポートスキル</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
       <div class="filter-btn-group" id="filterSupSkillButtons"></div>
     </div>
-    <div class="filter-group" id="filterSupLimitedGroup" style="display:none">
-      <div class="filter-btn-group">
-        <button class="filter-btn" id="filterSupLimitedBtn" onclick="this.classList.toggle('active');render()" style="background:rgba(255,107,107,.15);border-color:rgba(255,107,107,.4)">🎫 限定</button>
-      </div>
-    </div>
   </div>
   <div style="text-align:center;margin:6px 0">
     <button class="clear-filters-btn" id="clearFiltersBtn" onclick="clearAllFilters()" style="display:none">✕ フィルタークリア</button>
@@ -1534,7 +1529,6 @@ function updateUI() {
   document.getElementById('filterTargetGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupTagGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupSkillGroup').style.display = isSupporter ? '' : 'none';
-  document.getElementById('filterSupLimitedGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('spToggle').style.display = isUnit ? '' : 'none';
 
   const sortContainer = document.getElementById('sortBtns');
@@ -1863,7 +1857,7 @@ function getFiltered() {
     const target = document.getElementById('filterTarget').value;
     const activeSupTags = [...document.querySelectorAll('#filterSupTagButtons .filter-btn.active')].map(b => b.dataset.value);
     const activeSupSkills = [...document.querySelectorAll('#filterSupSkillButtons .filter-btn.active')].map(b => b.dataset.value);
-    const supLimitedActive = document.getElementById('filterSupLimitedBtn')?.classList.contains('active');
+    const supLimitedActive = document.getElementById('filterLimitedBtn')?.classList.contains('active');
     return data.filter(s => {
       if (q && !s.name.toLowerCase().includes(q) && !(currentLang==='en' && tData(s.name,'supporters').toLowerCase().includes(q))) return false;
       if (activeRarities.length > 0 && !activeRarities.includes(s.rarity)) return false;
@@ -4203,7 +4197,6 @@ function clearAllFilters() {
   removeExtraTagFilters();
   resetFilters();
   const limitedBtn = document.getElementById('filterLimitedBtn'); if (limitedBtn) limitedBtn.classList.remove('active');
-  const supLimitedBtn = document.getElementById('filterSupLimitedBtn'); if (supLimitedBtn) supLimitedBtn.classList.remove('active');
   buildFilters();
   updateUI();
   render();
@@ -4231,7 +4224,7 @@ function updateClearButton() {
     const charaTagCount = getAllSelectedTags().length;
     hasFilter = activeCharaTypes > 0 || series || charaTagCount > 0;
   } else if (currentTab === 'supporter') {
-    const supLimitedActive = document.getElementById('filterSupLimitedBtn')?.classList.contains('active');
+    const supLimitedActive = document.getElementById('filterLimitedBtn')?.classList.contains('active');
     const target = document.getElementById('filterTarget').value;
     const activeSupTags = document.querySelectorAll('#filterSupTagButtons .filter-btn.active').length;
     const activeSupSkills = document.querySelectorAll('#filterSupSkillButtons .filter-btn.active').length;
