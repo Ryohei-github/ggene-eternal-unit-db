@@ -5,4 +5,4 @@ Disallow: /cms-*
 Disallow: /api/
 
 # Sitemap
-Sitemap: https://mh-dev-gget-db.vercel.app/sitemap.xml
+Sitemap: https://gget-db.com/sitemap.xml
