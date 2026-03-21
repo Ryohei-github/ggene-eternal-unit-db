@@ -418,8 +418,8 @@ a:hover{text-decoration:underline}
 .stat-label{font-size:.55em;color:var(--card-text2);text-transform:uppercase;line-height:1.2}
 .stat-val{font-size:.8em;font-weight:700;line-height:1.2}
 .cp-val{color:var(--gold)}
-.card-terrain{display:flex;gap:5px;font-size:.65em;margin-bottom:4px}
-.terrain-item{display:flex;align-items:center;gap:2px}
+.card-terrain{display:grid;grid-template-columns:repeat(5,1fr);gap:3px;font-size:.65em;margin-bottom:4px;text-align:center}
+.terrain-item{display:flex;align-items:center;justify-content:center;gap:2px;min-width:0}
 .terrain-ok{color:#44cc44}
 .terrain-tri{color:#ffaa00}
 .terrain-no{color:#555}
@@ -612,7 +612,7 @@ a:hover{text-decoration:underline}
   .card-stats .stat-label{font-size:.42em}
   .card-stats-sub{grid-template-columns:repeat(4,1fr);gap:2px;margin-bottom:2px}
   .card-mechanism{font-size:.52em;margin-bottom:2px}
-  .card-terrain{font-size:.5em;margin-bottom:2px;gap:3px}
+  .card-terrain{font-size:.5em;margin-bottom:2px;gap:2px}
   .card-tags{gap:2px}
   .card-tags span{font-size:.48em;padding:1px 3px}
   .compare-btn{font-size:.58em;padding:3px 8px;margin-top:4px}
