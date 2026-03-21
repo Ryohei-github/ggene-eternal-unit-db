@@ -2329,7 +2329,7 @@ function unitCardHTML(u) {
     
     <div class="card-header">
       ${iconHTML}
-      <div class="card-name">${u.name}${u.limited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">'+(currentLang==="en"?"Limited":"限定")+'</span>' : ''}</div>
+      <div class="card-name">${u.name}${u.limited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px;white-space:nowrap">'+(currentLang==="en"?"Limited":"限定")+'</span>' : ''}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
         ${typeBadgeHTML(u.type)}
@@ -2404,10 +2404,9 @@ function charaCardHTML(c) {
         <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
         ${typeBadgeHTML(c.chara_type)}
         ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
-        ${c.acquire ? `<span class="badge" style="background:${c.acquire==='ガシャ'?'rgba(99,179,237,.25);color:#63b3ed':c.acquire==='スカウト'?'rgba(72,187,120,.25);color:#48bb78':c.acquire==='イベント'?'rgba(237,137,54,.25);color:#ed8936':c.acquire==='記念配布'?'rgba(214,158,255,.25);color:#d69eff':'rgba(160,174,192,.25);color:#a0aec0'};font-size:.55em">${c.acquire}</span>` : ''}
       </div>
     </div>
-    ${c.series ? `<div class="card-series"><span class="clickable-series" onclick="event.stopPropagation();filterBySeries('${c.series.replace(/'/g,"\\'")}')">${tData(c.series,"series")}</span></div>` : ''}
+    ${c.series || c.acquire ? `<div class="card-series">${c.series ? `<span class="clickable-series" onclick="event.stopPropagation();filterBySeries('${c.series.replace(/'/g,"\\'")}')">${tData(c.series,"series")}</span>` : ''}${c.acquire ? `${c.series ? ' ' : ''}<span style="background:${c.acquire==='ガシャ'?'rgba(99,179,237,.25);color:#63b3ed':c.acquire==='スカウト'?'rgba(72,187,120,.25);color:#48bb78':c.acquire==='イベント'?'rgba(237,137,54,.25);color:#ed8936':c.acquire==='記念配布'?'rgba(214,158,255,.25);color:#d69eff':'rgba(160,174,192,.25);color:#a0aec0'};font-size:.85em;padding:0 4px;border-radius:2px">${c.acquire}</span>` : ''}</div>` : ''}
     ${statsHTML}
     ${skillTags ? `<div class="card-skills">${skillTags}</div>` : ''}
     ${abilCount ? `<div class="card-abilities-count">${t("アビリティ")}: ${abilCount}${currentLang==="en"?"":"個"}</div>` : ''}
