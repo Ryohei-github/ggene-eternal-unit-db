@@ -578,10 +578,6 @@ a:hover{text-decoration:underline}
 .modal .stat-box{position:relative}
 .rank-badge{display:block;font-size:.6em;font-weight:700;color:var(--accent);margin-top:1px;line-height:1}
 .rank-badge.top3{color:#ffd700}
-.sp-compare-table{width:100%;border-collapse:collapse;font-size:.85em;margin-top:4px}
-.sp-compare-table th,.sp-compare-table td{padding:5px 8px;text-align:center;border-bottom:1px solid var(--card-border)}
-.sp-compare-table th{font-size:.75em;color:var(--card-text2);font-weight:400}
-.sp-compare-table td:first-child,.sp-compare-table th:first-child{text-align:left}
 .chara-sp-section h3{color:#ffd54f !important}
 .chara-sp-section h3::before{content:'⬆ '}
 .card-stats .rank-badge{font-size:.45em}
@@ -2716,45 +2712,52 @@ function showCharaDetail(id) {
   // Determine SP化/Lv100 stats
   const spSt = c.sp_stats || c.lv100_stats || null;
   const isUR = (c.rarity||'').toUpperCase() === 'UR';
-  const spLabel = isUR ? 'Lv100' : 'SP化 Lv100';
+  const baseLv = isUR ? 100 : (c.rarity||'').toUpperCase() === 'SSR' ? 90 : (c.rarity||'').toUpperCase() === 'R' ? 70 : 80;
 
   let statsHTML = '';
   if (hasStats) {
-    const statKeys = [
-      {key:'shooting', label:'射撃値'}, {key:'melee', label:'格闘値'},
-      {key:'awakening', label:'覚醒値'}, {key:'defense', label:'守備力'},
-      {key:'reaction', label:'反応値'}, {key:'sp', label:'SP'}
-    ];
-    let statRows = '';
-    if (spSt) {
-      // Table with base vs SP化 comparison
-      statRows = `<table class="sp-compare-table">
-        <thead><tr><th></th><th>通常</th><th style="color:#ffd54f">${spLabel}</th><th style="color:#4fc3f7">差分</th></tr></thead>
-        <tbody>
-        ${statKeys.map(({key, label}) => {
-          const base = s[key] || 0;
-          const sp = spSt[key] || 0;
-          const diff = sp - base;
-          const diffStr = diff > 0 ? `<span style="color:#4fc3f7">+${diff}</span>` : (diff < 0 ? `<span style="color:#ef5350">${diff}</span>` : '-');
-          return `<tr><td style="color:var(--card-text2)">${label}</td><td>${base||'-'}</td><td style="color:#ffd54f;font-weight:700">${sp||'-'}</td><td>${diffStr}</td></tr>`;
-        }).join('')}
-        </tbody>
-      </table>`;
-    } else {
-      // Original grid (no SP化 data available)
-      statRows = `<div class="stats-grid">
+    statsHTML = `<div class="detail-section">
+      <h3>ステータス</h3>
+      <div class="stats-grid">
+        <div class="stat-box"><div class="label">戦闘力</div><div class="val" style="color:var(--gold)">${(s.combat_power||0).toLocaleString()}</div></div>
         <div class="stat-box"><div class="label">射撃値</div><div class="val">${s.shooting||'-'}${rankBadge(_charaRanks,c.id,'shooting')}</div></div>
         <div class="stat-box"><div class="label">格闘値</div><div class="val">${s.melee||'-'}${rankBadge(_charaRanks,c.id,'melee')}</div></div>
         <div class="stat-box"><div class="label">覚醒値</div><div class="val">${s.awakening||'-'}${rankBadge(_charaRanks,c.id,'awakening')}</div></div>
         <div class="stat-box"><div class="label">守備力</div><div class="val">${s.defense||'-'}${rankBadge(_charaRanks,c.id,'defense')}</div></div>
         <div class="stat-box"><div class="label">反応値</div><div class="val">${s.reaction||'-'}${rankBadge(_charaRanks,c.id,'reaction')}</div></div>
         <div class="stat-box"><div class="label">SP</div><div class="val">${s.sp||'-'}</div></div>
-      </div>`;
-    }
-    statsHTML = `<div class="detail-section">
-      <h3>ステータス</h3>
-      <div class="stat-box" style="margin-bottom:8px"><div class="label">戦闘力</div><div class="val" style="color:var(--gold)">${(s.combat_power||0).toLocaleString()}</div></div>
-      ${statRows}
+      </div>
+      ${spSt ? `
+      <div style="margin-top:10px">
+        <details class="limit-break-details" open>
+          <summary style="cursor:pointer;color:var(--accent);font-size:.85em;user-select:none">${isUR ? 'Lv100 ステータス一覧' : 'SP化 ステータス一覧'}</summary>
+          <table class="lb-table">
+            <thead><tr><th>段階</th><th>LV</th><th>射撃</th><th>格闘</th><th>覚醒</th><th>守備</th><th>反応</th><th>SP</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>通常</td>
+                <td>${baseLv}</td>
+                <td>${s.shooting||'-'}</td>
+                <td>${s.melee||'-'}</td>
+                <td>${s.awakening||'-'}</td>
+                <td>${s.defense||'-'}</td>
+                <td>${s.reaction||'-'}</td>
+                <td>${s.sp||'-'}</td>
+              </tr>
+              <tr class="lb-sp">
+                <td><span class="sp-label">${isUR ? 'Lv100' : 'SP化'}</span></td>
+                <td>100</td>
+                <td>${spSt.shooting||'-'}</td>
+                <td>${spSt.melee||'-'}</td>
+                <td>${spSt.awakening||'-'}</td>
+                <td>${spSt.defense||'-'}</td>
+                <td>${spSt.reaction||'-'}</td>
+                <td>${spSt.sp||'-'}</td>
+              </tr>
+            </tbody>
+          </table>
+        </details>
+      </div>` : ''}
     </div>`;
   }
 
