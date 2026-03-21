@@ -7,3 +7,8 @@ image_map.json
 download_images.py
 download_log.txt
 *.py
+
+# Next.js
+.next/
+out/
+node_modules/

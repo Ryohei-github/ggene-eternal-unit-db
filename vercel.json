@@ -1,6 +1,5 @@
 {
-  "outputDirectory": "public",
-  "framework": null,
+  "framework": "nextjs",
   "headers": [
     {
       "source": "/(.*)",
@@ -10,12 +9,6 @@
         { "key": "X-XSS-Protection", "value": "1; mode=block" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
       ]
-    }
-  ],
-  "rewrites": [
-    {
-      "source": "/api/data",
-      "destination": "/api/data"
     }
   ],
   "redirects": [
