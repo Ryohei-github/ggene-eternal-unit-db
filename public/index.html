@@ -2114,10 +2114,9 @@ function unitCardHTML(u) {
     
     <div class="card-header">
       ${iconHTML}
-      <div class="card-name">${u.name}</div>
+      <div class="card-name">${u.name}${u.limited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">'+(currentLang==="en"?"Limited":"限定")+'</span>' : ''}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
-        ${u.limited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px">'+(currentLang==="en"?"Limited":"限定")+'</span>' : ''}
         ${typeBadgeHTML(u.type)}
       </div>
     </div>
