@@ -3,6 +3,11 @@ User-agent: *
 Allow: /
 Disallow: /cms-*
 Disallow: /api/
+Disallow: /units.json
+Disallow: /supporters.json
+Disallow: /characters.json
+Disallow: /translations_en.json
+Disallow: /unit-images/
 
 # Sitemap
 Sitemap: https://gget-db.com/sitemap.xml

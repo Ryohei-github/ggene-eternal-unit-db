@@ -1215,7 +1215,7 @@ let translationsEN = null;
 
 async function loadTranslations() {
   try {
-    const res = await fetch('/translations_en.json');
+    const res = await fetch('/api/data?type=translations');
     translationsEN = await res.json();
   } catch(e) {
     console.warn('Failed to load translations:', e);
@@ -1404,7 +1404,7 @@ let pickerSlotIndex = -1;
 async function init() {
   await loadTranslations();
   initLangToggle();
-  const uResp = await fetch('/units.json');
+  const uResp = await fetch('/api/data?type=units');
   const allData = await uResp.json();
   // --- 武装データ補完パッチ ---
   for(const _u of allData){if(_u.name==='ベギルペンデ(ドミニコス隊仕様)'&&_u.rarity==='ULT'){for(const _w of(_u.normal_weapons||[])){if(_w.name==='ビームサーベル'){_w.en=_w.en||'23';_w.critical=_w.critical||'5%';}if(_w.name==='ビームライフル'){_w.en=_w.en||'21';_w.critical=_w.critical||'0%';}}break;}}
@@ -1456,7 +1456,7 @@ async function init() {
   });
   // サポーターデータ読み込み
   try {
-    const sResp = await fetch('/supporters.json');
+    const sResp = await fetch('/api/data?type=supporters');
     const sData = await sResp.json();
     allSupporters = sData.map((s, idx) => ({ ...s, id: idx + 1 }));
   } catch(e) { allSupporters = []; }
