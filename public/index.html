@@ -2251,7 +2251,8 @@ function supporterCardHTML(s) {
   const max2 = s.leader2_3 || s.leader2_2 || s.leader2_1 || base2;
 
   const supImg = s.image ? `<img src="${s.image}" alt="${s.name}" style="width:44px;height:44px;border-radius:6px;object-fit:cover;border:1px solid var(--border);flex-shrink:0" onerror="this.style.display='none'" loading="lazy">` : '';
-  return `<div class="card" onclick="showSupporterDetail(${s.id})">
+  const _src = s.rarity==='UR'?'card-ur':s.rarity==='ULT'?'card-ult':s.rarity==='SSR'?'card-ssr':s.rarity==='SR'?'card-sr':s.rarity==='R'?'card-r':'';
+  return `<div class="card ${_src}" onclick="showSupporterDetail(${s.id})">
     <div class="card-header">
       <div style="display:flex;align-items:center;gap:8px;flex:1;min-width:0">
         ${supImg}
