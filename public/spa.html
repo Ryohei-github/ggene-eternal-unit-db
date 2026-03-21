@@ -1035,6 +1035,10 @@ a:hover{text-decoration:underline}
       <label>キャラタイプ</label>
       <select id="filterCharaType"><option value="">すべて</option></select>
     </div>
+    <div class="filter-group" id="filterCharaSkillGroup" style="display:none">
+      <label style="display:flex;align-items:center;gap:6px"><span>スキル</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
+      <div class="filter-btn-group" id="filterCharaSkillButtons"></div>
+    </div>
     <div class="filter-group" id="filterTargetGroup" style="display:none">
       <label>対象シリーズ</label>
       <select id="filterTarget"><option value="">すべて</option></select>
@@ -1618,6 +1622,7 @@ function updateUI() {
   document.getElementById('filterDebuffGroup').style.display = isUnit ? '' : 'none';
   document.getElementById('filterRarityGroup').style.display = '';
   document.getElementById('filterCharaTypeGroup').style.display = isChara ? '' : 'none';
+  document.getElementById('filterCharaSkillGroup').style.display = isChara ? '' : 'none';
   document.getElementById('filterTargetGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupTagGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupSkillGroup').style.display = isSupporter ? '' : 'none';
@@ -1777,6 +1782,27 @@ function buildFilters() {
     // Show tag filter for chara too
     document.getElementById('filterTagGroup').style.display = '';
     fillSelect('filterTag', [...tags].sort());
+    // Skill filter buttons for chara
+    const skillSet = new Set();
+    allCharas.forEach(c => {
+      (c.skills||[]).forEach(sk => {
+        const base = sk.name.replace(/[Ll][Vv][０-９\d]+/g,'').replace(/\s+/g,'').replace(/ブ－スト/g,'ブースト').trim();
+        skillSet.add(base);
+      });
+      (c.sp_skills||[]).forEach(sk => {
+        const base = sk.name.replace(/[Ll][Vv][０-９\d]+/g,'').replace(/\s+/g,'').replace(/ブ－スト/g,'ブースト').trim();
+        skillSet.add(base);
+      });
+    });
+    const skillOrder = ['アタックバースト','クリティカルブースト','射撃ブースト','格闘ブースト','覚醒ブースト','フォースガード','スウェー','ハイスピード','レンジブースト','ロックオン','MPアップ','HPリペア','ENセーブ','ENチャージ','命中率・回避率上昇','チャンスステップ回数増加','支援攻撃回数増加','支援防御回数増加','EN・弾数フリー'];
+    const orderedSkills = skillOrder.filter(s => skillSet.has(s));
+    const remainingSkills = [...skillSet].filter(s => !skillOrder.includes(s)).sort();
+    const allSkillList = [...orderedSkills, ...remainingSkills];
+    const skBtns = allSkillList.map(s => `<button class="filter-btn" data-value="${s}" style="font-size:.7em">${s}</button>`).join('');
+    document.getElementById('filterCharaSkillButtons').innerHTML = skBtns;
+    document.querySelectorAll('#filterCharaSkillButtons .filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
+    });
   } else {
     const rarities = new Set(), targets = new Set();
     const tagSet = new Set();
@@ -1952,6 +1978,13 @@ function getFiltered() {
       if (activeCharaTypes.length > 0 && !activeCharaTypes.includes(c.chara_type)) return false;
       if (series && c.series !== series) return false;
       if (selectedTags.length > 0 && !selectedTags.every(t => (c.tags||[]).includes(t))) return false;
+      // Skill filter
+      const activeSkills = [...document.querySelectorAll('#filterCharaSkillButtons .filter-btn.active')].map(b => b.dataset.value);
+      if (activeSkills.length > 0) {
+        const allSkills = [...(c.skills||[]), ...(c.sp_skills||[])];
+        const charaSkillBases = allSkills.map(sk => sk.name.replace(/[Ll][Vv][０-９\d]+/g,'').replace(/\s+/g,'').replace(/ブ－スト/g,'ブースト').trim());
+        if (!activeSkills.every(fs => charaSkillBases.includes(fs))) return false;
+      }
       return true;
     });
   } else {
@@ -4403,7 +4436,8 @@ function updateClearButton() {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].length;
     const series = document.getElementById('filterSeries')?.value || '';
     const charaTagCount = getAllSelectedTags().length;
-    hasFilter = activeCharaTypes > 0 || series || charaTagCount > 0;
+    const activeCharaSkills = document.querySelectorAll('#filterCharaSkillButtons .filter-btn.active').length;
+    hasFilter = activeCharaTypes > 0 || series || charaTagCount > 0 || activeCharaSkills > 0;
   } else if (currentTab === 'supporter') {
     const target = document.getElementById('filterTarget').value;
     const activeSupTags = document.querySelectorAll('#filterSupTagButtons .filter-btn.active').length;
