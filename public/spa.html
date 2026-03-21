@@ -1058,6 +1058,10 @@ a:hover{text-decoration:underline}
         <button class="sp-sw-btn" id="spBtn" onclick="toggleStatMode('sp')">SP</button>
         <button class="sp-sw-btn" id="sspBtn" onclick="toggleStatMode('ssp')">SSP</button>
       </span>
+      <span class="sp-switch" id="charaSpToggle" style="display:none">
+        <button class="sp-sw-btn active-normal" id="charaNormalBtn" onclick="toggleCharaStatMode('normal')">通常</button>
+        <button class="sp-sw-btn" id="charaSpBtn" onclick="toggleCharaStatMode('sp')">SP</button>
+      </span>
     </div>
     <div style="display:flex;align-items:center">
       <div class="sort-btns" id="sortBtns">
@@ -1384,6 +1388,7 @@ function initLangToggle() {
 let currentTab = 'unit';
 let currentSort = 'atk';
 let _statMode = 'normal'; // 'normal', 'sp', 'ssp'
+let _charaStatMode = 'normal'; // 'normal', 'sp'
 let currentDir = -1;
 let currentView = 'card';
 let activeTagLookup = '';  // currently selected tag in tag lookup
@@ -1616,6 +1621,7 @@ function updateUI() {
   document.getElementById('filterSupTagGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupSkillGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('spToggle').style.display = isUnit ? '' : 'none';
+  document.getElementById('charaSpToggle').style.display = isChara ? '' : 'none';
 
   const sortContainer = document.getElementById('sortBtns');
   if (isUnit) {
@@ -1986,12 +1992,12 @@ function sortItems(items) {
         break;
       case 'atk':
         if (isSupporter) { va = parseInt(a.attack)||0; vb = parseInt(b.attack)||0; }
-        else if (isChara) { va = parseInt(a.stats?.shooting)||0; vb = parseInt(b.stats?.shooting)||0; }
+        else if (isChara) { const ca=getCharaDisplayStats(a),cb=getCharaDisplayStats(b); va = parseInt(ca?.shooting)||0; vb = parseInt(cb?.shooting)||0; }
         else { va = parseInt(sa?.attack)||0; vb = parseInt(sb?.attack)||0; }
         break;
       case 'hp':
         if (isSupporter) { va = parseInt(a.hp)||0; vb = parseInt(b.hp)||0; }
-        else if (isChara) { va = parseInt(a.stats?.defense)||0; vb = parseInt(b.stats?.defense)||0; }
+        else if (isChara) { const ca=getCharaDisplayStats(a),cb=getCharaDisplayStats(b); va = parseInt(ca?.defense)||0; vb = parseInt(cb?.defense)||0; }
         else { va = parseInt(sa?.hp)||0; vb = parseInt(sb?.hp)||0; }
         break;
       case 'def':
@@ -2001,13 +2007,13 @@ function sortItems(items) {
       case 'agi':
         va = parseInt(sa?.agility)||0; vb = parseInt(sb?.agility)||0; break;
       case 'shoot':
-        va = parseInt(a.stats?.shooting)||0; vb = parseInt(b.stats?.shooting)||0; break;
+        { const ca = isChara ? getCharaDisplayStats(a) : a.stats; const cb = isChara ? getCharaDisplayStats(b) : b.stats; va = parseInt(ca?.shooting)||0; vb = parseInt(cb?.shooting)||0; } break;
       case 'react':
-        va = parseInt(a.stats?.reaction)||0; vb = parseInt(b.stats?.reaction)||0; break;
+        { const ca = isChara ? getCharaDisplayStats(a) : a.stats; const cb = isChara ? getCharaDisplayStats(b) : b.stats; va = parseInt(ca?.reaction)||0; vb = parseInt(cb?.reaction)||0; } break;
       case 'melee':
-        va = parseInt(a.stats?.melee)||0; vb = parseInt(b.stats?.melee)||0; break;
+        { const ca = isChara ? getCharaDisplayStats(a) : a.stats; const cb = isChara ? getCharaDisplayStats(b) : b.stats; va = parseInt(ca?.melee)||0; vb = parseInt(cb?.melee)||0; } break;
       case 'awaken':
-        va = parseInt(a.stats?.awakening)||0; vb = parseInt(b.stats?.awakening)||0; break;
+        { const ca = isChara ? getCharaDisplayStats(a) : a.stats; const cb = isChara ? getCharaDisplayStats(b) : b.stats; va = parseInt(ca?.awakening)||0; vb = parseInt(cb?.awakening)||0; } break;
       case 'ls':
         if (isSupporter) {
           const parseLS = s => {
@@ -2156,6 +2162,30 @@ function toggleStatMode(mode) {
   render();
 }
 
+function toggleCharaStatMode(mode) {
+  _charaStatMode = mode;
+  document.getElementById('charaNormalBtn').classList.toggle('active-normal', _charaStatMode === 'normal');
+  document.getElementById('charaSpBtn').classList.toggle('active-sp', _charaStatMode === 'sp');
+  render();
+}
+
+function getCharaDisplayStats(c) {
+  const isUR = (c.rarity||'').toUpperCase() === 'UR';
+  const spSt = c.sp_stats || c.lv100_stats || null;
+  if (_charaStatMode === 'sp' && spSt) {
+    return {
+      combat_power: c.stats?.combat_power || 0,
+      shooting: spSt.shooting || 0,
+      melee: spSt.melee || 0,
+      awakening: spSt.awakening || 0,
+      defense: spSt.defense || 0,
+      reaction: spSt.reaction || 0,
+      sp: spSt.sp || 0
+    };
+  }
+  return c.stats || {};
+}
+
 function getUnitDisplayStats(u) {
   // UR/ULT have no SP/SSP concept - always return normal stats
   if (u.rarity === 'UR' || u.rarity === 'ULT') return u.normal?.stats || {};
@@ -2231,12 +2261,15 @@ function unitCardHTML(u) {
 // === CHARA CARD ===
 function charaCardHTML(c) {
   const ex = isEXChara(c);
-  const s = c.stats || {};
+  const s = getCharaDisplayStats(c);
   const hasStats = Object.keys(s).length > 0;
+  const isUR = (c.rarity||'').toUpperCase() === 'UR';
+  const hasSPData = c.sp_stats || c.lv100_stats;
 
   let statsHTML = '';
   if (hasStats) {
-    statsHTML = `<div class="card-stats" style="grid-template-columns:repeat(5,1fr)">
+    statsHTML = `${_charaStatMode==='sp' && hasSPData ? `<div class="card-rarity-note" style="color:#c084fc">${isUR ? '※Lv100時のステータス' : '※SP化時のステータス'}</div>` : ''}
+    <div class="card-stats" style="grid-template-columns:repeat(5,1fr)">
       <div class="stat"><div class="stat-label">${t("射撃")}</div><div class="stat-val">${s.shooting||'-'}${rankBadge(_charaRanks,c.id,'shooting')}</div></div>
       <div class="stat"><div class="stat-label">${t("格闘")}</div><div class="stat-val">${s.melee||'-'}${rankBadge(_charaRanks,c.id,'melee')}</div></div>
       <div class="stat"><div class="stat-label">${t("覚醒")}</div><div class="stat-val">${s.awakening||'-'}${rankBadge(_charaRanks,c.id,'awakening')}</div></div>
@@ -2415,7 +2448,7 @@ function unitTableHTML(items) {
 
 function charaTableHTML(items) {
   const rows = items.map(c => {
-    const s = c.stats||{};
+    const s = getCharaDisplayStats(c);
     const skillNames = (c.skills||[]).map(sk=>`${sk.name.replace(/\(SP:\d+\)/,'').trim()} SP:${sk.sp_cost||'?'}`).join(', ');
     return `<tr onclick="showCharaDetail(${c.id})">
       <td class="cell-name">${c.name}</td>
