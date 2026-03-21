@@ -1810,19 +1810,18 @@ function buildFilters() {
     });
     // アビリティフィルタボタン生成（貴重アビリティ）
     const abilCategories = [
-      {label:'支援攻撃+1', match: d => /支援攻撃.*\+1|支援攻撃.*＋1/.test(d)},
-      {label:'支援防御+1', match: d => /「支援防御」.*\+1|支援防御\+1|支援防御.*＋1/.test(d) && !/支援攻撃/.test(d)},
-      {label:'反撃時支援防御', match: d => /反撃.*支援防御|支援防御.*参加/.test(d)},
-      {label:'チャンスステップ+1', match: d => /チャンスステップ.*\+1|チャンスステップ.*＋1/.test(d)}
+      {label:'支援攻撃+2以上', key:'atk2', test: allAbil => abilCounters.atk(allAbil) >= 2},
+      {label:'支援防御+2以上', key:'def2', test: allAbil => abilCounters.def(allAbil) >= 2},
+      {label:'チャンスステップ+1', key:'cs1', test: allAbil => abilCounters.cs(allAbil) >= 1}
     ];
     // Count how many charas match each category
     const abilBtns = abilCategories.map(cat => {
       let count = 0;
       allCharas.forEach(c => {
         const allAbil = [...(c.abilities||[]), ...(c.sp_abilities||[])];
-        if (allAbil.some(a => cat.match(a.desc||''))) count++;
+        if (cat.test(allAbil)) count++;
       });
-      return `<button class="filter-btn" data-value="${cat.label}" style="font-size:.7em">${cat.label}<span style="opacity:.5;margin-left:2px">(${count})</span></button>`;
+      return `<button class="filter-btn" data-value="${cat.key}" style="font-size:.7em">${cat.label}<span style="opacity:.5;margin-left:2px">(${count})</span></button>`;
     }).join('');
     document.getElementById('filterCharaAbilityButtons').innerHTML = abilBtns;
     document.querySelectorAll('#filterCharaAbilityButtons .filter-btn').forEach(btn => {
@@ -1908,6 +1907,13 @@ function getActiveTypes() {
 function getActiveRarities() {
   return [...document.querySelectorAll('#filterRarityButtons .filter-btn.active')].map(b => b.dataset.value);
 }
+
+// アビリティ合計値カウンター（フィルタボタン生成 & getFiltered 両方で使用）
+const abilCounters = {
+  atk: allAbil => { let t=0; allAbil.forEach(a=>{const d=a.desc||'';if(/支援攻撃.*\+1|支援攻撃.*＋1|支援反撃.*\+1/.test(d))t++;}); return t; },
+  def: allAbil => { let t=0; allAbil.forEach(a=>{const d=a.desc||'';if((/支援防御.*\+1|支援防御.*＋1/.test(d))&&!/支援攻撃/.test(d)&&!/反撃.*支援防御/.test(d)&&!/支援防御.*参加/.test(d)&&!/防御力/.test(d))t++;}); return t; },
+  cs:  allAbil => { let t=0; allAbil.forEach(a=>{const d=a.desc||'';if(/チャンスステップ.*\+1|チャンスステップ.*＋1/.test(d))t++;}); return t; }
+};
 
 function getFiltered() {
   const q = document.getElementById('searchInput').value.toLowerCase();
@@ -2010,18 +2016,16 @@ function getFiltered() {
         const charaSkillBases = allSkills.map(sk => sk.name.replace(/[Ll][Vv][０-９\d]+/g,'').replace(/\s+/g,'').replace(/ブ－スト/g,'ブースト').trim());
         if (!activeSkills.every(fs => charaSkillBases.includes(fs))) return false;
       }
-      // Ability filter (貴重アビリティ)
+      // Ability filter (貴重アビリティ: 合計値で判定)
       const activeAbils = [...document.querySelectorAll('#filterCharaAbilityButtons .filter-btn.active')].map(b => b.dataset.value);
       if (activeAbils.length > 0) {
         const allAbil = [...(c.abilities||[]), ...(c.sp_abilities||[])];
-        const descs = allAbil.map(a => a.desc||'');
-        const abilMatchers = {
-          '支援攻撃+1': d => /支援攻撃.*\+1|支援攻撃.*＋1/.test(d),
-          '支援防御+1': d => /「支援防御」.*\+1|支援防御\+1|支援防御.*＋1/.test(d) && !/支援攻撃/.test(d),
-          '反撃時支援防御': d => /反撃.*支援防御|支援防御.*参加/.test(d),
-          'チャンスステップ+1': d => /チャンスステップ.*\+1|チャンスステップ.*＋1/.test(d)
+        const abilTests = {
+          'atk2': ab => abilCounters.atk(ab) >= 2,
+          'def2': ab => abilCounters.def(ab) >= 2,
+          'cs1':  ab => abilCounters.cs(ab) >= 1
         };
-        if (!activeAbils.every(ab => descs.some(d => abilMatchers[ab] && abilMatchers[ab](d)))) return false;
+        if (!activeAbils.every(key => abilTests[key] && abilTests[key](allAbil))) return false;
       }
       return true;
     });
