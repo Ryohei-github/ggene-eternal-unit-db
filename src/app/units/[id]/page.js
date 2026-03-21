@@ -63,6 +63,7 @@ export default async function UnitPage({ params }) {
   const abilities = unit.normal?.abilities || [];
   const weapons = unit.normal_weapons || [];
   const mechanism = unit.normal?.mechanism || '';
+  const statsByStar = unit.stats_by_star || [];
 
   // JSON-LD structured data for this unit
   const jsonLd = {
@@ -140,6 +141,43 @@ export default async function UnitPage({ params }) {
             <div className="stat-item"><span className="stat-label">運動</span><span className="stat-value">{stats.agility?.toLocaleString() || '-'}</span></div>
           </div>
         </section>
+
+        {/* Limit Break Stats section */}
+        {statsByStar.length > 0 && (
+          <section className="unit-detail-section">
+            <h2>限界突破ステータス</h2>
+            <div className="limit-break-table-wrap">
+              <table className="limit-break-table">
+                <thead>
+                  <tr>
+                    <th>★</th>
+                    <th>Lv</th>
+                    <th>HP</th>
+                    <th>EN</th>
+                    <th>攻撃</th>
+                    <th>防御</th>
+                    <th>機動</th>
+                    <th>運動</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {statsByStar.map((s, i) => (
+                    <tr key={i} className={s.star === 3 ? 'limit-break-max' : ''}>
+                      <td className="lb-star">{'★'.repeat(s.star) || '−'}</td>
+                      <td>{s.lv}</td>
+                      <td>{s.hp?.toLocaleString()}</td>
+                      <td>{s.en?.toLocaleString()}</td>
+                      <td>{s.attack?.toLocaleString()}</td>
+                      <td>{s.defense?.toLocaleString()}</td>
+                      <td>{s.mobility}</td>
+                      <td>{s.agility?.toLocaleString()}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
 
         {/* Terrain section */}
         <section className="unit-detail-section">

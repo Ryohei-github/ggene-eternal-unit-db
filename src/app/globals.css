@@ -911,6 +911,48 @@ a:hover{text-decoration:underline}
 }
 .stat-label { color: #90a4ae; font-size: 13px; }
 .stat-value { color: #fff; font-weight: 600; font-size: 14px; }
+/* Limit Break Stats Table */
+.limit-break-table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.limit-break-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.limit-break-table th {
+  background: #1a2033;
+  color: #90caf9;
+  padding: 8px 10px;
+  text-align: right;
+  font-weight: 600;
+}
+.limit-break-table th:first-child {
+  text-align: center;
+}
+.limit-break-table td {
+  padding: 8px 10px;
+  border-bottom: 1px solid #1a2033;
+  color: #e0e0e0;
+  text-align: right;
+}
+.limit-break-table td:first-child {
+  text-align: center;
+}
+.limit-break-table .lb-star {
+  color: #ffd54f;
+  font-size: 12px;
+  letter-spacing: -1px;
+}
+.limit-break-table tr:hover td {
+  background: #141a2a;
+}
+.limit-break-table .limit-break-max td {
+  color: #ffd54f;
+  font-weight: 600;
+}
 .terrain-grid {
   display: flex;
   gap: 12px;
