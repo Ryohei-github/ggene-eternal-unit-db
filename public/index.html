@@ -5620,7 +5620,7 @@ function dcFilterDropdown(type) {
   if (type==='atkUnit'||type==='defUnit') {
     const items=allUnits.filter(u=>!q||u.name.toLowerCase().includes(q)).slice(0,60);
     dd.innerHTML=items.map(u=>{const s=u.normal?.stats||{};return `<div class="dmg-dropdown-item" onclick="dcSelectUnit('${type}',${u.id})">${u.image?`<img src="${u.image}" alt="" onerror="this.style.display='none'">`:''}
-<div><div class="ddi-name">${u.name}</div><div class="ddi-sub"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.6em;padding:0 3px">${u.rarity}</span> ATK:${(parseInt(s.attack)||0).toLocaleString()} DEF:${(parseInt(s.defense)||0).toLocaleString()}</div></div></div>`;}).join('')||'<div style="padding:10px;color:var(--card-text2);font-size:.8em;text-align:center">該当なし</div>';
+<div><div class="ddi-name">${u.name}</div><div class="ddi-sub"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.6em;padding:0 3px">${u.rarity}</span> ${typeBadgeHTML(u.type)} ATK:${(parseInt(s.attack)||0).toLocaleString()} DEF:${(parseInt(s.defense)||0).toLocaleString()}</div></div></div>`;}).join('')||'<div style="padding:10px;color:var(--card-text2);font-size:.8em;text-align:center">該当なし</div>';
   } else if (type==='atkChara'||type==='defChara') {
     const items=allCharas.filter(c=>!q||c.name.toLowerCase().includes(q)).slice(0,60);
     dd.innerHTML=items.map(c=>{const safeName=c.name.replace(/'/g,"\\'");return `<div class="dmg-dropdown-item" onclick="dcSelectChara('${type}','${safeName}')">
