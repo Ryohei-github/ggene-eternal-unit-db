@@ -1812,6 +1812,7 @@ function buildFilters() {
     const abilCategories = [
       {label:'支援攻撃+2以上', key:'atk2', test: allAbil => abilCounters.atk(allAbil) >= 2},
       {label:'支援防御+2以上', key:'def2', test: allAbil => abilCounters.def(allAbil) >= 2},
+      {label:'反撃時支援防御', key:'cdef', test: allAbil => allAbil.some(a => /反撃.*支援防御|支援防御.*参加/.test(a.desc||''))},
       {label:'チャンスステップ+1', key:'cs1', test: allAbil => abilCounters.cs(allAbil) >= 1}
     ];
     // Count how many charas match each category
@@ -2023,6 +2024,7 @@ function getFiltered() {
         const abilTests = {
           'atk2': ab => abilCounters.atk(ab) >= 2,
           'def2': ab => abilCounters.def(ab) >= 2,
+          'cdef': ab => ab.some(a => /反撃.*支援防御|支援防御.*参加/.test(a.desc||'')),
           'cs1':  ab => abilCounters.cs(ab) >= 1
         };
         if (!activeAbils.every(key => abilTests[key] && abilTests[key](allAbil))) return false;
