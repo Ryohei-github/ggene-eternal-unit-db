@@ -960,7 +960,6 @@ a:hover{text-decoration:underline}
     <div class="filter-group" id="filterRarityGroup">
       <label>レア</label>
       <div class="filter-btn-group" id="filterRarityButtons"></div>
-      <button class="filter-btn" id="filterLimitedBtn" onclick="this.classList.toggle('active');render()">限定</button>
     </div>
     <div class="filter-group" id="filterSeriesGroup">
       <label>シリーズ</label>
@@ -1006,6 +1005,7 @@ a:hover{text-decoration:underline}
       <label>入手方法</label>
       <div class="filter-btn-group" id="filterAcquireButtons">
         <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');render()">ガシャ</button>
+        <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');render()">限定ガシャ</button>
         <button class="filter-btn" data-value="開発" onclick="this.classList.toggle('active');render()">開発</button>
         <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');render()">イベント</button>
       </div>
@@ -1852,7 +1852,6 @@ function getFiltered() {
     const activeTerrains = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
     const mapFilterActive = document.getElementById('filterMapBtn')?.classList.contains('active');
     const charaFilterActive = document.getElementById('filterCharaBtn')?.classList.contains('active');
-    const limitedFilterActive = document.getElementById('filterLimitedBtn')?.classList.contains('active');
     const rangeMin = parseInt(document.getElementById('filterRange')?.value) || 0;
     return data.filter(u => {
       if (q) {
@@ -1908,10 +1907,16 @@ function getFiltered() {
           if (!hasEffect) return false;
         }
       }
-      if (limitedFilterActive && !u.limited) return false;
-      // Acquire method filter
+      // Acquire method filter (ガシャ/限定ガシャ/開発/イベント)
       const activeAcquire = [...document.querySelectorAll('#filterAcquireButtons .filter-btn.active')].map(b => b.dataset.value);
-      if (activeAcquire.length > 0 && !activeAcquire.includes(u.acquire)) return false;
+      if (activeAcquire.length > 0) {
+        const match = activeAcquire.some(v => {
+          if (v === '限定ガシャ') return u.acquire === 'ガシャ' && u.limited;
+          if (v === 'ガシャ') return u.acquire === 'ガシャ';
+          return u.acquire === v;
+        });
+        if (!match) return false;
+      }
       return true;
     });
   } else if (currentTab === 'chara') {
@@ -1935,7 +1940,6 @@ function getFiltered() {
     const target = document.getElementById('filterTarget').value;
     const activeSupTags = [...document.querySelectorAll('#filterSupTagButtons .filter-btn.active')].map(b => b.dataset.value);
     const activeSupSkills = [...document.querySelectorAll('#filterSupSkillButtons .filter-btn.active')].map(b => b.dataset.value);
-    const supLimitedActive = document.getElementById('filterLimitedBtn')?.classList.contains('active');
     return data.filter(s => {
       if (q && !s.name.toLowerCase().includes(q) && !(currentLang==='en' && tData(s.name,'supporters').toLowerCase().includes(q))) return false;
       if (activeRarities.length > 0 && !activeRarities.includes(s.rarity)) return false;
@@ -1950,7 +1954,6 @@ function getFiltered() {
       }
       // Support skill filter
       if (activeSupSkills.length > 0 && !activeSupSkills.includes(s.recovery_type)) return false;
-      if (supLimitedActive && s.obtain !== '限定') return false;
       return true;
     });
   }
@@ -4185,7 +4188,6 @@ function restoreFromURL() {
     if (terrain) terrain.split(',').forEach(v => { document.querySelectorAll('#filterTerrainButtons .filter-btn').forEach(b => { if (b.dataset.value === v) b.classList.add('active'); }); });
     if (params.get('map') === '1') document.getElementById('filterMapBtn')?.classList.add('active');
     if (params.get('chara') === '1') document.getElementById('filterCharaBtn')?.classList.add('active');
-    if (params.get('limited') === '1') document.getElementById('filterLimitedBtn')?.classList.add('active');
     const acquireParam = params.get('acquire');
     if (acquireParam) acquireParam.split(',').forEach(v => { document.querySelectorAll('#filterAcquireButtons .filter-btn').forEach(b => { if (b.dataset.value === v) b.classList.add('active'); }); });
     if (debuff) {
@@ -4277,7 +4279,6 @@ function removeExtraTagFilters() {
 function clearAllFilters() {
   removeExtraTagFilters();
   resetFilters();
-  const limitedBtn = document.getElementById('filterLimitedBtn'); if (limitedBtn) limitedBtn.classList.remove('active');
   buildFilters();
   updateUI();
   render();
@@ -4295,10 +4296,9 @@ function updateClearButton() {
     const activeTerrainsBtns = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
     const mapActive = document.getElementById('filterMapBtn')?.classList.contains('active');
     const charaActive = document.getElementById('filterCharaBtn')?.classList.contains('active');
-    const limitedActive = document.getElementById('filterLimitedBtn')?.classList.contains('active');
     const rangeVal = document.getElementById('filterRange')?.value || '';
     const acquireActive = [...document.querySelectorAll('#filterAcquireButtons .filter-btn.active')].length;
-    hasFilter = activeTypes > 0 || series || tagCount > 0 || activeTerrainsBtns.length > 0 || mapActive || charaActive || limitedActive || rangeVal || acquireActive > 0;
+    hasFilter = activeTypes > 0 || series || tagCount > 0 || activeTerrainsBtns.length > 0 || mapActive || charaActive || rangeVal || acquireActive > 0;
   }
   if (!hasFilter && currentTab === 'chara') {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].length;
@@ -4306,7 +4306,6 @@ function updateClearButton() {
     const charaTagCount = getAllSelectedTags().length;
     hasFilter = activeCharaTypes > 0 || series || charaTagCount > 0;
   } else if (currentTab === 'supporter') {
-    const supLimitedActive = document.getElementById('filterLimitedBtn')?.classList.contains('active');
     const target = document.getElementById('filterTarget').value;
     const activeSupTags = document.querySelectorAll('#filterSupTagButtons .filter-btn.active').length;
     const activeSupSkills = document.querySelectorAll('#filterSupSkillButtons .filter-btn.active').length;
