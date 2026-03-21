@@ -1845,9 +1845,11 @@ function buildFilters() {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
     // 入手方法フィルタボタン生成
-    const acquireOrder = ['ガシャ','スカウト','イベント','記念配布','配布'];
+    const acquireOrder = ['ガシャ','限定ガシャ','スカウト','イベント','記念配布','配布'];
     const acquireDist = {};
     allCharas.forEach(c => { const a = c.acquire || ''; if (a) acquireDist[a] = (acquireDist[a]||0)+1; });
+    const limitedGachaCount = allCharas.filter(c => c.acquire === 'ガシャ' && c.limited).length;
+    if (limitedGachaCount > 0) acquireDist['限定ガシャ'] = limitedGachaCount;
     const acqBtns = acquireOrder.filter(a => acquireDist[a]).map(a =>
       `<button class="filter-btn" data-value="${a}" style="font-size:.7em">${a}<span style="opacity:.5;margin-left:2px">(${acquireDist[a]})</span></button>`
     ).join('');
@@ -2058,7 +2060,14 @@ function getFiltered() {
       }
       // Acquire filter (入手方法)
       const activeAcquireChara = [...document.querySelectorAll('#filterCharaAcquireButtons .filter-btn.active')].map(b => b.dataset.value);
-      if (activeAcquireChara.length > 0 && !activeAcquireChara.includes(c.acquire)) return false;
+      if (activeAcquireChara.length > 0) {
+        const acqMatch = activeAcquireChara.some(v => {
+          if (v === '限定ガシャ') return c.acquire === 'ガシャ' && c.limited;
+          if (v === 'ガシャ') return c.acquire === 'ガシャ';
+          return c.acquire === v;
+        });
+        if (!acqMatch) return false;
+      }
       return true;
     });
   } else {
