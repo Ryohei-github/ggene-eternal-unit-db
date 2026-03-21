@@ -197,8 +197,8 @@ a:hover{text-decoration:underline}
 .tag-search-box input::placeholder{color:var(--text2)}
 
 /* Clear filters button */
-.clear-filters-btn{background:#fff;border:1px solid var(--border);color:var(--text2);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:.78em;transition:all .2s;white-space:nowrap}
-.clear-filters-btn:hover{border-color:#ff4466;color:#ff4466;background:rgba(255,68,102,.05)}
+.clear-filters-btn{background:#e63950;border:1px solid #e63950;color:#fff;padding:8px 18px;border-radius:8px;cursor:pointer;font-size:.82em;font-weight:700;transition:all .2s;white-space:nowrap;box-shadow:0 2px 8px rgba(230,57,80,.3);letter-spacing:.02em}
+.clear-filters-btn:hover{background:#d42a42;border-color:#d42a42;box-shadow:0 4px 12px rgba(230,57,80,.45);transform:translateY(-1px)}
 
 /* Team Simulator */
 .team-sim-container{max-width:1400px;margin:0 auto;padding:16px 16px 40px}
@@ -895,7 +895,12 @@ a:hover{text-decoration:underline}
     </div>
     <div class="filter-group" id="filterTagGroup">
       <label>タグ</label>
-      <select id="filterTag"><option value="">すべて</option></select>
+      <div id="filterTagContainer" style="display:flex;flex-direction:column;gap:4px">
+        <div class="tag-filter-row" style="display:flex;align-items:center;gap:4px">
+          <select id="filterTag" style="flex:1"><option value="">すべて</option></select>
+          <button class="add-tag-btn" id="addTagBtn" onclick="addTagFilter()" title="タグを追加" style="width:28px;height:28px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;font-size:1.1em;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s">＋</button>
+        </div>
+      </div>
     </div>
     <div class="filter-group" id="filterTerrainGroup">
       <label>地形</label>
@@ -1758,7 +1763,7 @@ function getFiltered() {
   if (currentTab === 'unit') {
     const activeTypes = getActiveTypes();
     const series = document.getElementById('filterSeries').value;
-    const tag = document.getElementById('filterTag').value;
+    const selectedTags = getAllSelectedTags();
     const activeTerrains = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
     const mapFilterActive = document.getElementById('filterMapBtn')?.classList.contains('active');
     const charaFilterActive = document.getElementById('filterCharaBtn')?.classList.contains('active');
@@ -1774,7 +1779,7 @@ function getFiltered() {
       if (activeTypes.length > 0 && !activeTypes.includes(u.type)) return false;
       if (activeRarities.length > 0 && !activeRarities.includes(u.rarity)) return false;
       if (series && !(u.series||[]).includes(series)) return false;
-      if (tag && !(u.tags||[]).includes(tag)) return false;
+      if (selectedTags.length > 0 && !selectedTags.every(t => (u.tags||[]).includes(t))) return false;
       if (activeTerrains.length > 0 && !activeTerrains.every(t => u.normal?.terrain?.[t] === '◯')) return false;
       // MAP weapon filter
       if (mapFilterActive) {
@@ -1822,7 +1827,7 @@ function getFiltered() {
   } else if (currentTab === 'chara') {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].map(b => b.dataset.value);
     const series = document.getElementById('filterSeries').value;
-    const tag = document.getElementById('filterTag').value;
+    const selectedTags = getAllSelectedTags();
     return data.filter(c => {
       if (q) {
         const nameMatch = c.name.toLowerCase().includes(q) || (currentLang==='en' && tData(c.name).toLowerCase().includes(q));
@@ -1833,7 +1838,7 @@ function getFiltered() {
       if (activeRarities.length > 0 && !activeRarities.includes(c.rarity)) return false;
       if (activeCharaTypes.length > 0 && !activeCharaTypes.includes(c.chara_type)) return false;
       if (series && c.series !== series) return false;
-      if (tag && !(c.tags||[]).includes(tag)) return false;
+      if (selectedTags.length > 0 && !selectedTags.every(t => (c.tags||[]).includes(t))) return false;
       return true;
     });
   } else {
@@ -4110,7 +4115,47 @@ function restoreFromURL() {
   return true;
 }
 
+// === MULTI-TAG FILTER ===
+let _extraTagCount = 0;
+function addTagFilter() {
+  _extraTagCount++;
+  const idx = _extraTagCount;
+  const container = document.getElementById('filterTagContainer');
+  const row = document.createElement('div');
+  row.className = 'tag-filter-row';
+  row.id = 'tagFilterRow_' + idx;
+  row.style.cssText = 'display:flex;align-items:center;gap:4px';
+  const sel = document.createElement('select');
+  sel.id = 'filterTag_' + idx;
+  sel.style.flex = '1';
+  const primary = document.getElementById('filterTag');
+  sel.innerHTML = primary.innerHTML;
+  sel.addEventListener('change', render);
+  const removeBtn = document.createElement('button');
+  removeBtn.textContent = '\u2715';
+  removeBtn.title = '\u3053\u306e\u30bf\u30b0\u3092\u524a\u9664';
+  removeBtn.style.cssText = 'width:28px;height:28px;border-radius:6px;border:1px solid #e63950;background:#e63950;color:#fff;cursor:pointer;font-size:.85em;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s';
+  removeBtn.onclick = function() { row.remove(); render(); };
+  row.appendChild(sel);
+  row.appendChild(removeBtn);
+  container.appendChild(row);
+}
+function getAllSelectedTags() {
+  const tags = [];
+  const primary = document.getElementById('filterTag')?.value;
+  if (primary) tags.push(primary);
+  document.querySelectorAll('[id^="filterTag_"]').forEach(sel => {
+    if (sel.value) tags.push(sel.value);
+  });
+  return tags;
+}
+function removeExtraTagFilters() {
+  document.querySelectorAll('[id^="tagFilterRow_"]').forEach(r => r.remove());
+  _extraTagCount = 0;
+}
+
 function clearAllFilters() {
+  removeExtraTagFilters();
   resetFilters();
   buildFilters();
   updateUI();
@@ -4125,20 +4170,18 @@ function updateClearButton() {
   if (!hasFilter && currentTab === 'unit') {
     const activeTypes = [...document.querySelectorAll('#filterTypeButtons .filter-btn.active')].length;
     const series = document.getElementById('filterSeries')?.value || '';
-    const tag = document.getElementById('filterTag')?.value || '';
+    const tagCount = getAllSelectedTags().length;
     const activeTerrainsBtns = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
     const mapActive = document.getElementById('filterMapBtn')?.classList.contains('active');
     const charaActive = document.getElementById('filterCharaBtn')?.classList.contains('active');
-    if (mapActive) params.set('map', '1');
-    if (charaActive) params.set('chara', '1');
     const rangeVal = document.getElementById('filterRange')?.value || '';
-    hasFilter = activeTypes > 0 || series || tag || activeTerrainsBtns.length > 0 || mapActive || charaActive || rangeVal;
+    hasFilter = activeTypes > 0 || series || tagCount > 0 || activeTerrainsBtns.length > 0 || mapActive || charaActive || rangeVal;
   }
   if (!hasFilter && currentTab === 'chara') {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].length;
     const series = document.getElementById('filterSeries')?.value || '';
-    const tag = document.getElementById('filterTag')?.value || '';
-    hasFilter = activeCharaTypes > 0 || series || tag;
+    const charaTagCount = getAllSelectedTags().length;
+    hasFilter = activeCharaTypes > 0 || series || charaTagCount > 0;
   } else if (currentTab === 'supporter') {
     const target = document.getElementById('filterTarget').value;
     const activeSupTags = document.querySelectorAll('#filterSupTagButtons .filter-btn.active').length;
@@ -4162,6 +4205,7 @@ document.getElementById('tagSearchInput')?.addEventListener('input', () => { ren
 // === COMPARE FEATURE ===
 window._compareList = [];
 window._compareMode = 'unit'; // 'unit' or 'chara'
+window._compareStars = {}; // {unitId: selectedStar}
 const COMPARE_MAX = 3;
 const COMPARE_COLORS = ['#e8961e','#3ab5a8','#e63950'];
 
@@ -4221,6 +4265,8 @@ function updateCompareUI() {
 function clearCompare() {
   _compareList = [];
   window._compareList = _compareList;
+  _compareStars = {};
+  window._compareStars = _compareStars;
   _compareMode = 'unit';
   window._compareMode = _compareMode;
   updateCompareUI();
@@ -4283,6 +4329,7 @@ function addFromPicker(id) {
 function removeFromCompare(id) {
   const idx = _compareList.indexOf(id);
   if (idx >= 0) _compareList.splice(idx, 1);
+  delete _compareStars[id];
   updateCompareUI();
   if (_compareList.length >= 2) {
     renderComparePanel();
@@ -4291,24 +4338,47 @@ function removeFromCompare(id) {
   }
 }
 
+function onCompareStarChange(unitId, star) {
+  _compareStars[unitId] = parseInt(star);
+  renderComparePanel();
+}
+function getCompareStats(u) {
+  const star = _compareStars[u.id];
+  if (star !== undefined && star !== null) {
+    const s = dcGetUnitStats(u, star);
+    if (s && (s.hp > 0 || s.attack > 0)) return s;
+  }
+  return u.normal?.stats || {};
+}
 function renderComparePanel() {
   if (_compareMode === 'chara') return renderCharaComparePanel();
   const units = _compareList.map(id => allUnits.find(u => u.id === id)).filter(Boolean);
   const n = units.length;
   const colClass = 'cols-' + n;
 
-  // Headers
-  const headers = units.map((u, i) => `
-    <div class="compare-unit-col">
-      <div class="unit-header">
-        ${u.image ? `<img src="${u.image}" alt="" onerror="this.style.display='none'">` : ''}
-        <div class="unit-name" data-index="${i+1}">${u.name}</div>
-        <div><span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span> ${typeBadgeHTML(u.type)}</div>
-        <button class="compare-unit-remove" onclick="removeFromCompare(${u.id})">✕ 外す</button>
-      </div>
-    </div>
-  `).join('');
+  // Initialize default star for each unit if not set
+  units.forEach(u => {
+    if (_compareStars[u.id] === undefined) {
+      const opts = dcGetStarOptions(u);
+      _compareStars[u.id] = opts.length > 0 ? opts[opts.length - 1].val : 0;
+    }
+  });
 
+  // Headers with star selector
+  const headers = units.map((u, i) => {
+    const opts = dcGetStarOptions(u);
+    const currentStar = _compareStars[u.id] ?? 0;
+    const starSelect = opts.length > 1 ? '<select class="compare-star-select" onchange="onCompareStarChange(' + u.id + ', this.value)" style="margin-top:6px;padding:4px 8px;border-radius:6px;border:1px solid ' + COMPARE_COLORS[i] + ';background:rgba(0,0,0,.3);color:#fff;font-size:.78em;font-weight:600;cursor:pointer;text-align:center">' + opts.map(o => '<option value="' + o.val + '"' + (o.val===currentStar?' selected':'') + '>' + o.label + '</option>').join('') + '</select>' : '';
+    return '<div class="compare-unit-col"><div class="unit-header">' +
+      (u.image ? '<img src="' + u.image + '" alt="" onerror="this.style.display=\'none\'">' : '') +
+      '<div class="unit-name" data-index="' + (i+1) + '">' + u.name + '</div>' +
+      '<div><span class="badge ' + rarityClass(u.rarity) + '">' + (u.rarity||'?') + '</span> ' + typeBadgeHTML(u.type) + '</div>' +
+      starSelect +
+      '<button class="compare-unit-remove" onclick="removeFromCompare(' + u.id + ')">\u2715 \u5916\u3059</button>' +
+      '</div></div>';
+  }).join('');
+
+  // Stats comparison using selected star level
   // Stats comparison
   const statKeys = [
     {key:'hp', label:'HP'}, {key:'en', label:'EN'}, {key:'attack', label:'攻撃力'},
@@ -4317,7 +4387,7 @@ function renderComparePanel() {
 
   let statsHTML = '';
   statKeys.forEach(sk => {
-    const vals = units.map(u => parseInt((u.normal?.stats||{})[sk.key])||0);
+    const vals = units.map(u => parseInt(getCompareStats(u)[sk.key])||0);
     const maxVal = Math.max(...vals);
     const minVal = Math.min(...vals);
     const cells = vals.map((v, i) => {
@@ -4579,7 +4649,7 @@ function drawCompareRadar(units) {
 
   // Draw unit polygons
   units.forEach((u, ui) => {
-    const stats = u.normal?.stats || {};
+    const stats = getCompareStats(u);
     ctx.beginPath();
     keys.forEach((k, i) => {
       const val = (parseInt(stats[k])||0) / maxVals[i];
@@ -5230,12 +5300,14 @@ function dcGetStarOptions(u) {
   const hasSP = sbs.some(s => s.star === 4);
   const hasSSP = sbs.some(s => s.star === 5);
   const opts = [];
-  if (u.rarity === 'UR' || u.rarity === 'ULT') {
+  if (u.rarity === 'ULT') {
+    [0,1,2,3].forEach(s => { if(sbs.find(x=>x.star===s)) opts.push({val:s,label:(s+1)+'段階'}); });
+  } else if (u.rarity === 'UR') {
     [0,1,2,3].forEach(s => { if(sbs.find(x=>x.star===s)) opts.push({val:s,label:s===0?'無凸':s+'凸'}); });
   } else {
-    [0,1,2,3].forEach(s => { if(sbs.find(x=>x.star===s)) opts.push({val:s,label:s===0?'無':s===3?'★★★':'★'.repeat(s)}); });
-    if (hasSP) opts.push({val:4,label:'SP化'});
-    if (hasSSP) opts.push({val:5,label:'SSP化'});
+    [0,1,2,3].forEach(s => { if(sbs.find(x=>x.star===s)) opts.push({val:s,label:s===0?'無凸':s===3?'完凸':s+'凸'}); });
+    if (hasSP) opts.push({val:4,label:'SP'});
+    if (hasSSP) opts.push({val:5,label:'SSP'});
   }
   return opts;
 }
