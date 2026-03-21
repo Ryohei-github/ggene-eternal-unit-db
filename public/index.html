@@ -895,6 +895,7 @@ a:hover{text-decoration:underline}
     <div class="filter-group" id="filterRarityGroup">
       <label>レア</label>
       <div class="filter-btn-group" id="filterRarityButtons"></div>
+      <button class="filter-btn" id="filterLimitedBtn" onclick="this.classList.toggle('active');render()" style="background:rgba(255,107,107,.15);border-color:rgba(255,107,107,.4)">🎫 限定</button>
     </div>
     <div class="filter-group" id="filterSeriesGroup">
       <label>シリーズ</label>
@@ -940,7 +941,6 @@ a:hover{text-decoration:underline}
       <label>獲得キャラ</label>
       <div class="filter-btn-group">
         <button class="filter-btn" id="filterCharaBtn" onclick="this.classList.toggle('active');render()">👤 キャラ付き</button>
-        <button class="filter-btn" id="filterLimitedBtn" onclick="this.classList.toggle('active');render()" style="background:rgba(255,107,107,.15);border-color:rgba(255,107,107,.4)">🎫 限定</button>
       </div>
     </div>
     <div class="filter-group filter-group-wide" id="filterDebuffGroup">
@@ -1863,6 +1863,7 @@ function getFiltered() {
     const target = document.getElementById('filterTarget').value;
     const activeSupTags = [...document.querySelectorAll('#filterSupTagButtons .filter-btn.active')].map(b => b.dataset.value);
     const activeSupSkills = [...document.querySelectorAll('#filterSupSkillButtons .filter-btn.active')].map(b => b.dataset.value);
+    const supLimitedActive = document.getElementById('filterSupLimitedBtn')?.classList.contains('active');
     return data.filter(s => {
       if (q && !s.name.toLowerCase().includes(q) && !(currentLang==='en' && tData(s.name,'supporters').toLowerCase().includes(q))) return false;
       if (activeRarities.length > 0 && !activeRarities.includes(s.rarity)) return false;
