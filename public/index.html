@@ -940,6 +940,7 @@ a:hover{text-decoration:underline}
       <label>獲得キャラ</label>
       <div class="filter-btn-group">
         <button class="filter-btn" id="filterCharaBtn" onclick="this.classList.toggle('active');render()">👤 キャラ付き</button>
+        <button class="filter-btn" id="filterLimitedBtn" onclick="this.classList.toggle('active');render()" style="background:rgba(255,107,107,.15);border-color:rgba(255,107,107,.4)">🎫 限定</button>
       </div>
     </div>
     <div class="filter-group filter-group-wide" id="filterDebuffGroup">
@@ -969,6 +970,11 @@ a:hover{text-decoration:underline}
     <div class="filter-group" id="filterSupSkillGroup" style="display:none">
       <label style="display:flex;align-items:center;gap:6px"><span>サポートスキル</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
       <div class="filter-btn-group" id="filterSupSkillButtons"></div>
+    </div>
+    <div class="filter-group" id="filterSupLimitedGroup" style="display:none">
+      <div class="filter-btn-group">
+        <button class="filter-btn" id="filterSupLimitedBtn" onclick="this.classList.toggle('active');render()" style="background:rgba(255,107,107,.15);border-color:rgba(255,107,107,.4)">🎫 限定</button>
+      </div>
     </div>
   </div>
   <div style="text-align:center;margin:6px 0">
@@ -1335,12 +1341,14 @@ async function init() {
   // --- 武装データ補完パッチ ---
   for(const _u of allData){if(_u.name==='ベギルペンデ(ドミニコス隊仕様)'&&_u.rarity==='ULT'){for(const _w of(_u.normal_weapons||[])){if(_w.name==='ビームサーベル'){_w.en=_w.en||'23';_w.critical=_w.critical||'5%';}if(_w.name==='ビームライフル'){_w.en=_w.en||'21';_w.critical=_w.critical||'0%';}}break;}}
   // ユニット: キャラタグを持たないエントリ（MSなど）
+  const _limitedURNames = new Set(["ガンダムAGE-2 ノーマル(EX)","ガンダムアストレイ レッドフレーム改(EX)","ガンダムDX(EX)","ガンダム・キャリバーン(最終決戦時)(EX)","デスティニーガンダム(EX)","Ξガンダム(EX)","ガンダム・バルバトスルプスレクス(EX)","ガンダム試作3号機(EX)","ユニコーンガンダム(デストロイモード／覚醒)(EX)","ゴッドガンダム(EX)","キュベレイ(ZZ版)(EX)","モンスターブラックドラゴン(EX)","バンシィ・ノルン(デストロイモード)(EX)","Hi-νガンダム(EX)","ガンダム試作2号機(EX)","Zガンダム(EX)","ストライクフリーダムガンダム(EX)"]);
   allUnits = allData.filter(u => {
     const tags = u.tags || [];
     if (tags.includes('キャラ')) return false;
     const s = u.normal?.stats;
     return s && (s.hp > 0 || s.attack > 0 || s.defense > 0 || s.en > 0);
   });
+  allUnits.forEach(u => { if(_limitedURNames.has(u.name)) u.limited = true; });
   // キャラデータ: タグに「キャラ」を持つエントリ
   allCharas = allData.filter(u => (u.tags || []).includes('キャラ')).map(u => {
     const n = u.normal || {};
@@ -1526,6 +1534,7 @@ function updateUI() {
   document.getElementById('filterTargetGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupTagGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('filterSupSkillGroup').style.display = isSupporter ? '' : 'none';
+  document.getElementById('filterSupLimitedGroup').style.display = isSupporter ? '' : 'none';
   document.getElementById('spToggle').style.display = isUnit ? '' : 'none';
 
   const sortContainer = document.getElementById('sortBtns');
@@ -1774,6 +1783,7 @@ function getFiltered() {
     const activeTerrains = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
     const mapFilterActive = document.getElementById('filterMapBtn')?.classList.contains('active');
     const charaFilterActive = document.getElementById('filterCharaBtn')?.classList.contains('active');
+    const limitedFilterActive = document.getElementById('filterLimitedBtn')?.classList.contains('active');
     const rangeMin = parseInt(document.getElementById('filterRange')?.value) || 0;
     return data.filter(u => {
       if (q) {
@@ -1829,6 +1839,7 @@ function getFiltered() {
           if (!hasEffect) return false;
         }
       }
+      if (limitedFilterActive && !u.limited) return false;
       return true;
     });
   } else if (currentTab === 'chara') {
@@ -1866,6 +1877,7 @@ function getFiltered() {
       }
       // Support skill filter
       if (activeSupSkills.length > 0 && !activeSupSkills.includes(s.recovery_type)) return false;
+      if (supLimitedActive && s.obtain !== '限定') return false;
       return true;
     });
   }
@@ -2097,6 +2109,7 @@ function unitCardHTML(u) {
       <div class="card-name">${u.name}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
+        ${u.limited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px">'+(currentLang==="en"?"Limited":"限定")+'</span>' : ''}
         ${typeBadgeHTML(u.type)}
       </div>
     </div>
@@ -4098,6 +4111,7 @@ function restoreFromURL() {
     if (terrain) terrain.split(',').forEach(v => { document.querySelectorAll('#filterTerrainButtons .filter-btn').forEach(b => { if (b.dataset.value === v) b.classList.add('active'); }); });
     if (params.get('map') === '1') document.getElementById('filterMapBtn')?.classList.add('active');
     if (params.get('chara') === '1') document.getElementById('filterCharaBtn')?.classList.add('active');
+    if (params.get('limited') === '1') document.getElementById('filterLimitedBtn')?.classList.add('active');
     if (debuff) {
       activeDebuffKey = debuff;
       document.querySelectorAll('#debuffCategoryButtons .filter-btn').forEach(b => {
@@ -4187,6 +4201,8 @@ function removeExtraTagFilters() {
 function clearAllFilters() {
   removeExtraTagFilters();
   resetFilters();
+  const limitedBtn = document.getElementById('filterLimitedBtn'); if (limitedBtn) limitedBtn.classList.remove('active');
+  const supLimitedBtn = document.getElementById('filterSupLimitedBtn'); if (supLimitedBtn) supLimitedBtn.classList.remove('active');
   buildFilters();
   updateUI();
   render();
@@ -4204,8 +4220,9 @@ function updateClearButton() {
     const activeTerrainsBtns = [...document.querySelectorAll('#filterTerrainButtons .filter-btn.active')].map(b => b.dataset.value);
     const mapActive = document.getElementById('filterMapBtn')?.classList.contains('active');
     const charaActive = document.getElementById('filterCharaBtn')?.classList.contains('active');
+    const limitedActive = document.getElementById('filterLimitedBtn')?.classList.contains('active');
     const rangeVal = document.getElementById('filterRange')?.value || '';
-    hasFilter = activeTypes > 0 || series || tagCount > 0 || activeTerrainsBtns.length > 0 || mapActive || charaActive || rangeVal;
+    hasFilter = activeTypes > 0 || series || tagCount > 0 || activeTerrainsBtns.length > 0 || mapActive || charaActive || limitedActive || rangeVal;
   }
   if (!hasFilter && currentTab === 'chara') {
     const activeCharaTypes = [...document.querySelectorAll('#charaTypeButtons .filter-btn.active')].length;
@@ -4213,6 +4230,7 @@ function updateClearButton() {
     const charaTagCount = getAllSelectedTags().length;
     hasFilter = activeCharaTypes > 0 || series || charaTagCount > 0;
   } else if (currentTab === 'supporter') {
+    const supLimitedActive = document.getElementById('filterSupLimitedBtn')?.classList.contains('active');
     const target = document.getElementById('filterTarget').value;
     const activeSupTags = document.querySelectorAll('#filterSupTagButtons .filter-btn.active').length;
     const activeSupSkills = document.querySelectorAll('#filterSupSkillButtons .filter-btn.active').length;
