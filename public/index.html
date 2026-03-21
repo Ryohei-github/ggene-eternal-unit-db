@@ -534,6 +534,7 @@ a:hover{text-decoration:underline}
 .target-unit-item .tui-name{font-size:.82em;font-weight:600;color:var(--text);flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .target-unit-item .tui-meta{font-size:.7em;color:var(--text2);white-space:nowrap}
 .clickable-tag{cursor:pointer;transition:background .15s,color .15s}.clickable-tag:hover{background:var(--accent);color:#fff}
+.clickable-series{cursor:pointer;transition:color .15s;text-decoration:underline;text-decoration-style:dotted;text-underline-offset:2px}.clickable-series:hover{color:var(--accent)}
 
 /* Transform Toggle */
 .transform-toggle{display:flex;gap:0;margin-bottom:8px;border:1px solid var(--border);border-radius:6px;overflow:hidden}
@@ -2092,7 +2093,7 @@ function unitCardHTML(u) {
         ${typeBadgeHTML(u.type)}
       </div>
     </div>
-    <div class="card-series">${(u.series||[]).map(s=>tData(s,"series")).join(' / ')}</div>
+    <div class="card-series">${(u.series||[]).map(s=>'<span class="clickable-series" onclick="event.stopPropagation();filterBySeries(\''+ s.replace(/'/g,"\\'") +'\')">' + tData(s,"series") + '</span>').join(' / ')}</div>
     ${u.normal?.combat_power ? `<div class="card-combat-power">${t('戦闘力')}: ${u.normal.combat_power.toLocaleString()}</div>` : ''}
     ${(u.rarity==='UR' || u.rarity==='ULT') ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : _statMode==='ssp' ? '<div class="card-rarity-note" style="color:#f472b6">※SSP化時のステータス</div>' : _statMode==='sp' ? '<div class="card-rarity-note" style="color:#c084fc">※SP化時のステータス</div>' : u.rarity==='SSR' ? `<div class="card-rarity-note">${currentLang==="en"?"※ Max enhanced stats":"※最大強化時のステータス"}</div>` : ''}
     <div class="card-stats">
@@ -2158,7 +2159,7 @@ function charaCardHTML(c) {
         ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
       </div>
     </div>
-    ${c.series ? `<div class="card-series">${tData(c.series,"series")}</div>` : ''}
+    ${c.series ? `<div class="card-series"><span class="clickable-series" onclick="event.stopPropagation();filterBySeries('${c.series.replace(/'/g,"\\'")}')">${tData(c.series,"series")}</span></div>` : ''}
     ${statsHTML}
     ${skillTags ? `<div class="card-skills">${skillTags}</div>` : ''}
     ${abilCount ? `<div class="card-abilities-count">${t("アビリティ")}: ${abilCount}${currentLang==="en"?"":"個"}</div>` : ''}
@@ -2527,7 +2528,7 @@ function renderUnitDetail(u, form) {
     </div>
     ${transformToggle}
     <div class="detail-section">
-      <div style="font-size:.8em;color:var(--card-text2);margin-bottom:4px">${(u.series||[]).join(' / ')}</div>
+      <div style="font-size:.8em;color:var(--card-text2);margin-bottom:4px">${(u.series||[]).map(s=>'<span class="clickable-series" onclick="filterBySeries(\''+ s.replace(/'/g,"\\'") +'\');closeModal()">'+tData(s,"series")+'</span>').join(' / ')}</div>
       <div class="card-tags">${getNonCharaTags(u.tags).map(t=>`<span class="tag clickable-tag" onclick="filterByTag('${t.replace(/'/g,"\\'")}');closeModal()">${t}</span>`).join('')}</div>
       ${getObtainChara(u) ? `<div class="paired-chara-section"><h4>👤 獲得キャラクター</h4>${getObtainChara(u)}</div>` : (getPairedCharas(u.tags).length ? `<div class="paired-chara-section"><h4>👤 獲得キャラクター</h4>${pairedCharaHTML(u)}</div>` : '')}
     </div>
@@ -2661,7 +2662,7 @@ function showCharaDetail(id) {
       ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
       ${c.obtain_method ? `<span class="badge badge-type">${c.obtain_method}</span>` : ''}
     </div>
-    ${c.series ? `<div class="detail-section"><div style="font-size:.8em;color:var(--card-text2)">${c.series}</div></div>` : ''}
+    ${c.series ? `<div class="detail-section"><div style="font-size:.8em;color:var(--card-text2)"><span class="clickable-series" onclick="filterBySeries('${c.series.replace(/'/g,"\\'")}');closeModal()">${tData(c.series,"series")}</span></div></div>` : ''}
     ${statsHTML}
     ${(c.skills||[]).length ? `<div class="detail-section"><h3>スキル (${c.skills.length})</h3>${skillsHTML}</div>` : ''}
     ${cleanAbilities.length ? `<div class="detail-section"><h3>アビリティ (${cleanAbilities.length})</h3>${abHTML}</div>` : ''}
@@ -2798,6 +2799,26 @@ function filterByTag(tagName) {
   opt.value = tagName; opt.textContent = tagName;
   sel.appendChild(opt);
   sel.value = tagName;
+  render();
+}
+
+function filterBySeries(seriesName) {
+  if (currentTab !== 'unit' && currentTab !== 'chara') {
+    var inUnits = allUnits.some(function(u) { return (u.series||[]).includes(seriesName); });
+    if (inUnits) {
+      document.querySelector('.tab-btn[data-tab="unit"]').click();
+    } else {
+      document.querySelector('.tab-btn[data-tab="chara"]').click();
+    }
+  }
+  var sel = document.getElementById('filterSeries');
+  for (var i = 0; i < sel.options.length; i++) {
+    if (sel.options[i].value === seriesName) { sel.value = seriesName; render(); return; }
+  }
+  var opt = document.createElement('option');
+  opt.value = seriesName; opt.textContent = tData(seriesName, 'series');
+  sel.appendChild(opt);
+  sel.value = seriesName;
   render();
 }
 
