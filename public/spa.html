@@ -2855,7 +2855,7 @@ function showCharaDetail(id) {
           <table class="lb-table">
             <thead><tr><th>段階</th><th>LV</th><th>射撃</th><th>格闘</th><th>覚醒</th><th>守備</th><th>反応</th><th>SP</th></tr></thead>
             <tbody>
-              <tr>
+              ${isUR ? '' : `<tr>
                 <td>通常</td>
                 <td>${baseLv}</td>
                 <td>${s.shooting||'-'}</td>
@@ -2864,9 +2864,9 @@ function showCharaDetail(id) {
                 <td>${s.defense||'-'}</td>
                 <td>${s.reaction||'-'}</td>
                 <td>${s.sp||'-'}</td>
-              </tr>
-              <tr class="lb-sp">
-                <td><span class="sp-label">${isUR ? 'Lv100' : 'SP化'}</span></td>
+              </tr>`}
+              <tr class="${isUR ? 'lb-max' : 'lb-sp'}">
+                <td><span class="${isUR ? '' : 'sp-label'}">${isUR ? 'Lv100' : 'SP化'}</span></td>
                 <td>100</td>
                 <td>${spSt.shooting||'-'}</td>
                 <td>${spSt.melee||'-'}</td>
