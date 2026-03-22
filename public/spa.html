@@ -1863,17 +1863,14 @@ function buildFilters() {
     const skillSet = new Set();
     allSupporters.forEach(s => {
       if (s.rarity) rarities.add(s.rarity);
-      if (s.target_series) targets.add(s.target_series);
-      // Extract individual tags from target_series (split by "or")
-      if (s.target_series) {
-        s.target_series.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(t => t.trim()).filter(Boolean).forEach(t => {
-          // Categorize: if it's a series name (contains ガンダム or known series), skip for tag filter
-          // Otherwise it's a tag
-          if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) {
-            tagSet.add(t);
-          }
-        });
-      }
+      // target_series is now an array — add each element individually
+      (s.target_series||[]).forEach(t => targets.add(t));
+      // Categorize: if it's a series name (contains ガンダム or known series), skip for tag filter; otherwise it's a tag
+      (s.target_series||[]).forEach(t => {
+        if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) {
+          tagSet.add(t);
+        }
+      });
       // Also check leader2_target for tags
       if (s.leader2_target) {
         s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => {
@@ -2077,11 +2074,10 @@ function getFiltered() {
     return data.filter(s => {
       if (q && !s.name.toLowerCase().includes(q) && !(currentLang==='en' && tData(s.name,'supporters').toLowerCase().includes(q))) return false;
       if (activeRarities.length > 0 && !activeRarities.includes(s.rarity)) return false;
-      if (target && s.target_series !== target) return false;
+      if (target && !(s.target_series||[]).includes(target)) return false;
       // Tag filter: check if any of the supporter's target tags match active tag filters
       if (activeSupTags.length > 0) {
-        const supAllTags = [];
-        if (s.target_series) s.target_series.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
+        const supAllTags = [...(s.target_series||[])];
         if (s.leader2_target) s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
         const hasTag = activeSupTags.some(ft => supAllTags.some(st => st.includes(ft) || ft.includes(st)));
         if (!hasTag) return false;
@@ -2458,8 +2454,9 @@ function supportSkillIcon(type, size = 22) {
 // === TARGET UNITS POPUP ===
 function showTargetUnits(targetSeries) {
   if (!targetSeries || targetSeries === '-') return;
-  // Parse target: may contain "or" separating multiple series
-  const seriesList = targetSeries.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(s => s.trim()).filter(Boolean);
+  // targetSeries can be array or comma/or-separated string for backward compat
+  const seriesList = Array.isArray(targetSeries) ? targetSeries
+    : (typeof targetSeries === 'string' ? targetSeries.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(s => s.trim()).filter(Boolean) : []);
   // Find matching units
   const matched = allUnits.filter(u => {
     const uSeries = u.seriesArr || [];
@@ -2490,7 +2487,7 @@ function showTargetUnits(targetSeries) {
       </div>`).join('')
     : '<div style="text-align:center;padding:24px;color:var(--text2);font-size:.85em">対象ユニットが見つかりませんでした</div>';
   overlay.innerHTML = `<div class="target-units-popup">
-    <h3><span>対象ユニット一覧：${targetSeries}</span><button class="close-btn" onclick="document.getElementById('targetUnitsOverlay').style.display='none'">✕</button></h3>
+    <h3><span>対象ユニット一覧：${Array.isArray(targetSeries) ? targetSeries.join(' / ') : targetSeries}</span><button class="close-btn" onclick="document.getElementById('targetUnitsOverlay').style.display='none'">✕</button></h3>
     <div style="font-size:.72em;color:var(--text2);margin-bottom:8px">${all.length}体のユニットが該当</div>
     <div class="target-units-list">${listHTML}</div>
   </div>`;
@@ -2527,7 +2524,7 @@ function supporterCardHTML(s) {
     <div style="background:rgba(232,150,30,.07);border:1px solid rgba(232,150,30,.2);border-radius:6px;padding:8px;margin-bottom:6px">
       <div style="font-size:.65em;color:var(--accent);font-weight:600;margin-bottom:2px">${t("リーダースキル")}</div>
       <div class="ls-row" style="display:flex;align-items:baseline;gap:4px;min-width:0">
-        <span class="tag leader-tag-clickable" style="font-size:.62em;background:rgba(232,150,30,.15);border-color:var(--accent);cursor:pointer;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" onclick="event.stopPropagation();showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')" title="${s.target_series||''}">${s.target_series||'-'}</span>
+        ${(s.target_series||[]).length ? (s.target_series||[]).map(ts => `<span class="tag leader-tag-clickable" style="font-size:.62em;background:rgba(232,150,30,.15);border-color:var(--accent);cursor:pointer;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" onclick="event.stopPropagation();showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})" title="${ts}">${ts}</span>`).join('') : '<span style="font-size:.62em;color:var(--card-text2)">-</span>'}
         <span style="white-space:nowrap;flex-shrink:0;display:flex;align-items:baseline;gap:3px">${base ? `<span style="font-size:.72em;color:var(--card-text2)">${base}</span>` : ''}${max && max !== base ? `<span style="font-size:.6em;color:var(--card-text2)">→</span><span style="font-size:${hasTier2 ? '.78' : '.88'}em;font-weight:700;color:${hasTier2 ? 'var(--text)' : '#3fb950'}">${max}</span>` : ''}</span>
       </div>
       ${hasTier2 ? `<div class="ls-row" style="display:flex;align-items:baseline;gap:4px;min-width:0;margin-top:3px;padding-top:3px;border-top:1px dashed rgba(232,150,30,.15)">
@@ -2608,7 +2605,7 @@ function supporterTableHTML(items) {
       <td class="cell-num">${s.hp ? s.hp.toLocaleString() : '-'}</td>
       <td class="cell-num">${s.attack||'-'}</td>
       <td class="cell-center" style="font-size:.8em">${s.obtain||'-'}</td>
-      <td class="cell-center" style="font-size:.8em"><span class="leader-tag-clickable" style="cursor:pointer;padding:1px 4px;border-radius:3px;background:rgba(232,150,30,.1)" onclick="event.stopPropagation();showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')">${s.target_series||'-'}</span></td>
+      <td class="cell-center" style="font-size:.8em">${(s.target_series||[]).length ? (s.target_series||[]).map(ts => `<span class="leader-tag-clickable" style="cursor:pointer;padding:1px 4px;border-radius:3px;background:rgba(232,150,30,.1);margin:1px" onclick="event.stopPropagation();showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join(' ') : '-'}</td>
       <td class="cell-center" style="font-weight:700">${lsDisplay}</td>
       <td class="cell-center"><span style="display:inline-flex;align-items:center;gap:4px">${recIcon} ${s.recovery_type||'-'} ${s.recovery_amount||''}</span></td>
       <td class="cell-center">${s.range||'-'}</td>
@@ -3016,7 +3013,7 @@ function showSupporterDetail(id) {
     </div>`;
     const tier1Vals = [['0凸', base], ['1凸', s.leader_1||'-'], ['2凸', s.leader_2||'-'], ['3凸', s.leader_3||'-']];
     convexHTML = `<div style="display:flex;flex-direction:column;gap:6px;margin-top:8px">`;
-    convexHTML += mkRow(s.target_series||'対象', tier1Vals, hasTier2 ? 'var(--text)' : '#3fb950');
+    convexHTML += mkRow((s.target_series||[]).join(' / ')||'対象', tier1Vals, hasTier2 ? 'var(--text)' : '#3fb950');
     if (hasTier2) {
       const tier2Vals = [['0凸', base2], ['1凸', s.leader2_1||'-'], ['2凸', s.leader2_2||'-'], ['3凸', s.leader2_3||'-']];
       convexHTML += mkRow((s.leader2_target||'').replace(/ and /g,' & '), tier2Vals, '#3fb950');
@@ -3033,7 +3030,7 @@ function showSupporterDetail(id) {
         <div class="detail-badges" style="margin-top:4px">
           ${obtainLabel}
           <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
-          ${s.target_series ? `<span class="badge badge-type leader-tag-clickable" style="cursor:pointer" onclick="showTargetUnits('${s.target_series.replace(/'/g,"\\'")}')">${s.target_series}</span>` : ''}
+          ${(s.target_series||[]).map(ts => `<span class="badge badge-type leader-tag-clickable" style="cursor:pointer" onclick="showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join('')}
         </div>
       </div>
     </div>
@@ -3048,7 +3045,7 @@ function showSupporterDetail(id) {
       <h3>リーダースキル</h3>
       <div class="supporter-detail-block" style="border-color:rgba(232,150,30,.3)">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap">
-          <span class="tag leader-tag-clickable" style="font-size:.8em;background:rgba(232,150,30,.2);border:1px solid var(--accent);color:var(--accent);cursor:pointer;padding:2px 8px" onclick="showTargetUnits('${(s.target_series||'').replace(/'/g,"\\'")}')">${s.target_series||'-'}</span>
+          ${(s.target_series||[]).length ? (s.target_series||[]).map(ts => `<span class="tag leader-tag-clickable" style="font-size:.8em;background:rgba(232,150,30,.2);border:1px solid var(--accent);color:var(--accent);cursor:pointer;padding:2px 8px" onclick="showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join('') : '<span style="font-size:.8em;color:var(--card-text2)">-</span>'}
           ${base ? `<span style="font-size:.95em;font-weight:700;color:var(--card-text)">${base}</span>` : ''}
           ${max && max !== base ? `<span style="color:var(--card-text2)">→</span><span style="font-size:.95em;font-weight:700;color:${hasTier2 ? 'var(--card-text)' : '#3fb950'}">${max}</span>` : ''}
         </div>
@@ -3273,10 +3270,10 @@ function checkLeaderSkillMatch(unit) {
     }
   }
 
-  // Check tier1 (or-based matching)
-  const target = sup.target_series || teamLeaderTag;
-  if (!target || target === '-') return null;
-  const seriesList = target.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(s => s.trim()).filter(Boolean);
+  // Check tier1 (array-based matching)
+  const targetArr = Array.isArray(sup.target_series) ? sup.target_series : (teamLeaderTag ? [teamLeaderTag] : []);
+  if (targetArr.length === 0) return null;
+  const seriesList = targetArr;
   const match = seriesList.some(ts => allUnitTags.some(ut => ut.includes(ts) || ts.includes(ut)));
   if (match) {
     const val = sup.leader_3 || sup.leader_2 || sup.leader_1 || sup.leader_0 || '';
@@ -3412,7 +3409,7 @@ function renderTeamSupporter() {
       </div>
     </div>`;
     // Auto-fill leader skill from supporter data
-    if (!teamLeaderTag && sup.target_series) teamLeaderTag = sup.target_series;
+    if (!teamLeaderTag && (sup.target_series||[]).length) teamLeaderTag = (sup.target_series||[]).join(' / ');
     if (!teamLeaderEffect && sup.leader_skill) teamLeaderEffect = sup.leader_skill;
   } else {
     pickHTML = `<div class="slot-empty" style="min-height:80px;min-width:120px" onclick="openTeamPicker('supporter',0)">+ ${currentLang==="en"?"Select Supporter":t("サポーター")+"選択"}</div>`;
@@ -3430,7 +3427,7 @@ function renderTeamSupporter() {
       if (m) { if (m.tier === 2) t2Count++; else t1Count++; }
     });
     const total = t1Count + t2Count;
-    if (total > 0 || sup.target_series) {
+    if (total > 0 || (sup.target_series||[]).length) {
       let detail = '';
       if (sup.leader2_target && t2Count > 0) detail += `<span style="color:#22c55e">${sup.leader2_3||sup.leader2_0||''}: ${t2Count}機</span>`;
       if (t1Count > 0) detail += `${detail?' / ':''}<span style="color:#4ade80">${sup.leader_3||sup.leader_0||''}: ${t1Count}機</span>`;
@@ -3527,7 +3524,7 @@ function openTeamPicker(mode, slotIdx) {
     // Build tag and skill filter buttons for supporter picker
     const supTagSet = new Set(), supSkillSet = new Set();
     allSupporters.forEach(s => {
-      if (s.target_series) s.target_series.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(t => t.trim()).filter(Boolean).forEach(t => {
+      (s.target_series||[]).forEach(t => {
         if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) supTagSet.add(t);
       });
       if (s.leader2_target) s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => {
@@ -3657,8 +3654,7 @@ function renderPickerList() {
       if (q && !s.name.toLowerCase().includes(q) && !(currentLang==='en' && tData(s.name,'supporters').toLowerCase().includes(q))) return false;
       if (activePickerSkills.length > 0 && !activePickerSkills.includes(s.recovery_type)) return false;
       if (activePickerTags.length > 0) {
-        const supAllTags = [];
-        if (s.target_series) s.target_series.split(/(?<![a-zA-Z])or(?![a-zA-Z])/i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
+        const supAllTags = [...(s.target_series||[])];
         if (s.leader2_target) s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => supAllTags.push(t));
         const hasTag = activePickerTags.some(ft => supAllTags.some(st => st.includes(ft) || ft.includes(st)));
         if (!hasTag) return false;
@@ -3673,7 +3669,7 @@ function renderPickerList() {
         ${s.image ? `<img src="${s.image}" alt="${s.name}" onerror="this.style.display='none'" loading="lazy">` : ''}
         <div class="picker-item-info">
           <div style="display:flex;align-items:center;gap:4px"><span class="picker-item-name" style="flex:1;min-width:0">${s.name}</span>${lsBadge}</div>
-          <div class="picker-item-sub"><span class="badge ${rarityClass(s.rarity)}" style="font-size:.6em;padding:1px 4px">${s.rarity}</span> HP:${s.hp||'-'} ATK:${s.attack||'-'} ${s.target_series ? '<span class="tag" style="font-size:.7em">'+s.target_series+'</span>' : ''}</div>
+          <div class="picker-item-sub"><span class="badge ${rarityClass(s.rarity)}" style="font-size:.6em;padding:1px 4px">${s.rarity}</span> HP:${s.hp||'-'} ATK:${s.attack||'-'} ${(s.target_series||[]).map(ts => '<span class="tag" style="font-size:.7em">'+ts+'</span>').join(' ')}</div>
         </div>
       </div>`;
     }).join('');
@@ -3697,7 +3693,7 @@ function selectPickerSupporter(id) {
   // Auto-fill leader skill from supporter data
   const sup = allSupporters.find(s => s.id === id);
   if (sup) {
-    teamLeaderTag = sup.target_series || '';
+    teamLeaderTag = (sup.target_series||[]).join(' / ') || '';
     teamLeaderEffect = sup.leader_skill || '';
   }
   closeTeamPicker();
@@ -3927,7 +3923,7 @@ async function shareTeamImage() {
     ctx.fillText(sup.name, 178, supY + 20);
     const maxLS1 = sup.leader_3||sup.leader_2||sup.leader_1||sup.leader_0||'';
     const maxLS2 = sup.leader2_3||sup.leader2_2||sup.leader2_1||sup.leader2_0||'';
-    const target1 = sup.target_series||'';
+    const target1 = (sup.target_series||[]).join(' / ')||'';
     const target2 = sup.leader2_target||'';
     let lsText = '';
     if (target1) lsText += `[${target1}] ${maxLS1}`;
