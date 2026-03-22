@@ -220,19 +220,16 @@ export default function AboutPage() {
                   transition: 'all .2s',
                 }}
               >
-                <span style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #e8961e, #ffd700)',
-                  color: '#0a0e17',
-                  fontWeight: 800,
-                  fontSize: '.7em',
-                  flexShrink: 0,
-                }}>DB</span>
+                <img
+                  src="/favicon.svg"
+                  alt="GジェネエターナルDB"
+                  width="40"
+                  height="40"
+                  style={{
+                    borderRadius: '10px',
+                    flexShrink: 0,
+                  }}
+                />
                 <div>
                   <div style={{ fontWeight: 700, fontSize: '.95em' }}>GジェネエターナルDB</div>
                   <div style={{ fontSize: '.8em', color: '#8a8d98' }}>
