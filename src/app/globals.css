@@ -55,14 +55,7 @@ a:hover{text-decoration:underline}
 .item-card-header.sr{background:linear-gradient(90deg,rgba(160,160,160,.3),rgba(192,192,192,.2))}
 .item-card-header.r{background:linear-gradient(90deg,rgba(184,115,51,.3),rgba(205,133,63,.2))}
 .item-card-header.n{background:linear-gradient(90deg,rgba(100,100,100,.3),rgba(130,130,130,.2))}
-.item-card-icon{width:36px;height:36px;border-radius:5px;display:flex;align-items:center;justify-content:center;font-size:.9em;flex-shrink:0;font-weight:700;border:1px solid var(--card-border)}
-.item-card-icon.en{background:rgba(0,200,255,.15);color:#00c8ff}
-.item-card-icon.hp{background:rgba(76,209,55,.15);color:#4cd137}
-.item-card-icon.atk{background:rgba(232,65,24,.15);color:#e84118}
-.item-card-icon.def{background:rgba(39,60,117,.2);color:#6c7adf}
-.item-card-icon.mob{background:rgba(251,197,49,.15);color:#fbc531}
-.item-card-icon.mix{background:rgba(156,136,255,.15);color:#9c88ff}
-.item-card-icon.special{background:rgba(232,150,30,.15);color:#e8961e}
+.item-card-icon{width:36px;height:36px;border-radius:5px;flex-shrink:0;border:1px solid var(--card-border);object-fit:cover;background:var(--card)}
 .item-card-name{font-weight:700;font-size:.85em;color:#fff;flex:1;min-width:0;line-height:1.3}
 .item-card-rarity{display:inline-block;font-size:.7em;font-weight:700;margin-left:4px;vertical-align:middle}
 .item-card-rarity.ssr{color:var(--gold)}
