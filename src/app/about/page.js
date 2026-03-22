@@ -256,7 +256,7 @@ export default function AboutPage() {
             <a href="https://x.com/mh_games_jp" target="_blank" rel="noopener noreferrer" style={{ color: '#e8961e' }}>X (@mh_games_jp)</a> までご連絡ください。
           </p>
           <p style={{ marginTop: '8px' }}>
-            © 2025 MH GAMES — GジェネエターナルDB by MH GAMES
+            © 2026 MH GAMES — GジェネエターナルDB by MH GAMES
           </p>
         </section>
 
