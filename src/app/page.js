@@ -37,6 +37,14 @@ export default function HomePage() {
           s.remove();
         });
 
+        // Extract and inject styles from <head>
+        const headStyles = doc.querySelectorAll('head style');
+        headStyles.forEach(style => {
+          const newStyle = document.createElement('style');
+          newStyle.textContent = style.textContent;
+          document.head.appendChild(newStyle);
+        });
+
         container.innerHTML = bodyContent.innerHTML;
 
         // Re-inject and execute scripts sequentially
