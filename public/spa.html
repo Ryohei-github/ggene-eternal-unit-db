@@ -1468,7 +1468,7 @@ async function init() {
       chara_type: u.type,
       obtain_method: u.obtain || '',
       acquire: u.acquire || '',
-      limited: _limitedCharaNames.has(u.name),
+      limited: _limitedCharaNames.has(u.name) && (u.acquire || '') === 'ガシャ',
       series: (u.series || []).join(' / '),
       seriesArr: u.series || [],
       tags: (u.tags || []).filter(t => t !== 'キャラ'),
