@@ -1,0 +1,4047 @@
+{
+  "option_parts": [
+    {
+      "name": "エネルギータンク(エゥーゴ)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが8%上昇",
+      "effect_type": "EN",
+      "target": "エゥーゴ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ファ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(機動戦士ガンダムZZ)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが7%上昇",
+      "effect_type": "EN",
+      "target": "機動戦士ガンダムZZ",
+      "rarity": "SR",
+      "sources": [
+        "マップイベントVol.2で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "エネルギータンク(機動戦士ガンダムSEED)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが7%上昇",
+      "effect_type": "EN",
+      "target": "機動戦士ガンダムSEED",
+      "rarity": "SR",
+      "sources": [
+        "大規模攻略戦Vol.1で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "エネルギータンク(機動戦士ガンダム)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "機動戦士ガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(機動戦士Zガンダム)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "機動戦士Zガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(機動戦士ガンダムZZ)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "機動戦士ガンダムZZ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(機動武闘伝Gガンダム)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "機動武闘伝Gガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(新機動戦記ガンダムW)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "新機動戦記ガンダムW",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(機動新世紀ガンダムX)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "機動新世紀ガンダムX",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(機動戦士ガンダムSEED)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "機動戦士ガンダムSEED",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(機動戦士ガンダム00)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "機動戦士ガンダム00",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(鉄血のオルフェンズ)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "鉄血のオルフェンズ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(水星の魔女)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "水星の魔女",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(電光石火)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "電光石火",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "エネルギータンク(一撃必殺)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "一撃必殺",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "エネルギータンク(堅牢)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "堅牢",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "エネルギータンク(突破力)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "突破力",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "エネルギータンク(大型機)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "大型機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "エネルギータンク(専用機)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "専用機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "エネルギータンク(試作機)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "試作機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "エネルギータンク(エース機)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "エース機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "エネルギータンク(指揮官機)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが20上昇",
+      "effect_type": "EN",
+      "target": "指揮官機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "エネルギータンク(宇宙世紀シリーズ)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが10上昇",
+      "effect_type": "EN",
+      "target": "宇宙世紀シリーズ",
+      "rarity": "N",
+      "sources": [
+        "特別リクエスト「アムロ」(RANK1)",
+        "特別リクエスト「ルー」(RANK1)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "エネルギータンク(オルタナティブシリーズ)",
+      "part_type": "エネルギータンク",
+      "effect": "自身の最大ENが10上昇",
+      "effect_type": "EN",
+      "target": "オルタナティブシリーズ",
+      "rarity": "N",
+      "sources": [
+        "特別リクエスト「レイン」(RANK1)",
+        "特別リクエスト「ヒイロ」(RANK1)",
+        "特別リクエスト「シン」(RANK1)",
+        "特別リクエスト「スメラギ」(RANK1)",
+        "特別リクエスト「グエル」(RANK1)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(地球連邦軍(宇宙世紀))",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が8%上昇",
+      "effect_type": "機動力",
+      "target": "地球連邦軍(宇宙世紀)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「セイラ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(エゥーゴ)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が8%上昇",
+      "effect_type": "機動力",
+      "target": "エゥーゴ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ルー」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(各国代表)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が8%上昇",
+      "effect_type": "機動力",
+      "target": "各国代表",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「レイン」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(オペレーション・メテオ)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が8%上昇",
+      "effect_type": "機動力",
+      "target": "オペレーション・メテオ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「リリーナ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(地球連邦軍(X))",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が8%上昇",
+      "effect_type": "機動力",
+      "target": "地球連邦軍(X)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ティファ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(地球連合軍)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が8%上昇",
+      "effect_type": "機動力",
+      "target": "地球連合軍",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ラクス」(RANK4)",
+        "特別リクエスト「ルナマリア」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(ソレスタルビーイング)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が8%上昇",
+      "effect_type": "機動力",
+      "target": "ソレスタルビーイング",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「スメラギ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(鉄華団)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が8%上昇",
+      "effect_type": "機動力",
+      "target": "鉄華団",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「クーデリア」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(地球連邦軍(AGE))",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が8%上昇",
+      "effect_type": "機動力",
+      "target": "地球連邦軍(AGE)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「アセム」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(水星の魔女)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が7%上昇",
+      "effect_type": "機動力",
+      "target": "水星の魔女",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「ミオリネ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(ネオ・ジオン)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が7%上昇",
+      "effect_type": "機動力",
+      "target": "ネオ・ジオン",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「クェス」(RANK4)",
+        "特別リクエスト「フルフロンタル」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(ザフト)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が7%上昇",
+      "effect_type": "機動力",
+      "target": "ザフト",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「シン」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(0083 STARDUST MEMORY)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が7%上昇",
+      "effect_type": "機動力",
+      "target": "0083 STARDUST MEMORY",
+      "rarity": "SR",
+      "sources": [
+        "0083 スターダストメモリーイベント第2弾で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動戦士ガンダム)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が7%上昇",
+      "effect_type": "機動力",
+      "target": "機動戦士ガンダム",
+      "rarity": "SR",
+      "sources": [
+        "大規模攻略戦Vol.1で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動戦士ガンダムZZ)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が5%上昇",
+      "effect_type": "機動力",
+      "target": "機動戦士ガンダムZZ",
+      "rarity": "SR",
+      "sources": [
+        "マップイベントVol.2で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動戦士ガンダム)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "機動戦士ガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動戦士Zガンダム)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "機動戦士Zガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動戦士ガンダムZZ)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "機動戦士ガンダムZZ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動武闘伝Gガンダム)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "機動武闘伝Gガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(新機動戦記ガンダムW)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "新機動戦記ガンダムW",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動新世紀ガンダムX)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "機動新世紀ガンダムX",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動戦士ガンダムSEED)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "機動戦士ガンダムSEED",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動戦士ガンダム00)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "機動戦士ガンダム00",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(鉄血のオルフェンズ)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "鉄血のオルフェンズ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(水星の魔女)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "水星の魔女",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(電光石火)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "電光石火",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(一撃必殺)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "一撃必殺",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(堅牢)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "堅牢",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(突破力)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "突破力",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(大型機)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "大型機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(専用機)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "専用機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(試作機)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "試作機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(エース機)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "エース機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(指揮官機)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "指揮官機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(逆襲のシャア)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "逆襲のシャア",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「クェス」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動戦士ガンダムSEED DESTINY)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "機動戦士ガンダムSEED DESTINY",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「ルナマリア」(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動戦士ガンダムUC)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "機動戦士ガンダムUC",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「オードリー」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(機動戦士ガンダムAGE)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が200上昇",
+      "effect_type": "機動力",
+      "target": "機動戦士ガンダムAGE",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「アセム」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(宇宙世紀シリーズ)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が100上昇",
+      "effect_type": "機動力",
+      "target": "宇宙世紀シリーズ",
+      "rarity": "N",
+      "sources": [
+        "特別リクエスト「セイラ」(RANK1)",
+        "特別リクエスト「ハマーン」(RANK1)",
+        "特別リクエスト「クェス」(RANK1)",
+        "特別リクエスト「オードリー」(RANK1)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "出力増加パーツ(オルタナティブシリーズ)",
+      "part_type": "出力増加パーツ",
+      "effect": "自身の機動力が100上昇",
+      "effect_type": "機動力",
+      "target": "オルタナティブシリーズ",
+      "rarity": "N",
+      "sources": [
+        "特別リクエスト「リリーナ」(RANK1)",
+        "特別リクエスト「ラクス」(RANK1)",
+        "特別リクエスト「ルナマリア」(RANK1)",
+        "特別リクエスト「マクギリス」(RANK1)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(地球連邦軍(宇宙世紀))",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "地球連邦軍(宇宙世紀)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「セイラ」(RANK5)",
+        "特別リクエスト「アムロ(CCA)」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(ジオン公国軍)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "ジオン公国軍",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「シャア」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(エゥーゴ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "エゥーゴ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ファ」(RANK5)",
+        "特別リクエスト「ルー」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(ティターンズ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "ティターンズ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「シロッコ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(アクシズ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "アクシズ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ハマーン」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(各国代表)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "各国代表",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「レイン」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(オペレーション・メテオ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "オペレーション・メテオ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「リリーナ」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(OZ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "OZ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ミリアルド」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(地球連邦軍(X))",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "地球連邦軍(X)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ティファ」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(地球連合軍)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "地球連合軍",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ラクス」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(ザフト)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "ザフト",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「アスラン」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(ソレスタルビーイング)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "ソレスタルビーイング",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「スメラギ」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(鉄華団)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "鉄華団",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「クーデリア」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(ネオ・ジオン)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "ネオ・ジオン",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「クェス」(RANK5)",
+        "特別リクエスト「フルフロンタル」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(デビルガンダム軍団)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "デビルガンダム軍団",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「東方不敗」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(NT-D)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "NT-D",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「オードリー」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(ギャラルホルン)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "ギャラルホルン",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「マクギリス」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(オーブ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "オーブ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「レイ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(フリーデン)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "フリーデン",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「カリス」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(地球連邦軍(AGE))",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "地球連邦軍(AGE)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「アセム」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(サイコロガンダム)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "サイコロガンダム",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(サイコロガンダム)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "追加装甲(フルアーマー百式改)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "フルアーマー百式改",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(フルアーマー百式改)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "追加装甲(コマンドガンダム)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "コマンドガンダム",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(コマンドガンダム)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "追加装甲(タイタニア)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが8%上昇",
+      "effect_type": "HP",
+      "target": "タイタニア",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(タイタニア)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "追加装甲(水星の魔女)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが7%上昇",
+      "effect_type": "HP",
+      "target": "水星の魔女",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「ミオリネ」(RANK5)",
+        "特別リクエスト「グエル」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(SEED ASTRAY)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが7%上昇",
+      "effect_type": "HP",
+      "target": "SEED ASTRAY",
+      "rarity": "SR",
+      "sources": [
+        "SEED ASTRAYイベントで入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "追加装甲(0083 STARDUST MEMORY)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが7%上昇",
+      "effect_type": "HP",
+      "target": "0083 STARDUST MEMORY",
+      "rarity": "SR",
+      "sources": [
+        "0083 スターダストメモリーイベント第1弾で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "追加装甲(突破力)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが7%上昇",
+      "effect_type": "HP",
+      "target": "突破力",
+      "rarity": "SR",
+      "sources": [
+        "マップイベントVol.1で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "追加装甲(G GENERATIONシリーズ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが7%上昇",
+      "effect_type": "HP",
+      "target": "G GENERATIONシリーズ",
+      "rarity": "SR",
+      "sources": [
+        "マップイベントVol.2で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "追加装甲(機動戦士ガンダム)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが7%上昇",
+      "effect_type": "HP",
+      "target": "機動戦士ガンダム",
+      "rarity": "SR",
+      "sources": [
+        "大規模攻略戦Vol.1で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "追加装甲(0080 ポケットの中の戦争)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが7%上昇",
+      "effect_type": "HP",
+      "target": "0080 ポケットの中の戦争",
+      "rarity": "SR",
+      "sources": [
+        "0080 ポケットの中の戦争イベントで入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "追加装甲(MS IGLOO)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが7%上昇",
+      "effect_type": "HP",
+      "target": "MS IGLOO",
+      "rarity": "SR",
+      "sources": [
+        "MS IGLOOイベントで入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "追加装甲(SEED X ASTRAY)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが7%上昇",
+      "effect_type": "HP",
+      "target": "SEED X ASTRAY",
+      "rarity": "SR",
+      "sources": [
+        "SEED X ASTRAYイベントで入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "追加装甲(第08MS小隊)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが7%上昇",
+      "effect_type": "HP",
+      "target": "第08MS小隊",
+      "rarity": "SR",
+      "sources": [
+        "第08MS小隊イベントで入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "追加装甲(オーヴェロン(アーマー形態))",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが5%上昇",
+      "effect_type": "HP",
+      "target": "オーヴェロン(アーマー形態)",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(オーヴェロン(アーマー形態))で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "追加装甲(デスティニーインパルスガンダム)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが5%上昇",
+      "effect_type": "HP",
+      "target": "デスティニーインパルスガンダム",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(デスティニーインパルスガンダム)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "追加装甲(武者頑駄無)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが5%上昇",
+      "effect_type": "HP",
+      "target": "武者頑駄無",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(武者頑駄無)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "追加装甲(バイアラン・カスタム2号機)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが5%上昇",
+      "effect_type": "HP",
+      "target": "バイアラン・カスタム2号機",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(バイアラン・カスタム2号機)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "追加装甲(ガンダム・端白星)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが5%上昇",
+      "effect_type": "HP",
+      "target": "ガンダム・端白星",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(ガンダム・端白星)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "追加装甲(機動戦士ガンダム)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "機動戦士ガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(機動戦士Zガンダム)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "機動戦士Zガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(機動戦士ガンダムZZ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "機動戦士ガンダムZZ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(機動武闘伝Gガンダム)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "機動武闘伝Gガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(新機動戦記ガンダムW)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "新機動戦記ガンダムW",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(機動新世紀ガンダムX)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "機動新世紀ガンダムX",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(機動戦士ガンダムSEED)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "機動戦士ガンダムSEED",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(機動戦士ガンダム00)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "機動戦士ガンダム00",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(鉄血のオルフェンズ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "鉄血のオルフェンズ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(水星の魔女)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "水星の魔女",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(電光石火)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "電光石火",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "追加装甲(一撃必殺)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "一撃必殺",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "追加装甲(堅牢)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "堅牢",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "追加装甲(突破力)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "突破力",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "追加装甲(大型機)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "大型機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "追加装甲(専用機)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "専用機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "追加装甲(試作機)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "試作機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "追加装甲(エース機)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "エース機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "追加装甲(指揮官機)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが2000上昇",
+      "effect_type": "HP",
+      "target": "指揮官機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "追加装甲(宇宙世紀シリーズ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが1000上昇",
+      "effect_type": "HP",
+      "target": "宇宙世紀シリーズ",
+      "rarity": "N",
+      "sources": [
+        "特別リクエスト(RANK1)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(オルタナティブシリーズ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが1000上昇",
+      "effect_type": "HP",
+      "target": "オルタナティブシリーズ",
+      "rarity": "N",
+      "sources": [
+        "特別リクエスト(RANK1)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "追加装甲(Gショップ)",
+      "part_type": "追加装甲",
+      "effect": "自身の最大HPが1000上昇",
+      "effect_type": "HP",
+      "target": "汎用",
+      "rarity": "N",
+      "sources": [
+        "Gショップで購入(500Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "強化装甲(ライバル)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が12%上昇",
+      "effect_type": "防御力",
+      "target": "ライバル",
+      "rarity": "SSR",
+      "sources": [
+        "エターナルロードEXPERT(ライバルタグ)初回報酬"
+      ],
+      "source_categories": [
+        "エターナルロード"
+      ]
+    },
+    {
+      "name": "強化装甲(機動戦士ガンダムSEED)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が12%上昇",
+      "effect_type": "防御力",
+      "target": "機動戦士ガンダムSEED",
+      "rarity": "SSR",
+      "sources": [
+        "大規模攻略戦Vol.1で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "強化装甲(地球連邦軍(宇宙世紀))",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "地球連邦軍(宇宙世紀)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「セイラ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(エゥーゴ)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "エゥーゴ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ファ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(各国代表)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "各国代表",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「レイン」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(オペレーション・メテオ)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "オペレーション・メテオ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「リリーナ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(地球連邦軍(X))",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "地球連邦軍(X)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ティファ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(地球連合軍)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "地球連合軍",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ラクス」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(ソレスタルビーイング)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "ソレスタルビーイング",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「スメラギ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(鉄華団)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "鉄華団",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「クーデリア」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(赤いガンダム)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "赤いガンダム",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(赤いガンダム)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(シャイニングガンダム(スーパーモード))",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "シャイニングガンダム(スーパーモード)",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(シャイニングガンダム(スーパーモード))で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(フルアーマーガンダムMk-Ⅲ)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "フルアーマーガンダムMk-Ⅲ",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(フルアーマーガンダムMk-Ⅲ)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(ザクウォーリア(ライブ仕様))",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "ザクウォーリア(ライブ仕様)",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(ザクウォーリア(ライブ仕様))で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(GファルコンGX)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "GファルコンGX",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(GファルコンGX)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(Gサイフォス)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が8%上昇",
+      "effect_type": "防御力",
+      "target": "Gサイフォス",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(Gサイフォス)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(0083 STARDUST MEMORY)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が7%上昇",
+      "effect_type": "防御力",
+      "target": "0083 STARDUST MEMORY",
+      "rarity": "SR",
+      "sources": [
+        "0083 スターダストメモリーイベント第1弾で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "強化装甲(オーヴェロン(アーマー形態))",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が5%上昇",
+      "effect_type": "防御力",
+      "target": "オーヴェロン(アーマー形態)",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(オーヴェロン(アーマー形態))で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(デスティニーインパルスガンダム)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が5%上昇",
+      "effect_type": "防御力",
+      "target": "デスティニーインパルスガンダム",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(デスティニーインパルスガンダム)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(武者頑駄無)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が5%上昇",
+      "effect_type": "防御力",
+      "target": "武者頑駄無",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(武者頑駄無)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(バイアラン・カスタム2号機)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が5%上昇",
+      "effect_type": "防御力",
+      "target": "バイアラン・カスタム2号機",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(バイアラン・カスタム2号機)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(ガンダム・端白星)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が5%上昇",
+      "effect_type": "防御力",
+      "target": "ガンダム・端白星",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(ガンダム・端白星)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "強化装甲(機動戦士ガンダム)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "機動戦士ガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2-3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(機動戦士Zガンダム)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "機動戦士Zガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2-3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(機動戦士ガンダムZZ)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "機動戦士ガンダムZZ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2-3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(機動武闘伝Gガンダム)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "機動武闘伝Gガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2-3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(新機動戦記ガンダムW)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "新機動戦記ガンダムW",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2-3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(機動新世紀ガンダムX)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "機動新世紀ガンダムX",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2-3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(機動戦士ガンダムSEED)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "機動戦士ガンダムSEED",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2-3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(機動戦士ガンダム00)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "機動戦士ガンダム00",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2-3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(鉄血のオルフェンズ)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "鉄血のオルフェンズ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2-3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(水星の魔女)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "水星の魔女",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK2-3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(電光石火)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "電光石火",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "強化装甲(一撃必殺)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "一撃必殺",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "強化装甲(堅牢)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "堅牢",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "強化装甲(突破力)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "突破力",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "強化装甲(大型機)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "大型機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "強化装甲(専用機)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "専用機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "強化装甲(試作機)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "試作機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "強化装甲(エース機)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "エース機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "強化装甲(指揮官機)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が200上昇",
+      "effect_type": "防御力",
+      "target": "指揮官機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "強化装甲(宇宙世紀シリーズ)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が100上昇",
+      "effect_type": "防御力",
+      "target": "宇宙世紀シリーズ",
+      "rarity": "N",
+      "sources": [
+        "特別リクエスト(RANK1)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "強化装甲(オルタナティブシリーズ)",
+      "part_type": "強化装甲",
+      "effect": "自身の防御力が100上昇",
+      "effect_type": "防御力",
+      "target": "オルタナティブシリーズ",
+      "rarity": "N",
+      "sources": [
+        "特別リクエスト(RANK1)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(エターナルロード 宇宙世紀)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が12%上昇",
+      "effect_type": "攻撃力",
+      "target": "宇宙世紀",
+      "rarity": "SSR",
+      "sources": [
+        "エターナルロードEXPERT(宇宙世紀)初回報酬"
+      ],
+      "source_categories": [
+        "エターナルロード"
+      ]
+    },
+    {
+      "name": "リミッター解除(エターナルロード オルタナティブ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が12%上昇",
+      "effect_type": "攻撃力",
+      "target": "オルタナティブ",
+      "rarity": "SSR",
+      "sources": [
+        "エターナルロードEXPERT(オルタナティブ)初回報酬"
+      ],
+      "source_categories": [
+        "エターナルロード"
+      ]
+    },
+    {
+      "name": "リミッター解除(エターナルロード 主人公)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が12%上昇",
+      "effect_type": "攻撃力",
+      "target": "主人公",
+      "rarity": "SSR",
+      "sources": [
+        "エターナルロードEXPERT(主人公)初回報酬"
+      ],
+      "source_categories": [
+        "エターナルロード"
+      ]
+    },
+    {
+      "name": "リミッター解除(エターナルロード 専用機)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が12%上昇",
+      "effect_type": "攻撃力",
+      "target": "専用機",
+      "rarity": "SSR",
+      "sources": [
+        "エターナルロードEXPERT(専用機)初回報酬"
+      ],
+      "source_categories": [
+        "エターナルロード"
+      ]
+    },
+    {
+      "name": "リミッター解除(エターナルロード 一撃必殺)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が12%上昇",
+      "effect_type": "攻撃力",
+      "target": "一撃必殺",
+      "rarity": "SSR",
+      "sources": [
+        "エターナルロードEXPERT(一撃必殺)初回報酬"
+      ],
+      "source_categories": [
+        "エターナルロード"
+      ]
+    },
+    {
+      "name": "リミッター解除(エターナルロード 堅牢)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が12%上昇",
+      "effect_type": "攻撃力",
+      "target": "堅牢",
+      "rarity": "SSR",
+      "sources": [
+        "エターナルロードEXPERT(堅牢)初回報酬"
+      ],
+      "source_categories": [
+        "エターナルロード"
+      ]
+    },
+    {
+      "name": "リミッター解除(エターナルロード)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が10%上昇",
+      "effect_type": "攻撃力",
+      "target": "汎用",
+      "rarity": "SSR",
+      "sources": [
+        "エターナルロードEXPERT初回報酬"
+      ],
+      "source_categories": [
+        "エターナルロード"
+      ]
+    },
+    {
+      "name": "リミッター解除(ジェネレーションタワー)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が10%上昇、機動力が2%減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "汎用",
+      "rarity": "SSR",
+      "sources": [
+        "ジェネレーションタワー初回報酬"
+      ],
+      "source_categories": [
+        "ジェネレーションタワー"
+      ]
+    },
+    {
+      "name": "リミッター解除(地球連邦軍(宇宙世紀))",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "地球連邦軍(宇宙世紀)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「アムロ」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(エゥーゴ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "エゥーゴ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ファ」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(各国代表)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "各国代表",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「レイン」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(オペレーション・メテオ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "オペレーション・メテオ",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「リリーナ」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(地球連邦軍(X))",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "地球連邦軍(X)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ティファ」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(地球連合軍)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "地球連合軍",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ラクス」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(ソレスタルビーイング)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "ソレスタルビーイング",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「スメラギ」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(鉄華団)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "鉄華団",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「クーデリア」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(ザクII)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇、機動力が2%減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "ザクII",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(ザクII)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "リミッター解除(ジム)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇、機動力が2%減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "ジム",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(ジム)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "リミッター解除(スタークジェガン)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇、機動力が2%減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "スタークジェガン",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(スタークジェガン)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "リミッター解除(ナイチンゲール)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇、機動力が2%減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "ナイチンゲール",
+      "rarity": "SSR",
+      "sources": [
+        "強敵襲来Lv8(ナイチンゲール)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "リミッター解除(ジオン公国軍)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "ジオン公国軍",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「シャア」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(ティターンズ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "ティターンズ",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「シロッコ」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(アクシズ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "アクシズ",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「ハマーン」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(OZ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "OZ",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「ミリアルド」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(ザフト)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "ザフト",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「アスラン」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(ネオ・ジオン)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "ネオ・ジオン",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「クェス」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(デビルガンダム軍団)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が8%上昇",
+      "effect_type": "攻撃力",
+      "target": "デビルガンダム軍団",
+      "rarity": "SR",
+      "sources": [
+        "特別リクエスト「東方不敗」(RANK5)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(0083 STARDUST MEMORY)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が7%上昇",
+      "effect_type": "攻撃力",
+      "target": "0083 STARDUST MEMORY",
+      "rarity": "SR",
+      "sources": [
+        "0083 スターダストメモリーイベント第2弾で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "リミッター解除(大規模攻略戦)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が7%上昇",
+      "effect_type": "攻撃力",
+      "target": "大規模攻略戦",
+      "rarity": "SR",
+      "sources": [
+        "大規模攻略戦Vol.1で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "リミッター解除(ミッション)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が7%上昇",
+      "effect_type": "攻撃力",
+      "target": "汎用",
+      "rarity": "SR",
+      "sources": [
+        "中級者ミッションで入手"
+      ],
+      "source_categories": [
+        "ミッション"
+      ]
+    },
+    {
+      "name": "リミッター解除(マップイベント)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が7%上昇",
+      "effect_type": "攻撃力",
+      "target": "マップイベント",
+      "rarity": "SR",
+      "sources": [
+        "マップイベントVol.2で入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "リミッター解除(ガンダムエアマスター)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が5%上昇、機動力が2%減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "ガンダムエアマスター",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(ガンダムエアマスター)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "リミッター解除(ウイングガンダム)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が5%上昇、機動力が2%減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "ウイングガンダム",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(ウイングガンダム)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "リミッター解除(グーン)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が5%上昇、機動力が2%減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "グーン",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(グーン)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "リミッター解除(ザクI)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が5%上昇、機動力が2%減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "ザクI",
+      "rarity": "SR",
+      "sources": [
+        "強敵襲来Lv4(ザクI)で入手"
+      ],
+      "source_categories": [
+        "強敵襲来"
+      ]
+    },
+    {
+      "name": "リミッター解除(機動戦士ガンダム)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "機動戦士ガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(機動戦士Zガンダム)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "機動戦士Zガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(機動戦士ガンダムZZ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "機動戦士ガンダムZZ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(機動武闘伝Gガンダム)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "機動武闘伝Gガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(新機動戦記ガンダムW)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "新機動戦記ガンダムW",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(機動新世紀ガンダムX)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "機動新世紀ガンダムX",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(機動戦士ガンダムSEED)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "機動戦士ガンダムSEED",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(機動戦士ガンダム00)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "機動戦士ガンダム00",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(鉄血のオルフェンズ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "鉄血のオルフェンズ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(水星の魔女)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "水星の魔女",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(電光石火)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "電光石火",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "リミッター解除(一撃必殺)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "一撃必殺",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "リミッター解除(堅牢)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "堅牢",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "リミッター解除(突破力)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "突破力",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "リミッター解除(大型機)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "大型機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "リミッター解除(専用機)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "専用機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "リミッター解除(試作機)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "試作機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "リミッター解除(エース機)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "エース機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "リミッター解除(指揮官機)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が200上昇",
+      "effect_type": "攻撃力",
+      "target": "指揮官機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "リミッター解除(宇宙世紀シリーズ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が100上昇",
+      "effect_type": "攻撃力",
+      "target": "宇宙世紀シリーズ",
+      "rarity": "N",
+      "sources": [
+        "特別リクエスト(RANK1)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(オルタナティブシリーズ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が100上昇",
+      "effect_type": "攻撃力",
+      "target": "オルタナティブシリーズ",
+      "rarity": "N",
+      "sources": [
+        "特別リクエスト(RANK1)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "リミッター解除(Gショップ)",
+      "part_type": "リミッター解除",
+      "effect": "自身の攻撃力が100上昇",
+      "effect_type": "攻撃力",
+      "target": "汎用",
+      "rarity": "N",
+      "sources": [
+        "Gショップで購入(500Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(電光石火)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "電光石火",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(一撃必殺)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "一撃必殺",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(堅牢)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "堅牢",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(突破力)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "突破力",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(大型機)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "大型機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(専用機)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "専用機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(試作機)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "試作機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(エース機)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "エース機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(指揮官機)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "指揮官機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(機動戦士ガンダム)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "機動戦士ガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「シャア」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(新機動戦記ガンダムW)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "新機動戦記ガンダムW",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「ミリアルド」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(SEED DESTINY)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "SEED DESTINY",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「ルナマリア」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "軽量装甲型モビリティ・ブースト(水星の魔女)",
+      "part_type": "軽量装甲型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、防御力が50減少",
+      "effect_type": "機動力↑防御力↓",
+      "target": "水星の魔女",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「グエル」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "軽量武装型モビリティ・ブースト(電光石火)",
+      "part_type": "軽量武装型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、攻撃力が50減少",
+      "effect_type": "機動力↑攻撃力↓",
+      "target": "電光石火",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量武装型モビリティ・ブースト(一撃必殺)",
+      "part_type": "軽量武装型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、攻撃力が50減少",
+      "effect_type": "機動力↑攻撃力↓",
+      "target": "一撃必殺",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量武装型モビリティ・ブースト(堅牢)",
+      "part_type": "軽量武装型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、攻撃力が50減少",
+      "effect_type": "機動力↑攻撃力↓",
+      "target": "堅牢",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量武装型モビリティ・ブースト(突破力)",
+      "part_type": "軽量武装型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、攻撃力が50減少",
+      "effect_type": "機動力↑攻撃力↓",
+      "target": "突破力",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量武装型モビリティ・ブースト(大型機)",
+      "part_type": "軽量武装型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、攻撃力が50減少",
+      "effect_type": "機動力↑攻撃力↓",
+      "target": "大型機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量武装型モビリティ・ブースト(専用機)",
+      "part_type": "軽量武装型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、攻撃力が50減少",
+      "effect_type": "機動力↑攻撃力↓",
+      "target": "専用機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量武装型モビリティ・ブースト(試作機)",
+      "part_type": "軽量武装型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、攻撃力が50減少",
+      "effect_type": "機動力↑攻撃力↓",
+      "target": "試作機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量武装型モビリティ・ブースト(エース機)",
+      "part_type": "軽量武装型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、攻撃力が50減少",
+      "effect_type": "機動力↑攻撃力↓",
+      "target": "エース機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量武装型モビリティ・ブースト(指揮官機)",
+      "part_type": "軽量武装型モビリティ・ブースト",
+      "effect": "自身の機動力が250上昇、攻撃力が50減少",
+      "effect_type": "機動力↑攻撃力↓",
+      "target": "指揮官機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "軽量武装型モビリティ・ブースト(機動戦士Zガンダム)",
+      "part_type": "機動戦士Zガンダム",
+      "effect": "自身の機動力が250上昇、攻撃力が50減少",
+      "effect_type": "機動力↑攻撃力↓",
+      "target": "機動戦士Zガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「シロッコ」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(電光石火)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "電光石火",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(一撃必殺)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "一撃必殺",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(堅牢)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "堅牢",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(突破力)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "突破力",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(大型機)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "大型機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(専用機)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "専用機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(試作機)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "試作機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(エース機)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "エース機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(指揮官機)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "指揮官機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(機動戦士ガンダムSEED)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "機動戦士ガンダムSEED",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「アスラン」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(逆襲のシャア)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "逆襲のシャア",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「クェス」(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(機動武闘伝Gガンダム)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "機動武闘伝Gガンダム",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「東方不敗」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(機動戦士ガンダムUC)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "機動戦士ガンダムUC",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「オードリー」(RANK3)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(鉄血のオルフェンズ)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "鉄血のオルフェンズ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「マクギリス」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型アタック・ブースト(機動戦士ガンダムSEED DESTINY)",
+      "part_type": "重量型アタック・ブースト",
+      "effect": "自身の攻撃力が250上昇、機動力が50減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "機動戦士ガンダムSEED DESTINY",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「レイ」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(地球連邦軍(宇宙世紀))",
+      "part_type": "地球連邦軍(宇宙世紀)",
+      "effect": "自身の防御力が10%上昇、機動力が2%減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "地球連邦軍(宇宙世紀)",
+      "rarity": "SSR",
+      "sources": [
+        "特別リクエスト「ギギ」(RANK4)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(電光石火)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "電光石火",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(一撃必殺)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "一撃必殺",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(堅牢)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "堅牢",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(突破力)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "突破力",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(大型機)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "大型機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(専用機)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "専用機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(試作機)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "試作機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(エース機)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "エース機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(指揮官機)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "指揮官機",
+      "rarity": "R",
+      "sources": [
+        "Gショップで購入(1000Pt)"
+      ],
+      "source_categories": [
+        "Gショップ"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(機動戦士ガンダムZZ)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "機動戦士ガンダムZZ",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「ハマーン」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(逆襲のシャア)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "逆襲のシャア",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「アムロ(CCA)」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(機動戦士ガンダムUC)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "機動戦士ガンダムUC",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「バナージ」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "重量型ディフェンス・ブースト(機動新世紀ガンダムX)",
+      "part_type": "重量型ディフェンス・ブースト",
+      "effect": "自身の防御力が250上昇、機動力が50減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "機動新世紀ガンダムX",
+      "rarity": "R",
+      "sources": [
+        "特別リクエスト「カリス」(RANK2)"
+      ],
+      "source_categories": [
+        "リクエスト"
+      ]
+    },
+    {
+      "name": "ブラックドラゴンの杖(SDガンダム外伝 ジークジオン編)",
+      "part_type": "ブラックドラゴンの杖",
+      "effect": "特殊武装POWERが7%上昇、ライバルタグ+5%",
+      "effect_type": "武装POWER",
+      "target": "SDガンダム外伝 ジークジオン編",
+      "rarity": "SR",
+      "sources": [
+        "SDガンダム外伝 ラクロアの勇者イベントで入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "力の盾(SDガンダム)",
+      "part_type": "力の盾",
+      "effect": "射撃武装被ダメージ7%軽減",
+      "effect_type": "ダメージ軽減",
+      "target": "SDガンダム",
+      "rarity": "SR",
+      "sources": [
+        "SDガンダム外伝 ラクロアの勇者イベントで入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "霞の鎧(SDガンダム)",
+      "part_type": "霞の鎧",
+      "effect": "特殊武装被ダメージ7%軽減",
+      "effect_type": "ダメージ軽減",
+      "target": "SDガンダム",
+      "rarity": "SR",
+      "sources": [
+        "SDガンダム外伝 ラクロアの勇者イベントで入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "ナイトソード(SDガンダム)",
+      "part_type": "ナイトソード",
+      "effect": "物理格闘武装POWERが7%上昇",
+      "effect_type": "武装POWER",
+      "target": "SDガンダム",
+      "rarity": "SR",
+      "sources": [
+        "SDガンダム外伝 ラクロアの勇者イベントで入手"
+      ],
+      "source_categories": [
+        "イベント"
+      ]
+    },
+    {
+      "name": "ピンクハロ【Half Anniv.】",
+      "part_type": "ハロ",
+      "effect": "HP8600上昇",
+      "effect_type": "HP",
+      "target": "制限なし",
+      "rarity": "SR",
+      "sources": [
+        "ハーフアニバーサリー期間限定キャラリクエストで入手"
+      ],
+      "source_categories": [
+        "リクエスト",
+        "期間限定"
+      ]
+    },
+    {
+      "name": "ネイビーハロ【Half Anniv.】",
+      "part_type": "ハロ",
+      "effect": "攻撃力860上昇",
+      "effect_type": "攻撃力",
+      "target": "制限なし",
+      "rarity": "SR",
+      "sources": [
+        "ハーフアニバーサリー期間限定キャラリクエストで入手"
+      ],
+      "source_categories": [
+        "リクエスト",
+        "期間限定"
+      ]
+    },
+    {
+      "name": "スカイブルーハロ【Half Anniv.】",
+      "part_type": "ハロ",
+      "effect": "防御力860上昇",
+      "effect_type": "防御力",
+      "target": "制限なし",
+      "rarity": "SR",
+      "sources": [
+        "ハーフアニバーサリー期間限定キャラリクエストで入手"
+      ],
+      "source_categories": [
+        "リクエスト",
+        "期間限定"
+      ]
+    },
+    {
+      "name": "イエローハロ【Half Anniv.】",
+      "part_type": "ハロ",
+      "effect": "機動力860上昇",
+      "effect_type": "機動力",
+      "target": "制限なし",
+      "rarity": "SR",
+      "sources": [
+        "ハーフアニバーサリー期間限定キャラリクエストで入手"
+      ],
+      "source_categories": [
+        "リクエスト",
+        "期間限定"
+      ]
+    },
+    {
+      "name": "オレンジハロ【Half Anniv.】",
+      "part_type": "ハロ",
+      "effect": "攻撃力946上昇、機動力86減少",
+      "effect_type": "攻撃力↑機動力↓",
+      "target": "制限なし",
+      "rarity": "SR",
+      "sources": [
+        "ハーフアニバーサリー期間限定キャラリクエストで入手"
+      ],
+      "source_categories": [
+        "リクエスト",
+        "期間限定"
+      ]
+    },
+    {
+      "name": "グリーンハロ【Half Anniv.】",
+      "part_type": "ハロ",
+      "effect": "防御力946上昇、機動力86減少",
+      "effect_type": "防御力↑機動力↓",
+      "target": "制限なし",
+      "rarity": "SR",
+      "sources": [
+        "ハーフアニバーサリー期間限定キャラリクエストで入手"
+      ],
+      "source_categories": [
+        "リクエスト",
+        "期間限定"
+      ]
+    }
+  ],
+  "enhancement_materials": [],
+  "weapon_materials": []
+}

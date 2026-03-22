@@ -113,6 +113,58 @@ a:hover{text-decoration:underline}
 .btn-about:hover{background:rgba(255,255,255,.12);text-decoration:none;transform:scale(1.05)}
 .header .yt-cta{margin-top:4px;font-size:.65em;color:#8a8d98;letter-spacing:.02em}.yt-cta a{color:#ff6b35;font-weight:bold;text-decoration:underline}
 
+/* Items Tab */
+.items-header{text-align:center;margin-bottom:20px}
+.items-title{font-size:1.3em;color:#ffd700;margin-bottom:14px;font-weight:700}
+.items-sub-tabs{display:flex;gap:6px;justify-content:center;flex-wrap:wrap}
+.item-sub-btn{padding:8px 18px;border-radius:20px;border:1px solid #2a2d38;background:rgba(255,255,255,.04);color:#8a8d98;font-size:.85em;cursor:pointer;transition:all .2s;font-weight:600}
+.item-sub-btn.active{background:linear-gradient(135deg,rgba(232,150,30,.2),rgba(214,48,49,.15));color:#ffd700;border-color:#e8961e}
+.item-sub-btn:hover{background:rgba(255,255,255,.08)}
+.items-filters{margin-bottom:16px}
+.items-search{margin-bottom:12px}
+.items-search input{width:100%;padding:10px 14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:8px;color:#e0ddd6;font-size:.9em}
+.items-search input:focus{outline:none;border-color:#e8961e}
+.items-filter-row{display:flex;flex-wrap:wrap;gap:12px}
+.items-filter-group{flex:1;min-width:180px}
+.items-filter-group label{display:block;font-size:.75em;color:#8a8d98;margin-bottom:4px;font-weight:600}
+.items-filter-group .filter-btn-group{display:flex;flex-wrap:wrap;gap:4px}
+.items-filter-group .filter-btn{padding:4px 10px;font-size:.75em;border-radius:14px;border:1px solid #2a2d38;background:rgba(255,255,255,.04);color:#8a8d98;cursor:pointer;transition:all .15s}
+.items-filter-group .filter-btn.active{background:rgba(232,150,30,.15);color:#ffd700;border-color:#e8961e}
+.items-count{font-size:.8em;color:#8a8d98;margin-bottom:10px;text-align:right}
+.items-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:12px}
+@media(max-width:640px){.items-grid{grid-template-columns:1fr}}
+.item-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;transition:all .2s;cursor:default}
+.item-card:hover{border-color:rgba(232,150,30,.3);background:rgba(255,255,255,.05)}
+.item-card-header{display:flex;align-items:center;gap:10px;margin-bottom:10px}
+.item-card-icon{width:40px;height:40px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.1em;flex-shrink:0;font-weight:700}
+.item-card-icon.en{background:rgba(0,200,255,.15);color:#00c8ff}
+.item-card-icon.hp{background:rgba(76,209,55,.15);color:#4cd137}
+.item-card-icon.atk{background:rgba(232,65,24,.15);color:#e84118}
+.item-card-icon.def{background:rgba(39,60,117,.2);color:#6c7adf}
+.item-card-icon.mob{background:rgba(251,197,49,.15);color:#fbc531}
+.item-card-icon.mix{background:rgba(156,136,255,.15);color:#9c88ff}
+.item-card-icon.special{background:rgba(232,150,30,.15);color:#e8961e}
+.item-card-name{font-weight:700;font-size:.9em;color:#e0ddd6;line-height:1.3}
+.item-card-rarity{display:inline-block;padding:1px 6px;border-radius:4px;font-size:.65em;font-weight:700;margin-left:6px;vertical-align:middle}
+.item-card-rarity.ssr{background:rgba(255,215,0,.15);color:#ffd700;border:1px solid rgba(255,215,0,.3)}
+.item-card-rarity.sr{background:rgba(192,192,192,.12);color:#c0c0c0;border:1px solid rgba(192,192,192,.25)}
+.item-card-rarity.r{background:rgba(205,127,50,.12);color:#cd7f32;border:1px solid rgba(205,127,50,.25)}
+.item-card-rarity.n{background:rgba(150,150,150,.1);color:#969696;border:1px solid rgba(150,150,150,.2)}
+.item-card-body{font-size:.82em;line-height:1.6}
+.item-card-effect{color:#c0bdb6;margin-bottom:6px;padding:8px;background:rgba(255,255,255,.02);border-radius:6px;border-left:3px solid rgba(232,150,30,.4)}
+.item-card-target{color:#8a8d98;margin-bottom:6px}
+.item-card-target span{color:#e8961e;font-weight:600}
+.item-card-sources{display:flex;flex-wrap:wrap;gap:4px}
+.item-source-tag{padding:2px 8px;border-radius:10px;font-size:.75em;background:rgba(255,255,255,.05);color:#8a8d98;border:1px solid rgba(255,255,255,.06)}
+.item-source-tag.request{background:rgba(0,200,255,.08);color:#5dade2;border-color:rgba(0,200,255,.15)}
+.item-source-tag.shop{background:rgba(76,209,55,.08);color:#4cd137;border-color:rgba(76,209,55,.15)}
+.item-source-tag.event{background:rgba(232,150,30,.08);color:#e8961e;border-color:rgba(232,150,30,.15)}
+.item-source-tag.road{background:rgba(255,0,0,.08);color:#ff6b6b;border-color:rgba(255,0,0,.15)}
+.item-source-tag.boss{background:rgba(156,136,255,.08);color:#9c88ff;border-color:rgba(156,136,255,.15)}
+.items-coming-soon{text-align:center;padding:60px 20px}
+.coming-soon-text{font-size:1.2em;color:#ffd700;font-weight:700;margin-bottom:8px}
+.coming-soon-sub{font-size:.85em;color:#8a8d98}
+
 /* Language Toggle */
 .lang-toggle{position:absolute;top:14px;right:16px;display:flex;align-items:center;gap:0;border-radius:16px;overflow:hidden;border:1px solid #2a2d38;font-size:.7em;z-index:101}
 .lang-toggle button{padding:4px 10px;border:none;cursor:pointer;font-weight:700;transition:all .2s;background:transparent;color:#8a8d98;font-family:inherit}
@@ -944,6 +996,7 @@ a:hover{text-decoration:underline}
     <button class="tab-btn" data-tab="ranking"><svg class="tab-icon" viewBox="0 0 20 20"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="4" width="4" height="14" rx="1"/><rect x="14" y="7" width="4" height="11" rx="1"/></svg><span class="tab-label">ステータス<br>ランキング</span></button>
     <button class="tab-btn" data-tab="tierlist"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M3 3h14v3H3zM3 8h11v3H3zM3 13h8v3H3z" fill="currentColor"/></svg><span class="tab-label">ティア</span></button>
     <button class="tab-btn" data-tab="dmgcalc"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M10 2l1.5 3 3.5.5-2.5 2.5.5 3.5L10 9.5 7 11.5l.5-3.5L5 5.5l3.5-.5z" fill="currentColor"/><path d="M3 14l14-8" stroke="currentColor" stroke-width="2" fill="none"/></svg><span class="tab-label">ダメ計算</span></button>
+    <button class="tab-btn" data-tab="items"><svg class="tab-icon" viewBox="0 0 20 20"><path d="M4 2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm1 3v2h10V5H5zm0 4v2h7V9H5zm0 4v2h5v-2H5z" fill="currentColor"/></svg><span class="tab-label">アイテム</span></button>
   </nav>
 </header>
 
@@ -1188,6 +1241,47 @@ a:hover{text-decoration:underline}
 
 <!-- Damage Calculator Container -->
 <div id="dmgCalcContainer" style="display:none"></div>
+
+<!-- Items Container -->
+<div id="itemsContainer" style="display:none">
+  <div class="items-header">
+    <h2 class="items-title">アイテム一覧</h2>
+    <div class="items-sub-tabs" id="itemSubTabs">
+      <button class="item-sub-btn active" data-sub="option_parts" onclick="switchItemSub('option_parts')">オプションパーツ</button>
+      <button class="item-sub-btn" data-sub="enhancement" onclick="switchItemSub('enhancement')">強化素材</button>
+      <button class="item-sub-btn" data-sub="weapon" onclick="switchItemSub('weapon')">武装強化素材</button>
+    </div>
+  </div>
+  <div class="items-filters" id="itemsFilters">
+    <div class="items-search">
+      <input type="text" id="itemSearchInput" placeholder="パーツ名・対象で検索..." oninput="renderItems()">
+    </div>
+    <div class="items-filter-row">
+      <div class="items-filter-group">
+        <label>パーツ種類</label>
+        <div class="filter-btn-group" id="itemPartTypeButtons"></div>
+      </div>
+      <div class="items-filter-group">
+        <label>レアリティ</label>
+        <div class="filter-btn-group" id="itemRarityButtons"></div>
+      </div>
+      <div class="items-filter-group">
+        <label>入手方法</label>
+        <div class="filter-btn-group" id="itemSourceButtons"></div>
+      </div>
+      <div class="items-filter-group">
+        <label>効果</label>
+        <div class="filter-btn-group" id="itemEffectButtons"></div>
+      </div>
+    </div>
+  </div>
+  <div class="items-count" id="itemsCount"></div>
+  <div class="items-grid" id="itemsGrid"></div>
+  <div class="items-coming-soon" id="itemsComingSoon" style="display:none">
+    <p class="coming-soon-text">準備中...</p>
+    <p class="coming-soon-sub">データ収集中です。今後のアップデートをお待ちください。</p>
+  </div>
+</div>
 
 <!-- Ranking Container -->
 <div class="ranking-container" id="rankingContainer" style="display:none">
@@ -1550,7 +1644,8 @@ function setupTabs() {
       const isRanking = currentTab === 'ranking';
       const isTierlist = currentTab === 'tierlist';
       const isDmgCalc = currentTab === 'dmgcalc';
-      const isSpecial = isTagLookup || isTeam || isRanking || isTierlist || isDmgCalc;
+      const isItems = currentTab === 'items';
+      const isSpecial = isTagLookup || isTeam || isRanking || isTierlist || isDmgCalc || isItems;
       document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
       document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
       document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
@@ -1559,6 +1654,7 @@ function setupTabs() {
       document.getElementById('rankingContainer').style.display = isRanking ? '' : 'none';
       document.getElementById('tierlistContainer').style.display = isTierlist ? '' : 'none';
       document.getElementById('dmgCalcContainer').style.display = isDmgCalc ? '' : 'none';
+      document.getElementById('itemsContainer').style.display = isItems ? '' : 'none';
       if (isTagLookup) {
         renderTagLookup();
       } else if (isRanking) {
@@ -1569,6 +1665,8 @@ function setupTabs() {
         renderDmgCalc();
       } else if (isTeam) {
         renderTeamSim();
+      } else if (isItems) {
+        loadAndRenderItems();
       } else {
         resetFilters();
         buildFilters();
@@ -4371,7 +4469,8 @@ function restoreFromURL() {
   const isRanking = tab === 'ranking';
   const isTierlist = tab === 'tierlist';
   const isDmgCalc = tab === 'dmgcalc';
-  const isSpecial = isTagLookup || isTeam || isRanking || isTierlist || isDmgCalc;
+  const isItems = tab === 'items';
+  const isSpecial = isTagLookup || isTeam || isRanking || isTierlist || isDmgCalc || isItems;
   document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
   document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
   document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
@@ -4380,7 +4479,12 @@ function restoreFromURL() {
   document.getElementById('rankingContainer').style.display = isRanking ? '' : 'none';
   document.getElementById('tierlistContainer').style.display = isTierlist ? '' : 'none';
   document.getElementById('dmgCalcContainer').style.display = isDmgCalc ? '' : 'none';
+  document.getElementById('itemsContainer').style.display = isItems ? '' : 'none';
 
+  if (isItems) {
+    loadAndRenderItems();
+    return true;
+  }
   if (isDmgCalc) {
     renderDmgCalc();
     return true;
@@ -5890,6 +5994,137 @@ function dcSelectChara(type,name) {
 function dcSelectSup(id) { dcAtk.supporter=allSupporters.find(s=>s.id===id);dcCloseAllDropdowns();renderDmgCalc(); }
 function dcBindEvents() {
   document.addEventListener('click', function(e) { if(!e.target.closest('.dmg-search-wrap')) dcCloseAllDropdowns(); });
+}
+
+/* ===== Items Tab ===== */
+let itemsData = null;
+let currentItemSub = 'option_parts';
+
+async function loadAndRenderItems() {
+  if (!itemsData) {
+    try {
+      const res = await fetch('/items.json');
+      itemsData = await res.json();
+    } catch(e) {
+      console.error('Failed to load items.json', e);
+      return;
+    }
+  }
+  buildItemFilters();
+  renderItems();
+}
+
+function switchItemSub(sub) {
+  currentItemSub = sub;
+  document.querySelectorAll('.item-sub-btn').forEach(b => b.classList.toggle('active', b.dataset.sub === sub));
+  const grid = document.getElementById('itemsGrid');
+  const coming = document.getElementById('itemsComingSoon');
+  const filters = document.getElementById('itemsFilters');
+  const count = document.getElementById('itemsCount');
+  if (sub === 'option_parts') {
+    grid.style.display = '';
+    coming.style.display = 'none';
+    filters.style.display = '';
+    count.style.display = '';
+    buildItemFilters();
+    renderItems();
+  } else {
+    grid.style.display = 'none';
+    coming.style.display = '';
+    filters.style.display = 'none';
+    count.style.display = 'none';
+  }
+}
+
+function buildItemFilters() {
+  if (!itemsData) return;
+  const parts = itemsData.option_parts || [];
+  // Part type buttons
+  const types = [...new Set(parts.map(p => p.part_type).filter(Boolean))];
+  const typeOrder = ['エネルギータンク','出力増加パーツ','追加装甲','強化装甲','リミッター解除','軽量装甲型モビリティ・ブースト','軽量武装型モビリティ・ブースト','重量型アタック・ブースト','重量型ディフェンス・ブースト','ハロ','SDガンダム外伝'];
+  const shortLabels = {'エネルギータンク':'ENタンク','出力増加パーツ':'出力増加','追加装甲':'追加装甲','強化装甲':'強化装甲','リミッター解除':'リミッター','軽量装甲型モビリティ・ブースト':'軽量装甲型','軽量武装型モビリティ・ブースト':'軽量武装型','重量型アタック・ブースト':'重量型ATK','重量型ディフェンス・ブースト':'重量型DEF','ハロ':'ハロ','SDガンダム外伝':'SD外伝'};
+  const sortedTypes = types.sort((a,b) => (typeOrder.indexOf(a)||99) - (typeOrder.indexOf(b)||99));
+  document.getElementById('itemPartTypeButtons').innerHTML = sortedTypes.map(t =>
+    `<button class="filter-btn" data-value="${t}" onclick="this.classList.toggle('active');renderItems()">${shortLabels[t]||t}</button>`
+  ).join('');
+  // Rarity buttons
+  document.getElementById('itemRarityButtons').innerHTML = ['SSR','SR','R','N'].map(r =>
+    `<button class="filter-btn" data-value="${r}" onclick="this.classList.toggle('active');renderItems()">${r}</button>`
+  ).join('');
+  // Source buttons
+  const srcLabels = {'リクエスト':'リクエスト','Gショップ':'Gショップ','イベント':'イベント','エターナルロード':'Eロード','強敵襲来':'強敵襲来','期間限定':'期間限定','ミッション':'ミッション','ジェネレーションタワー':'Gタワー'};
+  const allSrcs = [...new Set(parts.flatMap(p => p.source_categories))].sort();
+  document.getElementById('itemSourceButtons').innerHTML = allSrcs.map(s =>
+    `<button class="filter-btn" data-value="${s}" onclick="this.classList.toggle('active');renderItems()">${srcLabels[s]||s}</button>`
+  ).join('');
+  // Effect buttons
+  const effectLabels = {'EN':'EN','HP':'HP','攻撃力':'ATK','防御力':'DEF','機動力':'MOB'};
+  document.getElementById('itemEffectButtons').innerHTML = Object.entries(effectLabels).map(([k,v]) =>
+    `<button class="filter-btn" data-value="${k}" onclick="this.classList.toggle('active');renderItems()">${v}</button>`
+  ).join('');
+}
+
+function renderItems() {
+  if (!itemsData) return;
+  const parts = itemsData.option_parts || [];
+  const q = (document.getElementById('itemSearchInput').value || '').toLowerCase();
+  const activeTypes = [...document.querySelectorAll('#itemPartTypeButtons .filter-btn.active')].map(b => b.dataset.value);
+  const activeRarities = [...document.querySelectorAll('#itemRarityButtons .filter-btn.active')].map(b => b.dataset.value);
+  const activeSources = [...document.querySelectorAll('#itemSourceButtons .filter-btn.active')].map(b => b.dataset.value);
+  const activeEffects = [...document.querySelectorAll('#itemEffectButtons .filter-btn.active')].map(b => b.dataset.value);
+
+  let filtered = parts.filter(p => {
+    if (q && !p.name.toLowerCase().includes(q) && !p.target.toLowerCase().includes(q) && !p.effect.toLowerCase().includes(q)) return false;
+    if (activeTypes.length && !activeTypes.includes(p.part_type)) return false;
+    if (activeRarities.length && !activeRarities.includes(p.rarity)) return false;
+    if (activeSources.length && !activeSources.some(s => p.source_categories.includes(s))) return false;
+    if (activeEffects.length && !activeEffects.some(e => p.effect_type.includes(e))) return false;
+    return true;
+  });
+
+  document.getElementById('itemsCount').textContent = `${filtered.length} / ${parts.length} 件`;
+
+  const iconMap = {'EN':'en','HP':'hp','攻撃力':'atk','防御力':'def','機動力':'mob'};
+  const iconLabel = {'EN':'EN','HP':'HP','攻撃力':'ATK','防御力':'DEF','機動力':'MOB'};
+  const srcClass = {'リクエスト':'request','Gショップ':'shop','イベント':'event','エターナルロード':'road','強敵襲来':'boss','期間限定':'event','ミッション':'event','ジェネレーションタワー':'road'};
+
+  const grid = document.getElementById('itemsGrid');
+  grid.innerHTML = filtered.slice(0, 200).map(p => {
+    let iconCls = 'special';
+    let iconTxt = '★';
+    for (const [k,v] of Object.entries(iconMap)) {
+      if (p.effect_type.includes(k)) { iconCls = v; iconTxt = iconLabel[k]; break; }
+    }
+    if (p.effect_type.includes('↑')) { iconCls = 'mix'; iconTxt = '±'; }
+
+    const sourceTags = p.sources.map(s => {
+      let cls = '';
+      for (const [k,v] of Object.entries(srcClass)) {
+        if (s.includes('リクエスト')) { cls = 'request'; break; }
+        if (s.includes('Gショップ')) { cls = 'shop'; break; }
+        if (s.includes('エターナルロード')) { cls = 'road'; break; }
+        if (s.includes('強敵襲来')) { cls = 'boss'; break; }
+        if (s.includes('イベント') || s.includes('攻略戦') || s.includes('マップ')) { cls = 'event'; break; }
+      }
+      return `<span class="item-source-tag ${cls}">${s}</span>`;
+    }).join('');
+
+    return `<div class="item-card">
+      <div class="item-card-header">
+        <div class="item-card-icon ${iconCls}">${iconTxt}</div>
+        <div class="item-card-name">${p.name}<span class="item-card-rarity ${p.rarity.toLowerCase()}">${p.rarity}</span></div>
+      </div>
+      <div class="item-card-body">
+        <div class="item-card-effect">${p.effect}</div>
+        <div class="item-card-target">対象: <span>${p.target}</span></div>
+        <div class="item-card-sources">${sourceTags}</div>
+      </div>
+    </div>`;
+  }).join('');
+
+  if (filtered.length > 200) {
+    grid.innerHTML += `<div style="grid-column:1/-1;text-align:center;padding:16px;color:#8a8d98;font-size:.85em">他 ${filtered.length - 200} 件は検索・フィルタで絞り込んでください</div>`;
+  }
 }
 
 bindSortButtons();
