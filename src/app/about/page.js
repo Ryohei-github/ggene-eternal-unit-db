@@ -89,19 +89,17 @@ export default function AboutPage() {
               gap: '16px',
               marginBottom: '20px',
             }}>
-              <div style={{
-                width: '64px',
-                height: '64px',
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, #e8961e, #ffd700)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                fontSize: '1.5em',
-                fontWeight: 800,
-                color: '#0a0e17',
-                flexShrink: 0,
-              }}>MH</div>
+              <img
+                src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj"
+                alt="MH GAMES"
+                width="64"
+                height="64"
+                style={{
+                  borderRadius: '50%',
+                  border: '2px solid #e8961e',
+                  flexShrink: 0,
+                }}
+              />
               <div>
                 <div style={{ fontSize: '1.2em', fontWeight: 700 }}>MH GAMES</div>
                 <div style={{ fontSize: '.85em', color: '#8a8d98', marginTop: '2px' }}>
