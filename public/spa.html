@@ -1863,12 +1863,13 @@ function buildFilters() {
     const skillSet = new Set();
     allSupporters.forEach(s => {
       if (s.rarity) rarities.add(s.rarity);
-      // target_series is now an array — add each element individually
-      (s.target_series||[]).forEach(t => targets.add(t));
-      // Categorize: if it's a series name (contains ガンダム or known series), skip for tag filter; otherwise it's a tag
+      // target_series is now an array — split into series (dropdown) vs tags (buttons)
+      const _seriesRe = /機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/;
       (s.target_series||[]).forEach(t => {
-        if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) {
-          tagSet.add(t);
+        if (_seriesRe.test(t)) {
+          targets.add(t);  // シリーズ名 → ドロップダウン
+        } else {
+          tagSet.add(t);   // タグ → ボタンフィルタ
         }
       });
       // Also check leader2_target for tags
