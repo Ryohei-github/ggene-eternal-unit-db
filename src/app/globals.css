@@ -43,6 +43,7 @@ a:hover{text-decoration:underline}
 .items-filter-group .filter-btn{padding:4px 10px;background:#fff;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;font-size:.78em;transition:all .15s;white-space:nowrap}
 .items-filter-group .filter-btn:hover{border-color:var(--accent);color:var(--text)}
 .items-filter-group .filter-btn.active{background:rgba(232,150,30,.15);border-color:var(--accent);color:var(--accent);font-weight:600}
+.filter-sep{color:var(--border);font-size:.9em;margin:0 2px;user-select:none}
 .items-count{font-size:.8em;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border);margin-bottom:12px;text-align:right}
 .items-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
 @media(max-width:640px){.items-grid{grid-template-columns:repeat(2,1fr);gap:4px}}

@@ -133,6 +133,7 @@ a:hover{text-decoration:underline}
 .items-filter-group .filter-btn{padding:4px 10px;background:#fff;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;font-size:.78em;transition:all .15s;white-space:nowrap}
 .items-filter-group .filter-btn:hover{border-color:var(--accent);color:var(--text)}
 .items-filter-group .filter-btn.active{background:rgba(232,150,30,.15);border-color:var(--accent);color:var(--accent);font-weight:600}
+.filter-sep{color:var(--border);font-size:.9em;margin:0 2px;user-select:none}
 .items-count{font-size:.8em;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border);margin-bottom:12px;text-align:right}
 .items-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
 @media(max-width:640px){.items-grid{grid-template-columns:repeat(2,1fr);gap:4px}}
@@ -6043,29 +6044,62 @@ function switchItemSub(sub) {
 function buildItemFilters() {
   if (!itemsData) return;
   const parts = itemsData.option_parts || [];
-  // Part type buttons
-  const types = [...new Set(parts.map(p => p.part_type).filter(Boolean))];
-  const typeOrder = ['エネルギータンク','出力増加パーツ','追加装甲','強化装甲','リミッター解除','軽量装甲型モビリティ・ブースト','軽量武装型モビリティ・ブースト','重量型アタック・ブースト','重量型ディフェンス・ブースト','ハロ','SDガンダム外伝'];
-  const shortLabels = {'エネルギータンク':'ENタンク','出力増加パーツ':'出力増加','追加装甲':'追加装甲','強化装甲':'強化装甲','リミッター解除':'リミッター','軽量装甲型モビリティ・ブースト':'軽量装甲型','軽量武装型モビリティ・ブースト':'軽量武装型','重量型アタック・ブースト':'重量型ATK','重量型ディフェンス・ブースト':'重量型DEF','ハロ':'ハロ','SDガンダム外伝':'SD外伝'};
-  const sortedTypes = types.sort((a,b) => (typeOrder.indexOf(a)||99) - (typeOrder.indexOf(b)||99));
-  document.getElementById('itemPartTypeButtons').innerHTML = sortedTypes.map(t =>
-    `<button class="filter-btn" data-value="${t}" onclick="this.classList.toggle('active');renderItems()">${shortLabels[t]||t}</button>`
-  ).join('');
+
+  // Part type buttons - grouped into categories
+  const baseTypes = [
+    {val:'エネルギータンク',lbl:'ENタンク'},
+    {val:'出力増加パーツ',lbl:'出力増加'},
+    {val:'追加装甲',lbl:'追加装甲'},
+    {val:'強化装甲',lbl:'強化装甲'},
+    {val:'リミッター解除',lbl:'リミッター'}
+  ];
+  const boostTypes = [
+    {val:'軽量装甲型モビリティ・ブースト',lbl:'軽量装甲'},
+    {val:'軽量武装型モビリティ・ブースト',lbl:'軽量武装'},
+    {val:'重量型アタック・ブースト',lbl:'重量攻撃'},
+    {val:'重量型ディフェンス・ブースト',lbl:'重量防御'}
+  ];
+  const specialTypes = [
+    {val:'ハロ',lbl:'ハロ'},
+    {val:'SDガンダム外伝',lbl:'SD外伝'}
+  ];
+  const mkBtn = (v,l) => `<button class="filter-btn" data-value="${v}" onclick="this.classList.toggle('active');renderItems()">${l}</button>`;
+  const sep = '<span class="filter-sep">|</span>';
+  document.getElementById('itemPartTypeButtons').innerHTML =
+    baseTypes.map(t => mkBtn(t.val,t.lbl)).join('') + sep +
+    boostTypes.map(t => mkBtn(t.val,t.lbl)).join('') + sep +
+    specialTypes.map(t => mkBtn(t.val,t.lbl)).join('');
+
   // Rarity buttons
   document.getElementById('itemRarityButtons').innerHTML = ['SSR','SR','R','N'].map(r =>
-    `<button class="filter-btn" data-value="${r}" onclick="this.classList.toggle('active');renderItems()">${r}</button>`
+    `<button class="filter-btn filter-btn-${r.toLowerCase()}" data-value="${r}" onclick="this.classList.toggle('active');renderItems()">${r}</button>`
   ).join('');
-  // Source buttons
-  const srcLabels = {'リクエスト':'リクエスト','Gショップ':'Gショップ','イベント':'イベント','エターナルロード':'Eロード','強敵襲来':'強敵襲来','期間限定':'期間限定','ミッション':'ミッション','ジェネレーションタワー':'Gタワー'};
-  const allSrcs = [...new Set(parts.flatMap(p => p.source_categories))].sort();
-  document.getElementById('itemSourceButtons').innerHTML = allSrcs.map(s =>
-    `<button class="filter-btn" data-value="${s}" onclick="this.classList.toggle('active');renderItems()">${srcLabels[s]||s}</button>`
+
+  // Source buttons - ordered by frequency/importance
+  const srcOrder = [
+    {val:'Gショップ',lbl:'Gショップ'},
+    {val:'イベント',lbl:'イベント'},
+    {val:'エターナルロード',lbl:'Eロード'},
+    {val:'ジェネレーションタワー',lbl:'Gタワー'},
+    {val:'ミッション',lbl:'ミッション'},
+    {val:'リクエスト',lbl:'リクエスト'},
+    {val:'強敵襲来',lbl:'強敵襲来'},
+    {val:'期間限定',lbl:'期間限定'}
+  ];
+  const allSrcs = new Set(parts.flatMap(p => p.source_categories));
+  document.getElementById('itemSourceButtons').innerHTML = srcOrder.filter(s => allSrcs.has(s.val)).map(s =>
+    mkBtn(s.val,s.lbl)
   ).join('');
+
   // Effect buttons
-  const effectLabels = {'EN':'EN','HP':'HP','攻撃力':'ATK','防御力':'DEF','機動力':'MOB'};
-  document.getElementById('itemEffectButtons').innerHTML = Object.entries(effectLabels).map(([k,v]) =>
-    `<button class="filter-btn" data-value="${k}" onclick="this.classList.toggle('active');renderItems()">${v}</button>`
-  ).join('');
+  const effectItems = [
+    {val:'EN',lbl:'EN'},
+    {val:'HP',lbl:'HP'},
+    {val:'攻撃力',lbl:'ATK'},
+    {val:'防御力',lbl:'DEF'},
+    {val:'機動力',lbl:'MOB'}
+  ];
+  document.getElementById('itemEffectButtons').innerHTML = effectItems.map(e => mkBtn(e.val,e.lbl)).join('');
 }
 
 function renderItems() {
@@ -6085,6 +6119,10 @@ function renderItems() {
     if (activeEffects.length && !activeEffects.some(e => p.effect_type.includes(e))) return false;
     return true;
   });
+
+  // Sort by rarity (high to low): SSR > SR > R > N
+  const rarOrder = {SSR:0, SR:1, R:2, N:3};
+  filtered.sort((a, b) => (rarOrder[a.rarity]??9) - (rarOrder[b.rarity]??9));
 
   document.getElementById('itemsCount').textContent = `${filtered.length} / ${parts.length} 件`;
 
