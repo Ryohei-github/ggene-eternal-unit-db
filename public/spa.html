@@ -1864,12 +1864,13 @@ function buildFilters() {
     allSupporters.forEach(s => {
       if (s.rarity) rarities.add(s.rarity);
       // target_series is now an array — split into series (dropdown) vs tags (buttons)
-      const _seriesRe = /機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/;
+      // ◯◯シリーズ(SEEDシリーズ等)はタグ扱い、作品名(機動戦士ガンダム等)はシリーズ
+      const _seriesRe = /機動|ガンダム|SDガンダム|新機動/;
       (s.target_series||[]).forEach(t => {
-        if (_seriesRe.test(t)) {
-          targets.add(t);  // シリーズ名 → ドロップダウン
+        if (_seriesRe.test(t) && !t.endsWith('シリーズ')) {
+          targets.add(t);  // 作品名 → ドロップダウン
         } else {
-          tagSet.add(t);   // タグ → ボタンフィルタ
+          tagSet.add(t);   // タグ(◯◯シリーズ含む) → ボタンフィルタ
         }
       });
       // Also check leader2_target for tags
@@ -3526,10 +3527,10 @@ function openTeamPicker(mode, slotIdx) {
     const supTagSet = new Set(), supSkillSet = new Set();
     allSupporters.forEach(s => {
       (s.target_series||[]).forEach(t => {
-        if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) supTagSet.add(t);
+        if (!(/機動|ガンダム|SDガンダム|新機動/.test(t) && !t.endsWith('シリーズ'))) supTagSet.add(t);
       });
       if (s.leader2_target) s.leader2_target.split(/ and /i).map(t => t.trim()).filter(Boolean).forEach(t => {
-        if (!/機動|ガンダム|SDガンダム|新機動|SEEDシリーズ|宇宙世紀シリーズ|オルタナティブシリーズ/.test(t)) supTagSet.add(t);
+        if (!(/機動|ガンダム|SDガンダム|新機動/.test(t) && !t.endsWith('シリーズ'))) supTagSet.add(t);
       });
       if (s.recovery_type) supSkillSet.add(s.recovery_type);
     });
