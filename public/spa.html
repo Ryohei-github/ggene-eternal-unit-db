@@ -1892,11 +1892,28 @@ function buildFilters() {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
     fillSelect('filterTarget', [...targets].sort());
-    // Tag filter buttons
-    const tagBtns = [...tagSet].sort().map(t =>
-      `<button class="filter-btn" data-value="${t}">${t}</button>`
-    ).join('');
-    document.getElementById('filterSupTagButtons').innerHTML = tagBtns;
+    // Tag filter buttons — categorized groups
+    const _supTagGroups = [
+      { label: 'シリーズ系', tags: ['SEEDシリーズ','宇宙世紀シリーズ','オルタナティブシリーズ','SDガンダム'] },
+      { label: '陣営', tags: ['ジオン公国軍','ネオ・ジオン'] },
+      { label: 'ユニット特性', tags: ['エース機','専用機','指揮官機','試作機','量産機','大型機','換装','地上用'] },
+      { label: '能力・システム', tags: ['ニュータイプ専用機','サイコミュ','阿頼耶識システム'] },
+      { label: 'パイロット', tags: ['主人公','ライバル','モノアイ'] },
+      { label: '効果・スキル', tags: ['一撃必殺','電光石火','突破力','堅牢'] },
+    ];
+    let tagHTML = '';
+    _supTagGroups.forEach(g => {
+      const available = g.tags.filter(t => tagSet.has(t));
+      if (available.length === 0) return;
+      tagHTML += `<span style="font-size:.65em;color:var(--accent);font-weight:600;padding:4px 0 0;white-space:nowrap;display:flex;align-items:center;gap:4px;width:100%"><span>${g.label}</span><span style="flex:1;height:1px;background:var(--border);opacity:.4"></span></span>`;
+      tagHTML += available.map(t => `<button class="filter-btn" data-value="${t}">${t}</button>`).join('');
+    });
+    // Any remaining tags not in groups
+    const groupedTags = new Set(_supTagGroups.flatMap(g => g.tags));
+    [...tagSet].sort().filter(t => !groupedTags.has(t)).forEach(t => {
+      tagHTML += `<button class="filter-btn" data-value="${t}">${t}</button>`;
+    });
+    document.getElementById('filterSupTagButtons').innerHTML = tagHTML;
     document.querySelectorAll('#filterSupTagButtons .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
