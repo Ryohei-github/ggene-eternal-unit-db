@@ -19,20 +19,14 @@ export const metadata = {
     url: 'https://gget-db.com/',
     siteName: 'GジェネエターナルDB by MH GAMES',
     locale: 'ja_JP',
-    images: [
-      {
-        url: '/assets/ogp.png',
-        width: 1200,
-        height: 630,
-      },
-    ],
+    // OGP画像はopengraph-image.jsで動的生成（データ件数を自動反映）
   },
   twitter: {
     card: 'summary_large_image',
     site: '@mh_games_jp',
     title: 'GジェネエターナルDB｜ユニット・キャラ・サポーター検索',
     description: 'Gジェネ エターナルの全ユニット・キャラ・サポーターDB。多彩なフィルタで検索。',
-    images: ['/assets/ogp.png'],
+    // Twitter画像もopengraph-image.jsで動的生成
   },
   robots: { index: true, follow: true },
   icons: { icon: '/favicon.svg' },
