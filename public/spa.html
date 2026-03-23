@@ -6574,16 +6574,33 @@ init();
     }
   };
   
-  // 3. Apply collapsed state on landscape
+  // 3. Apply collapsed state on landscape + move tab bar outside header
+  const tabBar = document.getElementById('tabBar');
+  const tabBarOriginalParent = tabBar.parentElement;
+  const tabBarNextSibling = tabBar.nextSibling;
+
   function applyLandscapeMode() {
     const filters = document.getElementById('filtersContainer');
     const toggleBtn = document.getElementById('mobileFilterToggle');
     if (checkLandscape()) {
+      // ランドスケープ: タブバーをheaderの外(body直下)に移動
+      // (headerのtransformがfixed子要素を壊すため)
+      if (tabBar.parentElement === tabBarOriginalParent) {
+        document.body.appendChild(tabBar);
+      }
       if (!filters.classList.contains('filters-init')) {
         filters.classList.add('collapsed');
         filters.classList.add('filters-init');
       }
     } else {
+      // ポートレート/PC: タブバーをheader内に戻す
+      if (tabBar.parentElement !== tabBarOriginalParent) {
+        if (tabBarNextSibling) {
+          tabBarOriginalParent.insertBefore(tabBar, tabBarNextSibling);
+        } else {
+          tabBarOriginalParent.appendChild(tabBar);
+        }
+      }
       filters.classList.remove('collapsed');
       filters.classList.remove('filters-init');
       if (toggleBtn) toggleBtn.classList.remove('open');
