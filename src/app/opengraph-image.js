@@ -53,12 +53,6 @@ export default async function Image() {
 
   const features = ['ユニット検索', 'キャラ検索', 'サポーター', 'アイテム', 'ダメージ計算', 'ステータス比較', 'ランキング', 'チーム編成'];
 
-  const cards = [
-    { name: 'シャア専用ザクII(THE ORIGIN版)(EX)', series: '機動戦士ガンダム THE ORIGIN', atk: '16,740', hp: '90,720', def: '9,538', rarity: 'UR', headerColor: 'linear-gradient(90deg, #ffd700, #e8961e)' },
-    { name: 'Zガンダム(EX)', series: '機動戦士Zガンダム', atk: '15,774', hp: '100,396', def: '8,568', rarity: 'UR', headerColor: 'linear-gradient(90deg, #ffd700, #e8961e)' },
-    { name: 'ガンダム・キマリスヴィダール', series: '機動戦士ガンダム 鉄血のオルフェンズ', atk: '12,340', hp: '78,500', def: '7,210', rarity: 'SSR', headerColor: 'linear-gradient(90deg, #c0c0c0, #94a3b8)' },
-  ];
-
   const fontOptions = fontData ? [{
     name: 'NotoSansJP',
     data: fontData instanceof ArrayBuffer ? fontData : Buffer.from(fontData).buffer,
@@ -80,10 +74,18 @@ export default async function Image() {
         {/* Horizontal accent line */}
         <div style={{ position: 'absolute', top: '62%', left: 0, right: 0, height: '1px', background: 'linear-gradient(90deg, transparent, rgba(255,215,0,0.12) 20%, rgba(255,215,0,0.19) 50%, rgba(255,215,0,0.12) 80%, transparent)', display: 'flex' }} />
 
-        {/* Left panel */}
-        <div style={{ display: 'flex', flexDirection: 'column', padding: '45px 0 40px 55px', width: '820px' }}>
+        {/* Main panel */}
+        <div style={{ display: 'flex', flexDirection: 'column', padding: '45px 55px 40px 55px', width: '100%' }}>
           {/* Header */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '14px', marginBottom: '16px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '18px', marginBottom: '16px' }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj"
+              alt=""
+              width="56"
+              height="56"
+              style={{ borderRadius: '50%', border: '2px solid #e8961e' }}
+            />
             <div style={{ display: 'flex', flexDirection: 'column' }}>
               <div style={{ fontSize: '42px', fontWeight: 900, background: 'linear-gradient(135deg, #ffd700, #ffed4a 40%, #e8961e)', backgroundClip: 'text', color: 'transparent', lineHeight: 1.15, letterSpacing: '-0.5px', display: 'flex' }}>
                 GジェネエターナルDB
@@ -122,44 +124,6 @@ export default async function Image() {
 
           {/* URL */}
           <div style={{ marginTop: 'auto', fontSize: '24px', fontWeight: 900, color: '#ffd700', display: 'flex' }}>gget-db.com</div>
-        </div>
-
-        {/* Right panel */}
-        <div style={{
-          display: 'flex', flexDirection: 'column', justifyContent: 'center',
-          padding: '35px 40px 35px 30px', width: '380px', gap: '8px',
-          borderLeft: '1px solid rgba(255,255,255,0.024)',
-        }}>
-          <div style={{ fontSize: '10px', color: '#3a3f50', fontWeight: 700, letterSpacing: '2px', marginBottom: '2px', display: 'flex' }}>DATABASE PREVIEW</div>
-          {cards.map((card) => (
-            <div key={card.name} style={{
-              display: 'flex', flexDirection: 'column',
-              background: '#111318', borderRadius: '6px', overflow: 'hidden',
-              border: '1px solid #1a1d25',
-            }}>
-              <div style={{ height: '4px', background: card.headerColor, display: 'flex' }} />
-              <div style={{ padding: '10px 14px', display: 'flex', flexDirection: 'column' }}>
-                <div style={{ fontSize: '13px', fontWeight: 900, color: '#e0e0e0', marginBottom: '4px', display: 'flex' }}>{card.name}</div>
-                <div style={{ fontSize: '10px', color: '#555', marginBottom: '8px', display: 'flex' }}>{card.series}</div>
-                <div style={{ display: 'flex', gap: '12px' }}>
-                  {[
-                    { val: card.atk, lbl: '攻撃力' },
-                    { val: card.hp, lbl: 'HP' },
-                    { val: card.def, lbl: '防御力' },
-                  ].map((st) => (
-                    <div key={st.lbl} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                      <div style={{ fontSize: '14px', fontWeight: 900, color: '#ccc', display: 'flex' }}>{st.val}</div>
-                      <div style={{ fontSize: '8px', color: '#444', fontWeight: 700, display: 'flex' }}>{st.lbl}</div>
-                    </div>
-                  ))}
-                </div>
-                <div style={{ display: 'flex', gap: '4px', marginTop: '6px' }}>
-                  <span style={{ fontSize: '8px', padding: '1px 5px', borderRadius: '2px', fontWeight: 700, background: 'rgba(255,215,0,0.13)', color: '#ffd700', display: 'flex' }}>{card.rarity}</span>
-                  <span style={{ fontSize: '8px', padding: '1px 5px', borderRadius: '2px', fontWeight: 700, background: 'rgba(214,48,49,0.13)', color: '#ff6b6b', display: 'flex' }}>攻撃</span>
-                </div>
-              </div>
-            </div>
-          ))}
         </div>
       </div>
     ),
