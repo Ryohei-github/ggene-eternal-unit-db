@@ -853,6 +853,7 @@ a:hover{text-decoration:underline}
 }
 
 .mobile-filter-toggle{display:none}
+.tab-tooltip{display:none!important}
 
 /* Mobile Landscape: ultra-compact header to maximize content area */
 @media(max-height:500px) and (orientation:landscape){
@@ -882,7 +883,7 @@ a:hover{text-decoration:underline}
   
   /* Tab tooltip on hover/active */
   .tab-btn .tab-tooltip{display:none;position:absolute;left:100%;top:50%;transform:translateY(-50%);background:#1a1d25;color:#ffd700;padding:4px 10px;font-size:.7em;white-space:nowrap;border-radius:0 4px 4px 0;border:1px solid rgba(255,215,0,.3);border-left:none;z-index:102;pointer-events:none}
-  .tab-btn:hover .tab-tooltip,.tab-btn.active .tab-tooltip{display:block}
+  .tab-btn:hover .tab-tooltip,.tab-btn.active .tab-tooltip{display:block!important}
 
   /* Main content offset for sidebar */
   main[role="main"],.controls,.grid,.data-table-wrap,.tag-lookup-container,.team-sim-container,.ranking-container,.tierlist-container,.dmg-calc-container,.items-container,.ad-slot,.site-footer{margin-left:42px}
