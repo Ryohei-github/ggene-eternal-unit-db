@@ -852,27 +852,48 @@ a:hover{text-decoration:underline}
 
 }
 
+.mobile-filter-toggle{display:none}
+
 /* Mobile Landscape: ultra-compact header to maximize content area */
 @media(max-height:500px) and (orientation:landscape){
-  .header{padding:4px 10px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 12px}
+  /* Header auto-hide */
+  .header{position:fixed;top:0;left:0;right:0;z-index:100;transition:transform .3s ease;padding:4px 10px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 12px}
+  .header.header-hidden{transform:translateY(-100%)}
   .header-brand{gap:5px;padding-right:0}
   .header-icon{width:20px;height:20px}
   .header h1{font-size:.7em;letter-spacing:.3px}
   .header h1 .sub-brand{font-size:.7em}
   .header .sub{display:none}
-  .header-links{margin-top:0;gap:4px}
-  .header-links a{font-size:.52em;padding:2px 6px}
+  .header-links{display:none}
   .header .yt-cta{display:none}
   .lang-toggle{top:4px;right:6px;font-size:.5em}
   .lang-toggle button{padding:2px 5px}
   .accent-line{height:1px}
 
-  .tab-bar{gap:2px;padding:3px 6px;margin-top:2px}
-  .tab-btn{padding:3px 7px;font-size:.55em;gap:0}
-  .tab-icon{width:12px;height:12px}
-  .tab-label{font-size:.62em}
-  .tab-btn .tab-count{font-size:.5em}
+  /* Tab bar: left sidebar */
+  .tab-bar{position:fixed;left:0;top:0;bottom:0;width:42px;flex-direction:column;justify-content:flex-start;padding:4px 2px;gap:2px;margin-top:0;z-index:101;overflow-y:auto;overflow-x:hidden;background:linear-gradient(180deg,#0e1016,#161a22);border-right:1px solid rgba(232,150,30,.3);border-bottom:none}
+  .tab-btn{padding:6px 4px;flex-direction:column;gap:0;width:100%;clip-path:none;min-width:0;position:relative}
+  .tab-btn::before{clip-path:none!important}
+  .tab-btn.active::before{display:none}
+  .tab-btn.active{background:rgba(255,215,0,.15);border-left:2px solid #ffd700;border-radius:0}
+  .tab-icon{width:16px;height:16px}
+  .tab-label{display:none}
+  .tab-btn .tab-count{display:none}
+  
+  /* Tab tooltip on hover/active */
+  .tab-btn .tab-tooltip{display:none;position:absolute;left:100%;top:50%;transform:translateY(-50%);background:#1a1d25;color:#ffd700;padding:4px 10px;font-size:.7em;white-space:nowrap;border-radius:0 4px 4px 0;border:1px solid rgba(255,215,0,.3);border-left:none;z-index:102;pointer-events:none}
+  .tab-btn:hover .tab-tooltip,.tab-btn.active .tab-tooltip{display:block}
 
+  /* Main content offset for sidebar */
+  main[role="main"],.controls,.grid,.data-table-wrap,.tag-lookup-container,.team-sim-container,.ranking-container,.tierlist-container,.dmg-calc-container,.items-container,.ad-slot,.site-footer{margin-left:42px}
+
+  /* Filter collapsible */
+  .mobile-filter-toggle{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;padding:6px;background:rgba(232,150,30,.08);border:1px solid rgba(232,150,30,.25);border-radius:6px;color:var(--accent);font-size:.72em;font-weight:600;cursor:pointer;margin-bottom:6px}
+  .mobile-filter-toggle .toggle-arrow{transition:transform .2s}
+  .mobile-filter-toggle.open .toggle-arrow{transform:rotate(180deg)}
+  .filters.collapsed{display:none!important}
+
+  /* Controls compact */
   .controls{margin:4px auto;padding:0 8px}
   .search-box{margin-bottom:4px}
   .search-box input{padding:5px 8px;font-size:.78em}
@@ -884,27 +905,97 @@ a:hover{text-decoration:underline}
   .sort-btns button{font-size:.55em;padding:2px 5px}
   .stats-bar{gap:3px}
 
-  .grid{grid-template-columns:repeat(3,1fr);gap:4px;padding:0 6px 16px}
-  .card{padding:5px}
-  .card-name{font-size:.62em;line-height:1.15}
-  .badge{font-size:.45em;padding:1px 3px}
-  .card-series{font-size:.5em}
-  .card-combat-power{font-size:.52em}
-  .card-rarity-note{font-size:.42em}
-  .card-stats .stat-val{font-size:.65em}
-  .card-stats .stat-label{font-size:.4em}
-  .card-mechanism{font-size:.5em}
-  .card-terrain{font-size:.48em}
-  .card-tags span{font-size:.45em}
-  .compare-btn{font-size:.52em;padding:2px 6px;margin-top:3px}
+  /* Grid: 3-4 columns compact */
+  .grid{grid-template-columns:repeat(4,1fr);gap:4px;padding:0 6px 16px}
+
+  /* Ultra-compact cards */
+  .card{padding:5px;clip-path:none}
+  .card::before{display:none}
+  .card:hover::before{display:none}
+  .card-ur .card-header,.card-ult .card-header,.card-ssr .card-header,.card-sr .card-header,.card-r .card-header{margin:-5px -5px 3px;padding:4px 5px}
+  .card-header{gap:3px;margin-bottom:2px}
+  .card-icon{width:24px;height:24px}
+  .card-name{font-size:.58em;line-height:1.15}
+  .badge{font-size:.42em;padding:1px 3px}
+  .card-series{font-size:.48em;margin-bottom:1px}
+  .card-combat-power{font-size:.48em;margin:1px 0}
+  .card-rarity-note{font-size:.4em;margin-bottom:1px}
+  .card-stats{gap:2px;margin-bottom:2px}
+  .card-stats .stat-val{font-size:.6em}
+  .card-stats .stat-label{font-size:.38em}
+  .card-stats-sub{gap:1px;margin-bottom:1px}
+  .card-mechanism{font-size:.48em;margin-bottom:1px}
+  .card-terrain{font-size:.44em;margin-bottom:1px}
+  .card-weapons{gap:2px;margin-bottom:2px}
+  .weapon-tag{font-size:.48em;padding:0px 3px}
+  .card-tags{gap:1px}
+  .card-tags span{font-size:.42em;padding:1px 2px}
+  .compare-btn{font-size:.48em;padding:2px 5px;margin-top:2px}
 
   /* Supporter card landscape */
-  .card .supporter-stat{font-size:.55em;padding:1px 5px;margin-right:3px;margin-bottom:2px}
+  .card .supporter-stat{font-size:.52em;padding:1px 4px;margin-right:2px;margin-bottom:2px}
   .card .supporter-stat .sv{font-size:.82em}
-  .supporter-info{font-size:.55em;margin-bottom:3px;line-height:1.3}
-  .card .leader-tier-section{font-size:.55em}
-  .card .leader-tier-section .tier-label-text{font-size:.9em}
-  .card .recovery-section{font-size:.55em}
+  .supporter-info{font-size:.52em;margin-bottom:2px;line-height:1.3}
+  .card .leader-tier-section{font-size:.52em}
+  .card .recovery-section{font-size:.52em}
+
+  /* Modal landscape */
+  .modal-overlay{padding:6px 6px 6px 48px}
+  .modal{padding:10px;max-height:95vh;overflow-y:auto}
+  .modal-header-row{gap:8px}
+  .modal-icon{width:48px;height:48px}
+  .modal h2{font-size:1em}
+  .modal .stats-grid{grid-template-columns:repeat(4,1fr);gap:4px}
+
+  /* Ranking landscape */
+  .ranking-container{padding:0 10px 20px}
+  .ranking-item{grid-template-columns:28px 32px 1fr 60px;gap:4px;padding:4px 6px}
+  .ranking-icon{width:28px;height:28px}
+  .ranking-name{font-size:.72em}
+  .ranking-val{font-size:.85em}
+  .ranking-pos{font-size:.8em}
+
+  /* Team simulator landscape */
+  .team-sim-container{padding:8px 10px 20px}
+  .team-slots{grid-template-columns:repeat(5,1fr);gap:3px}
+  .team-slot-card{padding:3px}
+  .team-slot-card .slot-number{width:14px;height:14px;font-size:.5em}
+  .team-slot-card .slot-position{font-size:.4em}
+  .slot-filled .slot-img{width:20px;height:20px}
+  .slot-filled .slot-name{font-size:.5em}
+  .slot-filled .slot-stat{font-size:.4em}
+  .slot-filled .slot-weapons{display:none}
+  .slot-filled .slot-abilities{display:none}
+  .slot-filled .slot-skills{display:none}
+  .team-stats-grid{grid-template-columns:repeat(6,1fr);gap:3px}
+  .team-picker{width:60vw!important}
+
+  /* Tier list landscape */
+  .tierlist-container{padding:0 10px 20px}
+  .tier-unit{width:32px;height:32px}
+  .tier-label{width:32px;min-width:32px;font-size:.9em}
+
+  /* Damage calc landscape */
+  .dmg-calc-panels{grid-template-columns:1fr 1fr;gap:8px}
+  .dmg-calc-container{padding:8px}
+  .dmg-panel{padding:8px}
+
+  /* Items landscape */
+  .items-grid{grid-template-columns:repeat(3,1fr);gap:4px}
+  .item-card{padding:6px}
+
+  /* Compare landscape */
+  .compare-overlay{padding:6px 6px 6px 48px}
+  .compare-panel{padding:12px}
+  .compare-fab{bottom:12px;right:12px;padding:6px 12px;font-size:.72em}
+
+  /* Footer */
+  .site-footer{padding:8px 10px 20px}
+  .footer-links a{font-size:.55em}
+  .footer-copy{font-size:.5em}
+
+  /* Ad slots */
+  .ad-slot{min-height:0;padding:2px 8px}
 }
 
 /* Leader Skill Buff Indicator */
@@ -1037,6 +1128,9 @@ a:hover{text-decoration:underline}
   <div class="search-box">
     <input type="text" id="searchInput" placeholder="ユニット名で検索...（例: サザビー、ガンダム）" style="width:100%">
   </div>
+  <button class="mobile-filter-toggle" id="mobileFilterToggle" onclick="toggleMobileFilters()">
+    <span class="toggle-arrow">▼</span> フィルター
+  </button>
   <div class="filters" id="filtersContainer">
     <div class="filter-group" id="filterTypeGroup">
       <label>タイプ</label>
@@ -6420,6 +6514,120 @@ init();
   </nav>
   <p class="footer-copy">© 2026 MH GAMES — GジェネエターナルDB by MH GAMES｜当サイトはゲームの攻略情報を提供するファンサイトです</p>
 </footer>
+
+<!-- Mobile Landscape Enhancements -->
+<script>
+(function() {
+  // 1. Auto-hide header on scroll
+  let lastScrollY = 0;
+  let headerHidden = false;
+  const header = document.querySelector('.header');
+  
+  function checkLandscape() {
+    return window.matchMedia('(max-height:500px) and (orientation:landscape)').matches;
+  }
+  
+  window.addEventListener('scroll', function() {
+    if (!checkLandscape()) {
+      if (header.classList.contains('header-hidden')) {
+        header.classList.remove('header-hidden');
+      }
+      return;
+    }
+    const currentScrollY = window.scrollY;
+    if (currentScrollY > lastScrollY && currentScrollY > 60) {
+      // Scrolling down
+      if (!headerHidden) {
+        header.classList.add('header-hidden');
+        headerHidden = true;
+      }
+    } else {
+      // Scrolling up
+      if (headerHidden) {
+        header.classList.remove('header-hidden');
+        headerHidden = false;
+      }
+    }
+    lastScrollY = currentScrollY;
+  }, { passive: true });
+  
+  // 2. Filter toggle
+  window.toggleMobileFilters = function() {
+    const filters = document.getElementById('filtersContainer');
+    const toggleBtn = document.getElementById('mobileFilterToggle');
+    if (filters.classList.contains('collapsed')) {
+      filters.classList.remove('collapsed');
+      toggleBtn.classList.add('open');
+    } else {
+      filters.classList.add('collapsed');
+      toggleBtn.classList.remove('open');
+    }
+  };
+  
+  // 3. Apply collapsed state on landscape
+  function applyLandscapeMode() {
+    const filters = document.getElementById('filtersContainer');
+    const toggleBtn = document.getElementById('mobileFilterToggle');
+    if (checkLandscape()) {
+      if (!filters.classList.contains('filters-init')) {
+        filters.classList.add('collapsed');
+        filters.classList.add('filters-init');
+      }
+    } else {
+      filters.classList.remove('collapsed');
+      filters.classList.remove('filters-init');
+      if (toggleBtn) toggleBtn.classList.remove('open');
+    }
+  }
+  
+  // 4. Add tooltips to tab buttons
+  function addTabTooltips() {
+    const tooltipMap = {
+      'unit': 'ユニット',
+      'chara': 'キャラ', 
+      'supporter': 'サポ',
+      'taglookup': 'タグ検索',
+      'team': 'チーム編成',
+      'ranking': 'ランキング',
+      'tierlist': 'ティア',
+      'dmgcalc': 'ダメ計算',
+      'items': 'アイテム'
+    };
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      const tab = btn.dataset.tab;
+      if (tooltipMap[tab] && !btn.querySelector('.tab-tooltip')) {
+        const tooltip = document.createElement('span');
+        tooltip.className = 'tab-tooltip';
+        tooltip.textContent = tooltipMap[tab];
+        btn.appendChild(tooltip);
+      }
+    });
+  }
+  
+  // 5. Handle body padding for fixed header
+  function updateBodyPadding() {
+    if (checkLandscape()) {
+      document.body.style.paddingTop = header.offsetHeight + 'px';
+    } else {
+      document.body.style.paddingTop = '';
+    }
+  }
+  
+  // Initialize
+  const mql = window.matchMedia('(max-height:500px) and (orientation:landscape)');
+  mql.addEventListener('change', function() {
+    applyLandscapeMode();
+    updateBodyPadding();
+  });
+  
+  addTabTooltips();
+  applyLandscapeMode();
+  
+  // Update body padding after a brief delay to ensure header is rendered
+  setTimeout(updateBodyPadding, 100);
+  window.addEventListener('resize', updateBodyPadding);
+})();
+</script>
 
 </body>
 </html>
