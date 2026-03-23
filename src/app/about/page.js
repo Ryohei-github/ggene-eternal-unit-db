@@ -22,26 +22,25 @@ export default function AboutPage() {
       color: '#e0ddd6',
       fontFamily: "'Segoe UI', sans-serif",
     }}>
-      {/* Header */}
-      <header style={{
-        background: 'linear-gradient(135deg, #0e1016, #161a22)',
-        borderBottom: '2px solid transparent',
-        borderImage: 'linear-gradient(90deg, transparent, #e8961e, #d63031, transparent) 1',
-        padding: '20px',
-        textAlign: 'center',
-      }}>
-        <a href="/" style={{ textDecoration: 'none' }}>
-          <h1 style={{
-            fontSize: '1.4em',
-            letterSpacing: '2px',
-            background: 'linear-gradient(90deg, #f0a830, #ffd700, #e8961e)',
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-          }}>GジェネエターナルDB</h1>
-          <p style={{ fontSize: '.75em', color: '#8a8d98', marginTop: '2px' }}>
-            Gジェネ エターナル 全レアリティ対応データベース
-          </p>
-        </a>
+      {/* Header - SPAと同じ構成 */}
+      <header className="header" role="banner">
+        <div className="header-brand">
+          <img
+            className="header-icon"
+            src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj"
+            alt="MH GAMES"
+            width="36"
+            height="36"
+            loading="eager"
+          />
+          <h1><a href="/" style={{ textDecoration: 'none' }}>GジェネエターナルDB</a> <a href="https://www.youtube.com/@MH_GAMES_JP" target="_blank" className="sub-brand" style={{ textDecoration: 'none' }}>by MH GAMES</a></h1>
+        </div>
+        <p className="sub">Gジェネ エターナル 全レアリティ対応データベース</p>
+        <nav className="header-links" aria-label="外部リンク">
+          <a className="btn-yt" href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener noreferrer">▶ チャンネル登録</a>
+          <a className="btn-x" href="https://x.com/mh_games_jp" target="_blank" rel="noopener noreferrer">𝕏 ご意見はこちら</a>
+          <a className="btn-about" href="/about">ℹ このサイトについて</a>
+        </nav>
       </header>
 
       {/* Content */}
@@ -232,44 +231,6 @@ export default function AboutPage() {
                 </div>
               </a>
 
-              {/* プライバシーポリシー */}
-              <a
-                href="/privacy"
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: '12px',
-                  padding: '14px 16px',
-                  background: 'rgba(255, 255, 255, .03)',
-                  border: '1px solid rgba(255, 255, 255, .1)',
-                  borderRadius: '10px',
-                  textDecoration: 'none',
-                  color: '#e0ddd6',
-                  transition: 'all .2s',
-                }}
-              >
-                <span style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  width: '40px',
-                  height: '40px',
-                  borderRadius: '10px',
-                  background: 'rgba(255, 255, 255, .06)',
-                  border: '1px solid rgba(255, 255, 255, .12)',
-                  color: '#8a8d98',
-                  fontWeight: 800,
-                  fontSize: '1.1em',
-                  flexShrink: 0,
-                }}>🔒</span>
-                <div>
-                  <div style={{ fontWeight: 700, fontSize: '.95em' }}>プライバシーポリシー</div>
-                  <div style={{ fontSize: '.8em', color: '#8a8d98' }}>
-                    個人情報の取り扱い・Cookie・広告について
-                  </div>
-                </div>
-              </a>
-
               {/* サイト */}
               <a
                 href="https://gget-db.com"
@@ -341,6 +302,17 @@ export default function AboutPage() {
           }}>← トップページに戻る</a>
         </div>
       </main>
+
+      {/* Footer - SPAと同じ構成 */}
+      <footer className="site-footer" role="contentinfo">
+        <nav className="footer-links" aria-label="フッターリンク">
+          <a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener noreferrer">▶ YouTube チャンネル登録</a>
+          <a href="https://x.com/mh_games_jp" target="_blank" rel="noopener noreferrer">𝕏 公式X（ご意見はこちら）</a>
+          <a href="/about">ℹ このサイトについて</a>
+          <a href="/privacy">🔒 プライバシーポリシー</a>
+        </nav>
+        <p className="footer-copy">© 2026 MH GAMES — GジェネエターナルDB by MH GAMES｜当サイトはゲームの攻略情報を提供するファンサイトです</p>
+      </footer>
     </div>
   );
 }
