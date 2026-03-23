@@ -858,7 +858,7 @@ a:hover{text-decoration:underline}
 /* Mobile Landscape: ultra-compact header to maximize content area */
 @media(max-height:500px) and (orientation:landscape){
   /* Header auto-hide */
-  .header{position:fixed;top:0;left:0;right:0;z-index:100;transition:transform .3s ease;padding:4px 4px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 12px}
+  .header{position:fixed;top:0;left:56px;right:0;z-index:100;transition:transform .3s ease;padding:4px 4px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 12px}
   .header.header-hidden{transform:translateY(-100%)}
   .header-brand{gap:5px;padding-right:0}
   .header-icon{width:20px;height:20px}
@@ -6639,10 +6639,12 @@ init();
     });
   }
   
-  // 5. Handle body padding for fixed header
+  // 5. Handle content padding for fixed header in landscape
   function updateBodyPadding() {
     if (checkLandscape()) {
-      document.body.style.paddingTop = header.offsetHeight + 'px';
+      // headerはfixed、コンテンツがheaderの下に隠れないようにpadding-topを設定
+      const hh = header.offsetHeight + 4; // 4px余白
+      document.body.style.paddingTop = hh + 'px';
     } else {
       document.body.style.paddingTop = '';
     }
