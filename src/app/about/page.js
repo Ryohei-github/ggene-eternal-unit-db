@@ -112,13 +112,41 @@ export default function AboutPage() {
               fontSize: '.95em',
               lineHeight: 1.8,
               color: '#c0bdb6',
-              marginBottom: '20px',
+              marginBottom: '16px',
             }}>
               当サイト「GジェネエターナルDB」は、バンダイナムコエンターテインメントのゲーム
               「SDガンダム ジージェネレーション エターナル」のユニット・キャラクター・サポーターの
               データを網羅したファンメイドの非公式データベースサイトです。
               ゲームを楽しむプレイヤーの皆さんの攻略・編成のお役に立てれば幸いです。
             </p>
+
+            {/* サイトの特徴 */}
+            <div style={{
+              background: 'rgba(232, 150, 30, .06)',
+              border: '1px solid rgba(232, 150, 30, .15)',
+              borderRadius: '10px',
+              padding: '16px 20px',
+              marginBottom: '20px',
+            }}>
+              <div style={{ fontSize: '.85em', fontWeight: 700, color: '#e8961e', marginBottom: '10px' }}>
+                サイトの主な機能
+              </div>
+              <div style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
+                gap: '8px',
+                fontSize: '.85em',
+                color: '#c0bdb6',
+                lineHeight: 1.7,
+              }}>
+                <div>・全レアリティ対応のユニット検索</div>
+                <div>・キャラクター・サポーター一覧</div>
+                <div>・シリーズ・タイプ別フィルタ</div>
+                <div>・デバフ効果での絞り込み</div>
+                <div>・ステータス比較・スキル確認</div>
+                <div>・定期的なデータ更新</div>
+              </div>
+            </div>
 
             <div style={{
               display: 'flex',
@@ -200,6 +228,44 @@ export default function AboutPage() {
                   <div style={{ fontWeight: 700, fontSize: '.95em' }}>X (Twitter) - @mh_games_jp</div>
                   <div style={{ fontSize: '.8em', color: '#8a8d98' }}>
                     更新情報・お知らせを発信中。お問い合わせはDMへ
+                  </div>
+                </div>
+              </a>
+
+              {/* プライバシーポリシー */}
+              <a
+                href="/privacy"
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '12px',
+                  padding: '14px 16px',
+                  background: 'rgba(255, 255, 255, .03)',
+                  border: '1px solid rgba(255, 255, 255, .1)',
+                  borderRadius: '10px',
+                  textDecoration: 'none',
+                  color: '#e0ddd6',
+                  transition: 'all .2s',
+                }}
+              >
+                <span style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  width: '40px',
+                  height: '40px',
+                  borderRadius: '10px',
+                  background: 'rgba(255, 255, 255, .06)',
+                  border: '1px solid rgba(255, 255, 255, .12)',
+                  color: '#8a8d98',
+                  fontWeight: 800,
+                  fontSize: '1.1em',
+                  flexShrink: 0,
+                }}>🔒</span>
+                <div>
+                  <div style={{ fontWeight: 700, fontSize: '.95em' }}>プライバシーポリシー</div>
+                  <div style={{ fontSize: '.8em', color: '#8a8d98' }}>
+                    個人情報の取り扱い・Cookie・広告について
                   </div>
                 </div>
               </a>
