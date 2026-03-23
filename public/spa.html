@@ -574,6 +574,27 @@ a:hover{text-decoration:underline}
 .weapon-tag{padding:1px 5px;background:rgba(232,150,30,.1);border:1px solid rgba(232,150,30,.2);border-radius:3px;font-size:.6em;color:var(--accent)}
 .weapon-tag.ex{background:rgba(255,107,53,.15);border-color:rgba(255,107,53,.3);color:var(--accent2)}
 .weapon-tag.map{background:rgba(255,68,102,.15);border-color:rgba(255,68,102,.3);color:#ff6688}
+/* Uncap selector */
+.uncap-sel{background:var(--bg);color:#ffd700;border:1px solid rgba(255,215,0,.3);border-radius:4px;padding:1px 4px;font-size:.65em;font-weight:700;cursor:pointer;outline:none;margin-left:6px;vertical-align:middle}
+.uncap-sel:hover{border-color:#ffd700}
+/* Weapon level row & selector */
+.weapon-lv-row{display:flex;align-items:center;gap:4px}
+.weapon-lv-sel{background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:3px;padding:0 2px;font-size:.6em;cursor:pointer;outline:none;min-width:40px}
+/* Option parts */
+.slot-option-parts{display:flex;flex-wrap:wrap;gap:4px;align-items:center;margin-top:6px;padding-top:6px;border-top:1px dashed rgba(255,255,255,.06)}
+.op-label{font-size:.6em;color:var(--card-text2);font-weight:700;margin-right:2px}
+.op-chip{display:inline-flex;align-items:center;gap:3px;padding:2px 7px;background:rgba(100,200,255,.08);border:1px solid rgba(100,200,255,.2);border-radius:3px;font-size:.6em;color:#7cc8ff;cursor:pointer;transition:all .15s}
+.op-chip:hover{background:rgba(100,200,255,.18);border-color:rgba(100,200,255,.4)}
+.op-chip.empty{color:var(--card-text2);border-style:dashed;background:none;border-color:var(--border)}
+.op-chip.empty:hover{border-color:var(--accent);color:var(--accent)}
+.op-chip-name{max-width:80px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.op-chip-x{color:#ff6b6b;font-weight:700;margin-left:2px}
+/* OP Picker items */
+.op-picker-item{display:flex;align-items:center;gap:8px;padding:8px 12px;border-bottom:1px solid var(--border);cursor:pointer;transition:background .15s}
+.op-picker-item:hover{background:rgba(255,255,255,.04)}
+.op-picker-info{flex:1;min-width:0}
+.op-picker-name{font-size:.82em;font-weight:600;color:var(--card-text)}
+.op-picker-effect{font-size:.7em;color:var(--card-text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .card-tags{display:flex;flex-wrap:wrap;gap:3px}
 .tag{padding:1px 5px;background:rgba(255,255,255,.08);border-radius:3px;font-size:.6em;color:var(--card-text2)}
 .leader-tag-clickable:hover{filter:brightness(1.3);box-shadow:0 0 6px rgba(232,150,30,.4)}
@@ -1201,6 +1222,18 @@ a:hover{text-decoration:underline}
   </div>
 </div>
 
+<!-- Option Parts Picker -->
+<div class="team-picker-overlay" id="opPickerOverlay" onclick="if(event.target===this)closeOpPicker()">
+  <div class="team-picker" style="max-width:420px">
+    <div class="team-picker-header">
+      <h3>オプションパーツ選択</h3>
+      <input type="text" id="opPickerSearch" placeholder="パーツ名・効果で検索..." oninput="renderOpPickerList()">
+      <button class="team-picker-close" onclick="closeOpPicker()">&times;</button>
+    </div>
+    <div class="team-picker-list" id="opPickerList"></div>
+  </div>
+</div>
+
 <!-- Toast -->
 <div class="team-toast" id="teamToast"></div>
 
@@ -1509,12 +1542,14 @@ let allTagData = {};       // {tagName: {units:[], charas:[], total:N}}
 
 // === TEAM SIMULATOR STATE ===
 let teamSlots = [
-  { unitId: null, charaId: null },
-  { unitId: null, charaId: null },
-  { unitId: null, charaId: null },
-  { unitId: null, charaId: null },
-  { unitId: null, charaId: null }
+  { unitId: null, charaId: null, uncap: '★0', optionParts: [], weaponLevels: {} },
+  { unitId: null, charaId: null, uncap: '★0', optionParts: [], weaponLevels: {} },
+  { unitId: null, charaId: null, uncap: '★0', optionParts: [], weaponLevels: {} },
+  { unitId: null, charaId: null, uncap: '★0', optionParts: [], weaponLevels: {} },
+  { unitId: null, charaId: null, uncap: '★0', optionParts: [], weaponLevels: {} }
 ];
+const UNCAP_OPTIONS = ['★0','★1','★2','完凸','SP','SSP'];
+const UNCAP_OPTIONS_ULT = ['1段階','2段階','3段階'];
 let teamSupporterId = null;
 let teamLeaderTag = '';
 let teamLeaderEffect = '';
@@ -3442,13 +3477,22 @@ function renderTeamSlots(containerId, from, to) {
 }
 
 function renderSlotUnit(u, slotIdx) {
+  const slot = teamSlots[slotIdx];
   const s = u.normal?.stats || {};
   const t = u.normal?.terrain || {};
-  const weapons = (u.normal_weapons||[]).slice(0, 6).map(w => {
+  const weaponList = (u.normal_weapons||[]).slice(0, 6);
+  const weapons = weaponList.map((w, wi) => {
     const isMap = w.range === 'MAP';
     const isEx = w.name.endsWith(' EX');
     const mapIcon = isMap ? `<img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP" style="width:14px;height:14px;vertical-align:middle">` : '';
-    return `<span class="weapon-tag${isEx?' ex':''}${isMap?' map':''}" style="font-size:.62em">${mapIcon}${w.name}</span>`;
+    const wLv = slot.weaponLevels[wi] || '';
+    return `<div class="weapon-lv-row">
+      <span class="weapon-tag${isEx?' ex':''}${isMap?' map':''}" style="font-size:.62em">${mapIcon}${w.name}</span>
+      <select class="weapon-lv-sel" onchange="teamSlots[${slotIdx}].weaponLevels[${wi}]=this.value" title="武装Lv">
+        <option value=""${!wLv?' selected':''}>Lv-</option>
+        ${[1,2,3,4,5,6,7,8,9,10].map(l => `<option value="${l}"${wLv==l?' selected':''}>Lv${l}</option>`).join('')}
+      </select>
+    </div>`;
   }).join('');
   const iconHTML = u.image ? `<img class="slot-img" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'">` : '';
   const terrStr = ['宇宙','空中','地上','水上','水中'].map(k => `${k.charAt(0)}${t[k]==='◯'?'<span style="color:#44cc44">◯</span>':t[k]==='△'?'<span style="color:#ffaa00">△</span>':'<span style="color:#555">-</span>'}`).join(' ');
@@ -3457,12 +3501,19 @@ function renderSlotUnit(u, slotIdx) {
     <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 2L6 10h3v8l5-10h-3z" fill="#22c55e" stroke="#16a34a" stroke-width="1"/></svg>
     <span>${lsMatch.buff}</span>
   </div>` : '';
+  // Uncap selector - ULT uses different options
+  const isULT = u.rarity === 'ULT';
+  const uncapOpts = isULT ? UNCAP_OPTIONS_ULT : UNCAP_OPTIONS;
+  const curUncap = slot.uncap || uncapOpts[0];
+  const uncapSelect = `<select class="uncap-sel" onchange="teamSlots[${slotIdx}].uncap=this.value">${uncapOpts.map(o => `<option value="${o}"${curUncap===o?' selected':''}>${o}</option>`).join('')}</select>`;
+  // Option parts display
+  const partsHTML = renderSlotOptionParts(slotIdx);
   return `<div class="slot-filled${lsMatch ? ' ls-matched' : ''}">
     <button class="slot-remove-btn" onclick="removeSlot(${slotIdx},'unit')">✕</button>
     <div class="slot-top-row" style="cursor:pointer" onclick="openTeamPicker('unit',${slotIdx})" title="クリックで変更">
       ${iconHTML}
       <div class="slot-info">
-        <div class="slot-name">${u.name}</div>
+        <div class="slot-name">${u.name} ${uncapSelect}</div>
         <div style="font-size:.65em;color:var(--card-text2)">${(u.series||[]).join(' / ')}</div>
         ${buffBadge}
       </div>
@@ -3477,6 +3528,7 @@ function renderSlotUnit(u, slotIdx) {
     </div>
     <div style="font-size:.68em;color:var(--card-text2);margin-top:4px">${currentLang==="en"?"Terrain":"地形"}: ${terrStr}</div>
     ${weapons ? `<div class="slot-weapons">${weapons}</div>` : ''}
+    ${partsHTML}
   </div>`;
 }
 
@@ -3824,13 +3876,93 @@ function selectPickerSupporter(id) {
 }
 
 function removeSlot(idx, type) {
-  if (type === 'unit') teamSlots[idx].unitId = null;
+  if (type === 'unit') { teamSlots[idx].unitId = null; teamSlots[idx].uncap = '★0'; teamSlots[idx].optionParts = []; teamSlots[idx].weaponLevels = {}; }
   else teamSlots[idx].charaId = null;
   renderTeamSim();
 }
 
+// === OPTION PARTS PICKER ===
+let allItems = null;
+async function loadItemsForTeam() {
+  if (allItems) return allItems;
+  try {
+    const resp = await fetch('/data/items.json');
+    allItems = await resp.json();
+  } catch(e) { allItems = []; }
+  return allItems;
+}
+
+function renderSlotOptionParts(slotIdx) {
+  const slot = teamSlots[slotIdx];
+  const parts = slot.optionParts || [];
+  const maxParts = 3;
+  let html = '<div class="slot-option-parts"><div class="op-label">OP:</div>';
+  for (let p = 0; p < maxParts; p++) {
+    const part = parts[p];
+    if (part) {
+      html += `<div class="op-chip" onclick="removeOptionPart(${slotIdx},${p})" title="クリックで外す">
+        <span class="op-chip-name">${part.name}</span>
+        <span class="op-chip-x">✕</span>
+      </div>`;
+    } else {
+      html += `<div class="op-chip empty" onclick="openOptionPartsPicker(${slotIdx})">+ パーツ</div>`;
+    }
+  }
+  html += '</div>';
+  return html;
+}
+
+function removeOptionPart(slotIdx, partIdx) {
+  teamSlots[slotIdx].optionParts.splice(partIdx, 1);
+  renderTeamSim();
+}
+
+let opPickerSlotIdx = 0;
+async function openOptionPartsPicker(slotIdx) {
+  opPickerSlotIdx = slotIdx;
+  await loadItemsForTeam();
+  const overlay = document.getElementById('opPickerOverlay');
+  if (!overlay) return;
+  overlay.classList.add('open');
+  document.getElementById('opPickerSearch').value = '';
+  renderOpPickerList();
+  document.getElementById('opPickerSearch').focus();
+}
+
+function closeOpPicker() {
+  document.getElementById('opPickerOverlay').classList.remove('open');
+}
+
+function renderOpPickerList() {
+  const list = document.getElementById('opPickerList');
+  const q = (document.getElementById('opPickerSearch').value || '').toLowerCase();
+  const items = (allItems || []).filter(item => {
+    if (q && !item.name.toLowerCase().includes(q) && !(item.effect||'').toLowerCase().includes(q)) return false;
+    return true;
+  }).slice(0, 80);
+  list.innerHTML = items.map(item => {
+    const rarCls = rarityClass(item.rarity);
+    return `<div class="op-picker-item" onclick="selectOptionPart('${item.name.replace(/'/g,"\\'")}','${(item.rarity||'').replace(/'/g,"\\'")}','${(item.effect||'').replace(/'/g,"\\'")}')">
+      <span class="badge ${rarCls}" style="font-size:.6em;padding:1px 4px;min-width:28px;text-align:center">${item.rarity||'?'}</span>
+      <div class="op-picker-info">
+        <div class="op-picker-name">${item.name}</div>
+        <div class="op-picker-effect">${item.effect||''}</div>
+      </div>
+    </div>`;
+  }).join('') || '<div style="padding:20px;text-align:center;color:var(--text2)">該当なし</div>';
+}
+
+function selectOptionPart(name, rarity, effect) {
+  const slot = teamSlots[opPickerSlotIdx];
+  if (!slot.optionParts) slot.optionParts = [];
+  if (slot.optionParts.length >= 3) { showToast('パーツは最大3つまで'); return; }
+  slot.optionParts.push({ name, rarity, effect });
+  closeOpPicker();
+  renderTeamSim();
+}
+
 function clearTeam() {
-  teamSlots = teamSlots.map(() => ({ unitId: null, charaId: null }));
+  teamSlots = teamSlots.map(() => ({ unitId: null, charaId: null, uncap: '★0', optionParts: [], weaponLevels: {} }));
   teamSupporterId = null;
   teamLeaderTag = '';
   teamLeaderEffect = '';
@@ -3843,7 +3975,7 @@ function saveTeam() {
   const name = document.getElementById('teamNameInput').value || '編成タイトル';
   const data = {
     name,
-    slots: teamSlots.map(s => ({ u: s.unitId, c: s.charaId })),
+    slots: teamSlots.map(s => ({ u: s.unitId, c: s.charaId, uc: s.uncap, op: s.optionParts, wl: s.weaponLevels })),
     supporter: teamSupporterId,
     leaderTag: teamLeaderTag,
     leaderEffect: teamLeaderEffect
@@ -3862,8 +3994,8 @@ function loadSavedTeam(idx) {
   const data = saved[idx];
   if (!data) return;
   document.getElementById('teamNameInput').value = data.name || '編成タイトル';
-  teamSlots = (data.slots || []).map(s => ({ unitId: s.u || null, charaId: s.c || null }));
-  while (teamSlots.length < 5) teamSlots.push({ unitId: null, charaId: null });
+  teamSlots = (data.slots || []).map(s => ({ unitId: s.u || null, charaId: s.c || null, uncap: s.uc || '★0', optionParts: s.op || [], weaponLevels: s.wl || {} }));
+  while (teamSlots.length < 5) teamSlots.push({ unitId: null, charaId: null, uncap: '★0', optionParts: [], weaponLevels: {} });
   teamSupporterId = data.supporter || null;
   teamLeaderTag = data.leaderTag || '';
   teamLeaderEffect = data.leaderEffect || '';
@@ -3966,10 +4098,17 @@ async function shareTeamImage() {
   let maxUnitH = 220;
   let maxCharaH = 150;
   for (const sd of slotData) {
-    // Unit: header(22) + imageRow(54) + buffBadge?(20:0) + stats(6*15=90) + terrain(28) + abilities(label+n*line) + pad(10)
+    // Unit: header(22) + imageRow(54) + buffBadge?(20:0) + stats(6*15=90) + terrain(28) + weaponLv + optionParts + abilities(label+n*line) + pad(10)
     let uh = 22 + 54 + 90 + 28 + 10;
     const lsM = sd.unit ? checkLeaderSkillMatch(sd.unit) : null;
     if (lsM) uh += 20;
+    // Weapon levels space
+    const wLevelsI = teamSlots[slotData.indexOf(sd)]?.weaponLevels || {};
+    const hasWLI = Object.values(wLevelsI).some(v => v);
+    if (hasWLI) uh += LABEL_H + Object.values(wLevelsI).filter(v => v).length * (LINE_H - 2) + 4;
+    // Option parts space
+    const oPartsI = teamSlots[slotData.indexOf(sd)]?.optionParts || [];
+    if (oPartsI.length > 0) uh += LABEL_H + oPartsI.length * (LINE_H - 2) + 4;
     if (sd.unitAbils.length > 0) uh += LABEL_H + sd.unitAbils.length * LINE_H;
     if (uh > maxUnitH) maxUnitH = uh;
 
@@ -4106,6 +4245,17 @@ async function shareTeamImage() {
       ctx.fillStyle = rarCol; ctx.font = 'bold 12px sans-serif';
       ctx.fillText(unit.rarity||'?', x + slotW - 34, startY + 18);
 
+      // Uncap badge
+      const uncapVal = teamSlots[i].uncap || (unit.rarity === 'ULT' ? '1段階' : '★0');
+      ctx.fillStyle = '#ffd700'; ctx.font = 'bold 10px sans-serif';
+      const uncapW = ctx.measureText(uncapVal).width + 8;
+      ctx.fillStyle = 'rgba(255,215,0,.12)'; ctx.beginPath();
+      roundRect(ctx, x + slotW - 36 - uncapW, startY + 6, uncapW, 16, 3); ctx.fill();
+      ctx.strokeStyle = 'rgba(255,215,0,.3)'; ctx.lineWidth = 1; ctx.beginPath();
+      roundRect(ctx, x + slotW - 36 - uncapW, startY + 6, uncapW, 16, 3); ctx.stroke();
+      ctx.fillStyle = '#ffd700'; ctx.font = 'bold 10px sans-serif';
+      ctx.fillText(uncapVal, x + slotW - 32 - uncapW, startY + 18);
+
       // Unit image (48x48)
       const imgSize = 48;
       if (unitImg) {
@@ -4161,6 +4311,38 @@ async function shareTeamImage() {
         ctx.fillStyle = '#8b949e'; ctx.font = '10px sans-serif'; ctx.fillText(tk[0], tx + 6, curY + 13);
       });
       curY += 28;
+
+      // Weapon levels
+      const wLevels = teamSlots[i].weaponLevels || {};
+      const unitWeapons = (unit.normal_weapons||[]).slice(0, 6);
+      const hasWL = Object.values(wLevels).some(v => v);
+      if (hasWL && unitWeapons.length > 0) {
+        ctx.fillStyle = '#e8961e'; ctx.font = 'bold 10px sans-serif';
+        ctx.fillText('武装', x + slotPadX, curY);
+        curY += LABEL_H - 4;
+        unitWeapons.forEach((w, wi) => {
+          const lv = wLevels[wi];
+          if (!lv) return;
+          ctx.fillStyle = '#c9d1d9'; ctx.font = '10px sans-serif';
+          drawClipped(ctx, `${w.name} Lv${lv}`, x + slotPadX, curY, textMaxW);
+          curY += LINE_H - 2;
+        });
+        curY += 4;
+      }
+
+      // Option parts
+      const oParts = teamSlots[i].optionParts || [];
+      if (oParts.length > 0) {
+        ctx.fillStyle = '#7cc8ff'; ctx.font = 'bold 10px sans-serif';
+        ctx.fillText('OP', x + slotPadX, curY);
+        curY += LABEL_H - 4;
+        oParts.forEach(p => {
+          ctx.fillStyle = '#7cc8ff'; ctx.font = '10px sans-serif';
+          drawClipped(ctx, p.name, x + slotPadX, curY, textMaxW);
+          curY += LINE_H - 2;
+        });
+        curY += 4;
+      }
 
       // Unit abilities
       if (sd.unitAbils.length > 0) {
