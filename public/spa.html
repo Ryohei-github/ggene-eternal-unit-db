@@ -6078,7 +6078,7 @@ function buildItemFilters() {
   // Source buttons - ordered by frequency/importance
   const srcOrder = [
     {val:'Gショップ',lbl:'Gショップ'},
-    {val:'イベント',lbl:'イベント'},
+    {val:'イベント',lbl:'その他イベント'},
     {val:'エターナルロード',lbl:'Eロード'},
     {val:'ジェネレーションタワー',lbl:'Gタワー'},
     {val:'ミッション',lbl:'ミッション'},
@@ -6095,9 +6095,9 @@ function buildItemFilters() {
   const effectItems = [
     {val:'EN',lbl:'EN'},
     {val:'HP',lbl:'HP'},
-    {val:'攻撃力',lbl:'ATK'},
-    {val:'防御力',lbl:'DEF'},
-    {val:'機動力',lbl:'MOB'}
+    {val:'攻撃力',lbl:'攻撃力'},
+    {val:'防御力',lbl:'防御力'},
+    {val:'機動力',lbl:'機動力'}
   ];
   document.getElementById('itemEffectButtons').innerHTML = effectItems.map(e => mkBtn(e.val,e.lbl)).join('');
 }
@@ -6127,7 +6127,7 @@ function renderItems() {
   document.getElementById('itemsCount').textContent = `${filtered.length} / ${parts.length} 件`;
 
   const iconMap = {'EN':'en','HP':'hp','攻撃力':'atk','防御力':'def','機動力':'mob'};
-  const iconLabel = {'EN':'EN','HP':'HP','攻撃力':'ATK','防御力':'DEF','機動力':'MOB'};
+  const iconLabel = {'EN':'EN','HP':'HP','攻撃力':'攻撃力','防御力':'防御力','機動力':'機動力'};
   const srcClass = {'リクエスト':'request','Gショップ':'shop','イベント':'event','エターナルロード':'road','強敵襲来':'boss','期間限定':'event','ミッション':'event','ジェネレーションタワー':'road'};
 
   const grid = document.getElementById('itemsGrid');
