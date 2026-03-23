@@ -708,6 +708,14 @@ a:hover{text-decoration:underline}
 .modal .supporter-detail-block .sd-label{font-size:.7em;color:var(--accent);font-weight:600;margin-bottom:4px}
 .modal .supporter-detail-block .sd-text{font-size:.85em;color:var(--card-text);line-height:1.5}
 
+/* Wide modal layout for desktop */
+@media(min-width:1100px) and (min-height:600px){
+  .modal{max-width:1200px;max-height:90vh;overflow-y:auto;display:flex;flex-direction:column}
+  .modal .modal-detail-columns{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
+  .modal .modal-detail-columns .detail-col-left,
+  .modal .modal-detail-columns .detail-col-right{overflow-y:auto;max-height:70vh}
+}
+
 /* View Toggle */
 .view-toggle{display:flex;gap:2px;margin-left:12px}
 .view-btn{padding:3px 10px;background:var(--card);border:1px solid var(--border);border-radius:4px;color:var(--text2);cursor:pointer;font-size:.75em;display:flex;align-items:center;gap:3px}
@@ -3052,63 +3060,69 @@ function renderUnitDetail(u, form) {
       </div>
     </div>
     ${transformToggle}
-    <div class="detail-section">
-      <div style="font-size:.8em;color:var(--card-text2);margin-bottom:4px">${(u.series||[]).map(s=>'<span class="clickable-series" onclick="filterBySeries(\''+ s.replace(/'/g,"\\'") +'\');closeModal()">'+tData(s,"series")+'</span>').join(' / ')}</div>
-      <div class="card-tags">${getNonCharaTags(u.tags).map(t=>`<span class="tag clickable-tag" onclick="filterByTag('${t.replace(/'/g,"\\'")}');closeModal()">${t}</span>`).join('')}</div>
-      ${getObtainChara(u) ? `<div class="paired-chara-section"><h4>👤 獲得キャラクター</h4>${getObtainChara(u)}</div>` : (getPairedCharas(u.tags).length ? `<div class="paired-chara-section"><h4>👤 獲得キャラクター</h4>${pairedCharaHTML(u)}</div>` : '')}
-    </div>
-    <div class="detail-section">
-      <h3>ステータス${isTransform ? ' (変形後)' : ''}${!isTransform && u.rarity==='UR' ? ' <span class="rarity-note">※最大強化時のステータス</span>' : !isTransform && u.rarity==='SSR' ? ' <span class="rarity-note">※SSP化時のステータス</span>' : ''}</h3>
-      ${formData.combat_power ? `<div class="combat-power-display">戦闘力: <span style="color:var(--gold);font-weight:bold">${formData.combat_power.toLocaleString()}</span></div>` : ''}
-      <div class="stats-grid">
-        <div class="stat-box"><div class="label">HP</div><div class="val">${(parseInt(s.hp)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'hp')}</div></div>
-        <div class="stat-box"><div class="label">EN</div><div class="val">${s.en||'-'}${rankBadge(_unitRanks,u.id,'en')}</div></div>
-        <div class="stat-box"><div class="label">攻撃力</div><div class="val">${(parseInt(s.attack)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'attack')}</div></div>
-        <div class="stat-box"><div class="label">防御力</div><div class="val">${(parseInt(s.defense)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'defense')}</div></div>
-        <div class="stat-box"><div class="label">機動力</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'agility')}</div></div>
-        <div class="stat-box"><div class="label">移動力</div><div class="val">${s.mobility||'-'}${rankBadge(_unitRanks,u.id,'mobility')}</div></div>
+    <div class="modal-detail-columns">
+      <div class="detail-col-left">
+        <div class="detail-section">
+          <div style="font-size:.8em;color:var(--card-text2);margin-bottom:4px">${(u.series||[]).map(s=>'<span class="clickable-series" onclick="filterBySeries(\''+ s.replace(/'/g,"\\'") +'\');closeModal()">'+tData(s,"series")+'</span>').join(' / ')}</div>
+          <div class="card-tags">${getNonCharaTags(u.tags).map(t=>`<span class="tag clickable-tag" onclick="filterByTag('${t.replace(/'/g,"\\'")}');closeModal()">${t}</span>`).join('')}</div>
+          ${getObtainChara(u) ? `<div class="paired-chara-section"><h4>👤 獲得キャラクター</h4>${getObtainChara(u)}</div>` : (getPairedCharas(u.tags).length ? `<div class="paired-chara-section"><h4>👤 獲得キャラクター</h4>${pairedCharaHTML(u)}</div>` : '')}
+        </div>
+        <div class="detail-section">
+          <h3>ステータス${isTransform ? ' (変形後)' : ''}${!isTransform && u.rarity==='UR' ? ' <span class="rarity-note">※最大強化時のステータス</span>' : !isTransform && u.rarity==='SSR' ? ' <span class="rarity-note">※SSP化時のステータス</span>' : ''}</h3>
+          ${formData.combat_power ? `<div class="combat-power-display">戦闘力: <span style="color:var(--gold);font-weight:bold">${formData.combat_power.toLocaleString()}</span></div>` : ''}
+          <div class="stats-grid">
+            <div class="stat-box"><div class="label">HP</div><div class="val">${(parseInt(s.hp)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'hp')}</div></div>
+            <div class="stat-box"><div class="label">EN</div><div class="val">${s.en||'-'}${rankBadge(_unitRanks,u.id,'en')}</div></div>
+            <div class="stat-box"><div class="label">攻撃力</div><div class="val">${(parseInt(s.attack)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'attack')}</div></div>
+            <div class="stat-box"><div class="label">防御力</div><div class="val">${(parseInt(s.defense)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'defense')}</div></div>
+            <div class="stat-box"><div class="label">機動力</div><div class="val">${(parseInt(s.agility)||0).toLocaleString()}${rankBadge(_unitRanks,u.id,'agility')}</div></div>
+            <div class="stat-box"><div class="label">移動力</div><div class="val">${s.mobility||'-'}${rankBadge(_unitRanks,u.id,'mobility')}</div></div>
+          </div>
+          ${starData && starData.length > 1 ? `
+          <div style="margin-top:10px">
+            <details class="limit-break-details" open>
+              <summary style="cursor:pointer;color:var(--accent);font-size:.85em;user-select:none">${u.rarity==='ULT'?'段階強化ステータス一覧':u.rarity==='SSR'?'★限界突破 / SP化 / SSP化 ステータス一覧':'★限界突破ステータス一覧'}</summary>
+              <table class="lb-table">
+                <thead><tr><th>${u.rarity==='ULT'?'段階':'★'}</th><th>LV</th><th>HP</th><th>EN</th><th>攻撃</th><th>防御</th><th>機動</th><th>移動</th></tr></thead>
+                <tbody>${starData.map(st => {
+                  const isULT = u.rarity==='ULT';
+                  const ultLabels = {0:'1段階 <span class="badge rarity-ssr" style="font-size:.65em;padding:0 3px">SSR</span>',1:'2段階 <span class="badge rarity-ur" style="font-size:.65em;padding:0 3px">UR</span>',2:'3段階 <span class="badge rarity-ur" style="font-size:.65em;padding:0 3px">UR</span>'};
+                  const starLabel = isULT ? (ultLabels[st.star]||st.star) : (st.star === 0 ? '無' : st.star === 4 ? '<span class="sp-label">★★★<br>SP化</span>' : st.star === 5 ? '<span class="ssp-label">★★★<br>SSP化</span>' : '★'.repeat(st.star));
+                  const rowClass = isULT ? (st.star===2?' class="lb-max"':'') : (st.star >= 4 ? ' class="lb-sp"' : st.star === starData.filter(s=>s.star<=3).length - 1 && st.star <= 3 ? ' class="lb-max"' : '');
+                  return `<tr${rowClass}>
+                  <td>${starLabel}</td>
+                  <td>${st.lv||'-'}</td>
+                  <td>${(st.hp||0).toLocaleString()}</td>
+                  <td>${st.en||'-'}</td>
+                  <td>${(st.attack||0).toLocaleString()}</td>
+                  <td>${(st.defense||0).toLocaleString()}</td>
+                  <td>${(st.agility||0).toLocaleString()}</td>
+                  <td>${st.mobility||'-'}</td>
+                </tr>`}).join('')}</tbody>
+              </table>
+            </details>
+          </div>` : ''}
+        </div>
+        <div class="detail-section">
+          <h3>地形適性</h3>
+          <div class="terrain-grid">
+            <span>宇宙${terrainIcon(t['宇宙'])}</span>
+            <span>空中${terrainIcon(t['空中'])}</span>
+            <span>地上${terrainIcon(t['地上'])}</span>
+            <span>水上${terrainIcon(t['水上'])}</span>
+            <span>水中${terrainIcon(t['水中'])}</span>
+          </div>
+        </div>
       </div>
-      ${starData && starData.length > 1 ? `
-      <div style="margin-top:10px">
-        <details class="limit-break-details" open>
-          <summary style="cursor:pointer;color:var(--accent);font-size:.85em;user-select:none">${u.rarity==='ULT'?'段階強化ステータス一覧':u.rarity==='SSR'?'★限界突破 / SP化 / SSP化 ステータス一覧':'★限界突破ステータス一覧'}</summary>
-          <table class="lb-table">
-            <thead><tr><th>${u.rarity==='ULT'?'段階':'★'}</th><th>LV</th><th>HP</th><th>EN</th><th>攻撃</th><th>防御</th><th>機動</th><th>移動</th></tr></thead>
-            <tbody>${starData.map(st => {
-              const isULT = u.rarity==='ULT';
-              const ultLabels = {0:'1段階 <span class="badge rarity-ssr" style="font-size:.65em;padding:0 3px">SSR</span>',1:'2段階 <span class="badge rarity-ur" style="font-size:.65em;padding:0 3px">UR</span>',2:'3段階 <span class="badge rarity-ur" style="font-size:.65em;padding:0 3px">UR</span>'};
-              const starLabel = isULT ? (ultLabels[st.star]||st.star) : (st.star === 0 ? '無' : st.star === 4 ? '<span class="sp-label">★★★<br>SP化</span>' : st.star === 5 ? '<span class="ssp-label">★★★<br>SSP化</span>' : '★'.repeat(st.star));
-              const rowClass = isULT ? (st.star===2?' class="lb-max"':'') : (st.star >= 4 ? ' class="lb-sp"' : st.star === starData.filter(s=>s.star<=3).length - 1 && st.star <= 3 ? ' class="lb-max"' : '');
-              return `<tr${rowClass}>
-              <td>${starLabel}</td>
-              <td>${st.lv||'-'}</td>
-              <td>${(st.hp||0).toLocaleString()}</td>
-              <td>${st.en||'-'}</td>
-              <td>${(st.attack||0).toLocaleString()}</td>
-              <td>${(st.defense||0).toLocaleString()}</td>
-              <td>${(st.agility||0).toLocaleString()}</td>
-              <td>${st.mobility||'-'}</td>
-            </tr>`}).join('')}</tbody>
-          </table>
-        </details>
-      </div>` : ''}
-    </div>
-    <div class="detail-section">
-      <h3>地形適性</h3>
-      <div class="terrain-grid">
-        <span>宇宙${terrainIcon(t['宇宙'])}</span>
-        <span>空中${terrainIcon(t['空中'])}</span>
-        <span>地上${terrainIcon(t['地上'])}</span>
-        <span>水上${terrainIcon(t['水上'])}</span>
-        <span>水中${terrainIcon(t['水中'])}</span>
+      <div class="detail-col-right">
+        <div class="detail-section">
+          <h3>武装 (${weapons.length})</h3>
+          ${weaponsHTML}
+        </div>
+        ${pureAbilities.length ? `<div class="detail-section"><h3>アビリティ (${pureAbilities.length})</h3>${abHTML}</div>` : ''}
+        ${mechText ? `<div class="detail-section"><h3>機構</h3><div class="mechanism-item"><span class="mechanism-effect">${mechText}</span></div></div>` : ''}
       </div>
     </div>
-    <div class="detail-section">
-      <h3>武装 (${weapons.length})</h3>
-      ${weaponsHTML}
-    </div>
-    ${pureAbilities.length ? `<div class="detail-section"><h3>アビリティ (${pureAbilities.length})</h3>${abHTML}</div>` : ''}
-    ${mechText ? `<div class="detail-section"><h3>機構</h3><div class="mechanism-item"><span class="mechanism-effect">${mechText}</span></div></div>` : ''}
   `;
 }
 
@@ -3223,28 +3237,34 @@ function showCharaDetail(id) {
 
   document.getElementById('modalContent').innerHTML = `
     <button class="modal-close" onclick="closeModal()">&times;</button>
-    <h2>${c.name}</h2>
-    ${charaImgHTML}
-    <div class="detail-badges">
-      <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
-      ${typeBadgeHTML(c.chara_type)}
-      ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
-      ${c.limited ? '<span class="badge" style="background:#ff6b6b;color:#fff;font-size:.75em">限定</span>' : ''}
-      ${c.obtain_method ? `<span class="badge badge-type">${c.obtain_method}</span>` : ''}
-      ${c.acquire ? `<span class="badge" style="background:${c.acquire==='ガシャ'?'rgba(99,179,237,.25);color:#63b3ed':c.acquire==='スカウト'?'rgba(72,187,120,.25);color:#48bb78':c.acquire==='イベント'?'rgba(237,137,54,.25);color:#ed8936':'rgba(160,174,192,.25);color:#a0aec0'};font-size:.75em">${c.acquire}</span>` : ''}
-    </div>
-    ${c.series ? `<div class="detail-section"><div style="font-size:.8em;color:var(--card-text2)"><span class="clickable-series" onclick="filterBySeries('${c.series.replace(/'/g,"\\'")}');closeModal()">${tData(c.series,"series")}</span></div></div>` : ''}
-    ${statsHTML}
-    ${(c.skills||[]).length ? `<div class="detail-section"><h3>${c.sp_skills && c.sp_skills.length ? 'スキル（通常）' : 'スキル'} (${c.skills.length})</h3>${skillsHTML}</div>` : ''}
-    ${c.sp_skills && c.sp_skills.length ? `<div class="detail-section chara-sp-section"><h3>スキル（SP化後） (${c.sp_skills.length})</h3>${spSkillsHTML}</div>` : ''}
-    ${cleanAbilities.length ? `<div class="detail-section"><h3>${c.sp_abilities && c.sp_abilities.length ? 'アビリティ（通常）' : 'アビリティ'} (${cleanAbilities.length})</h3>${abHTML}</div>` : ''}
-    ${c.sp_abilities && c.sp_abilities.length ? `<div class="detail-section chara-sp-section"><h3>アビリティ（SP化後） (${c.sp_abilities.length})</h3>${c.sp_abilities.map(a => `
-      <div class="ability-item" style="border-left:3px solid #ffd54f;padding-left:10px">
-        <span class="ability-name" style="color:#ffd54f">${a.name}</span><br>
-        <span class="ability-effect">${a.desc || ''}</span>
-        ${a.condition ? `<span style="display:inline-block;margin-left:8px;padding:1px 6px;background:rgba(255,213,79,.1);border:1px solid #ffd54f;border-radius:4px;font-size:.75em;color:#ffd54f">${a.condition}</span>` : ''}
+    <div class="modal-detail-columns">
+      <div class="detail-col-left">
+        <h2>${c.name}</h2>
+        ${charaImgHTML}
+        <div class="detail-badges">
+          <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
+          ${typeBadgeHTML(c.chara_type)}
+          ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
+          ${c.limited ? '<span class="badge" style="background:#ff6b6b;color:#fff;font-size:.75em">限定</span>' : ''}
+          ${c.obtain_method ? `<span class="badge badge-type">${c.obtain_method}</span>` : ''}
+          ${c.acquire ? `<span class="badge" style="background:${c.acquire==='ガシャ'?'rgba(99,179,237,.25);color:#63b3ed':c.acquire==='スカウト'?'rgba(72,187,120,.25);color:#48bb78':c.acquire==='イベント'?'rgba(237,137,54,.25);color:#ed8936':'rgba(160,174,192,.25);color:#a0aec0'};font-size:.75em">${c.acquire}</span>` : ''}
+        </div>
+        ${c.series ? `<div class="detail-section"><div style="font-size:.8em;color:var(--card-text2)"><span class="clickable-series" onclick="filterBySeries('${c.series.replace(/'/g,"\\'")}');closeModal()">${tData(c.series,"series")}</span></div></div>` : ''}
+        ${statsHTML}
       </div>
-    `).join('')}</div>` : ''}
+      <div class="detail-col-right">
+        ${(c.skills||[]).length ? `<div class="detail-section"><h3>${c.sp_skills && c.sp_skills.length ? 'スキル（通常）' : 'スキル'} (${c.skills.length})</h3>${skillsHTML}</div>` : ''}
+        ${c.sp_skills && c.sp_skills.length ? `<div class="detail-section chara-sp-section"><h3>スキル（SP化後） (${c.sp_skills.length})</h3>${spSkillsHTML}</div>` : ''}
+        ${cleanAbilities.length ? `<div class="detail-section"><h3>${c.sp_abilities && c.sp_abilities.length ? 'アビリティ（通常）' : 'アビリティ'} (${cleanAbilities.length})</h3>${abHTML}</div>` : ''}
+        ${c.sp_abilities && c.sp_abilities.length ? `<div class="detail-section chara-sp-section"><h3>アビリティ（SP化後） (${c.sp_abilities.length})</h3>${c.sp_abilities.map(a => `
+          <div class="ability-item" style="border-left:3px solid #ffd54f;padding-left:10px">
+            <span class="ability-name" style="color:#ffd54f">${a.name}</span><br>
+            <span class="ability-effect">${a.desc || ''}</span>
+            ${a.condition ? `<span style="display:inline-block;margin-left:8px;padding:1px 6px;background:rgba(255,213,79,.1);border:1px solid #ffd54f;border-radius:4px;font-size:.75em;color:#ffd54f">${a.condition}</span>` : ''}
+          </div>
+        `).join('')}</div>` : ''}
+      </div>
+    </div>
   `;
   openModal();
 }
@@ -3283,49 +3303,55 @@ function showSupporterDetail(id) {
 
   document.getElementById('modalContent').innerHTML = `
     <button class="modal-close" onclick="closeModal()">&times;</button>
-    <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px">
-      ${s.image ? `<img src="${s.image}" alt="${s.name}" style="width:64px;height:64px;border-radius:8px;object-fit:cover;border:2px solid var(--border);flex-shrink:0" onerror="this.style.display='none'">` : ''}
-      <div>
-        <h2 style="margin:0">${s.name}</h2>
-        <div class="detail-badges" style="margin-top:4px">
-          ${obtainLabel}
-          <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
-          ${(s.target_series||[]).map(ts => `<span class="badge badge-type leader-tag-clickable" style="cursor:pointer" onclick="showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join('')}
+    <div class="modal-detail-columns">
+      <div class="detail-col-left">
+        <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px">
+          ${s.image ? `<img src="${s.image}" alt="${s.name}" style="width:64px;height:64px;border-radius:8px;object-fit:cover;border:2px solid var(--border);flex-shrink:0" onerror="this.style.display='none'">` : ''}
+          <div>
+            <h2 style="margin:0">${s.name}</h2>
+            <div class="detail-badges" style="margin-top:4px">
+              ${obtainLabel}
+              <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
+              ${(s.target_series||[]).map(ts => `<span class="badge badge-type leader-tag-clickable" style="cursor:pointer" onclick="showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join('')}
+            </div>
+          </div>
+        </div>
+        <div class="detail-section">
+          <h3>基本ステータス</h3>
+          <div class="stats-grid" style="grid-template-columns:repeat(2,1fr)">
+            <div class="stat-box"><div class="label">HP</div><div class="val">${s.hp ? s.hp.toLocaleString() : '-'}</div></div>
+            <div class="stat-box"><div class="label">攻撃力</div><div class="val">${s.attack||'-'}</div></div>
+          </div>
         </div>
       </div>
-    </div>
-    <div class="detail-section">
-      <h3>基本ステータス</h3>
-      <div class="stats-grid" style="grid-template-columns:repeat(2,1fr)">
-        <div class="stat-box"><div class="label">HP</div><div class="val">${s.hp ? s.hp.toLocaleString() : '-'}</div></div>
-        <div class="stat-box"><div class="label">攻撃力</div><div class="val">${s.attack||'-'}</div></div>
-      </div>
-    </div>
-    <div class="detail-section">
-      <h3>リーダースキル</h3>
-      <div class="supporter-detail-block" style="border-color:rgba(232,150,30,.3)">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap">
-          ${(s.target_series||[]).length ? (s.target_series||[]).map(ts => `<span class="tag leader-tag-clickable" style="font-size:.8em;background:rgba(232,150,30,.2);border:1px solid var(--accent);color:var(--accent);cursor:pointer;padding:2px 8px" onclick="showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join('') : '<span style="font-size:.8em;color:var(--card-text2)">-</span>'}
-          ${base ? `<span style="font-size:.95em;font-weight:700;color:var(--card-text)">${base}</span>` : ''}
-          ${max && max !== base ? `<span style="color:var(--card-text2)">→</span><span style="font-size:.95em;font-weight:700;color:${hasTier2 ? 'var(--card-text)' : '#3fb950'}">${max}</span>` : ''}
+      <div class="detail-col-right">
+        <div class="detail-section">
+          <h3>リーダースキル</h3>
+          <div class="supporter-detail-block" style="border-color:rgba(232,150,30,.3)">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap">
+              ${(s.target_series||[]).length ? (s.target_series||[]).map(ts => `<span class="tag leader-tag-clickable" style="font-size:.8em;background:rgba(232,150,30,.2);border:1px solid var(--accent);color:var(--accent);cursor:pointer;padding:2px 8px" onclick="showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join('') : '<span style="font-size:.8em;color:var(--card-text2)">-</span>'}
+              ${base ? `<span style="font-size:.95em;font-weight:700;color:var(--card-text)">${base}</span>` : ''}
+              ${max && max !== base ? `<span style="color:var(--card-text2)">→</span><span style="font-size:.95em;font-weight:700;color:${hasTier2 ? 'var(--card-text)' : '#3fb950'}">${max}</span>` : ''}
+            </div>
+            ${hasTier2 ? `<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;padding-top:4px;border-top:1px dashed rgba(63,185,80,.2);flex-wrap:wrap">
+              <span class="tag" style="font-size:.75em;background:rgba(63,185,80,.12);border-color:rgba(63,185,80,.4);color:#3fb950">${(s.leader2_target||'').replace(/ and /g,' & ')}</span>
+              <span style="font-size:.95em;font-weight:700;color:var(--card-text)">${base2}</span>
+              <span style="color:var(--card-text2)">→</span><span style="font-size:.95em;font-weight:700;color:#3fb950">${max2}</span>
+            </div>` : ''}
+            <div style="font-size:.85em;color:var(--card-text2);margin-top:4px">${s.leader_effect || 'ステータス上昇(EN除く)'}</div>
+            ${convexHTML}
+          </div>
         </div>
-        ${hasTier2 ? `<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;padding-top:4px;border-top:1px dashed rgba(63,185,80,.2);flex-wrap:wrap">
-          <span class="tag" style="font-size:.75em;background:rgba(63,185,80,.12);border-color:rgba(63,185,80,.4);color:#3fb950">${(s.leader2_target||'').replace(/ and /g,' & ')}</span>
-          <span style="font-size:.95em;font-weight:700;color:var(--card-text)">${base2}</span>
-          <span style="color:var(--card-text2)">→</span><span style="font-size:.95em;font-weight:700;color:#3fb950">${max2}</span>
-        </div>` : ''}
-        <div style="font-size:.85em;color:var(--card-text2);margin-top:4px">${s.leader_effect || 'ステータス上昇(EN除く)'}</div>
-        ${convexHTML}
-      </div>
-    </div>
-    <div class="detail-section">
-      <h3>サポートスキル</h3>
-      <div class="supporter-detail-block">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
-          ${recIcon}
-          <span style="font-weight:700;color:var(--card-text)">${s.recovery_type||'-'}回復 ${s.recovery_amount||''}</span>
+        <div class="detail-section">
+          <h3>サポートスキル</h3>
+          <div class="supporter-detail-block">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px">
+              ${recIcon}
+              <span style="font-weight:700;color:var(--card-text)">${s.recovery_type||'-'}回復 ${s.recovery_amount||''}</span>
+            </div>
+            <div style="font-size:.85em;color:var(--card-text2);margin-top:4px">効果範囲: 半径${s.range||'-'}マス</div>
+          </div>
         </div>
-        <div style="font-size:.85em;color:var(--card-text2);margin-top:4px">効果範囲: 半径${s.range||'-'}マス</div>
       </div>
     </div>
   `;
