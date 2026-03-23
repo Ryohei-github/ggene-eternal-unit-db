@@ -1008,6 +1008,7 @@ a:hover{text-decoration:underline}
     <a class="btn-yt" href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">▶ チャンネル登録</a>
     <a class="btn-x" href="https://x.com/mh_games_jp" target="_blank" rel="noopener">𝕏 ご意見はこちら</a>
     <a class="btn-about" href="/about">ℹ このサイトについて</a>
+    <a class="btn-about" href="/privacy">🔒 プライバシーポリシー</a>
   </nav>
   <p class="yt-cta">サイトの充実はチャンネル登録数が目標！<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">登録して応援</a>してくれると嬉しいです</p>
   <div class="accent-line"></div>
@@ -5889,7 +5890,8 @@ function dcRenderDefPanel() {
     buffs.forEach((b,i) => {
       const key = 'defBuff_'+i;
       const checked = dcDef.buffs[key] !== false;
-      html += `<div class="dmg-buff-item"><input type="checkbox" id="${key}" ${checked?'checked':''} onchange="dcDef.buffs['${key}']=this.checked;dcUpdateResults()"><label for="${key}">${b.name}</label><span class="buff-pct red">-${b.value}%</span></div>`;
+      const fgTag = b.isForceGuard ? ' <span style="color:#3b82f6;font-size:.7em;font-weight:700">[EX無視不可]</span>' : '';
+      html += `<div class="dmg-buff-item"><input type="checkbox" id="${key}" ${checked?'checked':''} onchange="dcDef.buffs['${key}']=this.checked;dcUpdateResults()"><label for="${key}">${b.name}${fgTag}</label><span class="buff-pct red">-${b.value}%</span></div>`;
     });
     html += '</div>';
   }
@@ -5903,7 +5905,7 @@ function dcRenderResults() {
   const r = dcCalculateDamage();
   if (!r) return '<div class="dmg-calc-empty">攻撃側のユニット・キャラ・武装と<br>防御側のユニット・キャラを選択してください</div>';
   return `<h3>計算結果</h3>
-    ${r.isEXWeapon ? '<div style="text-align:center;color:#f59e0b;font-weight:600;font-size:.85em;margin-bottom:8px">⚡ EX武装: 相手の軽減アビリティを無視' + (r.dmgDownPct>0 ? ' (無視: -'+r.dmgDownPct+'%)' : '') + '</div>' : ''}
+    ${r.isEXWeapon ? '<div style="text-align:center;color:#f59e0b;font-weight:600;font-size:.85em;margin-bottom:8px">⚡ EX武装: 相手の軽減アビリティを無視' + (r.dmgDownPct>0 ? ' (無視: -'+r.dmgDownPct+'%)' : '') + (r.forceGuardPct>0 ? '<br><span style="color:#3b82f6">🛡 フォースガード -'+r.forceGuardPct+'% は無視不可（適用中）</span>' : '') + '</div>' : ''}
     <div class="dmg-result-row normal">
       <span class="dmg-result-label">通常ダメージ</span>
       <span class="dmg-result-value">${Math.ceil(r.normalDmg).toLocaleString()}</span>
@@ -6068,8 +6070,9 @@ function dcDetectDefBuffs() {
   if (ch && ch.skills) {
     ch.skills.forEach(sk => {
       const eff = sk.effect || '';
+      const isForceGuard = (sk.name||'').includes('フォースガード');
       let m = eff.match(/ダメージが(\d+)%軽減/);
-      if (m) buffs.push({ name: sk.name+' (被ダメ-'+m[1]+'%)', value: parseInt(m[1]), cat: 'dmgDown' });
+      if (m) buffs.push({ name: sk.name+' (被ダメ-'+m[1]+'%)', value: parseInt(m[1]), cat: 'dmgDown', isForceGuard });
       m = eff.match(/防御力が(\d+)%上昇/);
       if (m) buffs.push({ name: sk.name+' (防御力+'+m[1]+'%)', value: parseInt(m[1]), cat: 'unitDefUp' });
     });
@@ -6094,12 +6097,15 @@ function dcCalculateDamage() {
     else if (b.cat==='dmgUp') dmgUpPct+=b.value;
     else if (b.cat==='critDmgUp') critDmgUpPct+=b.value;
   });
-  let unitDefUpPct=0, pilotDefUpPct=0, dmgDownPct=0;
+  let unitDefUpPct=0, pilotDefUpPct=0, dmgDownPct=0, forceGuardPct=0;
   defBuffs.forEach((b,i) => {
     if (dcDef.buffs['defBuff_'+i] === false) return;
     if (b.cat==='unitDefUp') unitDefUpPct+=b.value;
     else if (b.cat==='pilotDefUp') pilotDefUpPct+=b.value;
-    else if (b.cat==='dmgDown') dmgDownPct+=b.value;
+    else if (b.cat==='dmgDown') {
+      if (b.isForceGuard) forceGuardPct+=b.value;
+      else dmgDownPct+=b.value;
+    }
   });
   let supAtkPct=0, supFlatAtk=0;
   if (dcAtk.supporter) { supAtkPct=dcGetLeaderPct(dcAtk.supporter,dcAtk.supStar); supFlatAtk=parseInt(dcAtk.supporter.attack)||0; }
@@ -6123,9 +6129,9 @@ function dcCalculateDamage() {
   const tensionDmg={normal:0,strong:10,superstrong:20,superattack:30};
   const tensionCrit={normal:1.1,strong:1.2,superstrong:1.2,superattack:1.3};
   const totalDmgUp = dmgUpPct+(tensionDmg[dcAtk.tension]||0)+dcAtk.extraDmgUp;
-  // EX武装（UR）は相手の軽減アビリティを無視
+  // EX武装（UR）は相手の軽減アビリティを無視（ただしフォースガードは無視不可）
   const isEXWeapon = weapon.name && weapon.name.includes('EX');
-  const effectiveDmgDown = isEXWeapon ? dcDef.extraDmgDown : dmgDownPct+dcDef.extraDmgDown;
+  const effectiveDmgDown = isEXWeapon ? forceGuardPct+dcDef.extraDmgDown : dmgDownPct+forceGuardPct+dcDef.extraDmgDown;
   const totalDmgDown = effectiveDmgDown;
   const dmgModNormal = 1+totalDmgUp/100-totalDmgDown/100;
   const dmgModCrit = dmgModNormal+(critDmgUpPct+dcAtk.extraCritUp)/100;
@@ -6135,7 +6141,7 @@ function dcCalculateDamage() {
   const critMult = tensionCrit[dcAtk.tension]||1.1;
   const normalDmg = battleBaseDmg*dmgModNormal*defFactor;
   const critDmg = battleBaseDmg*dmgModCrit*defFactor*critMult;
-  return { weaponPow,pilotRatio,unitRatio,pilotSigmoid,unitSigmoid,weaponCorr,baseDmg,atkCorr,defCorr,dmgCoeff,battleBaseDmg,dmgModNormal,dmgModCrit,defFactor,critMult,normalDmg,critDmg,atkUnAtk:UnAtk,atkPlAtk:PlAtk,defUnDef:UnDef,defPlDef:PlDef,isEXWeapon,dmgDownPct };
+  return { weaponPow,pilotRatio,unitRatio,pilotSigmoid,unitSigmoid,weaponCorr,baseDmg,atkCorr,defCorr,dmgCoeff,battleBaseDmg,dmgModNormal,dmgModCrit,defFactor,critMult,normalDmg,critDmg,atkUnAtk:UnAtk,atkPlAtk:PlAtk,defUnDef:UnDef,defPlDef:PlDef,isEXWeapon,dmgDownPct,forceGuardPct };
 }
 
 function dcOpenDropdown(type) {
@@ -6372,6 +6378,7 @@ init();
     <a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">▶ YouTube チャンネル登録</a>
     <a href="https://x.com/mh_games_jp" target="_blank" rel="noopener">𝕏 公式X（ご意見はこちら）</a>
     <a href="/about">ℹ このサイトについて</a>
+    <a href="/privacy">🔒 プライバシーポリシー</a>
   </nav>
   <p class="footer-copy">© 2026 MH GAMES — GジェネエターナルDB by MH GAMES｜当サイトはゲームの攻略情報を提供するファンサイトです</p>
 </footer>
