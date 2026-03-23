@@ -3982,8 +3982,10 @@ let allItems = null;
 async function loadItemsForTeam() {
   if (allItems) return allItems;
   try {
-    const resp = await fetch('/data/items.json');
-    allItems = await resp.json();
+    // アイテムタブと同じitems.jsonのoption_partsを使用
+    const resp = await fetch('/items.json');
+    const data = await resp.json();
+    allItems = data.option_parts || [];
   } catch(e) { allItems = []; }
   return allItems;
 }
@@ -3991,18 +3993,15 @@ async function loadItemsForTeam() {
 function renderSlotOptionParts(slotIdx) {
   const slot = teamSlots[slotIdx];
   const parts = slot.optionParts || [];
-  const maxParts = 3;
   let html = '<div class="slot-option-parts"><div class="op-label">OP:</div>';
-  for (let p = 0; p < maxParts; p++) {
-    const part = parts[p];
-    if (part) {
-      html += `<div class="op-chip" onclick="removeOptionPart(${slotIdx},${p})" title="クリックで外す">
-        <span class="op-chip-name">${part.name}</span>
-        <span class="op-chip-x">✕</span>
-      </div>`;
-    } else {
-      html += `<div class="op-chip empty" onclick="openOptionPartsPicker(${slotIdx})">+ パーツ</div>`;
-    }
+  if (parts.length > 0) {
+    const part = parts[0];
+    html += `<div class="op-chip" onclick="removeOptionPart(${slotIdx},0)" title="クリックで外す">
+      <span class="op-chip-name">${part.name}</span>
+      <span class="op-chip-x">✕</span>
+    </div>`;
+  } else {
+    html += `<div class="op-chip empty" onclick="openOptionPartsPicker(${slotIdx})">+ パーツ</div>`;
   }
   html += '</div>';
   return html;
@@ -4014,9 +4013,14 @@ function removeOptionPart(slotIdx, partIdx) {
 }
 
 let opPickerSlotIdx = 0;
+let opPickerImagesData = null;
 async function openOptionPartsPicker(slotIdx) {
   opPickerSlotIdx = slotIdx;
   await loadItemsForTeam();
+  // アイテム画像データも読み込み（アイテムタブと共有）
+  if (!opPickerImagesData) {
+    try { const r = await fetch('/item-images.json'); opPickerImagesData = await r.json(); } catch(e) { opPickerImagesData = {}; }
+  }
   const overlay = document.getElementById('opPickerOverlay');
   if (!overlay) return;
   overlay.classList.add('open');
@@ -4038,7 +4042,12 @@ function renderOpPickerList() {
   }).slice(0, 80);
   list.innerHTML = items.map(item => {
     const rarCls = rarityClass(item.rarity);
+    // アイテム画像（アイテムタブと共通）
+    const imgIdx = item.image_index;
+    const imgUrl = (imgIdx && opPickerImagesData && opPickerImagesData[imgIdx]) ? opPickerImagesData[imgIdx] : '';
+    const imgTag = imgUrl ? `<img src="${imgUrl}" style="width:32px;height:32px;border-radius:4px;object-fit:cover;border:1px solid var(--card-border);flex-shrink:0" onerror="this.style.display='none'" alt="">` : '';
     return `<div class="op-picker-item" onclick="selectOptionPart('${item.name.replace(/'/g,"\\'")}','${(item.rarity||'').replace(/'/g,"\\'")}','${(item.effect||'').replace(/'/g,"\\'")}')">
+      ${imgTag}
       <span class="badge ${rarCls}" style="font-size:.6em;padding:1px 4px;min-width:28px;text-align:center">${item.rarity||'?'}</span>
       <div class="op-picker-info">
         <div class="op-picker-name">${item.name}</div>
@@ -4051,8 +4060,8 @@ function renderOpPickerList() {
 function selectOptionPart(name, rarity, effect) {
   const slot = teamSlots[opPickerSlotIdx];
   if (!slot.optionParts) slot.optionParts = [];
-  if (slot.optionParts.length >= 3) { showToast('パーツは最大3つまで'); return; }
-  slot.optionParts.push({ name, rarity, effect });
+  // 1ユニットにつきOPは1つのみ（既存があれば置き換え）
+  slot.optionParts = [{ name, rarity, effect }];
   closeOpPicker();
   renderTeamSim();
 }
