@@ -858,7 +858,7 @@ a:hover{text-decoration:underline}
 /* Mobile Landscape: ultra-compact header to maximize content area */
 @media(max-height:500px) and (orientation:landscape){
   /* Header auto-hide */
-  .header{position:fixed;top:0;left:0;right:0;z-index:100;transition:transform .3s ease;padding:4px 10px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 12px}
+  .header{position:fixed;top:0;left:0;right:0;z-index:100;transition:transform .3s ease;padding:4px 4px 0;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:2px 12px}
   .header.header-hidden{transform:translateY(-100%)}
   .header-brand{gap:5px;padding-right:0}
   .header-icon{width:20px;height:20px}
@@ -871,22 +871,21 @@ a:hover{text-decoration:underline}
   .lang-toggle button{padding:2px 5px}
   .accent-line{height:1px}
 
-  /* Tab bar: left sidebar */
-  .tab-bar{position:fixed;left:0;top:0;bottom:0;width:42px;flex-direction:column;justify-content:flex-start;padding:4px 2px;gap:2px;margin-top:0;z-index:101;overflow-y:auto;overflow-x:hidden;background:linear-gradient(180deg,#0e1016,#161a22);border-right:1px solid rgba(232,150,30,.3);border-bottom:none}
-  .tab-btn{padding:6px 4px;flex-direction:column;gap:0;width:100%;clip-path:none;min-width:0;position:relative}
+  /* Tab bar: left sidebar with short labels */
+  .tab-bar{position:fixed;left:0;top:0;bottom:0;width:56px;flex-direction:column;justify-content:flex-start;padding:2px 0;gap:0;margin-top:0;z-index:101;overflow-y:auto;overflow-x:hidden;background:linear-gradient(180deg,#0e1016,#161a22);border-right:1px solid rgba(232,150,30,.3);border-bottom:none}
+  .tab-btn{padding:4px 2px 2px;flex-direction:column;gap:0;width:100%;clip-path:none;min-width:0;position:relative}
   .tab-btn::before{clip-path:none!important}
   .tab-btn.active::before{display:none}
   .tab-btn.active{background:rgba(255,215,0,.15);border-left:2px solid #ffd700;border-radius:0}
-  .tab-icon{width:16px;height:16px}
-  .tab-label{display:none}
+  .tab-icon{width:14px;height:14px}
+  .tab-label{display:block!important;font-size:.38em;line-height:1.1;margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:52px;text-align:center}
   .tab-btn .tab-count{display:none}
-  
-  /* Tab tooltip on hover/active */
-  .tab-btn .tab-tooltip{display:none;position:absolute;left:100%;top:50%;transform:translateY(-50%);background:#1a1d25;color:#ffd700;padding:4px 10px;font-size:.7em;white-space:nowrap;border-radius:0 4px 4px 0;border:1px solid rgba(255,215,0,.3);border-left:none;z-index:102;pointer-events:none}
-  .tab-btn:hover .tab-tooltip,.tab-btn.active .tab-tooltip{display:block!important}
+
+  /* Tab tooltip - hidden since labels are visible */
+  .tab-btn .tab-tooltip{display:none!important}
 
   /* Main content offset for sidebar */
-  main[role="main"],.controls,.grid,.data-table-wrap,.tag-lookup-container,.team-sim-container,.ranking-container,.tierlist-container,.dmg-calc-container,.items-container,.ad-slot,.site-footer{margin-left:42px}
+  main[role="main"],.controls,.grid,.data-table-wrap,.tag-lookup-container,.team-sim-container,.ranking-container,.tierlist-container,.dmg-calc-container,.items-container,.ad-slot,.site-footer{margin-left:56px}
 
   /* Filter collapsible */
   .mobile-filter-toggle{display:flex;align-items:center;justify-content:center;gap:4px;width:100%;padding:6px;background:rgba(232,150,30,.08);border:1px solid rgba(232,150,30,.25);border-radius:6px;color:var(--accent);font-size:.72em;font-weight:600;cursor:pointer;margin-bottom:6px}
@@ -894,8 +893,8 @@ a:hover{text-decoration:underline}
   .mobile-filter-toggle.open .toggle-arrow{transform:rotate(180deg)}
   .filters.collapsed{display:none!important}
 
-  /* Controls compact */
-  .controls{margin:4px auto;padding:0 8px}
+  /* Controls compact - full width */
+  .controls{margin:4px auto;padding:0 4px;max-width:100%}
   .search-box{margin-bottom:4px}
   .search-box input{padding:5px 8px;font-size:.78em}
   .filters{gap:3px;margin-bottom:4px}
@@ -906,8 +905,8 @@ a:hover{text-decoration:underline}
   .sort-btns button{font-size:.55em;padding:2px 5px}
   .stats-bar{gap:3px}
 
-  /* Grid: 3-4 columns compact */
-  .grid{grid-template-columns:repeat(4,1fr);gap:4px;padding:0 6px 16px}
+  /* Grid: 3-4 columns compact - full width */
+  .grid{grid-template-columns:repeat(4,1fr);gap:4px;padding:0 4px 16px;max-width:100%}
 
   /* Ultra-compact cards */
   .card{padding:5px;clip-path:none}
@@ -941,7 +940,7 @@ a:hover{text-decoration:underline}
   .card .recovery-section{font-size:.52em}
 
   /* Modal landscape */
-  .modal-overlay{padding:6px 6px 6px 48px}
+  .modal-overlay{padding:4px 4px 4px 60px}
   .modal{padding:10px;max-height:95vh;overflow-y:auto}
   .modal-header-row{gap:8px}
   .modal-icon{width:48px;height:48px}
@@ -949,7 +948,7 @@ a:hover{text-decoration:underline}
   .modal .stats-grid{grid-template-columns:repeat(4,1fr);gap:4px}
 
   /* Ranking landscape */
-  .ranking-container{padding:0 10px 20px}
+  .ranking-container{padding:0 4px 20px}
   .ranking-item{grid-template-columns:28px 32px 1fr 60px;gap:4px;padding:4px 6px}
   .ranking-icon{width:28px;height:28px}
   .ranking-name{font-size:.72em}
@@ -957,7 +956,7 @@ a:hover{text-decoration:underline}
   .ranking-pos{font-size:.8em}
 
   /* Team simulator landscape */
-  .team-sim-container{padding:8px 10px 20px}
+  .team-sim-container{padding:8px 4px 20px}
   .team-slots{grid-template-columns:repeat(5,1fr);gap:3px}
   .team-slot-card{padding:3px}
   .team-slot-card .slot-number{width:14px;height:14px;font-size:.5em}
@@ -972,13 +971,13 @@ a:hover{text-decoration:underline}
   .team-picker{width:60vw!important}
 
   /* Tier list landscape */
-  .tierlist-container{padding:0 10px 20px}
+  .tierlist-container{padding:0 4px 20px}
   .tier-unit{width:32px;height:32px}
   .tier-label{width:32px;min-width:32px;font-size:.9em}
 
   /* Damage calc landscape */
-  .dmg-calc-panels{grid-template-columns:1fr 1fr;gap:8px}
-  .dmg-calc-container{padding:8px}
+  .dmg-calc-panels{grid-template-columns:1fr 1fr;gap:6px}
+  .dmg-calc-container{padding:4px}
   .dmg-panel{padding:8px}
 
   /* Items landscape */
@@ -986,12 +985,12 @@ a:hover{text-decoration:underline}
   .item-card{padding:6px}
 
   /* Compare landscape */
-  .compare-overlay{padding:6px 6px 6px 48px}
+  .compare-overlay{padding:4px 4px 4px 60px}
   .compare-panel{padding:12px}
   .compare-fab{bottom:12px;right:12px;padding:6px 12px;font-size:.72em}
 
   /* Footer */
-  .site-footer{padding:8px 10px 20px}
+  .site-footer{padding:8px 4px 20px}
   .footer-links a{font-size:.55em}
   .footer-copy{font-size:.5em}
 
@@ -6607,26 +6606,35 @@ init();
     }
   }
   
-  // 4. Add tooltips to tab buttons
-  function addTabTooltips() {
-    const tooltipMap = {
-      'unit': 'ユニット',
-      'chara': 'キャラ', 
-      'supporter': 'サポ',
-      'taglookup': 'タグ検索',
-      'team': 'チーム編成',
-      'ranking': 'ランキング',
-      'tierlist': 'ティア',
-      'dmgcalc': 'ダメ計算',
-      'items': 'アイテム'
-    };
+  // 4. Set short labels for landscape sidebar tabs
+  const shortLabelMap = {
+    'unit': 'ユニット',
+    'chara': 'キャラ',
+    'supporter': 'サポ',
+    'taglookup': 'タグ検索',
+    'team': '編成',
+    'ranking': 'ランク',
+    'tierlist': 'ティア',
+    'dmgcalc': 'ダメ計',
+    'items': 'アイテム'
+  };
+  // Store original labels for restoring
+  const originalLabels = {};
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    const tab = btn.dataset.tab;
+    const label = btn.querySelector('.tab-label');
+    if (label) originalLabels[tab] = label.innerHTML;
+  });
+
+  function updateTabLabels() {
     document.querySelectorAll('.tab-btn').forEach(btn => {
       const tab = btn.dataset.tab;
-      if (tooltipMap[tab] && !btn.querySelector('.tab-tooltip')) {
-        const tooltip = document.createElement('span');
-        tooltip.className = 'tab-tooltip';
-        tooltip.textContent = tooltipMap[tab];
-        btn.appendChild(tooltip);
+      const label = btn.querySelector('.tab-label');
+      if (!label) return;
+      if (checkLandscape() && shortLabelMap[tab]) {
+        label.textContent = shortLabelMap[tab];
+      } else if (originalLabels[tab]) {
+        label.innerHTML = originalLabels[tab];
       }
     });
   }
@@ -6644,11 +6652,12 @@ init();
   const mql = window.matchMedia('(max-height:500px) and (orientation:landscape)');
   mql.addEventListener('change', function() {
     applyLandscapeMode();
+    updateTabLabels();
     updateBodyPadding();
   });
-  
-  addTabTooltips();
+
   applyLandscapeMode();
+  updateTabLabels();
   
   // Update body padding after a brief delay to ensure header is rendered
   setTimeout(updateBodyPadding, 100);
