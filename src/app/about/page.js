@@ -138,12 +138,15 @@ export default function AboutPage() {
                 color: '#c0bdb6',
                 lineHeight: 1.7,
               }}>
-                <div>・全レアリティ対応のユニット検索</div>
-                <div>・キャラクター・サポーター一覧</div>
-                <div>・シリーズ・タイプ別フィルタ</div>
-                <div>・デバフ効果での絞り込み</div>
-                <div>・ステータス比較・スキル確認</div>
-                <div>・定期的なデータ更新</div>
+                <div>・ユニット検索（全レアリティ対応）</div>
+                <div>・キャラクター一覧・検索</div>
+                <div>・サポーター一覧・検索</div>
+                <div>・タグ検索</div>
+                <div>・チーム編成シミュレーター</div>
+                <div>・ステータスランキング</div>
+                <div>・ティアリスト</div>
+                <div>・ダメージ計算機</div>
+                <div>・アイテム（オプションパーツ）一覧</div>
               </div>
             </div>
 
