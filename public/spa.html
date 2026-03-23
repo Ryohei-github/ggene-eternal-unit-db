@@ -712,6 +712,16 @@ a:hover{text-decoration:underline}
 .modal .supporter-detail-block{background:rgba(0,0,0,.2);border:1px solid var(--card-border);border-radius:6px;padding:12px;margin-bottom:8px}
 .modal .supporter-detail-block .sd-label{font-size:.7em;color:var(--accent);font-weight:600;margin-bottom:4px}
 .modal .supporter-detail-block .sd-text{font-size:.85em;color:var(--card-text);line-height:1.5}
+/* Supporter layout */
+.supporter-modal-layout{display:flex;flex-direction:column;gap:12px}
+.supporter-header{display:flex;align-items:center;gap:12px}
+.supporter-header-info{flex:1;min-width:0}
+.supporter-stats-row{display:flex;align-items:center;gap:16px;flex-wrap:wrap;background:rgba(0,0,0,.25);border:1px solid var(--card-border);border-radius:8px;padding:10px 16px}
+.supporter-stat-item{display:flex;flex-direction:column;gap:2px}
+.supporter-stat-label{font-size:.7em;color:var(--card-text2);font-weight:600;text-transform:uppercase;letter-spacing:.03em}
+.supporter-stat-val{font-size:1.1em;font-weight:700;color:var(--card-text);display:flex;align-items:center;gap:6px}
+.supporter-stat-divider{width:1px;height:32px;background:var(--card-border);margin:0 4px}
+.supporter-skill-inline .supporter-stat-val{color:var(--accent)}
 
 /* Wide modal layout for desktop */
 @media(min-width:1100px) and (min-height:600px){
@@ -759,9 +769,18 @@ a:hover{text-decoration:underline}
   /* 地形 */
   .terrain-grid{font-size:.9em}
   /* サポーター */
-  .modal .supporter-detail-block{padding:10px;margin-bottom:6px}
-  .modal .supporter-detail-block .sd-label{font-size:.75em;margin-bottom:3px}
-  .modal .supporter-detail-block .sd-text{font-size:.85em;line-height:1.4}
+  .modal .supporter-modal-layout{gap:14px}
+  .modal .supporter-header .modal-icon{width:80px;height:80px;border-radius:10px}
+  .modal .supporter-header h2{font-size:1.6em}
+  .modal .supporter-stats-row{gap:24px;padding:12px 24px;font-size:1em}
+  .modal .supporter-stat-label{font-size:.75em}
+  .modal .supporter-stat-val{font-size:1.25em}
+  .modal .supporter-stat-divider{height:40px}
+  .modal .supporter-detail-block{padding:14px;margin-bottom:6px}
+  .modal .supporter-modal-layout .detail-section h3{font-size:1.05em;margin-bottom:8px}
+  .modal .supporter-modal-layout .lb-table{font-size:.88em}
+  .modal .supporter-modal-layout .lb-table th,
+  .modal .supporter-modal-layout .lb-table td{padding:5px 8px}
 }
 
 /* View Toggle */
@@ -3336,11 +3355,11 @@ function showSupporterDetail(id) {
   // Leader skill convex table
   let convexHTML = '';
   if (base) {
-    const mkRow = (label, vals, color) => `<div style="display:flex;gap:6px;align-items:center">
-      <div style="font-size:.7em;color:var(--card-text2);min-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${label}">${label}</div>
-      ${vals.map(([lbl, val], i) => `<div style="text-align:center;padding:4px 8px;background:rgba(0,0,0,.2);border-radius:6px;border:1px solid var(--card-border);min-width:52px;flex:1">
-        <div style="font-size:.6em;color:var(--card-text2)">${lbl}</div>
-        <div style="font-size:.9em;font-weight:700;color:${i === vals.length-1 ? color : 'var(--card-text)'}">${val}</div>
+    const mkRow = (label, vals, color) => `<div style="display:flex;gap:8px;align-items:center">
+      <div style="font-size:.8em;color:var(--card-text2);min-width:90px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${label}">${label}</div>
+      ${vals.map(([lbl, val], i) => `<div style="text-align:center;padding:5px 10px;background:rgba(0,0,0,.2);border-radius:6px;border:1px solid var(--card-border);min-width:56px;flex:1">
+        <div style="font-size:.7em;color:var(--card-text2)">${lbl}</div>
+        <div style="font-size:1em;font-weight:700;color:${i === vals.length-1 ? color : 'var(--card-text)'}">${val}</div>
       </div>`).join('')}
     </div>`;
     const tier1Vals = [['0凸', base], ['1凸', s.leader_1||'-'], ['2凸', s.leader_2||'-'], ['3凸', s.leader_3||'-']];
@@ -3355,51 +3374,52 @@ function showSupporterDetail(id) {
 
   document.getElementById('modalContent').innerHTML = `
     <div class="modal-drag-handle"></div><button class="modal-close" onclick="closeModal()" aria-label="閉じる">&times;</button>
-    <div class="modal-header-row" style="margin-bottom:10px">
-      ${s.image ? `<img class="modal-icon" src="${s.image}" alt="${s.name}" onerror="this.style.display='none'">` : ''}
-      <div style="flex:1">
-        <h2 style="margin:0">${s.name}</h2>
-        <div class="detail-badges" style="margin-top:6px;margin-bottom:0">
-          ${obtainLabel}
-          <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
-          ${(s.target_series||[]).map(ts => `<span class="badge badge-type leader-tag-clickable" style="cursor:pointer" onclick="showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join('')}
-        </div>
-      </div>
-      <div class="stats-grid" style="grid-template-columns:repeat(2,1fr);gap:8px;min-width:200px">
-        <div class="stat-box"><div class="label">HP</div><div class="val">${s.hp ? s.hp.toLocaleString() : '-'}</div></div>
-        <div class="stat-box"><div class="label">攻撃力</div><div class="val">${s.attack||'-'}</div></div>
-      </div>
-    </div>
-    <div class="modal-detail-columns supporter-detail-grid">
-      <div class="detail-col-left">
-        <div class="detail-section">
-          <h3>リーダースキル</h3>
-          <div class="supporter-detail-block" style="border-color:rgba(232,150,30,.3)">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap">
-              ${(s.target_series||[]).length ? (s.target_series||[]).map(ts => `<span class="tag leader-tag-clickable" style="font-size:.85em;background:rgba(232,150,30,.2);border:1px solid var(--accent);color:var(--accent);cursor:pointer;padding:3px 10px" onclick="showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join('') : '<span style="font-size:.85em;color:var(--card-text2)">-</span>'}
-              ${base ? `<span style="font-size:1em;font-weight:700;color:var(--card-text)">${base}</span>` : ''}
-              ${max && max !== base ? `<span style="color:var(--card-text2)">→</span><span style="font-size:1em;font-weight:700;color:${hasTier2 ? 'var(--card-text)' : '#3fb950'}">${max}</span>` : ''}
-            </div>
-            ${hasTier2 ? `<div style="display:flex;align-items:center;gap:8px;margin-bottom:4px;padding-top:4px;border-top:1px dashed rgba(63,185,80,.2);flex-wrap:wrap">
-              <span class="tag" style="font-size:.8em;background:rgba(63,185,80,.12);border-color:rgba(63,185,80,.4);color:#3fb950;padding:3px 10px">${(s.leader2_target||'').replace(/ and /g,' & ')}</span>
-              <span style="font-size:1em;font-weight:700;color:var(--card-text)">${base2}</span>
-              <span style="color:var(--card-text2)">→</span><span style="font-size:1em;font-weight:700;color:#3fb950">${max2}</span>
-            </div>` : ''}
-            <div style="font-size:.88em;color:var(--card-text2);margin-top:4px">${s.leader_effect || 'ステータス上昇(EN除く)'}</div>
-            ${convexHTML}
+    <div class="supporter-modal-layout">
+      <div class="supporter-header">
+        ${s.image ? `<img class="modal-icon" src="${s.image}" alt="${s.name}" onerror="this.style.display='none'">` : ''}
+        <div class="supporter-header-info">
+          <h2 style="margin:0">${s.name}</h2>
+          <div class="detail-badges" style="margin-top:4px;margin-bottom:0">
+            ${obtainLabel}
+            <span class="badge ${rarityClass(s.rarity)}">${s.rarity||'?'}</span>
+            ${(s.target_series||[]).map(ts => `<span class="badge badge-type leader-tag-clickable" style="cursor:pointer" onclick="showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join('')}
           </div>
         </div>
       </div>
-      <div class="detail-col-right">
-        <div class="detail-section">
-          <h3>サポートスキル</h3>
-          <div class="supporter-detail-block">
-            <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px">
-              ${recIcon}
-              <span style="font-weight:700;font-size:1.05em;color:var(--card-text)">${s.recovery_type||'-'}回復 ${s.recovery_amount||''}</span>
-            </div>
-            <div style="font-size:.88em;color:var(--card-text2);margin-top:4px">効果範囲: 半径${s.range||'-'}マス</div>
+      <div class="supporter-stats-row">
+        <div class="supporter-stat-item">
+          <span class="supporter-stat-label">HP</span>
+          <span class="supporter-stat-val">${s.hp ? s.hp.toLocaleString() : '-'}</span>
+        </div>
+        <div class="supporter-stat-item">
+          <span class="supporter-stat-label">攻撃力</span>
+          <span class="supporter-stat-val">${s.attack||'-'}</span>
+        </div>
+        <div class="supporter-stat-divider"></div>
+        <div class="supporter-stat-item supporter-skill-inline">
+          <span class="supporter-stat-label">サポートスキル</span>
+          <span class="supporter-stat-val">${recIcon} ${s.recovery_type||'-'}回復 ${s.recovery_amount||''}</span>
+        </div>
+        <div class="supporter-stat-item">
+          <span class="supporter-stat-label">効果範囲</span>
+          <span class="supporter-stat-val">半径${s.range||'-'}マス</span>
+        </div>
+      </div>
+      <div class="detail-section" style="margin-bottom:0">
+        <h3>リーダースキル</h3>
+        <div class="supporter-detail-block" style="border-color:rgba(232,150,30,.3)">
+          <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;flex-wrap:wrap">
+            ${(s.target_series||[]).length ? (s.target_series||[]).map(ts => `<span class="tag leader-tag-clickable" style="font-size:.95em;background:rgba(232,150,30,.2);border:1px solid var(--accent);color:var(--accent);cursor:pointer;padding:4px 12px" onclick="showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join('') : '<span style="font-size:.95em;color:var(--card-text2)">-</span>'}
+            ${base ? `<span style="font-size:1.15em;font-weight:700;color:var(--card-text)">${base}</span>` : ''}
+            ${max && max !== base ? `<span style="color:var(--card-text2);font-size:1.1em">→</span><span style="font-size:1.15em;font-weight:700;color:${hasTier2 ? 'var(--card-text)' : '#3fb950'}">${max}</span>` : ''}
           </div>
+          ${hasTier2 ? `<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;padding-top:6px;border-top:1px dashed rgba(63,185,80,.2);flex-wrap:wrap">
+            <span class="tag" style="font-size:.9em;background:rgba(63,185,80,.12);border-color:rgba(63,185,80,.4);color:#3fb950;padding:4px 12px">${(s.leader2_target||'').replace(/ and /g,' & ')}</span>
+            <span style="font-size:1.15em;font-weight:700;color:var(--card-text)">${base2}</span>
+            <span style="color:var(--card-text2);font-size:1.1em">→</span><span style="font-size:1.15em;font-weight:700;color:#3fb950">${max2}</span>
+          </div>` : ''}
+          <div style="font-size:.95em;color:var(--card-text2);margin-top:4px">${s.leader_effect || 'ステータス上昇(EN除く)'}</div>
+          ${convexHTML}
         </div>
       </div>
     </div>
