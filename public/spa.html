@@ -645,9 +645,12 @@ a:hover{text-decoration:underline}
 /* Detail Modal */
 .modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:200;justify-content:center;align-items:flex-start;padding:20px;overflow-y:auto}
 .modal-overlay.open{display:flex}
-.modal{background:var(--card);border:1px solid var(--accent);border-radius:12px;max-width:700px;width:100%;padding:24px;position:relative;color:var(--card-text)}
-.modal-close{position:absolute;top:12px;right:16px;font-size:1.5em;color:var(--card-text2);cursor:pointer;background:none;border:none}
-.modal-close:hover{color:#fff}
+.modal{background:var(--card);border:1px solid var(--accent);border-radius:12px;max-width:700px;width:100%;padding:24px;position:relative;color:var(--card-text);overflow-y:auto;max-height:calc(100vh - 40px)}
+.modal-close{position:sticky;top:0;float:right;font-size:1.1em;color:var(--card-text2);cursor:pointer;background:rgba(30,30,30,.85);border:1px solid var(--card-border);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;z-index:10;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:all .2s;margin:-4px -4px 0 0;flex-shrink:0}
+.modal-close:hover{color:#fff;background:rgba(232,150,30,.3);border-color:var(--accent)}
+.modal-close:active{transform:scale(.9)}
+.modal-drag-handle{width:40px;height:4px;background:rgba(255,255,255,.25);border-radius:2px;margin:0 auto 8px;flex-shrink:0;cursor:grab}
+.modal-drag-handle:active{cursor:grabbing;background:rgba(255,255,255,.5)}
 .modal-header-row{display:flex;align-items:center;gap:12px;margin-bottom:4px}
 .modal-icon{width:64px;height:64px;border-radius:8px;border:1px solid var(--card-border);object-fit:cover;flex-shrink:0;background:rgba(0,0,0,.2)}
 .modal h2{font-size:1.3em;margin-bottom:4px;color:#fff}
@@ -710,7 +713,7 @@ a:hover{text-decoration:underline}
 
 /* Wide modal layout for desktop */
 @media(min-width:1100px) and (min-height:600px){
-  .modal{max-width:1200px;max-height:90vh;overflow-y:auto;display:flex;flex-direction:column}
+  .modal{max-width:1200px;max-height:90vh;overflow-y:auto}
   .modal .modal-detail-columns{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
   .modal .modal-detail-columns .detail-col-left,
   .modal .modal-detail-columns .detail-col-right{overflow-y:auto;max-height:70vh}
@@ -809,6 +812,7 @@ a:hover{text-decoration:underline}
   /* Modal */
   .modal-overlay{padding:8px}
   .modal{padding:12px;max-width:calc(100vw - 16px);overflow-x:hidden;box-sizing:border-box}
+  .modal-close{width:32px;height:32px;font-size:1em}
   .modal .stats-grid{grid-template-columns:repeat(2,1fr)}
   .modal .mechanism-item{flex-direction:column;align-items:flex-start}
   .modal .weapon-info{grid-template-columns:repeat(2,1fr)}
@@ -955,6 +959,8 @@ a:hover{text-decoration:underline}
   /* Modal landscape */
   .modal-overlay{padding:2px 2px 2px 58px}
   .modal{padding:10px;max-height:95vh;overflow-y:auto}
+  .modal-drag-handle{margin-bottom:4px}
+  .modal-close{width:28px;height:28px;font-size:.9em}
   .modal-header-row{gap:8px}
   .modal-icon{width:48px;height:48px}
   .modal h2{font-size:1em}
@@ -1463,7 +1469,7 @@ a:hover{text-decoration:underline}
 </div>
 
 <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="詳細情報">
-  <div class="modal" id="modalContent"></div>
+  <div class="modal" id="modalContent" style="transition:transform .25s ease,opacity .25s ease"></div>
 </div>
 
 <script>
@@ -3045,7 +3051,7 @@ function renderUnitDetail(u, form) {
   const modalIconHTML = u.image ? `<img class="modal-icon" src="${u.image}" alt="${u.name}の詳細画像" onerror="this.style.display='none'">` : '';
 
   document.getElementById('modalContent').innerHTML = `
-    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-drag-handle"></div><button class="modal-close" onclick="closeModal()" aria-label="閉じる">&times;</button>
     <div class="modal-header-row">
       ${modalIconHTML}
       <div>
@@ -3236,7 +3242,7 @@ function showCharaDetail(id) {
   const charaImgHTML = c.image ? `<div style="text-align:center;margin:10px 0"><img src="${c.image}" alt="${c.name}" style="max-width:120px;border-radius:8px;border:1px solid var(--border)" onerror="this.style.display='none'"></div>` : '';
 
   document.getElementById('modalContent').innerHTML = `
-    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-drag-handle"></div><button class="modal-close" onclick="closeModal()" aria-label="閉じる">&times;</button>
     <div class="modal-detail-columns">
       <div class="detail-col-left">
         <h2>${c.name}</h2>
@@ -3302,7 +3308,7 @@ function showSupporterDetail(id) {
   }
 
   document.getElementById('modalContent').innerHTML = `
-    <button class="modal-close" onclick="closeModal()">&times;</button>
+    <div class="modal-drag-handle"></div><button class="modal-close" onclick="closeModal()" aria-label="閉じる">&times;</button>
     <div class="modal-detail-columns">
       <div class="detail-col-left">
         <div style="display:flex;align-items:center;gap:14px;margin-bottom:6px">
@@ -3359,11 +3365,97 @@ function showSupporterDetail(id) {
 }
 
 function openModal() {
-  document.getElementById('modalOverlay').classList.add('open');
+  const overlay = document.getElementById('modalOverlay');
+  const modal = document.getElementById('modalContent');
+  overlay.classList.add('open');
+  modal.style.transform = '';
+  modal.style.opacity = '';
+  // Push history state so browser back closes modal
+  if (!history.state || !history.state.modal) {
+    history.pushState({modal:true}, '');
+  }
+  // Setup swipe-to-close
+  _setupModalSwipe(modal);
 }
 
-function closeModal() {
-  document.getElementById('modalOverlay').classList.remove('open');
+function closeModal(skipHistory) {
+  const overlay = document.getElementById('modalOverlay');
+  const modal = document.getElementById('modalContent');
+  modal.style.transform = 'translateY(40px)';
+  modal.style.opacity = '0';
+  setTimeout(() => {
+    overlay.classList.remove('open');
+    modal.style.transform = '';
+    modal.style.opacity = '';
+  }, 200);
+  // Pop history if we pushed one
+  if (!skipHistory && history.state && history.state.modal) {
+    history.back();
+  }
+}
+
+// Browser back button closes modal
+window.addEventListener('popstate', function(e) {
+  const overlay = document.getElementById('modalOverlay');
+  if (overlay.classList.contains('open')) {
+    closeModal(true); // skipHistory=true to avoid double back
+  }
+  // Also close compare panel if open
+  const cmp = document.getElementById('compareOverlay');
+  if (cmp && cmp.classList.contains('open')) {
+    closeComparePanel(true);
+  }
+});
+
+// Swipe-to-close for modal
+function _setupModalSwipe(modal) {
+  let startY = 0, currentY = 0, isDragging = false;
+  const onTouchStart = (e) => {
+    // Only start swipe from drag handle or top 40px of modal
+    const handle = modal.querySelector('.modal-drag-handle');
+    const rect = modal.getBoundingClientRect();
+    const touch = e.touches[0];
+    const isHandle = handle && handle.contains(e.target);
+    const isTopArea = (touch.clientY - rect.top) < 40;
+    if (isHandle || isTopArea) {
+      startY = touch.clientY;
+      currentY = startY;
+      isDragging = true;
+      modal.style.transition = 'none';
+    }
+  };
+  const onTouchMove = (e) => {
+    if (!isDragging) return;
+    currentY = e.touches[0].clientY;
+    const dy = currentY - startY;
+    if (dy > 0) { // Only allow downward drag
+      modal.style.transform = `translateY(${dy}px)`;
+      modal.style.opacity = Math.max(0, 1 - dy / 300);
+      e.preventDefault();
+    }
+  };
+  const onTouchEnd = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    modal.style.transition = 'transform .25s ease, opacity .25s ease';
+    const dy = currentY - startY;
+    if (dy > 100) {
+      closeModal();
+    } else {
+      modal.style.transform = '';
+      modal.style.opacity = '';
+    }
+  };
+  // Remove old listeners
+  modal._swipeCleanup && modal._swipeCleanup();
+  modal.addEventListener('touchstart', onTouchStart, {passive: true});
+  modal.addEventListener('touchmove', onTouchMove, {passive: false});
+  modal.addEventListener('touchend', onTouchEnd, {passive: true});
+  modal._swipeCleanup = () => {
+    modal.removeEventListener('touchstart', onTouchStart);
+    modal.removeEventListener('touchmove', onTouchMove);
+    modal.removeEventListener('touchend', onTouchEnd);
+  };
 }
 
 function filterByTag(tagName) {
@@ -5079,7 +5171,7 @@ function openComparePanel() {
   document.getElementById('compareOverlay').classList.add('open');
 }
 
-function closeComparePanel() {
+function closeComparePanel(skipHistory) {
   document.getElementById('compareOverlay').classList.remove('open');
 }
 
