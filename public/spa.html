@@ -91,7 +91,9 @@ gtag('config', 'G-PHTSGSZ19J');
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#f0ede8;--card:#111318;--card-hover:#1a1d25;--border:#d4d0c8;--accent:#e8961e;--accent2:#d63031;--text:#1a1c2a;--text2:#5c6070;--gold:#d4a200;--ur:#e63950;--nu-green:#3ab5a8;--card-text:#e0ddd6;--card-text2:#8a8d98;--card-border:#2a2d38}
-body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden}
+body{font-family:'Segoe UI',sans-serif;background:var(--bg);color:var(--text);min-height:100vh;overflow-x:hidden;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+input,textarea,select{-webkit-user-select:text;-moz-user-select:text;-ms-user-select:text;user-select:text}
+img{-webkit-user-drag:none;-khtml-user-drag:none;-moz-user-drag:none;-o-user-drag:none;user-drag:none;pointer-events:none}
 
 a{color:var(--accent);text-decoration:none}
 a:hover{text-decoration:underline}
@@ -5339,11 +5341,48 @@ function drawCompareRadar(units) {
 }
 
 // Modify card click to support long-press/right-click for compare
+// Also block right-click globally to prevent content theft
 document.addEventListener('contextmenu', function(e) {
   const card = e.target.closest('.card[data-unit-id]');
   if (card && currentTab === 'unit') {
     e.preventDefault();
     toggleCompare(parseInt(card.getAttribute('data-unit-id')), e);
+    return;
+  }
+  // Allow right-click on input/textarea for usability
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  e.preventDefault();
+});
+
+// === ANTI-SCRAPING: Copy, Select, Drag, Keyboard shortcut prevention ===
+document.addEventListener('copy', function(e) {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  e.preventDefault();
+});
+document.addEventListener('cut', function(e) {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  e.preventDefault();
+});
+document.addEventListener('selectstart', function(e) {
+  if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+  e.preventDefault();
+});
+document.addEventListener('dragstart', function(e) {
+  if (e.target.tagName === 'IMG') { e.preventDefault(); return; }
+});
+document.addEventListener('keydown', function(e) {
+  // Block Ctrl+U (view source), Ctrl+S (save), Ctrl+Shift+I (devtools)
+  if (e.ctrlKey && (e.key === 'u' || e.key === 'U' || e.key === 's' || e.key === 'S')) {
+    e.preventDefault();
+  }
+  if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'i' || e.key === 'J' || e.key === 'j')) {
+    e.preventDefault();
+  }
+  // Block Ctrl+A (select all) except in input/textarea
+  if (e.ctrlKey && (e.key === 'a' || e.key === 'A')) {
+    if (e.target.tagName !== 'INPUT' && e.target.tagName !== 'TEXTAREA') {
+      e.preventDefault();
+    }
   }
 });
 

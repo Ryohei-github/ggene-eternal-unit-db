@@ -1,0 +1,47 @@
+# GジェネエターナルDB - Bot access restrictions
+User-agent: *
+Disallow: /data/
+Disallow: /api/
+
+# Block common scraping bots
+User-agent: CCBot
+Disallow: /
+
+User-agent: GPTBot
+Disallow: /
+
+User-agent: Google-Extended
+Disallow: /
+
+User-agent: anthropic-ai
+Disallow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
+User-agent: Bytespider
+Disallow: /
+
+User-agent: PetalBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Allow Google and Bing to index pages (but not /data/)
+User-agent: Googlebot
+Disallow: /data/
+Disallow: /api/
+
+User-agent: Bingbot
+Disallow: /data/
+Disallow: /api/
