@@ -5344,8 +5344,11 @@ function renderCharaComparePanel() {
 
   const headers = charas.map((c, i) => {
     const hasSP = !!c.sp_stats;
+    const hasLv100 = !!c.lv100_stats;
+    const hasAlt = hasSP || hasLv100;
     const currentMode = _compareCharaMode[c.id] || 'normal';
-    const modeSelect = hasSP ? `<select class="compare-star-select" onchange="_compareCharaMode[${c.id}]=this.value;renderComparePanel()" style="margin-top:6px;padding:4px 8px;border-radius:6px;border:1px solid ${COMPARE_COLORS[i]};background:rgba(0,0,0,.3);color:#fff;font-size:.78em;font-weight:600;cursor:pointer;text-align:center"><option value="normal"${currentMode==='normal'?' selected':''}>通常</option><option value="sp"${currentMode==='sp'?' selected':''}>SP化</option></select>` : '';
+    const altLabel = hasLv100 ? 'Lv100' : 'SP化';
+    const modeSelect = hasAlt ? `<select class="compare-star-select" onchange="_compareCharaMode[${c.id}]=this.value;renderComparePanel()" style="margin-top:6px;padding:4px 8px;border-radius:6px;border:1px solid ${COMPARE_COLORS[i]};background:rgba(0,0,0,.3);color:#fff;font-size:.78em;font-weight:600;cursor:pointer;text-align:center"><option value="normal"${currentMode==='normal'?' selected':''}>通常</option><option value="sp"${currentMode==='sp'?' selected':''}>${altLabel}</option></select>` : '';
     return `<div class="compare-unit-col"><div class="unit-header">${c.image ? `<img src="${c.image}" alt="" onerror="this.style.display='none'">` : ''}<div class="unit-name" data-index="${i+1}">${c.name}</div><div><span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span> ${typeBadgeHTML(c.chara_type)}</div>${modeSelect}<button class="compare-unit-remove" onclick="removeFromCompare(${c.id})">✕ 外す</button></div></div>`;
   }).join('');
 
@@ -5627,7 +5630,8 @@ document.getElementById('comparePickerOverlay').addEventListener('click', e => {
 let _rankingMode = 'unit';
 let _rankingStat = '';
 let _rankingRarities = [];
-let _rankingStarLevel = 'normal'; // 'normal', 'sp', 'ssp', or 'ult1'/'ult2'/'ult3'
+let _rankingStarLevel = 'normal'; // 'normal', 'star1', 'star2', 'star3', 'sp', 'ssp'
+let _rankingUltStage = 'ult3'; // 'ult1', 'ult2', 'ult3' — separate filter for ULT units
 let _rankingCharaMode = 'normal'; // 'normal' or 'sp'
 
 function switchRankingMode(mode) {
@@ -5635,6 +5639,7 @@ function switchRankingMode(mode) {
   _rankingStat = '';
   _rankingRarities = [];
   _rankingStarLevel = 'normal';
+  _rankingUltStage = 'ult3';
   _rankingCharaMode = 'normal';
   document.getElementById('rankingModeToggle').querySelectorAll('.ranking-mode-btn').forEach(b => b.classList.toggle('active', b.dataset.rmode === mode));
   renderRanking();
@@ -5681,14 +5686,22 @@ function renderRanking() {
       {val:'star2',label:'★2'},
       {val:'star3',label:'★3'},
       {val:'sp',label:'SP化'},
-      {val:'ssp',label:'SSP化'},
-      {val:'ult1',label:'ULT 1段階'},
-      {val:'ult2',label:'ULT 2段階'},
-      {val:'ult3',label:'ULT 3段階'}
+      {val:'ssp',label:'SSP化'}
     ];
-    starFilterEl.innerHTML = starOpts.map(o =>
-      `<button class="ranking-star-btn${_rankingStarLevel===o.val?' active':''}" onclick="_rankingStarLevel='${o.val}';renderRanking()">${o.label}</button>`
-    ).join('');
+    const ultOpts = [
+      {val:'ult1',label:'1段階'},
+      {val:'ult2',label:'2段階'},
+      {val:'ult3',label:'3段階'}
+    ];
+    starFilterEl.innerHTML =
+      `<div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center"><span style="font-size:.7em;color:var(--card-text2);font-weight:600">凸数/強化:</span>` +
+      starOpts.map(o =>
+        `<button class="ranking-star-btn${_rankingStarLevel===o.val?' active':''}" onclick="_rankingStarLevel='${o.val}';renderRanking()">${o.label}</button>`
+      ).join('') + `</div>` +
+      `<div style="display:flex;gap:4px;flex-wrap:wrap;align-items:center;margin-top:4px"><span style="font-size:.7em;color:var(--card-text2);font-weight:600">ULT段階:</span>` +
+      ultOpts.map(o =>
+        `<button class="ranking-star-btn${_rankingUltStage===o.val?' active':''}" onclick="_rankingUltStage='${o.val}';renderRanking()">${o.label}</button>`
+      ).join('') + `</div>`;
     starFilterEl.style.display = '';
   } else {
     // Chara mode: show normal/SP toggle
@@ -5714,32 +5727,20 @@ function renderRanking() {
         // Determine which star level stats to use
         const sbs = u.stats_by_star || [];
         let starEntry = null;
-        if (_rankingStarLevel === 'normal') {
-          starEntry = sbs.find(s => s.star === 0);
-        } else if (_rankingStarLevel === 'star1') {
-          starEntry = sbs.find(s => s.star === 1);
-        } else if (_rankingStarLevel === 'star2') {
-          starEntry = sbs.find(s => s.star === 2);
-        } else if (_rankingStarLevel === 'star3') {
-          starEntry = sbs.find(s => s.star === 3);
-        } else if (_rankingStarLevel === 'sp') {
-          starEntry = sbs.find(s => s.star === 4);
-        } else if (_rankingStarLevel === 'ssp') {
-          starEntry = sbs.find(s => s.star === 5);
-        } else if (_rankingStarLevel === 'ult1') {
-          if (u.rarity === 'ULT') starEntry = sbs.find(s => s.star === 0);
-        } else if (_rankingStarLevel === 'ult2') {
-          if (u.rarity === 'ULT') starEntry = sbs.find(s => s.star === 1);
-        } else if (_rankingStarLevel === 'ult3') {
-          if (u.rarity === 'ULT') starEntry = sbs.find(s => s.star === 2);
+        if (u.rarity === 'ULT') {
+          // ULT uses separate _rankingUltStage selector
+          const ultStarMap = {ult1: 0, ult2: 1, ult3: 2};
+          starEntry = sbs.find(s => s.star === ultStarMap[_rankingUltStage]);
+        } else {
+          // Non-ULT uses _rankingStarLevel selector
+          const starMap = {normal: 0, star1: 1, star2: 2, star3: 3, sp: 4, ssp: 5};
+          starEntry = sbs.find(s => s.star === starMap[_rankingStarLevel]);
         }
-        
+
         if (starEntry) {
           val = parseInt(starEntry[_rankingStat]) || 0;
-        } else if (_rankingStarLevel === 'normal' || _rankingStarLevel.startsWith('star')) {
-          val = parseInt((u.normal?.stats||{})[_rankingStat]) || 0;
         } else {
-          val = 0; // Unit doesn't have this star level
+          val = parseInt((u.normal?.stats||{})[_rankingStat]) || 0;
         }
       }
       return {
@@ -5753,17 +5754,11 @@ function renderRanking() {
         onclick: `showUnitDetail(${u.id})`
       };
     });
-    // Filter out units with 0 val when using non-normal star level
-    if (_rankingStarLevel !== 'normal') {
-      items = items.filter(x => x.val > 0);
-    }
+    // Filter out units with 0 val
+    items = items.filter(x => x.val > 0);
     if (_rankingRarities.length > 0) items = items.filter(x => _rankingRarities.includes(x.rarity));
-    // Filter by applicable rarity for star level
-    if (_rankingStarLevel === 'ult1' || _rankingStarLevel === 'ult2' || _rankingStarLevel === 'ult3') {
-      items = items.filter(x => x.rarity === 'ULT');
-    } else if (_rankingStarLevel === 'sp' || _rankingStarLevel === 'ssp') {
-      items = items.filter(x => x.rarity !== 'ULT');
-    }
+    // SP化/SSP化 modes only apply to non-ULT; but ULT units still show (with their own stage)
+    // No exclusive filtering needed anymore — both ULT and non-ULT coexist
   } else {
     items = allCharas.map(c => {
       let statObj = c.stats || {};
