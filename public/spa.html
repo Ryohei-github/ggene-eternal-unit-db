@@ -1005,6 +1005,33 @@ a:hover{text-decoration:underline}
   .team-picker{width:100%!important;border-left:none;border-top:2px solid var(--accent)}
   .team-supporter-section{flex-direction:column}
 
+  /* Items page mobile portrait optimization */
+  .items-container{padding:0 6px 24px}
+  .items-title{font-size:.85em;margin-bottom:6px}
+  .items-sub-tabs{gap:2px;margin-bottom:6px}
+  .item-sub-btn{padding:2px 8px;font-size:.62em;border-radius:4px;gap:2px}
+  .items-filters{margin-bottom:4px}
+  .items-search{margin-bottom:4px}
+  .items-search input{padding:6px 10px;font-size:.8em}
+  .items-filter-row{gap:2px;flex-direction:column;align-items:stretch}
+  .items-filter-group{gap:2px;flex-wrap:wrap}
+  .items-filter-group label{font-size:.58em;min-width:auto;flex-shrink:0}
+  .items-filter-group .filter-btn-group{gap:2px}
+  .items-filter-group .filter-btn{padding:1px 4px;font-size:.54em;border-radius:4px}
+  .items-count{font-size:.7em;padding:2px 0;margin-bottom:6px}
+  .items-grid{grid-template-columns:repeat(2,1fr);gap:3px}
+  .item-card{padding:6px;clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px)}
+  .item-card::before{clip-path:polygon(6px 0,100% 0,100% calc(100% - 6px),calc(100% - 6px) 100%,0 100%,0 6px,1px 7px,1px calc(100% - 1px),calc(100% - 7px) calc(100% - 1px),calc(100% - 1px) calc(100% - 7px),calc(100% - 1px) 1px,7px 1px,1px 7px)}
+  .item-card-header{margin:-6px -6px 4px;padding:5px 6px;gap:5px}
+  .item-card-icon{width:28px;height:28px;border-radius:3px}
+  .item-card-name{font-size:.7em;line-height:1.2}
+  .item-card-rarity{font-size:.65em}
+  .item-card-body{font-size:.68em;line-height:1.4}
+  .item-card-effect{padding:4px 6px;margin-bottom:3px}
+  .item-card-target{margin-bottom:3px;font-size:.85em}
+  .item-card-sources{gap:2px}
+  .item-card-sources .tag{font-size:.85em;padding:1px 4px}
+
 }
 
 .mobile-filter-toggle{display:none}
@@ -1140,6 +1167,14 @@ a:hover{text-decoration:underline}
   .dmg-panel{padding:8px}
 
   /* Items landscape */
+  .items-container{padding:0 2px 20px;margin-left:56px!important}
+  .items-sub-tabs{gap:2px;margin-bottom:4px}
+  .item-sub-btn{padding:2px 8px;font-size:.62em}
+  .items-search input{padding:5px 8px;font-size:.78em}
+  .items-filter-row{gap:3px}
+  .items-filter-group label{font-size:.58em}
+  .items-filter-group .filter-btn{padding:2px 5px;font-size:.55em}
+  .items-filter-group .filter-btn-group{gap:2px}
   .items-grid{grid-template-columns:repeat(3,1fr);gap:4px}
   .item-card{padding:6px}
 
