@@ -2145,17 +2145,17 @@ function buildFilters() {
     });
     // アビリティフィルタボタン生成（回数増加アビリティ）
     const abilCategories = [
-      {label:'支援攻撃2回', key:'atk2', test: allAbil => abilCounters.atk(allAbil) >= 2},
-      {label:'支援防御2回', key:'def2', test: allAbil => abilCounters.def(allAbil) >= 2},
-      {label:'反撃時支援防御', key:'cdef', test: allAbil => allAbil.some(a => /反撃.*支援防御|支援防御.*参加/.test(a.desc||''))},
-      {label:'チャンスステップ2回', key:'cs1', test: allAbil => abilCounters.cs(allAbil) >= 1}
+      {label:'支援攻撃2回', key:'atk2', test: (norm, sp) => abilCounters.atk(norm, sp) >= 2},
+      {label:'支援防御2回', key:'def2', test: (norm, sp) => abilCounters.def(norm, sp) >= 2},
+      {label:'反撃時支援防御', key:'cdef', test: (norm, sp) => [...norm,...sp].some(a => /反撃.*支援防御|支援防御.*参加/.test(a.desc||''))},
+      {label:'チャンスステップ2回', key:'cs1', test: (norm, sp) => abilCounters.cs(norm, sp) >= 1}
     ];
     // Count how many charas match each category
     const abilBtns = abilCategories.map(cat => {
       let count = 0;
       allCharas.forEach(c => {
-        const allAbil = [...(c.abilities||[]), ...(c.sp_abilities||[])];
-        if (cat.test(allAbil)) count++;
+        const norm = c.abilities||[], sp = c.sp_abilities||[];
+        if (cat.test(norm, sp)) count++;
       });
       return `<button class="filter-btn" data-value="${cat.key}" style="font-size:.7em">${cat.label}<span style="opacity:.5;margin-left:2px">(${count})</span></button>`;
     }).join('');
@@ -2274,10 +2274,21 @@ function getActiveRarities() {
 }
 
 // アビリティ合計値カウンター（フィルタボタン生成 & getFiltered 両方で使用）
+// SP化は通常アビリティを置き換えるため、通常/SP化を別々にカウントしてmaxを返す
+const _abilCount = (abilArr, re) => { let t=0; abilArr.forEach(a=>{const d=a.desc||'';if(re(d))t++;}); return t; };
 const abilCounters = {
-  atk: allAbil => { let t=0; allAbil.forEach(a=>{const d=a.desc||'';if(/支援攻撃.*\+1|支援攻撃.*＋1|支援反撃.*\+1/.test(d))t++;}); return t; },
-  def: allAbil => { let t=0; allAbil.forEach(a=>{const d=a.desc||'';if((/支援防御.*\+1|支援防御.*＋1/.test(d))&&!/支援攻撃/.test(d)&&!/反撃.*支援防御/.test(d)&&!/支援防御.*参加/.test(d)&&!/防御力/.test(d))t++;}); return t; },
-  cs:  allAbil => { let t=0; allAbil.forEach(a=>{const d=a.desc||'';if(/チャンスステップ.*\+1|チャンスステップ.*＋1/.test(d))t++;}); return t; }
+  atk: (norm, sp) => Math.max(
+    _abilCount(norm, d => /支援攻撃.*\+1|支援攻撃.*＋1|支援反撃.*\+1/.test(d)),
+    _abilCount(sp,   d => /支援攻撃.*\+1|支援攻撃.*＋1|支援反撃.*\+1/.test(d))
+  ),
+  def: (norm, sp) => Math.max(
+    _abilCount(norm, d => (/支援防御.*\+1|支援防御.*＋1/.test(d))&&!/支援攻撃/.test(d)&&!/反撃.*支援防御/.test(d)&&!/支援防御.*参加/.test(d)&&!/防御力/.test(d)),
+    _abilCount(sp,   d => (/支援防御.*\+1|支援防御.*＋1/.test(d))&&!/支援攻撃/.test(d)&&!/反撃.*支援防御/.test(d)&&!/支援防御.*参加/.test(d)&&!/防御力/.test(d))
+  ),
+  cs: (norm, sp) => Math.max(
+    _abilCount(norm, d => /チャンスステップ.*\+1|チャンスステップ.*＋1/.test(d)),
+    _abilCount(sp,   d => /チャンスステップ.*\+1|チャンスステップ.*＋1/.test(d))
+  )
 };
 
 function getFiltered() {
@@ -2381,17 +2392,17 @@ function getFiltered() {
         const charaSkillBases = allSkills.map(sk => sk.name.replace(/[Ll][Vv][０-９\d]+/g,'').replace(/\s+/g,'').replace(/ブ－スト/g,'ブースト').trim());
         if (!activeSkills.every(fs => charaSkillBases.includes(fs))) return false;
       }
-      // Ability filter (回数増加アビリティ: 合計値で判定)
+      // Ability filter (回数増加アビリティ: 通常/SP化別々にカウントしてmax)
       const activeAbils = [...document.querySelectorAll('#filterCharaAbilityButtons .filter-btn.active')].map(b => b.dataset.value);
       if (activeAbils.length > 0) {
-        const allAbil = [...(c.abilities||[]), ...(c.sp_abilities||[])];
+        const norm = c.abilities||[], sp = c.sp_abilities||[];
         const abilTests = {
-          'atk2': ab => abilCounters.atk(ab) >= 2,
-          'def2': ab => abilCounters.def(ab) >= 2,
-          'cdef': ab => ab.some(a => /反撃.*支援防御|支援防御.*参加/.test(a.desc||'')),
-          'cs1':  ab => abilCounters.cs(ab) >= 1
+          'atk2': (n, s) => abilCounters.atk(n, s) >= 2,
+          'def2': (n, s) => abilCounters.def(n, s) >= 2,
+          'cdef': (n, s) => [...n,...s].some(a => /反撃.*支援防御|支援防御.*参加/.test(a.desc||'')),
+          'cs1':  (n, s) => abilCounters.cs(n, s) >= 1
         };
-        if (!activeAbils.every(key => abilTests[key] && abilTests[key](allAbil))) return false;
+        if (!activeAbils.every(key => abilTests[key] && abilTests[key](norm, sp))) return false;
       }
       // Acquire filter (入手方法)
       const activeAcquireChara = [...document.querySelectorAll('#filterCharaAcquireButtons .filter-btn.active')].map(b => b.dataset.value);
