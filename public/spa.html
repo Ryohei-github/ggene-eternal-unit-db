@@ -463,7 +463,7 @@ a:hover{text-decoration:underline}
 .ranking-icon{width:40px;height:40px;border-radius:6px;object-fit:cover;border:1px solid var(--card-border)}
 .ranking-info{min-width:0}
 .ranking-name{font-size:.88em;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.ranking-sub{font-size:.68em;color:var(--card-text2);display:flex;gap:6px;align-items:center;margin-top:2px}
+.ranking-sub{font-size:.68em;color:var(--card-text2);display:flex;gap:6px;align-items:center;margin-top:2px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
 .ranking-val{text-align:right;font-size:1.15em;font-weight:800;color:var(--gold)}
 .ranking-item:not(.top1):not(.top2):not(.top3) .ranking-val{color:var(--card-text)}
 .ranking-bar-wrap{grid-column:1/-1;height:3px;background:rgba(255,255,255,.05);border-radius:2px;margin-top:2px}
@@ -472,12 +472,26 @@ a:hover{text-decoration:underline}
 .ranking-item.top2 .ranking-bar{background:#c0c0c0}
 .ranking-item.top3 .ranking-bar{background:#cd7f32}
 @media(max-width:600px){
-  .ranking-container{padding:0 10px 30px}
-  .ranking-item{grid-template-columns:32px 36px 1fr 70px;gap:6px;padding:6px 8px}
-  .ranking-icon{width:32px;height:32px}
-  .ranking-name{font-size:.8em}
-  .ranking-val{font-size:.95em}
-  .ranking-pos{font-size:.9em}
+  .ranking-container{padding:0 6px 20px}
+  /* Filters compact */
+  .ranking-mode-toggle{gap:4px;margin-bottom:6px}
+  .ranking-mode-btn{padding:3px 10px;font-size:.65em}
+  .ranking-tabs{gap:3px;margin-bottom:6px}
+  .ranking-tab{padding:3px 8px;font-size:.62em}
+  .ranking-rarity-filter{gap:4px;margin-bottom:4px}
+  .ranking-rarity-btn{padding:2px 8px;font-size:.6em}
+  .ranking-star-filter{gap:3px;margin:2px 0 6px}
+  .ranking-star-btn{padding:2px 7px;font-size:.6em}
+  /* Items compact */
+  .ranking-list{gap:2px}
+  .ranking-item{grid-template-columns:28px 32px 1fr auto;gap:4px;padding:5px 6px}
+  .ranking-icon{width:32px;height:32px;border-radius:4px}
+  .ranking-name{font-size:.72em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .ranking-sub{font-size:.55em;gap:3px;margin-top:1px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+  .ranking-sub .badge{font-size:.55em!important;padding:0 3px!important}
+  .ranking-val{font-size:.88em;white-space:nowrap}
+  .ranking-pos{font-size:.8em}
+  .ranking-bar-wrap{height:2px;margin-top:1px}
 }
 
 
