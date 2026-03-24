@@ -1321,18 +1321,12 @@ a:hover{text-decoration:underline}
 
 <main role="main">
 <!-- Ad: 忍者AdMax スマホ上部 -->
-<div class="ad-slot" id="adSlotTop">
-  <script src="https://adm.shinobi.jp/s/f969299a5a7ac2147238c6e4c8abd0da"></script>
-</div>
+<div class="ad-slot" id="adSlotTop"></div>
 
 <!-- Ad: 忍者AdMax PC左サイド -->
-<div class="ad-sidebar ad-sidebar-left" id="adSideLeft">
-  <script src="https://adm.shinobi.jp/s/986bd62e14794555eb77cbbbe051c274"></script>
-</div>
+<div class="ad-sidebar ad-sidebar-left" id="adSideLeft"></div>
 <!-- Ad: 忍者AdMax PC右サイド -->
-<div class="ad-sidebar ad-sidebar-right" id="adSideRight">
-  <script src="https://adm.shinobi.jp/s/f97fde07eb5842af35cf10b3d4f042dc"></script>
-</div>
+<div class="ad-sidebar ad-sidebar-right" id="adSideRight"></div>
 
 <section class="controls" aria-label="検索・フィルタ">
   <div class="search-box">
@@ -7014,12 +7008,29 @@ function renderItems() {
 
 bindSortButtons();
 init();
+
+// 忍者AdMax: 動的に広告スクリプトを注入（Next.js SPA注入環境対応）
+(function loadNinjaAds(){
+  const ads = [
+    { id:'adSlotTop', src:'https://adm.shinobi.jp/s/f969299a5a7ac2147238c6e4c8abd0da' },
+    { id:'adSideLeft', src:'https://adm.shinobi.jp/s/986bd62e14794555eb77cbbbe051c274' },
+    { id:'adSideRight', src:'https://adm.shinobi.jp/s/f97fde07eb5842af35cf10b3d4f042dc' },
+    { id:'adSlotBottom', src:'https://adm.shinobi.jp/s/6b37984cfa9c490a4d625b9fcbbf94f4' },
+  ];
+  ads.forEach(function(ad){
+    const el = document.getElementById(ad.id);
+    if(el){
+      const s = document.createElement('script');
+      s.src = ad.src;
+      s.async = true;
+      el.appendChild(s);
+    }
+  });
+})();
 </script>
 
 <!-- Ad: 忍者AdMax スマホ下部 -->
-<div class="ad-slot ad-slot-footer" id="adSlotBottom">
-  <script src="https://adm.shinobi.jp/s/6b37984cfa9c490a4d625b9fcbbf94f4"></script>
-</div>
+<div class="ad-slot ad-slot-footer" id="adSlotBottom"></div>
 </main>
 
 <!-- Footer -->
