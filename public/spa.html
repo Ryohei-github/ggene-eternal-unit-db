@@ -873,15 +873,61 @@ a:hover{text-decoration:underline}
   .card .supporter-stat{font-size:.62em}
   .card .supporter-stat .sv{font-size:.85em}
 
-  /* Modal */
-  .modal-overlay{padding:8px}
-  .modal{padding:12px;max-width:calc(100vw - 16px);overflow-x:hidden;box-sizing:border-box}
-  .modal-close{width:32px;height:32px;font-size:1em}
-  .modal .stats-grid{grid-template-columns:repeat(2,1fr)}
-  .modal .mechanism-item{flex-direction:column;align-items:flex-start}
-  .modal .weapon-info{grid-template-columns:repeat(2,1fr)}
-  .limit-break-details{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .lb-table{min-width:480px}
+  /* Modal — mobile portrait optimization */
+  .modal-overlay{padding:4px}
+  .modal{padding:10px;max-width:calc(100vw - 8px);max-height:calc(100vh - 8px);overflow-x:hidden;box-sizing:border-box}
+  .modal-drag-handle{margin-bottom:4px}
+  .modal-close{width:28px;height:28px;font-size:.9em;margin:-2px -2px 0 0}
+  .modal-header-row{gap:8px;margin-bottom:2px}
+  .modal-icon{width:44px;height:44px;border-radius:6px}
+  .modal h2{font-size:1em;margin-bottom:2px}
+  .modal .detail-badges{margin-bottom:6px;gap:3px}
+  .modal .detail-badges .badge{font-size:.6em;padding:1px 5px}
+  .modal .detail-badges button{font-size:.58em!important;padding:1px 6px!important}
+  .modal .modal-series-line{font-size:.72em}
+  .modal .card-tags .tag{font-size:.6em;padding:1px 4px}
+  .modal .detail-section{margin-bottom:8px}
+  .modal .detail-section h3{font-size:.75em;padding-bottom:2px;margin-bottom:4px}
+  .modal .stats-grid{grid-template-columns:repeat(4,1fr);gap:3px}
+  .modal .stat-box{padding:4px 2px;border-radius:4px}
+  .modal .stat-box .label{font-size:.5em}
+  .modal .stat-box .val{font-size:.85em}
+  .rank-badge{font-size:.5em}
+  .combat-power-display{font-size:.75em;margin-bottom:3px}
+  .rarity-note{font-size:.6em}
+  .limit-break-details{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:4px}
+  .limit-break-details summary{font-size:.72em!important}
+  .lb-table{min-width:360px;font-size:.62em}
+  .lb-table th,.lb-table td{padding:2px 3px}
+  .terrain-grid{gap:6px;font-size:.72em}
+  /* Weapons compact */
+  .modal .weapon-detail{padding:5px 8px;margin-bottom:3px;border-radius:4px}
+  .modal .weapon-name{font-size:.75em;margin-bottom:1px}
+  .modal .weapon-info{font-size:.62em;gap:1px 4px;grid-template-columns:repeat(3,1fr)}
+  .modal .weapon-effect{font-size:.58em;margin-top:1px}
+  .modal .mechanism-item{flex-direction:column;align-items:flex-start;padding:5px 8px;font-size:.7em}
+  /* Skills/abilities compact */
+  .modal .skill-item{padding:5px 8px;margin-bottom:3px}
+  .modal .skill-name{font-size:.75em}
+  .modal .skill-effect{font-size:.68em;margin-top:1px}
+  .modal .ability-item{padding:3px 0;font-size:.7em}
+  .modal .ability-name{font-size:.82em}
+  .modal .ability-effect{font-size:.78em}
+  /* Supporter modal compact */
+  .supporter-header{gap:8px}
+  .supporter-header .modal-icon{width:44px!important;height:44px!important}
+  .supporter-stats-row{gap:8px;padding:6px 10px}
+  .supporter-stat-label{font-size:.55em}
+  .supporter-stat-val{font-size:.85em}
+  .supporter-stat-divider{height:20px}
+  .supporter-skill-inline .supporter-stat-val{font-size:.75em}
+  .modal .supporter-detail-block{padding:8px;margin-bottom:4px}
+  .modal .supporter-modal-layout .detail-section h3{font-size:.75em;margin-bottom:4px}
+  .modal .supporter-modal-layout .lb-table{font-size:.6em}
+  .modal .supporter-modal-layout .lb-table th,
+  .modal .supporter-modal-layout .lb-table td{padding:2px 4px}
+  /* Chara image compact on mobile */
+  .modal .chara-img-mobile{max-width:64px!important;border-radius:6px!important;margin:4px auto!important}
 
   /* Table view */
   .data-table{font-size:.65em}
@@ -3173,7 +3219,7 @@ function renderUnitDetail(u, form) {
           </div>
           ${starData && starData.length > 1 ? `
           <div style="margin-top:10px">
-            <details class="limit-break-details" open>
+            <details class="limit-break-details" ${window.innerWidth > 600 ? 'open' : ''}>
               <summary style="cursor:pointer;color:var(--accent);font-size:.85em;user-select:none">${u.rarity==='ULT'?'段階強化ステータス一覧':u.rarity==='SSR'?'★限界突破 / SP化 / SSP化 ステータス一覧':'★限界突破ステータス一覧'}</summary>
               <table class="lb-table">
                 <thead><tr><th>${u.rarity==='ULT'?'段階':'★'}</th><th>LV</th><th>HP</th><th>EN</th><th>攻撃</th><th>防御</th><th>機動</th><th>移動</th></tr></thead>
@@ -3253,7 +3299,7 @@ function showCharaDetail(id) {
       </div>
       ${spSt ? `
       <div style="margin-top:10px">
-        <details class="limit-break-details" open>
+        <details class="limit-break-details" ${window.innerWidth > 600 ? 'open' : ''}>
           <summary style="cursor:pointer;color:var(--accent);font-size:.85em;user-select:none">${isUR ? 'Lv100 ステータス一覧' : 'SP化 ステータス一覧'}</summary>
           <table class="lb-table">
             <thead><tr><th>段階</th><th>LV</th><th>射撃</th><th>格闘</th><th>覚醒</th><th>守備</th><th>反応</th><th>SP</th></tr></thead>
@@ -3326,22 +3372,26 @@ function showCharaDetail(id) {
     </div>`;
   }
 
-  const charaImgHTML = c.image ? `<div style="text-align:center;margin:10px 0"><img src="${c.image}" alt="${c.name}" style="max-width:120px;border-radius:8px;border:1px solid var(--border)" onerror="this.style.display='none'"></div>` : '';
+  const charaIconHTML = c.image ? `<img class="modal-icon" src="${c.image}" alt="${c.name}" onerror="this.style.display='none'">` : '';
 
   document.getElementById('modalContent').innerHTML = `
     <div class="modal-drag-handle"></div><button class="modal-close" onclick="closeModal()" aria-label="閉じる">&times;</button>
     <div class="modal-detail-columns">
       <div class="detail-col-left">
-        <h2>${c.name}</h2>
-        ${charaImgHTML}
-        <div class="detail-badges">
-          <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
-          ${typeBadgeHTML(c.chara_type)}
-          ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
-          ${c.limited ? '<span class="badge" style="background:#ff6b6b;color:#fff;font-size:.75em">限定</span>' : ''}
-          ${c.obtain_method ? `<span class="badge badge-type">${c.obtain_method}</span>` : ''}
-          ${c.acquire ? `<span class="badge" style="background:${c.acquire==='ガシャ'?'rgba(99,179,237,.25);color:#63b3ed':c.acquire==='スカウト'?'rgba(72,187,120,.25);color:#48bb78':c.acquire==='イベント'?'rgba(237,137,54,.25);color:#ed8936':'rgba(160,174,192,.25);color:#a0aec0'};font-size:.75em">${c.acquire}</span>` : ''}
-          <button onclick="toggleCompare(${c.id},null,'chara');closeModal()" style="background:none;border:1px solid var(--accent);color:var(--accent);padding:2px 10px;border-radius:4px;font-size:.7em;cursor:pointer;font-weight:600;transition:all .2s" onmouseover="this.style.background='var(--accent)';this.style.color='#000'" onmouseout="this.style.background='none';this.style.color='var(--accent)'">${_compareList.includes(c.id) && _compareMode==='chara' ? '⚔ 比較中' : '⚔ 比較に追加'}</button>
+        <div class="modal-header-row">
+          ${charaIconHTML}
+          <div>
+            <h2>${c.name}</h2>
+            <div class="detail-badges">
+              <span class="badge ${rarityClass(c.rarity)}">${c.rarity||'?'}</span>
+              ${typeBadgeHTML(c.chara_type)}
+              ${ex ? '<span class="badge badge-ex">EX</span>' : ''}
+              ${c.limited ? '<span class="badge" style="background:#ff6b6b;color:#fff;font-size:.75em">限定</span>' : ''}
+              ${c.obtain_method ? `<span class="badge badge-type">${c.obtain_method}</span>` : ''}
+              ${c.acquire ? `<span class="badge" style="background:${c.acquire==='ガシャ'?'rgba(99,179,237,.25);color:#63b3ed':c.acquire==='スカウト'?'rgba(72,187,120,.25);color:#48bb78':c.acquire==='イベント'?'rgba(237,137,54,.25);color:#ed8936':'rgba(160,174,192,.25);color:#a0aec0'};font-size:.75em">${c.acquire}</span>` : ''}
+              <button onclick="toggleCompare(${c.id},null,'chara');closeModal()" style="background:none;border:1px solid var(--accent);color:var(--accent);padding:2px 10px;border-radius:4px;font-size:.7em;cursor:pointer;font-weight:600;transition:all .2s" onmouseover="this.style.background='var(--accent)';this.style.color='#000'" onmouseout="this.style.background='none';this.style.color='var(--accent)'">${_compareList.includes(c.id) && _compareMode==='chara' ? '⚔ 比較中' : '⚔ 比較に追加'}</button>
+            </div>
+          </div>
         </div>
         ${c.series ? `<div class="detail-section"><div style="font-size:.8em;color:var(--card-text2)"><span class="clickable-series" onclick="filterBySeries('${c.series.replace(/'/g,"\\'")}');closeModal()">${tData(c.series,"series")}</span></div></div>` : ''}
         ${statsHTML}
