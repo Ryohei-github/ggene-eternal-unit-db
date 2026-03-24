@@ -2622,6 +2622,10 @@ function toggleStatMode(mode) {
   document.getElementById('spBtn').classList.toggle('active-sp', _statMode === 'sp');
   document.getElementById('sspBtn').classList.toggle('active-ssp', _statMode === 'ssp');
   render();
+  // モーダルが開いている場合、武装表示を更新するために再描画
+  if (window._currentDetailUnit) {
+    renderUnitDetail(window._currentDetailUnit, window._currentDetailForm || 'base');
+  }
 }
 
 function toggleCharaStatMode(mode) {
@@ -2676,7 +2680,10 @@ function getUnitDisplayStats(u) {
 function unitCardHTML(u) {
   const s = getUnitDisplayStats(u);
   const ter = u.normal?.terrain || {};
-  const weapons = (u.normal_weapons||[]).map(w => {
+  const weapons = (u.normal_weapons||[]).filter(w => {
+    const isSSPWeapon = /\s*SSP$/.test(w.name);
+    return _statMode === 'ssp' ? true : !isSSPWeapon;
+  }).map(w => {
     let label = w.name;
     const isMap = w.range === 'MAP';
     const isEx = w.name.endsWith(' EX');
@@ -3047,7 +3054,12 @@ function renderUnitDetail(u, form) {
   const formData = isTransform ? u.transformed : (u.normal || {});
   const s = formData.stats || {};
   const t = formData.terrain || {};
-  const weapons = isTransform ? (u.transformed_weapons || []) : (u.normal_weapons || []);
+  const allWeapons = isTransform ? (u.transformed_weapons || []) : (u.normal_weapons || []);
+  // SSP武装はSSPモード時のみ表示、非SSPモード時は非SSP武装のみ表示
+  const weapons = allWeapons.filter(w => {
+    const isSSPWeapon = /\s*SSP$/.test(w.name);
+    return _statMode === 'ssp' ? true : !isSSPWeapon;
+  });
   const starData = isTransform ? (u.transformed?.stats_by_star || []) : (u.stats_by_star || []);
 
   let transformToggle = '';
