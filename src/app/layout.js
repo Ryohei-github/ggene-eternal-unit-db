@@ -29,7 +29,14 @@ export const metadata = {
     // Twitter画像もopengraph-image.jsで動的生成
   },
   robots: { index: true, follow: true },
-  icons: { icon: '/favicon.svg' },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' },
+      { url: '/favicon-48x48.png', type: 'image/png', sizes: '48x48' },
+      { url: '/favicon-192x192.png', type: 'image/png', sizes: '192x192' },
+    ],
+    apple: [{ url: '/favicon-192x192.png', sizes: '192x192' }],
+  },
   other: { 'theme-color': '#0a0e17' },
 };
 
