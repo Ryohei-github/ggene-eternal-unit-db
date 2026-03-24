@@ -47232,7 +47232,7 @@
   {
     "id": 277,
     "name": "ガンダムAGE-1 ソ―ディア",
-    "image": "/unit-images/mh-games-unit-686.png",
+    "image": "",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -50383,7 +50383,7 @@
   {
     "id": 295,
     "name": "騎士サザビー",
-    "image": "/unit-images/mh-games-unit-688.png",
+    "image": "",
     "rarity": "SSR",
     "type": "耐久",
     "obtain": "",
@@ -94378,7 +94378,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-689.png"
+    "image": ""
   },
   {
     "name": "ギャン",
@@ -94507,7 +94507,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-690.png"
+    "image": ""
   },
   {
     "name": "ゲルググ",
@@ -95016,7 +95016,7 @@
     "normal_weapons": [],
     "id": 868,
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-692.png"
+    "image": ""
   },
   {
     "name": "スーパーガンダム",
@@ -95145,7 +95145,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-693.png"
+    "image": ""
   },
   {
     "name": "ディジェ",
@@ -95895,7 +95895,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-694.png"
+    "image": ""
   },
   {
     "name": "バウンド・ドック",
@@ -96285,7 +96285,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-695.png"
+    "image": ""
   },
   {
     "name": "ΖΖガンダム",
@@ -118047,7 +118047,7 @@
       }
     ],
     "acquire": "ガシャ",
-    "image": "/unit-images/mh-games-unit-1351.png"
+    "image": ""
   },
   {
     "name": "ヅダ",
@@ -118303,7 +118303,7 @@
       }
     ],
     "acquire": "ガシャ",
-    "image": "/unit-images/mh-games-unit-1353.png"
+    "image": ""
   },
   {
     "name": "アプサラスII",
@@ -118690,7 +118690,7 @@
       }
     ],
     "acquire": "イベント",
-    "image": "/unit-images/mh-games-unit-1354.png"
+    "image": ""
   },
   {
     "name": "陸戦型ガンダム(第08MS小隊)",
@@ -123489,7 +123489,7 @@
       }
     ],
     "acquire": "ガシャ",
-    "image": "/unit-images/mh-games-unit-1371.png"
+    "image": ""
   },
   {
     "name": "ビショップ",
@@ -151085,7 +151085,7 @@
         "mobility": 5
       }
     ],
-    "image": "/unit-images/mh-games-unit-940.png",
+    "image": "",
     "acquire": "ガシャ"
   },
   {
@@ -151466,7 +151466,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-941.png"
+    "image": ""
   },
   {
     "name": "アデルキャノン",
@@ -152355,7 +152355,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-943.png"
+    "image": ""
   },
   {
     "name": "百里",
@@ -152600,7 +152600,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-944.png"
+    "image": ""
   },
   {
     "name": "ガンダム・キマリス",
@@ -152733,7 +152733,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-945.png"
+    "image": ""
   },
   {
     "name": "グレイズ(決闘仕様)",
@@ -152855,7 +152855,7 @@
         "mobility": 5
       }
     ],
-    "image": "/unit-images/mh-games-unit-946.png",
+    "image": "",
     "acquire": "開発"
   },
   {
@@ -152979,7 +152979,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-947.png"
+    "image": ""
   },
   {
     "name": "シュヴァルベ・グレイズ(マクギリス機)",
@@ -153102,7 +153102,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-948.png"
+    "image": ""
   },
   {
     "name": "シュヴァルベ・グレイズ(ガエリオ機)",
@@ -153225,7 +153225,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-949.png"
+    "image": ""
   },
   {
     "name": "シュヴァルベ・グレイズ(アイン機)",
@@ -153348,7 +153348,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-950.png"
+    "image": ""
   },
   {
     "name": "スピナ・ロディ",
@@ -153594,7 +153594,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-951.png"
+    "image": ""
   },
   {
     "name": "グレイズシルト",
@@ -153707,7 +153707,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-952.png"
+    "image": ""
   },
   {
     "name": "ゲイレール・シャルフリヒター",
@@ -154081,7 +154081,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-953.png"
+    "image": ""
   },
   {
     "name": "ベギルベウ",
@@ -154329,7 +154329,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-954.png"
+    "image": ""
   },
   {
     "name": "ディランザ グエル専用機",
@@ -154358,7 +154358,7 @@
     "normal_weapons": [],
     "id": 1301,
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-955.png"
+    "image": ""
   },
   {
     "name": "ハインドリー",
@@ -154866,7 +154866,7 @@
     "normal_weapons": [],
     "id": 1306,
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-956.png"
+    "image": ""
   },
   {
     "name": "オッゴ",
@@ -154977,7 +154977,7 @@
         "mobility": 4
       }
     ],
-    "image": "/unit-images/mh-games-unit-957.png",
+    "image": "",
     "acquire": "ガシャ"
   },
   {
@@ -155089,7 +155089,7 @@
         "mobility": 4
       }
     ],
-    "image": "/unit-images/mh-games-unit-958.png",
+    "image": "",
     "acquire": "ガシャ"
   },
   {
@@ -155210,7 +155210,7 @@
         "mobility": 4
       }
     ],
-    "image": "/unit-images/mh-games-unit-959.png",
+    "image": "",
     "acquire": "ガシャ"
   },
   {
@@ -155472,7 +155472,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-960.png"
+    "image": ""
   },
   {
     "name": "イフリート改",
@@ -155616,7 +155616,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-961.png"
+    "image": ""
   },
   {
     "name": "ジム(サンダーボルト版)",
@@ -155736,7 +155736,7 @@
         "mobility": 5
       }
     ],
-    "image": "/unit-images/mh-games-unit-962.png",
+    "image": "",
     "acquire": "開発"
   },
   {
@@ -156377,7 +156377,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-963.png"
+    "image": ""
   },
   {
     "name": "パワード・ジム",
@@ -157205,7 +157205,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-967.png"
+    "image": ""
   },
   {
     "name": "ハクリ・ロディ(ユハナ機)",
@@ -157334,7 +157334,7 @@
       }
     ],
     "acquire": "ガシャ",
-    "image": "/unit-images/mh-games-unit-968.png"
+    "image": ""
   },
   {
     "name": "ハクリ・ロディ(サンポ機)",
@@ -157469,7 +157469,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-969.png"
+    "image": ""
   },
   {
     "name": "トリアイナ",
@@ -157830,7 +157830,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-970.png"
+    "image": ""
   },
   {
     "name": "戦士ドム",
@@ -158323,7 +158323,7 @@
     "normal_weapons": [],
     "id": 1336,
     "acquire": "ガシャ",
-    "image": "/unit-images/mh-games-unit-974.png"
+    "image": ""
   },
   {
     "name": "ザクⅡ",
@@ -158351,7 +158351,7 @@
     },
     "normal_weapons": [],
     "id": 1337,
-    "image": "/unit-images/mh-games-unit-975.png",
+    "image": "",
     "acquire": "ガシャ"
   },
   {
@@ -163510,7 +163510,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1014.png"
+    "image": ""
   },
   {
     "name": "ジェニス",
@@ -167014,7 +167014,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1041.png"
+    "image": ""
   },
   {
     "name": "ガルム・ロディ(指揮官機)",
@@ -167504,7 +167504,7 @@
         "mobility": 5
       }
     ],
-    "image": "/unit-images/mh-games-unit-1044.png",
+    "image": "",
     "acquire": "ガシャ"
   },
   {
@@ -167856,7 +167856,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1046.png"
+    "image": ""
   },
   {
     "name": "ザクI",
@@ -167975,7 +167975,7 @@
         "mobility": 5
       }
     ],
-    "image": "/unit-images/mh-games-unit-1047.png",
+    "image": "",
     "acquire": "開発"
   },
   {
@@ -168095,7 +168095,7 @@
         "mobility": 4
       }
     ],
-    "image": "/unit-images/mh-games-unit-1048.png",
+    "image": "",
     "acquire": "ガシャ"
   },
   {
@@ -168231,7 +168231,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1049.png"
+    "image": ""
   },
   {
     "name": "ギラ・ドーガ",
@@ -168355,7 +168355,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1050.png"
+    "image": ""
   },
   {
     "name": "ジムⅡ・セミストライカー",
@@ -168588,7 +168588,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1051.png"
+    "image": ""
   },
   {
     "name": "ジェガンD型",
@@ -168712,7 +168712,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1052.png"
+    "image": ""
   },
   {
     "name": "ガンキャノン・ディテクター",
@@ -169067,7 +169067,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1053.png"
+    "image": ""
   },
   {
     "name": "ギラ・ドーガ(重武装仕様／袖付き)",
@@ -170325,7 +170325,7 @@
         "mobility": 6
       }
     ],
-    "image": "/unit-images/mh-games-unit-1056.png",
+    "image": "",
     "acquire": "ガシャ"
   },
   {
@@ -170812,7 +170812,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1057.png"
+    "image": ""
   },
   {
     "name": "ゲイレール",
@@ -171058,7 +171058,7 @@
       }
     ],
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1058.png"
+    "image": ""
   },
   {
     "name": "プルーマ",
@@ -171209,7 +171209,7 @@
     "normal_weapons": [],
     "id": 1442,
     "acquire": "開発",
-    "image": "/unit-images/mh-games-unit-1059.png"
+    "image": ""
   },
   {
     "name": "ハイングラ",
@@ -171450,7 +171450,7 @@
       }
     ],
     "acquire": "ガシャ",
-    "image": "/unit-images/mh-games-unit-1060.png"
+    "image": ""
   },
   {
     "name": "ボール(サンダーボルト版)",
@@ -171571,7 +171571,7 @@
         "mobility": 4
       }
     ],
-    "image": "/unit-images/mh-games-unit-1061.png",
+    "image": "",
     "acquire": "開発"
   },
   {
