@@ -2152,8 +2152,8 @@ function buildFilters() {
     document.querySelectorAll('#filterRarityButtons .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
-    fillSelect('filterSeries', [...series].sort());
-    fillSelect('filterTag', [...tags].sort());
+    fillSelect('filterSeries', [...series]);
+    fillSelect('filterTag', [...tags].sort((a,b)=>a.localeCompare(b,'ja')));
     // Debuff category buttons
     const debuffBtns = DEBUFF_CATEGORIES.map(d =>
       `<button class="filter-btn" data-debuff="${d.key}">${d.label}</button>`
@@ -2229,10 +2229,10 @@ function buildFilters() {
     document.querySelectorAll('#filterRarityButtons .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
-    fillSelect('filterSeries', [...series].sort());
+    fillSelect('filterSeries', [...series]);
     // Show tag filter for chara too
     document.getElementById('filterTagGroup').style.display = '';
-    fillSelect('filterTag', [...tags].sort());
+    fillSelect('filterTag', [...tags].sort((a,b)=>a.localeCompare(b,'ja')));
     // Skill filter buttons for chara
     const skillSet = new Set();
     allCharas.forEach(c => {
@@ -2321,7 +2321,7 @@ function buildFilters() {
     document.querySelectorAll('#filterRarityButtons .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
-    fillSelect('filterTarget', [...targets].sort());
+    fillSelect('filterTarget', [...targets]);
     // Tag filter buttons — categorized groups
     const _supTagGroups = [
       { label: 'シリーズ系', tags: ['SEEDシリーズ','宇宙世紀シリーズ','オルタナティブシリーズ','SDガンダム'] },
@@ -2360,10 +2360,92 @@ function buildFilters() {
   }
 }
 
+// ガンダムシリーズ放映年順ソート
+const SERIES_ORDER = [
+  // 宇宙世紀 (UC) — 時系列順
+  '機動戦士ガンダム',
+  'MSV',
+  'MSV-R',
+  'M-MSV',
+  'CCA-MSV',
+  '機動戦士ガンダム 第08MS小隊',
+  '機動戦士ガンダム0080 ポケットの中の戦争',
+  '機動戦士ガンダム MS IGLOO',
+  '機動戦士ガンダム0083 STARDUST MEMORY',
+  '機動戦士Ζガンダム',
+  'ADVANCE OF Z ティターンズの旗のもとに',
+  'GUNDAM SENTINEL',
+  '機動戦士ガンダムΖΖ',
+  '機動戦士ガンダム 逆襲のシャア',
+  '機動戦士ガンダム 逆襲のシャア ベルトーチカ・チルドレン',
+  '機動戦士ガンダム 閃光のハサウェイ',
+  '機動戦士ガンダムUC',
+  '機動戦士ガンダムNT',
+  '機動戦士ガンダムF90',
+  '機動戦士ガンダムF91',
+  '機動戦士クロスボーン・ガンダム',
+  '機動戦士Vガンダム',
+  // リギルド・センチュリー
+  'Gのレコンギスタ',
+  // 正暦
+  '∀ガンダム',
+  // アナザーガンダム — 放映年順
+  '機動武闘伝Gガンダム',
+  '新機動戦記ガンダムW',
+  '新機動戦記ガンダムW Endless Waltz',
+  '新機動戦記ガンダムW Endless Waltz 敗者たちの栄光',
+  '新機動戦記ガンダムW デュアルストーリー G-UNIT',
+  '機動新世紀ガンダムX',
+  '機動戦士ガンダムSEED',
+  '機動戦士ガンダムSEED ASTRAY',
+  '機動戦士ガンダムSEED X ASTRAY',
+  '機動戦士ガンダムSEED ASTRAY 天空の皇女',
+  '機動戦士ガンダムSEED DESTINY',
+  '機動戦士ガンダムSEED DESTINY ASTRAY',
+  '機動戦士ガンダムSEED FREEDOM',
+  '機動戦士ガンダムSEED VS ASTRAY',
+  '機動戦士ガンダム00',
+  '機動戦士ガンダムAGE',
+  'ガンダム Gのレコンギスタ',
+  '機動戦士ガンダム 鉄血のオルフェンズ',
+  '機動戦士ガンダム 水星の魔女',
+  // ビルドシリーズ
+  'ガンダムビルドファイターズ',
+  'ガンダムビルドダイバーズ',
+  // SD系
+  'SDガンダム',
+  'SDガンダムワールド ガシャポン戦士 スクランブルウォーズ',
+  'SDガンダムワールド 三国創傑伝',
+  'SDガンダム外伝 ジークジオン編',
+  'SDコマンド戦記 G-ARMS',
+  'SD戦国伝 武者七人衆編',
+  // その他
+  'GUNDAM THE BATTLE MASTER',
+  'GUNDAM EVOLVE',
+  'G GENERATIONシリーズ',
+  'UC-MSV',
+  'Z-MSV',
+  'ガンダム新体験 0087 グリーンダイバーズ',
+  'ダブルフェイク アンダー・ザ・ガンダム',
+  'プラモ狂四郎',
+  '模型戦士ガンプラビルダーズ ビギニングG',
+];
+function sortSeries(arr) {
+  return arr.slice().sort((a, b) => {
+    const ia = SERIES_ORDER.indexOf(a);
+    const ib = SERIES_ORDER.indexOf(b);
+    if (ia !== -1 && ib !== -1) return ia - ib;
+    if (ia !== -1) return -1;
+    if (ib !== -1) return 1;
+    return a.localeCompare(b, 'ja');
+  });
+}
+
 function fillSelect(id, opts) {
   const sel = document.getElementById(id);
   const isSeriesOrTag = id === 'filterSeries' || id === 'filterTag' || id === 'filterTarget';
-  opts.forEach(o => {
+  const sorted = (id === 'filterSeries' || id === 'filterTarget') ? sortSeries(opts) : opts;
+  sorted.forEach(o => {
     const op = document.createElement('option');
     op.value = o;
     op.textContent = isSeriesOrTag ? tData(o) : o;
