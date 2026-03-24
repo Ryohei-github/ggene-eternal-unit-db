@@ -1303,7 +1303,7 @@ a:hover{text-decoration:underline}
       <div class="filter-btn-group" id="filterCharaSkillButtons"></div>
     </div>
     <div class="filter-group" id="filterCharaAbilityGroup" style="display:none">
-      <label style="display:flex;align-items:center;gap:6px"><span>貴重アビリティ</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
+      <label style="display:flex;align-items:center;gap:6px"><span>回数増加アビリティ</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
       <div class="filter-btn-group" id="filterCharaAbilityButtons"></div>
     </div>
     <div class="filter-group" id="filterTargetGroup" style="display:none">
@@ -2143,7 +2143,7 @@ function buildFilters() {
     document.querySelectorAll('#filterCharaSkillButtons .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
-    // アビリティフィルタボタン生成（貴重アビリティ）
+    // アビリティフィルタボタン生成（回数増加アビリティ）
     const abilCategories = [
       {label:'支援攻撃2回', key:'atk2', test: allAbil => abilCounters.atk(allAbil) >= 2},
       {label:'支援防御2回', key:'def2', test: allAbil => abilCounters.def(allAbil) >= 2},
@@ -2381,7 +2381,7 @@ function getFiltered() {
         const charaSkillBases = allSkills.map(sk => sk.name.replace(/[Ll][Vv][０-９\d]+/g,'').replace(/\s+/g,'').replace(/ブ－スト/g,'ブースト').trim());
         if (!activeSkills.every(fs => charaSkillBases.includes(fs))) return false;
       }
-      // Ability filter (貴重アビリティ: 合計値で判定)
+      // Ability filter (回数増加アビリティ: 合計値で判定)
       const activeAbils = [...document.querySelectorAll('#filterCharaAbilityButtons .filter-btn.active')].map(b => b.dataset.value);
       if (activeAbils.length > 0) {
         const allAbil = [...(c.abilities||[]), ...(c.sp_abilities||[])];
