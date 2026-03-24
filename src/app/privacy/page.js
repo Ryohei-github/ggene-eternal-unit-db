@@ -1,12 +1,12 @@
 export const metadata = {
   title: 'プライバシーポリシー',
-  description: 'GジェネエターナルDBのプライバシーポリシー。Google Analytics・Google AdSenseの利用、Cookieの取り扱いなどについて。',
+  description: 'GジェネエターナルDBのプライバシーポリシー。Google Analytics・忍者AdMaxの利用、Cookieの取り扱いなどについて。',
   alternates: {
     canonical: '/privacy',
   },
   openGraph: {
     title: 'プライバシーポリシー | GジェネエターナルDB',
-    description: 'GジェネエターナルDBのプライバシーポリシー。Google Analytics・Google AdSenseの利用、Cookieの取り扱いなどについて。',
+    description: 'GジェネエターナルDBのプライバシーポリシー。Google Analytics・忍者AdMaxの利用、Cookieの取り扱いなどについて。',
     type: 'website',
     url: '/privacy',
     siteName: 'GジェネエターナルDB by MH GAMES',
@@ -109,25 +109,24 @@ export default function PrivacyPage() {
           </p>
         </section>
 
-        {/* Google AdSense */}
+        {/* 忍者AdMax */}
         <section style={sectionStyle}>
           <h3 style={h3Style}>
             <span style={barStyle}></span>
             広告配信について
           </h3>
           <p style={pStyle}>
-            当サイトでは、第三者配信の広告サービス「Google AdSense（グーグルアドセンス）」を利用しています。
-            Google AdSenseは、ユーザーの興味に応じた広告を表示するためにCookieを使用することがあります。
+            当サイトでは、広告配信サービス「忍者AdMax」を利用しています。
+            忍者AdMaxは、広告の配信・効果測定のためにCookieを使用することがあります。
           </p>
           <p style={pStyle}>
-            Googleが広告Cookieを使用することにより、ユーザーが当サイトや他のサイトにアクセスした際の
+            Cookieを使用することにより、ユーザーが当サイトや他のサイトにアクセスした際の
             情報に基づいて、適切な広告を表示できます。
-            ユーザーは、<a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" style={{ color: '#e8961e' }}>広告設定</a>で
-            パーソナライズ広告を無効にすることができます。
+            ユーザーはブラウザの設定によりCookieの受け入れを拒否することができます。
           </p>
           <p style={pStyle}>
             詳細については
-            <a href="https://policies.google.com/technologies/ads?hl=ja" target="_blank" rel="noopener noreferrer" style={{ color: '#e8961e' }}>Google広告に関するポリシー</a>をご確認ください。
+            <a href="https://www.ninja.co.jp/admax/privacy/" target="_blank" rel="noopener noreferrer" style={{ color: '#e8961e' }}>忍者AdMaxのプライバシーポリシー</a>をご確認ください。
           </p>
         </section>
 
@@ -138,7 +137,7 @@ export default function PrivacyPage() {
             Cookieについて
           </h3>
           <p style={pStyle}>
-            当サイトでは、上記のGoogle AnalyticsおよびGoogle AdSenseにおいてCookieを使用しています。
+            当サイトでは、上記のGoogle Analyticsおよび忍者AdMaxにおいてCookieを使用しています。
             Cookieとは、ウェブサイトがユーザーのブラウザに保存する小さなテキストファイルです。
           </p>
           <p style={pStyle}>

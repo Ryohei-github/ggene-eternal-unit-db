@@ -87,7 +87,6 @@ a:hover{text-decoration:underline}
 
 /* Ad slots */
 .ad-slot{max-width:1800px;margin:0 auto;padding:8px 16px;text-align:center;min-height:0;overflow:hidden}
-.ad-slot ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
 .ad-slot-footer{border-top:1px solid var(--border);padding-top:12px;margin-top:20px}
 
 /* Footer */

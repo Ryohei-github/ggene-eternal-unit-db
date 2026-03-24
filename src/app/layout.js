@@ -50,13 +50,7 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-PHTSGSZ19J');
           `}
         </Script>
-        {/* Google AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3746333245586627"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-        />
+        {/* 広告: 忍者AdMax（SPAで直接読み込み） */}
       </head>
       <body>{children}</body>
     </html>

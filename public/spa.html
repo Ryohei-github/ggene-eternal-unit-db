@@ -86,8 +86,7 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', 'G-PHTSGSZ19J');
 </script>
-<!-- Google AdSense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3746333245586627" crossorigin="anonymous"></script>
+<!-- 忍者AdMax -->
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#f0ede8;--card:#111318;--card-hover:#1a1d25;--border:#d4d0c8;--accent:#e8961e;--accent2:#d63031;--text:#1a1c2a;--text2:#5c6070;--gold:#d4a200;--ur:#e63950;--nu-green:#3ab5a8;--card-text:#e0ddd6;--card-text2:#8a8d98;--card-border:#2a2d38}
@@ -177,10 +176,16 @@ a:hover{text-decoration:underline}
 .lang-toggle button:hover:not(.active){background:rgba(232,150,30,.15)}
 
 
-/* Ad slots */
-.ad-slot{max-width:1800px;margin:0 auto;padding:8px 16px;text-align:center;min-height:0;overflow:hidden}
-.ad-slot ins.adsbygoogle[data-ad-status="unfilled"]{display:none!important}
+/* Ad slots — mobile top/bottom */
+.ad-slot{max-width:1800px;margin:0 auto;padding:8px 16px;text-align:center;min-height:0;overflow:hidden;display:none}
 .ad-slot-footer{border-top:1px solid var(--border);padding-top:12px;margin-top:20px}
+@media(max-width:600px){.ad-slot{display:block}}
+
+/* Ad sidebar — PC left/right sticky */
+.ad-sidebar{position:fixed;top:50%;transform:translateY(-50%);z-index:90;display:none}
+.ad-sidebar-left{left:8px}
+.ad-sidebar-right{right:8px}
+@media(min-width:1400px){.ad-sidebar{display:block}}
 
 /* Footer */
 .site-footer{max-width:1800px;margin:0 auto;padding:20px 16px 40px;text-align:center}
@@ -1312,10 +1317,18 @@ a:hover{text-decoration:underline}
 </header>
 
 <main role="main">
-<!-- Ad: GGeneDB_Top -->
+<!-- Ad: 忍者AdMax スマホ上部 -->
 <div class="ad-slot" id="adSlotTop">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3746333245586627" data-ad-slot="2907106881" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <script src="https://adm.shinobi.jp/s/f969299a5a7ac2147238c6e4c8abd0da"></script>
+</div>
+
+<!-- Ad: 忍者AdMax PC左サイド -->
+<div class="ad-sidebar ad-sidebar-left" id="adSideLeft">
+  <script src="https://adm.shinobi.jp/s/986bd62e14794555eb77cbbbe051c274"></script>
+</div>
+<!-- Ad: 忍者AdMax PC右サイド -->
+<div class="ad-sidebar ad-sidebar-right" id="adSideRight">
+  <script src="https://adm.shinobi.jp/s/f97fde07eb5842af35cf10b3d4f042dc"></script>
 </div>
 
 <section class="controls" aria-label="検索・フィルタ">
@@ -7000,10 +7013,9 @@ bindSortButtons();
 init();
 </script>
 
-<!-- Ad: GGeneDB_Bottom -->
+<!-- Ad: 忍者AdMax スマホ下部 -->
 <div class="ad-slot ad-slot-footer" id="adSlotBottom">
-  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3746333245586627" data-ad-slot="7371985568" data-ad-format="auto" data-full-width-responsive="true"></ins>
-  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  <script src="https://adm.shinobi.jp/s/6b37984cfa9c490a4d625b9fcbbf94f4"></script>
 </div>
 </main>
 
