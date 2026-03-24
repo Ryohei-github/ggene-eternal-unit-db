@@ -830,21 +830,33 @@ a:hover{text-decoration:underline}
   .tab-label{font-size:.68em}
   .tab-btn .tab-count{font-size:.58em}
 
-  /* Filters: tight layout */
-  .controls{margin:6px auto;padding:0 8px;max-width:100vw;overflow:hidden}
-  .search-box{margin-bottom:8px}
-  .search-box input{padding:7px 10px;font-size:.82em}
-  .filters{flex-direction:column;gap:4px;margin-bottom:8px}
-  .filter-group{flex-wrap:wrap;gap:3px}
-  .filter-group label{font-size:.62em;min-width:auto}
-  .filter-group select{font-size:.72em;padding:4px 6px}
-  .filter-btn{padding:2px 6px;font-size:.6em}
+  /* Filters: mobile portrait optimization */
+  .controls{margin:4px auto;padding:0 6px;max-width:100vw;overflow-x:hidden}
+  .search-box{margin-bottom:5px}
+  .search-box input{padding:6px 10px;font-size:.8em}
+  .filters{flex-direction:column;gap:1px;margin-bottom:4px}
+  .filter-group{flex-wrap:wrap;gap:2px;align-items:center}
+  .filter-group label{font-size:.58em;min-width:auto;margin-bottom:0;line-height:1.4;flex-shrink:0}
+  .filter-group label span[style*="flex:1"]{display:none}
+  .filter-group select{font-size:.68em;padding:3px 5px;max-width:calc(100vw - 80px)}
+  .filter-btn-group{display:flex;flex-wrap:wrap;gap:2px}
+  .filter-btn{padding:1px 4px;font-size:.54em;border-radius:4px}
+  .filter-btn img{width:10px;height:10px}
   .filter-group-wide{flex-basis:auto}
-  .debuff-filter-row{flex-wrap:wrap;gap:3px}
-  .debuff-filter-row .filter-btn{font-size:.58em;padding:2px 5px}
-  .stats-bar{flex-direction:column;gap:4px;align-items:flex-start;max-width:100%;overflow:hidden}
-  .sort-btns{justify-content:flex-start;flex-wrap:wrap;max-width:100%;gap:3px}
-  .sort-btns button{font-size:.6em;padding:2px 6px}
+  .debuff-filter-row{flex-wrap:wrap;gap:2px}
+  .debuff-filter-row .filter-btn{font-size:.52em;padding:1px 3px}
+  .debuff-rate-wrap label{font-size:.55em}
+  .debuff-rate-wrap select{font-size:.6em;padding:2px 4px}
+  .debuff-divider{height:12px;margin:0 2px!important}
+  .add-tag-btn{width:24px!important;height:24px!important;font-size:.9em!important}
+  .tag-filter-row{gap:3px!important}
+  .clear-filters-btn{font-size:.65em!important;padding:3px 10px!important}
+  .stats-bar{flex-direction:column;gap:2px;align-items:flex-start;max-width:100%;overflow:visible;padding:3px 0;margin-bottom:6px}
+  .sort-btns{justify-content:flex-start;flex-wrap:wrap;max-width:100%;gap:2px}
+  .sort-btns button{font-size:.55em;padding:2px 4px}
+  .sp-switch{gap:1px}
+  .sp-sw-btn{font-size:.65em;padding:2px 6px}
+  #resultCount{font-size:.75em}
 
   /* Grid & Cards: 2-column on mobile */
   .grid{grid-template-columns:repeat(2,1fr);gap:4px;padding:0 6px 24px;max-width:100vw;overflow:hidden}
