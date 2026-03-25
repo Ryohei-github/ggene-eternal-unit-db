@@ -4274,7 +4274,7 @@
     "effect": "特殊武装POWERが7%上昇装備したユニットが「ライバル」タグを含む場合、さらに特殊武装POWERが5%上昇",
     "target": "SDガンダム外伝 ジークジオン編",
     "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手",
-    "image": "/unit-images/mh-games-item-11.png"
+    "image": "/unit-images/mh-games-item-19.png"
   },
   {
     "id": 330,
@@ -4287,7 +4287,7 @@
     "effect": "戦闘を行う敵が射撃武装で攻撃する時自身の被ダメージが7%軽減",
     "target": "SDガンダム",
     "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手",
-    "image": "/unit-images/mh-games-item-6.png"
+    "image": "/unit-images/mh-games-item-21.png"
   },
   {
     "id": 331,
@@ -4300,7 +4300,7 @@
     "effect": "戦闘を行う敵が特殊武装で攻撃する時自身の被ダメージが7%軽減",
     "target": "SDガンダム",
     "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手",
-    "image": "/unit-images/mh-games-item-6.png"
+    "image": "/unit-images/mh-games-item-20.png"
   },
   {
     "id": 332,
@@ -4313,7 +4313,7 @@
     "effect": "物理格闘武装POWERが7%上昇",
     "target": "SDガンダム",
     "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手",
-    "image": "/unit-images/mh-games-item-10.png"
+    "image": "/unit-images/mh-games-item-19.png"
   },
   {
     "id": 333,
