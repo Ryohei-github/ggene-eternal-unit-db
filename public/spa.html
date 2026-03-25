@@ -1348,18 +1348,26 @@ a:hover{text-decoration:underline}
     <span class="toggle-arrow">▼</span> フィルター
   </button>
   <div class="filters" id="filtersContainer">
+    <!-- 共通: タイプ（ユニット: 攻撃/支援等、キャラ: 射撃/格闘等） -->
     <div class="filter-group" id="filterTypeGroup">
       <label>タイプ</label>
       <div class="filter-btn-group" id="filterTypeButtons"></div>
     </div>
+    <div class="filter-group" id="filterCharaTypeGroup" style="display:none">
+      <label>タイプ</label>
+      <select id="filterCharaType"><option value="">すべて</option></select>
+    </div>
+    <!-- 共通: レア度 -->
     <div class="filter-group" id="filterRarityGroup">
       <label>レア</label>
       <div class="filter-btn-group" id="filterRarityButtons"></div>
     </div>
+    <!-- 共通: シリーズ -->
     <div class="filter-group" id="filterSeriesGroup">
       <label>シリーズ</label>
       <select id="filterSeries"><option value="">すべて</option></select>
     </div>
+    <!-- 共通: タグ -->
     <div class="filter-group" id="filterTagGroup">
       <label>タグ</label>
       <div id="filterTagContainer" style="display:flex;flex-direction:column;gap:4px">
@@ -1369,6 +1377,21 @@ a:hover{text-decoration:underline}
         </div>
       </div>
     </div>
+    <!-- 共通: 入手方法（ユニット/キャラで別々のグループ） -->
+    <div class="filter-group" id="filterAcquireGroup">
+      <label>入手方法</label>
+      <div class="filter-btn-group" id="filterAcquireButtons">
+        <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');render()">ガシャ</button>
+        <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');render()">限定ガシャ</button>
+        <button class="filter-btn" data-value="開発" onclick="this.classList.toggle('active');render()">開発</button>
+        <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');render()">イベント</button>
+      </div>
+    </div>
+    <div class="filter-group" id="filterCharaAcquireGroup" style="display:none">
+      <label>入手方法</label>
+      <div class="filter-btn-group" id="filterCharaAcquireButtons"></div>
+    </div>
+    <!-- ユニット専用フィルター -->
     <div class="filter-group" id="filterTerrainGroup">
       <label>地形</label>
       <div class="filter-btn-group" id="filterTerrainButtons">
@@ -1396,15 +1419,6 @@ a:hover{text-decoration:underline}
         <button class="filter-btn" id="filterMapBtn" onclick="this.classList.toggle('active');render()"><img src="/assets/map_weapon/UI_Battle_MapUI_MapWeapon_Icon_Red.png" style="width:14px;height:14px;vertical-align:middle"> MAP所持</button>
       </div>
     </div>
-    <div class="filter-group" id="filterAcquireGroup">
-      <label>入手方法</label>
-      <div class="filter-btn-group" id="filterAcquireButtons">
-        <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');render()">ガシャ</button>
-        <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');render()">限定ガシャ</button>
-        <button class="filter-btn" data-value="開発" onclick="this.classList.toggle('active');render()">開発</button>
-        <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');render()">イベント</button>
-      </div>
-    </div>
     <div class="filter-group" id="filterCharaGroup">
       <label>獲得キャラ</label>
       <div class="filter-btn-group">
@@ -1423,14 +1437,7 @@ a:hover{text-decoration:underline}
         <div class="filter-btn-group" id="specialEffectButtons"></div>
       </div>
     </div>
-    <div class="filter-group" id="filterCharaTypeGroup" style="display:none">
-      <label>キャラタイプ</label>
-      <select id="filterCharaType"><option value="">すべて</option></select>
-    </div>
-    <div class="filter-group" id="filterCharaAcquireGroup" style="display:none">
-      <label>入手方法</label>
-      <div class="filter-btn-group" id="filterCharaAcquireButtons"></div>
-    </div>
+    <!-- キャラ専用フィルター -->
     <div class="filter-group" id="filterCharaSkillGroup" style="display:none">
       <label style="display:flex;align-items:center;gap:6px"><span>スキル</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
       <div class="filter-btn-group" id="filterCharaSkillButtons"></div>
@@ -2239,7 +2246,7 @@ function buildFilters() {
       const icon = TYPE_ICON_MAP[t] ? `<img src="${TYPE_ICON_MAP[t]}" alt="${t}">` : '';
       return `<button class="filter-btn" data-value="${t}">${icon}${t}</button>`;
     }).join('');
-    document.getElementById('filterCharaType').parentElement.innerHTML = '<label>タイプ</label><div class="filter-btn-group" id="charaTypeButtons">' + ctBtns + '</div>';
+    document.getElementById('filterCharaTypeGroup').innerHTML = '<label>タイプ</label><div class="filter-btn-group" id="charaTypeButtons">' + ctBtns + '</div>';
     document.querySelectorAll('#charaTypeButtons .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
