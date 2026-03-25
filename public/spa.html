@@ -4441,10 +4441,7 @@ let opPickerImagesData = null;
 async function openOptionPartsPicker(slotIdx) {
   opPickerSlotIdx = slotIdx;
   await loadItemsForTeam();
-  // アイテム画像データも読み込み（アイテムタブと共有）
-  if (!opPickerImagesData) {
-    try { const r = await fetch('/item-images.json'); opPickerImagesData = await r.json(); } catch(e) { opPickerImagesData = {}; }
-  }
+  // アイテム画像はitems.json内のimageフィールドから取得（ローカル画像）
   const overlay = document.getElementById('opPickerOverlay');
   if (!overlay) return;
   overlay.classList.add('open');
@@ -4466,9 +4463,8 @@ function renderOpPickerList() {
   }).slice(0, 80);
   list.innerHTML = items.map(item => {
     const rarCls = rarityClass(item.rarity);
-    // アイテム画像（アイテムタブと共通）
-    const imgIdx = item.image_index;
-    const imgUrl = (imgIdx && opPickerImagesData && opPickerImagesData[imgIdx]) ? opPickerImagesData[imgIdx] : '';
+    // アイテム画像（ローカル画像）
+    const imgUrl = item.image || '';
     const imgTag = imgUrl ? `<img src="${imgUrl}" style="width:32px;height:32px;border-radius:4px;object-fit:cover;border:1px solid var(--card-border);flex-shrink:0" onerror="this.style.display='none'" alt="">` : '';
     return `<div class="op-picker-item" onclick="selectOptionPart('${item.name.replace(/'/g,"\\'")}','${(item.rarity||'').replace(/'/g,"\\'")}','${(item.effect||'').replace(/'/g,"\\'")}')">
       ${imgTag}
@@ -6841,17 +6837,16 @@ function dcBindEvents() {
 
 /* ===== Items Tab ===== */
 let itemsData = null;
-let itemImagesData = null;
+// item-images.json は廃止、画像はitems.json内のimageフィールドで管理
 let currentItemSub = 'option_parts';
 
 async function loadAndRenderItems() {
   if (!itemsData) {
     try {
-      const [res1, res2] = await Promise.all([fetch('/items.json'), fetch('/item-images.json')]);
+      const res1 = await fetch('/items.json');
       itemsData = await res1.json();
-      itemImagesData = await res2.json();
     } catch(e) {
-      console.error('Failed to load items.json or item-images.json', e);
+      console.error('Failed to load items.json', e);
       return;
     }
   }
@@ -6992,8 +6987,7 @@ function renderItems() {
     }).join('');
 
     const rar = p.rarity.toLowerCase();
-    const imgIdx = p.image_index;
-    const imgUrl = (itemImagesData && imgIdx != null) ? itemImagesData.base + itemImagesData.files[imgIdx] : '';
+    const imgUrl = p.image || '';
     const iconHtml = imgUrl ? `<img class="item-card-icon" src="${imgUrl}" alt="" onerror="this.style.display='none'">` : `<div class="item-card-icon ${iconCls}">${iconTxt}</div>`;
     return `<div class="item-card">
       <div class="item-card-header ${rar}">

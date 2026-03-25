@@ -9,7 +9,8 @@
     "tag": "エゥーゴ",
     "effect": "自身の最大ENが8%上昇",
     "target": "エゥーゴ",
-    "obtain": "・特別リクエスト「ファ」(RANK4)"
+    "obtain": "・特別リクエスト「ファ」(RANK4)",
+    "image": "/unit-images/mh-games-item-18.png"
   },
   {
     "id": 2,
@@ -21,7 +22,8 @@
     "tag": "",
     "effect": "自身の最大ENが7%上昇",
     "target": "機動戦士ガンダムZZ",
-    "obtain": "・マップイベントVol.2で入手"
+    "obtain": "・マップイベントVol.2で入手",
+    "image": "/unit-images/mh-games-item-18.png"
   },
   {
     "id": 3,
@@ -33,7 +35,8 @@
     "tag": "",
     "effect": "自身の最大ENが7%上昇",
     "target": "機動戦士ガンダムSEED",
-    "obtain": "・大規模攻略戦Vol.1で入手"
+    "obtain": "・大規模攻略戦Vol.1で入手",
+    "image": "/unit-images/mh-games-item-18.png"
   },
   {
     "id": 4,
@@ -45,7 +48,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "機動戦士ガンダム",
-    "obtain": "・特別リクエスト「アムロ」(RANK2)"
+    "obtain": "・特別リクエスト「アムロ」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 5,
@@ -57,7 +61,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "機動戦士Zガンダム",
-    "obtain": "・特別リクエスト「カミーユ」(RANK2)"
+    "obtain": "・特別リクエスト「カミーユ」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 6,
@@ -69,7 +74,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "機動戦士ガンダムZZ",
-    "obtain": "・特別リクエスト「ジュドー」(RANK2)"
+    "obtain": "・特別リクエスト「ジュドー」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 7,
@@ -81,7 +87,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "機動武闘伝Gガンダム",
-    "obtain": "・特別リクエスト「ドモン」(RANK2)"
+    "obtain": "・特別リクエスト「ドモン」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 8,
@@ -93,7 +100,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "新機動戦記ガンダムW",
-    "obtain": "・特別リクエスト「ヒイロ」(RANK2)"
+    "obtain": "・特別リクエスト「ヒイロ」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 9,
@@ -105,7 +113,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "機動新世紀ガンダムX",
-    "obtain": "・特別リクエスト「ガロード」(RANK2)"
+    "obtain": "・特別リクエスト「ガロード」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 10,
@@ -117,7 +126,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "機動戦士ガンダムSEED",
-    "obtain": "・特別リクエスト「キラ」(RANK2)"
+    "obtain": "・特別リクエスト「キラ」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 11,
@@ -129,7 +139,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "機動戦士ガンダム00",
-    "obtain": "・特別リクエスト「刹那」(RANK2)"
+    "obtain": "・特別リクエスト「刹那」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 12,
@@ -141,7 +152,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "鉄血のオルフェンズ",
-    "obtain": "・特別リクエスト「三日月」(RANK2)"
+    "obtain": "・特別リクエスト「三日月」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 13,
@@ -153,7 +165,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "水星の魔女",
-    "obtain": "・特別リクエスト「スレッタ」(RANK2)"
+    "obtain": "・特別リクエスト「スレッタ」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 14,
@@ -165,7 +178,8 @@
     "tag": "電光石火",
     "effect": "自身の最大ENが20上昇",
     "target": "電光石火",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 15,
@@ -177,7 +191,8 @@
     "tag": "一撃必殺",
     "effect": "自身の最大ENが20上昇",
     "target": "一撃必殺",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 16,
@@ -189,7 +204,8 @@
     "tag": "堅牢",
     "effect": "自身の最大ENが20上昇",
     "target": "堅牢",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 17,
@@ -201,7 +217,8 @@
     "tag": "突破力",
     "effect": "自身の最大ENが20上昇",
     "target": "突破力",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 18,
@@ -213,7 +230,8 @@
     "tag": "大型機",
     "effect": "自身の最大ENが20上昇",
     "target": "大型機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 19,
@@ -225,7 +243,8 @@
     "tag": "専用機",
     "effect": "自身の最大ENが20上昇",
     "target": "専用機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 20,
@@ -237,7 +256,8 @@
     "tag": "試作機",
     "effect": "自身の最大ENが20上昇",
     "target": "試作機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 21,
@@ -249,7 +269,8 @@
     "tag": "エース機",
     "effect": "自身の最大ENが20上昇",
     "target": "エース機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 22,
@@ -261,7 +282,8 @@
     "tag": "指揮官機",
     "effect": "自身の最大ENが20上昇",
     "target": "指揮官機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 23,
@@ -273,7 +295,8 @@
     "tag": "",
     "effect": "自身の最大ENが20上昇",
     "target": "機動戦士ガンダムAGE",
-    "obtain": "・特別リクエスト「フリット」(RANK2)"
+    "obtain": "・特別リクエスト「フリット」(RANK2)",
+    "image": "/unit-images/mh-games-item-17.png"
   },
   {
     "id": 24,
@@ -285,7 +308,8 @@
     "tag": "宇宙世紀シリーズ",
     "effect": "自身の最大ENが10上昇",
     "target": "宇宙世紀シリーズ",
-    "obtain": "・特別リクエスト「アムロ」(RANK1)・特別リクエスト「ルー」(RANK1)"
+    "obtain": "・特別リクエスト「アムロ」(RANK1)・特別リクエスト「ルー」(RANK1)",
+    "image": "/unit-images/mh-games-item-16.png"
   },
   {
     "id": 25,
@@ -297,7 +321,8 @@
     "tag": "オルタナティブシリーズ",
     "effect": "自身の最大ENが10上昇",
     "target": "オルタナティブシリーズ",
-    "obtain": "・特別リクエスト「レイン」(RANK1)・特別リクエスト「ヒイロ」(RANK1)・特別リクエスト「シン」(RANK1)・特別リクエスト「スメラギ」(RANK1)・特別リクエスト「グエル」(RANK1)"
+    "obtain": "・特別リクエスト「レイン」(RANK1)・特別リクエスト「ヒイロ」(RANK1)・特別リクエスト「シン」(RANK1)・特別リクエスト「スメラギ」(RANK1)・特別リクエスト「グエル」(RANK1)",
+    "image": "/unit-images/mh-games-item-16.png"
   },
   {
     "id": 26,
@@ -309,7 +334,8 @@
     "tag": "地球連邦軍(宇宙世紀)",
     "effect": "自身の機動力が8%上昇",
     "target": "地球連邦軍(宇宙世紀)",
-    "obtain": "・特別リクエスト「セイラ」(RANK4)"
+    "obtain": "・特別リクエスト「セイラ」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 27,
@@ -321,7 +347,8 @@
     "tag": "エゥーゴ",
     "effect": "自身の機動力が8%上昇",
     "target": "エゥーゴ",
-    "obtain": "・特別リクエスト「ルー」(RANK4)"
+    "obtain": "・特別リクエスト「ルー」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 28,
@@ -333,7 +360,8 @@
     "tag": "各国代表",
     "effect": "自身の機動力が8%上昇",
     "target": "各国代表",
-    "obtain": "・特別リクエスト「レイン」(RANK4)"
+    "obtain": "・特別リクエスト「レイン」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 29,
@@ -345,7 +373,8 @@
     "tag": "オペレーション・メテオ",
     "effect": "自身の機動力が8%上昇",
     "target": "オペレーション",
-    "obtain": "・メテオ ・特別リクエスト「リリーナ」(RANK4)"
+    "obtain": "・メテオ ・特別リクエスト「リリーナ」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 30,
@@ -357,7 +386,8 @@
     "tag": "地球連邦軍(X)",
     "effect": "自身の機動力が8%上昇",
     "target": "地球連邦軍(X)",
-    "obtain": "・特別リクエスト「ティファ」(RANK4)"
+    "obtain": "・特別リクエスト「ティファ」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 31,
@@ -369,7 +399,8 @@
     "tag": "地球連合軍",
     "effect": "自身の機動力が8%上昇",
     "target": "地球連合軍",
-    "obtain": "・特別リクエスト「ラクス」(RANK4)・特別リクエスト「ルナマリア」(RANK4)"
+    "obtain": "・特別リクエスト「ラクス」(RANK4)・特別リクエスト「ルナマリア」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 32,
@@ -381,7 +412,8 @@
     "tag": "ソレスタルビーイング",
     "effect": "自身の機動力が8%上昇",
     "target": "ソレスタルビーイング",
-    "obtain": "・特別リクエスト「スメラギ」(RANK4)"
+    "obtain": "・特別リクエスト「スメラギ」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 33,
@@ -393,7 +425,8 @@
     "tag": "鉄華団",
     "effect": "自身の機動力が8%上昇",
     "target": "鉄華団",
-    "obtain": "・特別リクエスト「クーデリア」(RANK4)"
+    "obtain": "・特別リクエスト「クーデリア」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 34,
@@ -405,7 +438,8 @@
     "tag": "",
     "effect": "自身の機動力が7%上昇",
     "target": "水星の魔女",
-    "obtain": "・特別リクエスト「ミオリネ」(RANK4)"
+    "obtain": "・特別リクエスト「ミオリネ」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 35,
@@ -417,7 +451,8 @@
     "tag": "ネオ・ジオン",
     "effect": "自身の機動力が7%上昇",
     "target": "ネオ",
-    "obtain": "・ジオン ・特別リクエスト「クェス」(RANK4)・特別リクエスト「フルフロンタル」(RANK4)"
+    "obtain": "・ジオン ・特別リクエスト「クェス」(RANK4)・特別リクエスト「フルフロンタル」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 36,
@@ -429,7 +464,8 @@
     "tag": "ザフト",
     "effect": "自身の機動力が7%上昇",
     "target": "ザフト",
-    "obtain": "・特別リクエスト「シン」(RANK4)"
+    "obtain": "・特別リクエスト「シン」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 37,
@@ -441,7 +477,8 @@
     "tag": "",
     "effect": "自身の機動力が5%上昇",
     "target": "機動戦士ガンダムZZ",
-    "obtain": "・マップイベントVol.2で入手"
+    "obtain": "・マップイベントVol.2で入手",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 38,
@@ -453,7 +490,8 @@
     "tag": "",
     "effect": "自身の機動力が7%上昇",
     "target": "0083 STARDUST MEMORY",
-    "obtain": "・0083 スターダストメモリーイベント第2弾で入手"
+    "obtain": "・0083 スターダストメモリーイベント第2弾で入手",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 39,
@@ -465,7 +503,8 @@
     "tag": "",
     "effect": "自身の機動力が7%上昇",
     "target": "機動戦士ガンダム",
-    "obtain": "・大規模攻略戦Vol.1で入手"
+    "obtain": "・大規模攻略戦Vol.1で入手",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 40,
@@ -477,7 +516,8 @@
     "tag": "地球連邦軍(AGE)",
     "effect": "自身の機動力が8%上昇",
     "target": "地球連邦軍(AGE)",
-    "obtain": "・特別リクエスト「アセム」(RANK4)"
+    "obtain": "・特別リクエスト「アセム」(RANK4)",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 41,
@@ -489,7 +529,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "機動戦士ガンダム",
-    "obtain": "・特別リクエスト「セイラ」(RANK2)"
+    "obtain": "・特別リクエスト「セイラ」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 42,
@@ -501,7 +542,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "機動戦士Zガンダム",
-    "obtain": "・特別リクエスト「ファ」(RANK2)"
+    "obtain": "・特別リクエスト「ファ」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 43,
@@ -513,7 +555,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "機動戦士ガンダムZZ",
-    "obtain": "・特別リクエスト「ルー」(RANK2)"
+    "obtain": "・特別リクエスト「ルー」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 44,
@@ -525,7 +568,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "機動武闘伝Gガンダム",
-    "obtain": "・特別リクエスト「レイン」(RANK2)"
+    "obtain": "・特別リクエスト「レイン」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 45,
@@ -537,7 +581,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "新機動戦記ガンダムW",
-    "obtain": "・特別リクエスト「リリーナ」(RANK2)"
+    "obtain": "・特別リクエスト「リリーナ」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 46,
@@ -549,7 +594,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "機動新世紀ガンダムX",
-    "obtain": "・特別リクエスト「ティファ」(RANK2)"
+    "obtain": "・特別リクエスト「ティファ」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 47,
@@ -561,7 +607,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "機動戦士ガンダムSEED",
-    "obtain": "・特別リクエスト「ラクス」(RANK2)"
+    "obtain": "・特別リクエスト「ラクス」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 48,
@@ -573,7 +620,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "機動戦士ガンダム00",
-    "obtain": "・特別リクエスト「スメラギ」(RANK2)"
+    "obtain": "・特別リクエスト「スメラギ」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 49,
@@ -585,7 +633,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "鉄血のオルフェンズ",
-    "obtain": "・特別リクエスト「クーデリア」(RANK2)"
+    "obtain": "・特別リクエスト「クーデリア」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 50,
@@ -597,7 +646,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "水星の魔女",
-    "obtain": "・特別リクエスト「ミオリネ」(RANK2)"
+    "obtain": "・特別リクエスト「ミオリネ」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 51,
@@ -609,7 +659,8 @@
     "tag": "電光石火",
     "effect": "自身の機動力が200上昇",
     "target": "電光石火",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 52,
@@ -621,7 +672,8 @@
     "tag": "一撃必殺",
     "effect": "自身の機動力が200上昇",
     "target": "一撃必殺",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 53,
@@ -633,7 +685,8 @@
     "tag": "堅牢",
     "effect": "自身の機動力が200上昇",
     "target": "堅牢",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 54,
@@ -645,7 +698,8 @@
     "tag": "突破力",
     "effect": "自身の機動力が200上昇",
     "target": "突破力",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 55,
@@ -657,7 +711,8 @@
     "tag": "大型機",
     "effect": "自身の機動力が200上昇",
     "target": "大型機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 56,
@@ -669,7 +724,8 @@
     "tag": "専用機",
     "effect": "自身の機動力が200上昇",
     "target": "専用機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 57,
@@ -681,7 +737,8 @@
     "tag": "試作機",
     "effect": "自身の機動力が200上昇",
     "target": "試作機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 58,
@@ -693,7 +750,8 @@
     "tag": "エース機",
     "effect": "自身の機動力が200上昇",
     "target": "エース機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 59,
@@ -705,7 +763,8 @@
     "tag": "指揮官機",
     "effect": "自身の機動力が200上昇",
     "target": "指揮官機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 60,
@@ -717,7 +776,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "逆襲のシャア",
-    "obtain": "・特別リクエスト「クェス」(RANK2)"
+    "obtain": "・特別リクエスト「クェス」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 61,
@@ -729,7 +789,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "機動戦士ガンダムSEED DESTINY",
-    "obtain": "・特別リクエスト「ルナマリア」(RANK3)"
+    "obtain": "・特別リクエスト「ルナマリア」(RANK3)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 62,
@@ -741,7 +802,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "機動戦士ガンダムUC",
-    "obtain": "・特別リクエスト「オードリー」(RANK2)"
+    "obtain": "・特別リクエスト「オードリー」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 63,
@@ -753,7 +815,8 @@
     "tag": "",
     "effect": "自身の機動力が200上昇",
     "target": "機動戦士ガンダムAGE",
-    "obtain": "・特別リクエスト「アセム」(RANK2)"
+    "obtain": "・特別リクエスト「アセム」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 64,
@@ -765,7 +828,8 @@
     "tag": "宇宙世紀シリーズ",
     "effect": "自身の機動力が100上昇",
     "target": "宇宙世紀シリーズ",
-    "obtain": "・特別リクエスト「セイラ」(RANK1)・特別リクエスト「ハマーン」(RANK1)・特別リクエスト「クェス」(RANK1)・特別リクエスト「オードリー」(RANK1)"
+    "obtain": "・特別リクエスト「セイラ」(RANK1)・特別リクエスト「ハマーン」(RANK1)・特別リクエスト「クェス」(RANK1)・特別リクエスト「オードリー」(RANK1)",
+    "image": "/unit-images/mh-games-item-1.png"
   },
   {
     "id": 65,
@@ -777,7 +841,8 @@
     "tag": "オルタナティブシリーズ",
     "effect": "自身の機動力が100上昇",
     "target": "オルタナティブシリーズ",
-    "obtain": "・特別リクエスト「リリーナ」(RANK1)・特別リクエスト「ラクス」(RANK1)・特別リクエスト「ルナマリア」(RANK1)・特別リクエスト「マクギリス」(RANK1)"
+    "obtain": "・特別リクエスト「リリーナ」(RANK1)・特別リクエスト「ラクス」(RANK1)・特別リクエスト「ルナマリア」(RANK1)・特別リクエスト「マクギリス」(RANK1)",
+    "image": "/unit-images/mh-games-item-1.png"
   },
   {
     "id": 66,
@@ -789,7 +854,8 @@
     "tag": "強敵襲来",
     "effect": "自身の最大HPが8%上昇装備したユニットが「サイコロガンダム」の場合、さらに自身の最大HPが2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「サイコロガンダム」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「サイコロガンダム」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-15.png"
   },
   {
     "id": 67,
@@ -801,7 +867,8 @@
     "tag": "強敵襲来",
     "effect": "自身の最大HPが8%上昇装備したユニットが「フルアーマー百式改」の場合、さらに自身の最大HPが2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「フルアーマー百式改」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「フルアーマー百式改」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-15.png"
   },
   {
     "id": 68,
@@ -813,7 +880,8 @@
     "tag": "強敵襲来",
     "effect": "自身の最大HPが8%上昇装備したユニットが「コマンドガンダム」の場合、さらに自身の最大HPが2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「コマンドガンダム」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「コマンドガンダム」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-15.png"
   },
   {
     "id": 69,
@@ -825,7 +893,8 @@
     "tag": "強敵襲来",
     "effect": "自身の最大HPが8%上昇装備したユニットが「タイタニア」の場合、さらに自身の最大HPが2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「タイタニア」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「タイタニア」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-15.png"
   },
   {
     "id": 70,
@@ -837,7 +906,8 @@
     "tag": "地球連邦軍(宇宙世紀)",
     "effect": "自身の最大HPが8%上昇",
     "target": "地球連邦軍(宇宙世紀)",
-    "obtain": "・特別リクエスト「セイラ」(RANK5)・特別リクエスト「アムロ(CCA)」(RANK4)"
+    "obtain": "・特別リクエスト「セイラ」(RANK5)・特別リクエスト「アムロ(CCA)」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 71,
@@ -849,7 +919,8 @@
     "tag": "ジオン公国軍",
     "effect": "自身の最大HPが8%上昇",
     "target": "ジオン公国軍",
-    "obtain": "・特別リクエスト「シャア」(RANK4)"
+    "obtain": "・特別リクエスト「シャア」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 72,
@@ -861,7 +932,8 @@
     "tag": "エゥーゴ",
     "effect": "自身の最大HPが8%上昇",
     "target": "エゥーゴ",
-    "obtain": "・特別リクエスト「ファ」(RANK5)・特別リクエスト「ルー」(RANK5)"
+    "obtain": "・特別リクエスト「ファ」(RANK5)・特別リクエスト「ルー」(RANK5)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 73,
@@ -873,7 +945,8 @@
     "tag": "ティターンズ",
     "effect": "自身の最大HPが8%上昇",
     "target": "ティターンズ",
-    "obtain": "・特別リクエスト「シロッコ」(RANK4)"
+    "obtain": "・特別リクエスト「シロッコ」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 74,
@@ -885,7 +958,8 @@
     "tag": "アクシズ",
     "effect": "自身の最大HPが8%上昇",
     "target": "アクシズ",
-    "obtain": "・特別リクエスト「ハマーン」(RANK4)"
+    "obtain": "・特別リクエスト「ハマーン」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 75,
@@ -897,7 +971,8 @@
     "tag": "各国代表",
     "effect": "自身の最大HPが8%上昇",
     "target": "各国代表",
-    "obtain": "・特別リクエスト「レイン」(RANK5)"
+    "obtain": "・特別リクエスト「レイン」(RANK5)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 76,
@@ -909,7 +984,8 @@
     "tag": "オペレーション・メテオ",
     "effect": "自身の最大HPが8%上昇",
     "target": "オペレーション",
-    "obtain": "・メテオ ・特別リクエスト「リリーナ」(RANK5)"
+    "obtain": "・メテオ ・特別リクエスト「リリーナ」(RANK5)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 77,
@@ -921,7 +997,8 @@
     "tag": "OZ",
     "effect": "自身の最大HPが8%上昇",
     "target": "OZ",
-    "obtain": "・特別リクエスト「ミリアルド」(RANK4)"
+    "obtain": "・特別リクエスト「ミリアルド」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 78,
@@ -933,7 +1010,8 @@
     "tag": "地球連邦軍(X)",
     "effect": "自身の最大HPが8%上昇",
     "target": "地球連邦軍(X)",
-    "obtain": "・特別リクエスト「ティファ」(RANK5)"
+    "obtain": "・特別リクエスト「ティファ」(RANK5)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 79,
@@ -945,7 +1023,8 @@
     "tag": "地球連合軍",
     "effect": "自身の最大HPが8%上昇",
     "target": "地球連合軍",
-    "obtain": "・特別リクエスト「ラクス」(RANK5)"
+    "obtain": "・特別リクエスト「ラクス」(RANK5)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 80,
@@ -957,7 +1036,8 @@
     "tag": "ザフト",
     "effect": "自身の最大HPが8%上昇",
     "target": "ザフト",
-    "obtain": "・特別リクエスト「アスラン」(RANK4)"
+    "obtain": "・特別リクエスト「アスラン」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 81,
@@ -969,7 +1049,8 @@
     "tag": "ソレスタルビーイング",
     "effect": "自身の最大HPが8%上昇",
     "target": "ソレスタルビーイング",
-    "obtain": "・特別リクエスト「スメラギ」(RANK5)"
+    "obtain": "・特別リクエスト「スメラギ」(RANK5)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 82,
@@ -981,7 +1062,8 @@
     "tag": "鉄華団",
     "effect": "自身の最大HPが8%上昇",
     "target": "鉄華団",
-    "obtain": "・特別リクエスト「クーデリア」(RANK5)"
+    "obtain": "・特別リクエスト「クーデリア」(RANK5)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 83,
@@ -993,7 +1075,8 @@
     "tag": "",
     "effect": "自身の最大HPが7%上昇",
     "target": "水星の魔女",
-    "obtain": "・特別リクエスト「ミオリネ」(RANK5)・特別リクエスト「グエル」(RANK4)"
+    "obtain": "・特別リクエスト「ミオリネ」(RANK5)・特別リクエスト「グエル」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 84,
@@ -1005,7 +1088,8 @@
     "tag": "",
     "effect": "自身の最大HPが7%上昇",
     "target": "SEED ASTRAY",
-    "obtain": "・SEED ASTRAYイベントで入手"
+    "obtain": "・SEED ASTRAYイベントで入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 85,
@@ -1017,7 +1101,8 @@
     "tag": "",
     "effect": "自身の最大HPが7%上昇",
     "target": "0083 STARDUST MEMORY",
-    "obtain": "・0083 スターダストメモリーイベント第1弾で入手"
+    "obtain": "・0083 スターダストメモリーイベント第1弾で入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 86,
@@ -1029,7 +1114,8 @@
     "tag": "突破力",
     "effect": "自身の最大HPが7%上昇",
     "target": "突破力",
-    "obtain": "・マップイベントVol.1で入手"
+    "obtain": "・マップイベントVol.1で入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 87,
@@ -1041,7 +1127,8 @@
     "tag": "ネオ・ジオン",
     "effect": "自身の最大HPが8%上昇",
     "target": "ネオ",
-    "obtain": "・ジオン ・特別リクエスト「クェス」(RANK5)・特別リクエスト「フルフロンタル」(RANK5)"
+    "obtain": "・ジオン ・特別リクエスト「クェス」(RANK5)・特別リクエスト「フルフロンタル」(RANK5)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 88,
@@ -1053,7 +1140,8 @@
     "tag": "強敵襲来",
     "effect": "自身の最大HPが5%上昇装備したユニットが「オーヴェロン(アーマー形態)」の場合、さらに自身の最大HPが2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「オーヴェロン(アーマー形態)」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「オーヴェロン(アーマー形態)」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 89,
@@ -1065,7 +1153,8 @@
     "tag": "強敵襲来",
     "effect": "自身の最大HPが5%上昇装備したユニットが「デスティニーインパルスガンダム」の場合、さらに自身の最大HPが2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「デスティニーインパルスガンダム」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「デスティニーインパルスガンダム」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 90,
@@ -1077,7 +1166,8 @@
     "tag": "強敵襲来",
     "effect": "自身の最大HPが5%上昇装備したユニットが「武者頑駄無」の場合、さらに自身の最大HPが2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「武者頑駄無」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「武者頑駄無」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 91,
@@ -1089,7 +1179,8 @@
     "tag": "",
     "effect": "自身の最大HPが7%上昇",
     "target": "G GENERATIONシリーズ",
-    "obtain": "・マップイベントVol.2で入手"
+    "obtain": "・マップイベントVol.2で入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 92,
@@ -1101,7 +1192,8 @@
     "tag": "強敵襲来",
     "effect": "自身の最大HPが5%上昇装備したユニットが「バイアラン",
     "target": "強敵襲来",
-    "obtain": "・カスタム2号機」の場合、さらに自身の最大HPが2%上昇 強敵襲来 ・強敵襲来「バイアラン・カスタム2号機」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・カスタム2号機」の場合、さらに自身の最大HPが2%上昇 強敵襲来 ・強敵襲来「バイアラン・カスタム2号機」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 93,
@@ -1113,7 +1205,8 @@
     "tag": "デビルガンダム軍団",
     "effect": "自身の最大HPが8%上昇",
     "target": "デビルガンダム軍団",
-    "obtain": "・特別リクエスト「東方不敗」(RANK4)"
+    "obtain": "・特別リクエスト「東方不敗」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 94,
@@ -1125,7 +1218,8 @@
     "tag": "NT-D",
     "effect": "自身の最大HPが8%上昇",
     "target": "NT-D",
-    "obtain": "・特別リクエスト「オードリー」(RANK4)"
+    "obtain": "・特別リクエスト「オードリー」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 95,
@@ -1137,7 +1231,8 @@
     "tag": "強敵襲来",
     "effect": "自身の最大HPが5%上昇装備したユニットが「ガンダム",
     "target": "強敵襲来",
-    "obtain": "・端白星」の場合、さらに自身の最大HPが2%上昇 強敵襲来 ・強敵襲来「ガンダム・端白星」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・端白星」の場合、さらに自身の最大HPが2%上昇 強敵襲来 ・強敵襲来「ガンダム・端白星」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 96,
@@ -1149,7 +1244,8 @@
     "tag": "ギャラルホルン",
     "effect": "自身の最大HPが8%上昇",
     "target": "ギャラルホルン",
-    "obtain": "・特別リクエスト「マクギリス」(RANK4)"
+    "obtain": "・特別リクエスト「マクギリス」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 97,
@@ -1161,7 +1257,8 @@
     "tag": "",
     "effect": "自身の最大HPが7%上昇",
     "target": "機動戦士ガンダム",
-    "obtain": "・大規模攻略戦Vol.1で入手"
+    "obtain": "・大規模攻略戦Vol.1で入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 98,
@@ -1173,7 +1270,8 @@
     "tag": "",
     "effect": "自身の最大HPが7%上昇",
     "target": "0080 ポケットの中の戦争",
-    "obtain": "・0080 ポケットの中の戦争イベントで入手"
+    "obtain": "・0080 ポケットの中の戦争イベントで入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 99,
@@ -1185,7 +1283,8 @@
     "tag": "オーブ",
     "effect": "自身の最大HPが8%上昇",
     "target": "オーブ",
-    "obtain": "・特別リクエスト「レイ」(RANK4)"
+    "obtain": "・特別リクエスト「レイ」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 100,
@@ -1197,7 +1296,8 @@
     "tag": "",
     "effect": "自身の最大HPが7%上昇",
     "target": "MS IGLOO",
-    "obtain": "・MS IGLOOイベントで入手"
+    "obtain": "・MS IGLOOイベントで入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 101,
@@ -1209,7 +1309,8 @@
     "tag": "フリーデン",
     "effect": "自身の最大HPが8%上昇",
     "target": "フリーデン",
-    "obtain": "・特別リクエスト「カリス」(RANK4)"
+    "obtain": "・特別リクエスト「カリス」(RANK4)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 102,
@@ -1221,7 +1322,8 @@
     "tag": "",
     "effect": "自身の最大HPが7%上昇",
     "target": "SEED X ASTRAY",
-    "obtain": "・SEED X ASTRAYイベントで入手"
+    "obtain": "・SEED X ASTRAYイベントで入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 103,
@@ -1233,7 +1335,8 @@
     "tag": "地球連邦軍(AGE)",
     "effect": "自身の最大HPが8%上昇",
     "target": "地球連邦軍(AGE)",
-    "obtain": "・特別リクエスト「アセム」(RANK5)"
+    "obtain": "・特別リクエスト「アセム」(RANK5)",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 104,
@@ -1245,7 +1348,8 @@
     "tag": "",
     "effect": "自身の最大HPが8%上昇",
     "target": "第08MS小隊",
-    "obtain": "・第08MS小隊イベントで入手"
+    "obtain": "・第08MS小隊イベントで入手",
+    "image": "/unit-images/mh-games-item-14.png"
   },
   {
     "id": 105,
@@ -1257,7 +1361,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "機動戦士ガンダム",
-    "obtain": "・特別リクエスト「アムロ」(RANK3)"
+    "obtain": "・特別リクエスト「アムロ」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 106,
@@ -1269,7 +1374,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "機動戦士Zガンダム",
-    "obtain": "・特別リクエスト「カミーユ」(RANK3)"
+    "obtain": "・特別リクエスト「カミーユ」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 107,
@@ -1281,7 +1387,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "機動戦士ガンダムZZ",
-    "obtain": "・特別リクエスト「ジュドー」(RANK3)"
+    "obtain": "・特別リクエスト「ジュドー」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 108,
@@ -1293,7 +1400,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "機動武闘伝Gガンダム",
-    "obtain": "・特別リクエスト「ドモン」(RANK3)"
+    "obtain": "・特別リクエスト「ドモン」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 109,
@@ -1305,7 +1413,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "新機動戦記ガンダムW",
-    "obtain": "・特別リクエスト「ヒイロ」(RANK3)"
+    "obtain": "・特別リクエスト「ヒイロ」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 110,
@@ -1317,7 +1426,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "機動新世紀ガンダムX",
-    "obtain": "・特別リクエスト「ガロード」(RANK3)"
+    "obtain": "・特別リクエスト「ガロード」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 111,
@@ -1329,7 +1439,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "機動戦士ガンダムSEED",
-    "obtain": "・特別リクエスト「キラ」(RANK3)"
+    "obtain": "・特別リクエスト「キラ」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 112,
@@ -1341,7 +1452,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "機動戦士ガンダム00",
-    "obtain": "・特別リクエスト「刹那」(RANK3)"
+    "obtain": "・特別リクエスト「刹那」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 113,
@@ -1353,7 +1465,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "鉄血のオルフェンズ",
-    "obtain": "・特別リクエスト「三日月」(RANK3)"
+    "obtain": "・特別リクエスト「三日月」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 114,
@@ -1365,7 +1478,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "水星の魔女",
-    "obtain": "・特別リクエスト「スレッタ」(RANK3)"
+    "obtain": "・特別リクエスト「スレッタ」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 115,
@@ -1377,7 +1491,8 @@
     "tag": "電光石火",
     "effect": "自身の最大HPが2000上昇",
     "target": "電光石火",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 116,
@@ -1389,7 +1504,8 @@
     "tag": "一撃必殺",
     "effect": "自身の最大HPが2000上昇",
     "target": "一撃必殺",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 117,
@@ -1401,7 +1517,8 @@
     "tag": "堅牢",
     "effect": "自身の最大HPが2000上昇",
     "target": "堅牢",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 118,
@@ -1413,7 +1530,8 @@
     "tag": "突破力",
     "effect": "自身の最大HPが2000上昇",
     "target": "突破力",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 119,
@@ -1425,7 +1543,8 @@
     "tag": "大型機",
     "effect": "自身の最大HPが2000上昇",
     "target": "大型機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 120,
@@ -1437,7 +1556,8 @@
     "tag": "専用機",
     "effect": "自身の最大HPが2000上昇",
     "target": "専用機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 121,
@@ -1449,7 +1569,8 @@
     "tag": "試作機",
     "effect": "自身の最大HPが2000上昇",
     "target": "試作機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 122,
@@ -1461,7 +1582,8 @@
     "tag": "エース機",
     "effect": "自身の最大HPが2000上昇",
     "target": "エース機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 123,
@@ -1473,7 +1595,8 @@
     "tag": "指揮官機",
     "effect": "自身の最大HPが2000上昇",
     "target": "指揮官機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 124,
@@ -1485,7 +1608,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "逆襲のシャア",
-    "obtain": "・特別リクエスト「アムロ(CCA)」(RANK3)"
+    "obtain": "・特別リクエスト「アムロ(CCA)」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 125,
@@ -1497,7 +1621,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "機動戦士ガンダムSEED DESTINY",
-    "obtain": "・特別リクエスト「シン」(RANK3)"
+    "obtain": "・特別リクエスト「シン」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 126,
@@ -1509,7 +1634,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "機動戦士ガンダムUC",
-    "obtain": "・特別リクエスト「バナージ」(RANK3)"
+    "obtain": "・特別リクエスト「バナージ」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 127,
@@ -1521,7 +1647,8 @@
     "tag": "",
     "effect": "自身の最大HPが2000上昇",
     "target": "機動戦士ガンダムAGE",
-    "obtain": "・特別リクエスト「フリット」(RANK3)"
+    "obtain": "・特別リクエスト「フリット」(RANK3)",
+    "image": "/unit-images/mh-games-item-13.png"
   },
   {
     "id": 128,
@@ -1533,7 +1660,8 @@
     "tag": "宇宙世紀シリーズ",
     "effect": "自身の最大HPが1000上昇",
     "target": "宇宙世紀シリーズ",
-    "obtain": "・特別リクエスト「シャア」(RANK1)・特別リクエスト「ファ」(RANK1)・Gショップで購入(500Pt)"
+    "obtain": "・特別リクエスト「シャア」(RANK1)・特別リクエスト「ファ」(RANK1)・Gショップで購入(500Pt)",
+    "image": "/unit-images/mh-games-item-12.png"
   },
   {
     "id": 129,
@@ -1545,7 +1673,8 @@
     "tag": "オルタナティブシリーズ",
     "effect": "自身の最大HPが1000上昇",
     "target": "オルタナティブシリーズ",
-    "obtain": "・特別リクエスト「ミリアルド」(RANK1)・特別リクエスト「ティファ」(RANK1)・特別リクエスト「キラ」(RANK1)・特別リクエスト「レイ」(RANK1)・特別リクエスト「クーデリア」(RANK1)・Gショップで購入(500Pt)"
+    "obtain": "・特別リクエスト「ミリアルド」(RANK1)・特別リクエスト「ティファ」(RANK1)・特別リクエスト「キラ」(RANK1)・特別リクエスト「レイ」(RANK1)・特別リクエスト「クーデリア」(RANK1)・Gショップで購入(500Pt)",
+    "image": "/unit-images/mh-games-item-12.png"
   },
   {
     "id": 130,
@@ -1557,7 +1686,8 @@
     "tag": "ライバル",
     "effect": "自身の防御力が12%上昇",
     "target": "ライバル",
-    "obtain": "・エターナルロードEXPERT(ライバルタグ)初回報酬"
+    "obtain": "・エターナルロードEXPERT(ライバルタグ)初回報酬",
+    "image": "/unit-images/mh-games-item-7.png"
   },
   {
     "id": 131,
@@ -1569,7 +1699,8 @@
     "tag": "強敵襲来",
     "effect": "自身の防御力が8%上昇装備したユニットが「赤いガンダム」の場合、さらに自身の防御力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「赤いガンダム」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「赤いガンダム」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-7.png"
   },
   {
     "id": 132,
@@ -1581,7 +1712,8 @@
     "tag": "強敵襲来",
     "effect": "自身の防御力が8%上昇装備したユニットが「シャイニングガンダム(スーパーモード)」の場合、さらに自身の防御力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「シャイニングガンダム(スーパーモード)」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「シャイニングガンダム(スーパーモード)」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-7.png"
   },
   {
     "id": 133,
@@ -1593,7 +1725,8 @@
     "tag": "強敵襲来",
     "effect": "自身の防御力が8%上昇装備したユニットが「フルアーマーガンダムMk-Ⅲ」の場合、さらに自身の防御力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「フルアーマーガンダムMk-Ⅲ」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「フルアーマーガンダムMk-Ⅲ」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-7.png"
   },
   {
     "id": 134,
@@ -1605,7 +1738,8 @@
     "tag": "",
     "effect": "自身の防御力が12%上昇",
     "target": "機動戦士ガンダムSEED",
-    "obtain": "・大規模攻略戦Vol.1で入手"
+    "obtain": "・大規模攻略戦Vol.1で入手",
+    "image": "/unit-images/mh-games-item-7.png"
   },
   {
     "id": 135,
@@ -1617,7 +1751,8 @@
     "tag": "強敵襲来",
     "effect": "自身の防御力が8%上昇装備したユニットが「ザクウォーリア(ライブ仕様)」の場合、さらに自身の防御力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「ザクウォーリア(ライブ仕様)」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「ザクウォーリア(ライブ仕様)」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-7.png"
   },
   {
     "id": 136,
@@ -1629,7 +1764,8 @@
     "tag": "強敵襲来",
     "effect": "自身の防御力が8%上昇装備したユニットが「GファルコンGX」の場合、さらに自身の防御力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「GファルコンGX」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「GファルコンGX」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-7.png"
   },
   {
     "id": 137,
@@ -1641,7 +1777,8 @@
     "tag": "強敵襲来",
     "effect": "自身の防御力が8%上昇装備したユニットが「Gサイフォス」の場合、さらに自身の防御力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「Gサイフォス」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「Gサイフォス」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-7.png"
   },
   {
     "id": 138,
@@ -1653,7 +1790,8 @@
     "tag": "地球連邦軍(宇宙世紀)",
     "effect": "自身の防御力が8%上昇",
     "target": "地球連邦軍(宇宙世紀)",
-    "obtain": "・特別リクエスト「アムロ」(RANK4)"
+    "obtain": "・特別リクエスト「アムロ」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 139,
@@ -1665,7 +1803,8 @@
     "tag": "エゥーゴ",
     "effect": "自身の防御力が8%上昇",
     "target": "エゥーゴ",
-    "obtain": "・特別リクエスト「カミーユ」(RANK4)・特別リクエスト「ジュドー」(RANK4)"
+    "obtain": "・特別リクエスト「カミーユ」(RANK4)・特別リクエスト「ジュドー」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 140,
@@ -1677,7 +1816,8 @@
     "tag": "各国代表",
     "effect": "自身の防御力が8%上昇",
     "target": "各国代表",
-    "obtain": "・特別リクエスト「ドモン」(RANK4)"
+    "obtain": "・特別リクエスト「ドモン」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 141,
@@ -1689,7 +1829,8 @@
     "tag": "オペレーション・メテオ",
     "effect": "自身の防御力が8%上昇",
     "target": "オペレーション",
-    "obtain": "・メテオ ・特別リクエスト「ヒイロ」(RANK4)"
+    "obtain": "・メテオ ・特別リクエスト「ヒイロ」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 142,
@@ -1701,7 +1842,8 @@
     "tag": "地球連邦軍(X)",
     "effect": "自身の防御力が8%上昇",
     "target": "地球連邦軍(X)",
-    "obtain": "・特別リクエスト「ガロード」(RANK4)"
+    "obtain": "・特別リクエスト「ガロード」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 143,
@@ -1713,7 +1855,8 @@
     "tag": "地球連合軍",
     "effect": "自身の防御力が8%上昇",
     "target": "地球連合軍",
-    "obtain": "・特別リクエスト「キラ」(RANK4)"
+    "obtain": "・特別リクエスト「キラ」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 144,
@@ -1725,7 +1868,8 @@
     "tag": "ソレスタルビーイング",
     "effect": "自身の防御力が8%上昇",
     "target": "ソレスタルビーイング",
-    "obtain": "・特別リクエスト「刹那」(RANK4)"
+    "obtain": "・特別リクエスト「刹那」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 145,
@@ -1737,7 +1881,8 @@
     "tag": "鉄華団",
     "effect": "自身の防御力が8%上昇",
     "target": "鉄華団",
-    "obtain": "・特別リクエスト「三日月」(RANK4)"
+    "obtain": "・特別リクエスト「三日月」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 146,
@@ -1749,7 +1894,8 @@
     "tag": "",
     "effect": "自身の防御力が7%上昇",
     "target": "水星の魔女",
-    "obtain": "・特別リクエスト「スレッタ」(RANK4)"
+    "obtain": "・特別リクエスト「スレッタ」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 147,
@@ -1761,7 +1907,8 @@
     "tag": "ネオ・ジオン",
     "effect": "自身の防御力が8%上昇",
     "target": "ネオ",
-    "obtain": "・ジオン ・特別リクエスト「シャア(CCA)」(RANK4)"
+    "obtain": "・ジオン ・特別リクエスト「シャア(CCA)」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 148,
@@ -1773,7 +1920,8 @@
     "tag": "ザフト",
     "effect": "自身の防御力が8%上昇",
     "target": "ザフト",
-    "obtain": "・特別リクエスト「シン」(RANK5)"
+    "obtain": "・特別リクエスト「シン」(RANK5)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 149,
@@ -1785,7 +1933,8 @@
     "tag": "",
     "effect": "自身の防御力が7%上昇",
     "target": "サンダーボルト",
-    "obtain": "・サンダーボルトイベントで入手"
+    "obtain": "・サンダーボルトイベントで入手",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 150,
@@ -1797,7 +1946,8 @@
     "tag": "強敵襲来",
     "effect": "自身の防御力が5%上昇装備したユニットが「サイコロガンダム」の場合、さらに自身の防御力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「サイコロガンダム」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「サイコロガンダム」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 151,
@@ -1809,7 +1959,8 @@
     "tag": "強敵襲来",
     "effect": "自身の防御力が5%上昇装備したユニットが「フルアーマー百式改」の場合、さらに自身の防御力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「フルアーマー百式改」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「フルアーマー百式改」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 152,
@@ -1821,7 +1972,8 @@
     "tag": "強敵襲来",
     "effect": "自身の防御力が5%上昇装備したユニットが「コマンドガンダム」の場合、さらに自身の防御力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「コマンドガンダム」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「コマンドガンダム」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 153,
@@ -1833,7 +1985,8 @@
     "tag": "強敵襲来",
     "effect": "自身の防御力が5%上昇装備したユニットが「タイタニア」の場合、さらに自身の防御力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「タイタニア」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「タイタニア」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 154,
@@ -1845,7 +1998,8 @@
     "tag": "",
     "effect": "自身の防御力が7%上昇",
     "target": "鉄血のオルフェンズ 月鋼",
-    "obtain": "・鉄血のオルフェンズ 月鋼イベントで入手"
+    "obtain": "・鉄血のオルフェンズ 月鋼イベントで入手",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 155,
@@ -1857,7 +2011,8 @@
     "tag": "NT-D",
     "effect": "自身の防御力が8%上昇",
     "target": "NT-D",
-    "obtain": "・特別リクエスト「バナージ」(RANK4)"
+    "obtain": "・特別リクエスト「バナージ」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 156,
@@ -1869,7 +2024,8 @@
     "tag": "",
     "effect": "自身の防御力が7%上昇",
     "target": "0083 STARDUST MEMORY",
-    "obtain": "・0083 スターダストメモリーイベント第2弾で入手"
+    "obtain": "・0083 スターダストメモリーイベント第2弾で入手",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 157,
@@ -1881,7 +2037,8 @@
     "tag": "",
     "effect": "自身の防御力が7%上昇",
     "target": "ガンダム外伝 THE BLUE DESTINY",
-    "obtain": "・THE BLUE DESTINYイベントで入手"
+    "obtain": "・THE BLUE DESTINYイベントで入手",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 158,
@@ -1893,7 +2050,8 @@
     "tag": "地球連邦軍(AGE)",
     "effect": "自身の防御力が8%上昇",
     "target": "地球連邦軍(AGE)",
-    "obtain": "・特別リクエスト「フリット」(RANK4)"
+    "obtain": "・特別リクエスト「フリット」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 159,
@@ -1905,7 +2063,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "機動戦士ガンダム",
-    "obtain": "・特別リクエスト「シャア」(RANK3)"
+    "obtain": "・特別リクエスト「シャア」(RANK3)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 160,
@@ -1917,7 +2076,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "機動戦士Zガンダム",
-    "obtain": "・特別リクエスト「シロッコ」(RANK3)"
+    "obtain": "・特別リクエスト「シロッコ」(RANK3)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 161,
@@ -1929,7 +2089,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "機動戦士ガンダムZZ",
-    "obtain": "・特別リクエスト「ハマーン」(RANK3)"
+    "obtain": "・特別リクエスト「ハマーン」(RANK3)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 162,
@@ -1941,7 +2102,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "新機動戦記ガンダムW",
-    "obtain": "・特別リクエスト「ミリアルド」(RANK3)"
+    "obtain": "・特別リクエスト「ミリアルド」(RANK3)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 163,
@@ -1953,7 +2115,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "機動戦士ガンダムSEED",
-    "obtain": "・特別リクエスト「アスラン」(RANK3)"
+    "obtain": "・特別リクエスト「アスラン」(RANK3)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 164,
@@ -1965,7 +2128,8 @@
     "tag": "電光石火",
     "effect": "自身の防御力が200上昇",
     "target": "電光石火",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 165,
@@ -1977,7 +2141,8 @@
     "tag": "一撃必殺",
     "effect": "自身の防御力が200上昇",
     "target": "一撃必殺",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 166,
@@ -1989,7 +2154,8 @@
     "tag": "堅牢",
     "effect": "自身の防御力が200上昇",
     "target": "堅牢",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 167,
@@ -2001,7 +2167,8 @@
     "tag": "突破力",
     "effect": "自身の防御力が200上昇",
     "target": "突破力",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 168,
@@ -2013,7 +2180,8 @@
     "tag": "大型機",
     "effect": "自身の防御力が200上昇",
     "target": "大型機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 169,
@@ -2025,7 +2193,8 @@
     "tag": "専用機",
     "effect": "自身の防御力が200上昇",
     "target": "専用機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 170,
@@ -2037,7 +2206,8 @@
     "tag": "試作機",
     "effect": "自身の防御力が200上昇",
     "target": "試作機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 171,
@@ -2049,7 +2219,8 @@
     "tag": "エース機",
     "effect": "自身の防御力が200上昇",
     "target": "エース機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 172,
@@ -2061,7 +2232,8 @@
     "tag": "指揮官機",
     "effect": "自身の防御力が200上昇",
     "target": "指揮官機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 173,
@@ -2073,7 +2245,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "逆襲のシャア",
-    "obtain": "・特別リクエスト「シャア(CCA)」(RANK2)"
+    "obtain": "・特別リクエスト「シャア(CCA)」(RANK2)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 174,
@@ -2085,7 +2258,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "機動武闘伝Gガンダム",
-    "obtain": "・特別リクエスト「東方不敗」(RANK3)"
+    "obtain": "・特別リクエスト「東方不敗」(RANK3)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 175,
@@ -2097,7 +2271,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "機動戦士ガンダムUC",
-    "obtain": "・特別リクエスト「フルフロンタル」(RANK2)"
+    "obtain": "・特別リクエスト「フルフロンタル」(RANK2)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 176,
@@ -2109,7 +2284,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "鉄血のオルフェンズ",
-    "obtain": "・特別リクエスト「マクギリス」(RANK3)"
+    "obtain": "・特別リクエスト「マクギリス」(RANK3)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 177,
@@ -2121,7 +2297,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "閃光のハサウェイ",
-    "obtain": "・特別リクエスト「ギギ」(RANK2)"
+    "obtain": "・特別リクエスト「ギギ」(RANK2)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 178,
@@ -2133,7 +2310,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "機動戦士ガンダムSEED DESTINY",
-    "obtain": "・特別リクエスト「レイ」(RANK3)"
+    "obtain": "・特別リクエスト「レイ」(RANK3)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 179,
@@ -2145,7 +2323,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "水星の魔女",
-    "obtain": "・特別リクエスト「グエル」(RANK3)"
+    "obtain": "・特別リクエスト「グエル」(RANK3)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 180,
@@ -2157,7 +2336,8 @@
     "tag": "",
     "effect": "自身の防御力が200上昇",
     "target": "機動新世紀ガンダムX",
-    "obtain": "・特別リクエスト「カリス」(RANK3)"
+    "obtain": "・特別リクエスト「カリス」(RANK3)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 181,
@@ -2169,7 +2349,8 @@
     "tag": "宇宙世紀シリーズ",
     "effect": "自身の防御力が100上昇",
     "target": "宇宙世紀シリーズ",
-    "obtain": "・特別リクエスト「カミーユ」(RANK1)・特別リクエスト「ジュドー」(RANK1)・特別リクエスト「アムロ(CCA)」(RANK1)・特別リクエスト「バナージ」(RANK1)・特別リクエスト「ギギ」(RANK1)"
+    "obtain": "・特別リクエスト「カミーユ」(RANK1)・特別リクエスト「ジュドー」(RANK1)・特別リクエスト「アムロ(CCA)」(RANK1)・特別リクエスト「バナージ」(RANK1)・特別リクエスト「ギギ」(RANK1)",
+    "image": "/unit-images/mh-games-item-4.png"
   },
   {
     "id": 182,
@@ -2181,7 +2362,8 @@
     "tag": "オルタナティブシリーズ",
     "effect": "自身の防御力が100上昇",
     "target": "オルタナティブシリーズ",
-    "obtain": "・特別リクエスト「ドモン」(RANK1)・特別リクエスト「ガロード」(RANK1)・特別リクエスト「アスラン」(RANK1)・特別リクエスト「アセム」(RANK1)・特別リクエスト「ミオリネ」(RANK1)"
+    "obtain": "・特別リクエスト「ドモン」(RANK1)・特別リクエスト「ガロード」(RANK1)・特別リクエスト「アスラン」(RANK1)・特別リクエスト「アセム」(RANK1)・特別リクエスト「ミオリネ」(RANK1)",
+    "image": "/unit-images/mh-games-item-4.png"
   },
   {
     "id": 183,
@@ -2193,7 +2375,8 @@
     "tag": "宇宙世紀シリーズ",
     "effect": "自身の攻撃力が10%上昇",
     "target": "宇宙世紀シリーズ",
-    "obtain": "・エターナルロードEXPERT(宇宙世紀シリーズ)初回報酬"
+    "obtain": "・エターナルロードEXPERT(宇宙世紀シリーズ)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 184,
@@ -2205,7 +2388,8 @@
     "tag": "オルタナティブシリーズ",
     "effect": "自身の攻撃力が10%上昇",
     "target": "オルタナティブシリーズ",
-    "obtain": "・エターナルロードEXPERT(オルタナティブシリーズ)初回報酬"
+    "obtain": "・エターナルロードEXPERT(オルタナティブシリーズ)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 185,
@@ -2217,7 +2401,8 @@
     "tag": "SEEDシリーズ",
     "effect": "自身の攻撃力が12%上昇",
     "target": "SEEDシリーズ",
-    "obtain": "・エターナルロードEXPERT(SEEDシリーズ)初回報酬"
+    "obtain": "・エターナルロードEXPERT(SEEDシリーズ)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 186,
@@ -2229,7 +2414,8 @@
     "tag": "主人公",
     "effect": "自身の攻撃力が10%上昇",
     "target": "主人公",
-    "obtain": "・エターナルロードEXPERT(主人公タグ)初回報酬"
+    "obtain": "・エターナルロードEXPERT(主人公タグ)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 187,
@@ -2241,7 +2427,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "逆襲のシャア",
-    "obtain": "・エターナルロードEXPERT(逆襲のシャア)初回報酬"
+    "obtain": "・エターナルロードEXPERT(逆襲のシャア)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 188,
@@ -2253,7 +2440,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "機動戦士ガンダム",
-    "obtain": "・エターナルロードEXPERT(機動戦士ガンダム)初回報酬"
+    "obtain": "・エターナルロードEXPERT(機動戦士ガンダム)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 189,
@@ -2265,7 +2453,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "機動戦士Zガンダム A New Translation",
-    "obtain": "・エターナルロードEXPERT(機動戦士Zガンダム)初回報酬"
+    "obtain": "・エターナルロードEXPERT(機動戦士Zガンダム)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 190,
@@ -2277,7 +2466,8 @@
     "tag": "オルタナティブシリーズ",
     "effect": "自身の攻撃力が10%上昇「ライバル」タグを含む時、さらに自身の攻撃力が2%上昇",
     "target": "オルタナティブシリーズ",
-    "obtain": "・ジェネレーションタワーEAST-10Fクリアで入手"
+    "obtain": "・ジェネレーションタワーEAST-10Fクリアで入手",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 191,
@@ -2289,7 +2479,8 @@
     "tag": "専用機",
     "effect": "自身の攻撃力が12%上昇",
     "target": "専用機",
-    "obtain": "・エターナルロードEXPERT(専用機)初回報酬"
+    "obtain": "・エターナルロードEXPERT(専用機)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 192,
@@ -2301,7 +2492,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が8%上昇装備したユニットが「オーヴェロン(アーマー形態)」の場合、さらに自身の攻撃力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「オーヴェロン(アーマー形態)」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「オーヴェロン(アーマー形態)」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 193,
@@ -2313,7 +2505,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が8%上昇装備したユニットが「デスティニーインパルスガンダム」の場合、さらに自身の攻撃力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「デスティニーインパルスガンダム」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「デスティニーインパルスガンダム」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 194,
@@ -2325,7 +2518,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が8%上昇装備したユニットが「武者頑駄無」の場合、さらに自身の攻撃力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「武者頑駄無」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・強敵襲来「武者頑駄無」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 195,
@@ -2337,7 +2531,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "機動戦士ガンダムZZ",
-    "obtain": "・エターナルロードEXPERT(機動戦士ガンダムZZ)初回報酬"
+    "obtain": "・エターナルロードEXPERT(機動戦士ガンダムZZ)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 196,
@@ -2349,7 +2544,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "機動武闘伝Gガンダム",
-    "obtain": "・エターナルロードEXPERT(機動武闘伝Gガンダム)初回報酬"
+    "obtain": "・エターナルロードEXPERT(機動武闘伝Gガンダム)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 197,
@@ -2361,7 +2557,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "機動戦士ガンダムUC",
-    "obtain": "・エターナルロードEXPERT(機動戦士ガンダムUC)初回報酬"
+    "obtain": "・エターナルロードEXPERT(機動戦士ガンダムUC)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 198,
@@ -2373,7 +2570,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が8%上昇装備したユニットが「バイアラン",
     "target": "強敵襲来",
-    "obtain": "・カスタム2号機」の場合、さらに自身の攻撃力が2%上昇 強敵襲来 ・強敵襲来「バイアラン・カスタム2号機」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・カスタム2号機」の場合、さらに自身の攻撃力が2%上昇 強敵襲来 ・強敵襲来「バイアラン・カスタム2号機」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 199,
@@ -2385,7 +2583,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が8%上昇装備したユニットが「ガンダム",
     "target": "強敵襲来",
-    "obtain": "・端白星」の場合、さらに自身の攻撃力が2%上昇 強敵襲来 ・強敵襲来「ガンダム・端白星」CHALLENGEモードLv8クリアで入手"
+    "obtain": "・端白星」の場合、さらに自身の攻撃力が2%上昇 強敵襲来 ・強敵襲来「ガンダム・端白星」CHALLENGEモードLv8クリアで入手",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 200,
@@ -2397,7 +2596,8 @@
     "tag": "一撃必殺",
     "effect": "自身の攻撃力が12%上昇",
     "target": "一撃必殺",
-    "obtain": "・エターナルロードEXPERT(一撃必殺)初回報酬"
+    "obtain": "・エターナルロードEXPERT(一撃必殺)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 201,
@@ -2409,7 +2609,8 @@
     "tag": "堅牢",
     "effect": "自身の攻撃力が12%上昇",
     "target": "堅牢",
-    "obtain": "・エターナルロードEXPERT(堅牢)初回報酬"
+    "obtain": "・エターナルロードEXPERT(堅牢)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 202,
@@ -2421,7 +2622,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "水星の魔女",
-    "obtain": "・エターナルロードEXPERT(水星の魔女)初回報酬"
+    "obtain": "・エターナルロードEXPERT(水星の魔女)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 203,
@@ -2433,7 +2635,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "機動戦士ガンダムSEED DESTINY",
-    "obtain": "・エターナルロードEXPERT(SEED DESTINY)初回報酬"
+    "obtain": "・エターナルロードEXPERT(SEED DESTINY)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 204,
@@ -2445,7 +2648,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "機動新世紀ガンダムX",
-    "obtain": "・エターナルロードEXPERT(ガンダムX)初回報酬"
+    "obtain": "・エターナルロードEXPERT(ガンダムX)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 205,
@@ -2457,7 +2661,8 @@
     "tag": "オルタナティブシリーズ",
     "effect": "自身の攻撃力が10%上昇「主人公」タグを含む時、さらに自身の攻撃力が2%上昇",
     "target": "オルタナティブシリーズ",
-    "obtain": "・ジェネレーションタワーWEST-10Fクリアで入手"
+    "obtain": "・ジェネレーションタワーWEST-10Fクリアで入手",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 206,
@@ -2469,7 +2674,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "機動戦士ガンダムSEED",
-    "obtain": "・エターナルロードEXPERT(ガンダムSEED)初回報酬"
+    "obtain": "・エターナルロードEXPERT(ガンダムSEED)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 207,
@@ -2481,7 +2687,8 @@
     "tag": "",
     "effect": "自身の攻撃力が12%上昇",
     "target": "機動戦士ガンダムAGE",
-    "obtain": "・エターナルロードEXPERT(ガンダムAGE)初回報酬"
+    "obtain": "・エターナルロードEXPERT(ガンダムAGE)初回報酬",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 208,
@@ -2493,7 +2700,8 @@
     "tag": "地球連邦軍(宇宙世紀)",
     "effect": "自身の攻撃力が8%上昇",
     "target": "地球連邦軍(宇宙世紀)",
-    "obtain": "・特別リクエスト「アムロ」(RANK5)・特別リクエスト「アムロ(CCA)」(RANK5)"
+    "obtain": "・特別リクエスト「アムロ」(RANK5)・特別リクエスト「アムロ(CCA)」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 209,
@@ -2505,7 +2713,8 @@
     "tag": "ジオン公国軍",
     "effect": "自身の攻撃力が8%上昇",
     "target": "ジオン公国軍",
-    "obtain": "・特別リクエスト「シャア」(RANK5)"
+    "obtain": "・特別リクエスト「シャア」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 210,
@@ -2517,7 +2726,8 @@
     "tag": "エゥーゴ",
     "effect": "自身の攻撃力が8%上昇",
     "target": "エゥーゴ",
-    "obtain": "・特別リクエスト「カミーユ」(RANK5)・特別リクエスト「ジュドー」(RANK5)"
+    "obtain": "・特別リクエスト「カミーユ」(RANK5)・特別リクエスト「ジュドー」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 211,
@@ -2529,7 +2739,8 @@
     "tag": "ティターンズ",
     "effect": "自身の攻撃力が8%上昇",
     "target": "ティターンズ",
-    "obtain": "・特別リクエスト「シロッコ」(RANK5)"
+    "obtain": "・特別リクエスト「シロッコ」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 212,
@@ -2541,7 +2752,8 @@
     "tag": "アクシズ",
     "effect": "自身の攻撃力が8%上昇",
     "target": "アクシズ",
-    "obtain": "・特別リクエスト「ハマーン」(RANK5)"
+    "obtain": "・特別リクエスト「ハマーン」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 213,
@@ -2553,7 +2765,8 @@
     "tag": "各国代表",
     "effect": "自身の攻撃力が8%上昇",
     "target": "各国代表",
-    "obtain": "・特別リクエスト「ドモン」(RANK5)"
+    "obtain": "・特別リクエスト「ドモン」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 214,
@@ -2565,7 +2778,8 @@
     "tag": "オペレーション・メテオ",
     "effect": "自身の攻撃力が8%上昇",
     "target": "オペレーション",
-    "obtain": "・メテオ ・特別リクエスト「ヒイロ」(RANK5)"
+    "obtain": "・メテオ ・特別リクエスト「ヒイロ」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 215,
@@ -2577,7 +2791,8 @@
     "tag": "OZ",
     "effect": "自身の攻撃力が8%上昇",
     "target": "OZ",
-    "obtain": "・特別リクエスト「ミリアルド」(RANK5)"
+    "obtain": "・特別リクエスト「ミリアルド」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 216,
@@ -2589,7 +2804,8 @@
     "tag": "地球連邦軍(X)",
     "effect": "自身の攻撃力が8%上昇",
     "target": "地球連邦軍(X)",
-    "obtain": "・特別リクエスト「ガロード」(RANK5)"
+    "obtain": "・特別リクエスト「ガロード」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 217,
@@ -2601,7 +2817,8 @@
     "tag": "地球連合軍",
     "effect": "自身の攻撃力が8%上昇",
     "target": "地球連合軍",
-    "obtain": "・特別リクエスト「キラ」(RANK5)・特別リクエスト「ルナマリア」(RANK5)"
+    "obtain": "・特別リクエスト「キラ」(RANK5)・特別リクエスト「ルナマリア」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 218,
@@ -2613,7 +2830,8 @@
     "tag": "ザフト",
     "effect": "自身の攻撃力が8%上昇",
     "target": "ザフト",
-    "obtain": "・特別リクエスト「アスラン」(RANK5)"
+    "obtain": "・特別リクエスト「アスラン」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 219,
@@ -2625,7 +2843,8 @@
     "tag": "ソレスタルビーイング",
     "effect": "自身の攻撃力が8%上昇",
     "target": "ソレスタルビーイング",
-    "obtain": "・特別リクエスト「刹那」(RANK5)"
+    "obtain": "・特別リクエスト「刹那」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 220,
@@ -2637,7 +2856,8 @@
     "tag": "鉄華団",
     "effect": "自身の攻撃力が8%上昇",
     "target": "鉄華団",
-    "obtain": "・特別リクエスト「三日月」(RANK5)"
+    "obtain": "・特別リクエスト「三日月」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 221,
@@ -2649,7 +2869,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "機動戦士ガンダム",
-    "obtain": "・中級者ミッションLEVEL5完遂報酬"
+    "obtain": "・中級者ミッションLEVEL5完遂報酬",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 222,
@@ -2661,7 +2882,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "水星の魔女",
-    "obtain": "・特別リクエスト「スレッタ」(RANK5)・特別リクエスト「グエル」(RANK5)"
+    "obtain": "・特別リクエスト「スレッタ」(RANK5)・特別リクエスト「グエル」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 223,
@@ -2673,7 +2895,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "SEED ASTRAY",
-    "obtain": "・SEED ASTRAYイベントで入手"
+    "obtain": "・SEED ASTRAYイベントで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 224,
@@ -2685,7 +2908,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "0083 STARDUST MEMORY",
-    "obtain": "・0083 スターダストメモリーイベント第1弾で入手"
+    "obtain": "・0083 スターダストメモリーイベント第1弾で入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 225,
@@ -2697,7 +2921,8 @@
     "tag": "堅牢",
     "effect": "自身の攻撃力が7%上昇",
     "target": "堅牢",
-    "obtain": "・マップイベントVol.1で入手"
+    "obtain": "・マップイベントVol.1で入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 226,
@@ -2709,7 +2934,8 @@
     "tag": "ネオ・ジオン",
     "effect": "自身の攻撃力が8%上昇",
     "target": "ネオ",
-    "obtain": "・ジオン ・特別リクエスト「シャア(CCA)」(RANK5)・特別リクエスト「オードリー」(RANK5)"
+    "obtain": "・ジオン ・特別リクエスト「シャア(CCA)」(RANK5)・特別リクエスト「オードリー」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 227,
@@ -2721,7 +2947,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "サンダーボルト",
-    "obtain": "・サンダーボルトイベントで入手"
+    "obtain": "・サンダーボルトイベントで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 228,
@@ -2733,7 +2960,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が5%上昇装備したユニットが「赤いガンダム」の場合、さらに自身の攻撃力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「赤いガンダム」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「赤いガンダム」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 229,
@@ -2745,7 +2973,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "機動戦士ガンダムZZ",
-    "obtain": "・マップイベントVol.2で入手"
+    "obtain": "・マップイベントVol.2で入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 230,
@@ -2757,7 +2986,8 @@
     "tag": "突破力",
     "effect": "自身の攻撃力が7%上昇",
     "target": "突破力",
-    "obtain": "・マップイベントVol.2で入手"
+    "obtain": "・マップイベントVol.2で入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 231,
@@ -2769,7 +2999,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "鉄血のオルフェンズ 月鋼",
-    "obtain": "・鉄血のオルフェンズ 月鋼イベントで入手"
+    "obtain": "・鉄血のオルフェンズ 月鋼イベントで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 232,
@@ -2781,7 +3012,8 @@
     "tag": "デビルガンダム軍団",
     "effect": "自身の攻撃力が8%上昇",
     "target": "デビルガンダム軍団",
-    "obtain": "・特別リクエスト「東方不敗」(RANK5)"
+    "obtain": "・特別リクエスト「東方不敗」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 233,
@@ -2793,7 +3025,8 @@
     "tag": "NT-D",
     "effect": "自身の攻撃力が8%上昇",
     "target": "NT-D",
-    "obtain": "・特別リクエスト「バナージ」(RANK5)"
+    "obtain": "・特別リクエスト「バナージ」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 234,
@@ -2805,7 +3038,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が5%上昇装備したユニットが「シャイニングガンダム(スーパーモード)」の場合、さらに自身の攻撃力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「シャイニングガンダム(スーパーモード)」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「シャイニングガンダム(スーパーモード)」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 235,
@@ -2817,7 +3051,8 @@
     "tag": "ギャラルホルン",
     "effect": "自身の攻撃力が8%上昇",
     "target": "ギャラルホルン",
-    "obtain": "・特別リクエスト「マクギリス」(RANK5)"
+    "obtain": "・特別リクエスト「マクギリス」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 236,
@@ -2829,7 +3064,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "ガンダム外伝 THE BLUE DESTINY",
-    "obtain": "・THE BLUE DESTINYイベントで入手"
+    "obtain": "・THE BLUE DESTINYイベントで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 237,
@@ -2841,7 +3077,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が5%上昇装備したユニットが「フルアーマーガンダムMk-Ⅲ」の場合、さらに自身の攻撃力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「フルアーマーガンダムMk-Ⅲ」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「フルアーマーガンダムMk-Ⅲ」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 238,
@@ -2853,7 +3090,8 @@
     "tag": "マフティー",
     "effect": "自身の攻撃力が8%上昇",
     "target": "マフティー",
-    "obtain": "・特別リクエスト「ギギ」(RANK5)"
+    "obtain": "・特別リクエスト「ギギ」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 239,
@@ -2865,7 +3103,8 @@
     "tag": "電光石火",
     "effect": "自身の攻撃力が7%上昇",
     "target": "電光石火",
-    "obtain": "・大規模攻略戦Vol.1で入手"
+    "obtain": "・大規模攻略戦Vol.1で入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 240,
@@ -2877,7 +3116,8 @@
     "tag": "一撃必殺",
     "effect": "自身の攻撃力が7%上昇",
     "target": "一撃必殺",
-    "obtain": "・大規模攻略戦Vol.1で入手"
+    "obtain": "・大規模攻略戦Vol.1で入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 241,
@@ -2889,7 +3129,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "0080 ポケットの中の戦争",
-    "obtain": "・0080 ポケットの中の戦争イベントで入手"
+    "obtain": "・0080 ポケットの中の戦争イベントで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 242,
@@ -2901,7 +3142,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が5%上昇装備したユニットが「ザクウォーリア(ライブ仕様)」の場合、さらに自身の攻撃力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「ザクウォーリア(ライブ仕様)」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「ザクウォーリア(ライブ仕様)」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 243,
@@ -2913,7 +3155,8 @@
     "tag": "オーブ",
     "effect": "自身の攻撃力が8%上昇",
     "target": "オーブ",
-    "obtain": "・特別リクエスト「レイ」(RANK5)"
+    "obtain": "・特別リクエスト「レイ」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 244,
@@ -2925,7 +3168,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "MS IGLOO",
-    "obtain": "・MS IGLOOイベントで入手"
+    "obtain": "・MS IGLOOイベントで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 245,
@@ -2937,7 +3181,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が5%上昇装備したユニットが「GファルコンGX」の場合、さらに自身の攻撃力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「GファルコンGX」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「GファルコンGX」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 246,
@@ -2949,7 +3194,8 @@
     "tag": "フリーデン",
     "effect": "自身の攻撃力が8%上昇",
     "target": "フリーデン",
-    "obtain": "・特別リクエスト「カリス」(RANK5)"
+    "obtain": "・特別リクエスト「カリス」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 247,
@@ -2961,7 +3207,8 @@
     "tag": "",
     "effect": "自身の攻撃力が7%上昇",
     "target": "SEED X ASTRAY",
-    "obtain": "・SEED X ASTRAYイベントで入手"
+    "obtain": "・SEED X ASTRAYイベントで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 248,
@@ -2973,7 +3220,8 @@
     "tag": "強敵襲来",
     "effect": "自身の攻撃力が5%上昇装備したユニットが「Gサイフォス」の場合、さらに自身の攻撃力が2%上昇",
     "target": "強敵襲来",
-    "obtain": "・強敵襲来「Gサイフォス」CHALLENGEモードLv4クリアで入手"
+    "obtain": "・強敵襲来「Gサイフォス」CHALLENGEモードLv4クリアで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 249,
@@ -2985,7 +3233,8 @@
     "tag": "地球連邦軍(AGE)",
     "effect": "自身の攻撃力が8%上昇",
     "target": "地球連邦軍(AGE)",
-    "obtain": "・特別リクエスト「フリット」(RANK5)"
+    "obtain": "・特別リクエスト「フリット」(RANK5)",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 250,
@@ -2997,7 +3246,8 @@
     "tag": "",
     "effect": "自身の攻撃力が8%上昇",
     "target": "第08MS小隊",
-    "obtain": "・第08MS小隊イベントで入手"
+    "obtain": "・第08MS小隊イベントで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 251,
@@ -3009,7 +3259,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "機動戦士ガンダム",
-    "obtain": "・特別リクエスト「セイラ」(RANK3)"
+    "obtain": "・特別リクエスト「セイラ」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 252,
@@ -3021,7 +3272,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "機動戦士Zガンダム",
-    "obtain": "・特別リクエスト「ファ」(RANK3)"
+    "obtain": "・特別リクエスト「ファ」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 253,
@@ -3033,7 +3285,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "機動戦士ガンダムZZ",
-    "obtain": "・特別リクエスト「ルー」(RANK3)"
+    "obtain": "・特別リクエスト「ルー」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 254,
@@ -3045,7 +3298,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "機動武闘伝Gガンダム",
-    "obtain": "・特別リクエスト「レイン」(RANK3)"
+    "obtain": "・特別リクエスト「レイン」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 255,
@@ -3057,7 +3311,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "新機動戦記ガンダムW",
-    "obtain": "・特別リクエスト「リリーナ」(RANK3)"
+    "obtain": "・特別リクエスト「リリーナ」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 256,
@@ -3069,7 +3324,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "機動新世紀ガンダムX",
-    "obtain": "・特別リクエスト「ティファ」(RANK3)"
+    "obtain": "・特別リクエスト「ティファ」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 257,
@@ -3081,7 +3337,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "機動戦士ガンダムSEED",
-    "obtain": "・特別リクエスト「ラクス」(RANK3)"
+    "obtain": "・特別リクエスト「ラクス」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 258,
@@ -3093,7 +3350,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "機動戦士ガンダム00",
-    "obtain": "・特別リクエスト「スメラギ」(RANK3)"
+    "obtain": "・特別リクエスト「スメラギ」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 259,
@@ -3105,7 +3363,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "鉄血のオルフェンズ",
-    "obtain": "・特別リクエスト「クーデリア」(RANK3)"
+    "obtain": "・特別リクエスト「クーデリア」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 260,
@@ -3117,7 +3376,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "水星の魔女",
-    "obtain": "・特別リクエスト「ミオリネ」(RANK3)"
+    "obtain": "・特別リクエスト「ミオリネ」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 261,
@@ -3129,7 +3389,8 @@
     "tag": "電光石火",
     "effect": "自身の攻撃力が200上昇",
     "target": "電光石火",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 262,
@@ -3141,7 +3402,8 @@
     "tag": "一撃必殺",
     "effect": "自身の攻撃力が200上昇",
     "target": "一撃必殺",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 263,
@@ -3153,7 +3415,8 @@
     "tag": "堅牢",
     "effect": "自身の攻撃力が200上昇",
     "target": "堅牢",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 264,
@@ -3165,7 +3428,8 @@
     "tag": "突破力",
     "effect": "自身の攻撃力が200上昇",
     "target": "突破力",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 265,
@@ -3177,7 +3441,8 @@
     "tag": "大型機",
     "effect": "自身の攻撃力が200上昇",
     "target": "大型機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 266,
@@ -3189,7 +3454,8 @@
     "tag": "専用機",
     "effect": "自身の攻撃力が200上昇",
     "target": "専用機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 267,
@@ -3201,7 +3467,8 @@
     "tag": "試作機",
     "effect": "自身の攻撃力が200上昇",
     "target": "試作機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 268,
@@ -3213,7 +3480,8 @@
     "tag": "エース機",
     "effect": "自身の攻撃力が200上昇",
     "target": "エース機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 269,
@@ -3225,7 +3493,8 @@
     "tag": "指揮官機",
     "effect": "自身の攻撃力が200上昇",
     "target": "指揮官機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 270,
@@ -3237,7 +3506,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "逆襲のシャア",
-    "obtain": "・特別リクエスト「シャア(CCA)」(RANK3)"
+    "obtain": "・特別リクエスト「シャア(CCA)」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 271,
@@ -3249,7 +3519,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "機動戦士ガンダムSEED DESTINY",
-    "obtain": "・特別リクエスト「シン」(RANK2)"
+    "obtain": "・特別リクエスト「シン」(RANK2)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 272,
@@ -3261,7 +3532,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "機動戦士ガンダムUC",
-    "obtain": "・特別リクエスト「フルフロンタル」(RANK3)"
+    "obtain": "・特別リクエスト「フルフロンタル」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 273,
@@ -3273,7 +3545,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "閃光のハサウェイ",
-    "obtain": "・特別リクエスト「ギギ」(RANK3)"
+    "obtain": "・特別リクエスト「ギギ」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 274,
@@ -3285,7 +3558,8 @@
     "tag": "",
     "effect": "自身の攻撃力が200上昇",
     "target": "機動戦士ガンダムAGE",
-    "obtain": "・特別リクエスト「アセム」(RANK3)"
+    "obtain": "・特別リクエスト「アセム」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 275,
@@ -3297,7 +3571,8 @@
     "tag": "宇宙世紀シリーズ",
     "effect": "自身の攻撃力が100上昇",
     "target": "宇宙世紀シリーズ",
-    "obtain": "・特別リクエスト「シロッコ」(RANK1)・特別リクエスト「シャア(CCA)」(RANK1)・特別リクエスト「フルフロンタル」(RANK1)・Gショップで購入(500Pt)"
+    "obtain": "・特別リクエスト「シロッコ」(RANK1)・特別リクエスト「シャア(CCA)」(RANK1)・特別リクエスト「フルフロンタル」(RANK1)・Gショップで購入(500Pt)",
+    "image": "/unit-images/mh-games-item-8.png"
   },
   {
     "id": 276,
@@ -3309,7 +3584,8 @@
     "tag": "オルタナティブシリーズ",
     "effect": "自身の攻撃力が100上昇",
     "target": "オルタナティブシリーズ",
-    "obtain": "・特別リクエスト「東方不敗」(RANK1)・特別リクエスト「カリス」(RANK1)・特別リクエスト「刹那」(RANK1)・特別リクエスト「フリット」(RANK1)・特別リクエスト「三日月」(RANK1)・特別リクエスト「スレッタ」(RANK1)・Gショップで購入(500Pt)"
+    "obtain": "・特別リクエスト「東方不敗」(RANK1)・特別リクエスト「カリス」(RANK1)・特別リクエスト「刹那」(RANK1)・特別リクエスト「フリット」(RANK1)・特別リクエスト「三日月」(RANK1)・特別リクエスト「スレッタ」(RANK1)・Gショップで購入(500Pt)",
+    "image": "/unit-images/mh-games-item-8.png"
   },
   {
     "id": 277,
@@ -3321,7 +3597,8 @@
     "tag": "",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "機動戦士ガンダム",
-    "obtain": "・特別リクエスト「シャア」(RANK2)"
+    "obtain": "・特別リクエスト「シャア」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 278,
@@ -3333,7 +3610,8 @@
     "tag": "",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "新機動戦記ガンダムW",
-    "obtain": "・特別リクエスト「ミリアルド」(RANK2)"
+    "obtain": "・特別リクエスト「ミリアルド」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 279,
@@ -3345,7 +3623,8 @@
     "tag": "電光石火",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "電光石火",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 280,
@@ -3357,7 +3636,8 @@
     "tag": "一撃必殺",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "一撃必殺",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 281,
@@ -3369,7 +3649,8 @@
     "tag": "堅牢",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "堅牢",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 282,
@@ -3381,7 +3662,8 @@
     "tag": "突破力",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "突破力",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 283,
@@ -3393,7 +3675,8 @@
     "tag": "大型機",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "大型機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 284,
@@ -3405,7 +3688,8 @@
     "tag": "専用機",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "専用機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 285,
@@ -3417,7 +3701,8 @@
     "tag": "試作機",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "試作機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 286,
@@ -3429,7 +3714,8 @@
     "tag": "エース機",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "エース機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 287,
@@ -3441,7 +3727,8 @@
     "tag": "指揮官機",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "指揮官機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 288,
@@ -3453,7 +3740,8 @@
     "tag": "",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "機動戦士ガンダムSEED DESTINY",
-    "obtain": "・特別リクエスト「ルナマリア」(RANK2)"
+    "obtain": "・特別リクエスト「ルナマリア」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 289,
@@ -3465,7 +3753,8 @@
     "tag": "",
     "effect": "自身の機動力が250上昇自身の防御力が50減少",
     "target": "水星の魔女",
-    "obtain": "・特別リクエスト「グエル」(RANK2)"
+    "obtain": "・特別リクエスト「グエル」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 290,
@@ -3477,7 +3766,8 @@
     "tag": "",
     "effect": "自身の機動力が250上昇自身の攻撃力が50減少",
     "target": "機動戦士Zガンダム",
-    "obtain": "・特別リクエスト「シロッコ」(RANK2)"
+    "obtain": "・特別リクエスト「シロッコ」(RANK2)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 291,
@@ -3489,7 +3779,8 @@
     "tag": "電光石火",
     "effect": "自身の機動力が250上昇自身の攻撃力が50減少",
     "target": "電光石火",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 292,
@@ -3501,7 +3792,8 @@
     "tag": "一撃必殺",
     "effect": "自身の機動力が250上昇自身の攻撃力が50減少",
     "target": "一撃必殺",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 293,
@@ -3513,7 +3805,8 @@
     "tag": "堅牢",
     "effect": "自身の機動力が250上昇自身の攻撃力が50減少",
     "target": "堅牢",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 294,
@@ -3525,7 +3818,8 @@
     "tag": "突破力",
     "effect": "自身の機動力が250上昇自身の攻撃力が50減少",
     "target": "突破力",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 295,
@@ -3537,7 +3831,8 @@
     "tag": "大型機",
     "effect": "自身の機動力が250上昇自身の攻撃力が50減少",
     "target": "大型機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 296,
@@ -3549,7 +3844,8 @@
     "tag": "専用機",
     "effect": "自身の機動力が250上昇自身の攻撃力が50減少",
     "target": "専用機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 297,
@@ -3561,7 +3857,8 @@
     "tag": "試作機",
     "effect": "自身の機動力が250上昇自身の攻撃力が50減少",
     "target": "試作機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 298,
@@ -3573,7 +3870,8 @@
     "tag": "エース機",
     "effect": "自身の機動力が250上昇自身の攻撃力が50減少",
     "target": "エース機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 299,
@@ -3585,7 +3883,8 @@
     "tag": "指揮官機",
     "effect": "自身の機動力が250上昇自身の攻撃力が50減少",
     "target": "指揮官機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-2.png"
   },
   {
     "id": 300,
@@ -3597,7 +3896,8 @@
     "tag": "",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "機動戦士ガンダムSEED",
-    "obtain": "・特別リクエスト「アスラン」(RANK2)"
+    "obtain": "・特別リクエスト「アスラン」(RANK2)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 301,
@@ -3609,7 +3909,8 @@
     "tag": "電光石火",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "電光石火",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 302,
@@ -3621,7 +3922,8 @@
     "tag": "一撃必殺",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "一撃必殺",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 303,
@@ -3633,7 +3935,8 @@
     "tag": "堅牢",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "堅牢",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 304,
@@ -3645,7 +3948,8 @@
     "tag": "突破力",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "突破力",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 305,
@@ -3657,7 +3961,8 @@
     "tag": "大型機",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "大型機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 306,
@@ -3669,7 +3974,8 @@
     "tag": "専用機",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "専用機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 307,
@@ -3681,7 +3987,8 @@
     "tag": "試作機",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "試作機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 308,
@@ -3693,7 +4000,8 @@
     "tag": "エース機",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "エース機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 309,
@@ -3705,7 +4013,8 @@
     "tag": "指揮官機",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "指揮官機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 310,
@@ -3717,7 +4026,8 @@
     "tag": "",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "逆襲のシャア",
-    "obtain": "・特別リクエスト「クェス」(RANK3)"
+    "obtain": "・特別リクエスト「クェス」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 311,
@@ -3729,7 +4039,8 @@
     "tag": "",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "機動武闘伝Gガンダム",
-    "obtain": "・特別リクエスト「東方不敗」(RANK2)"
+    "obtain": "・特別リクエスト「東方不敗」(RANK2)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 312,
@@ -3741,7 +4052,8 @@
     "tag": "",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "機動戦士ガンダムUC",
-    "obtain": "・特別リクエスト「オードリー」(RANK3)"
+    "obtain": "・特別リクエスト「オードリー」(RANK3)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 313,
@@ -3753,7 +4065,8 @@
     "tag": "",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "鉄血のオルフェンズ",
-    "obtain": "・特別リクエスト「マクギリス」(RANK2)"
+    "obtain": "・特別リクエスト「マクギリス」(RANK2)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 314,
@@ -3765,7 +4078,8 @@
     "tag": "",
     "effect": "自身の攻撃力が250上昇自身の機動力が50減少",
     "target": "機動戦士ガンダムSEED DESTINY",
-    "obtain": "・特別リクエスト「レイ」(RANK2)"
+    "obtain": "・特別リクエスト「レイ」(RANK2)",
+    "image": "/unit-images/mh-games-item-9.png"
   },
   {
     "id": 315,
@@ -3777,7 +4091,8 @@
     "tag": "地球連邦軍(宇宙世紀)",
     "effect": "自身の防御力が10%上昇自身の機動力が2%減少",
     "target": "地球連邦軍(宇宙世紀)",
-    "obtain": "・特別リクエスト「ギギ」(RANK4)"
+    "obtain": "・特別リクエスト「ギギ」(RANK4)",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 316,
@@ -3789,7 +4104,8 @@
     "tag": "",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "機動戦士ガンダムZZ",
-    "obtain": "・特別リクエスト「ハマーン」(RANK2)"
+    "obtain": "・特別リクエスト「ハマーン」(RANK2)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 317,
@@ -3801,7 +4117,8 @@
     "tag": "電光石火",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "電光石火",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 318,
@@ -3813,7 +4130,8 @@
     "tag": "一撃必殺",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "一撃必殺",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 319,
@@ -3825,7 +4143,8 @@
     "tag": "堅牢",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "堅牢",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 320,
@@ -3837,7 +4156,8 @@
     "tag": "突破力",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "突破力",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 321,
@@ -3849,7 +4169,8 @@
     "tag": "大型機",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "大型機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 322,
@@ -3861,7 +4182,8 @@
     "tag": "専用機",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "専用機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 323,
@@ -3873,7 +4195,8 @@
     "tag": "試作機",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "試作機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 324,
@@ -3885,7 +4208,8 @@
     "tag": "エース機",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "エース機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 325,
@@ -3897,7 +4221,8 @@
     "tag": "指揮官機",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "指揮官機",
-    "obtain": "・Gショップで購入(1000Pt)"
+    "obtain": "・Gショップで購入(1000Pt)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 326,
@@ -3909,7 +4234,8 @@
     "tag": "",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "逆襲のシャア",
-    "obtain": "・特別リクエスト「アムロ(CCA)」(RANK2)"
+    "obtain": "・特別リクエスト「アムロ(CCA)」(RANK2)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 327,
@@ -3921,7 +4247,8 @@
     "tag": "",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "機動戦士ガンダムUC",
-    "obtain": "・特別リクエスト「バナージ」(RANK2)"
+    "obtain": "・特別リクエスト「バナージ」(RANK2)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 328,
@@ -3933,7 +4260,8 @@
     "tag": "",
     "effect": "自身の防御力が250上昇自身の機動力が50減少",
     "target": "機動新世紀ガンダムX",
-    "obtain": "・特別リクエスト「カリス」(RANK2)"
+    "obtain": "・特別リクエスト「カリス」(RANK2)",
+    "image": "/unit-images/mh-games-item-5.png"
   },
   {
     "id": 329,
@@ -3945,7 +4273,8 @@
     "tag": "",
     "effect": "特殊武装POWERが7%上昇装備したユニットが「ライバル」タグを含む場合、さらに特殊武装POWERが5%上昇",
     "target": "SDガンダム外伝 ジークジオン編",
-    "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手"
+    "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 330,
@@ -3957,7 +4286,8 @@
     "tag": "SDガンダム",
     "effect": "戦闘を行う敵が射撃武装で攻撃する時自身の被ダメージが7%軽減",
     "target": "SDガンダム",
-    "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手"
+    "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 331,
@@ -3969,7 +4299,8 @@
     "tag": "SDガンダム",
     "effect": "戦闘を行う敵が特殊武装で攻撃する時自身の被ダメージが7%軽減",
     "target": "SDガンダム",
-    "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手"
+    "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手",
+    "image": "/unit-images/mh-games-item-6.png"
   },
   {
     "id": 332,
@@ -3981,7 +4312,8 @@
     "tag": "SDガンダム",
     "effect": "物理格闘武装POWERが7%上昇",
     "target": "SDガンダム",
-    "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手"
+    "obtain": "・SDガンダム外伝 ラクロアの勇者イベントで入手",
+    "image": "/unit-images/mh-games-item-10.png"
   },
   {
     "id": 333,
@@ -3993,7 +4325,8 @@
     "tag": "",
     "effect": "自身のHPが8600上昇",
     "target": "制限なし",
-    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手"
+    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手",
+    "image": "/unit-images/mh-games-item-15.png"
   },
   {
     "id": 334,
@@ -4005,7 +4338,8 @@
     "tag": "",
     "effect": "自身の攻撃力が860上昇",
     "target": "制限なし",
-    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手"
+    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 335,
@@ -4017,7 +4351,8 @@
     "tag": "",
     "effect": "自身の防御力が860上昇",
     "target": "制限なし",
-    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手"
+    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手",
+    "image": "/unit-images/mh-games-item-7.png"
   },
   {
     "id": 336,
@@ -4029,7 +4364,8 @@
     "tag": "",
     "effect": "自身の機動力が860上昇",
     "target": "制限なし",
-    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手"
+    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手",
+    "image": "/unit-images/mh-games-item-3.png"
   },
   {
     "id": 337,
@@ -4041,7 +4377,8 @@
     "tag": "",
     "effect": "自身の攻撃力が946上昇自身の機動力が86減少",
     "target": "制限なし",
-    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手"
+    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手",
+    "image": "/unit-images/mh-games-item-11.png"
   },
   {
     "id": 338,
@@ -4053,6 +4390,7 @@
     "tag": "",
     "effect": "自身の防御力が946上昇自身の機動力が86減少",
     "target": "制限なし",
-    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手"
+    "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手",
+    "image": "/unit-images/mh-games-item-7.png"
   }
 ]
