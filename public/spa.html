@@ -2881,6 +2881,7 @@ function getUnitDisplayStats(u) {
 }
 
 function fmtStat(v) { return v === 'X' || v === '?' ? '?' : (parseInt(v)||0).toLocaleString(); }
+function fmtName(v) { return (!v || v === 'X' || /^X+$/.test(v)) ? '未発表' : v; }
 function isUnrevealedUnit(u) { return u.type === 'X' || u.normal?.combat_power === 'X'; }
 function isUnrevealedChara(c) { return c.chara_type === 'X' || c.stats?.combat_power === 'X'; }
 function unitCardHTML(u) {
@@ -2890,7 +2891,7 @@ function unitCardHTML(u) {
     const isSSPWeapon = /\s*SSP$/.test(w.name);
     return _statMode === 'ssp' ? true : !isSSPWeapon;
   }).map(w => {
-    let label = w.name;
+    let label = fmtName(w.name);
     const isMap = w.range === 'MAP';
     const isEx = w.name.endsWith(' EX');
     const mapIcon = isMap ? `<img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">` : '';
@@ -2964,7 +2965,7 @@ function charaCardHTML(c) {
 
   const displaySkills = (_charaStatMode === 'sp' && (c.sp_skills||[]).length > 0) ? c.sp_skills : (c.skills||[]);
   const skillTags = displaySkills.map(sk => {
-    const shortName = sk.name.replace(/\(SP:\d+\)/, '').replace(/Lv\d+/, '').trim();
+    const shortName = fmtName(sk.name.replace(/\(SP:\d+\)/, '').replace(/Lv\d+/, '').trim());
     return `<span class="skill-tag${_charaStatMode==='sp' && (c.sp_skills||[]).length > 0 ? ' sp-skill-tag' : ''}">${shortName} SP:${sk.sp_cost||'?'}</span>`;
   }).join('');
 
@@ -3137,7 +3138,7 @@ function unitTableHTML(items) {
 function charaTableHTML(items) {
   const rows = items.map(c => {
     const s = getCharaDisplayStats(c);
-    const skillNames = (c.skills||[]).map(sk=>`${sk.name.replace(/\(SP:\d+\)/,'').trim()} SP:${sk.sp_cost||'?'}`).join(', ');
+    const skillNames = (c.skills||[]).map(sk=>`${fmtName(sk.name.replace(/\(SP:\d+\)/,'').trim())} SP:${sk.sp_cost||'?'}`).join(', ');
     return `<tr onclick="showCharaDetail(${c.id})">
       <td class="cell-name">${c.name}</td>
       <td class="cell-center">${c.rarity||'-'}</td>
@@ -3283,17 +3284,17 @@ function renderUnitDetail(u, form) {
     const isEx = w.name.endsWith(' EX');
     return `
     <div class="weapon-detail">
-      <div class="weapon-name">${isMap?`<span class="map-badge"><img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">MAP兵器</span>`:''}${w.name}${isEx?'<span class="ex-badge">EX</span>':''}</div>
+      <div class="weapon-name">${isMap?`<span class="map-badge"><img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">MAP兵器</span>`:''}${fmtName(w.name)}${isEx?'<span class="ex-badge">EX</span>':''}</div>
       <div class="weapon-info">
-        <div><span>属性:</span> <strong>${w.attribute||'-'}</strong></div>
+        <div><span>属性:</span> <strong>${fmtName(w.attribute)||'-'}</strong></div>
         <div><span>射程:</span> <strong>${rangeDisplay(w)}</strong></div>
-        <div><span>威力:</span> <strong>${w.power||'-'}</strong></div>
+        <div><span>威力:</span> <strong>${fmtName(w.power)||'-'}</strong></div>
         <div><span>EN:</span> <strong>${w.en||'-'}</strong></div>
         <div><span>命中:</span> <strong>${w.hit||'-'}</strong></div>
         <div><span>クリ:</span> <strong>${w.critical||'-'}</strong></div>
         ${isMap ? `<div><span>使用回数:</span> <strong>${w.ammo && w.ammo !== '-' ? w.ammo + '回' : '-'}</strong></div>` : ''}
       </div>
-      ${w.weapon_type ? `<div class="weapon-effect">タイプ: ${w.weapon_type}</div>` : ''}
+      ${w.weapon_type ? `<div class="weapon-effect">タイプ: ${fmtName(w.weapon_type)}</div>` : ''}
       ${(() => { let eff = w.effect || ''; eff = eff.replace(/\s*\[添付\]/g, '').trim(); return eff && eff !== 'なし' ? `<div class="weapon-effect">効果: ${eff}</div>` : ''; })()}
       ${w.restriction && w.restriction !== 'なし' ? `<div class="weapon-effect">制限: ${w.restriction}</div>` : ''}
     </div>
@@ -3340,7 +3341,7 @@ function renderUnitDetail(u, form) {
   }
 
   const abHTML = pureAbilities.map(a => `
-    <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.desc||''}</span></div>
+    <div class="ability-item"><span class="ability-name">${fmtName(a.name)}</span><br><span class="ability-effect">${a.desc||''}</span></div>
   `).join('');
 
   const modalIconHTML = u.image ? `<img class="modal-icon" src="${u.image}" alt="${u.name}の詳細画像" onerror="this.style.display='none'">` : '';
@@ -3495,7 +3496,7 @@ function showCharaDetail(id) {
 
   const skillsHTML = (c.skills||[]).map(sk => `
     <div class="skill-item">
-      <div class="skill-name">${sk.name}${sk.sp_cost ? ` <span style="color:var(--accent);font-size:.8em">SP: ${sk.sp_cost}</span>` : ''}</div>
+      <div class="skill-name">${fmtName(sk.name)}${sk.sp_cost ? ` <span style="color:var(--accent);font-size:.8em">SP: ${sk.sp_cost}</span>` : ''}</div>
       <div class="skill-effect">${sk.effect || sk.desc || ''}</div>
     </div>
   `).join('');
@@ -3503,7 +3504,7 @@ function showCharaDetail(id) {
   // SP化 skills
   const spSkillsHTML = (c.sp_skills||[]).map(sk => `
     <div class="skill-item" style="border-left:3px solid #ffd54f;padding-left:10px">
-      <div class="skill-name" style="color:#ffd54f">${sk.name}${sk.sp_cost ? ` <span style="color:var(--accent);font-size:.8em">SP: ${sk.sp_cost}</span>` : ''}</div>
+      <div class="skill-name" style="color:#ffd54f">${fmtName(sk.name)}${sk.sp_cost ? ` <span style="color:var(--accent);font-size:.8em">SP: ${sk.sp_cost}</span>` : ''}</div>
       <div class="skill-effect">${sk.effect || sk.desc || ''}</div>
     </div>
   `).join('');
@@ -3518,7 +3519,7 @@ function showCharaDetail(id) {
   const normalAbilities = cleanAbilities.filter(a => !isEX(a));
 
   let abHTML = normalAbilities.map(a => `
-    <div class="ability-item"><span class="ability-name">${a.name}</span><br><span class="ability-effect">${a.desc || a.effect || ''}</span></div>
+    <div class="ability-item"><span class="ability-name">${fmtName(a.name)}</span><br><span class="ability-effect">${a.desc || a.effect || ''}</span></div>
   `).join('');
 
   if (exAbilities.length) {
@@ -3565,7 +3566,7 @@ function showCharaDetail(id) {
         ${cleanAbilities.length ? `<div class="detail-section"><h3>${c.sp_abilities && c.sp_abilities.length ? 'アビリティ（通常）' : 'アビリティ'} (${cleanAbilities.length})</h3>${abHTML}</div>` : ''}
         ${c.sp_abilities && c.sp_abilities.length ? `<div class="detail-section chara-sp-section"><h3>アビリティ（SP化後） (${c.sp_abilities.length})</h3>${c.sp_abilities.map(a => `
           <div class="ability-item" style="border-left:3px solid #ffd54f;padding-left:10px">
-            <span class="ability-name" style="color:#ffd54f">${a.name}</span><br>
+            <span class="ability-name" style="color:#ffd54f">${fmtName(a.name)}</span><br>
             <span class="ability-effect">${a.desc || ''}</span>
             ${a.condition ? `<span style="display:inline-block;margin-left:8px;padding:1px 6px;background:rgba(255,213,79,.1);border:1px solid #ffd54f;border-radius:4px;font-size:.75em;color:#ffd54f">${a.condition}</span>` : ''}
           </div>
