@@ -29,6 +29,11 @@ export default function HomePage() {
         const scripts = bodyContent.querySelectorAll('script');
         const scriptContents = [];
         scripts.forEach(s => {
+          // 忍者AdMaxのスクリプトはiframe方式で後から注入するためスキップ
+          if (s.src && s.src.includes('adm.shinobi.jp')) {
+            s.remove();
+            return;
+          }
           scriptContents.push({
             src: s.src,
             text: s.textContent,
@@ -63,6 +68,30 @@ export default function HomePage() {
             if (!scriptData.src) resolve();
           });
         }
+        // 忍者AdMax: document.write()を使うためiframeで注入
+        const adSlots = [
+          { id: 'adSlotTop', src: 'https://adm.shinobi.jp/s/f969299a5a7ac2147238c6e4c8abd0da', w: '320', h: '50' },
+          { id: 'adSideLeft', src: 'https://adm.shinobi.jp/s/986bd62e14794555eb77cbbbe051c274', w: '160', h: '600' },
+          { id: 'adSideRight', src: 'https://adm.shinobi.jp/s/f97fde07eb5842af35cf10b3d4f042dc', w: '160', h: '600' },
+          { id: 'adSlotBottom', src: 'https://adm.shinobi.jp/s/6b37984cfa9c490a4d625b9fcbbf94f4', w: '320', h: '50' },
+        ];
+        function injectAds() {
+          adSlots.forEach(ad => {
+            const el = container.querySelector('#' + ad.id);
+            if (!el || el.dataset.adLoaded) return;
+            el.dataset.adLoaded = '1';
+            const iframe = document.createElement('iframe');
+            iframe.style.cssText = 'border:none;overflow:hidden;display:block;margin:0 auto;';
+            iframe.width = ad.w;
+            iframe.height = ad.h;
+            iframe.scrolling = 'no';
+            iframe.srcdoc = '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0;overflow:hidden"><script src="' + ad.src + '"><\/script></body></html>';
+            el.appendChild(iframe);
+          });
+        }
+        injectAds();
+        setTimeout(injectAds, 500);
+
       } catch (err) {
         console.error('Failed to load SPA:', err);
       }
