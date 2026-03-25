@@ -1321,12 +1321,24 @@ a:hover{text-decoration:underline}
 
 <main role="main">
 <!-- Ad: 忍者AdMax スマホ上部 -->
-<div class="ad-slot" id="adSlotTop"></div>
+<div class="ad-slot" id="adSlotTop">
+<!-- admax -->
+<script src="https://adm.shinobi.jp/s/f969299a5a7ac2147238c6e4c8abd0da"></script>
+<!-- admax -->
+</div>
 
 <!-- Ad: 忍者AdMax PC左サイド -->
-<div class="ad-sidebar ad-sidebar-left" id="adSideLeft"></div>
+<div class="ad-sidebar ad-sidebar-left" id="adSideLeft">
+<!-- admax -->
+<script src="https://adm.shinobi.jp/s/986bd62e14794555eb77cbbbe051c274"></script>
+<!-- admax -->
+</div>
 <!-- Ad: 忍者AdMax PC右サイド -->
-<div class="ad-sidebar ad-sidebar-right" id="adSideRight"></div>
+<div class="ad-sidebar ad-sidebar-right" id="adSideRight">
+<!-- admax -->
+<script src="https://adm.shinobi.jp/s/f97fde07eb5842af35cf10b3d4f042dc"></script>
+<!-- admax -->
+</div>
 
 <section class="controls" aria-label="検索・フィルタ">
   <div class="search-box">
@@ -7035,38 +7047,15 @@ function renderItems() {
 bindSortButtons();
 init();
 
-// 忍者AdMax: iframe方式で広告を注入（Next.js SPA環境対応）
-// document.write()を使う忍者AdMaxスクリプトは動的script注入では動作しないため、
-// iframeのsrcdocでラップして実行する
-(function loadNinjaAds(){
-  const ads = [
-    { id:'adSlotTop', src:'https://adm.shinobi.jp/s/f969299a5a7ac2147238c6e4c8abd0da', w:'320', h:'100' },
-    { id:'adSideLeft', src:'https://adm.shinobi.jp/s/986bd62e14794555eb77cbbbe051c274', w:'160', h:'600' },
-    { id:'adSideRight', src:'https://adm.shinobi.jp/s/f97fde07eb5842af35cf10b3d4f042dc', w:'160', h:'600' },
-    { id:'adSlotBottom', src:'https://adm.shinobi.jp/s/6b37984cfa9c490a4d625b9fcbbf94f4', w:'320', h:'100' },
-  ];
-  function inject() {
-    ads.forEach(function(ad){
-      const el = document.getElementById(ad.id);
-      if(!el || el.dataset.adLoaded) return;
-      el.dataset.adLoaded = '1';
-      const iframe = document.createElement('iframe');
-      iframe.style.cssText = 'border:none;overflow:hidden;display:block;margin:0 auto;';
-      iframe.width = ad.w;
-      iframe.height = ad.h;
-      iframe.scrolling = 'no';
-      iframe.srcdoc = '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0;overflow:hidden"><script src="'+ad.src+'"><\/script></body></html>';
-      el.appendChild(iframe);
-    });
-  }
-  // Run immediately for elements already in DOM, and again after a short delay for adSlotBottom
-  inject();
-  setTimeout(inject, 500);
-})();
+// 忍者AdMax: HTMLに直接scriptタグを埋め込み済み（クローラー対応）
 </script>
 
 <!-- Ad: 忍者AdMax スマホ下部 -->
-<div class="ad-slot ad-slot-footer" id="adSlotBottom"></div>
+<div class="ad-slot ad-slot-footer" id="adSlotBottom">
+<!-- admax -->
+<script src="https://adm.shinobi.jp/s/6b37984cfa9c490a4d625b9fcbbf94f4"></script>
+<!-- admax -->
+</div>
 </main>
 
 <!-- Footer -->
