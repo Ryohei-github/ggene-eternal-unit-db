@@ -3459,13 +3459,13 @@ function renderCharaDetail(c) {
   const baseLv = isUR ? 100 : (c.rarity||'').toUpperCase() === 'SSR' ? 90 : (c.rarity||'').toUpperCase() === 'R' ? 70 : 80;
 
   // SP選択時はSP化後ステータスを表示
-  const isSPMode = !isUR && _charaStatMode === 'sp' && spSt;
-  const s = isSPMode ? { ...baseStats, shooting: spSt.shooting||0, melee: spSt.melee||0, awakening: spSt.awakening||0, defense: spSt.defense||0, reaction: spSt.reaction||0, sp: spSt.sp||0 } : baseStats;
+  const isSPModeStats = !isUR && _charaStatMode === 'sp' && spSt;
+  const s = isSPModeStats ? { ...baseStats, shooting: spSt.shooting||0, melee: spSt.melee||0, awakening: spSt.awakening||0, defense: spSt.defense||0, reaction: spSt.reaction||0, sp: spSt.sp||0 } : baseStats;
 
   let statsHTML = '';
   if (hasStats) {
     statsHTML = `<div class="detail-section">
-      <h3>ステータス${isSPMode ? ' <span style="color:#c084fc;font-size:.7em">（SP化後）</span>' : ''}</h3>
+      <h3>ステータス${isSPModeStats ? ' <span style="color:#c084fc;font-size:.7em">（SP化後）</span>' : ''}</h3>
       <div class="stats-grid">
         <div class="stat-box"><div class="label">戦闘力</div><div class="val" style="color:${s.combat_power==='X'||!s.combat_power?'#aaa':'var(--gold)'}">${s.combat_power==='X'?'未発表':s.combat_power?(s.combat_power).toLocaleString():'-'}</div></div>
         <div class="stat-box"><div class="label">射撃値</div><div class="val">${fmtStat(s.shooting)}${rankBadge(_charaRanks,c.id,'shooting')}</div></div>
