@@ -172658,5 +172658,666 @@
     "acquire": "ガシャ",
     "limited": false,
     "image": "/unit-images/mh-games-unit-490.png"
+  },
+  {
+    "id": 1455,
+    "name": "ウイングガンダムゼロ(EW版)(EX)",
+    "image": "",
+    "rarity": "UR",
+    "type": "X",
+    "obtain": "ヒイロ・ユイ(EW版)【UR】",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "オルタナティブシリーズ"
+    ],
+    "normal": {
+      "combat_power": "X",
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "△"
+      },
+      "stats": {
+        "hp": "X",
+        "en": "X",
+        "attack": "X",
+        "defense": "X",
+        "mobility": 5,
+        "agility": "X"
+      },
+      "abilities": [
+        {
+          "name": "最大HP上昇 LV3",
+          "desc": "自身の最大HPが15%上昇"
+        },
+        {
+          "name": "最大EN上昇 LV3",
+          "desc": "自身の最大ENが15%上昇"
+        },
+        {
+          "name": "攻撃力上昇 LV3",
+          "desc": "自身の攻撃力が15%上昇"
+        },
+        {
+          "name": "X",
+          "desc": "命中率・回避率+5%"
+        },
+        {
+          "name": "X",
+          "desc": "機動力+5%"
+        }
+      ],
+      "mechanism": "シールド"
+    },
+    "stats_by_star": [
+      {
+        "star": 0,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      }
+    ],
+    "normal_weapons": [
+      {
+        "name": "X",
+        "attribute": "X",
+        "weapon_type": "X",
+        "range": "1-1",
+        "power": "X",
+        "en": "18",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X",
+        "attribute": "X",
+        "weapon_type": "X",
+        "range": "2-4",
+        "power": "X",
+        "en": "18",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X",
+        "attribute": "X",
+        "weapon_type": "X",
+        "range": "2-4",
+        "power": "X",
+        "en": "23",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X EX",
+        "attribute": "物理・ビーム・特殊",
+        "weapon_type": "X",
+        "range": "1-4",
+        "power": "X",
+        "en": "42",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中 / 武器属性ダメージ軽減無効",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X",
+        "attribute": "物理・ビーム・特殊",
+        "weapon_type": "射撃",
+        "range": "MAP",
+        "power": "X",
+        "en": "54",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中 移動前限定使用可能 水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": "1"
+      }
+    ],
+    "acquire": "ガシャ"
+  },
+  {
+    "id": 1456,
+    "name": "ダブルオーライザー(最終決戦仕様)(EX)",
+    "image": "",
+    "rarity": "UR",
+    "type": "X",
+    "obtain": "",
+    "series": [
+      "機動戦士ガンダム00"
+    ],
+    "tags": [
+      "オルタナティブシリーズ"
+    ],
+    "normal": {
+      "combat_power": "X",
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "△"
+      },
+      "stats": {
+        "hp": "X",
+        "en": "X",
+        "attack": "X",
+        "defense": "X",
+        "mobility": 5,
+        "agility": "X"
+      },
+      "abilities": [
+        {
+          "name": "最大HP上昇 LV3",
+          "desc": "自身の最大HPが15%上昇"
+        },
+        {
+          "name": "最大EN上昇 LV3",
+          "desc": "自身の最大ENが15%上昇"
+        },
+        {
+          "name": "攻撃力上昇 LV3",
+          "desc": "自身の攻撃力が15%上昇"
+        },
+        {
+          "name": "X",
+          "desc": "命中率・回避率+5%"
+        },
+        {
+          "name": "X",
+          "desc": "機動力+5%"
+        }
+      ],
+      "mechanism": "シールド"
+    },
+    "stats_by_star": [
+      {
+        "star": 0,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      }
+    ],
+    "normal_weapons": [
+      {
+        "name": "X",
+        "attribute": "X",
+        "weapon_type": "X",
+        "range": "1-1",
+        "power": "X",
+        "en": "18",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X",
+        "attribute": "X",
+        "weapon_type": "X",
+        "range": "2-4",
+        "power": "X",
+        "en": "18",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X",
+        "attribute": "X",
+        "weapon_type": "X",
+        "range": "2-4",
+        "power": "X",
+        "en": "23",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X EX",
+        "attribute": "物理・ビーム・特殊",
+        "weapon_type": "X",
+        "range": "1-4",
+        "power": "X",
+        "en": "42",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中 / 武器属性ダメージ軽減無効",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X",
+        "attribute": "物理・ビーム・特殊",
+        "weapon_type": "射撃",
+        "range": "MAP",
+        "power": "X",
+        "en": "54",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中 移動前限定使用可能 水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": "1"
+      }
+    ],
+    "acquire": "ガシャ"
+  },
+  {
+    "id": 1457,
+    "name": "トールギスIII(EX)",
+    "image": "",
+    "rarity": "UR",
+    "type": "X",
+    "obtain": "プリベンター・ウインド【UR】",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "オルタナティブシリーズ"
+    ],
+    "normal": {
+      "combat_power": "X",
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "△"
+      },
+      "stats": {
+        "hp": "X",
+        "en": "X",
+        "attack": "X",
+        "defense": "X",
+        "mobility": 5,
+        "agility": "X"
+      },
+      "abilities": [
+        {
+          "name": "最大HP上昇 LV3",
+          "desc": "自身の最大HPが15%上昇"
+        },
+        {
+          "name": "最大EN上昇 LV3",
+          "desc": "自身の最大ENが15%上昇"
+        },
+        {
+          "name": "攻撃力上昇 LV3",
+          "desc": "自身の攻撃力が15%上昇"
+        },
+        {
+          "name": "X",
+          "desc": "命中率・回避率+5%"
+        },
+        {
+          "name": "X",
+          "desc": "機動力+5%"
+        }
+      ],
+      "mechanism": "シールド"
+    },
+    "stats_by_star": [
+      {
+        "star": 0,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": "X",
+        "en": "X",
+        "mobility": 5,
+        "attack": "X",
+        "defense": "X",
+        "agility": "X"
+      }
+    ],
+    "normal_weapons": [
+      {
+        "name": "X",
+        "attribute": "X",
+        "weapon_type": "X",
+        "range": "1-1",
+        "power": "X",
+        "en": "18",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X",
+        "attribute": "X",
+        "weapon_type": "X",
+        "range": "2-4",
+        "power": "X",
+        "en": "18",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X",
+        "attribute": "X",
+        "weapon_type": "X",
+        "range": "2-4",
+        "power": "X",
+        "en": "23",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X EX",
+        "attribute": "物理・ビーム・特殊",
+        "weapon_type": "X",
+        "range": "1-4",
+        "power": "X",
+        "en": "42",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中 / 武器属性ダメージ軽減無効",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "X",
+        "attribute": "物理・ビーム・特殊",
+        "weapon_type": "射撃",
+        "range": "MAP",
+        "power": "X",
+        "en": "54",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中 移動前限定使用可能 水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": "1"
+      }
+    ],
+    "acquire": "ガシャ"
+  },
+  {
+    "id": 1458,
+    "name": "ヒイロ・ユイ(EW版)",
+    "image": "",
+    "rarity": "UR",
+    "type": "X",
+    "obtain": "ガシャ",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "キャラ",
+      "オルタナティブシリーズ"
+    ],
+    "normal": {
+      "combat_power": "X",
+      "stats": {
+        "shooting": "X",
+        "melee": "X",
+        "awakening": "X",
+        "defense": "X",
+        "reaction": "X",
+        "sp": "X"
+      },
+      "skills": [
+        {
+          "name": "X",
+          "effect": "受けるダメージが1ターン20%軽減",
+          "sp_cost": 5
+        },
+        {
+          "name": "X",
+          "effect": "移動力が1上昇",
+          "sp_cost": 5
+        },
+        {
+          "name": "X",
+          "effect": "回避率が100%上昇",
+          "sp_cost": 10
+        }
+      ],
+      "abilities": [
+        {
+          "name": "X",
+          "desc": "「支援防御」+1回",
+          "condition": ""
+        },
+        {
+          "name": "X",
+          "desc": "自身が支援防御時、自身の防御力が20%上昇",
+          "condition": "耐久型"
+        },
+        {
+          "name": "X",
+          "desc": "覚醒値と反応値が20%上昇",
+          "condition": ""
+        },
+        {
+          "name": "X",
+          "desc": "防御力が20%上昇",
+          "condition": ""
+        },
+        {
+          "name": "X",
+          "desc": "与ダメージが15%上昇 被ダメージが15%軽減",
+          "condition": ""
+        },
+        {
+          "name": "XX値上昇 LV1",
+          "desc": "XX値が5%上昇",
+          "condition": ""
+        }
+      ],
+      "support": {
+        "cs": "赤",
+        "support_attack": "-",
+        "support_defense": "1回"
+      }
+    },
+    "acquire": "ガシャ"
+  },
+  {
+    "id": 1459,
+    "name": "プリベンター・ウインド",
+    "image": "",
+    "rarity": "UR",
+    "type": "X",
+    "obtain": "ガシャ",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "キャラ",
+      "オルタナティブシリーズ"
+    ],
+    "normal": {
+      "combat_power": "X",
+      "stats": {
+        "shooting": "X",
+        "melee": "X",
+        "awakening": "X",
+        "defense": "X",
+        "reaction": "X",
+        "sp": "X"
+      },
+      "skills": [
+        {
+          "name": "X",
+          "effect": "受けるダメージが1ターン20%軽減",
+          "sp_cost": 5
+        },
+        {
+          "name": "X",
+          "effect": "移動力が1上昇",
+          "sp_cost": 5
+        },
+        {
+          "name": "X",
+          "effect": "回避率が100%上昇",
+          "sp_cost": 10
+        }
+      ],
+      "abilities": [
+        {
+          "name": "X",
+          "desc": "「支援防御」+1回",
+          "condition": ""
+        },
+        {
+          "name": "X",
+          "desc": "自身が支援防御時、自身の防御力が20%上昇",
+          "condition": "耐久型"
+        },
+        {
+          "name": "X",
+          "desc": "覚醒値と反応値が20%上昇",
+          "condition": ""
+        },
+        {
+          "name": "X",
+          "desc": "防御力が20%上昇",
+          "condition": ""
+        },
+        {
+          "name": "X",
+          "desc": "与ダメージが15%上昇 被ダメージが15%軽減",
+          "condition": ""
+        },
+        {
+          "name": "XX値上昇 LV1",
+          "desc": "XX値が5%上昇",
+          "condition": ""
+        }
+      ],
+      "support": {
+        "cs": "赤",
+        "support_attack": "-",
+        "support_defense": "1回"
+      }
+    },
+    "acquire": "ガシャ"
   }
 ]
