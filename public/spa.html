@@ -2590,17 +2590,17 @@ function getFiltered() {
       if (activeCharaTypes.length > 0 && !activeCharaTypes.includes(c.chara_type)) return false;
       if (series && c.series !== series) return false;
       if (selectedTags.length > 0 && !selectedTags.every(t => (c.tags||[]).includes(t))) return false;
-      // Skill filter
+      // Skill filter（トグル連動：通常→通常スキルのみ、SP→通常+SP化スキル）
       const activeSkills = [...document.querySelectorAll('#filterCharaSkillButtons .filter-btn.active')].map(b => b.dataset.value);
       if (activeSkills.length > 0) {
-        const allSkills = [...(c.skills||[]), ...(c.sp_skills||[])];
-        const charaSkillBases = allSkills.map(sk => sk.name.replace(/[Ll][Vv][０-９\d]+/g,'').replace(/\s+/g,'').replace(/ブ－スト/g,'ブースト').trim());
+        const filterSkills = _charaStatMode === 'sp' ? [...(c.skills||[]), ...(c.sp_skills||[])] : (c.skills||[]);
+        const charaSkillBases = filterSkills.map(sk => sk.name.replace(/[Ll][Vv][０-９\d]+/g,'').replace(/\s+/g,'').replace(/ブ－スト/g,'ブースト').trim());
         if (!activeSkills.every(fs => charaSkillBases.includes(fs))) return false;
       }
-      // Ability filter (回数増加アビリティ: 通常/SP化別々にカウントしてmax)
+      // Ability filter (トグル連動：通常→通常アビリティのみ、SP→通常+SP化アビリティ)
       const activeAbils = [...document.querySelectorAll('#filterCharaAbilityButtons .filter-btn.active')].map(b => b.dataset.value);
       if (activeAbils.length > 0) {
-        const norm = c.abilities||[], sp = c.sp_abilities||[];
+        const norm = c.abilities||[], sp = _charaStatMode === 'sp' ? (c.sp_abilities||[]) : [];
         const abilTests = {
           'atk2': (n, s) => abilCounters.atk(n, s) >= 2,
           'def2': (n, s) => abilCounters.def(n, s) >= 2,
