@@ -2580,8 +2580,10 @@ function getFiltered() {
     return data.filter(c => {
       if (q) {
         const nameMatch = c.name.toLowerCase().includes(q) || (currentLang==='en' && tData(c.name).toLowerCase().includes(q));
-        const skillMatch = (c.skills||[]).some(sk => (sk.name||'').toLowerCase().includes(q) || (sk.effect||'').toLowerCase().includes(q));
-        const abilMatch = (c.abilities||[]).some(a => (a.name||'').toLowerCase().includes(q) || (a.desc||'').toLowerCase().includes(q));
+        const searchSkills = _charaStatMode === 'sp' ? [...(c.skills||[]), ...(c.sp_skills||[])] : (c.skills||[]);
+        const searchAbils = _charaStatMode === 'sp' ? [...(c.abilities||[]), ...(c.sp_abilities||[])] : (c.abilities||[]);
+        const skillMatch = searchSkills.some(sk => (sk.name||'').toLowerCase().includes(q) || (sk.effect||'').toLowerCase().includes(q));
+        const abilMatch = searchAbils.some(a => (a.name||'').toLowerCase().includes(q) || (a.desc||'').toLowerCase().includes(q));
         if (!nameMatch && !skillMatch && !abilMatch) return false;
       }
       if (activeRarities.length > 0 && !activeRarities.includes(c.rarity)) return false;
@@ -2836,6 +2838,10 @@ function toggleCharaStatMode(mode) {
   document.getElementById('charaNormalBtn').classList.toggle('active-normal', _charaStatMode === 'normal');
   document.getElementById('charaSpBtn').classList.toggle('active-sp', _charaStatMode === 'sp');
   render();
+  // モーダルが開いている場合、詳細表示を再描画
+  if (window._currentDetailChara) {
+    renderCharaDetail(window._currentDetailChara);
+  }
 }
 
 function getCharaDisplayStats(c) {
@@ -3438,19 +3444,28 @@ function switchForm(form) {
 function showCharaDetail(id) {
   const c = allCharas.find(x => x.id === id);
   if (!c) return;
-  const s = c.stats || {};
+  window._currentDetailChara = c;
+  renderCharaDetail(c);
+}
+
+function renderCharaDetail(c) {
+  const baseStats = c.stats || {};
   const ex = isEXChara(c);
-  const hasStats = Object.keys(s).length > 0;
+  const hasStats = Object.keys(baseStats).length > 0;
 
   // Determine SP化/Lv100 stats
   const spSt = c.sp_stats || c.lv100_stats || null;
   const isUR = (c.rarity||'').toUpperCase() === 'UR';
   const baseLv = isUR ? 100 : (c.rarity||'').toUpperCase() === 'SSR' ? 90 : (c.rarity||'').toUpperCase() === 'R' ? 70 : 80;
 
+  // SP選択時はSP化後ステータスを表示
+  const isSPMode = !isUR && _charaStatMode === 'sp' && spSt;
+  const s = isSPMode ? { ...baseStats, shooting: spSt.shooting||0, melee: spSt.melee||0, awakening: spSt.awakening||0, defense: spSt.defense||0, reaction: spSt.reaction||0, sp: spSt.sp||0 } : baseStats;
+
   let statsHTML = '';
   if (hasStats) {
     statsHTML = `<div class="detail-section">
-      <h3>ステータス</h3>
+      <h3>ステータス${isSPMode ? ' <span style="color:#c084fc;font-size:.7em">（SP化後）</span>' : ''}</h3>
       <div class="stats-grid">
         <div class="stat-box"><div class="label">戦闘力</div><div class="val" style="color:${s.combat_power==='X'||!s.combat_power?'#aaa':'var(--gold)'}">${s.combat_power==='X'?'未発表':s.combat_power?(s.combat_power).toLocaleString():'-'}</div></div>
         <div class="stat-box"><div class="label">射撃値</div><div class="val">${fmtStat(s.shooting)}${rankBadge(_charaRanks,c.id,'shooting')}</div></div>
@@ -3494,33 +3509,49 @@ function showCharaDetail(id) {
     </div>`;
   }
 
-  const skillsHTML = (c.skills||[]).map(sk => `
-    <div class="skill-item">
-      <div class="skill-name">${fmtName(sk.name)}${sk.sp_cost ? ` <span style="color:var(--accent);font-size:.8em">SP: ${sk.sp_cost}</span>` : ''}</div>
-      <div class="skill-effect">${sk.effect || sk.desc || ''}</div>
-    </div>
-  `).join('');
+  // SP化で追加/変更されたスキル名セット（SPバッジ判定用）
+  const spSkillNames = new Set((c.sp_skills||[]).map(sk => sk.name));
+  const normalSkillNames = new Set((c.skills||[]).map(sk => sk.name));
+  const spAbilNames = new Set((c.sp_abilities||[]).map(a => a.name));
+  const normalAbilNames = new Set((c.abilities||[]).map(a => a.name));
 
-  // SP化 skills
-  const spSkillsHTML = (c.sp_skills||[]).map(sk => `
-    <div class="skill-item" style="border-left:3px solid #ffd54f;padding-left:10px">
-      <div class="skill-name" style="color:#ffd54f">${fmtName(sk.name)}${sk.sp_cost ? ` <span style="color:var(--accent);font-size:.8em">SP: ${sk.sp_cost}</span>` : ''}</div>
+  const isSPMode = _charaStatMode === 'sp';
+  const hasSP = (c.sp_skills||[]).length > 0 || (c.sp_abilities||[]).length > 0;
+
+  // トグルに連動：通常→通常スキルのみ、SP→SP化後スキルのみ
+  const displayDetailSkills = (isSPMode && (c.sp_skills||[]).length > 0) ? c.sp_skills : (c.skills||[]);
+  const spBadge = `<span style="display:inline-block;background:linear-gradient(135deg,#ffd54f,#ffb300);color:#1a1a2e;font-size:.6em;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle;letter-spacing:.5px">SP</span>`;
+
+  const skillsHTML = displayDetailSkills.map(sk => {
+    const isSpSkill = isSPMode && spSkillNames.has(sk.name) && !normalSkillNames.has(sk.name);
+    const isSpUpgrade = isSPMode && spSkillNames.has(sk.name) && normalSkillNames.has(sk.name);
+    const badge = isSpSkill ? spBadge : (isSpUpgrade ? `<span style="display:inline-block;background:linear-gradient(135deg,#ffd54f,#ffb300);color:#1a1a2e;font-size:.6em;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle;letter-spacing:.5px">SP↑</span>` : '');
+    const borderStyle = (isSpSkill || isSpUpgrade) ? 'border-left:3px solid #ffd54f;padding-left:10px' : '';
+    return `<div class="skill-item" style="${borderStyle}">
+      <div class="skill-name">${fmtName(sk.name)}${badge}${sk.sp_cost ? ` <span style="color:var(--accent);font-size:.8em">SP: ${sk.sp_cost}</span>` : ''}</div>
       <div class="skill-effect">${sk.effect || sk.desc || ''}</div>
-    </div>
-  `).join('');
+    </div>`;
+  }).join('');
 
   const garbageNames = ['リセマラ評価','キャラ一覧の関連記事','解放キャラ','スキル','UR','対象ユニット','サポーターの一覧記事','レア度','2×2','SD','支援','攻撃'];
   const isGarbage = (n) => garbageNames.includes(n) || /^戦闘力[\(（]/.test(n) || /[\(（]SP:\d+[\)）]/.test(n);
-  const cleanAbilities = (c.abilities||[]).filter(a => !isGarbage(a.name));
+
+  // トグルに連動：通常→通常アビリティのみ、SP→SP化後アビリティのみ
+  const rawAbilities = (isSPMode && (c.sp_abilities||[]).length > 0) ? c.sp_abilities : (c.abilities||[]);
+  const cleanAbilities = rawAbilities.filter(a => !isGarbage(a.name));
 
   // Group EX abilities together (match both EXアビリティ and EXキャラアビリティ)
   const isEX = (a) => a.name === 'EXアビリティ' || a.name === 'EXキャラアビリティ';
   const exAbilities = cleanAbilities.filter(isEX);
   const normalAbilities = cleanAbilities.filter(a => !isEX(a));
 
-  let abHTML = normalAbilities.map(a => `
-    <div class="ability-item"><span class="ability-name">${fmtName(a.name)}</span><br><span class="ability-effect">${a.desc || a.effect || ''}</span></div>
-  `).join('');
+  let abHTML = normalAbilities.map(a => {
+    const isSpAbil = isSPMode && spAbilNames.has(a.name) && !normalAbilNames.has(a.name);
+    const isSpUpgrade = isSPMode && spAbilNames.has(a.name) && normalAbilNames.has(a.name);
+    const badge = isSpAbil ? spBadge : (isSpUpgrade ? `<span style="display:inline-block;background:linear-gradient(135deg,#ffd54f,#ffb300);color:#1a1a2e;font-size:.6em;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle;letter-spacing:.5px">SP↑</span>` : '');
+    const borderStyle = (isSpAbil || isSpUpgrade) ? 'style="border-left:3px solid #ffd54f;padding-left:10px"' : '';
+    return `<div class="ability-item" ${borderStyle}><span class="ability-name">${fmtName(a.name)}${badge}</span><br><span class="ability-effect">${a.desc || a.effect || ''}</span></div>`;
+  }).join('');
 
   if (exAbilities.length) {
     const exInner = exAbilities.map(a => `
@@ -3561,16 +3592,8 @@ function showCharaDetail(id) {
         ${statsHTML}
       </div>
       <div class="detail-col-right">
-        ${(c.skills||[]).length ? `<div class="detail-section"><h3>${c.sp_skills && c.sp_skills.length ? 'スキル（通常）' : 'スキル'} (${c.skills.length})</h3>${skillsHTML}</div>` : ''}
-        ${c.sp_skills && c.sp_skills.length ? `<div class="detail-section chara-sp-section"><h3>スキル（SP化後） (${c.sp_skills.length})</h3>${spSkillsHTML}</div>` : ''}
-        ${cleanAbilities.length ? `<div class="detail-section"><h3>${c.sp_abilities && c.sp_abilities.length ? 'アビリティ（通常）' : 'アビリティ'} (${cleanAbilities.length})</h3>${abHTML}</div>` : ''}
-        ${c.sp_abilities && c.sp_abilities.length ? `<div class="detail-section chara-sp-section"><h3>アビリティ（SP化後） (${c.sp_abilities.length})</h3>${c.sp_abilities.map(a => `
-          <div class="ability-item" style="border-left:3px solid #ffd54f;padding-left:10px">
-            <span class="ability-name" style="color:#ffd54f">${fmtName(a.name)}</span><br>
-            <span class="ability-effect">${a.desc || ''}</span>
-            ${a.condition ? `<span style="display:inline-block;margin-left:8px;padding:1px 6px;background:rgba(255,213,79,.1);border:1px solid #ffd54f;border-radius:4px;font-size:.75em;color:#ffd54f">${a.condition}</span>` : ''}
-          </div>
-        `).join('')}</div>` : ''}
+        ${displayDetailSkills.length ? `<div class="detail-section"><h3>スキル${isSPMode && hasSP ? '（SP化後）' : ''} (${displayDetailSkills.length})</h3>${skillsHTML}</div>` : ''}
+        ${cleanAbilities.length ? `<div class="detail-section"><h3>アビリティ${isSPMode && hasSP ? '（SP化後）' : ''} (${cleanAbilities.length})</h3>${abHTML}</div>` : ''}
       </div>
     </div>
   `;
@@ -3683,6 +3706,8 @@ function closeModal(skipHistory) {
   const modal = document.getElementById('modalContent');
   modal.style.transform = 'translateY(40px)';
   modal.style.opacity = '0';
+  window._currentDetailChara = null;
+  window._currentDetailUnit = null;
   setTimeout(() => {
     overlay.classList.remove('open');
     modal.style.transform = '';
