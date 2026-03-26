@@ -83,9 +83,12 @@ export default function HomePage() {
             iframe.width = ad.w;
             iframe.height = ad.h;
             iframe.scrolling = 'no';
-            // 実HTMLファイルを読み込むことでdocument.write()がパース中に正常実行される
-            iframe.src = '/ad-frame.html?src=' + encodeURIComponent(ad.src);
             el.appendChild(iframe);
+            // contentDocument.write()で直接書き込み：同一オリジンでdocument.write()が実行される
+            const iframeDoc = iframe.contentDocument;
+            iframeDoc.open();
+            iframeDoc.write('<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0;overflow:hidden"><script src="' + ad.src + '"><\/script></body></html>');
+            iframeDoc.close();
           });
         }
         injectAds();
