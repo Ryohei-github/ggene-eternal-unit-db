@@ -76,7 +76,7 @@ export default function HomePage() {
         ];
         admaxIds.forEach(id => {
           if (!window.admaxads.some(ad => ad.admax_id === id)) {
-            window.admaxads.push({ admax_id: id, type: 'switch' });
+            window.admaxads.push({ admax_id: id, type: 'banner' });
           }
         });
         const admaxTag = document.createElement('script');
