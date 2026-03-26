@@ -85,7 +85,10 @@ export default function HomePage() {
             iframe.width = ad.w;
             iframe.height = ad.h;
             iframe.scrolling = 'no';
-            iframe.srcdoc = '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0;overflow:hidden"><script src="' + ad.src + '"><\/script></body></html>';
+            // Blob URLを使用してiframeに同一オリジンを付与（srcdocはorigin:nullになりAdMaxがサイトを認識できない）
+            const html = '<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0;overflow:hidden"><script src="' + ad.src + '"><\/script></body></html>';
+            const blob = new Blob([html], { type: 'text/html' });
+            iframe.src = URL.createObjectURL(blob);
             el.appendChild(iframe);
           });
         }
