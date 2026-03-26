@@ -63,14 +63,6 @@ export default function RootLayout({ children }) {
           strategy="beforeInteractive"
         />
         <Script
-          src="https://adm.shinobi.jp/s/986bd62e14794555eb77cbbbe051c274"
-          strategy="beforeInteractive"
-        />
-        <Script
-          src="https://adm.shinobi.jp/s/f97fde07eb5842af35cf10b3d4f042dc"
-          strategy="beforeInteractive"
-        />
-        <Script
           src="https://adm.shinobi.jp/s/6b37984cfa9c490a4d625b9fcbbf94f4"
           strategy="beforeInteractive"
         />
