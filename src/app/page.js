@@ -29,7 +29,7 @@ export default function HomePage() {
         const scripts = bodyContent.querySelectorAll('script');
         const scriptContents = [];
         scripts.forEach(s => {
-          // 忍者AdMaxのスクリプトはiframe方式で後から注入するためスキップ
+          // 忍者AdMaxのスクリプトは非同期タグ方式で後から注入するためスキップ
           if (s.src && s.src.includes('adm.shinobi.jp')) {
             s.remove();
             return;
@@ -68,31 +68,21 @@ export default function HomePage() {
             if (!scriptData.src) resolve();
           });
         }
-        // 忍者AdMax: document.write()を使うためiframeで注入
-        const adSlots = [
-          { id: 'adSlotTop', src: 'https://adm.shinobi.jp/s/f969299a5a7ac2147238c6e4c8abd0da', w: '320', h: '50' },
-          { id: 'adSlotBottom', src: 'https://adm.shinobi.jp/s/6b37984cfa9c490a4d625b9fcbbf94f4', w: '320', h: '50' },
+        // 忍者AdMax: 非同期タグ方式で広告を読み込み（iframe不要・document.write()不要）
+        if (!window.admaxads) window.admaxads = [];
+        const admaxIds = [
+          'f969299a5a7ac2147238c6e4c8abd0da',
+          '6b37984cfa9c490a4d625b9fcbbf94f4',
         ];
-        function injectAds() {
-          adSlots.forEach(ad => {
-            const el = container.querySelector('#' + ad.id);
-            if (!el || el.dataset.adLoaded) return;
-            el.dataset.adLoaded = '1';
-            const iframe = document.createElement('iframe');
-            iframe.style.cssText = 'border:none;overflow:hidden;display:block;margin:0 auto;';
-            iframe.width = ad.w;
-            iframe.height = ad.h;
-            iframe.scrolling = 'no';
-            el.appendChild(iframe);
-            // contentDocument.write()で直接書き込み：同一オリジンでdocument.write()が実行される
-            const iframeDoc = iframe.contentDocument;
-            iframeDoc.open();
-            iframeDoc.write('<!DOCTYPE html><html><head><meta charset="utf-8"></head><body style="margin:0;padding:0;overflow:hidden"><script src="' + ad.src + '"><\/script></body></html>');
-            iframeDoc.close();
-          });
-        }
-        injectAds();
-        setTimeout(injectAds, 500);
+        admaxIds.forEach(id => {
+          if (!window.admaxads.some(ad => ad.admax_id === id)) {
+            window.admaxads.push({ admax_id: id, type: 'switch' });
+          }
+        });
+        const admaxTag = document.createElement('script');
+        admaxTag.src = 'https://adm.shinobi.jp/st/t.js';
+        admaxTag.async = true;
+        document.body.appendChild(admaxTag);
 
       } catch (err) {
         console.error('Failed to load SPA:', err);
