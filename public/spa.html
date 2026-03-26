@@ -188,6 +188,12 @@ a:hover{text-decoration:underline}
 @media(max-width:600px){.ad-slot{display:block}}
 
 
+/* Credit banner (初回アクセスバナー) */
+.credit-banner{position:fixed;bottom:0;left:0;right:0;z-index:9999;background:rgba(17,19,24,.95);border-top:1px solid var(--border);padding:14px 48px 14px 16px;font-size:13px;color:#c0c4d0;text-align:center;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:none}
+.credit-banner.show{display:block}
+.credit-banner-close{position:absolute;top:50%;right:14px;transform:translateY(-50%);background:none;border:none;color:#8a8d98;font-size:20px;cursor:pointer;padding:4px 8px;line-height:1}
+.credit-banner-close:hover{color:#fff}
+
 /* Footer */
 .site-footer{max-width:1800px;margin:0 auto;padding:20px 16px 40px;text-align:center}
 .footer-links{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-bottom:8px}
@@ -1548,6 +1554,7 @@ a:hover{text-decoration:underline}
 <div class="tierlist-container" id="tierlistContainer" style="display:none">
   <div class="tierlist-header">
     <h3>🏆 マイティアリスト</h3>
+    <p style="font-size:12px;color:#6b7080;margin:-4px 0 8px;width:100%">※ 動画・配信でご利用の際は、概要欄へのURL掲載をお願いしています。</p>
     <div class="tierlist-actions">
       <button class="tierlist-btn" onclick="resetTierList()">リセット</button>
       <button class="tierlist-btn primary" onclick="exportTierList()">📷 画像保存</button>
@@ -1576,6 +1583,7 @@ a:hover{text-decoration:underline}
   </div>
   <div class="tierlist-pool-label" id="tierPoolLabel">未配置ユニット（ドラッグして配置）</div>
   <div class="tierlist-pool" id="tierlistPool"></div>
+  <div class="tierlist-credit" style="margin-top:12px;text-align:center;font-size:12px;color:#6b7080;line-height:1.6">© MH GAMES | 動画・配信でご利用の際は概要欄へのURL掲載をお願いします<br><span style="font-size:11px;color:#555">gget-db.com</span></div>
 </div>
 
 <!-- Damage Calculator Container -->
@@ -6370,7 +6378,7 @@ function exportTierList() {
     // Footer
     ctx.fillStyle = '#5c6070';
     ctx.font = '11px sans-serif';
-    ctx.fillText('ggene-eternal-unit-db.vercel.app | MH GAMES', 12, y + 18);
+    ctx.fillText('© MH GAMES | gget-db.com | 動画・配信でご利用の際は概要欄へのURL掲載をお願いします', 12, y + 18);
 
     // Download
     const link = document.createElement('a');
@@ -7039,6 +7047,25 @@ bindSortButtons();
 init();
 
 // 忍者AdMax: HTMLに直接scriptタグを埋め込み済み（クローラー対応）
+
+// 初回アクセスバナー（localStorage管理）
+(function(){
+  var KEY = 'ggetdb_credit_dismissed';
+  var banner = document.getElementById('creditBanner');
+  var closeBtn = document.getElementById('creditBannerClose');
+  if (!banner || !closeBtn) return;
+  try {
+    if (!localStorage.getItem(KEY)) {
+      banner.classList.add('show');
+    }
+  } catch(e) {
+    // localStorage使用不可の場合はバナー表示しない
+  }
+  closeBtn.addEventListener('click', function(){
+    banner.classList.remove('show');
+    try { localStorage.setItem(KEY, '1'); } catch(e){}
+  });
+})();
 </script>
 
 <!-- Ad: 忍者AdMax スマホ下部（非同期タグ） -->
@@ -7046,6 +7073,12 @@ init();
 <div class="admax-ads" data-admax-id="6b37984cfa9c490a4d625b9fcbbf94f4" style="display:block;max-width:100%;overflow:hidden;margin:0 auto"></div>
 </div>
 </main>
+
+<!-- 初回アクセスバナー -->
+<div class="credit-banner" id="creditBanner">
+  動画・配信でこのサイトをご利用の際は、概要欄へのURL掲載をお願いしています。
+  <button class="credit-banner-close" id="creditBannerClose" aria-label="閉じる">×</button>
+</div>
 
 <!-- Footer -->
 <footer class="site-footer" role="contentinfo">
