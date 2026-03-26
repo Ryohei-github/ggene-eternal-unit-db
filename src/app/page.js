@@ -69,7 +69,9 @@ export default function HomePage() {
           });
         }
         // 忍者AdMax: 非同期タグ方式で広告を読み込み（iframe不要・document.write()不要）
-        if (!window.admaxads) window.admaxads = [];
+        // __admax_tag__をリセットして再初期化を許可（SPAでのDOM注入後に実行するため）
+        window.__admax_tag__ = undefined;
+        window.admaxads = window.admaxads || [];
         const admaxIds = [
           'f969299a5a7ac2147238c6e4c8abd0da',
           '6b37984cfa9c490a4d625b9fcbbf94f4',

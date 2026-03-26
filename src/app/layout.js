@@ -57,11 +57,6 @@ export default function RootLayout({ children }) {
             gtag('config', 'G-PHTSGSZ19J');
           `}
         </Script>
-        {/* 忍者AdMax: 非同期タグローダー（クローラー審査用にSSR出力） */}
-        <Script
-          src="https://adm.shinobi.jp/st/t.js"
-          strategy="beforeInteractive"
-        />
       </head>
       <body>{children}</body>
     </html>
