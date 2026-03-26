@@ -186,9 +186,12 @@ a:hover{text-decoration:underline}
 
 /* Ad sidebar — PC left/right sticky */
 .ad-sidebar{position:fixed;top:50%;transform:translateY(-50%);z-index:90;display:none}
-.ad-sidebar-left{left:8px}
+.ad-sidebar-left{left:64px}
 .ad-sidebar-right{right:8px}
-@media(min-width:1400px){.ad-sidebar{display:block}}
+@media(min-width:1600px){.ad-sidebar{display:block}}
+@media(min-width:1600px){
+  .controls,.grid,.data-table-wrap,.tag-lookup-container,.team-sim-container,.ranking-container,.tierlist-container,.dmg-calc-container,.items-container,.site-footer,.ad-slot{margin-left:240px!important;margin-right:184px!important;max-width:none!important}
+}
 
 /* Footer */
 .site-footer{max-width:1800px;margin:0 auto;padding:20px 16px 40px;text-align:center}
