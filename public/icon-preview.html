@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html><head><style>
+body{background:#1a1a2e;display:flex;flex-direction:column;gap:24px;padding:30px;align-items:center;font-family:'Segoe UI',sans-serif;color:#ccc}
+h2{color:#e8961e;margin:0;font-size:15px;letter-spacing:.05em}
+.note{font-size:11px;color:#666;margin:2px 0 10px}
+
+.options{display:flex;gap:12px;flex-wrap:wrap;justify-content:center}
+.opt{padding:16px 20px;border:1px solid rgba(255,255,255,.08);border-radius:10px;background:rgba(0,0,0,.2);text-align:center;cursor:pointer;min-width:80px}
+.opt:hover{border-color:rgba(232,150,30,.4)}
+.opt h4{color:#e8961e;margin:0 0 10px;font-size:11px;font-weight:600}
+.opt svg{color:#e8961e;fill:#e8961e}
+.opt .label{font-size:9px;color:#666;margin-top:6px}
+
+.tab-bar-mock{display:flex;gap:2px;background:#0f0f23;padding:6px 8px;border-radius:8px;width:100%;max-width:720px;overflow-x:auto}
+.t{display:flex;flex-direction:column;align-items:center;gap:3px;padding:7px 10px;border-radius:6px;border:1px solid rgba(255,255,255,.08);min-width:50px;flex:1}
+.t.active{border-color:#e8961e;background:rgba(232,150,30,.08)}
+.t svg{color:#888;fill:#888}
+.t.active svg{color:#e8961e;fill:#e8961e}
+.t span{font-size:9px;color:#666;white-space:nowrap}
+.t.active span{color:#e8961e}
+
+.section{border:1px solid rgba(232,150,30,.15);border-radius:12px;padding:20px;background:rgba(0,0,0,.15);width:100%;max-width:720px}
+.section-title{display:flex;align-items:center;gap:8px;margin-bottom:14px}
+.section-title span{font-size:12px;color:#888}
+</style></head><body>
+
+<!-- ======================== ユニット ======================== -->
+<div class="section">
+<h2>ユニット — アイコン案</h2>
+<p class="note">モビルスーツ = 戦闘ユニット</p>
+<div class="options">
+
+<div class="opt">
+<h4>A: クロスヘア</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="2"/><path d="M10 2v4M10 14v4M2 10h4M14 10h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+<div class="label">照準/ターゲット</div>
+</div>
+
+<div class="opt">
+<h4>B: シールド</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><path d="M10 1L3 5v6c0 4 3.5 6.5 7 8 3.5-1.5 7-4 7-8V5z"/></svg>
+<div class="label">防御/機体</div>
+</div>
+
+<div class="opt">
+<h4>C: メカヘッド</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><path d="M5 7h10v7l-2 3H7L5 14z"/><path d="M7 4h6v3H7z"/><path d="M8 10h1.5v1H8zM10.5 10h1.5v1h-1.5z" fill="#1a1a2e"/></svg>
+<div class="label">ロボ頭部</div>
+</div>
+
+<div class="opt">
+<h4>D: ソード</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><path d="M10 1v12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/><path d="M6 13h8l-1 2H7z"/><path d="M9 15h2v3H9z"/></svg>
+<div class="label">剣/攻撃</div>
+</div>
+
+<div class="opt">
+<h4>E: ダイヤモンド</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><path d="M10 2L3 10l7 8 7-8z"/><path d="M3 10h14" stroke="#1a1a2e" stroke-width="1.2"/><path d="M10 2l-3 8 3 8 3-8z" fill="none" stroke="#1a1a2e" stroke-width=".8"/></svg>
+<div class="label">宝石/ユニット</div>
+</div>
+
+</div>
+</div>
+
+<!-- ======================== キャラ ======================== -->
+<div class="section">
+<h2>キャラ — アイコン案</h2>
+<p class="note">パイロット = キャラクター</p>
+<div class="options">
+
+<div class="opt">
+<h4>A: バスト</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><circle cx="10" cy="7" r="4"/><path d="M3 18c0-4 3.1-7 7-7s7 3 7 7"/></svg>
+<div class="label">人物</div>
+</div>
+
+<div class="opt">
+<h4>B: フェイス</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/><circle cx="7.5" cy="9" r="1" fill="#1a1a2e"/><circle cx="12.5" cy="9" r="1" fill="#1a1a2e"/><path d="M7.5 13a3 3 0 005 0" stroke="#1a1a2e" stroke-width="1" fill="none" stroke-linecap="round"/></svg>
+<div class="label">顔</div>
+</div>
+
+<div class="opt">
+<h4>C: スター</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><path d="M10 2l2.5 5 5.5.8-4 3.9.9 5.5L10 14.7l-4.9 2.5.9-5.5-4-3.9 5.5-.8z"/></svg>
+<div class="label">★キャラ</div>
+</div>
+
+<div class="opt">
+<h4>D: IDカード</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><rect x="2" y="3" width="16" height="14" rx="2"/><circle cx="7.5" cy="9" r="2.5" fill="#1a1a2e"/><path d="M12 8h4M12 11h3" stroke="#1a1a2e" stroke-width="1.5" stroke-linecap="round"/></svg>
+<div class="label">カード/ID</div>
+</div>
+
+</div>
+</div>
+
+<!-- ======================== サポーター ======================== -->
+<div class="section">
+<h2>サポーター — アイコン案</h2>
+<p class="note">サポートユニット</p>
+<div class="options">
+
+<div class="opt">
+<h4>A: ハート盾</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><path d="M10 1L3 5v6c0 4 3.5 6.5 7 8 3.5-1.5 7-4 7-8V5z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 7l-1.5 1.5L10 13l1.5-4.5z"/></svg>
+<div class="label">守護/サポート</div>
+</div>
+
+<div class="opt">
+<h4>B: ハンド</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><path d="M10 3v6M7 5v5M13 5v5M5 8v4M15 8v4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M4 12a6 6 0 0012 0" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+<div class="label">手/支援</div>
+</div>
+
+<div class="opt">
+<h4>C: 旗</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><path d="M5 2v16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M5 3h10l-3 4 3 4H5z"/></svg>
+<div class="label">フラッグ</div>
+</div>
+
+<div class="opt">
+<h4>D: リンク</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><circle cx="6" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="14" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 10h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+<div class="label">連携</div>
+</div>
+
+<div class="opt">
+<h4>E: 矢印UP</h4>
+<svg width="36" height="36" viewBox="0 0 20 20"><path d="M10 3l5 6h-3v8H8V9H5z"/></svg>
+<div class="label">バフ/強化</div>
+</div>
+
+</div>
+</div>
+
+<!-- ======================== 組み合わせプレビュー ======================== -->
+<h2 style="margin-top:10px">おすすめ組み合わせプレビュー</h2>
+<p class="note">タブバーでの見え方（既存アイコンと並べて比較）</p>
+
+<!-- 組み合わせ1: クロスヘア + バスト + 旗 -->
+<p style="font-size:11px;color:#e8961e;margin:8px 0 4px">組合せ①　クロスヘア + バスト + 旗</p>
+<div class="tab-bar-mock">
+<div class="t active">
+<svg width="18" height="18" viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="2"/><path d="M10 2v4M10 14v4M2 10h4M14 10h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+<span>ユニット</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><circle cx="10" cy="7" r="4"/><path d="M3 18c0-4 3.1-7 7-7s7 3 7 7"/></svg>
+<span>キャラ</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><path d="M5 2v16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M5 3h10l-3 4 3 4H5z"/></svg>
+<span>サポ</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg>
+<span>タグ検索</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><rect x="1" y="3" width="5" height="5" rx="1"/><rect x="7.5" y="3" width="5" height="5" rx="1"/><rect x="14" y="3" width="5" height="5" rx="1"/><rect x="4" y="11" width="5" height="5" rx="1"/><rect x="11" y="11" width="5" height="5" rx="1"/></svg>
+<span>チーム編成</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="4" width="4" height="14" rx="1"/><rect x="14" y="7" width="4" height="11" rx="1"/></svg>
+<span>ランキング</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><path d="M3 3h14v3H3zM3 8h11v3H3zM3 13h8v3H3z"/></svg>
+<span>ティア</span>
+</div>
+</div>
+
+<!-- 組み合わせ2: シールド + IDカード + 矢印UP -->
+<p style="font-size:11px;color:#e8961e;margin:16px 0 4px">組合せ②　シールド + IDカード + 矢印UP</p>
+<div class="tab-bar-mock">
+<div class="t active">
+<svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 1L3 5v6c0 4 3.5 6.5 7 8 3.5-1.5 7-4 7-8V5z"/></svg>
+<span>ユニット</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><rect x="2" y="3" width="16" height="14" rx="2"/><circle cx="7.5" cy="9" r="2.5" fill="#0f0f23"/><path d="M12 8h4M12 11h3" stroke="#0f0f23" stroke-width="1.5" stroke-linecap="round"/></svg>
+<span>キャラ</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><path d="M10 3l5 6h-3v8H8V9H5z"/></svg>
+<span>サポ</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg>
+<span>タグ検索</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><rect x="1" y="3" width="5" height="5" rx="1"/><rect x="7.5" y="3" width="5" height="5" rx="1"/><rect x="14" y="3" width="5" height="5" rx="1"/><rect x="4" y="11" width="5" height="5" rx="1"/><rect x="11" y="11" width="5" height="5" rx="1"/></svg>
+<span>チーム編成</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="4" width="4" height="14" rx="1"/><rect x="14" y="7" width="4" height="11" rx="1"/></svg>
+<span>ランキング</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><path d="M3 3h14v3H3zM3 8h11v3H3zM3 13h8v3H3z"/></svg>
+<span>ティア</span>
+</div>
+</div>
+
+<!-- 組み合わせ3: メカヘッド + バスト + リンク -->
+<p style="font-size:11px;color:#e8961e;margin:16px 0 4px">組合せ③　メカヘッド + バスト + リンク</p>
+<div class="tab-bar-mock">
+<div class="t active">
+<svg width="18" height="18" viewBox="0 0 20 20"><path d="M5 7h10v7l-2 3H7L5 14z"/><path d="M7 4h6v3H7z"/><path d="M8 10h1.5v1H8zM10.5 10h1.5v1h-1.5z" fill="#0f0f23"/></svg>
+<span>ユニット</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><circle cx="10" cy="7" r="4"/><path d="M3 18c0-4 3.1-7 7-7s7 3 7 7"/></svg>
+<span>キャラ</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><circle cx="6" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="14" cy="10" r="3.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 10h2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+<span>サポ</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg>
+<span>タグ検索</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><rect x="1" y="3" width="5" height="5" rx="1"/><rect x="7.5" y="3" width="5" height="5" rx="1"/><rect x="14" y="3" width="5" height="5" rx="1"/><rect x="4" y="11" width="5" height="5" rx="1"/><rect x="11" y="11" width="5" height="5" rx="1"/></svg>
+<span>チーム編成</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="4" width="4" height="14" rx="1"/><rect x="14" y="7" width="4" height="11" rx="1"/></svg>
+<span>ランキング</span>
+</div>
+<div class="t">
+<svg width="18" height="18" viewBox="0 0 20 20"><path d="M3 3h14v3H3zM3 8h11v3H3zM3 13h8v3H3z"/></svg>
+<span>ティア</span>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+body{width:1200px;height:630px;font-family:'Noto Sans JP',sans-serif;background:#0a0e17;color:#fff;overflow:hidden;position:relative}
+.bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse 500px 400px at 25% 45%, rgba(255,185,0,0.07) 0%, transparent 70%),
+  radial-gradient(ellipse 400px 300px at 80% 60%, rgba(100,60,255,0.04) 0%, transparent 70%),
+  linear-gradient(160deg, #0c1019 0%, #0a0e17 50%, #0d0f1a 100%)}
+/* Horizontal accent line at 60% */
+.hline{position:absolute;top:62%;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#ffd70020 20%,#ffd70030 50%,#ffd70020 80%,transparent)}
+.topline{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#ffd700 0%,#e8961e 40%,#d63031 70%,transparent 100%)}
+.content{position:relative;z-index:1;height:100%;display:grid;grid-template-columns:1fr 380px;gap:0}
+/* Left panel */
+.left{padding:45px 0 40px 55px;display:flex;flex-direction:column}
+.header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+.yt-icon{width:52px;height:52px;border-radius:50%;border:3px solid #e8961e;object-fit:cover}
+.fav-icon{width:42px;height:42px;border-radius:8px;image-rendering:pixelated}
+.title-area{display:flex;flex-direction:column}
+.title{font-size:42px;font-weight:900;background:linear-gradient(135deg,#ffd700,#ffed4a 40%,#e8961e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.15;letter-spacing:-0.5px}
+.brand{font-size:13px;color:#666;margin-top:2px;letter-spacing:1px}
+.tagline{font-size:15px;color:#7a7f90;margin-bottom:20px}
+/* Stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:18px}
+.stat{background:rgba(255,255,255,0.02);border:1px solid rgba(255,215,0,0.08);border-radius:8px;padding:10px 12px;text-align:center}
+.stat-num{font-size:32px;font-weight:900;color:#ffd700;line-height:1.1}
+.stat-label{font-size:11px;color:#5a5f70;font-weight:700;margin-top:1px}
+/* Features */
+.features{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:auto}
+.feat{padding:4px 10px;font-size:11px;font-weight:700;color:#888;border:1px solid #ffffff10;border-radius:3px;background:rgba(255,255,255,0.02)}
+/* URL */
+.url{font-size:24px;font-weight:900;color:#ffd700}
+/* Right panel: card previews */
+.right{padding:35px 40px 35px 30px;display:flex;flex-direction:column;justify-content:center;gap:8px;border-left:1px solid #ffffff06}
+.card-preview{background:#111318;border-radius:6px;overflow:hidden;border:1px solid #1a1d25}
+.card-header{height:4px}
+.card-header.ur{background:linear-gradient(90deg,#ffd700,#e8961e)}
+.card-header.ssr{background:linear-gradient(90deg,#c0c0c0,#94a3b8)}
+.card-header.sr{background:linear-gradient(90deg,#cd7f32,#b8860b)}
+.card-body{padding:10px 14px}
+.card-name{font-size:13px;font-weight:900;color:#e0e0e0;margin-bottom:4px}
+.card-series{font-size:10px;color:#555;margin-bottom:8px}
+.card-stats{display:flex;gap:12px}
+.card-stat{display:flex;flex-direction:column;align-items:center}
+.card-stat-val{font-size:14px;font-weight:900;color:#ccc}
+.card-stat-lbl{font-size:8px;color:#444;font-weight:700}
+.card-tags{display:flex;gap:4px;margin-top:6px}
+.card-tag{font-size:8px;padding:1px 5px;border-radius:2px;font-weight:700}
+.card-tag.atk{background:#d6303120;color:#ff6b6b}
+.card-tag.rarity{background:#ffd70020;color:#ffd700}
+.card-tag.type{background:#4a9eff20;color:#4a9eff}
+.right-label{font-size:10px;color:#3a3f50;font-weight:700;letter-spacing:2px;margin-bottom:2px}
+.bottomline{position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,#d63031 30%,#e8961e 60%,#ffd700)}
+</style></head><body>
+<div class="bg"></div>
+<div class="hline"></div>
+<div class="topline"></div>
+<div class="bottomline"></div>
+<div class="content">
+  <div class="left">
+    <div class="header">
+      <img class="yt-icon" src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj" alt="">
+      <img class="fav-icon" src="https://gget-db.com/favicon.svg" alt="">
+      <div class="title-area">
+        <div class="title">GジェネエターナルDB</div>
+        <div class="brand">by MH GAMES</div>
+      </div>
+    </div>
+    <div class="tagline">Gジェネ エターナル 全レアリティ対応 総合データベース</div>
+    <div class="stats">
+      <div class="stat"><div class="stat-num">917</div><div class="stat-label">ユニット</div></div>
+      <div class="stat"><div class="stat-num">481</div><div class="stat-label">キャラ</div></div>
+      <div class="stat"><div class="stat-num">70</div><div class="stat-label">サポーター</div></div>
+      <div class="stat"><div class="stat-num">338</div><div class="stat-label">アイテム</div></div>
+    </div>
+    <div class="features">
+      <div class="feat">ユニット検索</div><div class="feat">キャラ検索</div>
+      <div class="feat">サポーター</div><div class="feat">アイテム</div>
+      <div class="feat">ダメージ計算</div><div class="feat">ステータス比較</div>
+      <div class="feat">ランキング</div><div class="feat">チーム編成</div>
+    </div>
+    <div class="url">gget-db.com</div>
+  </div>
+  <div class="right">
+    <div class="right-label">DATABASE PREVIEW</div>
+    <div class="card-preview">
+      <div class="card-header ur"></div>
+      <div class="card-body">
+        <div class="card-name">シャア専用ザクII(THE ORIGIN版)(EX)</div>
+        <div class="card-series">機動戦士ガンダム THE ORIGIN</div>
+        <div class="card-stats">
+          <div class="card-stat"><div class="card-stat-val">16,740</div><div class="card-stat-lbl">攻撃力</div></div>
+          <div class="card-stat"><div class="card-stat-val">90,720</div><div class="card-stat-lbl">HP</div></div>
+          <div class="card-stat"><div class="card-stat-val">9,538</div><div class="card-stat-lbl">防御力</div></div>
+        </div>
+        <div class="card-tags"><span class="card-tag rarity">UR</span><span class="card-tag atk">攻撃</span><span class="card-tag type">限定</span></div>
+      </div>
+    </div>
+    <div class="card-preview">
+      <div class="card-header ur"></div>
+      <div class="card-body">
+        <div class="card-name">Zガンダム(EX)</div>
+        <div class="card-series">機動戦士Zガンダム</div>
+        <div class="card-stats">
+          <div class="card-stat"><div class="card-stat-val">15,774</div><div class="card-stat-lbl">攻撃力</div></div>
+          <div class="card-stat"><div class="card-stat-val">100,396</div><div class="card-stat-lbl">HP</div></div>
+          <div class="card-stat"><div class="card-stat-val">8,568</div><div class="card-stat-lbl">防御力</div></div>
+        </div>
+        <div class="card-tags"><span class="card-tag rarity">UR</span><span class="card-tag atk">攻撃</span></div>
+      </div>
+    </div>
+    <div class="card-preview">
+      <div class="card-header ssr"></div>
+      <div class="card-body">
+        <div class="card-name">ガンダム・キマリスヴィダール</div>
+        <div class="card-series">機動戦士ガンダム 鉄血のオルフェンズ</div>
+        <div class="card-stats">
+          <div class="card-stat"><div class="card-stat-val">12,340</div><div class="card-stat-lbl">攻撃力</div></div>
+          <div class="card-stat"><div class="card-stat-val">78,500</div><div class="card-stat-lbl">HP</div></div>
+          <div class="card-stat"><div class="card-stat-val">7,210</div><div class="card-stat-lbl">防御力</div></div>
+        </div>
+        <div class="card-tags"><span class="card-tag rarity">SSR</span><span class="card-tag atk">攻撃</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>
