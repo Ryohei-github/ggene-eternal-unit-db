@@ -86,6 +86,26 @@ export default function HomePage() {
         admaxTag.async = true;
         document.body.appendChild(admaxTag);
 
+        // 広告iframeがAdMaxによって動的に挿入された際に幅をコンテナに収める
+        function constrainAdIframes() {
+          document.querySelectorAll('.ad-slot iframe').forEach(iframe => {
+            iframe.style.maxWidth = '100%';
+            iframe.style.width = '100%';
+            iframe.style.height = 'auto';
+            // iframeのwidth属性も除去
+            iframe.removeAttribute('width');
+          });
+        }
+        // MutationObserverで広告スロット内のDOM変更を監視
+        document.querySelectorAll('.ad-slot').forEach(slot => {
+          const observer = new MutationObserver(() => constrainAdIframes());
+          observer.observe(slot, { childList: true, subtree: true });
+        });
+        // 初回実行 + 遅延実行（AdMaxの読み込み完了を待つ）
+        constrainAdIframes();
+        setTimeout(constrainAdIframes, 2000);
+        setTimeout(constrainAdIframes, 5000);
+
       } catch (err) {
         console.error('Failed to load SPA:', err);
       }
