@@ -536,6 +536,8 @@ a:hover{text-decoration:underline}
 .tierlist-filter{margin-bottom:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .tierlist-filter input{padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:.8em;background:var(--bg);color:var(--text);flex:1;max-width:280px}
 .tierlist-filter select{padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:.8em;background:var(--bg);color:var(--text)}
+.tier-filter-group{display:flex;align-items:center;gap:6px}
+.tier-filter-label{font-size:.72em;color:var(--card-text2);font-weight:600;white-space:nowrap}
 .tier-filter-btns{display:flex;gap:5px;flex-wrap:wrap}
 .tierlist-acquire-filter{margin-bottom:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .tier-acquire-btns{display:flex;gap:5px;flex-wrap:wrap}
@@ -1566,18 +1568,25 @@ a:hover{text-decoration:underline}
   <div class="tierlist-board" id="tierlistBoard"></div>
   <div class="tierlist-filter">
     <input type="text" id="tierPoolSearch" placeholder="名前で検索..." oninput="renderTierPool()">
-    <div class="tier-filter-btns" id="tierRarityBtns">
-      <button class="filter-btn" data-value="UR" onclick="this.classList.toggle('active');renderTierPool()">UR</button>
-      <button class="filter-btn" data-value="SSR" onclick="this.classList.toggle('active');renderTierPool()">SSR</button>
-      <button class="filter-btn" data-value="SR" onclick="this.classList.toggle('active');renderTierPool()">SR</button>
+    <div class="tier-filter-group">
+      <span class="tier-filter-label">レアリティ</span>
+      <div class="tier-filter-btns" id="tierRarityBtns">
+        <button class="filter-btn" data-value="UR" onclick="this.classList.toggle('active');renderTierPool()">UR</button>
+        <button class="filter-btn" data-value="SSR" onclick="this.classList.toggle('active');renderTierPool()">SSR</button>
+        <button class="filter-btn" data-value="SR" onclick="this.classList.toggle('active');renderTierPool()">SR</button>
+      </div>
     </div>
-    <div class="tier-filter-btns" id="tierTypeBtns">
-      <button class="filter-btn" data-value="攻撃" onclick="this.classList.toggle('active');renderTierPool()">攻撃</button>
-      <button class="filter-btn" data-value="耐久" onclick="this.classList.toggle('active');renderTierPool()">耐久</button>
-      <button class="filter-btn" data-value="支援" onclick="this.classList.toggle('active');renderTierPool()">支援</button>
+    <div class="tier-filter-group" id="tierTypeGroup">
+      <span class="tier-filter-label">タイプ</span>
+      <div class="tier-filter-btns" id="tierTypeBtns">
+        <button class="filter-btn" data-value="攻撃" onclick="this.classList.toggle('active');renderTierPool()">攻撃</button>
+        <button class="filter-btn" data-value="耐久" onclick="this.classList.toggle('active');renderTierPool()">耐久</button>
+        <button class="filter-btn" data-value="支援" onclick="this.classList.toggle('active');renderTierPool()">支援</button>
+      </div>
     </div>
   </div>
   <div class="tierlist-acquire-filter" id="tierAcquireFilter">
+    <span class="tier-filter-label">入手方法</span>
     <div class="tier-acquire-btns" id="tierAcquireBtns_unit">
       <button class="filter-btn" data-value="恒常ガシャ" onclick="this.classList.toggle('active');renderTierPool()">恒常ガシャ</button>
       <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');renderTierPool()">限定ガシャ</button>
@@ -6189,10 +6198,10 @@ function switchTierMode(mode) {
   const labels = {unit:'ユニット',chara:'キャラ',supporter:'サポーター'};
   document.getElementById('tierPoolLabel').textContent = '未配置' + labels[mode] + '（ドラッグして配置）';
   // Show/hide type filter for supporters (they don't have attack/defense/support types)
-  const typeBtns = document.getElementById('tierTypeBtns');
-  if (typeBtns) {
-    typeBtns.style.display = mode === 'supporter' ? 'none' : '';
-    if (mode === 'supporter') typeBtns.querySelectorAll('.filter-btn.active').forEach(b => b.classList.remove('active'));
+  const typeGroup = document.getElementById('tierTypeGroup');
+  if (typeGroup) {
+    typeGroup.style.display = mode === 'supporter' ? 'none' : '';
+    if (mode === 'supporter') typeGroup.querySelectorAll('.filter-btn.active').forEach(b => b.classList.remove('active'));
   }
   // Switch acquire filter button groups
   ['unit','chara','supporter'].forEach(m => {
