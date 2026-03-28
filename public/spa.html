@@ -2944,7 +2944,7 @@ function unitCardHTML(u) {
     if (isMap && w.ammo && w.ammo !== '-') label += ` [${w.ammo}回]`;
     return `<span class="weapon-tag${isEx?' ex':''}${isMap?' map':''}">${mapIcon}${label}</span>`;
   }).join('');
-  const topTags = (u.tags||[]).slice(0,4).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('');
+  const topTags = (u.tags||[]).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('');
 
   const iconHTML = u.image ? `<img class="card-icon" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'" loading="lazy" width="40" height="40">` : '';
 
@@ -3036,7 +3036,7 @@ function charaCardHTML(c) {
     ${statsHTML}
     ${skillTags ? `<div class="card-skills">${skillTags}</div>` : ''}
     ${abilCount ? `<div class="card-abilities-count">${t("アビリティ")}: ${abilCount}${currentLang==="en"?"":"個"}</div>` : ''}
-    <div class="card-tags">${(c.tags||[]).slice(0,4).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('')}</div>
+    <div class="card-tags">${(c.tags||[]).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('')}</div>
     <div class="compare-btn" onclick="event.stopPropagation();toggleCompare(${c.id},null,'chara')">
       ${_compareList.includes(c.id) && _compareMode==='chara' ?'✓ 比較中':'⚔ キャラ比較'}
     </div>
