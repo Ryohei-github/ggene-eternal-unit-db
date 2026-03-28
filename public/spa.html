@@ -536,6 +536,8 @@ a:hover{text-decoration:underline}
 .tierlist-filter{margin-bottom:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .tierlist-filter input{padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:.8em;background:var(--bg);color:var(--text);flex:1;max-width:280px}
 .tierlist-filter select{padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:.8em;background:var(--bg);color:var(--text)}
+.tierlist-acquire-filter{margin-bottom:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.tier-acquire-btns{display:flex;gap:5px;flex-wrap:wrap}
 @media(max-width:600px){
   .tierlist-container{padding:0 10px 30px}
   .tier-unit{width:36px;height:36px}
@@ -1575,6 +1577,26 @@ a:hover{text-decoration:underline}
       <option value="耐久">耐久</option>
       <option value="支援">支援</option>
     </select>
+  </div>
+  <div class="tierlist-acquire-filter" id="tierAcquireFilter">
+    <div class="tier-acquire-btns" id="tierAcquireBtns_unit">
+      <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');renderTierPool()">ガシャ</button>
+      <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');renderTierPool()">限定ガシャ</button>
+      <button class="filter-btn" data-value="開発" onclick="this.classList.toggle('active');renderTierPool()">開発</button>
+      <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');renderTierPool()">イベント</button>
+    </div>
+    <div class="tier-acquire-btns" id="tierAcquireBtns_chara" style="display:none">
+      <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');renderTierPool()">限定ガシャ</button>
+      <button class="filter-btn" data-value="スカウト" onclick="this.classList.toggle('active');renderTierPool()">スカウト</button>
+      <button class="filter-btn" data-value="配布" onclick="this.classList.toggle('active');renderTierPool()">配布</button>
+      <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');renderTierPool()">イベント</button>
+    </div>
+    <div class="tier-acquire-btns" id="tierAcquireBtns_supporter" style="display:none">
+      <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');renderTierPool()">ガシャ</button>
+      <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');renderTierPool()">限定ガシャ</button>
+      <button class="filter-btn" data-value="開発" onclick="this.classList.toggle('active');renderTierPool()">開発</button>
+      <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');renderTierPool()">イベント</button>
+    </div>
   </div>
   <div class="tierlist-pool-label" id="tierPoolLabel">未配置ユニット（ドラッグして配置）</div>
   <div class="tierlist-pool" id="tierlistPool"></div>
@@ -6168,6 +6190,15 @@ function switchTierMode(mode) {
   // Show/hide type filter for supporters (they don't have attack/defense/support types)
   const typeSelect = document.getElementById('tierPoolType');
   if (typeSelect) typeSelect.style.display = mode === 'supporter' ? 'none' : '';
+  // Switch acquire filter button groups
+  ['unit','chara','supporter'].forEach(m => {
+    const el = document.getElementById('tierAcquireBtns_' + m);
+    if (el) {
+      el.style.display = m === mode ? '' : 'none';
+      // Reset active state on hidden groups
+      if (m !== mode) el.querySelectorAll('.filter-btn.active').forEach(b => b.classList.remove('active'));
+    }
+  });
   renderTierList();
 }
 
@@ -6220,12 +6251,37 @@ function renderTierPool() {
   const q = (document.getElementById('tierPoolSearch')?.value||'').toLowerCase();
   const rarity = document.getElementById('tierPoolRarity')?.value||'';
   const unitType = document.getElementById('tierPoolType')?.value||'';
+  // Acquire filter
+  const acqBtnContainer = document.getElementById('tierAcquireBtns_' + _tierMode);
+  const activeAcq = acqBtnContainer ? [...acqBtnContainer.querySelectorAll('.filter-btn.active')].map(b => b.dataset.value) : [];
   const source = _tierSource();
   const pool = source.filter(x => {
     if (placed.has(x.id)) return false;
     if (q && !x.name.toLowerCase().includes(q)) return false;
     if (rarity && x.rarity !== rarity) return false;
     if (unitType && (x.type||x.chara_type||'') !== unitType) return false;
+    // Acquire / obtain filter
+    if (activeAcq.length > 0) {
+      if (_tierMode === 'supporter') {
+        // Supporter obtain mapping: ガシャ→恒常, 限定ガシャ→限定, 開発→Gショップ, イベント→イベント報酬
+        const supMatch = activeAcq.some(v => {
+          if (v === 'ガシャ') return x.obtain === '恒常';
+          if (v === '限定ガシャ') return x.obtain === '限定';
+          if (v === '開発') return x.obtain === 'Gショップ';
+          if (v === 'イベント') return x.obtain === 'イベント報酬';
+          return false;
+        });
+        if (!supMatch) return false;
+      } else {
+        // Unit / Chara acquire filter
+        const acqMatch = activeAcq.some(v => {
+          if (v === '限定ガシャ') return x.acquire === 'ガシャ' && x.limited;
+          if (v === 'ガシャ') return x.acquire === 'ガシャ';
+          return x.acquire === v;
+        });
+        if (!acqMatch) return false;
+      }
+    }
     return true;
   });
   const poolEl = document.getElementById('tierlistPool');
