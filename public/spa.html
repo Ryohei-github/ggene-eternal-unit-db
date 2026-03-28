@@ -1368,7 +1368,7 @@ a:hover{text-decoration:underline}
     <div class="filter-group" id="filterAcquireGroup">
       <label>入手方法</label>
       <div class="filter-btn-group" id="filterAcquireButtons">
-        <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');render()">ガシャ</button>
+        <button class="filter-btn" data-value="恒常ガシャ" onclick="this.classList.toggle('active');render()">恒常ガシャ</button>
         <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');render()">限定ガシャ</button>
         <button class="filter-btn" data-value="開発" onclick="this.classList.toggle('active');render()">開発</button>
         <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');render()">イベント</button>
@@ -1580,20 +1580,20 @@ a:hover{text-decoration:underline}
   </div>
   <div class="tierlist-acquire-filter" id="tierAcquireFilter">
     <div class="tier-acquire-btns" id="tierAcquireBtns_unit">
-      <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');renderTierPool()">ガシャ</button>
+      <button class="filter-btn" data-value="恒常ガシャ" onclick="this.classList.toggle('active');renderTierPool()">恒常ガシャ</button>
       <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');renderTierPool()">限定ガシャ</button>
       <button class="filter-btn" data-value="開発" onclick="this.classList.toggle('active');renderTierPool()">開発</button>
       <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');renderTierPool()">イベント</button>
     </div>
     <div class="tier-acquire-btns" id="tierAcquireBtns_chara" style="display:none">
-      <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');renderTierPool()">ガシャ</button>
+      <button class="filter-btn" data-value="恒常ガシャ" onclick="this.classList.toggle('active');renderTierPool()">恒常ガシャ</button>
       <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');renderTierPool()">限定ガシャ</button>
       <button class="filter-btn" data-value="スカウト" onclick="this.classList.toggle('active');renderTierPool()">スカウト</button>
       <button class="filter-btn" data-value="配布" onclick="this.classList.toggle('active');renderTierPool()">配布</button>
       <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');renderTierPool()">イベント</button>
     </div>
     <div class="tier-acquire-btns" id="tierAcquireBtns_supporter" style="display:none">
-      <button class="filter-btn" data-value="ガシャ" onclick="this.classList.toggle('active');renderTierPool()">ガシャ</button>
+      <button class="filter-btn" data-value="恒常ガシャ" onclick="this.classList.toggle('active');renderTierPool()">恒常ガシャ</button>
       <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');renderTierPool()">限定ガシャ</button>
       <button class="filter-btn" data-value="イベント" onclick="this.classList.toggle('active');renderTierPool()">イベント</button>
     </div>
@@ -2312,11 +2312,13 @@ function buildFilters() {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
     // 入手方法フィルタボタン生成
-    const acquireOrder = ['ガシャ','限定ガシャ','スカウト','イベント','配布'];
+    const acquireOrder = ['恒常ガシャ','限定ガシャ','スカウト','イベント','配布'];
     const acquireDist = {};
-    allCharas.forEach(c => { const a = c.acquire || ''; if (a) acquireDist[a] = (acquireDist[a]||0)+1; });
+    allCharas.forEach(c => { const a = c.acquire || ''; if (a && a !== 'ガシャ') acquireDist[a] = (acquireDist[a]||0)+1; });
     const limitedGachaCount = allCharas.filter(c => c.acquire === 'ガシャ' && c.limited).length;
+    const normalGachaCount = allCharas.filter(c => c.acquire === 'ガシャ' && !c.limited).length;
     if (limitedGachaCount > 0) acquireDist['限定ガシャ'] = limitedGachaCount;
+    if (normalGachaCount > 0) acquireDist['恒常ガシャ'] = normalGachaCount;
     const acqBtns = acquireOrder.filter(a => acquireDist[a]).map(a =>
       `<button class="filter-btn" data-value="${a}" style="font-size:.7em">${a}<span style="opacity:.5;margin-left:2px">(${acquireDist[a]})</span></button>`
     ).join('');
@@ -2593,7 +2595,7 @@ function getFiltered() {
       if (activeAcquire.length > 0) {
         const match = activeAcquire.some(v => {
           if (v === '限定ガシャ') return u.acquire === 'ガシャ' && u.limited;
-          if (v === 'ガシャ') return u.acquire === 'ガシャ';
+          if (v === '恒常ガシャ') return u.acquire === 'ガシャ' && !u.limited;
           return u.acquire === v;
         });
         if (!match) return false;
@@ -2641,7 +2643,7 @@ function getFiltered() {
       if (activeAcquireChara.length > 0) {
         const acqMatch = activeAcquireChara.some(v => {
           if (v === '限定ガシャ') return c.acquire === 'ガシャ' && c.limited;
-          if (v === 'ガシャ') return c.acquire === 'ガシャ';
+          if (v === '恒常ガシャ') return c.acquire === 'ガシャ' && !c.limited;
           return c.acquire === v;
         });
         if (!acqMatch) return false;
@@ -6263,11 +6265,10 @@ function renderTierPool() {
     // Acquire / obtain filter
     if (activeAcq.length > 0) {
       if (_tierMode === 'supporter') {
-        // Supporter obtain mapping: ガシャ→恒常, 限定ガシャ→限定, 開発→Gショップ, イベント→イベント報酬
+        // Supporter obtain mapping: 恒常ガシャ→恒常, 限定ガシャ→限定, イベント→イベント報酬
         const supMatch = activeAcq.some(v => {
-          if (v === 'ガシャ') return x.obtain === '恒常';
+          if (v === '恒常ガシャ') return x.obtain === '恒常';
           if (v === '限定ガシャ') return x.obtain === '限定';
-          if (v === '開発') return x.obtain === 'Gショップ';
           if (v === 'イベント') return x.obtain === 'イベント報酬';
           return false;
         });
@@ -6276,7 +6277,7 @@ function renderTierPool() {
         // Unit / Chara acquire filter
         const acqMatch = activeAcq.some(v => {
           if (v === '限定ガシャ') return x.acquire === 'ガシャ' && x.limited;
-          if (v === 'ガシャ') return x.acquire === 'ガシャ';
+          if (v === '恒常ガシャ') return x.acquire === 'ガシャ' && !x.limited;
           return x.acquire === v;
         });
         if (!acqMatch) return false;
