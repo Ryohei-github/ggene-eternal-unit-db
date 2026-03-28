@@ -536,6 +536,7 @@ a:hover{text-decoration:underline}
 .tierlist-filter{margin-bottom:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .tierlist-filter input{padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:.8em;background:var(--bg);color:var(--text);flex:1;max-width:280px}
 .tierlist-filter select{padding:6px 10px;border:1px solid var(--border);border-radius:6px;font-size:.8em;background:var(--bg);color:var(--text)}
+.tier-filter-btns{display:flex;gap:5px;flex-wrap:wrap}
 .tierlist-acquire-filter{margin-bottom:8px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
 .tier-acquire-btns{display:flex;gap:5px;flex-wrap:wrap}
 @media(max-width:600px){
@@ -1565,18 +1566,16 @@ a:hover{text-decoration:underline}
   <div class="tierlist-board" id="tierlistBoard"></div>
   <div class="tierlist-filter">
     <input type="text" id="tierPoolSearch" placeholder="名前で検索..." oninput="renderTierPool()">
-    <select id="tierPoolRarity" onchange="renderTierPool()">
-      <option value="">全レアリティ</option>
-      <option value="UR">UR</option>
-      <option value="SSR">SSR</option>
-      <option value="SR">SR</option>
-    </select>
-    <select id="tierPoolType" onchange="renderTierPool()">
-      <option value="">全タイプ</option>
-      <option value="攻撃">攻撃</option>
-      <option value="耐久">耐久</option>
-      <option value="支援">支援</option>
-    </select>
+    <div class="tier-filter-btns" id="tierRarityBtns">
+      <button class="filter-btn" data-value="UR" onclick="this.classList.toggle('active');renderTierPool()">UR</button>
+      <button class="filter-btn" data-value="SSR" onclick="this.classList.toggle('active');renderTierPool()">SSR</button>
+      <button class="filter-btn" data-value="SR" onclick="this.classList.toggle('active');renderTierPool()">SR</button>
+    </div>
+    <div class="tier-filter-btns" id="tierTypeBtns">
+      <button class="filter-btn" data-value="攻撃" onclick="this.classList.toggle('active');renderTierPool()">攻撃</button>
+      <button class="filter-btn" data-value="耐久" onclick="this.classList.toggle('active');renderTierPool()">耐久</button>
+      <button class="filter-btn" data-value="支援" onclick="this.classList.toggle('active');renderTierPool()">支援</button>
+    </div>
   </div>
   <div class="tierlist-acquire-filter" id="tierAcquireFilter">
     <div class="tier-acquire-btns" id="tierAcquireBtns_unit">
@@ -6190,8 +6189,11 @@ function switchTierMode(mode) {
   const labels = {unit:'ユニット',chara:'キャラ',supporter:'サポーター'};
   document.getElementById('tierPoolLabel').textContent = '未配置' + labels[mode] + '（ドラッグして配置）';
   // Show/hide type filter for supporters (they don't have attack/defense/support types)
-  const typeSelect = document.getElementById('tierPoolType');
-  if (typeSelect) typeSelect.style.display = mode === 'supporter' ? 'none' : '';
+  const typeBtns = document.getElementById('tierTypeBtns');
+  if (typeBtns) {
+    typeBtns.style.display = mode === 'supporter' ? 'none' : '';
+    if (mode === 'supporter') typeBtns.querySelectorAll('.filter-btn.active').forEach(b => b.classList.remove('active'));
+  }
   // Switch acquire filter button groups
   ['unit','chara','supporter'].forEach(m => {
     const el = document.getElementById('tierAcquireBtns_' + m);
@@ -6251,8 +6253,8 @@ function tierItemHTML(x) {
 function renderTierPool() {
   const placed = new Set(Object.values(_tierData).flat());
   const q = (document.getElementById('tierPoolSearch')?.value||'').toLowerCase();
-  const rarity = document.getElementById('tierPoolRarity')?.value||'';
-  const unitType = document.getElementById('tierPoolType')?.value||'';
+  const activeRarities = [...document.querySelectorAll('#tierRarityBtns .filter-btn.active')].map(b => b.dataset.value);
+  const activeTypes = [...document.querySelectorAll('#tierTypeBtns .filter-btn.active')].map(b => b.dataset.value);
   // Acquire filter
   const acqBtnContainer = document.getElementById('tierAcquireBtns_' + _tierMode);
   const activeAcq = acqBtnContainer ? [...acqBtnContainer.querySelectorAll('.filter-btn.active')].map(b => b.dataset.value) : [];
@@ -6260,8 +6262,8 @@ function renderTierPool() {
   const pool = source.filter(x => {
     if (placed.has(x.id)) return false;
     if (q && !x.name.toLowerCase().includes(q)) return false;
-    if (rarity && x.rarity !== rarity) return false;
-    if (unitType && (x.type||x.chara_type||'') !== unitType) return false;
+    if (activeRarities.length > 0 && !activeRarities.includes(x.rarity)) return false;
+    if (activeTypes.length > 0 && !activeTypes.includes(x.type||x.chara_type||'')) return false;
     // Acquire / obtain filter
     if (activeAcq.length > 0) {
       if (_tierMode === 'supporter') {
