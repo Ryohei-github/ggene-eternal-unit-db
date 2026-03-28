@@ -1571,9 +1571,12 @@ a:hover{text-decoration:underline}
     <div class="tier-filter-group">
       <span class="tier-filter-label">レアリティ</span>
       <div class="tier-filter-btns" id="tierRarityBtns">
+        <button class="filter-btn" data-value="ULT" onclick="this.classList.toggle('active');renderTierPool()">ULT</button>
         <button class="filter-btn" data-value="UR" onclick="this.classList.toggle('active');renderTierPool()">UR</button>
         <button class="filter-btn" data-value="SSR" onclick="this.classList.toggle('active');renderTierPool()">SSR</button>
         <button class="filter-btn" data-value="SR" onclick="this.classList.toggle('active');renderTierPool()">SR</button>
+        <button class="filter-btn" data-value="R" onclick="this.classList.toggle('active');renderTierPool()">R</button>
+        <button class="filter-btn" data-value="N" onclick="this.classList.toggle('active');renderTierPool()">N</button>
       </div>
     </div>
     <div class="tier-filter-group" id="tierTypeGroup">
