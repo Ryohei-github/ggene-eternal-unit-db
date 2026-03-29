@@ -2803,16 +2803,16 @@ const TYPE_ICON_MAP = {
 };
 // === Debuff Filter Config ===
 const DEBUFF_CATEGORIES = [
-  { key:'atkDown', label:'攻撃力↓', group:'ステータス低下', pattern:/攻撃力(\d+)(?:~(\d+))?[%％]減少/, rates:[15,20,25,30,35] },
-  { key:'defDown', label:'防御力↓', group:'ステータス低下', pattern:/防御力(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
-  { key:'mobDown', label:'機動力↓', group:'ステータス低下', pattern:/機動力(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30] },
-  { key:'hitDown', label:'命中率↓', group:'ステータス低下', pattern:/命中率(\d+)(?:~(\d+))?[%％]減少/, rates:[5,10,12,15,17] },
-  { key:'beamDmgUp', label:'ビーム被ダメ↑', group:'ビーム系', pattern:/ビーム武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[20,25,30,35] },
-  { key:'beamPwDown', label:'ビームPW↓', group:'ビーム系', pattern:/ビーム武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
-  { key:'physDmgUp', label:'物理被ダメ↑', group:'物理系', pattern:/物理武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[10,20,25,30,35] },
-  { key:'physPwDown', label:'物理PW↓', group:'物理系', pattern:/物理武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
-  { key:'specDmgUp', label:'特殊被ダメ↑', group:'特殊系', pattern:/特殊武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[20,25,30,35] },
-  { key:'specPwDown', label:'特殊PW↓', group:'特殊系', pattern:/特殊武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'atkDown', label:'攻撃力↓', group:'耐久型', pattern:/攻撃力(\d+)(?:~(\d+))?[%％]減少/, rates:[15,20,25,30,35] },
+  { key:'mobDown', label:'機動力↓', group:'耐久型', pattern:/機動力(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30] },
+  { key:'hitDown', label:'命中率↓', group:'耐久型', pattern:/命中率(\d+)(?:~(\d+))?[%％]減少/, rates:[5,10,12,15,17] },
+  { key:'beamPwDown', label:'ビームPW↓', group:'耐久型', pattern:/ビーム武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'physPwDown', label:'物理PW↓', group:'耐久型', pattern:/物理武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'specPwDown', label:'特殊PW↓', group:'耐久型', pattern:/特殊武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'defDown', label:'防御力↓', group:'支援型', pattern:/防御力(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'beamDmgUp', label:'ビーム被ダメ↑', group:'支援型', pattern:/ビーム武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[20,25,30,35] },
+  { key:'physDmgUp', label:'物理被ダメ↑', group:'支援型', pattern:/物理武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[10,20,25,30,35] },
+  { key:'specDmgUp', label:'特殊被ダメ↑', group:'支援型', pattern:/特殊武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[20,25,30,35] },
 ];
 const SPECIAL_EFFECTS = [
   { key:'absHit', label:'絶対命中', pattern:/絶対命中/ },
