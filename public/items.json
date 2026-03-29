@@ -4453,7 +4453,7 @@
       "effect": "HP8600上昇",
       "effect_type": "HP",
       "target": "制限なし",
-      "rarity": "SR",
+      "rarity": "SSR",
       "sources": [
         "ハーフアニバーサリー期間限定キャラリクエストで入手"
       ],
@@ -4462,7 +4462,7 @@
         "期間限定"
       ],
       "image_index": 27,
-      "image": "/unit-images/mh-games-item-14.png"
+      "image": "/unit-images/mh-games-item-23.png"
     },
     {
       "name": "ネイビーハロ【Half Anniv.】",
@@ -4470,7 +4470,7 @@
       "effect": "攻撃力860上昇",
       "effect_type": "攻撃力",
       "target": "制限なし",
-      "rarity": "SR",
+      "rarity": "SSR",
       "sources": [
         "ハーフアニバーサリー期間限定キャラリクエストで入手"
       ],
@@ -4479,7 +4479,7 @@
         "期間限定"
       ],
       "image_index": 28,
-      "image": "/unit-images/mh-games-item-10.png"
+      "image": "/unit-images/mh-games-item-24.png"
     },
     {
       "name": "スカイブルーハロ【Half Anniv.】",
@@ -4487,7 +4487,7 @@
       "effect": "防御力860上昇",
       "effect_type": "防御力",
       "target": "制限なし",
-      "rarity": "SR",
+      "rarity": "SSR",
       "sources": [
         "ハーフアニバーサリー期間限定キャラリクエストで入手"
       ],
@@ -4496,7 +4496,7 @@
         "期間限定"
       ],
       "image_index": 29,
-      "image": "/unit-images/mh-games-item-6.png"
+      "image": "/unit-images/mh-games-item-25.png"
     },
     {
       "name": "イエローハロ【Half Anniv.】",
@@ -4504,7 +4504,7 @@
       "effect": "機動力860上昇",
       "effect_type": "機動力",
       "target": "制限なし",
-      "rarity": "SR",
+      "rarity": "SSR",
       "sources": [
         "ハーフアニバーサリー期間限定キャラリクエストで入手"
       ],
@@ -4513,7 +4513,7 @@
         "期間限定"
       ],
       "image_index": 30,
-      "image": "/unit-images/mh-games-item-3.png"
+      "image": "/unit-images/mh-games-item-26.png"
     },
     {
       "name": "オレンジハロ【Half Anniv.】",
@@ -4521,7 +4521,7 @@
       "effect": "攻撃力946上昇、機動力86減少",
       "effect_type": "攻撃力↑機動力↓",
       "target": "制限なし",
-      "rarity": "SR",
+      "rarity": "SSR",
       "sources": [
         "ハーフアニバーサリー期間限定キャラリクエストで入手"
       ],
@@ -4530,7 +4530,7 @@
         "期間限定"
       ],
       "image_index": 31,
-      "image": "/unit-images/mh-games-item-10.png"
+      "image": "/unit-images/mh-games-item-27.png"
     },
     {
       "name": "グリーンハロ【Half Anniv.】",
@@ -4538,7 +4538,7 @@
       "effect": "防御力946上昇、機動力86減少",
       "effect_type": "防御力↑機動力↓",
       "target": "制限なし",
-      "rarity": "SR",
+      "rarity": "SSR",
       "sources": [
         "ハーフアニバーサリー期間限定キャラリクエストで入手"
       ],
@@ -4547,7 +4547,41 @@
         "期間限定"
       ],
       "image_index": 32,
-      "image": "/unit-images/mh-games-item-6.png"
+      "image": "/unit-images/mh-games-item-28.png"
+    },
+    {
+      "name": "シルバーハロ【1st Anniv.】",
+      "part_type": "ハロ",
+      "effect": "防御力860上昇、機動力86上昇",
+      "effect_type": "防御力↑機動力↑",
+      "target": "制限なし",
+      "rarity": "SSR",
+      "sources": [
+        "1stアニバーサリー期間限定キャラリクエストで入手"
+      ],
+      "source_categories": [
+        "リクエスト",
+        "期間限定"
+      ],
+      "image_index": 33,
+      "image": "/unit-images/mh-games-item-29.png"
+    },
+    {
+      "name": "ゴールドハロ【1st Anniv.】",
+      "part_type": "ハロ",
+      "effect": "攻撃力860上昇、機動力86上昇",
+      "effect_type": "攻撃力↑機動力↑",
+      "target": "制限なし",
+      "rarity": "SSR",
+      "sources": [
+        "1stアニバーサリー期間限定キャラリクエストで入手"
+      ],
+      "source_categories": [
+        "リクエスト",
+        "期間限定"
+      ],
+      "image_index": 34,
+      "image": "/unit-images/mh-games-item-30.png"
     }
   ],
   "enhancement_materials": [],
