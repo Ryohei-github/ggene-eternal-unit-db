@@ -39,43 +39,24 @@ console.log(`[generate-ogp] Units=${unitCount}, Characters=${charaCount}, Suppor
 const orbitronPath = join(ROOT, 'node_modules/@fontsource/orbitron/files/orbitron-latin-700-normal.woff');
 const orbitronBold = readFileSync(orbitronPath);
 
-// 日本語フォント: システムフォント or Google Fonts からフェッチ
-async function loadJapaneseFont() {
-  // 1. DroidSansFallbackFull (Ubuntu/Vercel build環境に存在)
-  const droidPath = '/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf';
-  if (existsSync(droidPath)) {
-    console.log('[generate-ogp] Using DroidSansFallbackFull.ttf');
-    return readFileSync(droidPath);
-  }
-  // 2. macOS: ヒラギノ角ゴシック
-  const hiraPath = '/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc';
-  if (existsSync(hiraPath)) {
-    console.log('[generate-ogp] Using Hiragino Kaku Gothic W6');
-    return readFileSync(hiraPath);
-  }
-  // 3. Google Fonts からフェッチ (Vercel build等ネットワーク接続時)
-  // ※ Variable Font は satori 非対応のため Static 版を使用
-  const fontUrls = [
-    'https://raw.githubusercontent.com/google/fonts/main/ofl/notosansjp/static/NotoSansJP-Bold.ttf',
-    'https://github.com/google/fonts/raw/main/ofl/notosansjp/static/NotoSansJP-Bold.ttf',
+// 日本語フォント: リポジトリ同梱 → システムフォント fallback
+function loadJapaneseFont() {
+  const candidates = [
+    join(ROOT, 'fonts/NotoSansJP-Bold.otf'),        // リポジトリ同梱 (推奨)
+    join(ROOT, 'fonts/NotoSansJP-Bold.ttf'),
+    '/usr/share/fonts/truetype/droid/DroidSansFallbackFull.ttf', // Ubuntu
   ];
-  for (const url of fontUrls) {
-    try {
-      console.log(`[generate-ogp] Fetching Noto Sans JP from ${new URL(url).hostname}...`);
-      const res = await fetch(url, { redirect: 'follow' });
-      if (res.ok) {
-        const buf = Buffer.from(await res.arrayBuffer());
-        if (buf.length > 100000) return buf; // sanity check
-      }
-    } catch (e) {
-      console.warn(`[generate-ogp] Font fetch failed: ${e.message}`);
+  for (const p of candidates) {
+    if (existsSync(p)) {
+      console.log(`[generate-ogp] Using font: ${p}`);
+      return readFileSync(p);
     }
   }
-  throw new Error('No Japanese font available');
+  throw new Error('No Japanese font available. Place NotoSansJP-Bold.otf in fonts/');
 }
 
 async function main() {
-  const jpFont = await loadJapaneseFont();
+  const jpFont = loadJapaneseFont();
 
   const fonts = [
     { name: 'Orbitron', data: orbitronBold, weight: 700, style: 'normal' },
