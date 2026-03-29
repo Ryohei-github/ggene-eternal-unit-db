@@ -54,9 +54,10 @@ async function loadJapaneseFont() {
     return readFileSync(hiraPath);
   }
   // 3. Google Fonts からフェッチ (Vercel build等ネットワーク接続時)
+  // ※ Variable Font は satori 非対応のため Static 版を使用
   const fontUrls = [
-    'https://raw.githubusercontent.com/google/fonts/main/ofl/notosansjp/NotoSansJP%5Bwght%5D.ttf',
-    'https://github.com/google/fonts/raw/main/ofl/notosansjp/NotoSansJP%5Bwght%5D.ttf',
+    'https://raw.githubusercontent.com/google/fonts/main/ofl/notosansjp/static/NotoSansJP-Bold.ttf',
+    'https://github.com/google/fonts/raw/main/ofl/notosansjp/static/NotoSansJP-Bold.ttf',
   ];
   for (const url of fontUrls) {
     try {
