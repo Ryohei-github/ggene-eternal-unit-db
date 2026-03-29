@@ -4392,5 +4392,31 @@
     "target": "制限なし",
     "obtain": "・ハーフアニバーサリー期間限定キャラリクエストで入手",
     "image": "/unit-images/mh-games-item-7.png"
+  },
+  {
+    "id": 339,
+    "name": "シルバーハロ【1st Anniv.】",
+    "rarity": "SSR",
+    "genre": "防御力",
+    "obtain_type": "リクエスト",
+    "series": "制限なし",
+    "tag": "",
+    "effect": "自身の防御力が860上昇自身の機動力が86上昇",
+    "target": "制限なし",
+    "obtain": "・1stアニバーサリー期間限定キャラリクエストで入手",
+    "image": ""
+  },
+  {
+    "id": 340,
+    "name": "ゴールドハロ【1st Anniv.】",
+    "rarity": "SSR",
+    "genre": "攻撃力",
+    "obtain_type": "リクエスト",
+    "series": "制限なし",
+    "tag": "",
+    "effect": "自身の攻撃力が860上昇自身の機動力が86上昇",
+    "target": "制限なし",
+    "obtain": "・1stアニバーサリー期間限定キャラリクエストで入手",
+    "image": ""
   }
 ]
