@@ -224,7 +224,8 @@ a:hover{text-decoration:underline}
 .filter-group select:focus{border-color:var(--accent)}
 .filter-btn-group{display:flex;flex-wrap:wrap;gap:4px}
 .debuff-btn-group{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
-.debuff-btn-group+.debuff-btn-group{margin-left:2px;padding-left:8px;border-left:1px solid var(--border)}
+.debuff-categories-wrap{flex-direction:column;gap:4px}
+.debuff-btn-group+.debuff-btn-group{margin-left:0;padding-left:0;border-left:none}
 .debuff-group-label{font-size:.65em;color:var(--text3,#999);font-weight:600;white-space:nowrap;margin-right:1px}
 .filter-btn{padding:4px 10px;background:#fff;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;font-size:.78em;transition:all .15s;white-space:nowrap;display:inline-flex;align-items:center;gap:3px}
 .filter-btn:hover{border-color:var(--accent);color:var(--text)}
@@ -883,7 +884,7 @@ a:hover{text-decoration:underline}
   .filter-group-wide{flex-basis:auto}
   .debuff-filter-row{flex-wrap:wrap;gap:2px}
   .debuff-filter-row .filter-btn{font-size:.52em;padding:1px 3px}
-  .debuff-btn-group+.debuff-btn-group{margin-left:0;padding-left:4px;border-left-width:1px}
+  .debuff-btn-group+.debuff-btn-group{margin-left:0;padding-left:0}
   .debuff-group-label{font-size:.5em}
   .debuff-rate-wrap label{font-size:.55em}
   .debuff-rate-wrap select{font-size:.6em;padding:2px 4px}
@@ -1108,7 +1109,7 @@ a:hover{text-decoration:underline}
   .filter-btn{padding:2px 5px;font-size:.55em}
   .filter-group select{font-size:.68em;padding:3px 6px}
   .debuff-filter-row .filter-btn{font-size:.52em;padding:1px 4px}
-  .debuff-btn-group+.debuff-btn-group{margin-left:0;padding-left:4px}
+  .debuff-btn-group+.debuff-btn-group{margin-left:0;padding-left:0}
   .debuff-group-label{font-size:.5em}
   .sort-btns button{font-size:.55em;padding:2px 5px}
   .stats-bar{gap:3px}
@@ -1430,7 +1431,7 @@ a:hover{text-decoration:underline}
     <div class="filter-group filter-group-wide" id="filterDebuffGroup">
       <label>デバフ効果</label>
       <div class="debuff-filter-row" id="debuffFilterRow">
-        <div class="filter-btn-group" id="debuffCategoryButtons"></div>
+        <div class="filter-btn-group debuff-categories-wrap" id="debuffCategoryButtons"></div>
         <div class="debuff-rate-wrap" id="debuffRateWrap" style="display:none">
           <label>最低効果率</label>
           <select id="debuffMinRate"><option value="">すべて</option></select>
