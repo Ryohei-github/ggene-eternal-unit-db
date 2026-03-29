@@ -631,6 +631,11 @@ a:hover{text-decoration:underline}
 .op-picker-name{font-size:.82em;font-weight:600;color:var(--card-text)}
 .op-picker-effect{font-size:.7em;color:var(--card-text2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .card-tags{display:flex;flex-wrap:wrap;gap:3px}
+.card-debuff-weapons{margin-top:5px;padding:5px 6px;background:rgba(230,57,80,.07);border:1px solid rgba(230,57,80,.2);border-radius:4px;display:flex;flex-direction:column;gap:3px}
+.debuff-weapon-row{display:flex;align-items:center;justify-content:space-between;gap:6px;font-size:.62em;line-height:1.3}
+.debuff-weapon-name{color:#e0ddd6;font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.debuff-weapon-name.is-ex{color:#f59e0b}
+.debuff-weapon-meta{color:#e63950;font-weight:700;white-space:nowrap;flex-shrink:0}
 .tag{padding:1px 5px;background:rgba(255,255,255,.08);border-radius:3px;font-size:.6em;color:var(--card-text2)}
 .leader-tag-clickable:hover{filter:brightness(1.3);box-shadow:0 0 6px rgba(232,150,30,.4)}
 .paired-chara-section{margin-top:4px}
@@ -2944,6 +2949,28 @@ function unitCardHTML(u) {
     if (isMap && w.ammo && w.ammo !== '-') label += ` [${w.ammo}回]`;
     return `<span class="weapon-tag${isEx?' ex':''}${isMap?' map':''}">${mapIcon}${label}</span>`;
   }).join('');
+  // デバフフィルター中のみ：該当武装を率・レンジ・EX可否付きで表示
+  const debuffWeaponBlock = (() => {
+    if (!activeDebuffKey) return '';
+    const cat = DEBUFF_CATEGORIES.find(d => d.key === activeDebuffKey);
+    if (!cat) return '';
+    const allW = (u.normal_weapons||[]).concat(u.transformed_weapons||[]);
+    const matched = allW.filter(w => cat.pattern.test(w.effect||''));
+    if (!matched.length) return '';
+    const rows = matched.map(w => {
+      const m = (w.effect||'').match(cat.pattern);
+      const rate = m ? (m[1] + (m[2] ? '~' + m[2] : '') + '%') : '';
+      const isEx = (w.name||'').endsWith(' EX');
+      const rangeVal = w.range && w.range !== '-' ? w.range : '';
+      const metaParts = [rate, rangeVal ? 'レンジ' + rangeVal : '', isEx ? 'EX' : ''].filter(Boolean);
+      return `<div class="debuff-weapon-row">
+        <span class="debuff-weapon-name${isEx ? ' is-ex' : ''}">${isEx ? '⚡ ' : ''}${w.name||''}</span>
+        <span class="debuff-weapon-meta">${metaParts.join(' / ')}</span>
+      </div>`;
+    }).join('');
+    return `<div class="card-debuff-weapons">${rows}</div>`;
+  })();
+
   const topTags = (u.tags||[]).map(t => `<span class="tag clickable-tag" onclick="event.stopPropagation();filterByTag('${t.replace(/'/g,"\\'")}')">${t}</span>`).join('');
 
   const iconHTML = u.image ? `<img class="card-icon" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'" loading="lazy" width="40" height="40">` : '';
@@ -2982,6 +3009,7 @@ function unitCardHTML(u) {
       <span class="terrain-item">${currentLang==="en"?"Su":"水上"}${terrainIcon(ter['水上'])}</span>
       <span class="terrain-item">${currentLang==="en"?"Uw":"水中"}${terrainIcon(ter['水中'])}</span>
     </div>
+    ${debuffWeaponBlock}
     <div class="card-tags">${topTags}</div>
     <div class="compare-btn" onclick="event.stopPropagation();toggleCompare(${u.id})">
       ${_compareList.includes(u.id)?'✓ 比較中':'⚔ ユニット比較'}
