@@ -4,12 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "generate-ogp": "node scripts/generate-ogp.mjs",
+    "build": "node scripts/generate-ogp.mjs && next build",
     "start": "next start"
   },
   "dependencies": {
+    "@fontsource/orbitron": "^5.2.8",
+    "@resvg/resvg-js": "^2.6.2",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "satori": "^0.26.0"
   }
 }
