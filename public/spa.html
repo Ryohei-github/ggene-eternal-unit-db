@@ -223,6 +223,9 @@ a:hover{text-decoration:underline}
 .filter-group select{padding:6px 10px;background:#fff;border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.85em;outline:none}
 .filter-group select:focus{border-color:var(--accent)}
 .filter-btn-group{display:flex;flex-wrap:wrap;gap:4px}
+.debuff-btn-group{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.debuff-btn-group+.debuff-btn-group{margin-left:2px;padding-left:8px;border-left:1px solid var(--border)}
+.debuff-group-label{font-size:.65em;color:var(--text3,#999);font-weight:600;white-space:nowrap;margin-right:1px}
 .filter-btn{padding:4px 10px;background:#fff;border:1px solid var(--border);border-radius:6px;color:var(--text2);cursor:pointer;font-size:.78em;transition:all .15s;white-space:nowrap;display:inline-flex;align-items:center;gap:3px}
 .filter-btn:hover{border-color:var(--accent);color:var(--text)}
 .filter-btn.active{background:rgba(232,150,30,.15);border-color:var(--accent);color:var(--accent);font-weight:600}
@@ -880,6 +883,8 @@ a:hover{text-decoration:underline}
   .filter-group-wide{flex-basis:auto}
   .debuff-filter-row{flex-wrap:wrap;gap:2px}
   .debuff-filter-row .filter-btn{font-size:.52em;padding:1px 3px}
+  .debuff-btn-group+.debuff-btn-group{margin-left:0;padding-left:4px;border-left-width:1px}
+  .debuff-group-label{font-size:.5em}
   .debuff-rate-wrap label{font-size:.55em}
   .debuff-rate-wrap select{font-size:.6em;padding:2px 4px}
   .debuff-divider{height:12px;margin:0 2px!important}
@@ -1103,6 +1108,8 @@ a:hover{text-decoration:underline}
   .filter-btn{padding:2px 5px;font-size:.55em}
   .filter-group select{font-size:.68em;padding:3px 6px}
   .debuff-filter-row .filter-btn{font-size:.52em;padding:1px 4px}
+  .debuff-btn-group+.debuff-btn-group{margin-left:0;padding-left:4px}
+  .debuff-group-label{font-size:.5em}
   .sort-btns button{font-size:.55em;padding:2px 5px}
   .stats-bar{gap:3px}
 
@@ -2207,11 +2214,19 @@ function buildFilters() {
     });
     fillSelect('filterSeries', [...series]);
     fillSelect('filterTag', [...tags].sort((a,b)=>a.localeCompare(b,'ja')));
-    // Debuff category buttons
-    const debuffBtns = DEBUFF_CATEGORIES.map(d =>
-      `<button class="filter-btn" data-debuff="${d.key}">${d.label}</button>`
-    ).join('');
-    document.getElementById('debuffCategoryButtons').innerHTML = debuffBtns;
+    // Debuff category buttons (grouped)
+    let debuffBtnsHTML = '';
+    let lastGroup = '';
+    DEBUFF_CATEGORIES.forEach(d => {
+      if (d.group !== lastGroup) {
+        if (lastGroup) debuffBtnsHTML += '</div>';
+        debuffBtnsHTML += `<div class="debuff-btn-group"><span class="debuff-group-label">${d.group}</span>`;
+        lastGroup = d.group;
+      }
+      debuffBtnsHTML += `<button class="filter-btn" data-debuff="${d.key}">${d.label}</button>`;
+    });
+    if (lastGroup) debuffBtnsHTML += '</div>';
+    document.getElementById('debuffCategoryButtons').innerHTML = debuffBtnsHTML;
     document.querySelectorAll('#debuffCategoryButtons .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         const key = btn.dataset.debuff;
@@ -2788,16 +2803,16 @@ const TYPE_ICON_MAP = {
 };
 // === Debuff Filter Config ===
 const DEBUFF_CATEGORIES = [
-  { key:'atkDown', label:'攻撃力↓', pattern:/攻撃力(\d+)(?:~(\d+))?[%％]減少/, rates:[15,20,25,30,35] },
-  { key:'defDown', label:'防御力↓', pattern:/防御力(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
-  { key:'mobDown', label:'機動力↓', pattern:/機動力(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30] },
-  { key:'hitDown', label:'命中率↓', pattern:/命中率(\d+)(?:~(\d+))?[%％]減少/, rates:[5,10,12,15,17] },
-  { key:'beamDmgUp', label:'ビーム被ダメ↑', pattern:/ビーム武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[20,25,30,35] },
-  { key:'physDmgUp', label:'物理被ダメ↑', pattern:/物理武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[10,20,25,30,35] },
-  { key:'specDmgUp', label:'特殊被ダメ↑', pattern:/特殊武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[20,25,30,35] },
-  { key:'beamPwDown', label:'ビームPW↓', pattern:/ビーム武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
-  { key:'physPwDown', label:'物理PW↓', pattern:/物理武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
-  { key:'specPwDown', label:'特殊PW↓', pattern:/特殊武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'atkDown', label:'攻撃力↓', group:'ステータス低下', pattern:/攻撃力(\d+)(?:~(\d+))?[%％]減少/, rates:[15,20,25,30,35] },
+  { key:'defDown', label:'防御力↓', group:'ステータス低下', pattern:/防御力(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'mobDown', label:'機動力↓', group:'ステータス低下', pattern:/機動力(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30] },
+  { key:'hitDown', label:'命中率↓', group:'ステータス低下', pattern:/命中率(\d+)(?:~(\d+))?[%％]減少/, rates:[5,10,12,15,17] },
+  { key:'beamDmgUp', label:'ビーム被ダメ↑', group:'ビーム系', pattern:/ビーム武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[20,25,30,35] },
+  { key:'beamPwDown', label:'ビームPW↓', group:'ビーム系', pattern:/ビーム武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'physDmgUp', label:'物理被ダメ↑', group:'物理系', pattern:/物理武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[10,20,25,30,35] },
+  { key:'physPwDown', label:'物理PW↓', group:'物理系', pattern:/物理武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
+  { key:'specDmgUp', label:'特殊被ダメ↑', group:'特殊系', pattern:/特殊武装による被ダメ[ーージ]*(\d+)(?:~(\d+))?[%％]上昇/, rates:[20,25,30,35] },
+  { key:'specPwDown', label:'特殊PW↓', group:'特殊系', pattern:/特殊武装POWER(\d+)(?:~(\d+))?[%％]減少/, rates:[20,25,30,35] },
 ];
 const SPECIAL_EFFECTS = [
   { key:'absHit', label:'絶対命中', pattern:/絶対命中/ },
