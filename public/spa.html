@@ -2556,7 +2556,7 @@ function getActiveRarities() {
 
 // アビリティ合計値カウンター（フィルタボタン生成 & getFiltered 両方で使用）
 // SP化は通常アビリティを置き換えるため、通常/SP化を別々にカウントしてmaxを返す
-const _abilCount = (abilArr, re) => { let t=0; abilArr.forEach(a=>{const d=a.desc||'';if(re(d))t++;}); return t; };
+const _abilCount = (abilArr, re) => { let cnt=0; abilArr.forEach(a=>{const d=a.desc||'';if(re(d))cnt++;}); return cnt; };
 const abilCounters = {
   atk: (norm, sp) => Math.max(
     _abilCount(norm, d => /支援攻撃.*\+1|支援攻撃.*＋1|支援反撃.*\+1/.test(d)),
@@ -3117,9 +3117,9 @@ function supportSkillIcon(type, size = 22) {
     <rect x="17" y="10" width="6" height="3" rx="1" fill="#eab308"/>
     <text x="20" y="24" text-anchor="middle" font-size="9" font-weight="700" fill="#eab308" font-family="sans-serif">EN</text>
   </svg>`;
-  const t = (type||'').trim();
-  if (t.includes('HP') && t.includes('EN')) return hpSvg + enSvg;
-  if (t.includes('EN')) return enSvg;
+  const tp = (type||'').trim();
+  if (tp.includes('HP') && tp.includes('EN')) return hpSvg + enSvg;
+  if (tp.includes('EN')) return enSvg;
   return hpSvg;
 }
 
@@ -3217,10 +3217,10 @@ function supporterCardHTML(s) {
 function unitTableHTML(items) {
   const rows = items.map(u => {
     const s = u.normal?.stats||{};
-    const t = u.normal?.terrain||{};
+    const ter = u.normal?.terrain||{};
     const mapW = (u.normal_weapons||[]).filter(w=>w.range==='MAP');
     const mapLabel = mapW.length ? mapW.map(w=>`<img src="${WEAPON_MAP_ICON}" style="width:14px;height:14px;vertical-align:middle;margin-right:2px">`+w.name+(w.ammo&&w.ammo!=='-'?` [${w.ammo}回]`:'')).join(', ') : '-';
-    const terrStr = ['宇宙','空中','地上','水上','水中'].map(k=>t[k]==='◯'?'◯':t[k]==='△'?'△':'-').join('/');
+    const terrStr = ['宇宙','空中','地上','水上','水中'].map(k=>ter[k]==='◯'?'◯':ter[k]==='△'?'△':'-').join('/');
     const iconTd = u.image ? `<img class="cell-icon" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'" loading="lazy">` : '';
     return `<tr onclick="showUnitDetail(${u.id})">
       <td class="cell-name">${iconTd}${u.name}</td>
@@ -3369,7 +3369,7 @@ function renderUnitDetail(u, form) {
   const isTransform = form === 'transform' && u.transformed;
   const formData = isTransform ? u.transformed : (u.normal || {});
   const s = formData.stats || {};
-  const t = formData.terrain || {};
+  const terr = formData.terrain || {};
   const allWeapons = isTransform ? (u.transformed_weapons || []) : (u.normal_weapons || []);
   // SSP武装はSSPモード時のみ表示、非SSPモード時は非SSP武装のみ表示
   const weapons = allWeapons.filter(w => {
@@ -3515,11 +3515,11 @@ function renderUnitDetail(u, form) {
         <div class="detail-section">
           <h3>地形適性</h3>
           <div class="terrain-grid">
-            <span>宇宙${terrainIcon(t['宇宙'])}</span>
-            <span>空中${terrainIcon(t['空中'])}</span>
-            <span>地上${terrainIcon(t['地上'])}</span>
-            <span>水上${terrainIcon(t['水上'])}</span>
-            <span>水中${terrainIcon(t['水中'])}</span>
+            <span>宇宙${terrainIcon(terr['宇宙'])}</span>
+            <span>空中${terrainIcon(terr['空中'])}</span>
+            <span>地上${terrainIcon(terr['地上'])}</span>
+            <span>水上${terrainIcon(terr['水上'])}</span>
+            <span>水中${terrainIcon(terr['水中'])}</span>
           </div>
         </div>
       </div>
@@ -4125,7 +4125,7 @@ function renderTeamSlots(containerId, from, to) {
 function renderSlotUnit(u, slotIdx) {
   const slot = teamSlots[slotIdx];
   const s = u.normal?.stats || {};
-  const t = u.normal?.terrain || {};
+  const ter = u.normal?.terrain || {};
   const weaponList = (u.normal_weapons||[]).slice(0, 6);
   const weapons = weaponList.map((w, wi) => {
     const isMap = w.range === 'MAP';
@@ -4141,7 +4141,7 @@ function renderSlotUnit(u, slotIdx) {
     </div>`;
   }).join('');
   const iconHTML = u.image ? `<img class="slot-img" src="${u.image}" alt="${u.name}" onerror="this.style.display='none'">` : '';
-  const terrStr = ['宇宙','空中','地上','水上','水中'].map(k => `${k.charAt(0)}${t[k]==='◯'?'<span style="color:#44cc44">◯</span>':t[k]==='△'?'<span style="color:#ffaa00">△</span>':'<span style="color:#555">-</span>'}`).join(' ');
+  const terrStr = ['宇宙','空中','地上','水上','水中'].map(k => `${k.charAt(0)}${ter[k]==='◯'?'<span style="color:#44cc44">◯</span>':ter[k]==='△'?'<span style="color:#ffaa00">△</span>':'<span style="color:#555">-</span>'}`).join(' ');
   const lsMatch = checkLeaderSkillMatch(u);
   const buffBadge = lsMatch ? `<div class="ls-buff-indicator" title="${currentLang==="en"?"Leader Skill Applied":"リーダースキル適用"}: ${lsMatch.buff}">
     <svg width="14" height="14" viewBox="0 0 20 20" fill="none"><path d="M10 2L6 10h3v8l5-10h-3z" fill="#22c55e" stroke="#16a34a" stroke-width="1"/></svg>
@@ -4284,8 +4284,8 @@ function renderTeamStats() {
       const u = allUnits.find(x => x.id === slot.unitId);
       if (u) {
         filledCount++;
-        const t = u.type || '不明';
-        typeCounts[t] = (typeCounts[t] || 0) + 1;
+        const uType = u.type || '不明';
+        typeCounts[uType] = (typeCounts[uType] || 0) + 1;
       }
     }
   });
