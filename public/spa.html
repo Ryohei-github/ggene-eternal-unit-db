@@ -2549,6 +2549,9 @@ function sortSeries(arr) {
 
 function fillSelect(id, opts) {
   const sel = document.getElementById(id);
+  const curVal = sel.value;
+  // Reset to only the "all" option, then repopulate
+  sel.innerHTML = `<option value="">${t('すべて')}</option>`;
   const sorted = (id === 'filterSeries' || id === 'filterTarget') ? sortSeries(opts) : opts;
   sorted.forEach(o => {
     const op = document.createElement('option');
@@ -2556,6 +2559,8 @@ function fillSelect(id, opts) {
     op.textContent = tData(o);
     sel.appendChild(op);
   });
+  // Restore previous selection if still available
+  if (curVal && [...sel.options].some(o => o.value === curVal)) sel.value = curVal;
   // Sync searchable-select if exists
   const ssId = 'ss' + id.charAt(0).toUpperCase() + id.slice(1);
   const ssEl = document.getElementById(ssId);
