@@ -238,6 +238,20 @@ a:hover{text-decoration:underline}
 .filter-btn-r.active{background:rgba(205,133,63,.15);border-color:#cd853f;color:#cd853f}
 .filter-btn-n.active{background:rgba(119,119,119,.15);border-color:#999;color:#999}
 .filter-group-wide{flex-basis:100%}
+.searchable-select{position:relative;min-width:140px;flex:1;max-width:320px}
+.searchable-select .ss-display{padding:6px 28px 6px 10px;background:#fff;border:1px solid var(--border);border-radius:6px;color:var(--text);font-size:.85em;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;user-select:none;position:relative}
+.searchable-select .ss-display::after{content:'▾';position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:.7em;color:var(--text2);pointer-events:none}
+.searchable-select .ss-display:hover{border-color:var(--accent)}
+.searchable-select.open .ss-display{border-color:var(--accent);border-radius:6px 6px 0 0}
+.searchable-select .ss-dropdown{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border:1px solid var(--accent);border-top:none;border-radius:0 0 6px 6px;z-index:120;max-height:260px;overflow:hidden;flex-direction:column;box-shadow:0 4px 12px rgba(0,0,0,.15)}
+.searchable-select.open .ss-dropdown{display:flex}
+.searchable-select .ss-search{padding:6px 8px;border:none;border-bottom:1px solid var(--border);font-size:.82em;outline:none;color:var(--text);background:#f8f8f8}
+.searchable-select .ss-search::placeholder{color:var(--text2)}
+.searchable-select .ss-list{overflow-y:auto;max-height:220px;-webkit-overflow-scrolling:touch}
+.searchable-select .ss-option{padding:6px 10px;font-size:.82em;cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--text)}
+.searchable-select .ss-option:hover,.searchable-select .ss-option.highlighted{background:rgba(232,150,30,.1);color:var(--accent)}
+.searchable-select .ss-option.selected{font-weight:600;color:var(--accent)}
+.searchable-select .ss-empty{padding:8px 10px;font-size:.8em;color:var(--text2);text-align:center}
 .debuff-filter-row{display:flex;flex-wrap:wrap;gap:4px;align-items:center}
 .debuff-rate-wrap{display:inline-flex;align-items:center;gap:4px;margin-left:4px}
 .debuff-rate-wrap label{font-size:.7em;color:var(--accent);white-space:nowrap}
@@ -1369,7 +1383,8 @@ a:hover{text-decoration:underline}
     <!-- 共通: シリーズ -->
     <div class="filter-group" id="filterSeriesGroup">
       <label>シリーズ</label>
-      <select id="filterSeries"><option value="">すべて</option></select>
+      <select id="filterSeries" style="display:none"><option value="">すべて</option></select>
+      <div class="searchable-select" id="ssFilterSeries"></div>
     </div>
     <!-- 共通: タグ -->
     <div class="filter-group" id="filterTagGroup">
@@ -1452,7 +1467,8 @@ a:hover{text-decoration:underline}
     </div>
     <div class="filter-group" id="filterTargetGroup" style="display:none">
       <label>対象シリーズ</label>
-      <select id="filterTarget"><option value="">すべて</option></select>
+      <select id="filterTarget" style="display:none"><option value="">すべて</option></select>
+      <div class="searchable-select" id="ssFilterTarget"></div>
     </div>
     <div class="filter-group" id="filterSupTagGroup" style="display:none">
       <label style="display:flex;align-items:center;gap:6px"><span>対象タグ</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
@@ -2107,6 +2123,7 @@ function resetFilters() {
   if (charaTypeEl) charaTypeEl.innerHTML = `<option value="">${t('すべて')}</option>`;
   else { const g = document.getElementById('filterCharaTypeGroup'); if (g) g.innerHTML = '<label>キャラタイプ</label><select id="filterCharaType"><option value="">すべて</option></select>'; }
   document.getElementById('filterTarget').innerHTML = `<option value="">${t('すべて')}</option>`;
+  syncSearchableSelects();
   document.querySelectorAll('#filterSupTagButtons .filter-btn, #filterSupSkillButtons .filter-btn').forEach(b => b.classList.remove('active'));
   activeDebuffKey = '';
   activeSpecialKey = '';
@@ -2538,6 +2555,115 @@ function fillSelect(id, opts) {
     op.value = o;
     op.textContent = tData(o);
     sel.appendChild(op);
+  });
+  // Sync searchable-select if exists
+  const ssId = 'ss' + id.charAt(0).toUpperCase() + id.slice(1);
+  const ssEl = document.getElementById(ssId);
+  if (ssEl) initSearchableSelect(ssEl, sel);
+}
+
+/* ── Searchable Select Component ── */
+function initSearchableSelect(container, hiddenSelect) {
+  const allLabel = t('すべて') || 'すべて';
+  const searchPlaceholder = t('検索...') || '検索...';
+  container.innerHTML = '';
+  container._hiddenSelect = hiddenSelect;
+
+  // Build options data from hidden select
+  const options = [...hiddenSelect.options].map(o => ({value: o.value, text: o.textContent}));
+
+  // Display
+  const display = document.createElement('div');
+  display.className = 'ss-display';
+  display.textContent = allLabel;
+  container.appendChild(display);
+
+  // Dropdown
+  const dropdown = document.createElement('div');
+  dropdown.className = 'ss-dropdown';
+
+  const searchInput = document.createElement('input');
+  searchInput.className = 'ss-search';
+  searchInput.type = 'text';
+  searchInput.placeholder = searchPlaceholder;
+  dropdown.appendChild(searchInput);
+
+  const list = document.createElement('div');
+  list.className = 'ss-list';
+  dropdown.appendChild(list);
+  container.appendChild(dropdown);
+
+  function buildList(filter) {
+    list.innerHTML = '';
+    const q = (filter || '').toLowerCase();
+    let count = 0;
+    options.forEach(o => {
+      if (q && o.value && !o.value.toLowerCase().includes(q) && !o.text.toLowerCase().includes(q)) return;
+      const div = document.createElement('div');
+      div.className = 'ss-option' + (o.value === hiddenSelect.value ? ' selected' : '');
+      div.textContent = o.text || allLabel;
+      div.dataset.value = o.value;
+      div.addEventListener('click', () => selectOption(o));
+      list.appendChild(div);
+      count++;
+    });
+    if (count === 0) {
+      const empty = document.createElement('div');
+      empty.className = 'ss-empty';
+      empty.textContent = t('該当なし') || '該当なし';
+      list.appendChild(empty);
+    }
+  }
+
+  function selectOption(o) {
+    hiddenSelect.value = o.value;
+    display.textContent = o.value ? o.text : allLabel;
+    close();
+    hiddenSelect.dispatchEvent(new Event('change'));
+  }
+
+  function open() {
+    container.classList.add('open');
+    searchInput.value = '';
+    buildList('');
+    setTimeout(() => searchInput.focus(), 30);
+  }
+
+  function close() {
+    container.classList.remove('open');
+    searchInput.value = '';
+  }
+
+  function toggle() {
+    container.classList.contains('open') ? close() : open();
+  }
+
+  display.addEventListener('click', (e) => { e.stopPropagation(); toggle(); });
+  searchInput.addEventListener('input', () => buildList(searchInput.value));
+  searchInput.addEventListener('click', (e) => e.stopPropagation());
+  searchInput.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') close();
+    if (e.key === 'Enter') {
+      const first = list.querySelector('.ss-option');
+      if (first) first.click();
+    }
+  });
+  document.addEventListener('click', (e) => {
+    if (!container.contains(e.target)) close();
+  });
+
+  // Sync display if hidden select changes externally
+  container._syncDisplay = function() {
+    const cur = hiddenSelect.value;
+    const opt = options.find(o => o.value === cur);
+    display.textContent = opt ? (opt.value ? opt.text : allLabel) : allLabel;
+  };
+}
+
+function syncSearchableSelects() {
+  ['ssFilterSeries', 'ssFilterTarget'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el && el._hiddenSelect) initSearchableSelect(el, el._hiddenSelect);
   });
 }
 
@@ -3936,12 +4062,13 @@ function filterBySeries(seriesName) {
   }
   var sel = document.getElementById('filterSeries');
   for (var i = 0; i < sel.options.length; i++) {
-    if (sel.options[i].value === seriesName) { sel.value = seriesName; render(); return; }
+    if (sel.options[i].value === seriesName) { sel.value = seriesName; var ss = document.getElementById('ssFilterSeries'); if (ss && ss._syncDisplay) ss._syncDisplay(); render(); return; }
   }
   var opt = document.createElement('option');
   opt.value = seriesName; opt.textContent = tData(seriesName, 'series');
   sel.appendChild(opt);
   sel.value = seriesName;
+  var ss2 = document.getElementById('ssFilterSeries'); if (ss2) initSearchableSelect(ss2, sel);
   render();
 }
 
@@ -5366,7 +5493,7 @@ function restoreFromURL() {
         if (types.includes(b.dataset.value)) b.classList.add('active');
       });
     }
-    if (series) document.getElementById('filterSeries').value = series;
+    if (series) { document.getElementById('filterSeries').value = series; const ss = document.getElementById('ssFilterSeries'); if (ss && ss._syncDisplay) ss._syncDisplay(); }
     if (tag) document.getElementById('filterTag').value = tag;
     if (terrain) terrain.split(',').forEach(v => { document.querySelectorAll('#filterTerrainButtons .filter-btn').forEach(b => { if (b.dataset.value === v) b.classList.add('active'); }); });
     if (params.get('map') === '1') document.getElementById('filterMapBtn')?.classList.add('active');
@@ -5407,7 +5534,7 @@ function restoreFromURL() {
         if (charaTypes.includes(b.dataset.value)) b.classList.add('active');
       });
     }
-    if (series) document.getElementById('filterSeries').value = series;
+    if (series) { document.getElementById('filterSeries').value = series; const ss = document.getElementById('ssFilterSeries'); if (ss && ss._syncDisplay) ss._syncDisplay(); }
     if (tag) document.getElementById('filterTag').value = tag;
   }
 
