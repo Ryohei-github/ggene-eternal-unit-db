@@ -67,6 +67,8 @@ export default function handler(req, res) {
     'units': 'units.json',
     'supporters': 'supporters.json',
     'translations': 'translations_en.json',
+    'translations_en': 'translations_en.json',
+    'translations_zh_tw': 'translations_zh-tw.json',
     'characters': 'characters.json',
   };
 

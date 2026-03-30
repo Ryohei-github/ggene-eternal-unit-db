@@ -1310,6 +1310,7 @@ a:hover{text-decoration:underline}
   <div class="lang-toggle" id="langToggle">
     <button class="active" data-lang="ja">JA</button>
     <button data-lang="en">EN</button>
+    <button data-lang="zh-tw">繁中</button>
   </div>
   <div class="header-brand">
     <img class="header-icon" src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj" alt="MH GAMES - Gジェネエターナル ゲーム実況チャンネル" width="36" height="36" loading="eager">
@@ -1715,62 +1716,77 @@ let allUnits = [], allCharas = [], allSupporters = [];
 // i18n Internationalization System
 // ============================================
 let currentLang = localStorage.getItem('ggenedb_lang') || 'ja';
-let translationsEN = null;
+const translationsCache = {};
 
 async function loadTranslations() {
-  try {
-    const res = await fetch('/api/data?type=translations');
-    translationsEN = await res.json();
-  } catch(e) {
-    console.warn('Failed to load translations:', e);
-    translationsEN = {};
-  }
+  const langs = ['en', 'zh-tw'];
+  await Promise.all(langs.map(async lang => {
+    try {
+      const res = await fetch(`/api/data?type=translations_${lang.replace('-','_')}`);
+      const data = await res.json();
+      // Parse effectPatterns into compiled form
+      if (data.effectPatterns) {
+        data._effectPatterns = data.effectPatterns.map(p => ({from: p.from, to: p.to}));
+        delete data.effectPatterns;
+      }
+      translationsCache[lang] = data;
+    } catch(e) {
+      console.warn(`Failed to load ${lang} translations:`, e);
+      translationsCache[lang] = {};
+    }
+  }));
 }
+
+function _tr() { return currentLang !== 'ja' ? translationsCache[currentLang] : null; }
 
 // Translate UI label
 function t(jaText) {
-  if (currentLang === 'ja' || !translationsEN) return jaText;
-  return translationsEN.ui?.[jaText] || jaText;
+  const tr = _tr(); if (!tr) return jaText;
+  return tr.ui?.[jaText] || jaText;
 }
 
 // Translate game data (series, tags, characters, supporters, abilities, skills)
 function tData(jaText, category) {
-  if (currentLang === 'ja' || !translationsEN) return jaText;
-  if (category) {
-    return translationsEN[category]?.[jaText] || jaText;
-  }
-  // Auto-detect category
-  return translationsEN.series?.[jaText]
-    || translationsEN.tags?.[jaText]
-    || translationsEN.characters?.[jaText]
-    || translationsEN.supporters?.[jaText]
-    || translationsEN.abilities?.[jaText]
-    || translationsEN.skills?.[jaText]
-    || translationsEN.ui?.[jaText]
+  const tr = _tr(); if (!tr) return jaText;
+  if (category) return tr[category]?.[jaText] || jaText;
+  return tr.series?.[jaText]
+    || tr.tags?.[jaText]
+    || tr.characters?.[jaText]
+    || tr.supporters?.[jaText]
+    || tr.abilities?.[jaText]
+    || tr.skills?.[jaText]
+    || tr.units?.[jaText]
+    || tr.weapons?.[jaText]
+    || tr.ui?.[jaText]
     || jaText;
 }
 
 // Translate type names
 function tType(jaType) {
-  if (currentLang === 'ja' || !translationsEN) return jaType;
-  const map = {'攻撃':'Attacker','耐久':'Defender','支援':'Supporter'};
-  return map[jaType] || jaType;
+  const tr = _tr(); if (!tr) return jaType;
+  return tr.ui?.[jaType] || jaType;
 }
 
 // Translate terrain
 function tTerrain(jaTerrain) {
-  if (currentLang === 'ja' || !translationsEN) return jaTerrain;
-  const map = {'宇宙':'Space','空中':'Aerial','地上':'Ground','水上':'Surface','水中':'Underwater'};
-  return map[jaTerrain] || jaTerrain;
+  const tr = _tr(); if (!tr) return jaTerrain;
+  return tr.ui?.[jaTerrain] || jaTerrain;
 }
 
 // Translate mechanism
 function tMechanism(jaMech) {
-  if (currentLang === 'ja' || !translationsEN) return jaMech;
-  const map = {'シールド':'Shield','変形':'Transform','大型':'Large','脱出':'Escape','SD':'SD',
-    'シールド・変形':'Shield/Transform','シールド・脱出':'Shield/Escape',
-    '大型・脱出':'Large/Escape','シールド・SD':'Shield/SD'};
-  return map[jaMech] || jaMech;
+  const tr = _tr(); if (!tr) return jaMech;
+  return tr.ui?.[jaMech] || jaMech;
+}
+
+// Translate effect description text via template patterns
+function tEffect(jaEffect) {
+  const tr = _tr(); if (!tr || !tr._effectPatterns) return jaEffect;
+  let text = jaEffect;
+  for (const p of tr._effectPatterns) {
+    text = text.replaceAll(p.from, p.to);
+  }
+  return text;
 }
 
 // Switch language and re-render everything
@@ -1780,7 +1796,8 @@ function switchLang(lang) {
   document.querySelectorAll('#langToggle button').forEach(b => {
     b.classList.toggle('active', b.dataset.lang === lang);
   });
-  document.documentElement.lang = lang === 'en' ? 'en' : 'ja';
+  const langAttr = {'ja':'ja','en':'en','zh-tw':'zh-TW'};
+  document.documentElement.lang = langAttr[lang] || lang;
   applyStaticTranslations();
   buildFilters();
   updateUI();
@@ -1878,9 +1895,8 @@ function initLangToggle() {
     btn.addEventListener('click', () => switchLang(btn.dataset.lang));
     btn.classList.toggle('active', btn.dataset.lang === currentLang);
   });
-  if (currentLang === 'en') {
-    document.documentElement.lang = 'en';
-  }
+  const langAttrInit = {'ja':'ja','en':'en','zh-tw':'zh-TW'};
+  document.documentElement.lang = langAttrInit[currentLang] || 'ja';
 }
 
 let currentTab = 'unit';
@@ -2948,7 +2964,7 @@ function getUnitDisplayStats(u) {
 }
 
 function fmtStat(v) { return v === 'X' || v === '?' ? '?' : (parseInt(v)||0).toLocaleString(); }
-function fmtName(v) { return (!v || v === 'X' || /^X+$/.test(v)) ? '未発表' : v; }
+function fmtName(v) { if (!v || v === 'X' || /^X+$/.test(v)) return t('未発表')||'未発表'; return tData(v); }
 function isUnrevealedUnit(u) { return u.type === 'X' || u.normal?.combat_power === 'X'; }
 function isUnrevealedChara(c) { return c.chara_type === 'X' || c.stats?.combat_power === 'X'; }
 function unitCardHTML(u) {
@@ -2996,7 +3012,7 @@ function unitCardHTML(u) {
     
     <div class="card-header">
       ${iconHTML}
-      <div class="card-name">${u.name}${u.limited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px;white-space:nowrap">'+(currentLang==="en"?"Limited":"限定")+'</span>' : ''}</div>
+      <div class="card-name">${tData(u.name,'units')}${u.limited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px;white-space:nowrap">'+t('限定')+'</span>' : ''}</div>
       <div class="card-badges">
         <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
         ${u.type==='X' ? '<span class="badge" style="background:rgba(160,160,160,.3);color:#aaa">タイプ未発表</span>' : typeBadgeHTML(u.type)}
@@ -3376,7 +3392,7 @@ function renderUnitDetail(u, form) {
     <div class="weapon-detail">
       <div class="weapon-name">${isMap?`<span class="map-badge"><img src="${MAP_WEAPON_ICON}" class="map-icon" alt="MAP">MAP兵器</span>`:''}${fmtName(w.name)}${isEx?'<span class="ex-badge">EX</span>':''}</div>
       <div class="weapon-info">
-        <div><span>属性:</span> <strong>${fmtName(w.attribute)||'-'}</strong></div>
+        <div><span>${t('属性')}:</span> <strong>${t(w.attribute)||'-'}</strong></div>
         <div><span>射程:</span> <strong>${rangeDisplay(w)}</strong></div>
         <div><span>威力:</span> <strong>${fmtName(w.power)||'-'}</strong></div>
         <div><span>EN:</span> <strong>${w.en||'-'}</strong></div>
@@ -3384,9 +3400,9 @@ function renderUnitDetail(u, form) {
         <div><span>クリ:</span> <strong>${w.critical||'-'}</strong></div>
         ${isMap ? `<div><span>使用回数:</span> <strong>${w.ammo && w.ammo !== '-' ? w.ammo + '回' : '-'}</strong></div>` : ''}
       </div>
-      ${w.weapon_type ? `<div class="weapon-effect">タイプ: ${fmtName(w.weapon_type)}</div>` : ''}
-      ${(() => { let eff = w.effect || ''; eff = eff.replace(/\s*\[添付\]/g, '').trim(); return eff && eff !== 'なし' ? `<div class="weapon-effect">効果: ${eff}</div>` : ''; })()}
-      ${w.restriction && w.restriction !== 'なし' ? `<div class="weapon-effect">制限: ${w.restriction}</div>` : ''}
+      ${w.weapon_type ? `<div class="weapon-effect">${t('タイプ')}: ${fmtName(w.weapon_type)}</div>` : ''}
+      ${(() => { let eff = w.effect || ''; eff = eff.replace(/\s*\[添付\]/g, '').trim(); return eff && eff !== 'なし' && eff !== t('なし') ? `<div class="weapon-effect">${t('効果')}: ${tEffect(eff)}</div>` : ''; })()}
+      ${w.restriction && w.restriction !== 'なし' ? `<div class="weapon-effect">${t('制限なし') === t('制限なし') ? '制限' : 'Restriction'}: ${tEffect(w.restriction)}</div>` : ''}
     </div>
   `}).join('');
 
@@ -3423,15 +3439,15 @@ function renderUnitDetail(u, form) {
       skillsHTML = anchors.map((a, i) => {
         const descEnd = i + 1 < anchors.length ? anchors[i+1].start : skillEntry.desc.length;
         const desc = skillEntry.desc.slice(a.end, descEnd);
-        return `<div class="ability-item"><span class="ability-name">${a.name} (SP:${a.sp})</span><br><span class="ability-effect">${desc}</span></div>`;
+        return `<div class="ability-item"><span class="ability-name">${a.name} (SP:${a.sp})</span><br><span class="ability-effect">${tEffect(desc)}</span></div>`;
       }).join('');
     } else {
-      skillsHTML = `<div class="ability-item"><span class="ability-effect">${skillEntry.desc}</span></div>`;
+      skillsHTML = `<div class="ability-item"><span class="ability-effect">${tEffect(skillEntry.desc)}</span></div>`;
     }
   }
 
   const abHTML = pureAbilities.map(a => `
-    <div class="ability-item"><span class="ability-name">${fmtName(a.name)}</span><br><span class="ability-effect">${a.desc||''}</span></div>
+    <div class="ability-item"><span class="ability-name">${fmtName(a.name)}</span><br><span class="ability-effect">${tEffect(a.desc||'')}</span></div>
   `).join('');
 
   const modalIconHTML = u.image ? `<img class="modal-icon" src="${u.image}" alt="${u.name}の詳細画像" onerror="this.style.display='none'">` : '';
@@ -3441,7 +3457,7 @@ function renderUnitDetail(u, form) {
     <div class="modal-header-row">
       ${modalIconHTML}
       <div>
-        <h2>${u.name}</h2>
+        <h2>${tData(u.name,'units')}</h2>
         <div class="detail-badges">
           <span class="badge ${rarityClass(u.rarity)}">${u.rarity||'?'}</span>
           ${typeBadgeHTML(u.type)}
@@ -3613,7 +3629,7 @@ function renderCharaDetail(c) {
     const borderStyle = (isSpSkill || isSpUpgrade) ? 'border-left:3px solid #ffd54f;padding-left:10px' : '';
     return `<div class="skill-item" style="${borderStyle}">
       <div class="skill-name">${fmtName(sk.name)}${badge}${sk.sp_cost ? ` <span style="color:var(--accent);font-size:.8em">SP: ${sk.sp_cost}</span>` : ''}</div>
-      <div class="skill-effect">${sk.effect || sk.desc || ''}</div>
+      <div class="skill-effect">${tEffect(sk.effect || sk.desc || '')}</div>
     </div>`;
   }).join('');
 
@@ -3634,13 +3650,13 @@ function renderCharaDetail(c) {
     const isSpUpgrade = isSPMode && spAbilNames.has(a.name) && normalAbilNames.has(a.name);
     const badge = isSpAbil ? spBadge : (isSpUpgrade ? `<span style="display:inline-block;background:linear-gradient(135deg,#ffd54f,#ffb300);color:#1a1a2e;font-size:.6em;font-weight:700;padding:1px 5px;border-radius:3px;margin-left:5px;vertical-align:middle;letter-spacing:.5px">SP↑</span>` : '');
     const borderStyle = (isSpAbil || isSpUpgrade) ? 'style="border-left:3px solid #ffd54f;padding-left:10px"' : '';
-    return `<div class="ability-item" ${borderStyle}><span class="ability-name">${fmtName(a.name)}${badge}</span><br><span class="ability-effect">${a.desc || a.effect || ''}</span></div>`;
+    return `<div class="ability-item" ${borderStyle}><span class="ability-name">${fmtName(a.name)}${badge}</span><br><span class="ability-effect">${tEffect(a.desc || a.effect || '')}</span></div>`;
   }).join('');
 
   if (exAbilities.length) {
     const exInner = exAbilities.map(a => `
       <div style="padding:4px 0;border-bottom:1px solid var(--border)">
-        <span class="ability-effect">${a.desc || a.effect || ''}</span>
+        <span class="ability-effect">${tEffect(a.desc || a.effect || '')}</span>
         ${a.condition ? `<span style="display:inline-block;margin-left:8px;padding:1px 6px;background:rgba(232,150,30,.1);border:1px solid var(--accent);border-radius:4px;font-size:.75em;color:var(--accent)">${a.condition}</span>` : ''}
       </div>
     `).join('');
