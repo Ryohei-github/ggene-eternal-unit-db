@@ -2465,9 +2465,9 @@ function buildFilters() {
     document.querySelectorAll('#filterSupTagButtons .filter-btn').forEach(btn => {
       btn.addEventListener('click', () => { btn.classList.toggle('active'); render(); });
     });
-    // Support skill filter buttons (HP / EN / HP・EN / HP&軽減)
-    const skillOrder = ['HP', 'EN', 'HP・EN', 'HP&軽減'];
-    const skillLabels = { 'HP': 'HP回復', 'EN': 'EN回復', 'HP・EN': 'HP&EN回復', 'HP&軽減': 'HP回復&ダメ軽減' };
+    // Support skill filter buttons (HP / EN / HP・EN / HP&ダメ軽減)
+    const skillOrder = ['HP', 'EN', 'HP・EN', 'HP&ダメ軽減'];
+    const skillLabels = { 'HP': 'HP回復', 'EN': 'EN回復', 'HP・EN': 'HP&EN回復', 'HP&ダメ軽減': 'HP回復&ダメ軽減' };
     const skBtns = skillOrder.filter(s => skillSet.has(s)).map(s =>
       `<button class="filter-btn" data-value="${s}">${skillLabels[s]||s}</button>`
     ).join('');
@@ -3360,7 +3360,7 @@ function supporterCardHTML(s) {
     </div>
     <div style="display:flex;align-items:center;gap:6px;font-size:.78em;color:var(--card-text2);flex-wrap:wrap">
       ${recIcon}
-      <strong style="color:var(--card-text)">${s.recovery_type === 'HP&軽減' ? `HP${t("回復")} ${s.recovery_amount||''} <span style="color:#3fb950">ダメ軽減${(s.support_skill.match(/ダメージ軽減([\d.]+%)/)||['',''])[1]}</span>` : `${s.recovery_type||'-'} ${t("回復")} ${s.recovery_amount||''}`}</strong>
+      <strong style="color:var(--card-text)">${s.recovery_type === 'HP&ダメ軽減' ? `HP${t("回復")} ${s.recovery_amount||''} <span style="color:#3fb950">ダメ軽減${(s.support_skill.match(/ダメージ軽減([\d.]+%)/)||['',''])[1]}</span>` : `${s.recovery_type||'-'} ${t("回復")} ${s.recovery_amount||''}`}</strong>
       <span style="font-size:.85em">${t("範囲")}${s.range||'-'}${t("マス")}</span>
     </div>
   </div>`;
@@ -3432,7 +3432,7 @@ function supporterTableHTML(items) {
       <td class="cell-center" style="font-size:.8em">${s.obtain||'-'}</td>
       <td class="cell-center" style="font-size:.8em">${(s.target_series||[]).length ? (s.target_series||[]).map(ts => `<span class="leader-tag-clickable" style="cursor:pointer;padding:1px 4px;border-radius:3px;background:rgba(232,150,30,.1);margin:1px" onclick="event.stopPropagation();showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join(' ') : '-'}</td>
       <td class="cell-center" style="font-weight:700">${lsDisplay}</td>
-      <td class="cell-center"><span style="display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center">${recIcon} ${s.recovery_type === 'HP&軽減' ? `HP ${s.recovery_amount||''}<br><span style="color:#3fb950;font-size:.85em">ダメ軽減${(s.support_skill.match(/ダメージ軽減([\d.]+%)/)||['',''])[1]}</span>` : `${s.recovery_type||'-'} ${s.recovery_amount||''}`}</span></td>
+      <td class="cell-center"><span style="display:inline-flex;align-items:center;gap:4px;flex-wrap:wrap;justify-content:center">${recIcon} ${s.recovery_type === 'HP&ダメ軽減' ? `HP ${s.recovery_amount||''}<br><span style="color:#3fb950;font-size:.85em">ダメ軽減${(s.support_skill.match(/ダメージ軽減([\d.]+%)/)||['',''])[1]}</span>` : `${s.recovery_type||'-'} ${s.recovery_amount||''}`}</span></td>
       <td class="cell-center">${s.range||'-'}</td>
     </tr>`;
   }).join('');
@@ -3913,7 +3913,7 @@ function showSupporterDetail(id) {
         <div class="supporter-stat-divider"></div>
         <div class="supporter-stat-item supporter-skill-inline">
           <span class="supporter-stat-label">サポートスキル</span>
-          <span class="supporter-stat-val">${recIcon} ${s.recovery_type === 'HP&軽減' ? `HP回復 ${s.recovery_amount||''} <span style="color:#3fb950;font-weight:700">／ダメージ軽減${(s.support_skill.match(/ダメージ軽減([\d.]+%)/)||['',''])[1]}</span>` : `${s.recovery_type||'-'}回復 ${s.recovery_amount||''}`}</span>
+          <span class="supporter-stat-val">${recIcon} ${s.recovery_type === 'HP&ダメ軽減' ? `HP回復 ${s.recovery_amount||''} <span style="color:#3fb950;font-weight:700">／ダメージ軽減${(s.support_skill.match(/ダメージ軽減([\d.]+%)/)||['',''])[1]}</span>` : `${s.recovery_type||'-'}回復 ${s.recovery_amount||''}`}</span>
         </div>
         <div class="supporter-stat-item">
           <span class="supporter-stat-label">効果範囲</span>
@@ -4508,8 +4508,8 @@ function openTeamPicker(mode, slotIdx) {
       });
       if (s.recovery_type) supSkillSet.add(s.recovery_type);
     });
-    const skillLabels = { 'HP': 'HP回復', 'EN': 'EN回復', 'HP・EN': 'HP&EN回復', 'HP&軽減': 'HP回復&ダメ軽減' };
-    const skBtns = ['HP','EN','HP・EN','HP&軽減'].filter(s => supSkillSet.has(s)).map(s =>
+    const skillLabels = { 'HP': 'HP回復', 'EN': 'EN回復', 'HP・EN': 'HP&EN回復', 'HP&ダメ軽減': 'HP回復&ダメ軽減' };
+    const skBtns = ['HP','EN','HP・EN','HP&ダメ軽減'].filter(s => supSkillSet.has(s)).map(s =>
       `<button class="filter-btn picker-sup-skill-btn" data-value="${s}" onclick="this.classList.toggle('active');renderPickerList()">${skillLabels[s]}</button>`
     ).join('');
     const tagBtns = [...supTagSet].sort().map(t =>

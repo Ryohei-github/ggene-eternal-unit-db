@@ -1501,7 +1501,7 @@
     "target_series": [
       "疾風迅雷"
     ],
-    "recovery_type": "HP&軽減",
+    "recovery_type": "HP&ダメ軽減",
     "recovery_amount": "15%",
     "range": "4",
     "leader_effect": "ステータス上昇(EN除く)",
