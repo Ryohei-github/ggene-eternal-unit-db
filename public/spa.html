@@ -1467,6 +1467,15 @@ a:hover{text-decoration:underline}
       <label style="display:flex;align-items:center;gap:6px"><span>回数増加アビリティ</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
       <div class="filter-btn-group" id="filterCharaAbilityButtons"></div>
     </div>
+    <div class="filter-group" id="filterSupObtainGroup" style="display:none">
+      <label>入手方法</label>
+      <div class="filter-btn-group" id="filterSupObtainButtons">
+        <button class="filter-btn" data-value="恒常ガシャ" onclick="this.classList.toggle('active');render()">恒常ガシャ</button>
+        <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');render()">限定ガシャ</button>
+        <button class="filter-btn" data-value="イベント報酬" onclick="this.classList.toggle('active');render()">イベント報酬</button>
+        <button class="filter-btn" data-value="Gショップ" onclick="this.classList.toggle('active');render()">Gショップ</button>
+      </div>
+    </div>
     <div class="filter-group" id="filterTargetGroup" style="display:none">
       <label>対象シリーズ</label>
       <select id="filterTarget" style="display:none"><option value="">すべて</option></select>
@@ -1479,15 +1488,6 @@ a:hover{text-decoration:underline}
     <div class="filter-group" id="filterSupSkillGroup" style="display:none">
       <label style="display:flex;align-items:center;gap:6px"><span>サポートスキル</span><span style="flex:1;height:1px;background:var(--border)"></span></label>
       <div class="filter-btn-group" id="filterSupSkillButtons"></div>
-    </div>
-    <div class="filter-group" id="filterSupObtainGroup" style="display:none">
-      <label>入手方法</label>
-      <div class="filter-btn-group" id="filterSupObtainButtons">
-        <button class="filter-btn" data-value="恒常ガシャ" onclick="this.classList.toggle('active');render()">恒常ガシャ</button>
-        <button class="filter-btn" data-value="限定ガシャ" onclick="this.classList.toggle('active');render()">限定ガシャ</button>
-        <button class="filter-btn" data-value="イベント報酬" onclick="this.classList.toggle('active');render()">イベント報酬</button>
-        <button class="filter-btn" data-value="Gショップ" onclick="this.classList.toggle('active');render()">Gショップ</button>
-      </div>
     </div>
   </div>
   <div style="text-align:center;margin:6px 0">
