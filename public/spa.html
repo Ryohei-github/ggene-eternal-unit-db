@@ -1392,7 +1392,8 @@ a:hover{text-decoration:underline}
       <label>タグ</label>
       <div id="filterTagContainer" style="display:flex;flex-direction:column;gap:4px">
         <div class="tag-filter-row" style="display:flex;align-items:center;gap:4px">
-          <select id="filterTag" style="flex:1"><option value="">すべて</option></select>
+          <select id="filterTag" style="display:none"><option value="">すべて</option></select>
+          <div class="searchable-select" id="ssFilterTag" style="flex:1"></div>
           <button class="add-tag-btn" id="addTagBtn" onclick="addTagFilter()" title="タグを追加" style="width:28px;height:28px;border-radius:6px;border:1px solid var(--accent);background:var(--accent);color:#fff;cursor:pointer;font-size:1.1em;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s">＋</button>
         </div>
       </div>
@@ -2667,7 +2668,7 @@ function initSearchableSelect(container, hiddenSelect) {
 }
 
 function syncSearchableSelects() {
-  ['ssFilterSeries', 'ssFilterTarget'].forEach(id => {
+  ['ssFilterSeries', 'ssFilterTarget', 'ssFilterTag'].forEach(id => {
     const el = document.getElementById(id);
     if (el && el._hiddenSelect) initSearchableSelect(el, el._hiddenSelect);
   });
@@ -5501,7 +5502,7 @@ function restoreFromURL() {
       });
     }
     if (series) { document.getElementById('filterSeries').value = series; const ss = document.getElementById('ssFilterSeries'); if (ss && ss._syncDisplay) ss._syncDisplay(); }
-    if (tag) document.getElementById('filterTag').value = tag;
+    if (tag) { document.getElementById('filterTag').value = tag; const ssTag = document.getElementById('ssFilterTag'); if (ssTag && ssTag._syncDisplay) ssTag._syncDisplay(); }
     if (terrain) terrain.split(',').forEach(v => { document.querySelectorAll('#filterTerrainButtons .filter-btn').forEach(b => { if (b.dataset.value === v) b.classList.add('active'); }); });
     if (params.get('map') === '1') document.getElementById('filterMapBtn')?.classList.add('active');
     if (params.get('chara') === '1') document.getElementById('filterCharaBtn')?.classList.add('active');
@@ -5542,7 +5543,7 @@ function restoreFromURL() {
       });
     }
     if (series) { document.getElementById('filterSeries').value = series; const ss = document.getElementById('ssFilterSeries'); if (ss && ss._syncDisplay) ss._syncDisplay(); }
-    if (tag) document.getElementById('filterTag').value = tag;
+    if (tag) { document.getElementById('filterTag').value = tag; const ssTag = document.getElementById('ssFilterTag'); if (ssTag && ssTag._syncDisplay) ssTag._syncDisplay(); }
   }
 
   // Set sort button active
@@ -5566,18 +5567,24 @@ function addTagFilter() {
   row.style.cssText = 'display:flex;align-items:center;gap:4px';
   const sel = document.createElement('select');
   sel.id = 'filterTag_' + idx;
-  sel.style.flex = '1';
+  sel.style.display = 'none';
   const primary = document.getElementById('filterTag');
   sel.innerHTML = primary.innerHTML;
   sel.addEventListener('change', render);
+  const ssDiv = document.createElement('div');
+  ssDiv.className = 'searchable-select';
+  ssDiv.id = 'ssFilterTag_' + idx;
+  ssDiv.style.flex = '1';
   const removeBtn = document.createElement('button');
   removeBtn.textContent = '\u2715';
   removeBtn.title = '\u3053\u306e\u30bf\u30b0\u3092\u524a\u9664';
   removeBtn.style.cssText = 'width:28px;height:28px;border-radius:6px;border:1px solid #e63950;background:#e63950;color:#fff;cursor:pointer;font-size:.85em;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .2s';
   removeBtn.onclick = function() { row.remove(); render(); };
   row.appendChild(sel);
+  row.appendChild(ssDiv);
   row.appendChild(removeBtn);
   container.appendChild(row);
+  initSearchableSelect(ssDiv, sel);
 }
 function getAllSelectedTags() {
   const tags = [];
