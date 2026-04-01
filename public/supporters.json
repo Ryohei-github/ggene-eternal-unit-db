@@ -1495,15 +1495,15 @@
   {
     "name": "スメラギ・李・ノリエガ＆プトレマイオス2",
     "rarity": "UR",
-    "obtain": "周年限定",
+    "obtain": "限定",
     "hp": 4200,
     "attack": 280,
     "target_series": [
       "疾風迅雷"
     ],
-    "recovery_type": "HP",
+    "recovery_type": "HP&軽減",
     "recovery_amount": "15%",
-    "range": "半径4",
+    "range": "4",
     "leader_effect": "ステータス上昇(EN除く)",
     "leader_0": "+30%",
     "leader_1": "+36%",
