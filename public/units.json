@@ -171501,52 +171501,53 @@
     "name": "ウイングガンダムゼロ(EW版)(EX)",
     "image": "",
     "rarity": "UR",
-    "type": "X",
+    "type": "攻撃",
     "obtain": "ヒイロ・ユイ(EW版)【UR】",
     "series": [
       "新機動戦記ガンダムW Endless Waltz",
       "新機動戦記ガンダムW"
     ],
     "tags": [
-      "オルタナティブシリーズ"
+      "オルタナティブシリーズ",
+      "『ガンダム』",
+      "主人公",
+      "専用機",
+      "オペレーション・メテオ",
+      "ゼロシステム",
+      "突破力",
+      "Wシリーズ",
+      "白色",
+      "不撓不屈"
     ],
     "normal": {
-      "combat_power": "X",
+      "combat_power": 122881,
       "terrain": {
         "宇宙": "◯",
-        "空中": "-",
+        "空中": "◯",
         "地上": "◯",
         "水上": "-",
-        "水中": "△"
+        "水中": "▲"
       },
       "stats": {
-        "hp": "X",
-        "en": "X",
-        "attack": "X",
-        "defense": "X",
+        "hp": 111113,
+        "en": 420,
+        "attack": 13427,
+        "defense": 9347,
         "mobility": 5,
-        "agility": "X"
+        "agility": 10145
       },
       "abilities": [
         {
-          "name": "最大HP上昇 LV3",
-          "desc": "自身の最大HPが15%上昇"
-        },
-        {
-          "name": "最大EN上昇 LV3",
-          "desc": "自身の最大ENが15%上昇"
-        },
-        {
           "name": "攻撃力上昇 LV3",
-          "desc": "自身の攻撃力が15%上昇"
+          "desc": "攻撃力+15%"
         },
         {
-          "name": "X",
-          "desc": "命中率・回避率+5%"
+          "name": "最大HP・防御力上昇 LV2",
+          "desc": "最大HP・防御力+10%"
         },
         {
-          "name": "X",
-          "desc": "機動力+5%"
+          "name": "(テンション条件)攻撃力・防御力上昇 LV3",
+          "desc": "自身のテンションが「超強気」以上の時、攻撃力・防御力+10%"
         }
       ],
       "mechanism": "シールド"
@@ -171555,163 +171556,164 @@
       {
         "star": 0,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 0,
+        "en": 0,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 0,
+        "defense": 0,
+        "agility": 0
       },
       {
         "star": 1,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 0,
+        "en": 0,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 0,
+        "defense": 0,
+        "agility": 0
       },
       {
         "star": 2,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 0,
+        "en": 0,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 0,
+        "defense": 0,
+        "agility": 0
       },
       {
         "star": 3,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 111113,
+        "en": 420,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 13427,
+        "defense": 9347,
+        "agility": 10145
       }
     ],
     "normal_weapons": [
       {
-        "name": "X",
-        "attribute": "X",
-        "weapon_type": "X",
-        "range": "1-1",
-        "power": "X",
-        "en": "18",
-        "hit": "100%",
-        "critical": "5%",
-        "effect": "",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X",
-        "attribute": "X",
-        "weapon_type": "X",
-        "range": "2-4",
-        "power": "X",
-        "en": "18",
-        "hit": "100%",
-        "critical": "0%",
-        "effect": "",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X",
-        "attribute": "X",
-        "weapon_type": "X",
-        "range": "2-4",
-        "power": "X",
-        "en": "23",
-        "hit": "100%",
-        "critical": "0%",
-        "effect": "",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X EX",
-        "attribute": "物理・ビーム・特殊",
-        "weapon_type": "X",
-        "range": "1-4",
-        "power": "X",
-        "en": "42",
-        "hit": "100%",
-        "critical": "0%",
-        "effect": "絶対命中 / 武器属性ダメージ軽減無効",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X",
-        "attribute": "物理・ビーム・特殊",
+        "name": "ローリングバスターライフル",
+        "attribute": "ビーム",
         "weapon_type": "射撃",
         "range": "MAP",
-        "power": "X",
+        "power": "4,200",
         "en": "54",
         "hit": "100%",
         "critical": "0%",
-        "effect": "絶対命中 移動前限定使用可能 水中の敵へのダメージ半減",
+        "effect": "絶対命中 MP5消費で使用可能 水中の敵へのダメージ半減",
         "restriction": "",
         "ammo": "1"
+      },
+      {
+        "name": "ビームサーベル",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "4,080",
+        "en": "19",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "バスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "4,920",
+        "en": "27",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ツインバスターライフル EX",
+        "attribute": "ビーム・特殊",
+        "weapon_type": "射撃",
+        "range": "2-5",
+        "power": "6,720",
+        "en": "46",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中 / 武器属性ダメージ軽減無効 自身の残HPが多いほどPOWが上昇(最大20%)",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ツインバスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "3-5",
+        "power": "5,520",
+        "en": "34",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "自身のMPが多いほどPOWが上昇(最大15%) 水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
       }
     ],
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "transformed": false,
+    "transformed_weapons": []
   },
   {
     "id": 1456,
     "name": "ダブルオーライザー(最終決戦仕様)(EX)",
     "image": "",
     "rarity": "UR",
-    "type": "X",
-    "obtain": "",
+    "type": "耐久",
+    "obtain": "刹那・F・セイエイ(耐久)【UR】",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [
-      "オルタナティブシリーズ"
+      "オルタナティブシリーズ",
+      "『ガンダム』",
+      "主人公",
+      "ソレスタルビーイング",
+      "電光石火",
+      "エース機",
+      "白色",
+      "疾風迅雷"
     ],
     "normal": {
-      "combat_power": "X",
+      "combat_power": 121714,
       "terrain": {
         "宇宙": "◯",
-        "空中": "-",
+        "空中": "◯",
         "地上": "◯",
         "水上": "-",
-        "水中": "△"
+        "水中": "◯"
       },
       "stats": {
-        "hp": "X",
-        "en": "X",
-        "attack": "X",
-        "defense": "X",
+        "hp": 116152,
+        "en": 376,
+        "attack": 10627,
+        "defense": 13248,
         "mobility": 5,
-        "agility": "X"
+        "agility": 8667
       },
       "abilities": [
         {
-          "name": "最大HP上昇 LV3",
-          "desc": "自身の最大HPが15%上昇"
+          "name": "防御力上昇&EN回復(単体) LV3",
+          "desc": "防御力+15% 毎ターン開始時、自身のENが5%回復"
         },
         {
-          "name": "最大EN上昇 LV3",
-          "desc": "自身の最大ENが15%上昇"
+          "name": "GNフィールド LV4",
+          "desc": "戦闘を行う敵が物理、ビーム武装で攻撃する時自身の被ダメージが20%軽減 受けるダメージが4500以下の場合、ダメージを無効"
         },
         {
-          "name": "攻撃力上昇 LV3",
-          "desc": "自身の攻撃力が15%上昇"
-        },
-        {
-          "name": "X",
-          "desc": "命中率・回避率+5%"
-        },
-        {
-          "name": "X",
-          "desc": "機動力+5%"
+          "name": "(常時・テンション条件)攻撃力上昇 LV2",
+          "desc": "攻撃力+10% 自身のテンションが「超一撃」以上の時、攻撃力+10%"
         }
       ],
       "mechanism": "シールド"
@@ -171720,164 +171722,170 @@
       {
         "star": 0,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 0,
+        "en": 0,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 0,
+        "defense": 0,
+        "agility": 0
       },
       {
         "star": 1,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 0,
+        "en": 0,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 0,
+        "defense": 0,
+        "agility": 0
       },
       {
         "star": 2,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 0,
+        "en": 0,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 0,
+        "defense": 0,
+        "agility": 0
       },
       {
         "star": 3,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 116152,
+        "en": 376,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 10627,
+        "defense": 13248,
+        "agility": 8667
       }
     ],
     "normal_weapons": [
       {
-        "name": "X",
-        "attribute": "X",
-        "weapon_type": "X",
-        "range": "1-1",
-        "power": "X",
-        "en": "18",
-        "hit": "100%",
-        "critical": "5%",
-        "effect": "",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X",
-        "attribute": "X",
-        "weapon_type": "X",
-        "range": "2-4",
-        "power": "X",
-        "en": "18",
-        "hit": "100%",
-        "critical": "0%",
-        "effect": "",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X",
-        "attribute": "X",
-        "weapon_type": "X",
-        "range": "2-4",
-        "power": "X",
-        "en": "23",
-        "hit": "100%",
-        "critical": "0%",
-        "effect": "",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X EX",
-        "attribute": "物理・ビーム・特殊",
-        "weapon_type": "X",
-        "range": "1-4",
-        "power": "X",
-        "en": "42",
-        "hit": "100%",
-        "critical": "0%",
-        "effect": "絶対命中 / 武器属性ダメージ軽減無効",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X",
-        "attribute": "物理・ビーム・特殊",
-        "weapon_type": "射撃",
+        "name": "ライザーソード",
+        "attribute": "特殊",
+        "weapon_type": "格闘",
         "range": "MAP",
-        "power": "X",
+        "power": "4,080",
         "en": "54",
         "hit": "100%",
         "critical": "0%",
-        "effect": "絶対命中 移動前限定使用可能 水中の敵へのダメージ半減",
+        "effect": "絶対命中 移動前限定使用可能",
         "restriction": "",
         "ammo": "1"
+      },
+      {
+        "name": "GNソードⅢ",
+        "attribute": "物理",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "4,800",
+        "en": "25",
+        "hit": "100%",
+        "critical": "10%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "GNソードⅢ・ライフルモード",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "1-3",
+        "power": "4,200",
+        "en": "21",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "TRANS-AM",
+        "attribute": "特殊",
+        "weapon_type": "格闘",
+        "range": "1-3",
+        "power": "5,520",
+        "en": "34",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "敵に「機動力30%減少」を付与(1ターン)",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ライザーソード EX",
+        "attribute": "ビーム・特殊",
+        "weapon_type": "格闘",
+        "range": "1-4",
+        "power": "7,200",
+        "en": "47",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中 / 武器属性ダメージ軽減無効 敵に「攻撃力35%減少」を付与(1ターン) 使用制限MP消費4で使用可能",
+        "restriction": "",
+        "ammo": ""
       }
     ],
-    "acquire": "ガシャ"
+    "acquire": "ガシャ",
+    "transformed": false,
+    "transformed_weapons": [],
+    "unit_skills": [
+      {
+        "name": "ユニットスキル【ダブルオーライザー(最終決戦仕様)(EX)】",
+        "effect": "攻撃力25%上昇(1ターン) 防御力15%上昇(1ターン)(1バトルに1回)"
+      }
+    ]
   },
   {
     "id": 1457,
     "name": "トールギスIII(EX)",
     "image": "",
     "rarity": "UR",
-    "type": "X",
+    "type": "支援",
     "obtain": "プリベンター・ウインド【UR】",
     "series": [
       "新機動戦記ガンダムW Endless Waltz",
       "新機動戦記ガンダムW"
     ],
     "tags": [
-      "オルタナティブシリーズ"
+      "オルタナティブシリーズ",
+      "試作機",
+      "一撃必殺",
+      "Wシリーズ",
+      "空中用",
+      "白色",
+      "不撓不屈"
     ],
     "normal": {
-      "combat_power": "X",
+      "combat_power": 120360,
       "terrain": {
         "宇宙": "◯",
-        "空中": "-",
+        "空中": "◯",
         "地上": "◯",
         "水上": "-",
-        "水中": "△"
+        "水中": "▲"
       },
       "stats": {
-        "hp": "X",
-        "en": "X",
-        "attack": "X",
-        "defense": "X",
+        "hp": 101274,
+        "en": 439,
+        "attack": 9985,
+        "defense": 11618,
         "mobility": 5,
-        "agility": "X"
+        "agility": 11688
       },
       "abilities": [
         {
-          "name": "最大HP上昇 LV3",
-          "desc": "自身の最大HPが15%上昇"
+          "name": "防御力・機動力上昇 LV3",
+          "desc": "防御力・機動力+15%"
         },
         {
-          "name": "最大EN上昇 LV3",
-          "desc": "自身の最大ENが15%上昇"
+          "name": "攻撃力上昇 LV1",
+          "desc": "攻撃力+5%"
         },
         {
-          "name": "攻撃力上昇 LV3",
-          "desc": "自身の攻撃力が15%上昇"
-        },
-        {
-          "name": "X",
-          "desc": "命中率・回避率+5%"
-        },
-        {
-          "name": "X",
-          "desc": "機動力+5%"
+          "name": "回避率上昇 LV1",
+          "desc": "回避率+5%"
         }
       ],
       "mechanism": "シールド"
@@ -171886,275 +171894,113 @@
       {
         "star": 0,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 0,
+        "en": 0,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 0,
+        "defense": 0,
+        "agility": 0
       },
       {
         "star": 1,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 0,
+        "en": 0,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 0,
+        "defense": 0,
+        "agility": 0
       },
       {
         "star": 2,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 0,
+        "en": 0,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 0,
+        "defense": 0,
+        "agility": 0
       },
       {
         "star": 3,
         "lv": 100,
-        "hp": "X",
-        "en": "X",
+        "hp": 101274,
+        "en": 439,
         "mobility": 5,
-        "attack": "X",
-        "defense": "X",
-        "agility": "X"
+        "attack": 9985,
+        "defense": 11618,
+        "agility": 11688
       }
     ],
     "normal_weapons": [
       {
-        "name": "X",
-        "attribute": "X",
-        "weapon_type": "X",
-        "range": "1-1",
-        "power": "X",
-        "en": "18",
-        "hit": "100%",
-        "critical": "5%",
-        "effect": "",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X",
-        "attribute": "X",
-        "weapon_type": "X",
-        "range": "2-4",
-        "power": "X",
-        "en": "18",
-        "hit": "100%",
-        "critical": "0%",
-        "effect": "",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X",
-        "attribute": "X",
-        "weapon_type": "X",
-        "range": "2-4",
-        "power": "X",
-        "en": "23",
-        "hit": "100%",
-        "critical": "0%",
-        "effect": "",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X EX",
-        "attribute": "物理・ビーム・特殊",
-        "weapon_type": "X",
-        "range": "1-4",
-        "power": "X",
-        "en": "42",
-        "hit": "100%",
-        "critical": "0%",
-        "effect": "絶対命中 / 武器属性ダメージ軽減無効",
-        "restriction": "",
-        "ammo": ""
-      },
-      {
-        "name": "X",
-        "attribute": "物理・ビーム・特殊",
+        "name": "メガキャノン",
+        "attribute": "ビーム",
         "weapon_type": "射撃",
         "range": "MAP",
-        "power": "X",
+        "power": "4,560",
         "en": "54",
         "hit": "100%",
         "critical": "0%",
         "effect": "絶対命中 移動前限定使用可能 水中の敵へのダメージ半減",
         "restriction": "",
         "ammo": "1"
-      }
-    ],
-    "acquire": "ガシャ"
-  },
-  {
-    "id": 1458,
-    "name": "ヒイロ・ユイ(EW版)",
-    "image": "",
-    "rarity": "UR",
-    "type": "X",
-    "obtain": "ガシャ",
-    "series": [
-      "新機動戦記ガンダムW Endless Waltz",
-      "新機動戦記ガンダムW"
-    ],
-    "tags": [
-      "キャラ",
-      "オルタナティブシリーズ"
-    ],
-    "normal": {
-      "combat_power": "X",
-      "stats": {
-        "shooting": "X",
-        "melee": "X",
-        "awakening": "X",
-        "defense": "X",
-        "reaction": "X",
-        "sp": "X"
       },
-      "skills": [
-        {
-          "name": "X",
-          "effect": "受けるダメージが1ターン20%軽減",
-          "sp_cost": 5
-        },
-        {
-          "name": "X",
-          "effect": "移動力が1上昇",
-          "sp_cost": 5
-        },
-        {
-          "name": "X",
-          "effect": "回避率が100%上昇",
-          "sp_cost": 10
-        }
-      ],
-      "abilities": [
-        {
-          "name": "X",
-          "desc": "「支援防御」+1回",
-          "condition": ""
-        },
-        {
-          "name": "X",
-          "desc": "自身が支援防御時、自身の防御力が20%上昇",
-          "condition": "耐久型"
-        },
-        {
-          "name": "X",
-          "desc": "覚醒値と反応値が20%上昇",
-          "condition": ""
-        },
-        {
-          "name": "X",
-          "desc": "防御力が20%上昇",
-          "condition": ""
-        },
-        {
-          "name": "X",
-          "desc": "与ダメージが15%上昇 被ダメージが15%軽減",
-          "condition": ""
-        },
-        {
-          "name": "XX値上昇 LV1",
-          "desc": "XX値が5%上昇",
-          "condition": ""
-        }
-      ],
-      "support": {
-        "cs": "赤",
-        "support_attack": "-",
-        "support_defense": "1回"
-      }
-    },
-    "acquire": "ガシャ"
-  },
-  {
-    "id": 1459,
-    "name": "プリベンター・ウインド",
-    "image": "",
-    "rarity": "UR",
-    "type": "X",
-    "obtain": "ガシャ",
-    "series": [
-      "新機動戦記ガンダムW Endless Waltz",
-      "新機動戦記ガンダムW"
-    ],
-    "tags": [
-      "キャラ",
-      "オルタナティブシリーズ"
-    ],
-    "normal": {
-      "combat_power": "X",
-      "stats": {
-        "shooting": "X",
-        "melee": "X",
-        "awakening": "X",
-        "defense": "X",
-        "reaction": "X",
-        "sp": "X"
+      {
+        "name": "ビームサーベル",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "3,960",
+        "en": "18",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
       },
-      "skills": [
-        {
-          "name": "X",
-          "effect": "受けるダメージが1ターン20%軽減",
-          "sp_cost": 5
-        },
-        {
-          "name": "X",
-          "effect": "移動力が1上昇",
-          "sp_cost": 5
-        },
-        {
-          "name": "X",
-          "effect": "回避率が100%上昇",
-          "sp_cost": 10
-        }
-      ],
-      "abilities": [
-        {
-          "name": "X",
-          "desc": "「支援防御」+1回",
-          "condition": ""
-        },
-        {
-          "name": "X",
-          "desc": "自身が支援防御時、自身の防御力が20%上昇",
-          "condition": "耐久型"
-        },
-        {
-          "name": "X",
-          "desc": "覚醒値と反応値が20%上昇",
-          "condition": ""
-        },
-        {
-          "name": "X",
-          "desc": "防御力が20%上昇",
-          "condition": ""
-        },
-        {
-          "name": "X",
-          "desc": "与ダメージが15%上昇 被ダメージが15%軽減",
-          "condition": ""
-        },
-        {
-          "name": "XX値上昇 LV1",
-          "desc": "XX値が5%上昇",
-          "condition": ""
-        }
-      ],
-      "support": {
-        "cs": "赤",
-        "support_attack": "-",
-        "support_defense": "1回"
+      {
+        "name": "ヒートロッド",
+        "attribute": "物理",
+        "weapon_type": "格闘",
+        "range": "2-4",
+        "power": "4,320",
+        "en": "22",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "メガキャノン EX",
+        "attribute": "ビーム・特殊",
+        "weapon_type": "射撃",
+        "range": "1-4",
+        "power": "6,600",
+        "en": "45",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中 / 武器属性ダメージ軽減無効 敵に「防御力35%減少」を付与(1ターン)",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "メガキャノン",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "3-5",
+        "power": "5,040",
+        "en": "30",
+        "hit": "90%",
+        "critical": "0%",
+        "effect": "敵に「ビーム武装による被ダメージ25%上昇」を付与(1ターン) 水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
       }
-    },
-    "acquire": "ガシャ"
+    ],
+    "acquire": "ガシャ",
+    "transformed": false,
+    "transformed_weapons": []
   }
 ]

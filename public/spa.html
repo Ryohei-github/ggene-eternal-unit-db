@@ -3661,6 +3661,7 @@ function renderUnitDetail(u, form) {
           ${weaponsHTML}
         </div>
         ${pureAbilities.length ? `<div class="detail-section"><h3>アビリティ (${pureAbilities.length})</h3>${abHTML}</div>` : ''}
+        ${(u.unit_skills && u.unit_skills.length) ? `<div class="detail-section"><h3>ユニットスキル</h3>${u.unit_skills.map(sk => `<div class="ability-item" style="border-left:3px solid #f59e0b"><span class="ability-name" style="color:#f59e0b">${sk.name}</span><span class="ability-desc">${sk.effect}</span></div>`).join('')}</div>` : ''}
         ${mechText ? `<div class="detail-section"><h3>機構</h3><div class="mechanism-item"><span class="mechanism-effect">${mechText}</span></div></div>` : ''}
       </div>
     </div>
@@ -6969,6 +6970,13 @@ function dcDetectAtkBuffs() {
       if (m) { buffs.push({ name: sk.name+' (攻撃力+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'unitAtkUp' }); return; }
     });
   }
+  if (u && u.unit_skills) {
+    u.unit_skills.forEach(sk => {
+      const eff = sk.effect || '';
+      let m = eff.match(/攻撃力(\d+)%上昇/);
+      if (m) buffs.push({ name: 'ユニットスキル (攻撃力+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'unitAtkUp' });
+    });
+  }
   if (w && w.effect) {
     let m = w.effect.match(/クリティカルダメージが(\d+)%上昇/);
     if (m) buffs.push({ name: '武装効果 (クリダメ+'+m[1]+'%)', value: parseInt(m[1]), sign: '+', cat: 'critDmgUp' });
@@ -7018,6 +7026,15 @@ function dcDetectDefBuffs() {
       if (m) buffs.push({ name: sk.name+' (被ダメ-'+m[1]+'%)', value: parseInt(m[1]), cat: 'dmgDown', isForceGuard });
       m = eff.match(/防御力が(\d+)%上昇/);
       if (m) buffs.push({ name: sk.name+' (防御力+'+m[1]+'%)', value: parseInt(m[1]), cat: 'unitDefUp' });
+    });
+  }
+  if (u && u.unit_skills) {
+    u.unit_skills.forEach(sk => {
+      const eff = sk.effect || '';
+      let m = eff.match(/防御力(\d+)%上昇/);
+      if (m) buffs.push({ name: 'ユニットスキル (防御力+'+m[1]+'%)', value: parseInt(m[1]), cat: 'unitDefUp' });
+      m = eff.match(/被ダメージが?(\d+)%軽減/);
+      if (m) buffs.push({ name: 'ユニットスキル (被ダメ-'+m[1]+'%)', value: parseInt(m[1]), cat: 'dmgDown' });
     });
   }
   return buffs;
