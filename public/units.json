@@ -172002,5 +172002,262 @@
     "acquire": "ガシャ",
     "transformed": false,
     "transformed_weapons": []
+  },
+  {
+    "id": 1458,
+    "name": "ヒイロ・ユイ(EW版)",
+    "image": "",
+    "rarity": "UR",
+    "type": "攻撃",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "キャラ",
+      "オルタナティブシリーズ",
+      "主人公",
+      "ベテラン",
+      "ガンダムパイロット",
+      "可変機パイロット"
+    ],
+    "normal": {
+      "combat_power": 3661,
+      "stats": {
+        "shooting": 842,
+        "melee": 642,
+        "awakening": 432,
+        "defense": 523,
+        "reaction": 615,
+        "sp": 15
+      },
+      "skills": [
+        {
+          "name": "レンジブースト LV1",
+          "effect": "射程が1上昇",
+          "sp_cost": 5
+        },
+        {
+          "name": "MPアップ LV5",
+          "effect": "自身のMPが5上昇",
+          "sp_cost": 3
+        },
+        {
+          "name": "射撃ブースト LV5",
+          "effect": "射撃値が1ターン25％上昇",
+          "sp_cost": 5
+        }
+      ],
+      "abilities": [
+        {
+          "name": "与ダメージ上昇 LV4",
+          "desc": "与ダメージが20％上昇",
+          "condition": ""
+        },
+        {
+          "name": "射撃値上昇 LV5",
+          "desc": "射撃値が25％上昇",
+          "condition": ""
+        },
+        {
+          "name": "EXアビリティ",
+          "desc": "「チャンスステップ回数」+1回 自身の武装の消費MPが3軽減",
+          "condition": ""
+        },
+        {
+          "name": "EXアビリティ",
+          "desc": "自身のMPが5上昇 被ダメージが15%軽減",
+          "condition": "ウイングガンダムゼロ(EW版)(EX)"
+        },
+        {
+          "name": "EXアビリティ",
+          "desc": "",
+          "condition": "ゼロシステム"
+        },
+        {
+          "name": "反応値上昇 LV1",
+          "desc": "反応値が5％上昇",
+          "condition": ""
+        }
+      ]
+    },
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 842,
+      "melee": 642,
+      "awakening": 432,
+      "defense": 523,
+      "reaction": 615,
+      "sp": 15
+    }
+  },
+  {
+    "id": 1459,
+    "name": "刹那・F・セイエイ(耐久)",
+    "image": "",
+    "rarity": "UR",
+    "type": "耐久",
+    "obtain": "",
+    "series": [
+      "機動戦士ガンダム00"
+    ],
+    "tags": [
+      "キャラ",
+      "オルタナティブシリーズ",
+      "主人公",
+      "ベテラン",
+      "ガンダムパイロット"
+    ],
+    "normal": {
+      "combat_power": 3836,
+      "stats": {
+        "shooting": 596,
+        "melee": 703,
+        "awakening": 423,
+        "defense": 808,
+        "reaction": 600,
+        "sp": 15
+      },
+      "skills": [
+        {
+          "name": "MPアップ LV5",
+          "effect": "自身のMPが7上昇",
+          "sp_cost": 3
+        },
+        {
+          "name": "アタックバースト LV5",
+          "effect": "与えるダメージが1ターン25％上昇",
+          "sp_cost": 5
+        },
+        {
+          "name": "スウェー LV2",
+          "effect": "回避率が100％上昇",
+          "sp_cost": 7
+        }
+      ],
+      "abilities": [
+        {
+          "name": "支援防御 LV5",
+          "desc": "「支援防御」+1回 自身が支援防御時、自身の防御力が25％上昇",
+          "condition": ""
+        },
+        {
+          "name": "真のイノベイター LV5",
+          "desc": "守備値と反応値が25％上昇 自身のMP変動が5上昇",
+          "condition": "『ガンダム』かつ機動戦士ガンダム00"
+        },
+        {
+          "name": "EXアビリティ",
+          "desc": "「支援防御」+1回 HPが0%になった時、自身のHPが7%回復(1回)",
+          "condition": ""
+        },
+        {
+          "name": "EXアビリティ",
+          "desc": "「超一撃EX1(刹那・F・セイエイ)」格闘値・反応値が20%上昇(1ターン) 被ダメージ5%軽減 自身のMP変動無効",
+          "condition": "ダブルオーライザー(最終決戦仕様)(EX) 『ガンダム』かつ機動戦士ガンダム00"
+        },
+        {
+          "name": "EXアビリティ",
+          "desc": "「超一撃EX2(刹那・F・セイエイ)」格闘値・反応値が50%上昇 被ダメージ15%軽減 自身のMP変動無効 次のターンMP12減少",
+          "condition": "ダブルオーライザー(最終決戦仕様)(EX) 『ガンダム』かつ機動戦士ガンダム00"
+        },
+        {
+          "name": "格闘値上昇 LV1",
+          "desc": "格闘値が5％上昇",
+          "condition": ""
+        }
+      ]
+    },
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 596,
+      "melee": 703,
+      "awakening": 423,
+      "defense": 808,
+      "reaction": 600,
+      "sp": 15
+    }
+  },
+  {
+    "id": 1460,
+    "name": "プリベンター・ウインド",
+    "image": "",
+    "rarity": "UR",
+    "type": "支援",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "キャラ",
+      "オルタナティブシリーズ",
+      "ベテラン"
+    ],
+    "normal": {
+      "combat_power": 3577,
+      "stats": {
+        "shooting": 806,
+        "melee": 700,
+        "awakening": 561,
+        "defense": 561,
+        "reaction": 540,
+        "sp": 15
+      },
+      "skills": [
+        {
+          "name": "命中率・回避率上昇 LV3",
+          "effect": "命中率と回避率が25％上昇",
+          "sp_cost": 5
+        },
+        {
+          "name": "アタックバースト LV4",
+          "effect": "与えるダメージが1ターン20％上昇",
+          "sp_cost": 5
+        },
+        {
+          "name": "ENチャージ LV3",
+          "effect": "自身のENが50％回復",
+          "sp_cost": 10
+        }
+      ],
+      "abilities": [
+        {
+          "name": "支援攻撃/支援反撃 LV4",
+          "desc": "「支援攻撃/反撃」+1回 自身が支援攻撃/支援反撃時、自身の武装の消費ENが20%軽減",
+          "condition": ""
+        },
+        {
+          "name": "射撃値上昇 LV4",
+          "desc": "射撃値が5％上昇",
+          "condition": ""
+        },
+        {
+          "name": "EXアビリティ",
+          "desc": "「支援攻撃/反撃」+1回 自身のテンションが「超一撃」以上の時、ビーム武装の最大射程が1上昇",
+          "condition": ""
+        },
+        {
+          "name": "EXアビリティ",
+          "desc": "同部隊内の指定タグを持つユニットに対し攻撃力5%アップを付与(永続)",
+          "condition": "トールギスIII(EX) 新機動戦記ガンダムW"
+        },
+        {
+          "name": "格闘値上昇 LV1",
+          "desc": "格闘値が5％上昇",
+          "condition": ""
+        }
+      ]
+    },
+    "acquire": "ガシャ",
+    "lv100_stats": {
+      "shooting": 806,
+      "melee": 700,
+      "awakening": 561,
+      "defense": 561,
+      "reaction": 540,
+      "sp": 15
+    }
   }
 ]
