@@ -3304,7 +3304,7 @@ function supporterCardHTML(s) {
   const max = s.leader_3 || s.leader_2 || s.leader_1 || base;
   const effectLabel = s.leader_effect || 'ステータス上昇(EN除く)';
   const recIcon = supportSkillIcon(s.recovery_type);
-  const obtainBadge = s.obtain === '限定' ? `<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">${currentLang==="en"?"Limited":"限定"}</span>` : '';
+  const obtainBadge = (s.obtain === '限定' || s.obtain === '周年限定') ? `<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px">${currentLang==="en"?"Limited":s.obtain}</span>` : '';
   const hasTier2 = !!s.leader2_target;
   const base2 = s.leader2_0 || '';
   const max2 = s.leader2_3 || s.leader2_2 || s.leader2_1 || base2;
@@ -3844,7 +3844,7 @@ function showSupporterDetail(id) {
   const hasTier2 = !!s.leader2_target;
   const base2 = s.leader2_0 || '';
   const max2 = s.leader2_3 || s.leader2_2 || s.leader2_1 || base2;
-  const obtainLabel = s.obtain === '限定' ? '<span class="badge" style="background:#ff6b6b;color:#fff">限定</span>' : (s.obtain ? `<span class="badge badge-type">${s.obtain}</span>` : '');
+  const obtainLabel = (s.obtain === '限定' || s.obtain === '周年限定') ? `<span class="badge" style="background:#ff6b6b;color:#fff">${s.obtain}</span>` : (s.obtain ? `<span class="badge badge-type">${s.obtain}</span>` : '');
   const recIcon = supportSkillIcon(s.recovery_type, 24);
   // Leader skill convex table
   let convexHTML = '';
@@ -6477,7 +6477,7 @@ function renderTierPool() {
         // Supporter obtain mapping: 恒常ガシャ→恒常, 限定ガシャ→限定, イベント→イベント報酬
         const supMatch = activeAcq.some(v => {
           if (v === '恒常ガシャ') return x.obtain === '恒常';
-          if (v === '限定ガシャ') return x.obtain === '限定';
+          if (v === '限定ガシャ') return x.obtain === '限定' || x.obtain === '周年限定';
           if (v === 'イベント') return x.obtain === 'イベント報酬';
           return false;
         });
