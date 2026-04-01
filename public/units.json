@@ -171499,7 +171499,7 @@
   {
     "id": 1455,
     "name": "ウイングガンダムゼロ(EW版)(EX)",
-    "image": "",
+    "image": "/unit-images/mh-games-unit-1475.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "ヒイロ・ユイ(EW版)【UR】",
@@ -171668,7 +171668,7 @@
   {
     "id": 1456,
     "name": "ダブルオーライザー(最終決戦仕様)(EX)",
-    "image": "",
+    "image": "/unit-images/mh-games-unit-1476.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "刹那・F・セイエイ(耐久)【UR】",
@@ -171840,7 +171840,7 @@
   {
     "id": 1457,
     "name": "トールギスIII(EX)",
-    "image": "",
+    "image": "/unit-images/mh-games-unit-1477.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "プリベンター・ウインド【UR】",
@@ -172006,7 +172006,7 @@
   {
     "id": 1458,
     "name": "ヒイロ・ユイ(EW版)",
-    "image": "",
+    "image": "/unit-images/mh-games-chara-366.png",
     "rarity": "UR",
     "type": "攻撃",
     "obtain": "",
@@ -172095,7 +172095,7 @@
   {
     "id": 1459,
     "name": "刹那・F・セイエイ(耐久)",
-    "image": "",
+    "image": "/unit-images/mh-games-chara-367.png",
     "rarity": "UR",
     "type": "耐久",
     "obtain": "",
@@ -172182,7 +172182,7 @@
   {
     "id": 1460,
     "name": "プリベンター・ウインド",
-    "image": "",
+    "image": "/unit-images/mh-games-chara-368.png",
     "rarity": "UR",
     "type": "支援",
     "obtain": "",
