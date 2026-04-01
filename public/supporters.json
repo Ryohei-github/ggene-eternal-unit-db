@@ -1503,7 +1503,7 @@
     ],
     "recovery_type": "HP",
     "recovery_amount": "15%",
-    "range": "半径4マス",
+    "range": "半径4",
     "leader_effect": "ステータス上昇(EN除く)",
     "leader_0": "+30%",
     "leader_1": "+36%",
