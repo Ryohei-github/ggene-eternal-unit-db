@@ -3358,9 +3358,10 @@ function supporterCardHTML(s) {
       </div>` : ''}
       <div style="font-size:.6em;color:var(--card-text2);margin-top:1px">${effectLabel}</div>
     </div>
-    <div style="display:flex;align-items:center;gap:6px;font-size:.78em;color:var(--card-text2)">
+    <div style="display:flex;align-items:center;gap:6px;font-size:.78em;color:var(--card-text2);flex-wrap:wrap">
       ${recIcon}
       <strong style="color:var(--card-text)">${s.recovery_type||'-'} ${t("回復")} ${s.recovery_amount||''}</strong>
+      ${(s.support_skill||'').includes('ダメージ軽減') ? `<span style="color:#3fb950;font-weight:700;font-size:.9em">${(s.support_skill.match(/ダメージ軽減[\d.]+%/)||[''])[0]}</span>` : ''}
       <span style="font-size:.85em">${t("範囲")}${s.range||'-'}${t("マス")}</span>
     </div>
   </div>`;
@@ -3432,7 +3433,7 @@ function supporterTableHTML(items) {
       <td class="cell-center" style="font-size:.8em">${s.obtain||'-'}</td>
       <td class="cell-center" style="font-size:.8em">${(s.target_series||[]).length ? (s.target_series||[]).map(ts => `<span class="leader-tag-clickable" style="cursor:pointer;padding:1px 4px;border-radius:3px;background:rgba(232,150,30,.1);margin:1px" onclick="event.stopPropagation();showTargetUnits(${JSON.stringify(s.target_series).replace(/'/g,"\\'")})">${ts}</span>`).join(' ') : '-'}</td>
       <td class="cell-center" style="font-weight:700">${lsDisplay}</td>
-      <td class="cell-center"><span style="display:inline-flex;align-items:center;gap:4px">${recIcon} ${s.recovery_type||'-'} ${s.recovery_amount||''}</span></td>
+      <td class="cell-center"><span style="display:inline-flex;align-items:center;gap:4px">${recIcon} ${s.recovery_type||'-'} ${s.recovery_amount||''}${(s.support_skill||'').includes('ダメージ軽減') ? `<br><span style="color:#3fb950;font-size:.85em">${(s.support_skill.match(/ダメージ軽減[\d.]+%/)||[''])[0]}</span>` : ''}</span></td>
       <td class="cell-center">${s.range||'-'}</td>
     </tr>`;
   }).join('');
@@ -3913,7 +3914,7 @@ function showSupporterDetail(id) {
         <div class="supporter-stat-divider"></div>
         <div class="supporter-stat-item supporter-skill-inline">
           <span class="supporter-stat-label">サポートスキル</span>
-          <span class="supporter-stat-val">${recIcon} ${s.recovery_type||'-'}回復 ${s.recovery_amount||''}</span>
+          <span class="supporter-stat-val">${recIcon} ${s.recovery_type||'-'}回復 ${s.recovery_amount||''}${(s.support_skill||'').includes('ダメージ軽減') ? ` <span style="color:#3fb950;font-weight:700">／${(s.support_skill.match(/ダメージ軽減[\d.]+%/)||[''])[0]}</span>` : ''}</span>
         </div>
         <div class="supporter-stat-item">
           <span class="supporter-stat-label">効果範囲</span>
