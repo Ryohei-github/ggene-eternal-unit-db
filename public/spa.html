@@ -6686,7 +6686,7 @@ function exportTierList() {
 
 // === DAMAGE CALCULATOR ===
 let dcAtk = { unit:null, unitStar:3, chara:null, supporter:null, supStar:0, weaponIdx:0, tension:'normal', extraDmgUp:0, extraCritUp:0, buffs:{} };
-let dcDef = { unit:null, unitStar:3, chara:null, defenseType:'none', extraDmgDown:0, buffs:{} };
+let dcDef = { unit:null, unitStar:3, chara:null, supporter:null, supStar:0, defenseType:'none', extraDmgDown:0, buffs:{} };
 let dcDropdownOpen = null;
 
 function renderDmgCalc() {
@@ -6850,6 +6850,26 @@ function dcRenderDefPanel() {
       <div class="ds-info"><div class="ds-name">${ch.name} <span class="badge ${rarityClass(ch.rarity)}" style="font-size:.65em;padding:1px 4px">${ch.rarity}</span></div>
       <div class="ds-stats">守備:${ch.stats.defense} / 反応:${ch.stats.reaction}</div></div>
       <span class="ds-clear" onclick="dcDef.chara=null;dcDef.buffs={};renderDmgCalc()">✕</span>
+    </div>`;
+  }
+  html += '</div>';
+  const sup = dcDef.supporter;
+  html += `<div class="dmg-field">
+    <div class="dmg-field-label">サポーター</div>
+    <div class="dmg-search-wrap">
+      <input class="dmg-search-input" id="dcDefSupSearch" placeholder="サポーター名で検索..." autocomplete="off" onfocus="dcOpenDropdown('defSup')" oninput="dcFilterDropdown('defSup')">
+      <div class="dmg-dropdown" id="dcDefSupDropdown"></div>
+    </div>`;
+  if (sup) {
+    const lsPct = dcGetLeaderPct(sup, dcDef.supStar);
+    html += `<div class="dmg-selected">
+      ${sup.image ? `<img src="${sup.image}" alt="" onerror="this.style.display='none'">` : ''}
+      <div class="ds-info"><div class="ds-name">${sup.name}</div>
+      <div class="ds-stats">LS: ${lsPct}% / 攻撃+${sup.attack||0}</div></div>
+      <span class="ds-clear" onclick="dcDef.supporter=null;renderDmgCalc()">✕</span>
+    </div>`;
+    html += `<div class="dmg-star-btns">
+      ${[0,1,2,3].map(s => `<button class="dmg-star-btn ${dcDef.supStar===s?'active':''}" onclick="dcDef.supStar=${s};renderDmgCalc()">${s}凸</button>`).join('')}
     </div>`;
   }
   html += '</div>';
@@ -7103,8 +7123,10 @@ function dcCalculateDamage() {
   });
   let supAtkPct=0, supFlatAtk=0;
   if (dcAtk.supporter) { supAtkPct=dcGetLeaderPct(dcAtk.supporter,dcAtk.supStar); supFlatAtk=parseInt(dcAtk.supporter.attack)||0; }
+  let supDefPct=0, supFlatDef=0;
+  if (dcDef.supporter) { supDefPct=dcGetLeaderPct(dcDef.supporter,dcDef.supStar); supFlatDef=parseInt(dcDef.supporter.attack)||0; }
   const UnAtk = Math.ceil((atkUnitBase.attack||0)*(1+(unitAtkUpPct+supAtkPct)/100))+supFlatAtk;
-  const UnDef = Math.ceil((defUnitBase.defense||0)*(1+unitDefUpPct/100));
+  const UnDef = Math.ceil((defUnitBase.defense||0)*(1+(unitDefUpPct+supDefPct)/100))+supFlatDef;
   const pilotStatInfo = dcGetPilotAtkStat(weapon, dcAtk.chara);
   const PlAtk = Math.ceil(pilotStatInfo.value*(1+pilotAtkUpPct/100));
   const PlDef = Math.ceil((dcDef.chara.stats.defense||0)*(1+pilotDefUpPct/100));
@@ -7141,14 +7163,14 @@ function dcCalculateDamage() {
 function dcOpenDropdown(type) {
   dcDropdownOpen = type;
   dcFilterDropdown(type);
-  const ddId = {atkUnit:'dcAtkUnitDropdown',atkChara:'dcAtkCharaDropdown',atkSup:'dcAtkSupDropdown',defUnit:'dcDefUnitDropdown',defChara:'dcDefCharaDropdown'}[type];
+  const ddId = {atkUnit:'dcAtkUnitDropdown',atkChara:'dcAtkCharaDropdown',atkSup:'dcAtkSupDropdown',defUnit:'dcDefUnitDropdown',defChara:'dcDefCharaDropdown',defSup:'dcDefSupDropdown'}[type];
   const dd = document.getElementById(ddId);
   if (dd) dd.classList.add('open');
 }
 function dcCloseAllDropdowns() { document.querySelectorAll('.dmg-dropdown').forEach(d=>d.classList.remove('open')); dcDropdownOpen=null; }
 function dcFilterDropdown(type) {
-  const inputId = {atkUnit:'dcAtkUnitSearch',atkChara:'dcAtkCharaSearch',atkSup:'dcAtkSupSearch',defUnit:'dcDefUnitSearch',defChara:'dcDefCharaSearch'}[type];
-  const ddId = {atkUnit:'dcAtkUnitDropdown',atkChara:'dcAtkCharaDropdown',atkSup:'dcAtkSupDropdown',defUnit:'dcDefUnitDropdown',defChara:'dcDefCharaDropdown'}[type];
+  const inputId = {atkUnit:'dcAtkUnitSearch',atkChara:'dcAtkCharaSearch',atkSup:'dcAtkSupSearch',defUnit:'dcDefUnitSearch',defChara:'dcDefCharaSearch',defSup:'dcDefSupSearch'}[type];
+  const ddId = {atkUnit:'dcAtkUnitDropdown',atkChara:'dcAtkCharaDropdown',atkSup:'dcAtkSupDropdown',defUnit:'dcDefUnitDropdown',defChara:'dcDefCharaDropdown',defSup:'dcDefSupDropdown'}[type];
   const input=document.getElementById(inputId), dd=document.getElementById(ddId);
   if(!input||!dd) return;
   const q=(input.value||'').toLowerCase();
@@ -7160,9 +7182,10 @@ function dcFilterDropdown(type) {
     const items=allCharas.filter(c=>!q||c.name.toLowerCase().includes(q)).slice(0,60);
     dd.innerHTML=items.map(c=>{const safeName=c.name.replace(/'/g,"\\'");return `<div class="dmg-dropdown-item" onclick="dcSelectChara('${type}','${safeName}')">
 <div><div class="ddi-name">${c.name}</div><div class="ddi-sub"><span class="badge ${rarityClass(c.rarity)}" style="font-size:.6em;padding:0 3px">${c.rarity}</span> 射:${c.stats.shooting} 格:${c.stats.melee} 覚:${c.stats.awakening} 守:${c.stats.defense}</div></div></div>`;}).join('')||'<div style="padding:10px;color:var(--card-text2);font-size:.8em;text-align:center">該当なし</div>';
-  } else if (type==='atkSup') {
+  } else if (type==='atkSup'||type==='defSup') {
+    const side = type==='atkSup'?'atk':'def';
     const items=allSupporters.filter(s=>!q||s.name.toLowerCase().includes(q)).slice(0,40);
-    dd.innerHTML=items.map(s=>`<div class="dmg-dropdown-item" onclick="dcSelectSup(${s.id})">${s.image?`<img src="${s.image}" alt="" onerror="this.style.display='none'">`:''}
+    dd.innerHTML=items.map(s=>`<div class="dmg-dropdown-item" onclick="dcSelectSup('${side}',${s.id})">${s.image?`<img src="${s.image}" alt="" onerror="this.style.display='none'">`:''}
 <div><div class="ddi-name">${s.name}</div><div class="ddi-sub">${s.leader_skill||''}</div></div></div>`).join('')||'<div style="padding:10px;color:var(--card-text2);font-size:.8em;text-align:center">該当なし</div>';
   }
 }
@@ -7176,7 +7199,7 @@ function dcSelectChara(type,name) {
   if(type==='atkChara'){dcAtk.chara=c;dcAtk.buffs={};}else{dcDef.chara=c;dcDef.buffs={};}
   dcCloseAllDropdowns();renderDmgCalc();
 }
-function dcSelectSup(id) { dcAtk.supporter=allSupporters.find(s=>s.id===id);dcCloseAllDropdowns();renderDmgCalc(); }
+function dcSelectSup(side,id) { const s=allSupporters.find(x=>x.id===id); if(side==='def'){dcDef.supporter=s;}else{dcAtk.supporter=s;} dcCloseAllDropdowns();renderDmgCalc(); }
 function dcBindEvents() {
   document.addEventListener('click', function(e) { if(!e.target.closest('.dmg-search-wrap')) dcCloseAllDropdowns(); });
 }
