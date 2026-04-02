@@ -980,16 +980,24 @@ a:hover{text-decoration:underline}
 .grid.compact-mode .card-stats-sub{margin-bottom:0}
 
 /* Table View */
-.data-table-wrap{max-width:1800px;margin:0 auto;padding:0 16px 40px;overflow-x:auto;box-sizing:border-box;width:100%}
+.data-table-wrap{max-width:1800px;margin:0 auto;padding:0 16px 40px;overflow-x:auto;box-sizing:border-box;width:100%;border-radius:8px;border:1px solid var(--card-border);background:var(--card)}
 .data-table{width:100%;border-collapse:collapse;font-size:.8em}
-.data-table th{position:sticky;top:0;background:var(--card);color:var(--accent);font-weight:600;padding:8px 10px;text-align:left;border-bottom:2px solid var(--accent);white-space:nowrap;font-size:.85em;cursor:pointer;user-select:none}
-.data-table th:hover{color:#fff}
-.data-table td{padding:7px 10px;border-bottom:1px solid var(--card-border);vertical-align:middle;white-space:nowrap;color:var(--card-text)}
-.data-table tr{cursor:pointer;transition:background .15s;background:var(--card)}
-.data-table tr:hover{background:var(--card-hover)}
-.data-table .cell-name{font-weight:600;color:#fff;white-space:normal;max-width:200px}
-.data-table .cell-icon{width:32px;height:32px;border-radius:4px;vertical-align:middle;margin-right:6px;border:1px solid var(--card-border)}
+.data-table th{position:sticky;top:0;background:linear-gradient(180deg,rgba(30,30,30,.98),rgba(25,25,25,.98));color:var(--accent);font-weight:600;padding:10px 12px;text-align:left;border-bottom:2px solid var(--accent);white-space:nowrap;font-size:.85em;cursor:pointer;user-select:none;z-index:2;backdrop-filter:blur(4px)}
+.data-table th:hover{color:#fff;background:linear-gradient(180deg,rgba(40,40,40,.98),rgba(30,30,30,.98))}
+.data-table th.sort-active{color:#fff}
+.data-table th.sort-active::after{content:'';display:inline-block;margin-left:4px;border:4px solid transparent;vertical-align:middle}
+.data-table th.sort-asc::after{border-bottom-color:var(--accent);border-top:0;margin-bottom:2px}
+.data-table th.sort-desc::after{border-top-color:var(--accent);border-bottom:0;margin-top:2px}
+.data-table td{padding:8px 12px;border-bottom:1px solid var(--card-border);vertical-align:middle;white-space:nowrap;color:var(--card-text);transition:background .1s}
+.data-table tbody tr{cursor:pointer;transition:background .15s}
+.data-table tbody tr:nth-child(odd){background:rgba(255,255,255,.02)}
+.data-table tbody tr:nth-child(even){background:rgba(0,0,0,.1)}
+.data-table tbody tr:hover{background:rgba(232,150,30,.08)}
+.data-table tbody tr:active{background:rgba(232,150,30,.15)}
+.data-table .cell-name{font-weight:600;color:#fff;white-space:normal;max-width:200px;display:flex;align-items:center;gap:6px}
+.data-table .cell-icon{width:36px;height:36px;border-radius:6px;vertical-align:middle;border:1px solid var(--card-border);flex-shrink:0;object-fit:cover}
 .data-table .cell-num{text-align:right;font-variant-numeric:tabular-nums;color:var(--card-text)}
+.data-table .cell-cp{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent);font-size:1.05em}
 .data-table .cell-center{text-align:center;color:var(--card-text)}
 
 /* Tablet: 2 columns */
@@ -2600,6 +2608,26 @@ function bindSortButtons() {
   });
 }
 
+function bindTableHeaderSort() {
+  const SORT_MAP = {name:'name',rarity:'rarity',type:'type',cp:'cp',atk:'atk',hp:'hp',def:'def',en:'en',agi:'agi',mob:'mob',shooting:'shooting',melee:'melee',awakening:'awakening',reaction:'reaction'};
+  document.querySelectorAll('.data-table th[data-tsort]').forEach(th => {
+    const sort = SORT_MAP[th.dataset.tsort] || th.dataset.tsort;
+    // Mark active sort column
+    if (currentSort === sort) {
+      th.classList.add('sort-active');
+      th.classList.add(currentDir === 1 ? 'sort-asc' : 'sort-desc');
+    }
+    th.addEventListener('click', () => {
+      if (currentSort === sort) currentDir *= -1;
+      else { currentSort = sort; currentDir = sort === 'name' ? 1 : -1; }
+      document.querySelectorAll('.sort-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.sort === currentSort);
+      });
+      render();
+    });
+  });
+}
+
 function buildFilters() {
   if (currentTab === 'unit') {
     const types = new Set(), series = new Set(), tags = new Set(), rarities = new Set();
@@ -3326,6 +3354,7 @@ function render() {
     } else {
       tableWrap.innerHTML = supporterTableHTML(filtered);
     }
+    bindTableHeaderSort();
   }
   syncURL();
   updateClearButton();
@@ -3756,7 +3785,7 @@ function unitTableHTML(items) {
       <td class="cell-name">${iconTd}${u.name}</td>
       <td class="cell-center"><span class="badge ${rarityClass(u.rarity)}" style="font-size:.7em">${u.rarity||'?'}</span></td>
       <td class="cell-center">${u.type ? typeIconHTML(u.type)+' '+u.type : '-'}</td>
-      <td class="cell-num">${u.normal?.combat_power ? u.normal.combat_power.toLocaleString() : '-'}</td>
+      <td class="cell-cp">${u.normal?.combat_power ? u.normal.combat_power.toLocaleString() : '-'}</td>
       <td class="cell-num">${fmtStat(s.attack)}</td>
       <td class="cell-num">${fmtStat(s.hp)}</td>
       <td class="cell-num">${fmtStat(s.defense)}</td>
@@ -3768,7 +3797,7 @@ function unitTableHTML(items) {
     </tr>`;
   }).join('');
   return `<table class="data-table"><thead><tr>
-    <th>${t("ユニット")}</th><th>${t("レア")}</th><th>${t("タイプ")}</th><th>${t("戦闘力")}</th><th>${t("攻撃力")}</th><th>HP</th><th>${t("防御力")}</th><th>EN</th><th>${t("機動力")}</th><th>${t("移動力")}</th><th>${t("地形")}</th><th>MAP</th>
+    <th data-tsort="name">${t("ユニット")}</th><th data-tsort="rarity">${t("レア")}</th><th data-tsort="type">${t("タイプ")}</th><th data-tsort="cp">${t("戦闘力")}</th><th data-tsort="atk">${t("攻撃力")}</th><th data-tsort="hp">HP</th><th data-tsort="def">${t("防御力")}</th><th data-tsort="en">EN</th><th data-tsort="agi">${t("機動力")}</th><th data-tsort="mob">${t("移動力")}</th><th>${t("地形")}</th><th>MAP</th>
   </tr></thead><tbody>${rows}</tbody></table>`;
 }
 
@@ -3778,9 +3807,9 @@ function charaTableHTML(items) {
     const skillNames = (c.skills||[]).map(sk=>`${fmtName(sk.name.replace(/\(SP:\d+\)/,'').trim())} SP:${sk.sp_cost||'?'}`).join(', ');
     return `<tr onclick="showCharaDetail(${c.id})">
       <td class="cell-name">${c.name}</td>
-      <td class="cell-center">${c.rarity||'-'}</td>
+      <td class="cell-center"><span class="badge ${rarityClass(c.rarity)}" style="font-size:.7em">${c.rarity||'-'}</span></td>
       <td class="cell-center">${c.chara_type==='X' ? '<span style="color:#aaa">未発表</span>' : c.chara_type ? typeIconHTML(c.chara_type)+' '+c.chara_type : '-'}</td>
-      <td class="cell-num">${fmtStat(s.combat_power)}</td>
+      <td class="cell-cp">${fmtStat(s.combat_power)}</td>
       <td class="cell-num">${fmtStat(s.shooting)}</td>
       <td class="cell-num">${fmtStat(s.melee)}</td>
       <td class="cell-num">${fmtStat(s.awakening)}</td>
@@ -3790,7 +3819,7 @@ function charaTableHTML(items) {
     </tr>`;
   }).join('');
   return `<table class="data-table"><thead><tr>
-    <th>${t("キャラ")}</th><th>${t("レア")}</th><th>${t("タイプ")}</th><th>${t("戦闘力")}</th><th>${t("射撃")}</th><th>${t("格闘")}</th><th>${t("覚醒")}</th><th>${t("防御力")}</th><th>${t("反応")}</th><th>${t("スキル")}</th>
+    <th data-tsort="name">${t("キャラ")}</th><th data-tsort="rarity">${t("レア")}</th><th data-tsort="type">${t("タイプ")}</th><th data-tsort="cp">${t("戦闘力")}</th><th data-tsort="shooting">${t("射撃")}</th><th data-tsort="melee">${t("格闘")}</th><th data-tsort="awakening">${t("覚醒")}</th><th data-tsort="def">${t("防御力")}</th><th data-tsort="reaction">${t("反応")}</th><th>${t("スキル")}</th>
   </tr></thead><tbody>${rows}</tbody></table>`;
 }
 
@@ -3814,7 +3843,7 @@ function supporterTableHTML(items) {
     </tr>`;
   }).join('');
   return `<table class="data-table"><thead><tr>
-    <th>サポーター名</th><th>レア</th><th>HP</th><th>攻撃力</th><th>入手</th><th>対象</th><th>効果量</th><th>サポートスキル</th><th>範囲</th>
+    <th data-tsort="name">サポーター名</th><th data-tsort="rarity">レア</th><th data-tsort="hp">HP</th><th data-tsort="atk">攻撃力</th><th>入手</th><th>対象</th><th>効果量</th><th>サポートスキル</th><th>範囲</th>
   </tr></thead><tbody>${rows}</tbody></table>`;
 }
 
@@ -4375,9 +4404,13 @@ function closeModal(skipHistory) {
 function openSubPanel() {
   const sub = document.getElementById('modalContent2');
   sub.scrollTop = 0;
-  // Use rAF to ensure the transform:translateX(100%) is applied before adding open class
+  // Force layout reflow so browser registers the hidden state first
+  sub.getBoundingClientRect();
+  // Double rAF to ensure transform:translateX(100%) is painted before transitioning to 0
   requestAnimationFrame(() => {
-    sub.classList.add('open');
+    requestAnimationFrame(() => {
+      sub.classList.add('open');
+    });
   });
 }
 
