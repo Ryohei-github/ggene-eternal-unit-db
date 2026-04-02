@@ -2432,12 +2432,15 @@ function toggleToolsPanel() {
   const toolsBtn = document.querySelector('.bottom-nav-item[data-tab="tools"]');
   if (toolsPanel) {
     const isOpen = toolsPanel.classList.toggle('open');
-    if (toolsBtn) {
-      if (isOpen) {
-        toolsBtn.classList.add('active');
-      } else {
-        toolsBtn.classList.remove('active');
-      }
+    if (isOpen) {
+      // Remember which data tab was active, then deactivate all and activate tools
+      document.querySelectorAll('.bottom-nav-item').forEach(b => b.classList.remove('active'));
+      if (toolsBtn) toolsBtn.classList.add('active');
+    } else {
+      // Restore the active data tab based on currentTab
+      document.querySelectorAll('.bottom-nav-item').forEach(b => b.classList.remove('active'));
+      const dataBtn = document.querySelector(`.bottom-nav-item[data-tab="${currentTab}"]`);
+      if (dataBtn) dataBtn.classList.add('active');
     }
   }
 }
