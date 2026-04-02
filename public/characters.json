@@ -2685,5 +2685,131 @@
         "effect": "格闘値が5%上昇"
       }
     ]
+  },
+  {
+    "name": "ヒイロ・ユイ(EW版)",
+    "rarity": "SR",
+    "series": "新機動戦記ガンダムW Endless Waltz",
+    "chara_type": "攻撃",
+    "obtain_method": "データ反映中",
+    "abilities": [],
+    "skills": [],
+    "stats": {
+      "shooting": 0,
+      "melee": 0,
+      "awakening": 0,
+      "defense": 0,
+      "reaction": 0,
+      "combat_power": 0,
+      "mobility": 0
+    }
+  },
+  {
+    "name": "デュオ・マックスウェル(EW版)",
+    "rarity": "SR",
+    "series": "新機動戦記ガンダムW Endless Waltz",
+    "chara_type": "攻撃",
+    "obtain_method": "データ反映中",
+    "abilities": [],
+    "skills": [],
+    "stats": {
+      "shooting": 0,
+      "melee": 0,
+      "awakening": 0,
+      "defense": 0,
+      "reaction": 0,
+      "combat_power": 0,
+      "mobility": 0
+    }
+  },
+  {
+    "name": "カトル・ラバーバ・ウィナー(EW版)",
+    "rarity": "SR",
+    "series": "新機動戦記ガンダムW Endless Waltz",
+    "chara_type": "支援",
+    "obtain_method": "データ反映中",
+    "abilities": [],
+    "skills": [],
+    "stats": {
+      "shooting": 0,
+      "melee": 0,
+      "awakening": 0,
+      "defense": 0,
+      "reaction": 0,
+      "combat_power": 0,
+      "mobility": 0
+    }
+  },
+  {
+    "name": "トロワ・バートン(EW版)",
+    "rarity": "SR",
+    "series": "新機動戦記ガンダムW Endless Waltz",
+    "chara_type": "支援",
+    "obtain_method": "データ反映中",
+    "abilities": [],
+    "skills": [],
+    "stats": {
+      "shooting": 0,
+      "melee": 0,
+      "awakening": 0,
+      "defense": 0,
+      "reaction": 0,
+      "combat_power": 0,
+      "mobility": 0
+    }
+  },
+  {
+    "name": "張五飛(EW版)",
+    "rarity": "SR",
+    "series": "新機動戦記ガンダムW Endless Waltz",
+    "chara_type": "攻撃",
+    "obtain_method": "データ反映中",
+    "abilities": [],
+    "skills": [],
+    "stats": {
+      "shooting": 0,
+      "melee": 0,
+      "awakening": 0,
+      "defense": 0,
+      "reaction": 0,
+      "combat_power": 0,
+      "mobility": 0
+    }
+  },
+  {
+    "name": "プリベンター・ウインド",
+    "rarity": "SR",
+    "series": "新機動戦記ガンダムW Endless Waltz",
+    "chara_type": "支援",
+    "obtain_method": "データ反映中",
+    "abilities": [],
+    "skills": [],
+    "stats": {
+      "shooting": 0,
+      "melee": 0,
+      "awakening": 0,
+      "defense": 0,
+      "reaction": 0,
+      "combat_power": 0,
+      "mobility": 0
+    }
+  },
+  {
+    "name": "ルクレツィア・ノイン(EW版)",
+    "rarity": "SR",
+    "series": "新機動戦記ガンダムW Endless Waltz",
+    "chara_type": "支援",
+    "obtain_method": "データ反映中",
+    "abilities": [],
+    "skills": [],
+    "stats": {
+      "shooting": 0,
+      "melee": 0,
+      "awakening": 0,
+      "defense": 0,
+      "reaction": 0,
+      "combat_power": 0,
+      "mobility": 0
+    }
   }
 ]

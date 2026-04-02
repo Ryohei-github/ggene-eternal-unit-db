@@ -172259,5 +172259,738 @@
       "reaction": 540,
       "sp": 15
     }
+  },
+  {
+    "id": 1461,
+    "name": "ガンダムエピオン(EW版/シュトゥルム・ウント・ドラング装備)",
+    "image": "",
+    "rarity": "ULT",
+    "type": "攻撃",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW",
+      "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "ライバル",
+      "専用機",
+      "可変機",
+      "ホワイトファング",
+      "ゼロシステム",
+      "一撃必殺",
+      "Wシリーズ",
+      "空中用",
+      "赤色"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド・変形",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": true,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1462,
+    "name": "ウイングガンダムゼロ(EW版)",
+    "image": "",
+    "rarity": "SSR",
+    "type": "支援",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "主人公",
+      "専用機",
+      "オペレーション・メテオ",
+      "ゼロシステム",
+      "突破力",
+      "Wシリーズ",
+      "白色",
+      "不撓不屈"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1463,
+    "name": "ガンダムデスサイズヘル(EW版)",
+    "image": "",
+    "rarity": "SSR",
+    "type": "攻撃",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "専用機",
+      "オペレーション・メテオ",
+      "一撃必殺",
+      "Wシリーズ",
+      "黒色",
+      "疾風迅雷"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1464,
+    "name": "ガンダムヘビーアームズ改(EW版)",
+    "image": "",
+    "rarity": "SSR",
+    "type": "支援",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "専用機",
+      "オペレーション・メテオ",
+      "Wシリーズ"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1465,
+    "name": "ガンダムサンドロック改(EW版)",
+    "image": "",
+    "rarity": "SSR",
+    "type": "攻撃",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "専用機",
+      "オペレーション・メテオ",
+      "ゼロシステム",
+      "突破力",
+      "Wシリーズ",
+      "白色"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1466,
+    "name": "アルトロンガンダム(EW版)",
+    "image": "",
+    "rarity": "SSR",
+    "type": "攻撃",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "ライバル",
+      "専用機",
+      "オペレーション・メテオ",
+      "一撃必殺",
+      "Wシリーズ"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1467,
+    "name": "トールギスIII",
+    "image": "",
+    "rarity": "SSR",
+    "type": "耐久",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "試作機",
+      "電光石火",
+      "Wシリーズ",
+      "空中用",
+      "白色",
+      "不撓不屈"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1468,
+    "name": "ウイングガンダム(EW版)(イベント)",
+    "image": "",
+    "rarity": "SSR",
+    "type": "攻撃",
+    "obtain": "イベント報酬",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "主人公",
+      "専用機",
+      "可変機",
+      "オペレーション・メテオ",
+      "突破力",
+      "空中用",
+      "白色"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド・変形",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": true,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1469,
+    "name": "ウイングガンダムプロトゼロ(EW版)",
+    "image": "",
+    "rarity": "SR",
+    "type": "攻撃",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW",
+      "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "主人公",
+      "オペレーション・メテオ",
+      "ゼロシステム",
+      "電光石火",
+      "Wシリーズ",
+      "白色",
+      "不撓不屈"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド・変形",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": true,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1470,
+    "name": "ガンダムデスサイズ(EW版/ルーセット装備)",
+    "image": "",
+    "rarity": "SR",
+    "type": "攻撃",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW",
+      "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "オペレーション・メテオ",
+      "一撃必殺",
+      "Wシリーズ",
+      "黒色"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1471,
+    "name": "ガンダムヘビーアームズ(EW版/イーゲル装備)",
+    "image": "",
+    "rarity": "SR",
+    "type": "攻撃",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW",
+      "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "オペレーション・メテオ",
+      "堅牢",
+      "Wシリーズ",
+      "赤色",
+      "不撓不屈"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1472,
+    "name": "ガンダムサンドロック(EW版/アーマディロ装備)",
+    "image": "",
+    "rarity": "SR",
+    "type": "耐久",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW",
+      "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "オペレーション・メテオ",
+      "突破力",
+      "Wシリーズ",
+      "黒色",
+      "不撓不屈"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1473,
+    "name": "シェンロンガンダム(EW版/獠牙装備)",
+    "image": "",
+    "rarity": "SR",
+    "type": "耐久",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW",
+      "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "オペレーション・メテオ",
+      "一撃必殺",
+      "Wシリーズ",
+      "黒色",
+      "疾風迅雷"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1474,
+    "name": "トールギスF",
+    "image": "",
+    "rarity": "SR",
+    "type": "攻撃",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW",
+      "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ライバル",
+      "OZ",
+      "電光石火",
+      "Wシリーズ",
+      "空中用",
+      "白色"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1475,
+    "name": "サーペント",
+    "image": "",
+    "rarity": "SR",
+    "type": "支援",
+    "obtain": "",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz",
+      "新機動戦記ガンダムW"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "電光石火",
+      "Wシリーズ",
+      "量産機"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": false,
+    "transformed_weapons": []
+  },
+  {
+    "id": 1476,
+    "name": "ウイングガンダム(EW版)(開発)",
+    "image": "",
+    "rarity": "R",
+    "type": "耐久",
+    "obtain": "開発",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz 敗者たちの栄光",
+      "新機動戦記ガンダムW",
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "オルタナティブシリーズ",
+      "ガンダム",
+      "主人公",
+      "可変機",
+      "オペレーション・メテオ",
+      "Wシリーズ",
+      "空中用",
+      "白色"
+    ],
+    "normal": {
+      "abilities": [],
+      "combat_power": 0,
+      "mechanism": "シールド・変形",
+      "stats": {
+        "agility": 0,
+        "attack": 0,
+        "defense": 0,
+        "en": 0,
+        "hp": 0,
+        "mobility": 0
+      },
+      "terrain": {
+        "地上": "◯",
+        "宇宙": "◯",
+        "空中": "◯",
+        "水上": "-",
+        "水中": "◯"
+      }
+    },
+    "normal_weapons": [],
+    "stats_by_star": [],
+    "transformed": true,
+    "transformed_weapons": []
   }
 ]
