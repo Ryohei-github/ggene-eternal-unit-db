@@ -813,10 +813,12 @@ a:hover{text-decoration:underline}
 .supporter-stat .sv{font-weight:700;color:var(--card-text)}
 
 /* Detail Modal */
-.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);z-index:200;justify-content:center;align-items:center;padding:10px;overflow-y:auto}
+/* Detail Slide-in Panel */
+.modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:200;justify-content:flex-end;align-items:stretch;padding:0;overflow:hidden;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
 .modal-overlay.open{display:flex}
-.modal{background:var(--card);border:1px solid var(--accent);border-radius:12px;max-width:700px;width:100%;padding:24px;position:relative;color:var(--card-text);overflow-y:auto;max-height:calc(100vh - 40px)}
-.modal-close{position:sticky;top:0;float:right;font-size:1.1em;color:var(--card-text2);cursor:pointer;background:rgba(30,30,30,.85);border:1px solid var(--card-border);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;z-index:10;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:all .2s;margin:-4px -4px 0 0;flex-shrink:0}
+.modal{background:var(--card);border:none;border-left:1px solid var(--accent);border-radius:0;max-width:560px;width:100%;padding:24px;position:relative;color:var(--card-text);overflow-y:auto;max-height:100vh;height:100vh;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 32px rgba(0,0,0,.4)}
+.modal-overlay.open .modal{transform:translateX(0)}
+.modal-close{position:sticky;top:0;float:right;font-size:1.1em;color:var(--card-text2);cursor:pointer;background:rgba(30,30,30,.9);border:1px solid var(--card-border);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;z-index:10;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:all .2s;margin:-4px -4px 0 0;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .modal-close:hover{color:#fff;background:rgba(232,150,30,.3);border-color:var(--accent)}
 .modal-close:active{transform:scale(.9)}
 .modal-drag-handle{width:40px;height:4px;background:rgba(255,255,255,.25);border-radius:2px;margin:0 auto 8px;flex-shrink:0;cursor:grab}
@@ -893,9 +895,9 @@ a:hover{text-decoration:underline}
 .supporter-stat-divider{width:1px;height:32px;background:var(--card-border);margin:0 4px}
 .supporter-skill-inline .supporter-stat-val{color:var(--accent)}
 
-/* Wide modal layout for desktop */
+/* Wide panel layout for desktop */
 @media(min-width:1100px) and (min-height:600px){
-  .modal{max-width:95vw;max-height:95vh;overflow-y:auto;padding:18px 24px}
+  .modal{max-width:600px;padding:18px 24px}
   .modal .modal-detail-columns{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
   .modal .modal-detail-columns .detail-col-left,
   .modal .modal-detail-columns .detail-col-right{overflow-y:auto;max-height:85vh}
@@ -1073,9 +1075,9 @@ a:hover{text-decoration:underline}
   .card .supporter-stat{font-size:.62em}
   .card .supporter-stat .sv{font-size:.85em}
 
-  /* Modal — mobile portrait optimization */
-  .modal-overlay{padding:4px}
-  .modal{padding:10px;max-width:calc(100vw - 8px);max-height:calc(100vh - 8px);overflow-x:hidden;box-sizing:border-box}
+  /* Modal — mobile: full-width slide-in */
+  .modal-overlay{padding:0}
+  .modal{padding:10px;max-width:100vw;width:100vw;max-height:100vh;height:100vh;overflow-x:hidden;box-sizing:border-box;border-left:none}
   .modal-drag-handle{margin-bottom:4px}
   .modal-close{width:28px;height:28px;font-size:.9em;margin:-2px -2px 0 0}
   .modal-header-row{gap:8px;margin-bottom:2px}
@@ -1303,9 +1305,9 @@ a:hover{text-decoration:underline}
   .card .leader-tier-section{font-size:.52em}
   .card .recovery-section{font-size:.52em}
 
-  /* Modal landscape */
-  .modal-overlay{padding:2px 2px 2px 58px}
-  .modal{padding:10px;max-height:95vh;overflow-y:auto}
+  /* Modal landscape — slide-in panel */
+  .modal-overlay{padding:0}
+  .modal{padding:10px;max-height:100vh;height:100vh;max-width:60vw;overflow-y:auto;border-left:1px solid var(--accent)}
   .modal-drag-handle{margin-bottom:4px}
   .modal-close{width:28px;height:28px;font-size:.9em}
   .modal-header-row{gap:8px}
@@ -1961,7 +1963,7 @@ a:hover{text-decoration:underline}
   </div>
 </div>
 
-<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="詳細情報">
+<div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="詳細情報" onclick="if(event.target===this)closeModal()">
   <div class="modal" id="modalContent" style="transition:transform .25s ease,opacity .25s ease"></div>
 </div>
 
@@ -4308,9 +4310,9 @@ function showSupporterDetail(id) {
 function openModal() {
   const overlay = document.getElementById('modalOverlay');
   const modal = document.getElementById('modalContent');
+  // Show overlay first, then trigger slide-in on next frame
   overlay.classList.add('open');
-  modal.style.transform = '';
-  modal.style.opacity = '';
+  modal.scrollTop = 0;
   // Push history state so browser back closes modal
   if (!history.state || !history.state.modal) {
     history.pushState({modal:true}, '');
@@ -4322,15 +4324,14 @@ function openModal() {
 function closeModal(skipHistory) {
   const overlay = document.getElementById('modalOverlay');
   const modal = document.getElementById('modalContent');
-  modal.style.transform = 'translateY(40px)';
-  modal.style.opacity = '0';
+  // Slide out to the right
+  modal.style.transform = 'translateX(100%)';
   window._currentDetailChara = null;
   window._currentDetailUnit = null;
   setTimeout(() => {
     overlay.classList.remove('open');
     modal.style.transform = '';
-    modal.style.opacity = '';
-  }, 200);
+  }, 300);
   // Pop history if we pushed one
   if (!skipHistory && history.state && history.state.modal) {
     history.back();
@@ -4352,41 +4353,39 @@ window.addEventListener('popstate', function(e) {
 
 // Swipe-to-close for modal
 function _setupModalSwipe(modal) {
-  let startY = 0, currentY = 0, isDragging = false;
+  let startX = 0, currentX = 0, isDragging = false;
   const onTouchStart = (e) => {
-    // Only start swipe from drag handle or top 40px of modal
-    const handle = modal.querySelector('.modal-drag-handle');
+    // Start swipe from left edge area of panel (first 30px)
     const rect = modal.getBoundingClientRect();
     const touch = e.touches[0];
+    const isLeftEdge = (touch.clientX - rect.left) < 30;
+    const handle = modal.querySelector('.modal-drag-handle');
     const isHandle = handle && handle.contains(e.target);
-    const isTopArea = (touch.clientY - rect.top) < 40;
-    if (isHandle || isTopArea) {
-      startY = touch.clientY;
-      currentY = startY;
+    if (isLeftEdge || isHandle) {
+      startX = touch.clientX;
+      currentX = startX;
       isDragging = true;
       modal.style.transition = 'none';
     }
   };
   const onTouchMove = (e) => {
     if (!isDragging) return;
-    currentY = e.touches[0].clientY;
-    const dy = currentY - startY;
-    if (dy > 0) { // Only allow downward drag
-      modal.style.transform = `translateY(${dy}px)`;
-      modal.style.opacity = Math.max(0, 1 - dy / 300);
+    currentX = e.touches[0].clientX;
+    const dx = currentX - startX;
+    if (dx > 0) { // Only allow rightward drag (to close)
+      modal.style.transform = `translateX(${dx}px)`;
       e.preventDefault();
     }
   };
   const onTouchEnd = () => {
     if (!isDragging) return;
     isDragging = false;
-    modal.style.transition = 'transform .25s ease, opacity .25s ease';
-    const dy = currentY - startY;
-    if (dy > 100) {
+    modal.style.transition = 'transform .3s cubic-bezier(.4,0,.2,1)';
+    const dx = currentX - startX;
+    if (dx > 80) {
       closeModal();
     } else {
-      modal.style.transform = '';
-      modal.style.opacity = '';
+      modal.style.transform = 'translateX(0)';
     }
   };
   // Remove old listeners
