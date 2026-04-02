@@ -950,6 +950,16 @@ a:hover{text-decoration:underline}
 .view-btn.active{border-color:var(--accent);color:var(--accent)}
 .view-btn svg{width:14px;height:14px;fill:currentColor}
 
+/* Compact Card Mode */
+.grid.compact-mode{grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:6px}
+.grid.compact-mode .card{padding:8px}
+.grid.compact-mode .card-series,.grid.compact-mode .card-terrain,.grid.compact-mode .card-tags,.grid.compact-mode .compare-btn,.grid.compact-mode .card-mechanism,.grid.compact-mode .card-rarity-note,.grid.compact-mode .debuff-weapon-block{display:none}
+.grid.compact-mode .card-header{margin-bottom:3px}
+.grid.compact-mode .card-name{font-size:.82em}
+.grid.compact-mode .card-combat-power{font-size:.6em;margin:1px 0}
+.grid.compact-mode .card-stats{margin-bottom:2px}
+.grid.compact-mode .card-stats-sub{margin-bottom:0}
+
 /* Table View */
 .data-table-wrap{max-width:1800px;margin:0 auto;padding:0 16px 40px;overflow-x:auto;box-sizing:border-box;width:100%}
 .data-table{width:100%;border-collapse:collapse;font-size:.8em}
@@ -1113,6 +1123,15 @@ a:hover{text-decoration:underline}
   .data-table{font-size:.65em}
   .data-table td,.data-table th{padding:4px 5px}
   .view-toggle{margin-left:4px}
+
+  /* Compact card mode mobile */
+  .grid.compact-mode{grid-template-columns:repeat(3,1fr);gap:3px}
+  .grid.compact-mode .card{padding:5px}
+  .grid.compact-mode .card-name{font-size:.58em}
+  .grid.compact-mode .card-stats .stat-val{font-size:.58em}
+  .grid.compact-mode .card-stats .stat-label{font-size:.38em}
+  .grid.compact-mode .card-stats-sub .stat-val{font-size:.55em}
+  .grid.compact-mode .card-stats-sub .stat-label{font-size:.36em}
 
   /* Ad slots */
   .ad-slot{min-height:0;padding:3px 8px}
@@ -1716,6 +1735,7 @@ a:hover{text-decoration:underline}
         <button class="sort-btn" data-sort="name">名前順</button>
       </div>
       <div class="view-toggle" id="viewToggle">
+        <button class="view-btn" data-view="compact" title="コンパクト表示"><svg viewBox="0 0 16 16"><rect x="1" y="1" width="4" height="4" rx=".5"/><rect x="6" y="1" width="4" height="4" rx=".5"/><rect x="11" y="1" width="4" height="4" rx=".5"/><rect x="1" y="6" width="4" height="4" rx=".5"/><rect x="6" y="6" width="4" height="4" rx=".5"/><rect x="11" y="6" width="4" height="4" rx=".5"/><rect x="1" y="11" width="4" height="4" rx=".5"/><rect x="6" y="11" width="4" height="4" rx=".5"/><rect x="11" y="11" width="4" height="4" rx=".5"/></svg></button>
         <button class="view-btn active" data-view="card" title="カード表示"><svg viewBox="0 0 16 16"><rect x="1" y="1" width="6" height="6" rx="1"/><rect x="9" y="1" width="6" height="6" rx="1"/><rect x="1" y="9" width="6" height="6" rx="1"/><rect x="9" y="9" width="6" height="6" rx="1"/></svg></button>
         <button class="view-btn" data-view="table" title="テーブル表示"><svg viewBox="0 0 16 16"><rect x="1" y="1" width="14" height="3" rx=".5"/><rect x="1" y="6" width="14" height="3" rx=".5"/><rect x="1" y="11" width="14" height="3" rx=".5"/></svg></button>
       </div>
@@ -2432,10 +2452,21 @@ function setupViewToggle() {
       currentView = btn.dataset.view;
       document.querySelectorAll('.view-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
+      applyViewMode();
       render();
       syncURL();
     });
   });
+}
+
+function applyViewMode() {
+  const grid = document.getElementById('mainGrid');
+  if (!grid) return;
+  if (currentView === 'compact') {
+    grid.classList.add('compact-mode');
+  } else {
+    grid.classList.remove('compact-mode');
+  }
 }
 
 function resetFilters() {
@@ -3252,9 +3283,10 @@ function render() {
   const grid = document.getElementById('mainGrid');
   const tableWrap = document.getElementById('tableWrap');
 
-  if (currentView === 'card') {
+  if (currentView === 'card' || currentView === 'compact') {
     grid.style.display = '';
     tableWrap.style.display = 'none';
+    applyViewMode();
     if (currentTab === 'unit') {
       grid.innerHTML = filtered.map(u => unitCardHTML(u)).join('');
     } else if (currentTab === 'chara') {
@@ -5774,6 +5806,7 @@ function restoreFromURL() {
   document.querySelectorAll('.view-btn').forEach(b => {
     b.classList.toggle('active', b.dataset.view === currentView);
   });
+  applyViewMode();
 
   // Show/hide sections
   const isTagLookup = tab === 'taglookup';
