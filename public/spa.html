@@ -258,7 +258,10 @@ a:hover{text-decoration:underline}
 .bottom-nav-item:hover{color:#9a9eb0;background:rgba(255,255,255,.03)}
 .bottom-nav-item.active{color:#fff;background:rgba(255,255,255,.1);border-bottom:2px solid rgba(240,168,48,.6);font-weight:600}
 .bottom-nav-item.active svg{filter:drop-shadow(0 0 3px rgba(240,168,48,.3))}
-.bottom-nav-item svg{width:20px;height:20px;transition:filter .25s}
+.bottom-nav-item svg{width:20px;height:20px;transition:filter .25s;fill:currentColor}
+.bottom-nav-item svg circle,.bottom-nav-item svg path{fill:currentColor}
+.bottom-nav-item svg [fill="none"]{fill:none}
+.bottom-nav-item svg [stroke="currentColor"]{stroke:currentColor}
 
 /* Tools Slide-up Panel */
 .tools-panel{display:none;position:fixed;bottom:56px;left:0;right:0;background:linear-gradient(180deg,#1a1e2a,#181c28);border-top:1px solid rgba(255,255,255,.08);z-index:85;max-height:60vh;overflow-y:auto;flex-direction:column;padding:8px 0;box-shadow:0 -4px 16px rgba(0,0,0,.4)}
@@ -2426,8 +2429,16 @@ function switchTab(tabName) {
 
 function toggleToolsPanel() {
   const toolsPanel = document.getElementById('toolsPanel');
+  const toolsBtn = document.querySelector('.bottom-nav-item[data-tab="tools"]');
   if (toolsPanel) {
-    toolsPanel.classList.toggle('open');
+    const isOpen = toolsPanel.classList.toggle('open');
+    if (toolsBtn) {
+      if (isOpen) {
+        toolsBtn.classList.add('active');
+      } else {
+        toolsBtn.classList.remove('active');
+      }
+    }
   }
 }
 
