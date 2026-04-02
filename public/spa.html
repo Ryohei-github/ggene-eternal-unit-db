@@ -822,6 +822,8 @@ a:hover{text-decoration:underline}
 .modal-sub .modal-back{display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--card-border);color:var(--accent);padding:6px 12px;border-radius:6px;font-size:.8em;cursor:pointer;margin-bottom:8px;transition:all .2s;font-weight:600}
 .modal-sub .modal-back:hover{background:rgba(232,150,30,.1);border-color:var(--accent)}
 .modal-overlay.open .modal{transform:translateX(0)}
+.modal-overlay.open .modal.modal-sub{transform:translateX(100%)}
+.modal-overlay.open .modal.modal-sub.open{transform:translateX(0)}
 .modal-close{position:sticky;top:0;float:right;font-size:1.1em;color:var(--card-text2);cursor:pointer;background:rgba(30,30,30,.9);border:1px solid var(--card-border);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;z-index:10;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:all .2s;margin:-4px -4px 0 0;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .modal-close:hover{color:#fff;background:rgba(232,150,30,.3);border-color:var(--accent)}
 .modal-close:active{transform:scale(.9)}
