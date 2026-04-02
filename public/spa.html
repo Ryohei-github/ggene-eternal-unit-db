@@ -827,6 +827,8 @@ a:hover{text-decoration:underline}
 .modal-overlay.open .modal{transform:translateX(0)}
 .modal-overlay.open .modal.modal-sub{transform:translateX(100%)}
 .modal-overlay.open .modal.modal-sub.open{transform:translateX(0)}
+.modal-main-dimmer{display:none;position:absolute;top:0;right:0;width:100%;height:100%;background:rgba(0,0,0,.35);z-index:3;cursor:pointer;transition:opacity .3s}
+.modal-main-dimmer.active{display:block}
 .modal-close{position:sticky;top:0;float:right;font-size:1.1em;color:var(--card-text2);cursor:pointer;background:rgba(30,30,30,.9);border:1px solid var(--card-border);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;z-index:10;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:all .2s;margin:-4px -4px 0 0;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .modal-close:hover{color:#fff;background:rgba(232,150,30,.3);border-color:var(--accent)}
 .modal-close:active{transform:scale(.9)}
@@ -4390,6 +4392,7 @@ function closeModal(skipHistory) {
     sub.classList.remove('open');
     sub.innerHTML = '';
   }
+  _hideMainDimmer();
   // Slide out to the right
   modal.style.transform = 'translateX(100%)';
   window._currentDetailChara = null;
@@ -4415,6 +4418,8 @@ function openSubPanel() {
       sub.classList.add('open');
     });
   });
+  // Show dimmer over main panel so clicking it closes sub-panel
+  _showMainDimmer();
   // Setup swipe-to-close for sub-panel
   _setupSubPanelSwipe(sub);
 }
@@ -4466,9 +4471,31 @@ function closeSubPanel() {
   const sub = document.getElementById('modalContent2');
   sub.classList.remove('open');
   window._currentDetailChara = null;
+  // Hide dimmer over main panel
+  _hideMainDimmer();
   setTimeout(() => {
     sub.innerHTML = '';
   }, 300);
+}
+
+function _showMainDimmer() {
+  const modal = document.getElementById('modalContent');
+  if (!modal) return;
+  let dimmer = modal.querySelector('.modal-main-dimmer');
+  if (!dimmer) {
+    dimmer = document.createElement('div');
+    dimmer.className = 'modal-main-dimmer';
+    dimmer.onclick = () => closeSubPanel();
+    modal.appendChild(dimmer);
+  }
+  dimmer.classList.add('active');
+}
+
+function _hideMainDimmer() {
+  const modal = document.getElementById('modalContent');
+  if (!modal) return;
+  const dimmer = modal.querySelector('.modal-main-dimmer');
+  if (dimmer) dimmer.classList.remove('active');
 }
 
 // Browser back button closes modal
