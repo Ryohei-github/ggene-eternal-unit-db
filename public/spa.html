@@ -816,7 +816,11 @@ a:hover{text-decoration:underline}
 /* Detail Slide-in Panel */
 .modal-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.5);z-index:200;justify-content:flex-end;align-items:stretch;padding:0;overflow:hidden;backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px)}
 .modal-overlay.open{display:flex}
-.modal{background:var(--card);border:none;border-left:1px solid var(--accent);border-radius:0;max-width:560px;width:100%;padding:24px;position:relative;color:var(--card-text);overflow-y:auto;max-height:100vh;height:100vh;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 32px rgba(0,0,0,.4)}
+.modal{background:var(--card);border:none;border-left:1px solid var(--accent);border-radius:0;max-width:720px;width:100%;padding:24px;position:relative;color:var(--card-text);overflow-y:auto;max-height:100vh;height:100vh;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);box-shadow:-8px 0 32px rgba(0,0,0,.4)}
+.modal-sub{position:absolute;top:0;right:0;z-index:5;max-width:520px;transform:translateX(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);border-left:1px solid var(--accent);box-shadow:-8px 0 32px rgba(0,0,0,.5)}
+.modal-sub.open{transform:translateX(0)}
+.modal-sub .modal-back{display:flex;align-items:center;gap:6px;background:none;border:1px solid var(--card-border);color:var(--accent);padding:6px 12px;border-radius:6px;font-size:.8em;cursor:pointer;margin-bottom:8px;transition:all .2s;font-weight:600}
+.modal-sub .modal-back:hover{background:rgba(232,150,30,.1);border-color:var(--accent)}
 .modal-overlay.open .modal{transform:translateX(0)}
 .modal-close{position:sticky;top:0;float:right;font-size:1.1em;color:var(--card-text2);cursor:pointer;background:rgba(30,30,30,.9);border:1px solid var(--card-border);border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;z-index:10;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:all .2s;margin:-4px -4px 0 0;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.3)}
 .modal-close:hover{color:#fff;background:rgba(232,150,30,.3);border-color:var(--accent)}
@@ -897,7 +901,8 @@ a:hover{text-decoration:underline}
 
 /* Wide panel layout for desktop */
 @media(min-width:1100px) and (min-height:600px){
-  .modal{max-width:600px;padding:18px 24px}
+  .modal{max-width:720px;padding:18px 24px}
+  .modal-sub{max-width:520px}
   .modal .modal-detail-columns{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:start}
   .modal .modal-detail-columns .detail-col-left,
   .modal .modal-detail-columns .detail-col-right{overflow-y:auto;max-height:85vh}
@@ -1078,6 +1083,7 @@ a:hover{text-decoration:underline}
   /* Modal — mobile: full-width slide-in */
   .modal-overlay{padding:0}
   .modal{padding:10px;max-width:100vw;width:100vw;max-height:100vh;height:100vh;overflow-x:hidden;box-sizing:border-box;border-left:none}
+  .modal-sub{max-width:100vw;width:100vw;border-left:none}
   .modal-drag-handle{margin-bottom:4px}
   .modal-close{width:28px;height:28px;font-size:.9em;margin:-2px -2px 0 0}
   .modal-header-row{gap:8px;margin-bottom:2px}
@@ -1308,6 +1314,7 @@ a:hover{text-decoration:underline}
   /* Modal landscape — slide-in panel */
   .modal-overlay{padding:0}
   .modal{padding:10px;max-height:100vh;height:100vh;max-width:60vw;overflow-y:auto;border-left:1px solid var(--accent)}
+  .modal-sub{max-width:55vw}
   .modal-drag-handle{margin-bottom:4px}
   .modal-close{width:28px;height:28px;font-size:.9em}
   .modal-header-row{gap:8px}
@@ -1965,6 +1972,7 @@ a:hover{text-decoration:underline}
 
 <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-label="詳細情報" onclick="if(event.target===this)closeModal()">
   <div class="modal" id="modalContent" style="transition:transform .25s ease,opacity .25s ease"></div>
+  <div class="modal modal-sub" id="modalContent2" style="transition:transform .3s cubic-bezier(.4,0,.2,1)"></div>
 </div>
 
 <script>
@@ -3430,7 +3438,9 @@ function toggleCharaStatMode(mode) {
   render();
   // モーダルが開いている場合、詳細表示を再描画
   if (window._currentDetailChara) {
-    renderCharaDetail(window._currentDetailChara);
+    const sub = document.getElementById('modalContent2');
+    const isSub = sub && sub.classList.contains('open');
+    renderCharaDetail(window._currentDetailChara, isSub ? 'sub' : undefined);
   }
 }
 
@@ -4065,10 +4075,16 @@ function showCharaDetail(id) {
   const c = allCharas.find(x => x.id === id);
   if (!c) return;
   window._currentDetailChara = c;
+  // If called from a unit detail context, open as nested sub-panel
+  if (window._currentDetailUnit) {
+    renderCharaDetail(c, 'sub');
+    return;
+  }
   renderCharaDetail(c);
 }
 
-function renderCharaDetail(c) {
+function renderCharaDetail(c, target) {
+  const isSub = target === 'sub';
   const baseStats = c.stats || {};
   const ex = isEXChara(c);
   const hasStats = Object.keys(baseStats).length > 0;
@@ -4188,8 +4204,14 @@ function renderCharaDetail(c) {
 
   const charaIconHTML = c.image ? `<img class="modal-icon" src="${c.image}" alt="${c.name}" onerror="this.style.display='none'">` : '';
 
-  document.getElementById('modalContent').innerHTML = `
-    <div class="modal-drag-handle"></div><button class="modal-close" onclick="closeModal()" aria-label="閉じる">&times;</button>
+  const targetEl = isSub ? 'modalContent2' : 'modalContent';
+  const backBtn = isSub ? `<button class="modal-back" onclick="closeSubPanel()">← ユニットに戻る</button>` : '';
+  const closeBtn = isSub ? `<button class="modal-close" onclick="closeSubPanel()" aria-label="閉じる">&times;</button>` : `<button class="modal-close" onclick="closeModal()" aria-label="閉じる">&times;</button>`;
+  const dragHandle = isSub ? '' : '<div class="modal-drag-handle"></div>';
+
+  document.getElementById(targetEl).innerHTML = `
+    ${dragHandle}${closeBtn}
+    ${backBtn}
     <div class="modal-detail-columns">
       <div class="detail-col-left">
         <div class="modal-header-row">
@@ -4217,7 +4239,11 @@ function renderCharaDetail(c) {
       </div>
     </div>
   `;
-  openModal();
+  if (isSub) {
+    openSubPanel();
+  } else {
+    openModal();
+  }
 }
 
 // === SUPPORTER DETAIL ===
@@ -4324,6 +4350,12 @@ function openModal() {
 function closeModal(skipHistory) {
   const overlay = document.getElementById('modalOverlay');
   const modal = document.getElementById('modalContent');
+  const sub = document.getElementById('modalContent2');
+  // Close sub-panel first if open
+  if (sub.classList.contains('open')) {
+    sub.classList.remove('open');
+    sub.innerHTML = '';
+  }
   // Slide out to the right
   modal.style.transform = 'translateX(100%)';
   window._currentDetailChara = null;
@@ -4338,8 +4370,32 @@ function closeModal(skipHistory) {
   }
 }
 
+function openSubPanel() {
+  const sub = document.getElementById('modalContent2');
+  sub.scrollTop = 0;
+  // Use rAF to ensure the transform:translateX(100%) is applied before adding open class
+  requestAnimationFrame(() => {
+    sub.classList.add('open');
+  });
+}
+
+function closeSubPanel() {
+  const sub = document.getElementById('modalContent2');
+  sub.classList.remove('open');
+  window._currentDetailChara = null;
+  setTimeout(() => {
+    sub.innerHTML = '';
+  }, 300);
+}
+
 // Browser back button closes modal
 window.addEventListener('popstate', function(e) {
+  // Close sub-panel first if open
+  const sub = document.getElementById('modalContent2');
+  if (sub && sub.classList.contains('open')) {
+    closeSubPanel();
+    return;
+  }
   const overlay = document.getElementById('modalOverlay');
   if (overlay.classList.contains('open')) {
     closeModal(true); // skipHistory=true to avoid double back
