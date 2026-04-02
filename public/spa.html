@@ -1740,6 +1740,30 @@ a:hover{text-decoration:underline}
 let allUnits = [], allCharas = [], allSupporters = [];
 
 // ============================================
+// ============================================
+// Cache Busting
+// ============================================
+let _buildVer = '';
+
+async function loadBuildVersion() {
+  try {
+    const res = await fetch('/build-meta.json', { cache: 'no-store' });
+    if (res.ok) {
+      const meta = await res.json();
+      _buildVer = meta.v || '';
+    }
+  } catch(e) {
+    console.warn('[cacheBust] Failed to load build-meta.json:', e);
+  }
+}
+
+function cacheBust(url) {
+  if (!_buildVer) return url;
+  const sep = url.includes('?') ? '&' : '?';
+  return url + sep + '_v=' + _buildVer;
+}
+
+// ============================================
 // i18n Internationalization System
 // ============================================
 let currentLang = localStorage.getItem('ggenedb_lang') || 'ja';
@@ -1749,7 +1773,7 @@ async function loadTranslations() {
   const langs = ['en', 'zh-tw'];
   await Promise.all(langs.map(async lang => {
     try {
-      const res = await fetch(`/api/data?type=translations_${lang.replace('-','_')}`);
+      const res = await fetch(cacheBust(`/api/data?type=translations_${lang.replace('-','_')}`));
       const data = await res.json();
       // Parse effectPatterns into compiled form
       if (data.effectPatterns) {
@@ -1952,9 +1976,10 @@ let pickerMode = null;  // 'unit' | 'chara' | 'supporter'
 let pickerSlotIndex = -1;
 
 async function init() {
+  await loadBuildVersion();
   await loadTranslations();
   initLangToggle();
-  const uResp = await fetch('/api/data?type=units');
+  const uResp = await fetch(cacheBust('/api/data?type=units'));
   const allData = await uResp.json();
   // --- 武装データ補完パッチ ---
   for(const _u of allData){if(_u.name==='ベギルペンデ(ドミニコス隊仕様)'&&_u.rarity==='ULT'){for(const _w of(_u.normal_weapons||[])){if(_w.name==='ビームサーベル'){_w.en=_w.en||'23';_w.critical=_w.critical||'5%';}if(_w.name==='ビームライフル'){_w.en=_w.en||'21';_w.critical=_w.critical||'0%';}}break;}}
@@ -2026,7 +2051,7 @@ async function init() {
   });
   // サポーターデータ読み込み
   try {
-    const sResp = await fetch('/api/data?type=supporters');
+    const sResp = await fetch(cacheBust('/api/data?type=supporters'));
     const sData = await sResp.json();
     allSupporters = sData.map((s, idx) => ({ ...s, id: idx + 1 }));
   } catch(e) { allSupporters = []; }
@@ -4694,7 +4719,7 @@ async function loadItemsForTeam() {
   if (allItems) return allItems;
   try {
     // アイテムタブと同じitems.jsonのoption_partsを使用
-    const resp = await fetch('/items.json');
+    const resp = await fetch(cacheBust('/items.json'));
     const data = await resp.json();
     allItems = data.option_parts || [];
   } catch(e) { allItems = []; }
@@ -7212,7 +7237,7 @@ let currentItemSub = 'option_parts';
 async function loadAndRenderItems() {
   if (!itemsData) {
     try {
-      const res1 = await fetch('/items.json');
+      const res1 = await fetch(cacheBust('/items.json'));
       itemsData = await res1.json();
     } catch(e) {
       console.error('Failed to load items.json', e);

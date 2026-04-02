@@ -8,6 +8,9 @@ download_images.py
 download_log.txt
 *.py
 
+# Build-generated
+public/build-meta.json
+
 # Next.js
 .next/
 out/
