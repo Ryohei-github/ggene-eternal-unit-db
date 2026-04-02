@@ -140,7 +140,32 @@ a:hover{text-decoration:underline}
 .filter-sep{color:var(--border);font-size:.9em;margin:0 2px;user-select:none}
 .items-count{font-size:.8em;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border);margin-bottom:12px;text-align:right}
 .items-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
-@media(max-width:640px){.items-grid{grid-template-columns:repeat(2,1fr);gap:4px}}
+/* ===== RESPONSIVE: PC ≥769px ===== */
+@media(min-width:769px){
+  .sidebar.visible{display:flex}
+  .bottom-nav{display:none!important}
+  .tools-panel{display:none!important}
+  .main-wrap{margin-left:220px}
+  .header-compact-title{display:inline}
+  .header{display:none}
+  .tab-bar{display:none}
+}
+
+/* ===== RESPONSIVE: Mobile ≤768px ===== */
+@media(max-width:768px){
+  .sidebar{display:none!important}
+  .bottom-nav.visible{display:flex}
+  .main-wrap{margin-left:0;padding-bottom:56px}
+  .header{display:none}
+  .tab-bar{display:none}
+  .header-compact{position:static}
+
+  /* Adjust main content for mobile with bottom nav */
+  main{padding-bottom:0}
+
+  /* Items grid on mobile */
+  .items-grid{grid-template-columns:repeat(2,1fr);gap:4px}
+}
 .item-card{background:var(--card);border:none;border-radius:0;padding:10px;cursor:default;transition:all .2s;color:var(--card-text);clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);position:relative}
 .item-card:hover{background:var(--card-hover);transform:translateY(-2px)}
 .item-card::before{content:'';position:absolute;inset:0;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px,1px 11px,1px calc(100% - 1px),calc(100% - 11px) calc(100% - 1px),calc(100% - 1px) calc(100% - 11px),calc(100% - 1px) 1px,11px 1px,1px 11px);background:transparent;pointer-events:none;transition:background .2s}
@@ -177,6 +202,58 @@ a:hover{text-decoration:underline}
 .lang-toggle button{padding:4px 10px;border:none;cursor:pointer;font-weight:700;transition:all .2s;background:transparent;color:#8a8d98;font-family:inherit}
 .lang-toggle button.active{background:var(--accent);color:#000}
 .lang-toggle button:hover:not(.active){background:rgba(232,150,30,.15)}
+
+/* ===== NEW LAYOUT: App Container & Sidebar ===== */
+.app-layout{display:flex;min-height:100vh}
+
+/* PC Sidebar (≥769px) */
+.sidebar{display:none;width:220px;background:linear-gradient(135deg,#0e1016,#161a22);border-right:1px solid #2a2d38;position:fixed;left:0;top:0;height:100vh;overflow-y:auto;z-index:90;flex-direction:column;padding:16px 0}
+.sidebar.visible{display:flex}
+.sidebar-header{padding:0 16px 20px;border-bottom:1px solid #2a2d38;text-align:center}
+.sidebar-logo{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:12px}
+.sidebar-logo img{width:32px;height:32px;border-radius:50%;border:2px solid var(--accent);flex-shrink:0}
+.sidebar-title{font-size:.95em;letter-spacing:1px;background:linear-gradient(90deg,#f0a830,#ffd700,#e8961e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+
+/* Sidebar Navigation Sections */
+.sidebar-nav{flex:1;overflow-y:auto;padding:0}
+.nav-section{padding:12px 8px;border-bottom:1px solid rgba(255,255,255,.05)}
+.nav-section:first-of-type{padding-top:0;border-bottom:1px solid #2a2d38}
+.nav-section-label{font-size:.65em;color:#8a8d98;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:0 8px 8px;margin-bottom:4px}
+.nav-item{display:flex;align-items:center;gap:8px;padding:8px 12px;margin:2px 0;cursor:pointer;border-radius:4px;transition:all .2s;color:#8a8d98;font-size:.85em;position:relative;border-left:2px solid transparent}
+.nav-item:hover{background:rgba(255,215,0,.08);color:var(--text);border-left-color:rgba(255,215,0,.3)}
+.nav-item.active{background:rgba(255,215,0,.15);color:#ffd700;font-weight:700;border-left-color:var(--accent)}
+.nav-item svg{width:18px;height:18px;flex-shrink:0;fill:currentColor}
+.nav-item-label{flex:1}
+.nav-item-count{font-size:.75em;color:#8a8d98;margin-left:auto}
+.nav-item.active .nav-item-count{color:var(--accent)}
+
+.sidebar-footer{padding:12px 8px;border-top:1px solid #2a2d38;margin-top:auto}
+.footer-link{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:4px;color:#8a8d98;font-size:.9em;transition:all .2s;margin:2px}
+.footer-link:hover{color:var(--accent);background:rgba(255,215,0,.08)}
+
+.main-wrap{margin-left:0;flex:1;display:flex;flex-direction:column}
+
+/* Compact Header (replaces old header) */
+.header-compact{background:linear-gradient(135deg,#0e1016,#161a22);border-bottom:1px solid #2a2d38;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;height:50px}
+.header-compact-brand{display:flex;align-items:center;gap:8px}
+.header-compact-icon{width:28px;height:28px;border-radius:50%;border:1.5px solid var(--accent);flex-shrink:0}
+.header-compact-title{font-size:.95em;letter-spacing:1px;background:linear-gradient(90deg,#f0a830,#ffd700,#e8961e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
+
+/* Mobile Bottom Navigation (≤768px) */
+.bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;height:56px;background:linear-gradient(135deg,#0e1016,#161a22);border-top:1px solid #2a2d38;z-index:90;flex-direction:row;justify-content:space-around}
+.bottom-nav.visible{display:flex}
+.bottom-nav-item{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;flex:1;cursor:pointer;color:#8a8d98;font-size:.65em;transition:all .2s;border-top:3px solid transparent;padding-top:2px}
+.bottom-nav-item:hover{color:var(--text)}
+.bottom-nav-item.active{color:#ffd700;border-top-color:var(--accent)}
+.bottom-nav-item svg{width:20px;height:20px}
+
+/* Tools Slide-up Panel */
+.tools-panel{display:none;position:fixed;bottom:56px;left:0;right:0;background:linear-gradient(135deg,#0e1016,#161a22);border-top:1px solid #2a2d38;z-index:85;max-height:60vh;overflow-y:auto;flex-direction:column;padding:8px 0}
+.tools-panel.open{display:flex}
+.tools-panel-item{padding:10px 16px;border-bottom:1px solid rgba(255,255,255,.05);cursor:pointer;color:#8a8d98;font-size:.85em;transition:all .2s;display:flex;align-items:center;gap:8px}
+.tools-panel-item:hover{background:rgba(255,215,0,.08);color:var(--text)}
+.tools-panel-item.active{background:rgba(255,215,0,.15);color:#ffd700;font-weight:700}
+.tools-panel-item svg{width:18px;height:18px;fill:currentColor;flex-shrink:0}
 
 
 /* Ad slots — mobile top/bottom */
@@ -1130,7 +1207,7 @@ a:hover{text-decoration:underline}
   .stats-bar{gap:3px}
 
   /* Grid: 3-4 columns compact - full width */
-  .grid{grid-template-columns:repeat(4,1fr);gap:4px;padding:0 2px 16px;max-width:none!important;margin:0 0 0 56px!important;box-sizing:border-box}
+  .grid{grid-template-columns:repeat(4,1fr);gap:4px;padding:0 2px 16px;max-width:none!important;margin:0 !important;box-sizing:border-box}
 
   /* Ultra-compact cards */
   .card{padding:5px;clip-path:none}
@@ -1321,7 +1398,88 @@ a:hover{text-decoration:underline}
 </head>
 <body>
 
-<header class="header" role="banner">
+<div class="app-layout">
+  <!-- PC SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="sidebar-logo">
+        <img src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj" alt="Logo" width="32" height="32">
+        <span class="sidebar-title">GジェネエターナルDB</span>
+      </div>
+    </div>
+    <nav class="sidebar-nav">
+      <!-- Data Section -->
+      <div class="nav-section">
+        <div class="nav-section-label">データ</div>
+        <button class="nav-item active" data-tab="unit" onclick="switchTab('unit')">
+          <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="2"/><path d="M10 2v4M10 14v4M2 10h4M14 10h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+          <span class="nav-item-label">ユニット</span>
+          <span class="nav-item-count" id="sidebarUnitCount"></span>
+        </button>
+        <button class="nav-item" data-tab="chara" onclick="switchTab('chara')">
+          <svg viewBox="0 0 20 20"><circle cx="10" cy="7" r="4"/><path d="M3 18c0-4 3.1-7 7-7s7 3 7 7"/></svg>
+          <span class="nav-item-label">キャラ</span>
+          <span class="nav-item-count" id="sidebarCharaCount"></span>
+        </button>
+        <button class="nav-item" data-tab="supporter" onclick="switchTab('supporter')">
+          <svg viewBox="0 0 20 20"><path d="M5 2v16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M5 3h10l-3 4 3 4H5z"/></svg>
+          <span class="nav-item-label">サポーター</span>
+          <span class="nav-item-count" id="sidebarSupporterCount"></span>
+        </button>
+      </div>
+      <!-- Tools Section -->
+      <div class="nav-section">
+        <div class="nav-section-label">ツール</div>
+        <button class="nav-item" data-tab="taglookup" onclick="switchTab('taglookup')">
+          <svg viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg>
+          <span class="nav-item-label">タグ検索</span>
+        </button>
+        <button class="nav-item" data-tab="team" onclick="switchTab('team')">
+          <svg viewBox="0 0 20 20"><rect x="1" y="3" width="5" height="5" rx="1"/><rect x="7.5" y="3" width="5" height="5" rx="1"/><rect x="14" y="3" width="5" height="5" rx="1"/><rect x="4" y="11" width="5" height="5" rx="1"/><rect x="11" y="11" width="5" height="5" rx="1"/></svg>
+          <span class="nav-item-label">チーム編成</span>
+        </button>
+        <button class="nav-item" data-tab="ranking" onclick="switchTab('ranking')">
+          <svg viewBox="0 0 20 20"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="4" width="4" height="14" rx="1"/><rect x="14" y="7" width="4" height="11" rx="1"/></svg>
+          <span class="nav-item-label">ステータスランキング</span>
+        </button>
+        <button class="nav-item" data-tab="tierlist" onclick="switchTab('tierlist')">
+          <svg viewBox="0 0 20 20"><path d="M3 3h14v3H3zM3 8h11v3H3zM3 13h8v3H3z" fill="currentColor"/></svg>
+          <span class="nav-item-label">ティア</span>
+        </button>
+        <button class="nav-item" data-tab="dmgcalc" onclick="switchTab('dmgcalc')">
+          <svg viewBox="0 0 20 20"><path d="M10 2l1.5 3 3.5.5-2.5 2.5.5 3.5L10 9.5 7 11.5l.5-3.5L5 5.5l3.5-.5z" fill="currentColor"/><path d="M3 14l14-8" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          <span class="nav-item-label">ダメ計算</span>
+        </button>
+        <button class="nav-item" data-tab="items" onclick="switchTab('items')">
+          <svg viewBox="0 0 20 20"><path d="M4 2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm1 3v2h10V5H5zm0 4v2h7V9H5zm0 4v2h5v-2H5z" fill="currentColor"/></svg>
+          <span class="nav-item-label">アイテム</span>
+        </button>
+      </div>
+    </nav>
+    <div class="sidebar-footer">
+      <a class="footer-link" href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener" title="YouTube">▶</a>
+      <a class="footer-link" href="https://x.com/mh_games_jp" target="_blank" rel="noopener" title="Twitter/X">𝕏</a>
+      <a class="footer-link" href="/about" title="About">ℹ</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT WRAPPER -->
+  <div class="main-wrap">
+    <!-- COMPACT HEADER -->
+    <header class="header-compact" role="banner">
+      <div class="header-compact-brand">
+        <img class="header-compact-icon" src="https://yt3.googleusercontent.com/1fHhbDahgzj20gzAsBkKvdA_N5O7uQQ-xU3R8evoky8Nibz6G46Nif9IdfsP94SWavB0HZFI=s240-c-k-c0x00ffffff-no-rj" alt="Logo" width="28" height="28">
+        <span class="header-compact-title">GジェネエターナルDB</span>
+      </div>
+      <div class="lang-toggle" id="langToggle">
+        <button class="active" data-lang="ja">JA</button>
+        <button data-lang="en">EN</button>
+        <button data-lang="zh-tw">繁中</button>
+      </div>
+    </header>
+
+    <!-- OLD HEADER (for reference, hidden) -->
+    <header class="header" role="banner" style="display:none">
   <div class="lang-toggle" id="langToggle">
     <button class="active" data-lang="ja">JA</button>
     <button data-lang="en">EN</button>
@@ -2083,55 +2241,146 @@ async function init() {
   buildFilters();
   applyStaticTranslations();
 
+  // Update count displays in sidebar
+  document.getElementById('sidebarUnitCount').textContent = `(${allUnits.length})`;
+  document.getElementById('sidebarCharaCount').textContent = `(${allCharas.length})`;
+  document.getElementById('sidebarSupporterCount').textContent = `(${allSupporters.length})`;
+
+  // Initialize new layout
+  initializeLayout();
+
   // Check for team data in URL params FIRST (before render/syncURL can wipe them)
   if (loadTeamFromURL()) {
-    document.querySelector('.tab-btn[data-tab="team"]').click();
+    switchTab('team');
   } else if (!restoreFromURL()) {
     render();
   }
 }
 
+// ===== NEW LAYOUT FUNCTIONS =====
+function switchTab(tabName) {
+  currentTab = tabName;
+
+  // Update old tab-btn active state
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  const oldBtn = document.querySelector(`.tab-btn[data-tab="${tabName}"]`);
+  if (oldBtn) oldBtn.classList.add('active');
+
+  // Update new sidebar nav-item active state
+  document.querySelectorAll('.nav-item').forEach(b => b.classList.remove('active'));
+  const sidebarBtn = document.querySelector(`.sidebar .nav-item[data-tab="${tabName}"]`);
+  if (sidebarBtn) sidebarBtn.classList.add('active');
+
+  // Update bottom nav active state
+  document.querySelectorAll('.bottom-nav-item').forEach(b => b.classList.remove('active'));
+  const bottomBtn = document.querySelector(`.bottom-nav-item[data-tab="${tabName}"]`);
+  if (bottomBtn) bottomBtn.classList.add('active');
+
+  // Update tools panel active state
+  document.querySelectorAll('.tools-panel-item').forEach(b => b.classList.remove('active'));
+  const toolsBtn = document.querySelector(`.tools-panel-item[data-tab="${tabName}"]`);
+  if (toolsBtn) toolsBtn.classList.add('active');
+
+  // Close tools panel when selecting from it
+  const toolsPanel = document.getElementById('toolsPanel');
+  if (toolsPanel && toolsPanel.classList.contains('open')) {
+    toolsPanel.classList.remove('open');
+  }
+
+  // Handle tab content visibility (same as original setupTabs logic)
+  const isTagLookup = tabName === 'taglookup';
+  const isTeam = tabName === 'team';
+  const isRanking = tabName === 'ranking';
+  const isTierlist = tabName === 'tierlist';
+  const isDmgCalc = tabName === 'dmgcalc';
+  const isItems = tabName === 'items';
+  const isSpecial = isTagLookup || isTeam || isRanking || isTierlist || isDmgCalc || isItems;
+
+  document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
+  document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
+  document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
+  document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
+  document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
+  document.getElementById('rankingContainer').style.display = isRanking ? '' : 'none';
+  document.getElementById('tierlistContainer').style.display = isTierlist ? '' : 'none';
+  document.getElementById('dmgCalcContainer').style.display = isDmgCalc ? '' : 'none';
+  document.getElementById('itemsContainer').style.display = isItems ? '' : 'none';
+
+  if (isTagLookup) {
+    renderTagLookup();
+  } else if (isRanking) {
+    renderRanking();
+  } else if (isTierlist) {
+    renderTierList();
+  } else if (isDmgCalc) {
+    renderDmgCalc();
+  } else if (isTeam) {
+    renderTeamSim();
+  } else if (isItems) {
+    loadAndRenderItems();
+  } else {
+    resetFilters();
+    buildFilters();
+    updateUI();
+    render();
+  }
+  syncURL();
+}
+
+function toggleToolsPanel() {
+  const toolsPanel = document.getElementById('toolsPanel');
+  if (toolsPanel) {
+    toolsPanel.classList.toggle('open');
+  }
+}
+
+function initializeLayout() {
+  // Initialize sidebar visibility on PC
+  const sidebar = document.getElementById('sidebar');
+  const bottomNav = document.getElementById('bottomNav');
+
+  function updateLayoutForViewport() {
+    if (window.innerWidth >= 769) {
+      if (sidebar) sidebar.classList.add('visible');
+      if (bottomNav) bottomNav.classList.remove('visible');
+    } else {
+      if (sidebar) sidebar.classList.remove('visible');
+      if (bottomNav) bottomNav.classList.add('visible');
+    }
+  }
+
+  updateLayoutForViewport();
+  window.addEventListener('resize', updateLayoutForViewport);
+}
+
 function setupTabs() {
   document.querySelectorAll('.tab-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-      currentTab = btn.dataset.tab;
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      const isTagLookup = currentTab === 'taglookup';
-      const isTeam = currentTab === 'team';
-      const isRanking = currentTab === 'ranking';
-      const isTierlist = currentTab === 'tierlist';
-      const isDmgCalc = currentTab === 'dmgcalc';
-      const isItems = currentTab === 'items';
-      const isSpecial = isTagLookup || isTeam || isRanking || isTierlist || isDmgCalc || isItems;
-      document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
-      document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
-      document.getElementById('tableWrap').style.display = isSpecial ? 'none' : (currentView === 'table' ? '' : 'none');
-      document.getElementById('tagLookupContainer').style.display = isTagLookup ? '' : 'none';
-      document.getElementById('teamSimContainer').style.display = isTeam ? '' : 'none';
-      document.getElementById('rankingContainer').style.display = isRanking ? '' : 'none';
-      document.getElementById('tierlistContainer').style.display = isTierlist ? '' : 'none';
-      document.getElementById('dmgCalcContainer').style.display = isDmgCalc ? '' : 'none';
-      document.getElementById('itemsContainer').style.display = isItems ? '' : 'none';
-      if (isTagLookup) {
-        renderTagLookup();
-      } else if (isRanking) {
-        renderRanking();
-      } else if (isTierlist) {
-        renderTierList();
-      } else if (isDmgCalc) {
-        renderDmgCalc();
-      } else if (isTeam) {
-        renderTeamSim();
-      } else if (isItems) {
-        loadAndRenderItems();
-      } else {
-        resetFilters();
-        buildFilters();
-        updateUI();
-        render();
+      switchTab(btn.dataset.tab);
+    });
+  });
+
+  // Setup sidebar nav items (same behavior as tab-btn)
+  document.querySelectorAll('.nav-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchTab(btn.dataset.tab);
+    });
+  });
+
+  // Setup bottom nav items
+  document.querySelectorAll('.bottom-nav-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const tabName = btn.dataset.tab;
+      if (tabName !== 'tools') {
+        switchTab(tabName);
       }
-      syncURL();
+    });
+  });
+
+  // Setup tools panel items
+  document.querySelectorAll('.tools-panel-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      switchTab(btn.dataset.tab);
     });
   });
 }
@@ -7412,10 +7661,10 @@ init();
 <div class="ad-slot ad-slot-footer" id="adSlotBottom">
 <div class="admax-ads" data-admax-id="6b37984cfa9c490a4d625b9fcbbf94f4" style="display:block;max-width:100%;overflow:hidden;margin:0 auto"></div>
 </div>
-</main>
+    </main>
 
-<!-- Footer -->
-<footer class="site-footer" role="contentinfo">
+    <!-- Footer -->
+    <footer class="site-footer" role="contentinfo">
   <nav class="footer-links" aria-label="フッターリンク">
     <a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">▶ YouTube チャンネル登録</a>
     <a href="https://x.com/mh_games_jp" target="_blank" rel="noopener">𝕏 公式X（ご意見はこちら）</a>
@@ -7424,7 +7673,59 @@ init();
   </nav>
   <p class="footer-copy" style="max-width:480px;margin:0 auto 8px;line-height:1.7">当サイトはバンダイナムコエンターテインメントとは一切関係のない非公式ファンサイトです。<br>掲載されている画像・データの著作権は各権利者に帰属します。<br>データの正確性については可能な限り努力しておりますが、<br>誤りがある場合は<a href="https://x.com/mh_games_jp" target="_blank" rel="noopener" style="color:var(--accent)">X (@mh_games_jp)</a>までご連絡ください。</p>
   <p class="footer-copy">© 2026 MH GAMES — GジェネエターナルDB by MH GAMES</p>
-</footer>
+    </footer>
+  </div>
+  <!-- End main-wrap -->
+</div>
+<!-- End app-layout -->
+
+<!-- MOBILE BOTTOM NAVIGATION -->
+<nav class="bottom-nav" id="bottomNav">
+  <button class="bottom-nav-item active" data-tab="unit" onclick="switchTab('unit')">
+    <svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="10" cy="10" r="2"/><path d="M10 2v4M10 14v4M2 10h4M14 10h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" fill="none"/></svg>
+    <span>ユニット</span>
+  </button>
+  <button class="bottom-nav-item" data-tab="chara" onclick="switchTab('chara')">
+    <svg viewBox="0 0 20 20"><circle cx="10" cy="7" r="4"/><path d="M3 18c0-4 3.1-7 7-7s7 3 7 7"/></svg>
+    <span>キャラ</span>
+  </button>
+  <button class="bottom-nav-item" data-tab="supporter" onclick="switchTab('supporter')">
+    <svg viewBox="0 0 20 20"><path d="M5 2v16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" fill="none"/><path d="M5 3h10l-3 4 3 4H5z"/></svg>
+    <span>サポ</span>
+  </button>
+  <button class="bottom-nav-item" data-tab="tools" onclick="toggleToolsPanel()">
+    <svg viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg>
+    <span>ツール</span>
+  </button>
+</nav>
+
+<!-- TOOLS SLIDE-UP PANEL (Mobile only) -->
+<div class="tools-panel" id="toolsPanel">
+  <button class="tools-panel-item" data-tab="taglookup" onclick="switchTab('taglookup')">
+    <svg viewBox="0 0 20 20"><path d="M3 3h6l8 8-6 6-8-8z"/><circle cx="7" cy="7" r="1.5"/></svg>
+    <span>タグ検索</span>
+  </button>
+  <button class="tools-panel-item" data-tab="team" onclick="switchTab('team')">
+    <svg viewBox="0 0 20 20"><rect x="1" y="3" width="5" height="5" rx="1"/><rect x="7.5" y="3" width="5" height="5" rx="1"/><rect x="14" y="3" width="5" height="5" rx="1"/><rect x="4" y="11" width="5" height="5" rx="1"/><rect x="11" y="11" width="5" height="5" rx="1"/></svg>
+    <span>チーム編成</span>
+  </button>
+  <button class="tools-panel-item" data-tab="ranking" onclick="switchTab('ranking')">
+    <svg viewBox="0 0 20 20"><rect x="2" y="10" width="4" height="8" rx="1"/><rect x="8" y="4" width="4" height="14" rx="1"/><rect x="14" y="7" width="4" height="11" rx="1"/></svg>
+    <span>ステータスランキング</span>
+  </button>
+  <button class="tools-panel-item" data-tab="tierlist" onclick="switchTab('tierlist')">
+    <svg viewBox="0 0 20 20"><path d="M3 3h14v3H3zM3 8h11v3H3zM3 13h8v3H3z" fill="currentColor"/></svg>
+    <span>ティア</span>
+  </button>
+  <button class="tools-panel-item" data-tab="dmgcalc" onclick="switchTab('dmgcalc')">
+    <svg viewBox="0 0 20 20"><path d="M10 2l1.5 3 3.5.5-2.5 2.5.5 3.5L10 9.5 7 11.5l.5-3.5L5 5.5l3.5-.5z" fill="currentColor"/><path d="M3 14l14-8" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+    <span>ダメ計算</span>
+  </button>
+  <button class="tools-panel-item" data-tab="items" onclick="switchTab('items')">
+    <svg viewBox="0 0 20 20"><path d="M4 2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm1 3v2h10V5H5zm0 4v2h7V9H5zm0 4v2h5v-2H5z" fill="currentColor"/></svg>
+    <span>アイテム</span>
+  </button>
+</div>
 
 <!-- Mobile Landscape Enhancements -->
 <script>
