@@ -518,6 +518,8 @@ a:hover{text-decoration:underline}
 .compare-stat-cell{text-align:center;padding:6px 4px;border-radius:6px;font-size:1em;font-weight:700}
 .compare-stat-cell.best{color:var(--gold);background:rgba(255,215,0,.08)}
 .compare-stat-cell.worst{color:var(--card-text2);opacity:.6}
+.compare-bar{height:4px;background:rgba(255,255,255,.08);border-radius:2px;margin-top:4px;overflow:hidden}
+.compare-bar-fill{height:100%;border-radius:2px;transition:width .4s cubic-bezier(.4,0,.2,1)}
 .compare-radar-wrap{display:flex;justify-content:center;margin:16px 0}
 .compare-radar-wrap canvas{max-width:420px;width:100%}
 .compare-terrain-row{display:grid;gap:12px;padding:4px 0}
@@ -563,7 +565,7 @@ a:hover{text-decoration:underline}
   .compare-radar-wrap canvas{max-width:300px}
 
 
-  .compare-fab{bottom:16px;right:16px;padding:8px 14px;font-size:.78em}
+  .compare-fab{bottom:72px;right:16px;padding:8px 14px;font-size:.78em}
 }
 
 
@@ -694,6 +696,7 @@ a:hover{text-decoration:underline}
 /* Card */
 .card{background:var(--card);border:none;border-radius:0;padding:10px;cursor:pointer;transition:all .25s cubic-bezier(.4,0,.2,1);color:var(--card-text);clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px);position:relative;box-shadow:var(--shadow-card)}
 .card:hover{background:var(--card-hover);transform:translateY(-3px);box-shadow:var(--shadow-card-hover)}
+.card:active{transform:scale(.97);transition:transform .1s}
 .card::before{content:'';position:absolute;inset:0;clip-path:polygon(10px 0,100% 0,100% calc(100% - 10px),calc(100% - 10px) 100%,0 100%,0 10px,1px 11px,1px calc(100% - 1px),calc(100% - 11px) calc(100% - 1px),calc(100% - 1px) calc(100% - 11px),calc(100% - 1px) 1px,11px 1px,1px 11px);background:transparent;pointer-events:none;transition:background .25s}
 .card:hover::before{background:linear-gradient(135deg,#ffd700,#ffaa00)}
 
@@ -4412,6 +4415,51 @@ function openSubPanel() {
       sub.classList.add('open');
     });
   });
+  // Setup swipe-to-close for sub-panel
+  _setupSubPanelSwipe(sub);
+}
+
+function _setupSubPanelSwipe(panel) {
+  let startX = 0, currentX = 0, isDragging = false;
+  const onTouchStart = (e) => {
+    const rect = panel.getBoundingClientRect();
+    const touch = e.touches[0];
+    if ((touch.clientX - rect.left) < 50) {
+      startX = touch.clientX;
+      currentX = startX;
+      isDragging = true;
+      panel.style.transition = 'none';
+    }
+  };
+  const onTouchMove = (e) => {
+    if (!isDragging) return;
+    currentX = e.touches[0].clientX;
+    const dx = currentX - startX;
+    if (dx > 0) {
+      panel.style.transform = `translateX(${dx}px)`;
+      e.preventDefault();
+    }
+  };
+  const onTouchEnd = () => {
+    if (!isDragging) return;
+    isDragging = false;
+    panel.style.transition = 'transform .3s cubic-bezier(.4,0,.2,1)';
+    const dx = currentX - startX;
+    if (dx > 60) {
+      closeSubPanel();
+    } else {
+      panel.style.transform = 'translateX(0)';
+    }
+  };
+  panel._subSwipeCleanup && panel._subSwipeCleanup();
+  panel.addEventListener('touchstart', onTouchStart, {passive: true});
+  panel.addEventListener('touchmove', onTouchMove, {passive: false});
+  panel.addEventListener('touchend', onTouchEnd, {passive: true});
+  panel._subSwipeCleanup = () => {
+    panel.removeEventListener('touchstart', onTouchStart);
+    panel.removeEventListener('touchmove', onTouchMove);
+    panel.removeEventListener('touchend', onTouchEnd);
+  };
 }
 
 function closeSubPanel() {
@@ -4449,7 +4497,7 @@ function _setupModalSwipe(modal) {
     // Start swipe from left edge area of panel (first 30px)
     const rect = modal.getBoundingClientRect();
     const touch = e.touches[0];
-    const isLeftEdge = (touch.clientX - rect.left) < 30;
+    const isLeftEdge = (touch.clientX - rect.left) < 50;
     const handle = modal.querySelector('.modal-drag-handle');
     const isHandle = handle && handle.contains(e.target);
     if (isLeftEdge || isHandle) {
@@ -4473,7 +4521,7 @@ function _setupModalSwipe(modal) {
     isDragging = false;
     modal.style.transition = 'transform .3s cubic-bezier(.4,0,.2,1)';
     const dx = currentX - startX;
-    if (dx > 80) {
+    if (dx > 60) {
       closeModal();
     } else {
       modal.style.transform = 'translateX(0)';
@@ -6316,11 +6364,13 @@ function renderComparePanel() {
     const vals = units.map(u => parseInt(getCompareStats(u)[sk.key])||0);
     const maxVal = Math.max(...vals);
     const minVal = Math.min(...vals);
+    const barMax = maxVal || 1;
     const cells = vals.map((v, i) => {
       let cls = '';
       if (n > 1 && v === maxVal && vals.filter(x=>x===maxVal).length < n) cls = 'best';
       else if (n > 1 && v === minVal && vals.filter(x=>x===minVal).length < n) cls = 'worst';
-      return `<div class="compare-stat-cell ${cls}">${v.toLocaleString()}</div>`;
+      const pct = Math.round((v / barMax) * 100);
+      return `<div class="compare-stat-cell ${cls}"><div>${v.toLocaleString()}</div><div class="compare-bar"><div class="compare-bar-fill" style="width:${pct}%;background:${COMPARE_COLORS[i]}"></div></div></div>`;
     }).join('');
     statsHTML += `<div><div class="compare-stat-row ${colClass}" style="grid-template-columns:var(--cmp-label-w,80px) repeat(${n},1fr)"><div style="font-size:.75em;color:var(--accent);font-weight:600;text-align:left">${sk.label}</div>${cells}</div></div>`;
   });
@@ -6408,11 +6458,13 @@ function renderCharaComparePanel() {
     });
     const maxVal = Math.max(...vals);
     const minVal = Math.min(...vals);
-    const cells = vals.map(v => {
+    const barMax = maxVal || 1;
+    const cells = vals.map((v, i) => {
       let cls = '';
       if (n > 1 && v === maxVal && vals.filter(x=>x===maxVal).length < n) cls = 'best';
       else if (n > 1 && v === minVal && vals.filter(x=>x===minVal).length < n) cls = 'worst';
-      return `<div class="compare-stat-cell ${cls}">${v.toLocaleString()}</div>`;
+      const pct = Math.round((v / barMax) * 100);
+      return `<div class="compare-stat-cell ${cls}"><div>${v.toLocaleString()}</div><div class="compare-bar"><div class="compare-bar-fill" style="width:${pct}%;background:${COMPARE_COLORS[i]}"></div></div></div>`;
     }).join('');
     statsHTML += `<div><div class="compare-stat-row ${colClass}" style="grid-template-columns:var(--cmp-label-w,80px) repeat(${n},1fr)"><div style="font-size:.75em;color:var(--accent);font-weight:600;text-align:left">${sk.label}</div>${cells}</div></div>`;
   });
