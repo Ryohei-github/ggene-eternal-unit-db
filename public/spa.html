@@ -151,8 +151,7 @@ a:hover{text-decoration:underline}
   .tools-panel{display:none!important}
   .main-wrap{margin-left:220px}
   .header-compact-brand{display:none!important}
-  .header-compact-yt{display:none!important}
-  .header-compact-cta{display:none!important}
+  .header-compact-cta-bar{display:none!important}
   .header-compact{padding:6px 20px;height:auto;min-height:0}
   .header{display:none}
   .tab-bar{display:none}
@@ -254,10 +253,10 @@ a:hover{text-decoration:underline}
 .header-compact-title{font-size:.95em;letter-spacing:1px;background:linear-gradient(90deg,#f0a830,#ffd700,#e8961e);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:700}
 .header-compact-subbrand{font-size:.55em;color:#8a8d98;text-decoration:none;letter-spacing:.5px;white-space:nowrap;transition:color .2s}
 .header-compact-subbrand:hover{color:#b0b4c0}
-.header-compact-yt{font-size:.6em;padding:3px 10px;border-radius:12px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;text-decoration:none;font-weight:600;white-space:nowrap;transition:all .2s;position:absolute;right:16px;top:36px;z-index:101}
-.header-compact-yt:hover{background:linear-gradient(135deg,#ff2222,#ee0000);transform:scale(1.05)}
-.header-compact-cta{text-align:center;font-size:.6em;color:#8a8d98;padding:4px 10px 6px;background:linear-gradient(135deg,#0e1016,#161a22);margin:0;border-bottom:1px solid #2a2d38;letter-spacing:.02em}
-.header-compact-cta a{color:#ff6b35;font-weight:bold;text-decoration:underline}
+.header-compact-cta-bar{display:flex;align-items:center;justify-content:center;gap:10px;padding:5px 10px;background:linear-gradient(135deg,#0e1016,#161a22);border-bottom:1px solid #2a2d38;margin:0}
+.header-compact-cta-bar .cta-text{font-size:.6em;color:#8a8d98;letter-spacing:.02em}
+.header-compact-cta-bar .cta-btn{font-size:.6em;padding:3px 10px;border-radius:12px;background:linear-gradient(135deg,#ff0000,#cc0000);color:#fff;text-decoration:none;font-weight:600;white-space:nowrap;transition:all .2s;flex-shrink:0}
+.header-compact-cta-bar .cta-btn:hover{background:linear-gradient(135deg,#ff2222,#ee0000);transform:scale(1.05)}
 
 /* Mobile Bottom Navigation (≤768px) */
 .bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;height:56px;background:linear-gradient(135deg,#0e1016,#161a22);border-top:1px solid #2a2d38;z-index:90;flex-direction:row;justify-content:space-around;align-items:stretch;box-shadow:0 -2px 12px rgba(0,0,0,.5);padding:0 4px;gap:2px}
@@ -1042,8 +1041,9 @@ a:hover{text-decoration:underline}
   .header-compact-brand{gap:5px}
   .header-compact-title{font-size:.8em}
   .header-compact-subbrand{font-size:.48em}
-  .header-compact-yt{font-size:.5em;padding:2px 7px;right:6px;top:32px}
-  .header-compact-cta{font-size:.52em;padding:3px 8px 5px}
+  .header-compact-cta-bar{gap:6px;padding:4px 8px}
+  .header-compact-cta-bar .cta-text{font-size:.52em}
+  .header-compact-cta-bar .cta-btn{font-size:.52em;padding:2px 8px}
 
   /* Tab bar: horizontal scroll, compact */
   .tab-bar{gap:2px;padding:4px 6px;margin-top:4px}
@@ -1583,14 +1583,16 @@ a:hover{text-decoration:underline}
         <span class="header-compact-title">GジェネエターナルDB</span>
         <a class="header-compact-subbrand" href="https://www.youtube.com/@MH_GAMES_JP" target="_blank" rel="noopener">by MH GAMES</a>
       </div>
-      <a class="header-compact-yt" href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">▶ チャンネル登録</a>
       <div class="lang-toggle" id="langToggle">
         <button class="active" data-lang="ja">JA</button>
         <button data-lang="en">EN</button>
         <button data-lang="zh-tw">繁中</button>
       </div>
     </header>
-    <p class="header-compact-cta">サイトの充実はチャンネル登録数が目標！<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">登録して応援</a>してくれると嬉しいです</p>
+    <div class="header-compact-cta-bar" id="compactCtaBar">
+      <span class="cta-text">このサイトを応援してくれる方は</span>
+      <a class="cta-btn" href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">▶ チャンネル登録</a>
+    </div>
 
     <!-- OLD HEADER (for reference, hidden) -->
     <header class="header" role="banner" style="display:none">
@@ -2216,15 +2218,11 @@ function applyStaticTranslations() {
   if (btnYt) btnYt.textContent = t('▶ チャンネル登録');
   if (btnX) btnX.textContent = t('𝕏 ご意見はこちら');
 
-  // Compact header elements
-  const compactYt = document.querySelector('.header-compact-yt');
-  if (compactYt) compactYt.textContent = t('▶ チャンネル登録');
-  const compactCta = document.querySelector('.header-compact-cta');
-  if (compactCta && currentLang === 'en') {
-    compactCta.innerHTML = 'Help us grow! <a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">Subscribe & Support</a> us!';
-  } else if (compactCta && currentLang === 'ja') {
-    compactCta.innerHTML = 'サイトの充実はチャンネル登録数が目標！<a href="https://www.youtube.com/@MH_GAMES_JP?sub_confirmation=1" target="_blank" rel="noopener">登録して応援</a>してくれると嬉しいです';
-  }
+  // Compact header CTA bar
+  const compactCtaText = document.querySelector('.header-compact-cta-bar .cta-text');
+  const compactCtaBtn = document.querySelector('.header-compact-cta-bar .cta-btn');
+  if (compactCtaText) compactCtaText.textContent = currentLang === 'en' ? 'Support us!' : 'このサイトを応援してくれる方は';
+  if (compactCtaBtn) compactCtaBtn.textContent = t('▶ チャンネル登録');
 }
 
 // Initialize language toggle
