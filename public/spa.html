@@ -376,8 +376,8 @@ a:hover{text-decoration:underline}
 .filter-chip-more{font-size:.65em;color:var(--text2);padding:2px 6px;white-space:nowrap}
 
 /* Filters collapsible animation */
-.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;overflow:hidden;transition:max-height .3s ease,opacity .25s ease}
-.filters.collapsed{max-height:0!important;opacity:0;margin-bottom:0;pointer-events:none}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;overflow:visible;transition:max-height .3s ease,opacity .25s ease}
+.filters.collapsed{max-height:0!important;opacity:0;margin-bottom:0;pointer-events:none;overflow:hidden}
 
 .stats-bar{display:flex;justify-content:space-between;align-items:center;font-size:.8em;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border);margin-bottom:12px}
 .sort-btns{display:flex;gap:4px;flex-wrap:wrap}
