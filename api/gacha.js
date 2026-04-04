@@ -35,11 +35,13 @@ function isAllowedOrigin(req) {
   return false;
 }
 
+// Supabase anon key is intentionally public (designed for client-side use with RLS)
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://juzzgoplgmfbwsyexupg.supabase.co';
+const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp1enpnb3BsZ21mYndzeWV4dXBnIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzUzMTY5NDcsImV4cCI6MjA5MDg5Mjk0N30.rmPVxrLNek8WUMYtSkLbZymCkxAlndVxLwZ1b8_Uo3Q';
+
 function getSupabase() {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
-  if (!url || !key) return null;
-  return createClient(url, key);
+  if (!SUPABASE_URL || !SUPABASE_ANON_KEY) return null;
+  return createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 }
 
 export default async function handler(req, res) {
