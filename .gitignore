@@ -11,6 +11,10 @@ download_log.txt
 # Build-generated
 public/build-meta.json
 
+# Local env overrides (secret keys go here)
+.env.local
+.env.*.local
+
 # Next.js
 .next/
 out/

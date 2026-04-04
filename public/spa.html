@@ -144,6 +144,48 @@ a:hover{text-decoration:underline}
 .filter-sep{color:var(--border);font-size:.9em;margin:0 2px;user-select:none}
 .items-count{font-size:.8em;color:var(--text2);padding:4px 0;border-bottom:1px solid var(--border);margin-bottom:12px;text-align:right}
 .items-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:8px}
+/* Gacha Section */
+.gacha-container{max-width:1200px;margin:0 auto;padding:20px 16px 40px}
+.gacha-header{text-align:center;margin-bottom:24px}
+.gacha-title{font-size:1.3em;color:var(--text);font-weight:700;margin-bottom:4px}
+.gacha-subtitle{font-size:.8em;color:var(--text2)}
+.gacha-loading{text-align:center;color:var(--text2);padding:40px 0;font-size:.9em}
+.gacha-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
+.gacha-card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .25s;position:relative}
+.gacha-card:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(232,150,30,.15);transform:translateY(-2px)}
+.gacha-card-banner{height:8px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.gacha-card-banner.limited{background:linear-gradient(90deg,#ff4444,#ff8800,#ffd700)}
+.gacha-card-body{padding:16px}
+.gacha-card-name{font-size:1em;font-weight:700;color:var(--text);margin-bottom:8px}
+.gacha-card-meta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.gacha-card-badge{font-size:.7em;padding:2px 8px;border-radius:4px;font-weight:600}
+.gacha-badge-limited{background:rgba(255,68,68,.15);color:#ff6666;border:1px solid rgba(255,68,68,.3)}
+.gacha-badge-active{background:rgba(68,255,68,.15);color:#66ff66;border:1px solid rgba(68,255,68,.3)}
+.gacha-badge-ended{background:rgba(128,128,128,.15);color:#999;border:1px solid rgba(128,128,128,.3)}
+.gacha-card-period{font-size:.75em;color:var(--text2);margin-bottom:12px}
+.gacha-card-pickups{display:flex;gap:6px;flex-wrap:wrap}
+.gacha-pickup-unit{display:flex;align-items:center;gap:6px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:8px;padding:4px 10px 4px 4px}
+.gacha-pickup-img{width:32px;height:32px;border-radius:6px;object-fit:cover;border:1px solid var(--card-border)}
+.gacha-pickup-name{font-size:.75em;font-weight:600;color:var(--accent)}
+.gacha-pickup-label{font-size:.6em;color:#ff8800;font-weight:700;letter-spacing:.5px}
+.gacha-detail{max-width:1200px;margin:0 auto;padding:20px 0}
+.gacha-detail-back{display:inline-flex;align-items:center;gap:4px;color:var(--accent);font-size:.85em;cursor:pointer;margin-bottom:16px;border:none;background:none;font-weight:600;padding:6px 12px;border-radius:6px;transition:background .2s}
+.gacha-detail-back:hover{background:rgba(255,215,0,.1)}
+.gacha-detail-info{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:20px;margin-bottom:20px}
+.gacha-detail-name{font-size:1.2em;font-weight:700;color:var(--text);margin-bottom:8px}
+.gacha-detail-note{font-size:.85em;color:var(--text2);margin-bottom:12px;line-height:1.6}
+.gacha-detail-period{font-size:.8em;color:var(--text2)}
+.gacha-unit-section{margin-top:20px}
+.gacha-unit-section-title{font-size:.95em;font-weight:700;color:var(--accent);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--card-border)}
+.gacha-unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
+.gacha-unit-card{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:10px;cursor:pointer;transition:all .2s}
+.gacha-unit-card:hover{border-color:var(--accent);background:rgba(255,215,0,.04)}
+.gacha-unit-card.pickup{border-color:rgba(255,215,0,.4);background:rgba(255,215,0,.06)}
+.gacha-unit-img{width:40px;height:40px;border-radius:6px;object-fit:cover;border:1px solid var(--card-border);flex-shrink:0}
+.gacha-unit-info{flex:1;min-width:0}
+.gacha-unit-name{font-size:.82em;font-weight:600;color:var(--text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gacha-unit-meta{font-size:.7em;color:var(--text2)}
+.gacha-empty{text-align:center;color:var(--text2);padding:40px 0;font-size:.9em}
 /* ===== RESPONSIVE: PC ≥769px ===== */
 @media(min-width:769px){
   .sidebar.visible{display:flex}
@@ -1290,7 +1332,7 @@ a:hover{text-decoration:underline}
   .tab-btn .tab-tooltip{display:none!important}
 
   /* Main content offset for sidebar — now handled by .main-wrap margin-left */
-  main[role="main"],.data-table-wrap,.tag-lookup-container,.team-sim-container,.ranking-container,.tierlist-container,.dmg-calc-container,.items-container,.ad-slot,.site-footer{margin-left:0!important}
+  main[role="main"],.data-table-wrap,.tag-lookup-container,.team-sim-container,.ranking-container,.tierlist-container,.dmg-calc-container,.items-container,.gacha-container,.ad-slot,.site-footer{margin-left:0!important}
 
   /* Filter toggle compact for landscape */
   .filter-toggle-bar{padding:4px 8px;margin-bottom:4px}
@@ -1563,6 +1605,10 @@ a:hover{text-decoration:underline}
         <button class="nav-item" data-tab="items" onclick="switchTab('items')">
           <svg viewBox="0 0 20 20"><path d="M4 2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm1 3v2h10V5H5zm0 4v2h7V9H5zm0 4v2h5v-2H5z" fill="currentColor"/></svg>
           <span class="nav-item-label">アイテム</span>
+        </button>
+        <button class="nav-item" data-tab="gacha" onclick="switchTab('gacha')">
+          <svg viewBox="0 0 20 20"><circle cx="10" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 8h14" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="3" fill="currentColor"/><path d="M8 15h4v3H8z" fill="currentColor"/><rect x="6" y="17" width="8" height="2" rx="1" fill="currentColor"/></svg>
+          <span class="nav-item-label">ガシャ</span>
         </button>
       </div>
     </nav>
@@ -1974,6 +2020,18 @@ a:hover{text-decoration:underline}
     <p class="coming-soon-text">準備中...</p>
     <p class="coming-soon-sub">データ収集中です。今後のアップデートをお待ちください。</p>
   </div>
+</div>
+
+<!-- Gacha Container -->
+<div id="gachaContainer" class="gacha-container" style="display:none">
+  <div class="gacha-header">
+    <h2 class="gacha-title">開催中ガシャ</h2>
+    <p class="gacha-subtitle">現在開催中のピックアップガシャ一覧</p>
+  </div>
+  <div class="gacha-list" id="gachaList">
+    <div class="gacha-loading">読み込み中...</div>
+  </div>
+  <div id="gachaDetail" class="gacha-detail" style="display:none"></div>
 </div>
 
 <!-- Ranking Container -->
@@ -2422,7 +2480,8 @@ function switchTab(tabName) {
   const isTierlist = tabName === 'tierlist';
   const isDmgCalc = tabName === 'dmgcalc';
   const isItems = tabName === 'items';
-  const isSpecial = isTagLookup || isTeam || isRanking || isTierlist || isDmgCalc || isItems;
+  const isGacha = tabName === 'gacha';
+  const isSpecial = isTagLookup || isTeam || isRanking || isTierlist || isDmgCalc || isItems || isGacha;
 
   document.querySelector('.controls').style.display = isSpecial ? 'none' : '';
   document.getElementById('mainGrid').style.display = isSpecial ? 'none' : '';
@@ -2433,6 +2492,7 @@ function switchTab(tabName) {
   document.getElementById('tierlistContainer').style.display = isTierlist ? '' : 'none';
   document.getElementById('dmgCalcContainer').style.display = isDmgCalc ? '' : 'none';
   document.getElementById('itemsContainer').style.display = isItems ? '' : 'none';
+  document.getElementById('gachaContainer').style.display = isGacha ? '' : 'none';
 
   if (isTagLookup) {
     renderTagLookup();
@@ -2446,6 +2506,8 @@ function switchTab(tabName) {
     renderTeamSim();
   } else if (isItems) {
     loadAndRenderItems();
+  } else if (isGacha) {
+    loadAndRenderGacha();
   } else {
     resetFilters();
     buildFilters();
@@ -7949,6 +8011,135 @@ function renderItems() {
 bindSortButtons();
 init();
 
+// ===== GACHA FUNCTIONS =====
+let gachaDataCache = null;
+
+async function fetchGachaData(action, params = '') {
+  const url = '/api/gacha?action=' + action + (params ? '&' + params : '');
+  const res = await fetch(url);
+  if (!res.ok) throw new Error('Gacha API error: ' + res.status);
+  return res.json();
+}
+
+async function loadAndRenderGacha() {
+  const listEl = document.getElementById('gachaList');
+  const detailEl = document.getElementById('gachaDetail');
+  detailEl.style.display = 'none';
+  listEl.style.display = '';
+
+  if (gachaDataCache) {
+    renderGachaList(gachaDataCache);
+    return;
+  }
+
+  listEl.innerHTML = '<div class="gacha-loading">読み込み中...</div>';
+  try {
+    const data = await fetchGachaData('all');
+    gachaDataCache = data;
+    renderGachaList(data);
+  } catch (e) {
+    listEl.innerHTML = '<div class="gacha-empty">ガシャ情報の取得に失敗しました。</div>';
+    console.error(e);
+  }
+}
+
+function renderGachaList(gachas) {
+  const listEl = document.getElementById('gachaList');
+  if (!gachas || gachas.length === 0) {
+    listEl.innerHTML = '<div class="gacha-empty">現在開催中のガシャはありません。</div>';
+    return;
+  }
+
+  const now = new Date();
+  listEl.innerHTML = gachas.map(g => {
+    const start = g.start_date ? new Date(g.start_date) : null;
+    const end = g.end_date ? new Date(g.end_date) : null;
+    const isActive = g.is_active && (!end || end >= now);
+    const badges = [];
+    if (g.is_limited) badges.push('<span class="gacha-card-badge gacha-badge-limited">期間限定</span>');
+    if (isActive) badges.push('<span class="gacha-card-badge gacha-badge-active">開催中</span>');
+    else badges.push('<span class="gacha-card-badge gacha-badge-ended">終了</span>');
+
+    const period = (start ? start.toLocaleDateString('ja-JP') : '?') + ' ～ ' + (end ? end.toLocaleDateString('ja-JP') : '未定');
+
+    return '<div class="gacha-card" onclick="showGachaDetail(' + g.id + ')">' +
+      '<div class="gacha-card-banner' + (g.is_limited ? ' limited' : '') + '"></div>' +
+      '<div class="gacha-card-body">' +
+        '<div class="gacha-card-name">' + escapeHTML(g.name) + '</div>' +
+        '<div class="gacha-card-meta">' + badges.join('') + '</div>' +
+        '<div class="gacha-card-period">' + period + '</div>' +
+      '</div>' +
+    '</div>';
+  }).join('');
+}
+
+async function showGachaDetail(gachaId) {
+  const listEl = document.getElementById('gachaList');
+  const detailEl = document.getElementById('gachaDetail');
+  const headerEl = document.querySelector('.gacha-header');
+
+  listEl.style.display = 'none';
+  if (headerEl) headerEl.style.display = 'none';
+  detailEl.style.display = '';
+  detailEl.innerHTML = '<div class="gacha-loading">読み込み中...</div>';
+
+  try {
+    const data = await fetchGachaData('detail', 'gacha_id=' + gachaId);
+    const start = data.start_date ? new Date(data.start_date).toLocaleDateString('ja-JP') : '?';
+    const end = data.end_date ? new Date(data.end_date).toLocaleDateString('ja-JP') : '未定';
+
+    const pickups = (data.units || []).filter(u => u.is_pickup);
+    const others = (data.units || []).filter(u => !u.is_pickup);
+
+    function unitCard(u, isPickup) {
+      const cls = 'gacha-unit-card' + (isPickup ? ' pickup' : '');
+      const img = u.image ? '<img class="gacha-unit-img" src="' + escapeHTML(u.image) + '" alt="" loading="lazy">' : '<div class="gacha-unit-img" style="background:#222"></div>';
+      return '<div class="' + cls + '">' +
+        img +
+        '<div class="gacha-unit-info">' +
+          '<div class="gacha-unit-name">' + escapeHTML(u.name) + '</div>' +
+          '<div class="gacha-unit-meta">' + escapeHTML(u.rarity || '') + ' / ' + escapeHTML(u.type || '') + '</div>' +
+        '</div>' +
+        (isPickup ? '<span class="gacha-pickup-label">PICKUP</span>' : '') +
+      '</div>';
+    }
+
+    let html = '<button class="gacha-detail-back" onclick="backToGachaList()">← ガシャ一覧に戻る</button>';
+    html += '<div class="gacha-detail-info">';
+    html += '<div class="gacha-detail-name">' + escapeHTML(data.name) + '</div>';
+    if (data.note) html += '<div class="gacha-detail-note">' + escapeHTML(data.note) + '</div>';
+    html += '<div class="gacha-detail-period">' + start + ' ～ ' + end + '</div>';
+    html += '</div>';
+
+    if (pickups.length > 0) {
+      html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">ピックアップユニット</div>';
+      html += '<div class="gacha-unit-grid">' + pickups.map(u => unitCard(u, true)).join('') + '</div></div>';
+    }
+
+    if (others.length > 0) {
+      html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">その他のユニット</div>';
+      html += '<div class="gacha-unit-grid">' + others.map(u => unitCard(u, false)).join('') + '</div></div>';
+    }
+
+    detailEl.innerHTML = html;
+  } catch (e) {
+    detailEl.innerHTML = '<button class="gacha-detail-back" onclick="backToGachaList()">← 戻る</button><div class="gacha-empty">ガシャ詳細の取得に失敗しました。</div>';
+    console.error(e);
+  }
+}
+
+function backToGachaList() {
+  document.getElementById('gachaDetail').style.display = 'none';
+  document.getElementById('gachaList').style.display = '';
+  const headerEl = document.querySelector('.gacha-header');
+  if (headerEl) headerEl.style.display = '';
+}
+
+function escapeHTML(str) {
+  if (!str) return '';
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
 // 忍者AdMax: HTMLに直接scriptタグを埋め込み済み（クローラー対応）
 
 </script>
@@ -8020,6 +8211,10 @@ init();
   <button class="tools-panel-item" data-tab="items" onclick="switchTab('items')">
     <svg viewBox="0 0 20 20"><path d="M4 2h12a2 2 0 012 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm1 3v2h10V5H5zm0 4v2h7V9H5zm0 4v2h5v-2H5z" fill="currentColor"/></svg>
     <span>アイテム</span>
+  </button>
+  <button class="tools-panel-item" data-tab="gacha" onclick="switchTab('gacha')">
+    <svg viewBox="0 0 20 20"><circle cx="10" cy="8" r="7" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M3 8h14" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="8" r="3" fill="currentColor"/><path d="M8 15h4v3H8z" fill="currentColor"/><rect x="6" y="17" width="8" height="2" rx="1" fill="currentColor"/></svg>
+    <span>ガシャ</span>
   </button>
 </div>
 
