@@ -172992,5 +172992,201 @@
     "stats_by_star": [],
     "transformed": true,
     "transformed_weapons": []
+  },
+  {
+    "id": 1477,
+    "name": "ヒイロ・ユイ(EW版)",
+    "image": "",
+    "rarity": "SR",
+    "type": "攻撃",
+    "obtain": "データ反映中",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "キャラ"
+    ],
+    "normal": {
+      "combat_power": 0,
+      "stats": {
+        "shooting": 0,
+        "melee": 0,
+        "awakening": 0,
+        "defense": 0,
+        "reaction": 0,
+        "sp": 0
+      },
+      "skills": [],
+      "abilities": []
+    },
+    "acquire": "データ反映中"
+  },
+  {
+    "id": 1478,
+    "name": "デュオ・マックスウェル(EW版)",
+    "image": "",
+    "rarity": "SR",
+    "type": "攻撃",
+    "obtain": "データ反映中",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "キャラ"
+    ],
+    "normal": {
+      "combat_power": 0,
+      "stats": {
+        "shooting": 0,
+        "melee": 0,
+        "awakening": 0,
+        "defense": 0,
+        "reaction": 0,
+        "sp": 0
+      },
+      "skills": [],
+      "abilities": []
+    },
+    "acquire": "データ反映中"
+  },
+  {
+    "id": 1479,
+    "name": "カトル・ラバーバ・ウィナー(EW版)",
+    "image": "",
+    "rarity": "SR",
+    "type": "支援",
+    "obtain": "データ反映中",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "キャラ"
+    ],
+    "normal": {
+      "combat_power": 0,
+      "stats": {
+        "shooting": 0,
+        "melee": 0,
+        "awakening": 0,
+        "defense": 0,
+        "reaction": 0,
+        "sp": 0
+      },
+      "skills": [],
+      "abilities": []
+    },
+    "acquire": "データ反映中"
+  },
+  {
+    "id": 1480,
+    "name": "トロワ・バートン(EW版)",
+    "image": "",
+    "rarity": "SR",
+    "type": "支援",
+    "obtain": "データ反映中",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "キャラ"
+    ],
+    "normal": {
+      "combat_power": 0,
+      "stats": {
+        "shooting": 0,
+        "melee": 0,
+        "awakening": 0,
+        "defense": 0,
+        "reaction": 0,
+        "sp": 0
+      },
+      "skills": [],
+      "abilities": []
+    },
+    "acquire": "データ反映中"
+  },
+  {
+    "id": 1481,
+    "name": "張五飛(EW版)",
+    "image": "",
+    "rarity": "SR",
+    "type": "攻撃",
+    "obtain": "データ反映中",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "キャラ"
+    ],
+    "normal": {
+      "combat_power": 0,
+      "stats": {
+        "shooting": 0,
+        "melee": 0,
+        "awakening": 0,
+        "defense": 0,
+        "reaction": 0,
+        "sp": 0
+      },
+      "skills": [],
+      "abilities": []
+    },
+    "acquire": "データ反映中"
+  },
+  {
+    "id": 1482,
+    "name": "プリベンター・ウインド",
+    "image": "",
+    "rarity": "SR",
+    "type": "支援",
+    "obtain": "データ反映中",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "キャラ"
+    ],
+    "normal": {
+      "combat_power": 0,
+      "stats": {
+        "shooting": 0,
+        "melee": 0,
+        "awakening": 0,
+        "defense": 0,
+        "reaction": 0,
+        "sp": 0
+      },
+      "skills": [],
+      "abilities": []
+    },
+    "acquire": "データ反映中"
+  },
+  {
+    "id": 1483,
+    "name": "ルクレツィア・ノイン(EW版)",
+    "image": "",
+    "rarity": "SR",
+    "type": "支援",
+    "obtain": "データ反映中",
+    "series": [
+      "新機動戦記ガンダムW Endless Waltz"
+    ],
+    "tags": [
+      "キャラ"
+    ],
+    "normal": {
+      "combat_power": 0,
+      "stats": {
+        "shooting": 0,
+        "melee": 0,
+        "awakening": 0,
+        "defense": 0,
+        "reaction": 0,
+        "sp": 0
+      },
+      "skills": [],
+      "abilities": []
+    },
+    "acquire": "データ反映中"
   }
 ]
