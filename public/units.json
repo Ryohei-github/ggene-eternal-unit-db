@@ -172998,7 +172998,7 @@
     "name": "ヒイロ・ユイ(EW版)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "新機動戦記ガンダムW Endless Waltz"
@@ -173007,7 +173007,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2307,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -173035,7 +173035,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2326,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -173054,7 +173054,7 @@
     "name": "カトル・ラバーバ・ウィナー(EW版)",
     "image": "",
     "rarity": "SR",
-    "type": "支援",
+    "type": "攻撃",
     "obtain": "データ反映中",
     "series": [
       "新機動戦記ガンダムW Endless Waltz"
@@ -173063,7 +173063,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2310,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -173091,7 +173091,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2341,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -173119,7 +173119,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2341,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -173138,7 +173138,7 @@
     "name": "プリベンター・ウインド",
     "image": "",
     "rarity": "SR",
-    "type": "支援",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "新機動戦記ガンダムW Endless Waltz"
@@ -173147,7 +173147,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2413,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -173166,7 +173166,7 @@
     "name": "ルクレツィア・ノイン(EW版)",
     "image": "",
     "rarity": "SR",
-    "type": "支援",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "新機動戦記ガンダムW Endless Waltz"
@@ -173175,7 +173175,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2402,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -173194,7 +173194,7 @@
     "name": "ガンダムスローネアイントゥルブレンツ",
     "image": "",
     "rarity": "ULT",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -173203,13 +173203,21 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 62373,
+        "en": 279,
+        "attack": 6865,
+        "defense": 5607,
+        "mobility": 4,
+        "agility": 6875
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "変形"
     },
     "acquire": ""
   },
@@ -173218,22 +173226,30 @@
     "name": "フルアーマー0ガンダム",
     "image": "",
     "rarity": "SSR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 14192,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 93960,
+        "en": 282,
+        "attack": 6939,
+        "defense": 8959,
+        "mobility": 5,
+        "agility": 6231
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173242,22 +173258,30 @@
     "name": "ダブルオーライザー",
     "image": "",
     "rarity": "SSR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 14739,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 73136,
+        "en": 329,
+        "attack": 7761,
+        "defense": 6680,
+        "mobility": 5,
+        "agility": 8077
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173273,15 +173297,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 16478,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 69927,
+        "en": 296,
+        "attack": 10694,
+        "defense": 6626,
+        "mobility": 5,
+        "agility": 7407
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173290,22 +173322,30 @@
     "name": "アリオスガンダム GNHW／M",
     "image": "",
     "rarity": "SSR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 14448,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 73136,
+        "en": 326,
+        "attack": 7035,
+        "defense": 7383,
+        "mobility": 5,
+        "agility": 8171
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド、変形"
     },
     "acquire": ""
   },
@@ -173314,22 +173354,30 @@
     "name": "ケルディムガンダム GNHW／R",
     "image": "",
     "rarity": "SSR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 14671,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 101887,
+        "en": 282,
+        "attack": 7040,
+        "defense": 7722,
+        "mobility": 5,
+        "agility": 6231
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173338,21 +173386,28 @@
     "name": "セラヴィーガンダム GNHW／B",
     "image": "",
     "rarity": "SSR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 14263,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 66021,
+        "en": 379,
+        "attack": 7415,
+        "defense": 6636,
+        "mobility": 5,
+        "agility": 8135
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
       }
     },
     "acquire": ""
@@ -173369,15 +173424,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 16005,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 77536,
+        "en": 284,
+        "attack": 9302,
+        "defense": 7018,
+        "mobility": 5,
+        "agility": 7387
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド、変形"
     },
     "acquire": ""
   },
@@ -173386,22 +173449,30 @@
     "name": "レグナント",
     "image": "",
     "rarity": "SSR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 14902,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 70396,
+        "en": 361,
+        "attack": 7725,
+        "defense": 6946,
+        "mobility": 5,
+        "agility": 7420
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "-"
+      },
+      "mechanism": "大型、変形"
     },
     "acquire": ""
   },
@@ -173417,15 +173488,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 15857,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 70080,
+        "en": 313,
+        "attack": 9306,
+        "defense": 7009,
+        "mobility": 5,
+        "agility": 7371
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173441,14 +173520,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 16220,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 66392,
+        "en": 313,
+        "attack": 9357,
+        "defense": 6981,
+        "mobility": 5,
+        "agility": 7418
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -173465,14 +173551,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 18041,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 72805,
+        "en": 343,
+        "attack": 10225,
+        "defense": 7719,
+        "mobility": 5,
+        "agility": 8173
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -173482,21 +173575,28 @@
     "name": "ガッデス",
     "image": "",
     "rarity": "SSR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 15178,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 85306,
+        "en": 400,
+        "attack": 7660,
+        "defense": 8132,
+        "mobility": 5,
+        "agility": 8096
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -173506,22 +173606,30 @@
     "name": "ティエレン全領域対応型",
     "image": "",
     "rarity": "SSR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 15027,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 93216,
+        "en": 340,
+        "attack": 6848,
+        "defense": 11287,
+        "mobility": 5,
+        "agility": 6951
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173537,15 +173645,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 15613,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 66452,
+        "en": 313,
+        "attack": 9245,
+        "defense": 7043,
+        "mobility": 5,
+        "agility": 7323
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173554,22 +173670,30 @@
     "name": "ガンダムエクシア",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10796,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 76660,
+        "en": 228,
+        "attack": 5581,
+        "defense": 6097,
+        "mobility": 5,
+        "agility": 4974
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173585,15 +173709,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11321,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 58524,
+        "en": 254,
+        "attack": 7038,
+        "defense": 4974,
+        "mobility": 5,
+        "agility": 5828
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド、変形"
     },
     "acquire": ""
   },
@@ -173602,22 +173734,30 @@
     "name": "ガンダムデュナメス",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10784,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 58408,
+        "en": 277,
+        "attack": 6144,
+        "defense": 5268,
+        "mobility": 5,
+        "agility": 5838
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173626,21 +173766,28 @@
     "name": "ガンダムヴァーチェ",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10748,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 70245,
+        "en": 228,
+        "attack": 5538,
+        "defense": 6756,
+        "mobility": 5,
+        "agility": 4974
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -173657,15 +173804,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11293,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 52672,
+        "en": 252,
+        "attack": 7050,
+        "defense": 5548,
+        "mobility": 5,
+        "agility": 5840
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173681,14 +173836,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11452,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 58408,
+        "en": 231,
+        "attack": 7009,
+        "defense": 5581,
+        "mobility": 5,
+        "agility": 5821
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -173698,22 +173860,30 @@
     "name": "ガンダムスローネドライ",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10691,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 52567,
+        "en": 294,
+        "attack": 5875,
+        "defense": 5236,
+        "mobility": 5,
+        "agility": 6412
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173722,22 +173892,30 @@
     "name": "ガンダムスローネアイン",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10639,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 79726,
+        "en": 238,
+        "attack": 5268,
+        "defense": 5853,
+        "mobility": 5,
+        "agility": 4974
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173746,21 +173924,28 @@
     "name": "アルヴァアロン",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10417,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 77272,
+        "en": 252,
+        "attack": 4944,
+        "defense": 6132,
+        "mobility": 5,
+        "agility": 4974
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -173777,14 +173962,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11124,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 52987,
+        "en": 254,
+        "attack": 7023,
+        "defense": 5548,
+        "mobility": 4,
+        "agility": 5817
+      },
+      "terrain": {
+        "宇宙": "-",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "-"
       }
     },
     "acquire": ""
@@ -173794,22 +173986,30 @@
     "name": "ジンクス",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10268,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 58174,
+        "en": 279,
+        "attack": 5572,
+        "defense": 5840,
+        "mobility": 5,
+        "agility": 5850
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173818,22 +174018,30 @@
     "name": "ティエレンタオツー",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10301,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 52462,
+        "en": 294,
+        "attack": 5888,
+        "defense": 5236,
+        "mobility": 5,
+        "agility": 6412
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "◯",
+        "水中": "-"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -173842,21 +174050,28 @@
     "name": "グラハム専用ユニオンフラッグカスタムⅡ(GNフラッグ)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10363,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 52987,
+        "en": 294,
+        "attack": 5794,
+        "defense": 5255,
+        "mobility": 5,
+        "agility": 6424
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -173873,15 +174088,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11254,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 55820,
+        "en": 243,
+        "attack": 7343,
+        "defense": 5245,
+        "mobility": 4,
+        "agility": 5818
+      },
+      "terrain": {
+        "宇宙": "▲",
+        "空中": "◯",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド、変形"
     },
     "acquire": ""
   },
@@ -173897,14 +174120,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 12161,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 62580,
+        "en": 245,
+        "attack": 7555,
+        "defense": 5957,
+        "mobility": 5,
+        "agility": 6237
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "-",
+        "水上": "-",
+        "水中": "-"
       }
     },
     "acquire": ""
@@ -173914,21 +174144,28 @@
     "name": "GNアームズ TYPE-D",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11338,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 85934,
+        "en": 257,
+        "attack": 5621,
+        "defense": 6245,
+        "mobility": 5,
+        "agility": 5329
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "-",
+        "水上": "-",
+        "水中": "-"
       }
     },
     "acquire": ""
@@ -173938,7 +174175,7 @@
     "name": "AEUイナクト(指揮官機)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -173947,12 +174184,12 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 62704,
+        "en": 299,
+        "attack": 6584,
+        "defense": 5621,
+        "mobility": 4,
+        "agility": 6256
       }
     },
     "acquire": ""
@@ -173962,7 +174199,7 @@
     "name": "ティエレン宇宙型(指揮官機)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -173971,12 +174208,12 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 71967,
+        "en": 245,
+        "attack": 5993,
+        "defense": 7555,
+        "mobility": 4,
+        "agility": 5287
       }
     },
     "acquire": ""
@@ -173995,12 +174232,12 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 62704,
+        "en": 270,
+        "attack": 7555,
+        "defense": 5318,
+        "mobility": 4,
+        "agility": 6258
       }
     },
     "acquire": ""
@@ -174010,7 +174247,7 @@
     "name": "ユニオンフラッグオービットパッケージ(オービットフラッグ)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -174019,12 +174256,12 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 77911,
+        "en": 268,
+        "attack": 5362,
+        "defense": 6884,
+        "mobility": 4,
+        "agility": 5339
       }
     },
     "acquire": ""
@@ -174034,7 +174271,7 @@
     "name": "ユニオンフラッグ陸戦重装甲型(シェルフラッグ)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -174043,12 +174280,12 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 68700,
+        "en": 257,
+        "attack": 5643,
+        "defense": 7884,
+        "mobility": 4,
+        "agility": 5339
       }
     },
     "acquire": ""
@@ -174058,7 +174295,7 @@
     "name": "ティエレンチーツー",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -174067,12 +174304,12 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 82136,
+        "en": 268,
+        "attack": 5318,
+        "defense": 6610,
+        "mobility": 4,
+        "agility": 5318
       }
     },
     "acquire": ""
@@ -174082,22 +174319,30 @@
     "name": "0ガンダム(実戦配備型／GNコンデンサー搭載仕様)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10567,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 58658,
+        "en": 267,
+        "attack": 6119,
+        "defense": 5279,
+        "mobility": 5,
+        "agility": 6107
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174113,15 +174358,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11421,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 58735,
+        "en": 232,
+        "attack": 6994,
+        "defense": 5544,
+        "mobility": 5,
+        "agility": 5782
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174130,22 +174383,30 @@
     "name": "ダブルオーガンダム",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10581,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 67337,
+        "en": 252,
+        "attack": 4964,
+        "defense": 7089,
+        "mobility": 5,
+        "agility": 4982
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174161,15 +174422,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11611,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 52983,
+        "en": 256,
+        "attack": 7045,
+        "defense": 5504,
+        "mobility": 5,
+        "agility": 5839
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174185,15 +174454,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11636,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 58133,
+        "en": 254,
+        "attack": 7086,
+        "defense": 4946,
+        "mobility": 5,
+        "agility": 5864
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド、変形"
     },
     "acquire": ""
   },
@@ -174202,22 +174479,30 @@
     "name": "GNアーチャー",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10518,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 55603,
+        "en": 279,
+        "attack": 6120,
+        "defense": 5538,
+        "mobility": 5,
+        "agility": 5867
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "変形"
     },
     "acquire": ""
   },
@@ -174226,22 +174511,30 @@
     "name": "ケルディムガンダム",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10827,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 55953,
+        "en": 266,
+        "attack": 6116,
+        "defense": 5572,
+        "mobility": 5,
+        "agility": 6117
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174250,21 +174543,28 @@
     "name": "セラフィムガンダム GNHW／B",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10537,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 73199,
+        "en": 252,
+        "attack": 4960,
+        "defense": 6455,
+        "mobility": 5,
+        "agility": 4954
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
       }
     },
     "acquire": ""
@@ -174281,14 +174581,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11693,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 58577,
+        "en": 231,
+        "attack": 7001,
+        "defense": 5579,
+        "mobility": 5,
+        "agility": 5819
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
       }
     },
     "acquire": ""
@@ -174298,21 +174605,28 @@
     "name": "セラフィムガンダム",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10354,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 52771,
+        "en": 295,
+        "attack": 5839,
+        "defense": 5268,
+        "mobility": 5,
+        "agility": 6388
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
       }
     },
     "acquire": ""
@@ -174322,21 +174636,28 @@
     "name": "ガデッサ(リヴァイヴ機)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10574,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 58443,
+        "en": 267,
+        "attack": 6130,
+        "defense": 5289,
+        "mobility": 5,
+        "agility": 6137
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -174353,15 +174674,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11647,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 57918,
+        "en": 256,
+        "attack": 7056,
+        "defense": 4967,
+        "mobility": 5,
+        "agility": 5817
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174370,22 +174699,30 @@
     "name": "ガラッゾ(ブリング機)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10945,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 76752,
+        "en": 228,
+        "attack": 5532,
+        "defense": 6097,
+        "mobility": 5,
+        "agility": 5000
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174394,22 +174731,30 @@
     "name": "ガルムガンダム",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10581,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 55010,
+        "en": 267,
+        "attack": 6181,
+        "defense": 5525,
+        "mobility": 4,
+        "agility": 6139
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174418,22 +174763,30 @@
     "name": "エンプラス",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10722,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 80299,
+        "en": 240,
+        "attack": 5265,
+        "defense": 5791,
+        "mobility": 5,
+        "agility": 5007
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "-",
+        "水上": "-",
+        "水中": "-"
+      },
+      "mechanism": "大型"
     },
     "acquire": ""
   },
@@ -174449,14 +174802,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11466,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 52399,
+        "en": 256,
+        "attack": 7024,
+        "defense": 5507,
+        "mobility": 5,
+        "agility": 5854
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "-",
+        "水上": "-",
+        "水中": "-"
       }
     },
     "acquire": ""
@@ -174466,22 +174826,30 @@
     "name": "ジンクスIII",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10227,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 58513,
+        "en": 280,
+        "attack": 5514,
+        "defense": 5821,
+        "mobility": 5,
+        "agility": 5833
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174490,22 +174858,30 @@
     "name": "アヘッド",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10597,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 66753,
+        "en": 229,
+        "attack": 5514,
+        "defense": 6998,
+        "mobility": 5,
+        "agility": 5010
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174514,22 +174890,30 @@
     "name": "アヘッド脳量子波対応型(スマルトロン)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 10429,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 52767,
+        "en": 280,
+        "attack": 5821,
+        "defense": 5220,
+        "mobility": 5,
+        "agility": 6773
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174545,15 +174929,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11290,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 52983,
+        "en": 253,
+        "attack": 7004,
+        "defense": 5517,
+        "mobility": 5,
+        "agility": 5870
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174569,14 +174961,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11776,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 55542,
+        "en": 242,
+        "attack": 7413,
+        "defense": 5222,
+        "mobility": 5,
+        "agility": 5874
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -174586,21 +174985,28 @@
     "name": "オーライザー",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11141,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 56603,
+        "en": 299,
+        "attack": 6230,
+        "defense": 5682,
+        "mobility": 5,
+        "agility": 7226
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "-",
+        "水上": "-",
+        "水中": "-"
       }
     },
     "acquire": ""
@@ -174610,22 +175016,30 @@
     "name": "ユニオンリアルド宇宙型(カタロン仕様)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11154,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 75126,
+        "en": 246,
+        "attack": 5989,
+        "defense": 7168,
+        "mobility": 5,
+        "agility": 5290
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "-",
+        "水上": "-",
+        "水中": "-"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174641,15 +175055,23 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11717,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 62304,
+        "en": 274,
+        "attack": 7504,
+        "defense": 5296,
+        "mobility": 4,
+        "agility": 6309
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "-"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174658,22 +175080,30 @@
     "name": "AEUイナクト宇宙型(カタロンカラー)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 11255,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 62630,
+        "en": 298,
+        "attack": 6547,
+        "defense": 5594,
+        "mobility": 4,
+        "agility": 6308
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "-",
+        "水上": "-",
+        "水中": "-"
+      },
+      "mechanism": "シールド、変形"
     },
     "acquire": ""
   },
@@ -174682,22 +175112,30 @@
     "name": "0ガンダム",
     "image": "",
     "rarity": "R",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 8512,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 46349,
+        "en": 228,
+        "attack": 5101,
+        "defense": 4615,
+        "mobility": 4,
+        "agility": 4853
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
+      },
+      "mechanism": "シールド"
     },
     "acquire": ""
   },
@@ -174715,12 +175153,12 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 45887,
+        "en": 208,
+        "attack": 5831,
+        "defense": 4372,
+        "mobility": 4,
+        "agility": 4874
       }
     },
     "acquire": ""
@@ -174730,7 +175168,7 @@
     "name": "AEUイナクト(デモカラー)",
     "image": "",
     "rarity": "R",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -174739,12 +175177,12 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 46072,
+        "en": 229,
+        "attack": 5112,
+        "defense": 4607,
+        "mobility": 4,
+        "agility": 4872
       }
     },
     "acquire": ""
@@ -174763,12 +175201,12 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 48690,
+        "en": 218,
+        "attack": 5577,
+        "defense": 4130,
+        "mobility": 4,
+        "agility": 4859
       }
     },
     "acquire": ""
@@ -174787,12 +175225,12 @@
     "normal": {
       "combat_power": 0,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 43734,
+        "en": 218,
+        "attack": 5598,
+        "defense": 4607,
+        "mobility": 4,
+        "agility": 4859
       }
     },
     "acquire": ""
@@ -174802,22 +175240,30 @@
     "name": "オーバーフラッグ",
     "image": "",
     "rarity": "R",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 8587,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
-      }
+        "hp": 48497,
+        "en": 228,
+        "attack": 5122,
+        "defense": 4372,
+        "mobility": 4,
+        "agility": 4863
+      },
+      "terrain": {
+        "宇宙": "▲",
+        "空中": "◯",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "▲"
+      },
+      "mechanism": "シールド、変形"
     },
     "acquire": ""
   },
@@ -174833,14 +175279,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 9455,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 52332,
+        "en": 214,
+        "attack": 6053,
+        "defense": 4961,
+        "mobility": 4,
+        "agility": 5182
+      },
+      "terrain": {
+        "宇宙": "-",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -174850,21 +175303,28 @@
     "name": "ティエレン宇宙型(ガシャ)",
     "image": "",
     "rarity": "R",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 8898,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 57565,
+        "en": 221,
+        "attack": 4747,
+        "defense": 6266,
+        "mobility": 4,
+        "agility": 4450
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "-"
       }
     },
     "acquire": ""
@@ -174874,21 +175334,28 @@
     "name": "ティエレン高機動型(ガシャ)",
     "image": "",
     "rarity": "R",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 8951,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 47005,
+        "en": 257,
+        "attack": 5222,
+        "defense": 4719,
+        "mobility": 4,
+        "agility": 5768
+      },
+      "terrain": {
+        "宇宙": "-",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "◯",
+        "水中": "-"
       }
     },
     "acquire": ""
@@ -174905,14 +175372,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 9275,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 47098,
+        "en": 235,
+        "attack": 5993,
+        "defense": 5000,
+        "mobility": 4,
+        "agility": 5222
+      },
+      "terrain": {
+        "宇宙": "-",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -174922,21 +175396,28 @@
     "name": "AEUイナクト(ガシャ)",
     "image": "",
     "rarity": "R",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 8781,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 60302,
+        "en": 228,
+        "attack": 4447,
+        "defense": 6006,
+        "mobility": 4,
+        "agility": 4501
+      },
+      "terrain": {
+        "宇宙": "▲",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -174946,21 +175427,28 @@
     "name": "ユニオンリアルド(ガシャ)",
     "image": "",
     "rarity": "R",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 9156,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 52332,
+        "en": 245,
+        "attack": 5472,
+        "defense": 4729,
+        "mobility": 4,
+        "agility": 5247
+      },
+      "terrain": {
+        "宇宙": "▲",
+        "空中": "◯",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -174977,14 +175465,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 9415,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 52332,
+        "en": 235,
+        "attack": 6006,
+        "defense": 4474,
+        "mobility": 4,
+        "agility": 5212
+      },
+      "terrain": {
+        "宇宙": "▲",
+        "空中": "◯",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -174994,21 +175489,28 @@
     "name": "AEUヘリオン(ガシャ)",
     "image": "",
     "rarity": "R",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 8953,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 52332,
+        "en": 247,
+        "attack": 4961,
+        "defense": 5233,
+        "mobility": 4,
+        "agility": 5247
+      },
+      "terrain": {
+        "宇宙": "▲",
+        "空中": "◯",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -175025,14 +175527,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 8778,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 43489,
+        "en": 219,
+        "attack": 5604,
+        "defense": 4590,
+        "mobility": 5,
+        "agility": 4852
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "◯"
       }
     },
     "acquire": ""
@@ -175049,14 +175558,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 7019,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 39568,
+        "en": 170,
+        "attack": 4568,
+        "defense": 3759,
+        "mobility": 4,
+        "agility": 3931
+      },
+      "terrain": {
+        "宇宙": "▲",
+        "空中": "◯",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -175066,21 +175582,28 @@
     "name": "AEUヘリオン(開発)",
     "image": "",
     "rarity": "N",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 6622,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 43612,
+        "en": 172,
+        "attack": 3554,
+        "defense": 4748,
+        "mobility": 4,
+        "agility": 3424
+      },
+      "terrain": {
+        "宇宙": "▲",
+        "空中": "◯",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -175090,21 +175613,28 @@
     "name": "ティエレン地上型(開発)",
     "image": "",
     "rarity": "N",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 6725,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 37665,
+        "en": 191,
+        "attack": 4153,
+        "defense": 3752,
+        "mobility": 4,
+        "agility": 4005
+      },
+      "terrain": {
+        "宇宙": "-",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -175114,21 +175644,28 @@
     "name": "ティエレン宇宙型(開発)",
     "image": "",
     "rarity": "N",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 6734,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 39489,
+        "en": 191,
+        "attack": 4180,
+        "defense": 3567,
+        "mobility": 4,
+        "agility": 3981
+      },
+      "terrain": {
+        "宇宙": "◯",
+        "空中": "-",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "-"
       }
     },
     "acquire": ""
@@ -175145,14 +175682,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 6892,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 35683,
+        "en": 184,
+        "attack": 4541,
+        "defense": 3781,
+        "mobility": 4,
+        "agility": 3964
+      },
+      "terrain": {
+        "宇宙": "-",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "◯",
+        "水中": "-"
       }
     },
     "acquire": ""
@@ -175162,21 +175706,28 @@
     "name": "アンフ(開発)",
     "image": "",
     "rarity": "N",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 6584,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 35683,
+        "en": 203,
+        "attack": 3964,
+        "defense": 3589,
+        "mobility": 4,
+        "agility": 4335
+      },
+      "terrain": {
+        "宇宙": "-",
+        "空中": "-",
+        "地上": "◯",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -175193,14 +175744,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 6954,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 35611,
+        "en": 183,
+        "attack": 4568,
+        "defense": 3774,
+        "mobility": 4,
+        "agility": 3964
+      },
+      "terrain": {
+        "宇宙": "▲",
+        "空中": "◯",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -175217,14 +175775,21 @@
     ],
     "tags": [],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 7015,
       "stats": {
-        "hp": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "agility": 0,
-        "mobility": 0
+        "hp": 39648,
+        "en": 170,
+        "attack": 4558,
+        "defense": 3766,
+        "mobility": 4,
+        "agility": 3922
+      },
+      "terrain": {
+        "宇宙": "▲",
+        "空中": "◯",
+        "地上": "▲",
+        "水上": "-",
+        "水中": "▲"
       }
     },
     "acquire": ""
@@ -175234,7 +175799,7 @@
     "name": "アニュー・リターナー",
     "image": "",
     "rarity": "SSR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175243,7 +175808,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 3229,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175262,7 +175827,7 @@
     "name": "セルゲイ・スミルノフ",
     "image": "",
     "rarity": "SSR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175271,7 +175836,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 3154,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175299,7 +175864,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2936,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175374,7 +175939,7 @@
     "name": "アレルヤ・ハプティズム(2nd)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175383,7 +175948,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2463,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175402,7 +175967,7 @@
     "name": "ティエリア・アーデ(2nd)",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175430,7 +175995,7 @@
     "name": "マリー・パーファシー",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175439,7 +176004,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2466,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175458,7 +176023,7 @@
     "name": "沙慈・クロスロード",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175467,7 +176032,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2301,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175495,7 +176060,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2472,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175523,7 +176088,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2300,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175542,7 +176107,7 @@
     "name": "ルイス・ハレヴィ",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175551,7 +176116,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2327,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175570,7 +176135,7 @@
     "name": "リヴァイヴ・リバイバル",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "支援",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175579,7 +176144,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2492,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175607,7 +176172,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2491,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175626,7 +176191,7 @@
     "name": "ブリング・スタビティ",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175635,7 +176200,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2550,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175654,7 +176219,7 @@
     "name": "バラック・ジニン",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175663,7 +176228,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2296,
       "stats": {
         "shooting": 0,
         "melee": 0,
@@ -175682,7 +176247,7 @@
     "name": "アンドレイ・スミルノフ",
     "image": "",
     "rarity": "SR",
-    "type": "攻撃",
+    "type": "耐久",
     "obtain": "データ反映中",
     "series": [
       "機動戦士ガンダム00"
@@ -175691,7 +176256,7 @@
       "キャラ"
     ],
     "normal": {
-      "combat_power": 0,
+      "combat_power": 2432,
       "stats": {
         "shooting": 0,
         "melee": 0,
