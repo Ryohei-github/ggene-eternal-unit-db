@@ -188,7 +188,7 @@ a:hover{text-decoration:underline}
 .gacha-unit-card.gacha-card-sr{background:linear-gradient(105deg,rgba(120,120,120,.15),rgba(180,180,180,.06))}
 .gacha-unit-img{width:40px;height:40px;border-radius:5px;object-fit:cover;border:1px solid var(--border);flex-shrink:0;background:var(--bg)}
 .gacha-unit-info{flex:1;min-width:0}
-.gacha-unit-name{font-size:.88em;font-weight:700;color:var(--card-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:4px}
+.gacha-unit-name{font-size:.88em;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:4px;text-shadow:0 1px 3px rgba(0,0,0,.6)}
 .gacha-unit-meta{font-size:.72em;color:var(--card-text2);display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-top:2px}
 .gacha-empty{text-align:center;color:var(--text2);padding:40px 0;font-size:.9em}
 .gacha-unit-note{font-size:.9em;color:#ff8800;margin-left:4px}
@@ -8097,6 +8097,7 @@ async function showGachaDetail(gachaId) {
     // Categorize units
     const limitedUR = (data.units || []).filter(u => u.category === 'pickup_limited');
     const standardUR = (data.units || []).filter(u => u.category === 'pickup_standard');
+    const pickupSSR = (data.units || []).filter(u => u.category === 'pickup_ssr');
     const newSSR = (data.units || []).filter(u => u.category === 'new_ssr');
     const otherUnits = (data.units || []).filter(u => !u.category || u.category === 'pickup');
     const supporters = data.supporters || [];
@@ -8150,11 +8151,12 @@ async function showGachaDetail(gachaId) {
     html += '</div>';
 
     // Section: 限定URピックアップ
-    if (limitedUR.length > 0 || supporters.length > 0) {
+    const limitedSup = supporters.filter(s => s.category === 'pickup_limited');
+    if (limitedUR.length > 0 || limitedSup.length > 0) {
       html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">限定URピックアップ</div>';
       html += '<div class="gacha-unit-grid">';
       html += limitedUR.map(u => unitCard(u, true)).join('');
-      html += supporters.filter(s => s.category === 'pickup_limited').map(s => supporterCard(s, true)).join('');
+      html += limitedSup.map(s => supporterCard(s, true)).join('');
       html += '</div></div>';
     }
 
@@ -8162,6 +8164,16 @@ async function showGachaDetail(gachaId) {
     if (standardUR.length > 0) {
       html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">恒常URピックアップ</div>';
       html += '<div class="gacha-unit-grid">' + standardUR.map(u => unitCard(u, true)).join('') + '</div></div>';
+    }
+
+    // Section: SSRピックアップ
+    const ssrSupporters = supporters.filter(s => s.category === 'pickup_ssr');
+    if (pickupSSR.length > 0 || ssrSupporters.length > 0) {
+      html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">SSRピックアップ</div>';
+      html += '<div class="gacha-unit-grid">';
+      html += pickupSSR.map(u => unitCard(u, true)).join('');
+      html += ssrSupporters.map(s => supporterCard(s, true)).join('');
+      html += '</div></div>';
     }
 
     // Section: 新規SSRユニット
