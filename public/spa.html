@@ -147,9 +147,9 @@ a:hover{text-decoration:underline}
 /* Gacha Section */
 .gacha-container{max-width:1200px;margin:0 auto;padding:20px 16px 40px}
 .gacha-header{text-align:center;margin-bottom:24px}
-.gacha-title{font-size:1.3em;color:var(--card-text);font-weight:700;margin-bottom:4px}
-.gacha-subtitle{font-size:.8em;color:var(--card-text2)}
-.gacha-loading{text-align:center;color:var(--card-text2);padding:40px 0;font-size:.9em}
+.gacha-title{font-size:1.3em;color:#fff;font-weight:700;margin-bottom:4px}
+.gacha-subtitle{font-size:.8em;color:#b0b4c0}
+.gacha-loading{text-align:center;color:#b0b4c0;padding:40px 0;font-size:.9em}
 .gacha-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:16px}
 .gacha-card{background:var(--card);border:1px solid var(--card-border);border-radius:12px;overflow:hidden;cursor:pointer;transition:all .25s;position:relative}
 .gacha-card:hover{border-color:var(--accent);box-shadow:0 4px 20px rgba(232,150,30,.15);transform:translateY(-2px)}
@@ -162,37 +162,35 @@ a:hover{text-decoration:underline}
 .gacha-badge-limited{background:rgba(255,68,68,.15);color:#ff6666;border:1px solid rgba(255,68,68,.3)}
 .gacha-badge-active{background:rgba(68,255,68,.15);color:#66ff66;border:1px solid rgba(68,255,68,.3)}
 .gacha-badge-ended{background:rgba(128,128,128,.15);color:#999;border:1px solid rgba(128,128,128,.3)}
-.gacha-card-period{font-size:.75em;color:var(--card-text2);margin-bottom:12px}
+.gacha-card-period{font-size:.75em;color:#b0b4c0;margin-bottom:12px}
 .gacha-card-pickups{display:flex;gap:6px;flex-wrap:wrap}
 .gacha-pickup-unit{display:flex;align-items:center;gap:6px;background:rgba(255,215,0,.08);border:1px solid rgba(255,215,0,.2);border-radius:8px;padding:4px 10px 4px 4px}
 .gacha-pickup-img{width:32px;height:32px;border-radius:6px;object-fit:cover;border:1px solid var(--card-border)}
-.gacha-pickup-name{font-size:.75em;font-weight:600;color:var(--accent)}
+.gacha-pickup-name{font-size:.75em;font-weight:600;color:#ffd700}
 .gacha-pickup-label{font-size:.6em;color:#ff8800;font-weight:700;letter-spacing:.5px}
 .gacha-detail{max-width:1200px;margin:0 auto;padding:20px 0}
 .gacha-detail-back{display:inline-flex;align-items:center;gap:4px;color:var(--accent);font-size:.85em;cursor:pointer;margin-bottom:16px;border:none;background:none;font-weight:600;padding:6px 12px;border-radius:6px;transition:background .2s}
 .gacha-detail-back:hover{background:rgba(255,215,0,.1)}
 .gacha-detail-info{background:var(--card);border:1px solid var(--card-border);border-radius:12px;padding:20px;margin-bottom:20px}
 .gacha-detail-name{font-size:1.2em;font-weight:700;color:#fff;margin-bottom:8px}
-.gacha-detail-note{font-size:.85em;color:var(--card-text2);margin-bottom:12px;line-height:1.6}
-.gacha-detail-period{font-size:.8em;color:var(--card-text2)}
+.gacha-detail-note{font-size:.85em;color:#c8ccd4;margin-bottom:12px;line-height:1.6}
+.gacha-detail-period{font-size:.8em;color:#b0b4c0}
 .gacha-unit-section{margin-top:20px}
 .gacha-unit-section-title{font-size:.95em;font-weight:700;color:var(--accent);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--card-border)}
 .gacha-unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
-.gacha-unit-card{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:12px;cursor:pointer;transition:all .2s}
-.gacha-unit-card:hover{border-color:var(--accent);background:rgba(255,215,0,.06);transform:translateY(-1px)}
-.gacha-unit-card.pickup{border-color:rgba(255,215,0,.5);background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(255,140,0,.06));box-shadow:0 0 12px rgba(255,215,0,.08)}
-.gacha-unit-card.pickup:hover{border-color:var(--accent);box-shadow:0 0 16px rgba(255,215,0,.15)}
-.gacha-unit-img{width:44px;height:44px;border-radius:6px;object-fit:cover;border:1.5px solid var(--card-border);flex-shrink:0}
-.gacha-unit-card.pickup .gacha-unit-img{border-color:rgba(255,215,0,.5)}
+.gacha-unit-card{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--card-border);border-radius:0;padding:10px;cursor:pointer;transition:all .25s;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px);position:relative}
+.gacha-unit-card::before{content:'';position:absolute;inset:0;clip-path:polygon(8px 0,100% 0,100% calc(100% - 8px),calc(100% - 8px) 100%,0 100%,0 8px,1px 9px,1px calc(100% - 1px),calc(100% - 9px) calc(100% - 1px),calc(100% - 1px) calc(100% - 9px),calc(100% - 1px) 1px,9px 1px,1px 9px);background:transparent;pointer-events:none;transition:background .25s}
+.gacha-unit-card:hover{background:var(--card-hover);transform:translateY(-2px)}
+.gacha-unit-card:hover::before{background:linear-gradient(135deg,#ffd700,#ffaa00)}
+.gacha-unit-card.pickup{background:linear-gradient(135deg,rgba(255,215,0,.08),var(--card))}
+.gacha-unit-card.gacha-card-ur{background:linear-gradient(105deg,rgba(0,131,143,.2),rgba(0,188,212,.1),rgba(124,77,255,.1))}
+.gacha-unit-card.gacha-card-ssr{background:linear-gradient(105deg,rgba(218,165,32,.15),rgba(255,215,0,.08))}
+.gacha-unit-card.gacha-card-sr{background:linear-gradient(105deg,rgba(120,120,120,.15),rgba(180,180,180,.06))}
+.gacha-unit-img{width:40px;height:40px;border-radius:5px;object-fit:cover;border:1px solid var(--border);flex-shrink:0;background:var(--bg)}
 .gacha-unit-info{flex:1;min-width:0}
-.gacha-unit-name{font-size:.85em;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gacha-unit-meta{font-size:.72em;color:#b0b3be}
-.gacha-empty{text-align:center;color:var(--card-text2);padding:40px 0;font-size:.9em}
-.gacha-rarity-badge{display:inline-block;padding:1px 6px;border-radius:3px;font-size:.85em;font-weight:700;letter-spacing:.3px}
-.gacha-rarity-ur{background:linear-gradient(135deg,#e63950,#ff6b81);color:#fff}
-.gacha-rarity-ssr{background:linear-gradient(135deg,#d4a200,#ffd700);color:#1a1c2a}
-.gacha-rarity-sr{background:linear-gradient(135deg,#7b7b7b,#b0b0b0);color:#1a1c2a}
-.gacha-rarity-r{background:linear-gradient(135deg,#4a7c59,#6aab7a);color:#fff}
+.gacha-unit-name{font-size:.88em;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;display:flex;align-items:center;gap:4px}
+.gacha-unit-meta{font-size:.72em;color:#b0b4c0;display:flex;align-items:center;gap:4px;flex-wrap:wrap;margin-top:2px}
+.gacha-empty{text-align:center;color:#b0b4c0;padding:40px 0;font-size:.9em}
 .gacha-unit-note{font-size:.9em;color:#ff8800;margin-left:4px}
 /* ===== RESPONSIVE: PC ≥769px ===== */
 @media(min-width:769px){
@@ -8104,33 +8102,43 @@ async function showGachaDetail(gachaId) {
     const supporters = data.supporters || [];
 
     function unitCard(u, isPickup) {
-      const cls = 'gacha-unit-card' + (isPickup ? ' pickup' : '');
+      const rc = u.rarity==='UR'?'gacha-card-ur':u.rarity==='SSR'?'gacha-card-ssr':u.rarity==='SR'?'gacha-card-sr':'';
+      const cls = 'gacha-unit-card' + (rc ? ' '+rc : '') + (isPickup ? ' pickup' : '');
       const uid = u.unit_id ? parseInt(u.unit_id, 10) : 0;
       const onclick = uid ? ' onclick="gachaOpenUnit(' + uid + ')"' : '';
       const img = u.image ? '<img class="gacha-unit-img" src="' + escapeHTML(u.image) + '" alt="" loading="lazy">' : '<div class="gacha-unit-img" style="background:#222"></div>';
-      const rarityBadge = u.rarity ? '<span class="gacha-rarity-badge gacha-rarity-' + escapeHTML(u.rarity).toLowerCase() + '">' + escapeHTML(u.rarity) + '</span>' : '';
+      const rBadge = u.rarity ? '<span class="badge ' + rarityClass(u.rarity) + '">' + escapeHTML(u.rarity) + '</span>' : '';
+      const tBadge = u.type ? typeBadgeHTML(u.type) : '';
+      const isLimited = u.category === 'pickup_limited' || (u.obtain && (u.obtain.includes('限定')));
+      const limitedTag = isLimited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px;white-space:nowrap">限定</span>' : '';
       const noteTag = u.note ? '<span class="gacha-unit-note">' + escapeHTML(u.note) + '</span>' : '';
       return '<div class="' + cls + '"' + onclick + '>' +
         img +
         '<div class="gacha-unit-info">' +
-          '<div class="gacha-unit-name">' + escapeHTML(u.name) + '</div>' +
-          '<div class="gacha-unit-meta">' + rarityBadge + ' ' + escapeHTML(u.type || '') + ' ' + noteTag + '</div>' +
+          '<div class="gacha-unit-name">' + escapeHTML(u.name) + limitedTag + '</div>' +
+          '<div class="gacha-unit-meta">' + rBadge + ' ' + tBadge + ' ' + noteTag + '</div>' +
         '</div>' +
         (isPickup ? '<span class="gacha-pickup-label">PICKUP</span>' : '') +
       '</div>';
     }
 
-    function supporterCard(s) {
+    function supporterCard(s, isPickup) {
+      const rc = s.rarity==='UR'?'gacha-card-ur':s.rarity==='SSR'?'gacha-card-ssr':s.rarity==='SR'?'gacha-card-sr':'';
+      const cls = 'gacha-unit-card' + (rc ? ' '+rc : '') + (isPickup ? ' pickup' : '');
+      const sName = escapeHTML(s.name);
+      const onclick = ' onclick="gachaOpenSupporter(\'' + sName.replace(/'/g,"\\'") + '\')"';
       const img = s.image ? '<img class="gacha-unit-img" src="' + escapeHTML(s.image) + '" alt="" loading="lazy">' : '<div class="gacha-unit-img" style="background:#222"></div>';
-      const rarityBadge = s.rarity ? '<span class="gacha-rarity-badge gacha-rarity-' + escapeHTML(s.rarity).toLowerCase() + '">' + escapeHTML(s.rarity) + '</span>' : '';
+      const rBadge = s.rarity ? '<span class="badge ' + rarityClass(s.rarity) + '">' + escapeHTML(s.rarity) + '</span>' : '';
+      const isLimited = s.category === 'pickup_limited' || (s.obtain && (s.obtain.includes('限定')));
+      const limitedTag = isLimited ? '<span style="background:#ff6b6b;color:#fff;font-size:.6em;padding:1px 5px;border-radius:3px;margin-left:4px;white-space:nowrap">限定</span>' : '';
       const noteTag = s.note ? '<span class="gacha-unit-note">' + escapeHTML(s.note) + '</span>' : '';
-      return '<div class="gacha-unit-card pickup">' +
+      return '<div class="' + cls + '"' + onclick + '>' +
         img +
         '<div class="gacha-unit-info">' +
-          '<div class="gacha-unit-name">' + escapeHTML(s.name) + '</div>' +
-          '<div class="gacha-unit-meta">' + rarityBadge + ' サポーター ' + noteTag + '</div>' +
+          '<div class="gacha-unit-name">' + sName + limitedTag + '</div>' +
+          '<div class="gacha-unit-meta">' + rBadge + ' <span class="badge badge-type badge-sup">サポーター</span> ' + noteTag + '</div>' +
         '</div>' +
-        '<span class="gacha-pickup-label">PICKUP</span>' +
+        (isPickup ? '<span class="gacha-pickup-label">PICKUP</span>' : '') +
       '</div>';
     }
 
@@ -8146,7 +8154,7 @@ async function showGachaDetail(gachaId) {
       html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">限定URピックアップ</div>';
       html += '<div class="gacha-unit-grid">';
       html += limitedUR.map(u => unitCard(u, true)).join('');
-      html += supporters.filter(s => s.category === 'pickup_limited').map(s => supporterCard(s)).join('');
+      html += supporters.filter(s => s.category === 'pickup_limited').map(s => supporterCard(s, true)).join('');
       html += '</div></div>';
     }
 
@@ -8192,6 +8200,18 @@ function gachaOpenUnit(unitId) {
     }
   }
   console.warn('Unit not found in local data:', unitId);
+}
+
+function gachaOpenSupporter(name) {
+  if (typeof showSupporterDetail === 'function' && allSupporters && allSupporters.length > 0) {
+    const decoded = name.replace(/&amp;/g,'&').replace(/&lt;/g,'<').replace(/&gt;/g,'>').replace(/&quot;/g,'"');
+    const found = allSupporters.find(s => s.name === decoded);
+    if (found) {
+      showSupporterDetail(found.id);
+      return;
+    }
+  }
+  console.warn('Supporter not found in local data:', name);
 }
 
 function escapeHTML(str) {
