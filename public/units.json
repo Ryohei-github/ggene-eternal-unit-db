@@ -173318,29 +173318,150 @@
       "白色"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "攻撃力上昇 LV2",
+          "desc": "攻撃力+10%"
+        },
+        {
+          "name": "(テンション条件)攻撃力上昇 LV2",
+          "desc": "自身のテンションが「超強気」以上の時 攻撃力+10%"
+        },
+        {
+          "name": "ビーム武装POWER上昇 LV1",
+          "desc": "ビーム武装のPOWER+5%"
+        }
+      ],
+      "combat_power": 14720,
       "mechanism": "シールド・変形",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 52814,
+        "en": 225,
+        "attack": 6690,
+        "defense": 4457,
+        "mobility": 4,
+        "agility": 5507
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
-        "空中": "◯",
+        "空中": "-",
+        "地上": "◯",
         "水上": "-",
-        "水中": "◯"
+        "水中": "△"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "バスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃MAP",
+        "range": "MAP",
+        "power": "3,720",
+        "en": "54",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中\n移動前限定使用可能\n水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": "2"
+      },
+      {
+        "name": "ビームサーベル",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "4,080",
+        "en": "23",
+        "hit": "100%",
+        "critical": "10%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "マシンキャノン",
+        "attribute": "物理",
+        "weapon_type": "射撃",
+        "range": "1-2",
+        "power": "4,320",
+        "en": "25",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "バスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "5,160",
+        "en": "29",
+        "hit": "95%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 0,
+        "lv": 90,
+        "hp": 52814,
+        "en": 225,
+        "mobility": 4,
+        "attack": 6690,
+        "defense": 4457,
+        "agility": 5507
+      },
+      {
+        "star": 3,
+        "lv": 90,
+        "hp": 73939,
+        "en": 315,
+        "mobility": 4,
+        "attack": 9365,
+        "defense": 6239,
+        "agility": 7710
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 90008,
+        "en": 375,
+        "mobility": 4,
+        "attack": 11401,
+        "defense": 7596,
+        "agility": 9387
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 93373,
+        "en": 389,
+        "mobility": 4,
+        "attack": 11829,
+        "defense": 7881,
+        "agility": 9739
+      }
+    ],
     "transformed": true,
-    "transformed_weapons": []
+    "transformed_weapons": [
+      {
+        "name": "バスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "5,160",
+        "en": "29",
+        "hit": "95%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ]
   },
   {
     "id": 1469,
@@ -173952,29 +174073,119 @@
       "白色"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "防御力上昇 LV1",
+          "desc": "防御力+5%"
+        }
+      ],
+      "combat_power": 7916,
       "mechanism": "シールド・変形",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 43100,
+        "en": 205,
+        "attack": 4777,
+        "defense": 4413,
+        "mobility": 4,
+        "agility": 4306
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
-        "空中": "◯",
+        "空中": "-",
+        "地上": "◯",
         "水上": "-",
-        "水中": "◯"
+        "水中": "△"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "ビームサーベル",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "4,080",
+        "en": "22",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "マシンキャノン",
+        "attribute": "物理",
+        "weapon_type": "射撃",
+        "range": "1-2",
+        "power": "4,440",
+        "en": "26",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "バスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "4,680",
+        "en": "27",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 3,
+        "lv": 70,
+        "hp": 43100,
+        "en": 205,
+        "mobility": 4,
+        "attack": 4777,
+        "defense": 4413,
+        "agility": 4306
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 80813,
+        "en": 370,
+        "mobility": 4,
+        "attack": 8953,
+        "defense": 8271,
+        "agility": 8073
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 83843,
+        "en": 383,
+        "mobility": 4,
+        "attack": 9290,
+        "defense": 8583,
+        "agility": 8379
+      }
+    ],
     "transformed": true,
-    "transformed_weapons": []
+    "transformed_weapons": [
+      {
+        "name": "バスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "4,680",
+        "en": "27",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ]
   },
   {
     "id": 1477,
