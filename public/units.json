@@ -172286,27 +172286,137 @@
       "赤色"
     ],
     "normal": {
-      "abilities": [],
+      "abilities": [
+        {
+          "name": "攻撃力・防御力上昇 LV3",
+          "desc": "攻撃力・防御力＋15%"
+        },
+        {
+          "name": "有利：新機動戦記ガンダムW Endless Waltz LV4",
+          "desc": "新機動戦記ガンダムW Endless Waltzの敵相手に攻撃力と防御力+30%"
+        },
+        {
+          "name": "(戦闘条件)攻撃力上昇 LV3",
+          "desc": "1対1の時、攻撃力+15%"
+        }
+      ],
       "combat_power": 0,
       "mechanism": "シールド・変形",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 62354,
+        "en": 267,
+        "attack": 7969,
+        "defense": 5780,
+        "mobility": 4,
+        "agility": 6269
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
         "空中": "◯",
+        "地上": "◯",
         "水上": "-",
         "水中": "◯"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "ツヴァイヘンダー・モード(最大開放)",
+        "attribute": "ビーム",
+        "weapon_type": "格闘MAP",
+        "range": "MAP",
+        "power": "4,560",
+        "en": "60",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中\n移動前限定使用可能\n水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": "1"
+      },
+      {
+        "name": "ビームソード",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "2-4",
+        "power": "4,080",
+        "en": "21",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ツヴァイヘンダー・モード(最大開放)",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-3",
+        "power": "5,640",
+        "en": "36",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "自身のMPが多いほどPOWが上昇(最大15%)\n水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ヒートロッド",
+        "attribute": "物理",
+        "weapon_type": "格闘",
+        "range": "1-2",
+        "power": "3,360",
+        "en": "11",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "敵に「攻撃力30%減少」を付与(1ターン)",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "シュトゥルム・ウント・ドラング",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-2",
+        "power": "4,680",
+        "en": "30",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "MP1消費で使用可能\n水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 0,
+        "lv": 90,
+        "hp": 62354,
+        "en": 267,
+        "mobility": 4,
+        "attack": 7969,
+        "defense": 5780,
+        "agility": 6269
+      },
+      {
+        "star": 1,
+        "lv": 100,
+        "hp": 74693,
+        "en": 313,
+        "mobility": 5,
+        "attack": 9980,
+        "defense": 7240,
+        "agility": 7509
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 86184,
+        "en": 361,
+        "mobility": 5,
+        "attack": 11516,
+        "defense": 8353,
+        "agility": 8665
+      }
+    ],
     "transformed": true,
     "transformed_weapons": []
   },
@@ -172334,27 +172444,134 @@
       "不撓不屈"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "防御力・機動力上昇 LV2",
+          "desc": "防御力・機動力+10%"
+        },
+        {
+          "name": "(テンション条件)攻撃力上昇 LV2",
+          "desc": "自身のテンションが「超強気」以上の時 攻撃力+10%"
+        },
+        {
+          "name": "(テンション条件)ビーム武装射程アップ LV1",
+          "desc": "自身のテンションが「超一撃」以上の時ビーム武装の最大射程が1上昇"
+        }
+      ],
+      "combat_power": 14596,
       "mechanism": "シールド",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 52750,
+        "en": 233,
+        "attack": 5537,
+        "defense": 5242,
+        "mobility": 5,
+        "agility": 5821
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
         "空中": "◯",
+        "地上": "◯",
         "水上": "-",
         "水中": "◯"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "ツインバスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃MAP",
+        "range": "MAP",
+        "power": "4,320",
+        "en": "63",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中\nMP2消費で使用可能\n敵に「防御力25%減少」を付与(1ターン)\n移動前限定使用可能\n水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": "1"
+      },
+      {
+        "name": "ビームサーベル",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "4,080",
+        "en": "20",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "バスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "4,080",
+        "en": "29",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "敵に「ビーム武装による被ダメージ25%上昇」を付与(1ターン)\n水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ツインバスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "3-5",
+        "power": "5,280",
+        "en": "30",
+        "hit": "95%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 0,
+        "lv": 90,
+        "hp": 52750,
+        "en": 233,
+        "mobility": 5,
+        "attack": 5537,
+        "defense": 5242,
+        "agility": 5821
+      },
+      {
+        "star": 1,
+        "lv": 90,
+        "hp": 73850,
+        "en": 326,
+        "mobility": 5,
+        "attack": 7751,
+        "defense": 7339,
+        "agility": 8148
+      },
+      {
+        "star": 2,
+        "lv": 100,
+        "hp": 89901,
+        "en": 390,
+        "mobility": 5,
+        "attack": 9436,
+        "defense": 8936,
+        "agility": 9914
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 93265,
+        "en": 404,
+        "mobility": 5,
+        "attack": 9788,
+        "defense": 9268,
+        "agility": 10302
+      }
+    ],
     "transformed": false,
     "transformed_weapons": []
   },
@@ -172379,27 +172596,124 @@
       "疾風迅雷"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "攻撃力上昇 LV2",
+          "desc": "攻撃力+10%"
+        },
+        {
+          "name": "(テンション条件)攻撃力上昇 LV2",
+          "desc": "自身のテンションが「超強気」以上の時 攻撃力+10%"
+        },
+        {
+          "name": "物理ダメージ軽減 LV2",
+          "desc": "物理武装の被ダメージが20%軽減"
+        }
+      ],
+      "combat_power": 15815,
       "mechanism": "シールド",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 69745,
+        "en": 299,
+        "attack": 9791,
+        "defense": 7309,
+        "mobility": 5,
+        "agility": 7371
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
         "空中": "◯",
+        "地上": "◯",
         "水上": "-",
         "水中": "◯"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "ビームシザース",
+        "attribute": "ビーム",
+        "weapon_type": "格闘MAP",
+        "range": "MAP",
+        "power": "4,320",
+        "en": "60",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中\n移動前限定使用可能\n水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": "1"
+      },
+      {
+        "name": "ビームシザース",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "4,080",
+        "en": "20",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "バルカン",
+        "attribute": "物理",
+        "weapon_type": "射撃",
+        "range": "1-2",
+        "power": "3,360",
+        "en": "8",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ビームシザース",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-3",
+        "power": "5,280",
+        "en": "32",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "敵に「命中率15%減少」を付与(1ターン)\n水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 3,
+        "lv": 90,
+        "hp": 69745,
+        "en": 299,
+        "mobility": 5,
+        "attack": 9791,
+        "defense": 7309,
+        "agility": 7371
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 84935,
+        "en": 359,
+        "mobility": 5,
+        "attack": 11918,
+        "defense": 8897,
+        "agility": 8973
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 88121,
+        "en": 373,
+        "mobility": 6,
+        "attack": 12365,
+        "defense": 9230,
+        "agility": 9309
+      }
+    ],
     "transformed": false,
     "transformed_weapons": []
   },
@@ -172422,27 +172736,137 @@
       "Wシリーズ"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "最大HP上昇 LV2",
+          "desc": "最大HP+10%"
+        },
+        {
+          "name": "防御力上昇 LV2",
+          "desc": "防御力+10%"
+        },
+        {
+          "name": "物理ダメージ軽減 LV2",
+          "desc": "物理武装の被ダメージが20%軽減"
+        }
+      ],
+      "combat_power": 14205,
       "mechanism": "",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 70403,
+        "en": 359,
+        "attack": 7778,
+        "defense": 8046,
+        "mobility": 5,
+        "agility": 7330
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
-        "空中": "◯",
+        "空中": "△",
+        "地上": "◯",
         "水上": "-",
-        "水中": "◯"
+        "水中": "△"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "ガトリングガン",
+        "attribute": "物理",
+        "weapon_type": "射撃MAP",
+        "range": "MAP",
+        "power": "3,960",
+        "en": "0",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中\n移動前限定使用可能",
+        "restriction": "",
+        "ammo": "1"
+      },
+      {
+        "name": "アーミーナイフ",
+        "attribute": "物理",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "3,960",
+        "en": "18",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ガトリングガン",
+        "attribute": "物理",
+        "weapon_type": "射撃",
+        "range": "1-3",
+        "power": "3,840",
+        "en": "20",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ホーミングミサイル",
+        "attribute": "物理",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "4,560",
+        "en": "25",
+        "hit": "80%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ダブルガトリングガン",
+        "attribute": "物理",
+        "weapon_type": "射撃",
+        "range": "2-5",
+        "power": "5,160",
+        "en": "30",
+        "hit": "95%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 3,
+        "lv": 90,
+        "hp": 70403,
+        "en": 359,
+        "mobility": 5,
+        "attack": 7778,
+        "defense": 8046,
+        "agility": 7330
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 85737,
+        "en": 431,
+        "mobility": 5,
+        "attack": 9470,
+        "defense": 9796,
+        "agility": 8924
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 88952,
+        "en": 447,
+        "mobility": 6,
+        "attack": 9825,
+        "defense": 10163,
+        "agility": 9260
+      }
+    ],
     "transformed": false,
     "transformed_weapons": []
   },
@@ -172467,27 +172891,124 @@
       "白色"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "攻撃力上昇 LV2",
+          "desc": "攻撃力+10%"
+        },
+        {
+          "name": "防御力上昇 LV2",
+          "desc": "防御力+10%"
+        },
+        {
+          "name": "(HP条件)攻撃力上昇 LV2",
+          "desc": "自身のHPが50%以上の時、自身の攻撃力が10%上昇"
+        }
+      ],
+      "combat_power": 15217,
       "mechanism": "",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 73488,
+        "en": 266,
+        "attack": 9273,
+        "defense": 7759,
+        "mobility": 5,
+        "agility": 7322
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
-        "空中": "◯",
+        "空中": "-",
+        "地上": "◯",
         "水上": "-",
         "水中": "◯"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "ヒートショーテル",
+        "attribute": "物理",
+        "weapon_type": "格闘MAP",
+        "range": "MAP",
+        "power": "4,200",
+        "en": "58",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中\n移動前限定使用可能",
+        "restriction": "",
+        "ammo": "1"
+      },
+      {
+        "name": "ヒートショーテル",
+        "attribute": "物理",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "4,200",
+        "en": "20",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ヒートショーテル",
+        "attribute": "物理",
+        "weapon_type": "格闘",
+        "range": "1-2",
+        "power": "4,680",
+        "en": "25",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ヒートショーテル(クロスクラッシャー)",
+        "attribute": "物理",
+        "weapon_type": "格闘",
+        "range": "1-3",
+        "power": "5,400",
+        "en": "32",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "敵に「物理武装による被ダメージ25%上昇」を付与(1ターン)",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 3,
+        "lv": 90,
+        "hp": 73488,
+        "en": 266,
+        "mobility": 5,
+        "attack": 9273,
+        "defense": 7759,
+        "agility": 7322
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 89494,
+        "en": 319,
+        "mobility": 5,
+        "attack": 11287,
+        "defense": 9444,
+        "agility": 8912
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 92853,
+        "en": 331,
+        "mobility": 5,
+        "attack": 11710,
+        "defense": 9798,
+        "agility": 9247
+      }
+    ],
     "transformed": false,
     "transformed_weapons": []
   },
@@ -172511,27 +173032,124 @@
       "Wシリーズ"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "攻撃力上昇 LV3",
+          "desc": "攻撃力+15%"
+        },
+        {
+          "name": "(テンション条件)攻撃力上昇 LV2",
+          "desc": "自身のテンションが「超強気」以上の時 攻撃力+10%"
+        },
+        {
+          "name": "物理ダメージ軽減 LV2",
+          "desc": "物理武装の被ダメージが20%軽減"
+        }
+      ],
+      "combat_power": 15404,
       "mechanism": "シールド",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 69878,
+        "en": 264,
+        "attack": 10662,
+        "defense": 7646,
+        "mobility": 5,
+        "agility": 7420
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
         "空中": "◯",
+        "地上": "◯",
         "水上": "-",
         "水中": "◯"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "ドラゴンハング",
+        "attribute": "物理",
+        "weapon_type": "格闘MAP",
+        "range": "MAP",
+        "power": "4,200",
+        "en": "58",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中\n移動前限定使用可能",
+        "restriction": "",
+        "ammo": "1"
+      },
+      {
+        "name": "ビームトライデント",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "4,080",
+        "en": "20",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ドラゴンハング",
+        "attribute": "物理",
+        "weapon_type": "格闘",
+        "range": "2-4",
+        "power": "4,680",
+        "en": "25",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "敵に「攻撃力25%減少」を付与(1ターン)",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ツインビームトライデント",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-3",
+        "power": "5,400",
+        "en": "35",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 3,
+        "lv": 90,
+        "hp": 69878,
+        "en": 264,
+        "mobility": 5,
+        "attack": 10662,
+        "defense": 7646,
+        "agility": 7420
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 85096,
+        "en": 317,
+        "mobility": 5,
+        "attack": 12977,
+        "defense": 9307,
+        "agility": 9032
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 88286,
+        "en": 329,
+        "mobility": 6,
+        "attack": 13465,
+        "defense": 9657,
+        "agility": 9372
+      }
+    ],
     "transformed": false,
     "transformed_weapons": []
   },
@@ -172556,27 +173174,124 @@
       "不撓不屈"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "最大HP・防御力上昇 LV2",
+          "desc": "最大HPと防御力+10%"
+        },
+        {
+          "name": "機動力上昇 LV1",
+          "desc": "機動力+5%"
+        },
+        {
+          "name": "回避率上昇 LV1",
+          "desc": "回避率+5%"
+        }
+      ],
+      "combat_power": 13802,
       "mechanism": "シールド",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 100987,
+        "en": 309,
+        "attack": 6279,
+        "defense": 8570,
+        "mobility": 5,
+        "agility": 6587
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
         "空中": "◯",
+        "地上": "◯",
         "水上": "-",
-        "水中": "◯"
+        "水中": "△"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "メガキャノン",
+        "attribute": "ビーム",
+        "weapon_type": "射撃MAP",
+        "range": "MAP",
+        "power": "4,200",
+        "en": "54",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中\n敵に「ビーム武装POWER20%減少」を付与(1ターン)\n移動前限定使用可能\n水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": "1"
+      },
+      {
+        "name": "ビームサーベル",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "3,960",
+        "en": "19",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ヒートロッド",
+        "attribute": "物理",
+        "weapon_type": "格闘",
+        "range": "2-4",
+        "power": "4,560",
+        "en": "27",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "敵に「攻撃力30%減少」を付与(1ターン)",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "メガキャノン",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "3-5",
+        "power": "5,160",
+        "en": "29",
+        "hit": "95%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 3,
+        "lv": 90,
+        "hp": 100987,
+        "en": 309,
+        "mobility": 5,
+        "attack": 6279,
+        "defense": 8570,
+        "agility": 6587
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 122934,
+        "en": 372,
+        "mobility": 5,
+        "attack": 7644,
+        "defense": 10433,
+        "agility": 7998
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 127559,
+        "en": 383,
+        "mobility": 6,
+        "attack": 7929,
+        "defense": 10820,
+        "agility": 8351
+      }
+    ],
     "transformed": false,
     "transformed_weapons": []
   },
@@ -172651,29 +173366,132 @@
       "不撓不屈"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "攻撃力上昇 LV1",
+          "desc": "攻撃力+5%"
+        }
+      ],
+      "combat_power": 11058,
       "mechanism": "シールド・変形",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 52446,
+        "en": 254,
+        "attack": 7085,
+        "defense": 5538,
+        "mobility": 5,
+        "agility": 5821
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
         "空中": "◯",
+        "地上": "◯",
         "水上": "-",
         "水中": "◯"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "ビームサーベル",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "4,200",
+        "en": "22",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "バスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "4,800",
+        "en": "27",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ツインバスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "3-5",
+        "power": "5,040",
+        "en": "31",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "敵から遠いほどPOWが上昇(最大10%)\n水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ウイングバルカン",
+        "attribute": "物理",
+        "weapon_type": "射撃",
+        "range": "1-3",
+        "power": "3,960",
+        "en": "21",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 3,
+        "lv": 80,
+        "hp": 52446,
+        "en": 254,
+        "mobility": 5,
+        "attack": 7085,
+        "defense": 5538,
+        "agility": 5821
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 80556,
+        "en": 373,
+        "mobility": 5,
+        "attack": 10882,
+        "defense": 8507,
+        "agility": 8941
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 83582,
+        "en": 387,
+        "mobility": 5,
+        "attack": 11825,
+        "defense": 8827,
+        "agility": 9277
+      }
+    ],
     "transformed": true,
-    "transformed_weapons": []
+    "transformed_weapons": [
+      {
+        "name": "バスターライフル",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "4,800",
+        "en": "27",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ]
   },
   {
     "id": 1470,
@@ -172880,27 +173698,103 @@
       "白色"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "防御力上昇 LV1",
+          "desc": "防御力+5%"
+        }
+      ],
+      "combat_power": 10986,
       "mechanism": "シールド",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 52446,
+        "en": 254,
+        "attack": 7085,
+        "defense": 5538,
+        "mobility": 5,
+        "agility": 5821
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
         "空中": "◯",
+        "地上": "◯",
         "水上": "-",
-        "水中": "◯"
+        "水中": "△"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "ビームサーベル",
+        "attribute": "ビーム",
+        "weapon_type": "格闘",
+        "range": "1-1",
+        "power": "4,080",
+        "en": "21",
+        "hit": "100%",
+        "critical": "5%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ヒートランス「テンペスト」",
+        "attribute": "物理",
+        "weapon_type": "格闘",
+        "range": "1-2",
+        "power": "4,800",
+        "en": "21",
+        "hit": "100%",
+        "critical": "10%",
+        "effect": "残HPが多いほどPOWが上昇(最大10%)",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ドーバーガン",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "4,440",
+        "en": "25",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 3,
+        "lv": 80,
+        "hp": 52446,
+        "en": 254,
+        "mobility": 5,
+        "attack": 7085,
+        "defense": 5538,
+        "agility": 5821
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 80556,
+        "en": 373,
+        "mobility": 5,
+        "attack": 10882,
+        "defense": 8507,
+        "agility": 8941
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 83582,
+        "en": 387,
+        "mobility": 5,
+        "attack": 11825,
+        "defense": 8827,
+        "agility": 9277
+      }
+    ],
     "transformed": false,
     "transformed_weapons": []
   },
@@ -172922,27 +173816,116 @@
       "量産機"
     ],
     "normal": {
-      "abilities": [],
-      "combat_power": 0,
+      "abilities": [
+        {
+          "name": "防御力上昇 LV1",
+          "desc": "防御力+5%"
+        }
+      ],
+      "combat_power": 10284,
       "mechanism": "",
       "stats": {
-        "agility": 0,
-        "attack": 0,
-        "defense": 0,
-        "en": 0,
-        "hp": 0,
-        "mobility": 0
+        "hp": 58157,
+        "en": 254,
+        "attack": 5583,
+        "defense": 7108,
+        "mobility": 4,
+        "agility": 5582
       },
       "terrain": {
-        "地上": "◯",
         "宇宙": "◯",
-        "空中": "◯",
+        "空中": "-",
+        "地上": "◯",
         "水上": "-",
-        "水中": "◯"
+        "水中": "△"
       }
     },
-    "normal_weapons": [],
-    "stats_by_star": [],
+    "normal_weapons": [
+      {
+        "name": "ダブルガトリングガン",
+        "attribute": "物理",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "4,440",
+        "en": "27",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "敵に「物理武装による被ダメージ20%上昇」を付与(1ターン)",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "バズーカ",
+        "attribute": "物理",
+        "weapon_type": "射撃",
+        "range": "3-4",
+        "power": "4,560",
+        "en": "26",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "ビームキャノン",
+        "attribute": "ビーム",
+        "weapon_type": "射撃",
+        "range": "2-4",
+        "power": "4,680",
+        "en": "27",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "水中の敵へのダメージ半減",
+        "restriction": "",
+        "ammo": ""
+      },
+      {
+        "name": "一斉射撃",
+        "attribute": "特殊",
+        "weapon_type": "射撃MAP",
+        "range": "MAP",
+        "power": "3,840",
+        "en": "54",
+        "hit": "100%",
+        "critical": "0%",
+        "effect": "絶対命中\n移動前限定使用可能",
+        "restriction": "",
+        "ammo": "1"
+      }
+    ],
+    "stats_by_star": [
+      {
+        "star": 3,
+        "lv": 80,
+        "hp": 58157,
+        "en": 254,
+        "mobility": 4,
+        "attack": 5583,
+        "defense": 7108,
+        "agility": 5582
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 89328,
+        "en": 373,
+        "mobility": 4,
+        "attack": 8573,
+        "defense": 10913,
+        "agility": 8571
+      },
+      {
+        "star": 3,
+        "lv": 100,
+        "hp": 92684,
+        "en": 387,
+        "mobility": 4,
+        "attack": 8896,
+        "defense": 11324,
+        "agility": 8895
+      }
+    ],
     "transformed": false,
     "transformed_weapons": []
   },
