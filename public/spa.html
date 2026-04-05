@@ -178,14 +178,22 @@ a:hover{text-decoration:underline}
 .gacha-unit-section{margin-top:20px}
 .gacha-unit-section-title{font-size:.95em;font-weight:700;color:var(--accent);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--card-border)}
 .gacha-unit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:8px}
-.gacha-unit-card{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:10px;cursor:pointer;transition:all .2s}
-.gacha-unit-card:hover{border-color:var(--accent);background:rgba(255,215,0,.04)}
-.gacha-unit-card.pickup{border-color:rgba(255,215,0,.4);background:rgba(255,215,0,.06)}
-.gacha-unit-img{width:40px;height:40px;border-radius:6px;object-fit:cover;border:1px solid var(--card-border);flex-shrink:0}
+.gacha-unit-card{display:flex;align-items:center;gap:10px;background:var(--card);border:1px solid var(--card-border);border-radius:8px;padding:12px;cursor:pointer;transition:all .2s}
+.gacha-unit-card:hover{border-color:var(--accent);background:rgba(255,215,0,.06);transform:translateY(-1px)}
+.gacha-unit-card.pickup{border-color:rgba(255,215,0,.5);background:linear-gradient(135deg,rgba(255,215,0,.1),rgba(255,140,0,.06));box-shadow:0 0 12px rgba(255,215,0,.08)}
+.gacha-unit-card.pickup:hover{border-color:var(--accent);box-shadow:0 0 16px rgba(255,215,0,.15)}
+.gacha-unit-img{width:44px;height:44px;border-radius:6px;object-fit:cover;border:1.5px solid var(--card-border);flex-shrink:0}
+.gacha-unit-card.pickup .gacha-unit-img{border-color:rgba(255,215,0,.5)}
 .gacha-unit-info{flex:1;min-width:0}
-.gacha-unit-name{font-size:.82em;font-weight:600;color:var(--card-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.gacha-unit-meta{font-size:.7em;color:var(--card-text2)}
+.gacha-unit-name{font-size:.85em;font-weight:700;color:#fff;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gacha-unit-meta{font-size:.72em;color:#b0b3be}
 .gacha-empty{text-align:center;color:var(--card-text2);padding:40px 0;font-size:.9em}
+.gacha-rarity-badge{display:inline-block;padding:1px 6px;border-radius:3px;font-size:.85em;font-weight:700;letter-spacing:.3px}
+.gacha-rarity-ur{background:linear-gradient(135deg,#e63950,#ff6b81);color:#fff}
+.gacha-rarity-ssr{background:linear-gradient(135deg,#d4a200,#ffd700);color:#1a1c2a}
+.gacha-rarity-sr{background:linear-gradient(135deg,#7b7b7b,#b0b0b0);color:#1a1c2a}
+.gacha-rarity-r{background:linear-gradient(135deg,#4a7c59,#6aab7a);color:#fff}
+.gacha-unit-note{font-size:.9em;color:#ff8800;margin-left:4px}
 /* ===== RESPONSIVE: PC ≥769px ===== */
 @media(min-width:769px){
   .sidebar.visible{display:flex}
@@ -8088,19 +8096,41 @@ async function showGachaDetail(gachaId) {
     const start = data.start_date ? new Date(data.start_date).toLocaleDateString('ja-JP') : '?';
     const end = data.end_date ? new Date(data.end_date).toLocaleDateString('ja-JP') : '未定';
 
-    const pickups = (data.units || []).filter(u => u.is_pickup);
-    const others = (data.units || []).filter(u => !u.is_pickup);
+    // Categorize units
+    const limitedUR = (data.units || []).filter(u => u.category === 'pickup_limited');
+    const standardUR = (data.units || []).filter(u => u.category === 'pickup_standard');
+    const newSSR = (data.units || []).filter(u => u.category === 'new_ssr');
+    const otherUnits = (data.units || []).filter(u => !u.category || u.category === 'pickup');
+    const supporters = data.supporters || [];
 
     function unitCard(u, isPickup) {
       const cls = 'gacha-unit-card' + (isPickup ? ' pickup' : '');
+      const uid = u.unit_id ? parseInt(u.unit_id, 10) : 0;
+      const onclick = uid ? ' onclick="gachaOpenUnit(' + uid + ')"' : '';
       const img = u.image ? '<img class="gacha-unit-img" src="' + escapeHTML(u.image) + '" alt="" loading="lazy">' : '<div class="gacha-unit-img" style="background:#222"></div>';
-      return '<div class="' + cls + '">' +
+      const rarityBadge = u.rarity ? '<span class="gacha-rarity-badge gacha-rarity-' + escapeHTML(u.rarity).toLowerCase() + '">' + escapeHTML(u.rarity) + '</span>' : '';
+      const noteTag = u.note ? '<span class="gacha-unit-note">' + escapeHTML(u.note) + '</span>' : '';
+      return '<div class="' + cls + '"' + onclick + '>' +
         img +
         '<div class="gacha-unit-info">' +
           '<div class="gacha-unit-name">' + escapeHTML(u.name) + '</div>' +
-          '<div class="gacha-unit-meta">' + escapeHTML(u.rarity || '') + ' / ' + escapeHTML(u.type || '') + '</div>' +
+          '<div class="gacha-unit-meta">' + rarityBadge + ' ' + escapeHTML(u.type || '') + ' ' + noteTag + '</div>' +
         '</div>' +
         (isPickup ? '<span class="gacha-pickup-label">PICKUP</span>' : '') +
+      '</div>';
+    }
+
+    function supporterCard(s) {
+      const img = s.image ? '<img class="gacha-unit-img" src="' + escapeHTML(s.image) + '" alt="" loading="lazy">' : '<div class="gacha-unit-img" style="background:#222"></div>';
+      const rarityBadge = s.rarity ? '<span class="gacha-rarity-badge gacha-rarity-' + escapeHTML(s.rarity).toLowerCase() + '">' + escapeHTML(s.rarity) + '</span>' : '';
+      const noteTag = s.note ? '<span class="gacha-unit-note">' + escapeHTML(s.note) + '</span>' : '';
+      return '<div class="gacha-unit-card pickup">' +
+        img +
+        '<div class="gacha-unit-info">' +
+          '<div class="gacha-unit-name">' + escapeHTML(s.name) + '</div>' +
+          '<div class="gacha-unit-meta">' + rarityBadge + ' サポーター ' + noteTag + '</div>' +
+        '</div>' +
+        '<span class="gacha-pickup-label">PICKUP</span>' +
       '</div>';
     }
 
@@ -8111,14 +8141,31 @@ async function showGachaDetail(gachaId) {
     html += '<div class="gacha-detail-period">' + start + ' ～ ' + end + '</div>';
     html += '</div>';
 
-    if (pickups.length > 0) {
-      html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">ピックアップユニット</div>';
-      html += '<div class="gacha-unit-grid">' + pickups.map(u => unitCard(u, true)).join('') + '</div></div>';
+    // Section: 限定URピックアップ
+    if (limitedUR.length > 0 || supporters.length > 0) {
+      html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">限定URピックアップ</div>';
+      html += '<div class="gacha-unit-grid">';
+      html += limitedUR.map(u => unitCard(u, true)).join('');
+      html += supporters.filter(s => s.category === 'pickup_limited').map(s => supporterCard(s)).join('');
+      html += '</div></div>';
     }
 
-    if (others.length > 0) {
-      html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">その他のユニット</div>';
-      html += '<div class="gacha-unit-grid">' + others.map(u => unitCard(u, false)).join('') + '</div></div>';
+    // Section: 恒常URピックアップ
+    if (standardUR.length > 0) {
+      html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">恒常URピックアップ</div>';
+      html += '<div class="gacha-unit-grid">' + standardUR.map(u => unitCard(u, true)).join('') + '</div></div>';
+    }
+
+    // Section: 新規SSRユニット
+    if (newSSR.length > 0) {
+      html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">新規追加SSRユニット</div>';
+      html += '<div class="gacha-unit-grid">' + newSSR.map(u => unitCard(u, false)).join('') + '</div></div>';
+    }
+
+    // Section: その他 (fallback)
+    if (otherUnits.length > 0) {
+      html += '<div class="gacha-unit-section"><div class="gacha-unit-section-title">ピックアップユニット</div>';
+      html += '<div class="gacha-unit-grid">' + otherUnits.map(u => unitCard(u, true)).join('') + '</div></div>';
     }
 
     detailEl.innerHTML = html;
@@ -8133,6 +8180,18 @@ function backToGachaList() {
   document.getElementById('gachaList').style.display = '';
   const headerEl = document.querySelector('.gacha-header');
   if (headerEl) headerEl.style.display = '';
+}
+
+function gachaOpenUnit(unitId) {
+  // Try to open the unit detail modal using the existing SPA function
+  if (typeof showUnitDetail === 'function' && allUnits && allUnits.length > 0) {
+    const found = allUnits.find(u => u.id === unitId);
+    if (found) {
+      showUnitDetail(unitId);
+      return;
+    }
+  }
+  console.warn('Unit not found in local data:', unitId);
 }
 
 function escapeHTML(str) {

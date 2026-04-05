@@ -123,15 +123,30 @@ export default async function handler(req, res) {
         // Fetch gacha units with unit details
         const { data: gachaUnits, error: guErr } = await supabase
           .from('gacha_units')
-          .select('is_pickup, unit_id, units(unit_id, name, image, rarity, type, obtain, series, tags, combat_power)')
+          .select('is_pickup, unit_id, category, note, units(unit_id, name, image, rarity, type, obtain, series, tags, combat_power)')
           .eq('gacha_id', gachaId);
         if (guErr) throw guErr;
+
+        // Fetch gacha supporters
+        const { data: gachaSupporters, error: gsErr } = await supabase
+          .from('gacha_supporters')
+          .select('is_pickup, supporter_id, category, note, supporters(supporter_id, name, image, rarity, obtain, hp, attack, target_series, leader_skill, support_skill)')
+          .eq('gacha_id', gachaId);
+        if (gsErr) throw gsErr;
 
         return res.status(200).json({
           ...gacha,
           units: (gachaUnits || []).map(gu => ({
             ...gu.units,
             is_pickup: gu.is_pickup,
+            category: gu.category,
+            note: gu.note,
+          })),
+          supporters: (gachaSupporters || []).map(gs => ({
+            ...gs.supporters,
+            is_pickup: gs.is_pickup,
+            category: gs.category,
+            note: gs.note,
           })),
         });
       }
